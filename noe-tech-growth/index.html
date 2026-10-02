@@ -1,0 +1,1542 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Noé Tech Growth</title>
+<meta name="description" content="J'aide les PME B2B à encaisser plus vite : contrats solides, suivi des impayés, relances systématiques. Diagnostic de 45 minutes.">
+<meta name="theme-color" content="#06110B">
+<meta property="og:title" content="Noé Tech Growth · Encaissez plus vite">
+<meta property="og:description" content="J'aide les PME B2B à encaisser plus vite : contrats solides, suivi des impayés, relances systématiques.">
+<meta property="og:image" content="assets/brand-badge.webp">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: "La tige". A living stem runs down the left margin, grows with the scroll and
+   carries the navigation; content sits on a forest-night canvas with one pale sage "paper" band. */
+:root{
+  --night:#06110B;      /* canvas */
+  --forest:#0C1F15;     /* raised surface */
+  --forest-2:#12301F;   /* hover / inset */
+  --ink:#EDF3E6;        /* text on night */
+  --ink-soft:#A9BCAA;   /* secondary text */
+  --ink-mute:#7F9583;
+  --leaf:#A3D65C;       /* brand accent, from the logo leaf */
+  --leaf-deep:#5E9A3A;
+  --sage:#6F9562;       /* brand wall green */
+  --spark:#5AB4FF;      /* the electric blue of the logo core */
+  --gold:#E2B857;       /* embroidery gold, used sparingly */
+  --paper:#EEF2E6; --paper-2:#E1E9D5; --paper-ink:#12241A; --paper-soft:#4A5E4E;
+  --line:rgba(196,230,170,.13); --line-2:rgba(196,230,170,.24);
+  --ok:#8BD06A; --warn:#E2B857; --late:#E8893F; --bad:#E5604F;
+  --on-leaf:#0B1A0F;
+
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-text:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  --r-s:10px; --r-m:18px; --r-l:28px;
+  --gut:clamp(16px,4vw,40px);
+  --stem:0px;
+  --hdr:68px;
+  color-scheme:dark;
+}
+@media (min-width:1180px){:root{--stem:84px}}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--hdr) + 16px)}
+body{margin:0;background:var(--night);color:var(--ink);font:400 17px/1.6 var(--f-text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--f-display);font-stretch:112%;margin:0;line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(34px,4.6vw,62px);font-weight:800}
+h3{font-size:clamp(21px,1.8vw,26px);font-weight:700;letter-spacing:-.01em;line-height:1.15}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--f-mono);font-size:.82em;letter-spacing:.02em}
+.small{font-size:14px;color:var(--ink-mute);line-height:1.5}
+.muted{color:var(--ink-soft)}
+.lead{font-size:clamp(18px,1.5vw,20px);color:var(--ink-soft);max-width:62ch;line-height:1.6}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:18px;height:1.5px;background:currentColor}
+:focus-visible{outline:2px solid var(--spark);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--leaf);color:var(--on-leaf);padding:10px 14px;border-radius:8px;font-weight:600}
+.skip:focus{top:12px}
+
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-inline:calc(var(--gut) + var(--stem)) var(--gut)}
+.sec{padding-block:clamp(80px,10vw,140px);position:relative}
+.sec-head{display:grid;gap:20px;margin-bottom:clamp(40px,5vw,64px);max-width:860px}
+
+/* ---------- buttons ---------- */
+.btn{--bx:0px;--by:0px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:0;background:var(--leaf);color:var(--on-leaf);font:600 16px/1.2 var(--f-text);text-decoration:none;cursor:pointer;transform:translate(var(--bx),var(--by));transition:transform .35s cubic-bezier(.2,.8,.2,1),background-color .2s,box-shadow .2s;box-shadow:0 10px 24px -12px rgba(163,214,92,.55);text-align:center}
+.btn:hover{background:#B6E374;box-shadow:0 14px 30px -14px rgba(163,214,92,.7)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .3s}
+.btn:hover svg{transform:translateX(3px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.ghost:hover{background:var(--forest-2)}
+.btn.sm{min-height:42px;padding:0 18px;font-size:14.5px}
+.copy{border:1px solid var(--line-2);background:transparent;border-radius:999px;padding:6px 14px;font:500 13px var(--f-mono);cursor:pointer;color:var(--ink-soft);transition:background-color .2s,color .2s}
+.copy:hover{background:var(--forest-2);color:var(--ink)}
+.copy.done{background:var(--leaf);color:var(--on-leaf);border-color:var(--leaf)}
+.chip{border:1px solid var(--line-2);background:transparent;color:var(--ink-soft);border-radius:999px;padding:9px 16px;font:500 14.5px var(--f-text);cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.chip:hover{color:var(--ink);border-color:var(--leaf)}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:var(--leaf);color:var(--on-leaf);border-color:var(--leaf)}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);transition:background-color .3s,box-shadow .3s}
+.hdr.scrolled{background:rgba(6,17,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{height:100%;display:flex;align-items:center;gap:22px;max-width:1440px;padding-inline:var(--gut)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none}
+.brand img{width:30px;height:auto}
+.brand span{font:800 17px/1 var(--f-display);font-stretch:118%;letter-spacing:-.01em}
+.brand small{display:block;font:500 9.5px/1 var(--f-mono);letter-spacing:.2em;color:var(--leaf);margin-top:4px;text-transform:uppercase}
+.nav{display:flex;gap:4px}
+.nav a{text-decoration:none;font-size:14.5px;color:var(--ink-soft);padding:8px 12px;border-radius:999px;transition:color .2s,background-color .2s}
+.nav a:hover{color:var(--ink)}
+.nav a.active{color:var(--ink);background:var(--forest-2)}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;border-radius:999px;padding:5px 10px;font:500 12px var(--f-mono);cursor:pointer;color:var(--ink-mute)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--night)}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:50%;background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:1.5px;background:var(--ink);transition:transform .3s}
+.burger span:first-child{top:17px}.burger span:last-child{top:25px}
+.burger[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+@media (max-width:1080px){
+  .burger{display:block}
+  .cta-h{display:none}
+  .nav{position:fixed;inset:var(--hdr) 0 auto 0;flex-direction:column;background:rgba(6,17,11,.97);backdrop-filter:blur(14px);padding:12px var(--gut) 28px;border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+  .nav.open{opacity:1;transform:none;pointer-events:auto}
+  .nav a{font-size:20px;padding:12px 4px;border-bottom:1px solid var(--line);border-radius:0;font-family:var(--f-display);font-weight:700}
+}
+
+/* ---------- the stem (signature) ---------- */
+.stem{position:fixed;left:30px;top:calc(var(--hdr) + 26px);bottom:34px;width:24px;z-index:40;display:none}
+@media (min-width:1180px){.stem{display:block}}
+.stem-track{position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px}
+.stem-fill{position:absolute;left:11px;top:0;width:2px;height:100%;border-radius:2px;background:linear-gradient(var(--leaf-deep),var(--leaf));transform-origin:top;transform:scaleY(var(--grow,0))}
+.stem-node{position:absolute;left:0;width:24px;height:24px;transform:translateY(-50%);display:grid;place-items:center;text-decoration:none;cursor:pointer}
+.stem-node i{width:8px;height:8px;border-radius:50%;background:var(--night);box-shadow:inset 0 0 0 1.5px var(--line-2);transition:background-color .3s,box-shadow .3s,transform .3s}
+.stem-node svg{position:absolute;left:14px;top:-4px;width:22px;height:14px;fill:var(--leaf);transform-origin:0 50%;transform:rotate(-35deg) scale(0);transition:transform .6s cubic-bezier(.3,1.6,.4,1)}
+.stem-node.even svg{transform:rotate(35deg) scale(0);top:12px}
+.stem-node.on i{background:var(--leaf);box-shadow:0 0 0 3px rgba(163,214,92,.18)}
+.stem-node.on svg{transform:rotate(-35deg) scale(1)}
+.stem-node.even.on svg{transform:rotate(35deg) scale(1)}
+.stem-node.cur i{background:var(--spark);box-shadow:0 0 0 4px rgba(90,180,255,.22);transform:scale(1.25)}
+.stem-node b{position:absolute;left:34px;white-space:nowrap;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--forest);border:1px solid var(--line-2);padding:5px 9px;border-radius:6px;opacity:0;transform:translateX(-6px);transition:opacity .2s,transform .2s;pointer-events:none}
+.stem-node:hover b{opacity:1;transform:none}
+.stem-bud{position:absolute;left:12px;top:0;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--spark);box-shadow:0 0 0 5px rgba(90,180,255,.16),0 4px 14px rgba(0,0,0,.4);transition:width .5s,height .5s,background-color .5s,border-radius .5s}
+.stem.bloom .stem-bud{width:46px;height:56px;border-radius:0;background:url(assets/logo-mark.webp) center/contain no-repeat;box-shadow:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;margin-top:calc(var(--hdr) * -1);padding-top:var(--hdr);overflow:hidden;isolation:isolate;background:radial-gradient(120% 90% at 80% 30%,#14341F 0%,var(--night) 62%)}
+#flux{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(24px,4vw,64px);padding-block:clamp(40px,6vw,80px) clamp(56px,7vw,96px)}
+.hero-copy{display:grid;gap:24px;position:relative;z-index:3;min-width:0}
+.hero h1{font-size:clamp(54px,7.4vw,116px);font-weight:900;font-stretch:120%;letter-spacing:-.035em;line-height:.9}
+.hero h1 em{font-style:normal;color:var(--leaf);display:block}
+.tag{font:600 clamp(19px,1.8vw,24px)/1.3 var(--f-display);font-stretch:105%;color:var(--ink)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.proof{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--ink-soft)}
+.proof span{display:inline-flex;align-items:center;gap:8px}
+.proof span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--leaf)}
+
+.stage{position:relative;aspect-ratio:4/4.6;width:100%;max-width:600px;justify-self:end}
+.plane{position:absolute;will-change:transform}
+.p-disc{inset:9% 2% 9% 6%;border-radius:50%;background:radial-gradient(circle at 34% 28%,#9DBB86 0%,#6F9562 38%,#3E6236 78%,#2B4A27 100%);box-shadow:inset -30px -40px 80px rgba(6,17,11,.45),0 40px 80px -30px rgba(0,0,0,.7)}
+.p-disc::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(163,214,92,.28)}
+.p-disc.pulse{animation:pulse .7s ease-out}
+@keyframes pulse{0%{box-shadow:inset -30px -40px 80px rgba(6,17,11,.45),0 0 0 0 rgba(163,214,92,.35)}100%{box-shadow:inset -30px -40px 80px rgba(6,17,11,.45),0 0 0 28px rgba(163,214,92,0)}}
+.p-ring{inset:3% -4% 3% 0;pointer-events:none}
+.p-ring svg{width:100%;height:100%;overflow:visible}
+.p-word{left:-6%;right:-6%;top:12%;text-align:center;font:900 clamp(110px,15vw,230px)/.8 var(--f-display);font-stretch:125%;letter-spacing:-.04em;color:rgba(237,243,230,.1);user-select:none;pointer-events:none}
+.p-noe{left:8%;right:4%;bottom:0;display:flex;justify-content:center;pointer-events:none}
+.p-noe img{width:100%;max-width:520px;height:auto;-webkit-mask-image:linear-gradient(#000 78%,transparent 100%);mask-image:linear-gradient(#000 78%,transparent 100%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.chipcard{background:rgba(12,31,21,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line-2);border-radius:16px;padding:12px 14px;display:grid;gap:6px;min-width:0;box-shadow:0 18px 40px -16px rgba(0,0,0,.7);font-size:13px}
+.chipcard .row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.chipcard b{font:600 14px var(--f-text)}
+.chipcard .mono{color:var(--ink-mute);font-size:11px}
+.pill{display:inline-flex;align-items:center;gap:6px;font:500 11px var(--f-mono);padding:3px 8px;border-radius:999px;background:rgba(139,208,106,.16);color:var(--ok)}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.blue{background:rgba(90,180,255,.15);color:var(--spark)}
+.c1{left:0;top:64%;width:min(270px,56%)}
+.c2{right:-4%;top:14%;width:min(230px,48%)}
+.p-leaf{pointer-events:none}
+.p-leaf svg{display:block;fill:var(--leaf)}
+.l1{right:4%;bottom:8%;width:70px;filter:blur(3px);opacity:.85}
+.l2{left:2%;top:6%;width:42px;filter:blur(1.5px);opacity:.7}
+.l3{right:30%;top:-2%;width:28px;opacity:.55}
+.hero-meter{position:absolute;right:var(--gut);bottom:18px;display:flex;align-items:baseline;gap:10px;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);z-index:3}
+.hero-meter b{font:700 18px var(--f-mono);color:var(--leaf)}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;padding-top:24px}
+  .stage{justify-self:center;max-width:440px;order:-1;margin-bottom:-12px}
+  .hero h1{font-size:clamp(50px,15vw,84px)}
+  .c1{left:-2%;top:66%;width:60%}.c2{right:-2%;top:8%;width:50%}
+  .chipcard{padding:9px 11px;font-size:12px}.chipcard b{font-size:12.5px}.chipcard .row{flex-wrap:wrap;gap:4px 10px}
+  .hero-meter{position:static;padding:0 var(--gut) 24px;justify-content:flex-start}
+}
+
+/* ---------- marquee ---------- */
+.marquee{border-block:1px solid var(--line);overflow:hidden;display:flex;background:var(--forest)}
+.marquee>div{display:flex;flex:none;gap:0;animation:mq 42s linear infinite}
+.marquee span{display:inline-flex;align-items:center;gap:22px;padding:18px 22px;white-space:nowrap;font:700 clamp(18px,2vw,26px)/1 var(--f-display);font-stretch:115%;color:var(--ink-soft)}
+.marquee span::after{content:"";width:10px;height:14px;background:var(--leaf);border-radius:0 100% 0 100%;transform:rotate(20deg)}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* ---------- benchmark (scrub counter) ---------- */
+.stat{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.big{font:900 clamp(120px,19vw,280px)/.8 var(--f-display);font-stretch:125%;letter-spacing:-.05em;color:var(--ink);display:flex;align-items:flex-start}
+.big small{font-size:.26em;color:var(--late);margin:.12em 0 0 .08em;letter-spacing:-.01em}
+.stat h2{font-size:clamp(26px,3vw,40px);margin:18px 0}
+.cmp{display:grid;gap:14px;margin-top:26px;max-width:560px}
+.cmp>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;align-items:center}
+.bar{height:12px;background:var(--forest-2);border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px;background:var(--warn);transform-origin:left;transform:scaleX(var(--s,1))}
+.cmp>div:last-child .bar i{background:var(--late)}
+@media (max-width:760px){.stat{grid-template-columns:1fr}}
+
+/* ---------- paper band: problem ---------- */
+.paper{background:var(--paper);color:var(--paper-ink)}
+.paper .lead,.paper .muted{color:var(--paper-soft)}
+.paper .eyebrow{color:var(--leaf-deep)}
+.leaks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.leak{background:#fff;border-radius:var(--r-l);padding:30px 28px 32px;display:grid;gap:14px;align-content:start;box-shadow:0 1px 0 rgba(18,36,26,.06),0 24px 40px -30px rgba(18,36,26,.35);position:relative;overflow:hidden}
+.leak .k{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--late);display:flex;align-items:center;gap:10px}
+.leak .k svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.leak::after{content:"";position:absolute;left:28px;right:28px;bottom:0;height:3px;background:var(--late);border-radius:3px 3px 0 0;transform:scaleX(.18);transform-origin:left;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.leak:hover::after{transform:scaleX(1)}
+.costs{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);margin-top:clamp(56px,7vw,96px);align-items:start}
+.costs h3{font-size:clamp(28px,3vw,40px);font-weight:800}
+.costs ul{list-style:none;margin:0;padding:0;display:grid}
+.costs li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:20px 0;border-top:1px solid rgba(18,36,26,.14);font-size:18px;line-height:1.45}
+.costs li:last-child{border-bottom:1px solid rgba(18,36,26,.14)}
+.costs li svg{width:22px;height:22px;stroke:var(--late);fill:none;stroke-width:1.8;margin-top:2px}
+@media (max-width:900px){.leaks,.costs{grid-template-columns:1fr}}
+
+/* ---------- calculator ---------- */
+.calc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px}
+.panel{background:var(--forest);border:1px solid var(--line);border-radius:var(--r-l);padding:clamp(22px,3vw,34px);position:relative;overflow:hidden}
+.spot::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,-500px) var(--my,-500px),rgba(163,214,92,.07),transparent 60%);border-radius:inherit}
+.paper .spot::before{display:none}
+.calc .in{display:grid;gap:22px;align-content:start}
+.field{display:grid;gap:8px;min-width:0}
+.field label,.field>.lbl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14.5px;color:var(--ink-soft)}
+.field label b{font:600 15px var(--f-mono);color:var(--leaf)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.unit{position:relative}
+.unit::after{content:attr(data-u);position:absolute;right:16px;top:50%;transform:translateY(-50%);font:500 13px var(--f-mono);color:var(--ink-mute);pointer-events:none}
+input[type=text],input:not([type]),select{width:100%;min-height:52px;background:var(--night);border:1px solid var(--line-2);border-radius:14px;color:var(--ink);font:500 18px var(--f-mono);padding:0 60px 0 16px;transition:border-color .2s,box-shadow .2s}
+select,input:not([type]){font:500 16px var(--f-text);padding-right:16px}
+input:focus,select:focus{outline:none;border-color:var(--leaf);box-shadow:0 0 0 4px rgba(163,214,92,.15)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--leaf) var(--p,25%),var(--forest-2) var(--p,25%))}
+input[type=range]::-moz-range-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--leaf) var(--p,25%),var(--forest-2) var(--p,25%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border-radius:50%;background:var(--ink);border:5px solid var(--leaf);box-shadow:0 4px 12px rgba(0,0,0,.4)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ink);border:5px solid var(--leaf)}
+.calc .out{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:22px}
+.res{display:grid;gap:4px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.res span{font-size:14px;color:var(--ink-soft)}
+.res b{font:700 clamp(22px,2.4vw,30px)/1.1 var(--f-display);font-stretch:108%;letter-spacing:-.01em}
+.res.hl b{color:var(--leaf);font-size:clamp(28px,3.2vw,40px)}
+.res.bad b{color:var(--late)}
+.tank{position:relative;border-radius:60px;border:1px solid var(--line-2);background:var(--night);overflow:hidden;min-height:300px}
+.tank canvas{position:absolute;inset:0;width:100%;height:100%}
+.tank .pct{position:absolute;top:16px;left:0;right:0;text-align:center;font:700 20px var(--f-mono);z-index:2}
+.tank .lbl{position:absolute;bottom:16px;left:6px;right:6px;text-align:center;font:500 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;z-index:2;color:var(--on-leaf)}
+.calc-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+@media (max-width:520px){.calc .out{grid-template-columns:minmax(0,1fr) 84px}.tank{min-height:260px}.two{grid-template-columns:1fr}}
+
+/* ---------- PEAK: three workstreams ---------- */
+.peak{background:linear-gradient(var(--night),#081a10 40%,var(--night))}
+.peak-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(32px,5vw,72px);align-items:start}
+.peak-pin{position:sticky;top:calc(var(--hdr) + 24px);display:grid;gap:22px}
+.peak-pin .intro{display:grid;gap:18px}
+.peak-pin h2{font-size:clamp(30px,3.3vw,48px)}
+.peak-pin .lead{font-size:17px}
+@media (max-height:1000px){.peak-pin .intro .lead{display:none}.g-num b{font-size:clamp(64px,6vw,96px)}}
+.gauge{margin-top:8px;background:var(--forest);border:1px solid var(--line);border-radius:var(--r-l);padding:24px;display:grid;gap:18px}
+.g-num{display:flex;align-items:baseline;gap:10px}
+.g-num b{font:900 clamp(72px,8vw,120px)/.85 var(--f-display);font-stretch:125%;letter-spacing:-.05em}
+.g-num span{font:700 26px var(--f-display);color:var(--ink-soft)}
+.g-cap{font-size:14px;color:var(--ink-soft);max-width:36ch}
+.g-pipe{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;font:500 11px var(--f-mono);color:var(--ink-mute);text-transform:uppercase;letter-spacing:.06em}
+.g-track{height:10px;border-radius:999px;background:var(--forest-2);position:relative}
+.g-track i{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:999px;background:linear-gradient(90deg,var(--leaf-deep),var(--leaf));transform-origin:left;transform:scaleX(var(--g,1))}
+.g-track em{position:absolute;top:50%;left:calc(var(--g,1) * 100%);width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--spark);box-shadow:0 0 0 5px rgba(90,180,255,.2)}
+.g-track s{position:absolute;top:-6px;bottom:-6px;width:2px;background:var(--ink-mute);left:var(--t,50%)}
+.g-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.g-steps li{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.3;color:var(--ink-mute);transition:all .3s}
+.g-steps li b{display:block;font:500 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.g-steps li.on{border-color:var(--leaf);color:var(--ink);background:rgba(163,214,92,.08)}
+.g-steps li.on b{color:var(--leaf)}
+.peak-flow{display:grid;gap:clamp(64px,8vw,120px);padding-top:8px}
+.ch{display:grid;gap:22px;scroll-margin-top:calc(var(--hdr) + 20px)}
+.ch-head{display:grid;gap:14px;max-width:62ch}
+.when{font:500 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--spark)}
+.ch h3{font-size:clamp(30px,3vw,42px);font-weight:800}
+.note{border-left:2px solid var(--leaf);padding:4px 0 4px 16px;font-size:15px;color:var(--ink-soft)}
+.ch ul.pts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ch ul.pts li{background:var(--forest);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;color:var(--ink-soft)}
+.ch ul.pts li b{display:block;color:var(--ink);margin-bottom:4px}
+.clauses{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cl{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;cursor:pointer;background:var(--forest);transition:border-color .2s,background-color .2s}
+.cl:hover{border-color:var(--line-2)}
+.cl:has(input:checked){border-color:var(--leaf);background:rgba(163,214,92,.07)}
+.cl input,.prep input{appearance:none;-webkit-appearance:none;width:22px;height:22px;border-radius:7px;border:1.5px solid var(--line-2);margin:1px 0 0;display:grid;place-items:center;cursor:pointer;background:var(--night)}
+.cl input:checked,.prep input:checked{background:var(--leaf);border-color:var(--leaf)}
+.cl input:checked::after,.prep input:checked::after{content:"";width:10px;height:6px;border:2px solid var(--on-leaf);border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.cl b{display:block;font-size:15px}
+.cl span{font-size:13.5px;color:var(--ink-mute);line-height:1.45}
+.draft{background:#F6F8F1;color:var(--paper-ink);border-radius:var(--r-m);padding:22px 24px;box-shadow:0 24px 50px -30px rgba(0,0,0,.8);position:relative}
+.draft::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:repeating-linear-gradient(90deg,var(--leaf-deep) 0 18px,transparent 18px 24px);border-radius:var(--r-m) var(--r-m) 0 0;opacity:.5}
+.draft-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.draft-top .mono{color:var(--paper-soft);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.meter{display:flex;gap:4px;margin-right:auto}
+.meter i{width:16px;height:6px;border-radius:3px;background:rgba(18,36,26,.14)}
+.meter i.on{background:var(--leaf-deep)}
+.draft .copy{color:var(--paper-ink);border-color:rgba(18,36,26,.25)}
+.draft .copy:hover{background:var(--paper-2)}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font:400 14px/1.65 var(--f-mono)}
+.draft .small{color:var(--paper-soft)}
+.age-bar{display:flex;height:58px;border-radius:14px;overflow:hidden;gap:3px}
+.age-bar button{border:0;background:var(--c);color:var(--on-leaf);font:600 13px var(--f-mono);cursor:pointer;min-width:44px;opacity:.55;transition:opacity .25s,flex-grow .5s}
+.age-bar button[aria-pressed="true"]{opacity:1}
+.age-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.age-legend div{display:grid;gap:3px;font-size:12.5px;color:var(--ink-mute)}
+.age-legend i{display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--c);margin-right:6px}
+.age-legend b{font:600 14px var(--f-mono);color:var(--ink)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-m);background:var(--forest)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th{text-align:left;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);padding:12px 14px;border-bottom:1px solid var(--line)}
+td{padding:11px 14px;border-bottom:1px solid var(--line);transition:opacity .3s}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+tr.dim td{opacity:.32}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:9px}
+.action{background:rgba(90,180,255,.08);border:1px solid rgba(90,180,255,.3);border-radius:var(--r-m);padding:16px 18px;display:grid;gap:4px}
+.action .mono{color:var(--spark);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em}
+.steps{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.rem{background:var(--forest);border:1px solid var(--line);border-radius:var(--r-l);padding:22px 24px;display:grid;gap:16px}
+.rem-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rem-head span{font:500 12px var(--f-mono);color:var(--spark)}
+.rem pre{background:var(--night);border-radius:14px;padding:18px;color:var(--ink-soft);border:1px solid var(--line)}
+.rem .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+@media (max-width:1000px){
+  .peak-grid{grid-template-columns:1fr}
+  .peak-pin{position:sticky;top:calc(var(--hdr) + 4px);z-index:5;gap:0}
+  .peak-pin>.intro{display:none}
+  .gauge{padding:14px 16px;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;align-items:center;background:rgba(12,31,21,.94);backdrop-filter:blur(10px);margin:0}
+  .g-num b{font-size:46px}.g-num span{font-size:18px}
+  .g-cap,.g-steps,.gauge>.small{display:none}
+  .g-pipe{grid-template-columns:minmax(0,1fr)}.g-pipe>span{display:none}
+  .peak-intro-m{display:grid!important}
+}
+.peak-intro-m{display:none;gap:18px;margin-bottom:24px}
+@media (max-width:640px){.clauses,.ch ul.pts{grid-template-columns:1fr}.age-legend{grid-template-columns:1fr 1fr}}
+
+/* ---------- sectors ---------- */
+.band{background:var(--forest);border-block:1px solid var(--line)}
+.sect-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.sect{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sect>div{border-radius:var(--r-l);padding:28px;position:relative;overflow:hidden;animation:fadeUp .45s cubic-bezier(.2,.8,.2,1)}
+.sect .trap{background:var(--night);border:1px solid rgba(232,137,63,.35)}
+.sect .fix{background:var(--leaf);color:var(--on-leaf)}
+.sect h4{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.sect .trap h4{color:var(--late)}
+.sect ul{list-style:none;margin:0;padding:0;display:grid;gap:14px;font-size:17px;line-height:1.45}
+.sect li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px}
+.sect .trap li::before{content:"";width:10px;height:10px;margin-top:8px;border:1.5px solid var(--late);border-radius:50%}
+.sect .fix li::before{content:"";width:12px;height:7px;margin-top:7px;border:2px solid var(--on-leaf);border-top:0;border-right:0;transform:rotate(-45deg)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:760px){.sect{grid-template-columns:1fr}}
+
+/* ---------- public circuit ---------- */
+.circuit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative}
+.circuit::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:var(--line-2)}
+.circuit::after{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:linear-gradient(90deg,var(--leaf),var(--spark));transform-origin:left;transform:scaleX(var(--c,0))}
+.node{display:grid;gap:10px;align-content:start;position:relative;z-index:1}
+.node .n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--night);border:1.5px solid var(--line-2);font:700 20px var(--f-display);transition:background-color .4s,border-color .4s,color .4s}
+.node.lit .n{background:var(--leaf);border-color:var(--leaf);color:var(--on-leaf)}
+.node .who{font:500 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--spark)}
+.node p{font-size:15px;color:var(--ink-soft)}
+.node p b{color:var(--ink)}
+.dossier{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;margin-top:48px;background:var(--forest);border:1px solid var(--line);border-radius:var(--r-l);padding:clamp(24px,3vw,36px)}
+.dossier ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dossier li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;font-size:15px;color:var(--ink-soft)}
+.dossier li::before{content:"";width:16px;height:16px;border-radius:5px;border:1.5px solid var(--leaf);margin-top:3px}
+@media (max-width:900px){
+  .circuit{grid-template-columns:1fr;gap:26px;padding-left:0}
+  .circuit::before,.circuit::after{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}
+  .circuit::after{transform-origin:top;transform:scaleY(var(--c,0))}
+  .node{grid-template-columns:56px minmax(0,1fr);column-gap:18px}
+  .node>*:not(.n){grid-column:2}.node .n{grid-row:1/span 3}
+  .dossier,.dossier ul{grid-template-columns:1fr}
+}
+
+/* ---------- OHADA ---------- */
+.ohada{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:start}
+.cle{display:grid;gap:12px;margin-top:32px}
+.cle div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.cle b{font:800 20px var(--f-display);font-stretch:112%;color:var(--leaf)}
+.cle span{color:var(--ink-soft);font-size:15.5px}
+.proc{list-style:none;margin:0;padding:0 0 0 34px;display:grid;gap:26px;position:relative}
+.proc::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.proc::after{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--leaf);transform-origin:top;transform:scaleY(var(--d,0))}
+.proc li{position:relative;display:grid;gap:4px}
+.proc li::before{content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--night);border:2px solid var(--line-2);transition:background-color .3s,border-color .3s}
+.proc li.lit::before{background:var(--leaf);border-color:var(--leaf)}
+.proc b{font:700 18px var(--f-display);font-stretch:108%;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.proc .d{font:500 11px var(--f-mono);letter-spacing:.06em;color:var(--spark);border:1px solid rgba(90,180,255,.35);border-radius:999px;padding:3px 9px;text-transform:uppercase}
+.proc li>span{color:var(--ink-soft);font-size:15.5px}
+@media (max-width:900px){.ohada{grid-template-columns:1fr}.cle div{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- offers ---------- */
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch;perspective:1200px}
+.offer{background:var(--night);border:1px solid var(--line);border-radius:var(--r-l);padding:30px 28px;display:grid;gap:16px;align-content:start;position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .3s;transform-style:preserve-3d}
+.offer:hover{border-color:var(--line-2)}
+.offer .st{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute)}
+.offer h3{font-size:24px}
+.price{font:900 clamp(40px,4vw,54px)/1 var(--f-display);font-stretch:118%;letter-spacing:-.03em;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+.price small{font:500 14px var(--f-mono);letter-spacing:0;color:var(--ink-soft)}
+.price .from{display:block;width:100%;font:500 12px var(--f-mono);color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase}
+.offer ul{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:10px;font-size:15px;color:var(--ink-soft)}
+.offer li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+.offer li::before{content:"";width:12px;height:7px;margin-top:7px;border:2px solid var(--leaf);border-top:0;border-right:0;transform:rotate(-45deg)}
+.offer.feat{background:linear-gradient(160deg,#1B4128,#0C2416 70%);border-color:rgba(163,214,92,.5);box-shadow:0 40px 70px -40px rgba(163,214,92,.35)}
+.badge{position:absolute;top:-13px;left:26px;background:var(--leaf);color:var(--on-leaf);font:600 12px var(--f-mono);letter-spacing:.04em;padding:6px 12px;border-radius:999px}
+.pay{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;margin-top:30px}
+.pay .m{display:flex;flex-wrap:wrap;gap:8px}
+.pay .m span{border:1px solid var(--line-2);border-radius:999px;padding:8px 14px;font:500 13px var(--f-mono);color:var(--ink-soft)}
+@media (max-width:960px){.offers{grid-template-columns:1fr}}
+
+/* ---------- method ---------- */
+.method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.mstep{padding:28px 28px 30px 0;display:grid;gap:12px;align-content:start;position:relative}
+.mstep+.mstep{padding-left:28px;border-left:1px solid var(--line)}
+.mstep .k{font:500 12px var(--f-mono);letter-spacing:.12em;color:var(--leaf)}
+.mstep h3{font-size:clamp(26px,2.6vw,34px);font-weight:800}
+.diag{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:18px;margin-top:40px}
+.tline{display:flex;gap:4px;margin:20px 0 16px;height:54px}
+.tline button{border:0;border-radius:10px;background:var(--forest-2);color:var(--ink-soft);font:500 12px var(--f-mono);cursor:pointer;min-width:0;padding:0 6px;transition:background-color .25s,color .25s}
+.tline button[aria-pressed="true"]{background:var(--leaf);color:var(--on-leaf)}
+.tline-txt{display:grid;gap:4px;font-size:17px;min-height:56px}
+.tline-txt b{font:600 12px var(--f-mono);color:var(--spark);letter-spacing:.06em}
+.prep{display:grid;gap:10px;margin-top:18px}
+.prep label{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;cursor:pointer;font-size:15.5px;color:var(--ink-soft)}
+@media (max-width:900px){.method,.diag{grid-template-columns:1fr}.mstep+.mstep{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- quiz ---------- */
+.quiz{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:18px}
+.qbar{display:flex;gap:6px;margin-bottom:28px}
+.qbar i{flex:1;height:6px;border-radius:3px;background:var(--forest-2);transition:background-color .3s}
+.qbar i.cur{background:var(--spark)}.qbar i.y{background:var(--ok)}.qbar i.n{background:var(--bad)}
+.qn{color:var(--ink-mute);margin-bottom:12px}
+.qq{font:700 clamp(24px,2.6vw,34px)/1.2 var(--f-display);font-stretch:106%;min-height:3.6em;letter-spacing:-.01em;text-wrap:balance}
+.qa{display:flex;gap:12px;margin-top:26px}
+.qa .btn{min-width:120px}
+.ring{position:relative;width:180px;height:180px;margin:0 auto 18px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:var(--forest-2)}
+.ring .fg{stroke:var(--spark);stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1),stroke .4s}
+.ring>div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring b{font:900 56px/1 var(--f-display);font-stretch:120%}
+.ring span{font:500 12px var(--f-mono);color:var(--ink-mute)}
+.verdict{text-align:center;display:grid;gap:8px}
+.verdict h3{font-size:30px}
+.advice{margin:16px 0 0;padding-left:18px;display:grid;gap:8px;font-size:14.5px;color:var(--ink-soft)}
+@media (max-width:900px){.quiz{grid-template-columns:1fr}}
+
+/* ---------- fit ---------- */
+.fit{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:18px}
+.fit>div{border-radius:var(--r-l);padding:clamp(24px,3vw,36px)}
+.fit .yes{background:var(--forest);border:1px solid var(--line)}
+.fit .no{border:1px dashed var(--line-2)}
+.fit h3{margin-bottom:20px;font-size:22px}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.fit li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;font-size:16.5px}
+.fit .yes li::before{content:"";width:12px;height:7px;margin-top:8px;border:2px solid var(--leaf);border-top:0;border-right:0;transform:rotate(-45deg)}
+.fit .no li{color:var(--ink-soft)}
+.fit .no li::before{content:"";width:12px;height:2px;margin-top:12px;background:var(--bad)}
+@media (max-width:900px){.fit{grid-template-columns:1fr}}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,96px);align-items:center}
+.portrait{position:relative;aspect-ratio:765/1024;border-radius:28px 46% 28px 28px;overflow:hidden;background:#140c1c;box-shadow:0 50px 90px -40px rgba(0,0,0,.85)}
+.portrait img{width:100%;height:112%;object-fit:cover;object-position:50% 20%;transform:translateY(var(--py,0px))}
+.portrait figcaption{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(6,17,11,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line-2);border-radius:14px;padding:12px 14px}
+.portrait figcaption b{font:700 16px var(--f-display);font-stretch:110%}
+.portrait figcaption span{font:500 11px var(--f-mono);color:var(--leaf);letter-spacing:.08em;text-transform:uppercase}
+.portrait-wrap{position:relative;max-width:480px;width:100%}
+.portrait-wrap .mark{position:absolute;right:-26px;top:-26px;width:84px;z-index:2;filter:drop-shadow(0 14px 22px rgba(0,0,0,.6))}
+.about h2{margin:0 0 22px}
+.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.certs span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);border-radius:999px;padding:8px 14px;font-size:13.5px;color:var(--ink-soft)}
+.certs span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--spark)}
+@media (max-width:900px){.about{grid-template-columns:1fr}.portrait-wrap{max-width:400px;margin-inline:auto}.portrait-wrap .mark{right:-6px;top:-20px;width:64px}}
+
+/* ---------- FAQ + glossary ---------- */
+.faq{display:grid;gap:0;border-top:1px solid var(--line);max-width:960px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;cursor:pointer;font:600 clamp(17px,1.5vw,20px)/1.35 var(--f-text)}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);position:relative;transition:transform .3s,background-color .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+details[open] summary i{background:var(--leaf);border-color:var(--leaf)}
+details[open] summary i::before,details[open] summary i::after{background:var(--on-leaf)}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.ans{padding:0 50px 24px 0;color:var(--ink-soft);max-width:70ch}
+.gloss-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin:clamp(72px,8vw,110px) 0 26px}
+.gloss-head h3{font-size:clamp(26px,3vw,38px);font-weight:800}
+.gnav{display:flex;gap:8px}
+.gnav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;display:grid;place-items:center}
+.gnav button:hover{background:var(--forest-2)}
+.gnav svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2}
+.gloss{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,300px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent;overscroll-behavior-x:contain}
+.gloss.drag{cursor:grabbing;scroll-snap-type:none}
+.term{scroll-snap-align:start;background:var(--night);border:1px solid var(--line);border-radius:var(--r-m);padding:22px;display:grid;gap:10px;align-content:start;user-select:none}
+.term b{font:800 19px var(--f-display);font-stretch:110%;color:var(--leaf)}
+.term span{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- close ---------- */
+.final{background:radial-gradient(90% 80% at 15% 100%,#1B4128 0%,var(--night) 60%);overflow:hidden}
+.final-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.final h2{font-size:clamp(38px,4.4vw,64px);font-weight:900;font-stretch:118%;margin:18px 0 22px}
+.final h2 em{font-style:normal;color:var(--leaf)}
+.limited{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font:500 13px var(--f-mono);color:var(--gold)}
+.limited::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.3}}
+.contact{display:grid;gap:10px;margin-top:30px;max-width:520px}
+.contact>div{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(12,31,21,.6)}
+.contact .muted{font-size:13px}
+.contact .mono{font-size:15px;overflow-wrap:anywhere}
+.form{background:var(--forest);border:1px solid var(--line-2);border-radius:var(--r-l);padding:clamp(22px,3vw,34px);display:grid;gap:20px;position:relative;overflow:hidden}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.form pre{background:var(--night);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:13px;color:var(--ink-soft);max-height:220px;overflow:auto}
+.form .btn{width:100%}
+.close-mark{display:flex;align-items:center;gap:18px;margin-top:44px}
+.close-mark img{width:64px}
+.close-mark b{font:900 26px/1 var(--f-display);font-stretch:122%;letter-spacing:-.02em}
+.close-mark small{display:block;font:500 11px var(--f-mono);letter-spacing:.2em;color:var(--leaf);margin-top:6px}
+@media (max-width:900px){.final-grid{grid-template-columns:1fr}.contact>div{grid-template-columns:76px minmax(0,1fr) auto}}
+
+footer{border-top:1px solid var(--line);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:13.5px;color:var(--ink-mute)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;display:none;box-shadow:0 14px 30px -10px rgba(0,0,0,.7)}
+@media (max-width:1080px){.fab{display:inline-flex}}
+.fab.hide{opacity:0;pointer-events:none;transform:translateY(10px)}
+.fab svg{width:18px;height:18px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--night);padding:10px 18px;border-radius:999px;font:600 14px var(--f-text);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:90}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- reveal (only for things below the fold at load) ---------- */
+.rv{transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),clip-path 1s cubic-bezier(.7,0,.2,1)}
+.rv.pre{opacity:0;transform:translateY(26px)}
+.wipe.pre{opacity:1;transform:none;clip-path:inset(0 0 100% 0 round var(--r-l))}
+.wipe{clip-path:inset(0 0 0 0 round var(--r-l))}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv.pre{opacity:1;transform:none;clip-path:none}
+  .marquee>div{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Noé Tech Growth"><img src="assets/logo-mark.webp" alt="" width="30" height="38"><span>NOÉ<small>Tech Growth</small></span></a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#probleme" data-en="The problem">Le problème</a>
+      <a href="#calculateur" data-en="Calculator">Calculateur</a>
+      <a href="#chantiers" data-en="The method">Les trois chantiers</a>
+      <a href="#secteurs" data-en="Your sector">Votre secteur</a>
+      <a href="#offres" data-en="Pricing">Offres</a>
+      <a href="#test" data-en="Test">Test</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" id="lFR" aria-pressed="true">FR</button>
+      <button type="button" id="lEN" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn sm cta-h mag" href="#contact" data-en="45-min diagnostic">Diagnostic 45 min</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- signature: the growth stem -->
+<aside class="stem" id="stem" aria-hidden="true">
+  <div class="stem-track"></div>
+  <div class="stem-fill"></div>
+  <div id="stemNodes"></div>
+  <div class="stem-bud" id="stemBud"></div>
+</aside>
+
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <canvas id="flux" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow" data-en="B2B SMEs · Cameroon">PME B2B · Cameroun</div>
+      <h1 data-en="Get paid <em>faster.</em>">Encaissez <em>plus vite.</em></h1>
+      <p class="tag" data-en="Profitable on paper. Short on cash.">Rentable sur le papier. À court de trésorerie.</p>
+      <p class="lead" data-en="The work is delivered. The invoice is sent. The money hasn’t arrived. I set up three things that change that: solid contracts, weekly tracking of unpaid invoices, and reminders sent on a fixed schedule. One result is measured: the number of days your clients take to pay.">Le travail est livré. La facture est partie. L'argent n'est pas arrivé. Je mets en place trois choses qui changent cela : des contrats solides, un suivi des impayés chaque semaine, des relances à date fixe. Un seul résultat mesuré : le nombre de jours que vos clients mettent à payer.</p>
+      <div class="ctas">
+        <a class="btn mag" href="#contact"><span data-en="Book a 45-min diagnostic">Réserver un diagnostic de 45 min</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost mag" href="#calculateur" data-en="What late payments cost you">Calculer ce que les retards vous coûtent</a>
+      </div>
+      <div class="proof">
+        <span data-en="Prices shown upfront">Prix affichés</span>
+        <span data-en="Excel + WhatsApp, no software to buy">Excel + WhatsApp, aucun logiciel à acheter</span>
+        <span data-en="Measured every month">Mesuré chaque mois</span>
+      </div>
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="plane p-disc" id="disc" data-d="0.3" data-s="0.10"></div>
+      <div class="plane p-ring" data-d="0.45" data-s="0.06" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none"><circle cx="52" cy="50" r="47" stroke="rgba(90,180,255,.35)" stroke-width=".35" stroke-dasharray="1 2.4"/><path d="M90 30 h6 M93 30 v-6 M8 72 h-5 M5 72 v6" stroke="rgba(90,180,255,.5)" stroke-width=".4"/><circle cx="96" cy="24" r=".9" fill="#5AB4FF"/><circle cx="3" cy="78" r=".9" fill="#5AB4FF"/></svg>
+      </div>
+      <div class="plane p-word" data-d="0.6" data-s="0.18" aria-hidden="true">NOÉ</div>
+      <div class="plane p-noe" data-d="1" data-s="0"><img src="assets/noe-cutout.webp" alt="Noé Mbwang, fondateur de Noé Tech Growth" width="765" height="1024" fetchpriority="high"></div>
+      <div class="plane chipcard c2" data-d="1.9" data-s="-0.22" aria-hidden="true">
+        <div class="row"><b data-en="D+7 reminder">Relance J+7</b><span class="pill blue" data-en="sent">envoyée</span></div>
+        <span class="mono" data-en="WhatsApp · on schedule">WhatsApp · à date fixe</span>
+      </div>
+      <div class="plane chipcard c1" data-d="2.4" data-s="-0.34" aria-hidden="true">
+        <div class="row"><b data-en="Invoice F-1042">Facture F-1042</b><span class="pill" data-en="paid">payée</span></div>
+        <div class="row"><span class="mono" data-en="Due D+30 · example">Échéance J+30 · exemple</span><span class="mono num">4 200 000 FCFA</span></div>
+      </div>
+      <div class="plane p-leaf l1" data-d="3.2" data-s="-0.55" aria-hidden="true"><svg viewBox="0 0 40 24"><path d="M0 12C8 0 26-2 40 12 26 26 8 24 0 12Z"/></svg></div>
+      <div class="plane p-leaf l2" data-d="2.6" data-s="-0.4" aria-hidden="true"><svg viewBox="0 0 40 24"><path d="M0 12C8 0 26-2 40 12 26 26 8 24 0 12Z"/></svg></div>
+      <div class="plane p-leaf l3" data-d="0.2" data-s="0.2" aria-hidden="true"><svg viewBox="0 0 40 24"><path d="M0 12C8 0 26-2 40 12 26 26 8 24 0 12Z"/></svg></div>
+    </div>
+  </div>
+  <div class="hero-meter"><span data-en="Invoices paid during your visit">Factures encaissées pendant votre visite</span><b id="heroCount" class="num">0</b></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span data-en="Solid contracts">Contrats solides</span><span data-en="Unpaid invoices tracked">Suivi des impayés</span><span data-en="Reminders on fixed dates">Relances à date fixe</span><span data-en="Average payment time">Délai moyen de paiement</span><span>OHADA</span><span>Orange Money · MTN MoMo</span><span data-en="Across Cameroon">Partout au Cameroun</span>
+</div><div>
+  <span data-en="Solid contracts">Contrats solides</span><span data-en="Unpaid invoices tracked">Suivi des impayés</span><span data-en="Reminders on fixed dates">Relances à date fixe</span><span data-en="Average payment time">Délai moyen de paiement</span><span>OHADA</span><span>Orange Money · MTN MoMo</span><span data-en="Across Cameroon">Partout au Cameroun</span>
+</div></div>
+
+<!-- ================= REPÈRE ================= -->
+<section class="sec" id="repere" data-stem="Repère" data-stem-en="Benchmark">
+  <div class="wrap stat">
+    <div class="big num" aria-label="Plus de 200 jours"><span id="statN">200</span><small data-en="+ days">+ j</small></div>
+    <div>
+      <div class="eyebrow" data-en="Benchmark">Repère</div>
+      <h2 data-en="In 2025, the Cameroonian State took more than 200 days to pay its suppliers.">En 2025, l'État camerounais a mis plus de 200 jours à payer ses prestataires.</h2>
+      <p class="muted" data-en="Up from 120 days in 2023. When the largest client in the country pays this late, every company in the chain waits too: your clients pay you late because they are being paid late themselves. You can’t change their cash flow. You can change your place in their payment queue.">Contre 120 jours en 2023. Quand le plus gros client du pays paie aussi tard, toute la chaîne attend : vos clients vous paient tard parce qu'on les paie tard. Vous ne changerez pas leur trésorerie. Vous pouvez changer votre place dans leur file de paiement.</p>
+      <div class="cmp" id="cmp">
+        <div><span class="mono small" data-en="2023 · 120 d">2023 · 120 j</span><div class="bar"><i style="width:57%"></i></div></div>
+        <div><span class="mono small" data-en="2025 · 200+ d">2025 · 200+ j</span><div class="bar"><i style="width:100%"></i></div></div>
+      </div>
+      <p class="small" style="margin-top:14px" data-en="Source: Treasury Directorate, Ministry of Finance (Minfi), cited by Financial Afrik, February 2026.">Source : direction de la Trésorerie du Minfi, citée par Financial Afrik, février 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLÈME ================= -->
+<section class="sec paper" id="probleme" data-stem="Le problème" data-stem-en="The problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="You did the work. You’re still waiting for the money.">Vous avez fait le travail. Vous attendez encore l'argent.</h2>
+      <p class="lead" data-en="An SME can be profitable on paper and still run out of cash because its clients pay late. Salaries, suppliers and taxes don’t wait. It looks like a client problem. It often starts inside your own company, in three precise places.">Une PME peut être rentable sur le papier et manquer de trésorerie parce que ses clients paient tard. Les salaires, les fournisseurs et les impôts, eux, n'attendent pas. On le prend pour un problème de client. Il commence souvent chez vous, à trois endroits précis.</p>
+    </div>
+    <div class="leaks">
+      <article class="leak rv wipe">
+        <div class="k"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><span data-en="Leak 1 · The contract">Fuite 1 · Le contrat</span></div>
+        <h3 data-en="The contract says nothing about payment terms, or what happens when they are missed.">Le contrat ne dit rien du délai de paiement, ni de ce qui se passe en cas de retard.</h3>
+        <p class="muted" data-en="Without a written date, there is no late payment. There’s just a client taking their time.">Sans date écrite, il n'y a pas de retard. Il y a seulement un client qui prend son temps.</p>
+      </article>
+      <article class="leak rv wipe">
+        <div class="k"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg><span data-en="Leak 2 · Tracking">Fuite 2 · Le suivi</span></div>
+        <h3 data-en="Nobody knows, on any given day, who owes how much and since when.">Personne ne sait, à un jour donné, qui doit combien et depuis quand.</h3>
+        <p class="muted" data-en="Invoices sit in a binder, payments on the bank statement, and the reconciliation lives in the owner’s head.">Les factures sont dans un classeur, les paiements sur le relevé bancaire, et le rapprochement dans la tête du dirigeant.</p>
+      </article>
+      <article class="leak rv wipe">
+        <div class="k"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg><span data-en="Leak 3 · Reminders">Fuite 3 · Les relances</span></div>
+        <h3 data-en="Reminders go out when someone remembers.">Les relances partent quand quelqu'un y pense.</h3>
+        <p class="muted" data-en="Your client knows it. They pay first the suppliers who follow up on fixed dates.">Le client le sait. Il paie d'abord les fournisseurs qui relancent à date fixe.</p>
+      </article>
+    </div>
+    <div class="costs">
+      <div class="rv">
+        <h3 data-en="What late payment costs you, on top of the wait.">Ce que le retard vous coûte, en plus de l'attente.</h3>
+        <p class="muted" style="margin-top:14px" data-en="None of these costs appear on the invoice. All of them appear in your accounts.">Aucun de ces coûts n'apparaît sur la facture. Tous apparaissent dans vos comptes.</p>
+      </div>
+      <ul>
+        <li class="rv"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg><span data-en="The overdraft and its interest, to pay salaries your clients already owe you.">Le découvert et ses agios, pour payer des salaires que vos clients vous doivent déjà.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/></svg><span data-en="Your own suppliers paid late, and worse terms next time.">Vos propres fournisseurs payés en retard, et de moins bonnes conditions la fois suivante.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg><span data-en="Orders turned down because cash can’t keep up.">Des commandes refusées parce que la trésorerie ne suit pas.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24"><path d="M20 15A8 8 0 1 1 9 4a7 7 0 0 0 11 11z"/></svg><span data-en="Your evenings spent chasing payments instead of running the business.">Vos soirées passées à relancer au lieu de diriger.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALCULATEUR ================= -->
+<section class="sec" id="calculateur" data-stem="Calculateur" data-stem-en="Calculator">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-en="Calculator">Calculateur</div>
+      <h2 data-en="How much of your money is sleeping at your clients’?">Combien d'argent dort chez vos clients ?</h2>
+      <p class="lead" data-en="Three figures are enough. A fourth shows what the delay costs if you cover it with an overdraft. Nothing is saved.">Trois chiffres suffisent. Un quatrième montre ce que le retard vous coûte si vous le financez par découvert. Rien n'est enregistré.</p>
+    </div>
+    <div class="calc">
+      <div class="panel in spot">
+        <div class="field">
+          <label for="cBill"><span data-en="Monthly B2B invoicing">Facturation B2B par mois</span></label>
+          <div class="unit" data-u="FCFA"><input type="text" id="cBill" inputmode="numeric" value="10 000 000" autocomplete="off"></div>
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="cReal"><span data-en="Actual payment time">Délai réel de paiement</span></label>
+            <div class="unit dayu" data-u="j"><input type="text" id="cReal" inputmode="numeric" value="60" autocomplete="off"></div>
+          </div>
+          <div class="field">
+            <label for="cTerm"><span data-en="Contract terms">Délai prévu au contrat</span></label>
+            <div class="unit dayu" data-u="j"><input type="text" id="cTerm" inputmode="numeric" value="30" autocomplete="off"></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cRate"><span data-en="Your overdraft rate (yearly)">Votre taux de découvert (annuel)</span></label>
+          <div class="unit" data-u="%"><input type="text" id="cRate" inputmode="decimal" value="14" autocomplete="off"></div>
+        </div>
+        <div class="field">
+          <label for="cDays"><span data-en="Days gained">Jours gagnés</span><b id="cDaysV">15 j</b></label>
+          <input type="range" id="cDays" min="0" max="60" value="15">
+          <span class="small" data-en="Move the slider: every day gained raises the level.">Déplacez le curseur : chaque jour gagné fait monter le niveau.</span>
+        </div>
+      </div>
+      <div class="panel out spot">
+        <div style="display:grid;gap:16px;align-content:start;min-width:0">
+          <div class="res"><span data-en="Cash tied up at your clients’">Trésorerie immobilisée chez vos clients</span><b id="rLocked" class="num">20 000 000 FCFA</b></div>
+          <div class="res"><span data-en="Of which, due to late payment">Dont part due au retard</span><b id="rLate" class="num">10 000 000 FCFA</b></div>
+          <div class="res hl"><span id="rFreeL">Trésorerie libérée si vos clients paient 15 jours plus tôt</span><b id="rFree" class="num">5 000 000 FCFA</b></div>
+          <div class="res bad" style="border:0;padding:0"><span data-en="Yearly cost of the delay if financed by overdraft">Coût annuel du retard s'il est financé par découvert</span><b id="rCost" class="num">1 400 000 FCFA</b></div>
+        </div>
+        <div class="tank">
+          <span class="pct num" id="tankPct">50 %</span>
+          <canvas id="tank" aria-hidden="true"></canvas>
+          <span class="lbl" data-en="Delay absorbed">Retard résorbé</span>
+        </div>
+        <div class="calc-foot">
+          <span class="small" data-en="Estimate based on your figures. Not a promised result.">Estimation à partir de vos chiffres. Ce n'est pas un résultat promis.</span>
+          <a class="btn sm mag" id="waCalc" href="#" target="_blank" rel="noopener" data-en="Send this calculation to Noé on WhatsApp">Envoyer ce calcul à Noé sur WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHANTIERS (peak) ================= -->
+<section class="sec peak" id="chantiers" data-stem="Les trois chantiers" data-stem-en="The method">
+  <div class="wrap">
+    <div class="peak-intro-m">
+      <h2 data-en="Three workstreams. One number to bring down.">Trois chantiers. Un seul chiffre à faire baisser.</h2>
+      <p class="lead" data-en="That number is your average payment time: the days between sending an invoice and the money landing in your account.">Ce chiffre, c'est votre délai moyen de paiement : le nombre de jours entre l'envoi d'une facture et l'arrivée de l'argent sur votre compte.</p>
+    </div>
+    <div class="peak-grid">
+      <div class="peak-pin">
+        <div class="intro">
+          <h2 data-en="Three workstreams. One number to bring down.">Trois chantiers. Un seul chiffre à faire baisser.</h2>
+          <p class="lead" data-en="That number is your average payment time: the days between sending an invoice and the money landing in your account.">Ce chiffre, c'est votre délai moyen de paiement : le nombre de jours entre l'envoi d'une facture et l'arrivée de l'argent sur votre compte.</p>
+        </div>
+        <div class="gauge" id="gauge">
+          <div class="g-num"><b class="num" id="gNum">60</b><span class="dayu2" id="gUnit">j</span></div>
+          <div class="g-pipe"><span data-en="Invoice sent">Facture envoyée</span><div class="g-track" id="gTrack"><i></i><s id="gTerm"></s><em></em></div><span data-en="Money in">Argent reçu</span></div>
+          <p class="g-cap" id="gCap"></p>
+          <ol class="g-steps" id="gSteps">
+            <li data-k="contrats"><b data-en="Before the order">Avant</b><span data-en="Solid contracts">Contrats solides</span></li>
+            <li data-k="suivi"><b data-en="Weekly">Chaque semaine</b><span data-en="Tracking">Suivi des impayés</span></li>
+            <li data-k="relances"><b data-en="Fixed dates">Date fixe</b><span data-en="Reminders">Relances</span></li>
+          </ol>
+          <p class="small" data-en="Figures from your calculator. Change them above and the gauge follows.">Chiffres repris de votre calculateur. Modifiez-les plus haut, la jauge suit.</p>
+        </div>
+      </div>
+
+      <div class="peak-flow" id="peakFlow">
+        <!-- 1 contrats -->
+        <div class="ch" id="contrats">
+          <div class="ch-head">
+            <span class="when" data-en="Before the order">Avant la commande</span>
+            <h3 data-en="Solid contracts">Contrats solides</h3>
+            <p class="muted" data-en="A contract that protects your cash fits in a few clear clauses. They are written before the work starts, not on the day the client stops answering.">Un contrat qui protège votre encaissement tient en quelques clauses claires. Elles s'écrivent avant le début du travail, pas le jour où le client ne répond plus.</p>
+            <p class="note" data-en="OHADA law provides a simplified procedure, the payment order (injonction de payer), for claims that are certain, liquid and due. Your paperwork is what makes a claim certain: contract, purchase order, proof of delivery, invoice, dated reminders.">Le droit OHADA prévoit une procédure simplifiée, l'injonction de payer, pour les créances certaines, liquides et exigibles. Ce sont vos écrits qui rendent une créance certaine : contrat, bon de commande, preuve de livraison, facture, relances datées.</p>
+          </div>
+          <p class="small" data-en="Tick the clauses your contracts already contain. The draft below assembles a model payment-terms article.">Cochez les clauses que vos contrats contiennent déjà. Le projet ci-dessous assemble un article « Conditions de paiement » type.</p>
+          <div class="clauses" id="clauses"></div>
+          <div class="draft">
+            <div class="draft-top"><span class="mono" data-en="Draft · Payment terms">Projet · Conditions de paiement</span><div class="meter" id="clMeter"></div><button class="copy" type="button" data-copy="#clDraft" data-en="Copy">Copier</button></div>
+            <pre id="clDraft"></pre>
+            <p class="small" style="margin-top:12px" data-en="Indicative wording, to adapt to your business and have reviewed before use.">Formulation indicative, à adapter à votre activité et à faire relire avant usage.</p>
+          </div>
+        </div>
+
+        <!-- 2 suivi -->
+        <div class="ch" id="suivi">
+          <div class="ch-head">
+            <span class="when" data-en="Every week">Chaque semaine</span>
+            <h3 data-en="Tracking unpaid invoices">Suivi des impayés</h3>
+            <p class="muted" data-en="A table, updated every week, that answers one question: who owes how much, and since when?">Un tableau, tenu à jour chaque semaine, qui répond à une seule question : qui doit combien, et depuis quand ?</p>
+          </div>
+          <ul class="pts">
+            <li data-en="<b>One line per invoice.</b> Client, amount, sent date, due date, last contact, next action."><b>Une ligne par facture.</b> Client, montant, date d'envoi, échéance, dernier contact, prochaine action.</li>
+            <li data-en="<b>Receivables sorted by age.</b> The older an invoice, the harder it is to collect."><b>Les créances classées par âge.</b> Plus une facture vieillit, plus elle est difficile à faire payer.</li>
+            <li data-en="<b>One named owner.</b> When it’s everyone’s job, it’s no one’s."><b>Un responsable nommé.</b> Quand c'est tout le monde, ce n'est personne.</li>
+            <li data-en="<b>Twenty minutes a week.</b> Same day, same time, to decide the week’s actions."><b>Vingt minutes par semaine.</b> Le même jour, pour décider des actions de la semaine.</li>
+          </ul>
+          <p class="small" data-en="Example aging report (fictional data). Click a band to see the invoices and this week’s action. Excel is enough: no software to buy.">Exemple de balance âgée (données fictives). Cliquez une tranche pour voir les factures et l'action de la semaine. Excel suffit : aucun logiciel à acheter.</p>
+          <div class="age-bar" id="ageBar" role="group" aria-label="Tranches d'âge"></div>
+          <div class="age-legend" id="ageLegend"></div>
+          <div class="tbl-wrap"><table><thead><tr><th data-en="Client">Client</th><th data-en="Invoice">Facture</th><th class="r" data-en="Amount">Montant</th><th class="r" data-en="Overdue">Retard</th><th data-en="Next action">Prochaine action</th></tr></thead><tbody id="ageRows"></tbody></table></div>
+          <div class="action" id="ageAction" aria-live="polite"></div>
+        </div>
+
+        <!-- 3 relances -->
+        <div class="ch" id="relances">
+          <div class="ch-head">
+            <span class="when" data-en="On fixed dates">À date fixe</span>
+            <h3 data-en="Systematic reminders">Relances systématiques</h3>
+            <p class="muted" data-en="Reminders stop depending on the mood of the day. They follow a calendar the client has known since signing.">La relance cesse de dépendre de l'humeur du jour. Elle suit un calendrier que le client connaît depuis la signature.</p>
+            <p class="note" data-en="Example calendar. Dates and tone are set with you, client by client. Every message is copy-ready: replace the [brackets].">Exemple de calendrier. Les dates et le ton se règlent avec vous, client par client. Chaque message est prêt à copier : remplacez les [crochets].</p>
+          </div>
+          <div class="steps" id="remSteps" role="group" aria-label="Calendrier de relance"></div>
+          <div class="rem" id="remCard" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTEURS ================= -->
+<section class="sec band" id="secteurs" data-stem="Votre secteur" data-stem-en="Your sector">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="Every trade has its own payment traps.">Chaque métier a ses propres pièges d'encaissement.</h2>
+      <p class="lead" data-en="Pick yours. The three workstreams stay the same; what changes is where the money gets stuck.">Choisissez le vôtre. Les trois chantiers restent les mêmes ; ce qui change, c'est l'endroit où l'argent se bloque.</p>
+    </div>
+    <div class="sect-tabs" id="sectTabs" role="tablist" aria-label="Secteurs"></div>
+    <div class="sect" id="sectBody" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= CLIENTS PUBLICS ================= -->
+<section class="sec" id="public" data-stem="Clients publics" data-stem-en="Public clients">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="Paid by the State or a public company? Learn the circuit.">Payé par l'État ou une entreprise publique ? Connaissez le circuit.</h2>
+      <p class="lead" data-en="Public payment chains are long and you don’t control them. Every invoice goes through four stages, handled by different people. What you control: a complete file from the first submission, and knowing at all times which stage each invoice has reached.">Leurs circuits de paiement sont longs et vous ne les contrôlez pas. Chaque facture passe par quatre étapes, tenues par des personnes différentes. Ce que vous contrôlez : un dossier complet dès le premier dépôt, et savoir à tout moment à quelle étape se trouve chaque facture.</p>
+    </div>
+    <div class="circuit" id="circuit">
+      <div class="node"><div class="n">1</div><h3 data-en="Commitment">Engagement</h3><span class="who" data-en="Authorising officer">Ordonnateur</span><p data-en="The administration commits the expense: contract or purchase order. <b>You:</b> keep the signed order and its reference number.">L'administration réserve la dépense : marché ou bon de commande. <b>Vous :</b> gardez la commande signée et son numéro de référence.</p></div>
+      <div class="node"><div class="n">2</div><h3 data-en="Verification">Liquidation</h3><span class="who" data-en="Department receiving the work">Service bénéficiaire</span><p data-en="The work is checked and the amount confirmed. <b>You:</b> a signed acceptance report and an invoice that matches the order exactly.">On constate le service fait et on arrête le montant. <b>Vous :</b> un procès-verbal de réception signé et une facture conforme à la commande.</p></div>
+      <div class="node"><div class="n">3</div><h3 data-en="Payment order">Ordonnancement</h3><span class="who" data-en="Authorising officer">Ordonnateur</span><p data-en="The order to pay is issued. <b>You:</b> note the date and the person in charge, follow up in writing.">L'ordre de payer est émis. <b>Vous :</b> notez la date et l'interlocuteur, relancez par écrit.</p></div>
+      <div class="node"><div class="n">4</div><h3 data-en="Payment">Paiement</h3><span class="who" data-en="Public accountant">Comptable public</span><p data-en="The Treasury pays. <b>You:</b> check your bank details on file and reconcile the payment the day it arrives.">Le Trésor paie. <b>Vous :</b> vérifiez vos coordonnées bancaires au dossier et rapprochez le paiement le jour même.</p></div>
+    </div>
+    <div class="dossier rv">
+      <div><h3 data-en="The complete file, first time">Le dossier complet, du premier coup</h3><p class="muted" style="margin-top:10px" data-en="An incomplete file goes back to the bottom of the pile. It adds weeks to a delay that is already long.">Un dossier incomplet repart en bas de la pile. Il ajoute des semaines à un délai déjà long.</p></div>
+      <ul>
+        <li data-en="Contract or purchase order, with its reference">Marché ou bon de commande, avec sa référence</li>
+        <li data-en="Signed delivery note or acceptance report">Bon de livraison ou PV de réception signé</li>
+        <li data-en="Invoice matching the order line by line">Facture conforme à la commande, ligne par ligne</li>
+        <li data-en="Every document the contract requires, up to date">Toutes les pièces exigées par le marché, à jour</li>
+        <li data-en="Bank details identical across all documents">Coordonnées bancaires identiques sur toutes les pièces</li>
+        <li data-en="A dated copy of every submission, with a receipt stamp">Une copie datée de chaque dépôt, avec cachet de réception</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OHADA ================= -->
+<section class="sec" id="ohada" style="padding-top:0" data-stem="OHADA" data-stem-en="OHADA">
+  <div class="wrap ohada">
+    <div>
+      <div class="eyebrow">OHADA</div>
+      <h2 style="margin-top:18px" data-en="The payment order, in plain words.">L'injonction de payer, en clair.</h2>
+      <p class="lead" style="margin-top:18px" data-en="It is the simplified procedure of the OHADA Uniform Act on debt recovery. It only works if your claim meets three conditions. Your paperwork proves them.">C'est la procédure simplifiée de l'Acte uniforme OHADA sur le recouvrement des créances. Elle ne fonctionne que si votre créance remplit trois conditions. Ce sont vos écrits qui les prouvent.</p>
+      <div class="cle">
+        <div><b data-en="Certain">Certaine</b><span data-en="Its existence can’t seriously be disputed: contract, order, signed proof of delivery.">Son existence ne se discute pas sérieusement : contrat, commande, preuve de livraison signée.</span></div>
+        <div><b data-en="Liquid">Liquide</b><span data-en="Its amount is known and stated: invoice, agreed price.">Son montant est connu et chiffré : facture, prix convenu.</span></div>
+        <div><b data-en="Due">Exigible</b><span data-en="The payment date has passed: a due date written in the contract.">Sa date de paiement est passée : échéance écrite au contrat.</span></div>
+      </div>
+    </div>
+    <div>
+      <ol class="proc" id="proc">
+        <li><b data-en="Formal notice">Mise en demeure</b><span data-en="Your last written reminder, dated, with a final deadline. It shows the client was warned.">Votre dernière relance écrite, datée, avec un délai final. Elle prouve que le client a été averti.</span></li>
+        <li><b data-en="Application to the court">Requête au président de la juridiction</b><span data-en="Filed with the competent court, with all supporting documents.">Déposée auprès de la juridiction compétente, avec toutes les pièces justificatives.</span></li>
+        <li><b data-en="Payment order">Décision d'injonction de payer</b><span data-en="If the file is convincing, the judge orders the debtor to pay.">Si le dossier est convaincant, le juge ordonne au débiteur de payer.</span></li>
+        <li><b><span data-en="Service on the debtor">Signification au débiteur</span><span class="d" data-en="within 3 months">sous 3 mois</span></b><span data-en="By a bailiff. A decision not served within three months lapses.">Par huissier. Une décision non signifiée dans les trois mois devient non avenue.</span></li>
+        <li><b><span data-en="Debtor may object">Opposition possible</span><span class="d" data-en="15 days">15 jours</span></b><span data-en="The debtor has fifteen days from service to object. Then the case is heard.">Le débiteur dispose de quinze jours après la signification pour s'opposer. L'affaire est alors débattue.</span></li>
+        <li><b data-en="Enforceable order">Formule exécutoire</b><span data-en="Without objection, the decision becomes enforceable and can be executed.">Sans opposition, la décision devient exécutoire et peut être mise en œuvre.</span></li>
+      </ol>
+      <p class="small" style="margin-top:20px" data-en="General information, not legal advice. Any court procedure is handled by a lawyer or a bailiff. My job is to make sure your file is ready, and that you rarely need it.">Information générale, pas un conseil juridique. Une procédure relève d'un avocat ou d'un huissier. Mon travail : que votre dossier soit prêt, et que vous en ayez rarement besoin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFRES ================= -->
+<section class="sec band" id="offres" data-stem="Offres" data-stem-en="Pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="Three steps, prices shown.">Trois étapes, des prix affichés.</h2>
+    </div>
+    <div class="offers">
+      <article class="offer spot tilt rv">
+        <span class="st" data-en="Step 1">Étape 1</span>
+        <h3 data-en="Cash &amp; Contracts Audit">Audit Trésorerie et Contrats</h3>
+        <div class="price num">50 000 <small>FCFA</small></div>
+        <p class="muted" data-en="State of your receivables, main contract gaps, action plan.">État de vos créances, principales failles contractuelles, plan d'action.</p>
+        <ul>
+          <li data-en="Your outstanding invoices, sorted by age and by client">Vos factures en attente, classées par âge et par client</li>
+          <li data-en="A review of your contracts, quotes and purchase orders">La lecture de vos contrats, devis et bons de commande</li>
+          <li data-en="Gaps ranked from most to least costly">Les failles classées de la plus coûteuse à la moins coûteuse</li>
+          <li data-en="A written action plan: who does what, and when">Un plan d'action écrit : qui fait quoi, et quand</li>
+        </ul>
+      </article>
+      <article class="offer spot tilt feat rv">
+        <span class="badge" data-en="The core of the method">Le cœur de la méthode</span>
+        <span class="st" data-en="Step 2">Étape 2</span>
+        <h3 data-en="Collection System">Système Encaissement</h3>
+        <div class="price num"><span class="from" data-en="From">À partir de</span>150 000 <small>FCFA</small></div>
+        <p class="muted" data-en="Contract templates, receivables tracker, WhatsApp reminder scripts, team training.">Modèles de contrats, tableau de suivi des créances, scripts de relance WhatsApp, formation de votre équipe.</p>
+        <ul>
+          <li data-en="Contract and payment-terms templates fitted to your business">Modèles de contrat et de conditions de paiement adaptés à votre activité</li>
+          <li data-en="Receivables tracker, ready to fill in">Tableau de suivi des créances, prêt à remplir</li>
+          <li data-en="WhatsApp and email reminder scripts, from polite reminder to formal notice">Scripts de relance WhatsApp et e-mail, du rappel courtois à la mise en demeure</li>
+          <li data-en="Training for the person who will run the tracking">Formation de la personne qui tiendra le suivi</li>
+        </ul>
+        <p class="small" data-en="The price depends on your situation. The audit is used to quote it precisely.">Le prix dépend de votre situation. L'audit sert à le chiffrer précisément.</p>
+      </article>
+      <article class="offer spot tilt rv">
+        <span class="st" data-en="Step 3">Étape 3</span>
+        <h3 data-en="Monthly follow-up">Suivi mensuel</h3>
+        <div class="price num">35 000 <small data-en="FCFA / month">FCFA / mois</small></div>
+        <p class="muted" data-en="A monthly review of your receivables and reminders.">Un point chaque mois sur vos créances et vos relances.</p>
+        <ul>
+          <li data-en="Measurement of your average payment time">La mesure de votre délai moyen de paiement</li>
+          <li data-en="Review of the oldest invoices">La revue des factures les plus anciennes</li>
+          <li data-en="Fine-tuning of reminders and templates">L'ajustement des relances et des modèles</li>
+        </ul>
+      </article>
+    </div>
+    <div class="pay">
+      <div class="m"><span>Orange Money</span><span>MTN MoMo</span><span data-en="Bank transfer">Virement</span></div>
+      <a class="btn mag" href="#contact" data-en="Start with the 45-min diagnostic">Commencer par le diagnostic de 45 min</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MÉTHODE ================= -->
+<section class="sec" id="methode" data-stem="Méthode" data-stem-en="Method">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="We start by measuring.">On commence par mesurer.</h2>
+    </div>
+    <div class="method">
+      <div class="mstep rv"><span class="k" data-en="45 MINUTES">45 MINUTES</span><h3 data-en="Diagnostic">Diagnostic</h3><p class="muted" data-en="We look at your clients’ payment times and one standard contract. You leave with an estimate of what late payment costs you each month.">Nous regardons vos délais de paiement clients et un contrat type. Vous repartez avec une estimation de ce que les retards vous coûtent par mois.</p></div>
+      <div class="mstep rv"><span class="k" data-en="STEP 1">ÉTAPE 1</span><h3 data-en="Audit">Audit</h3><p class="muted" data-en="State of your receivables, gaps in your contracts, written action plan.">État de vos créances, failles de vos contrats, plan d'action écrit.</p></div>
+      <div class="mstep rv"><span class="k" data-en="STEPS 2 + 3">ÉTAPES 2 + 3</span><h3 data-en="System and follow-up">Système et suivi</h3><p class="muted" data-en="Template contracts, tracker, reminder scripts, team training. Then a check-in every month.">Contrats types, tableau de suivi, scripts de relance, formation de votre équipe. Puis un suivi chaque mois.</p></div>
+    </div>
+    <div class="diag">
+      <div class="panel spot">
+        <h3 data-en="The 45 minutes, in order">Les 45 minutes, dans l'ordre</h3>
+        <div class="tline" id="tline" role="group" aria-label="Déroulé du diagnostic"></div>
+        <div class="tline-txt" id="tlineTxt" aria-live="polite"></div>
+      </div>
+      <div class="panel spot">
+        <h3 data-en="To prepare before the meeting">À préparer avant le rendez-vous</h3>
+        <div class="prep">
+          <label for="p1"><input type="checkbox" id="p1"><span data-en="The list of your outstanding invoices, even on paper.">La liste de vos factures en attente, même sur papier.</span></label>
+          <label for="p2"><input type="checkbox" id="p2"><span data-en="A contract, quote or purchase order you actually use.">Un contrat, un devis ou un bon de commande que vous utilisez vraiment.</span></label>
+          <label for="p3"><input type="checkbox" id="p3"><span data-en="The names of your five largest clients.">Les noms de vos cinq plus gros clients.</span></label>
+        </div>
+        <p class="small" style="margin-top:14px" id="prepState"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEST ================= -->
+<section class="sec band" id="test" data-stem="Test" data-stem-en="Test">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="Do your contracts protect you?">Vos contrats vous protègent-ils ?</h2>
+      <p class="lead" data-en="Six questions, one minute. Answer yes or no.">Six questions, une minute. Répondez par oui ou par non.</p>
+    </div>
+    <div class="quiz">
+      <div class="panel spot" style="background:var(--night)">
+        <div class="qbar" id="qbar"></div>
+        <div class="qn mono" id="qn">1 / 6</div>
+        <div class="qq" id="qq" aria-live="polite"></div>
+        <div class="qa"><button class="btn mag" type="button" id="qYes" data-en="Yes">Oui</button><button class="btn ghost mag" type="button" id="qNo" data-en="No">Non</button></div>
+        <p class="small" style="margin-top:22px" data-en="This test gives an indication. It does not replace a review of your contracts.">Ce test donne une indication. Il ne remplace pas l'examen de vos contrats.</p>
+      </div>
+      <div class="panel spot" style="background:var(--night)">
+        <div class="ring"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="ringFg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"/></svg><div><b id="ringN" class="num">0</b><span data-en="out of 6">sur 6</span></div></div>
+        <div class="verdict" id="verdict"></div>
+        <ul class="advice" id="advice"></ul>
+        <div class="ctas" style="margin-top:20px;justify-content:center" id="quizCtas" hidden>
+          <a class="btn sm mag" id="waQuiz" href="#" target="_blank" rel="noopener" data-en="Send my result to Noé on WhatsApp">Envoyer mon résultat à Noé sur WhatsApp</a>
+          <button class="btn sm ghost" type="button" id="qReset" data-en="Retake the test">Refaire le test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POUR QUI ================= -->
+<section class="sec" id="pourqui" data-stem="Pour qui" data-stem-en="Who it’s for">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="Built for companies that invoice other companies.">Fait pour les entreprises qui facturent d'autres entreprises.</h2>
+      <p class="lead" data-en="For owners and managers of SMEs with 10 to 50 employees that invoice other businesses, wherever they are in Cameroon.">Pour les dirigeants et gérants de PME de 10 à 50 employés qui facturent d'autres entreprises, où que vous soyez au Cameroun.</p>
+    </div>
+    <div class="fit">
+      <div class="yes rv"><h3 data-en="You’re in the right place if you are">Vous êtes au bon endroit si vous êtes</h3><ul>
+        <li data-en="A construction, finishing-works or subcontracting company">Entreprise du BTP, du second œuvre ou sous-traitant</li>
+        <li data-en="A B2B service provider: maintenance, cleaning, security, IT">Prestataire de services aux entreprises : maintenance, nettoyage, sécurité, informatique</li>
+        <li data-en="A supplier or trader selling to professionals">Fournisseur ou négociant pour professionnels</li>
+        <li data-en="A transport or logistics company">Transporteur ou logisticien</li>
+        <li data-en="An agency, consultancy or engineering firm">Agence, cabinet ou bureau d'études</li>
+      </ul></div>
+      <div class="no rv"><h3 data-en="This isn’t for you if you’re looking for">Ce n'est pas pour vous si vous cherchez</h3><ul>
+        <li data-en="Help for a cash-paid retail shop">Une aide pour un commerce payé au comptant</li>
+        <li data-en="Debt recovery through the courts">Un recouvrement devant les tribunaux</li>
+        <li data-en="Invoicing software">Un logiciel de facturation</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= À PROPOS ================= -->
+<section class="sec" id="apropos" style="padding-top:0" data-stem="À propos" data-stem-en="About">
+  <div class="wrap about">
+    <div class="portrait-wrap rv">
+      <img class="mark" src="assets/logo-mark.webp" alt="" width="84" height="105">
+      <figure class="portrait" id="portrait" style="margin:0">
+        <img src="assets/noe-portrait.jpg" alt="Portrait de Noé Mbwang" width="765" height="1024" loading="lazy">
+        <figcaption><b>Noé Mbwang</b><span data-en="Founder">Fondateur</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <div class="eyebrow" data-en="About">À propos</div>
+      <h2 style="margin-top:18px" data-en="Trained as a lawyer, focused on a single problem.">Juriste de formation, concentré sur un seul problème.</h2>
+      <p class="lead" data-en="I’m Noé Mbwang, founder of Noé Tech Growth. I hold a Master’s in Public International Law and Political Science. I work on one thing: helping B2B SMEs get paid faster. My tools are data analysis, Excel, and Claude to prepare reminders, template contracts and reports. AI is a means. The result I measure is your clients’ average payment time.">Je suis Noé Mbwang, fondateur de Noé Tech Growth. J'ai un Master en Droit Public International et Science Politique. Je travaille sur une seule chose : aider les PME B2B à encaisser plus vite. Mes outils : l'analyse de données, Excel, et Claude pour préparer relances, contrats types et rapports. L'IA est un moyen. Le résultat que je mesure, c'est le délai moyen de paiement de vos clients.</p>
+      <div class="certs"><span>IBM Data Analytics Professional Certificate</span><span>IBM Data Literacy</span><span>Anthropic AI Fluency for Small Businesses</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec band" id="faq" data-stem="FAQ" data-stem-en="FAQ">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-en="The questions I get asked.">Les questions qu'on me pose.</h2>
+    </div>
+    <div class="faq">
+      <details><summary><span data-en="My clients are large companies. I don’t want to upset them.">Mes clients sont de grandes entreprises. Je ne veux pas les froisser.</span><i aria-hidden="true"></i></summary><p class="ans" data-en="A reminder set out in the contract and sent on a fixed date is not aggressive. It shows your company is organised. The scripts are written to protect the relationship.">Une relance prévue au contrat et envoyée à date fixe n'a rien d'agressif. Elle montre que votre entreprise est organisée. Les scripts sont écrits pour garder la relation.</p></details>
+      <details><summary><span data-en="My client is the State or a public company. What changes?">Mon client est l'État ou une grande entreprise publique. Qu'est-ce que ça change ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="Their payment chains are long and you don’t control them. What you do control: a complete file from the first submission, signed proof of delivery, and tracking that knows which stage each invoice is at. An incomplete file lengthens a delay that is already long.">Leurs circuits de paiement sont longs et vous ne les contrôlez pas. Ce que vous contrôlez : un dossier complet dès le premier dépôt, une preuve de livraison signée, et un suivi qui sait à quelle étape se trouve chaque facture. Un dossier incomplet rallonge un délai déjà long.</p></details>
+      <details><summary><span data-en="I work with purchase orders and WhatsApp agreements, no contract.">Je travaille avec des bons de commande et des accords sur WhatsApp, sans contrat.</span><i aria-hidden="true"></i></summary><p class="ans" data-en="That’s a starting point. A signed purchase order and payment terms written on the quote and the invoice already cover the essentials. We start from your current documents.">C'est un point de départ. Un bon de commande signé et des conditions de paiement écrites sur le devis et sur la facture couvrent déjà l'essentiel. On part de vos documents actuels.</p></details>
+      <details><summary><span data-en="What if a client refuses to sign new terms?">Et si un client refuse de signer de nouvelles conditions ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="We don’t renegotiate everything at once. New terms apply to new orders, starting with the clients who pay latest.">On ne renégocie pas tout d'un coup. Les nouvelles conditions s'appliquent aux nouvelles commandes, en commençant par les clients qui paient le plus tard.</p></details>
+      <details><summary><span data-en="Do you handle court recovery?">Faites-vous du recouvrement judiciaire ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="No. I set up the contracts, tracking and reminders so that you rarely get there. If a procedure becomes necessary, it’s a matter for a lawyer or a bailiff.">Non. Je mets en place les contrats, le suivi et les relances pour que vous arriviez rarement à ce stade. Si une procédure devient nécessaire, elle relève d'un avocat ou d'un huissier.</p></details>
+      <details><summary><span data-en="What happens during the diagnostic?">Que se passe-t-il pendant le diagnostic ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="We look at your clients’ payment times and one standard contract. You leave with an estimate of what late payment costs you each month.">Nous regardons vos délais de paiement clients et un contrat type. Vous repartez avec une estimation de ce que les retards vous coûtent par mois.</p></details>
+      <details><summary><span data-en="What result can I expect?">Quel résultat puis-je attendre ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="I don’t promise a number. We measure your average payment time at the start, then every month. That number tells us whether the work is paying off.">Je ne promets pas de chiffre. Nous mesurons votre délai moyen de paiement au départ, puis chaque mois. C'est ce chiffre qui dit si le travail porte.</p></details>
+      <details><summary><span data-en="How soon will I see an effect?">Au bout de combien de temps voit-on un effet ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="Weekly tracking and fixed-date reminders act on invoices already outstanding, from the first month. New contract terms act on new orders, so their effect builds up over the following months. The monthly measurement shows you both.">Le suivi hebdomadaire et les relances à date fixe agissent sur les factures déjà en cours, dès le premier mois. Les nouvelles conditions contractuelles agissent sur les nouvelles commandes, donc leur effet s'installe sur les mois suivants. La mesure mensuelle vous montre les deux.</p></details>
+      <details><summary><span data-en="I’m not in Douala or Yaoundé. Can we still work together?">Je ne suis pas à Douala ni à Yaoundé. Peut-on travailler ensemble ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="Yes. The diagnostic, the documents and the monthly follow-up work over WhatsApp and email, wherever your company is based.">Oui. Le diagnostic, les documents et le suivi mensuel passent par WhatsApp et l'e-mail, où que soit votre entreprise.</p></details>
+      <details><summary><span data-en="Do I need to buy software?">Dois-je acheter un logiciel ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="No. Tracking fits in Excel, and reminders go out through WhatsApp and email, tools your team already uses.">Non. Le suivi tient dans Excel, et les relances partent de WhatsApp et de l'e-mail, des outils que votre équipe utilise déjà.</p></details>
+      <details><summary><span data-en="Why use AI?">Pourquoi utiliser l'IA ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="To prepare reminders, template contracts and reports faster. Every document is reviewed before it reaches you.">Pour préparer plus vite les relances, les contrats types et les rapports. Chaque document est relu avant de vous être remis.</p></details>
+      <details><summary><span data-en="How do I pay?">Comment payer ?</span><i aria-hidden="true"></i></summary><p class="ans" data-en="By Orange Money, MTN MoMo or bank transfer.">Par Orange Money, MTN MoMo ou virement.</p></details>
+    </div>
+
+    <div class="gloss-head">
+      <div style="display:grid;gap:14px">
+        <div class="eyebrow" data-en="Glossary">Glossaire</div>
+        <h3 data-en="The words that matter for your cash.">Les mots qui comptent pour votre trésorerie.</h3>
+      </div>
+      <div class="gnav"><button type="button" id="gPrev" aria-label="Précédent"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="gNext" aria-label="Suivant"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+    </div>
+    <div class="gloss" id="gloss">
+      <div class="term"><b data-en="Average payment time">Délai moyen de paiement</b><span data-en="The average number of days between sending an invoice and receiving payment. Also called DSO. It’s the number we bring down.">Nombre moyen de jours entre l'envoi d'une facture et son règlement. On l'appelle aussi DSO. C'est le chiffre qu'on fait baisser.</span></div>
+      <div class="term"><b data-en="Aging report">Balance âgée</b><span data-en="The list of unpaid invoices sorted by how long they’ve been overdue: under 30, 30–60, 60–90, over 90 days.">La liste des factures impayées classées par ancienneté du retard : moins de 30, 30 à 60, 60 à 90, plus de 90 jours.</span></div>
+      <div class="term"><b data-en="Deposit">Acompte</b><span data-en="Part of the price paid at order. It finances the start of the work and commits the client.">Part du prix versée à la commande. Elle finance le démarrage et engage le client.</span></div>
+      <div class="term"><b data-en="Late-payment penalty">Pénalité de retard</b><span data-en="A rate written in the contract and accepted at signing, applied to amounts paid late.">Taux écrit au contrat et accepté à la signature, appliqué aux sommes payées en retard.</span></div>
+      <div class="term"><b data-en="Formal notice">Mise en demeure</b><span data-en="A written, dated demand to pay within a deadline. The last step before a legal procedure.">Demande écrite et datée de payer dans un délai. Dernière étape avant une procédure.</span></div>
+      <div class="term"><b data-en="Payment order">Injonction de payer</b><span data-en="Simplified OHADA procedure to recover a claim that is certain, liquid and due.">Procédure OHADA simplifiée pour recouvrer une créance certaine, liquide et exigible.</span></div>
+      <div class="term"><b data-en="Retention of title">Réserve de propriété</b><span data-en="A clause that keeps you owner of the goods until full payment.">Clause qui vous garde propriétaire des marchandises jusqu'au paiement complet.</span></div>
+      <div class="term"><b data-en="Retention money">Retenue de garantie</b><span data-en="In construction, a share of each payment held back until final acceptance. Track it, or it’s forgotten.">Dans le BTP, part de chaque paiement retenue jusqu'à la réception définitive. À suivre, sinon elle s'oublie.</span></div>
+      <div class="term"><b data-en="Acceptance report">PV de réception</b><span data-en="A document signed by the client confirming delivery or completion. Without it, the invoice can be disputed.">Document signé par le client qui constate la livraison ou la fin des travaux. Sans lui, la facture se discute.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT (close) ================= -->
+<section class="sec final" id="contact" data-stem="Diagnostic" data-stem-en="Diagnostic">
+  <div class="wrap final-grid">
+    <div>
+      <div class="eyebrow" data-en="Diagnostic">Diagnostic</div>
+      <h2 data-en="45 minutes to know <em>your number.</em>">45 minutes pour connaître <em>votre chiffre.</em></h2>
+      <p class="lead" data-en="Tell me your sector, whether your clients pay late, and the size of your team. I reply within the day, wherever you are in Cameroon.">Indiquez votre secteur, si vos clients paient en retard, et la taille de votre équipe. Je vous réponds dans la journée, où que vous soyez au Cameroun.</p>
+      <div class="limited" data-en="Limited slots.">Places limitées.</div>
+      <div class="contact">
+        <div><span class="muted">WhatsApp</span><span class="mono" id="waNum">+237 653 40 05 04</span><button class="copy" type="button" data-copy="#waNum" data-en="Copy">Copier</button></div>
+        <div><span class="muted">E-mail</span><span class="mono" id="mail">noembwang@gmail.com</span><button class="copy" type="button" data-copy="#mail" data-en="Copy">Copier</button></div>
+      </div>
+      <div class="close-mark"><img src="assets/logo-mark.webp" alt="" width="64" height="80" loading="lazy"><div><b>NOÉ</b><small>TECH GROWTH</small></div></div>
+    </div>
+    <form class="form spot" id="ctaForm" novalidate>
+      <div class="field"><label for="fSector"><span data-en="Your sector">Votre secteur</span></label>
+        <select id="fSector"></select></div>
+      <div class="field"><span class="lbl" id="fLateL" data-en="Do your clients pay late?">Vos clients paient-ils en retard ?</span>
+        <div class="seg" id="fLate" role="group" aria-labelledby="fLateL"></div></div>
+      <div class="field"><span class="lbl" id="fSizeL" data-en="Team size">Taille de l'équipe</span>
+        <div class="seg" id="fSize" role="group" aria-labelledby="fSizeL"></div></div>
+      <div class="two">
+        <div class="field"><label for="fName"><span data-en="First name">Prénom</span></label><input id="fName" autocomplete="given-name"></div>
+        <div class="field"><label for="fCo"><span data-en="Company">Entreprise</span></label><input id="fCo" autocomplete="organization"></div>
+      </div>
+      <div class="field"><label for="fCity"><span data-en="City">Ville</span></label><input id="fCity" autocomplete="address-level2"></div>
+      <div class="field"><span class="lbl" data-en="Your message (your calculation is included)">Votre message (votre calcul part avec)</span><pre id="fPreview"></pre></div>
+      <a class="btn mag" id="waForm" href="#" target="_blank" rel="noopener"><span data-en="Write to Noé on WhatsApp">Écrire à Noé sur WhatsApp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="copy" type="button" data-copy="#fPreview" style="justify-self:start" data-en="Copy the message">Copier le message</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-en="Noé Tech Growth · Cameroon">Noé Tech Growth · Cameroun</span>
+    <span>WhatsApp +237 653 40 05 04 · noembwang@gmail.com</span>
+    <span>© 2026 Noé Tech Growth</span>
+  </div>
+</footer>
+<a class="btn sm fab" id="fab" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg><span data-en="Diagnostic">Diagnostic</span></a>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(()=>{
+/* ====== CONFIG ====== */
+const WA_NUMBER='237653400504';
+
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fine=matchMedia('(pointer:fine)').matches, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+let lang='fr';
+const T=(fr,en)=>lang==='en'?en:fr;
+const fmtN=n=>Math.round(n).toLocaleString(lang==='en'?'en-US':'fr-FR').replace(/[  ]/g,' ');
+const fmt=n=>fmtN(n)+' FCFA';
+const wa=msg=>`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+const rerender=[];
+
+/* ====== i18n ====== */
+const i18n=$$('[data-en]');i18n.forEach(e=>e._fr=e.innerHTML);
+function setLang(l){
+  lang=l;document.documentElement.lang=l;
+  i18n.forEach(e=>e.innerHTML=l==='en'?e.dataset.en:e._fr);
+  $('#lFR').setAttribute('aria-pressed',l==='fr');$('#lEN').setAttribute('aria-pressed',l==='en');
+  $$('.dayu').forEach(u=>u.dataset.u=T('j','d'));
+  rerender.forEach(f=>f());
+  try{localStorage.setItem('ntg-lang',l)}catch(e){}
+}
+$('#lFR').onclick=()=>setLang('fr');$('#lEN').onclick=()=>setLang('en');
+
+/* ====== toast + copy ====== */
+const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),1800)};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-copy]');if(!b)return;
+  const src=$(b.dataset.copy),txt=src.textContent;
+  const ok=()=>{b.classList.add('done');toast(T('Copié','Copied'));setTimeout(()=>b.classList.remove('done'),1500)};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(src);const s=getSelection();s.removeAllRanges();s.addRange(r);toast(T('Texte sélectionné : copiez-le','Text selected: copy it'))};
+  try{navigator.clipboard.writeText(txt).then(ok,fallback)}catch(err){fallback()}
+});
+
+/* ====== header, nav ====== */
+const hdr=$('.hdr'),fab=$('#fab');
+const burger=$('#burger'),nav=$('#nav');
+burger.onclick=()=>{const o=!nav.classList.contains('open');nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)};
+nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');burger.setAttribute('aria-expanded',false)}});
+const links=$$('.nav a');
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+links.forEach(a=>{const s=$(a.getAttribute('href'));s&&io.observe(s)});
+new IntersectionObserver(([e])=>fab.classList.toggle('hide',e.isIntersecting),{threshold:.15}).observe($('#contact'));
+
+/* ====== reveal: only what is below the fold at load ====== */
+if(!reduce&&'IntersectionObserver' in window){
+  const rv=$$('.rv').filter(el=>el.getBoundingClientRect().top>innerHeight*.92);
+  rv.forEach(el=>el.classList.add('pre'));
+  const ro=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const el=en.target,sib=[...el.parentNode.children].filter(c=>c.classList.contains('pre'));el.style.transitionDelay=Math.max(0,sib.indexOf(el))*90+'ms';el.classList.remove('pre');ro.unobserve(el)}}),{rootMargin:'0px 0px -8% 0px'});
+  rv.forEach(el=>ro.observe(el));
+}
+
+/* ====== magnetic, spotlight, tilt ====== */
+if(fine&&!reduce){
+  $$('.mag').forEach(b=>{
+    b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--bx',(e.clientX-r.left-r.width/2)*.18+'px');b.style.setProperty('--by',(e.clientY-r.top-r.height/2)*.28+'px')});
+    b.addEventListener('pointerleave',()=>{b.style.setProperty('--bx','0px');b.style.setProperty('--by','0px')});
+  });
+  $$('.tilt').forEach(c=>{
+    c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-6px)`});
+    c.addEventListener('pointerleave',()=>c.style.transform='');
+  });
+}
+document.addEventListener('pointermove',e=>{const s=e.target.closest('.spot');if(!s)return;const r=s.getBoundingClientRect();s.style.setProperty('--mx',e.clientX-r.left+'px');s.style.setProperty('--my',e.clientY-r.top+'px')},{passive:true});
+
+/* ====== shared state for calculator ====== */
+const C={bill:10e6,real:60,term:30,rate:14,days:15,touched:false};
+
+/* ====== HERO: layered stage (pointer + scroll depth) ====== */
+const hero=$('.hero'),stage=$('#stage'),planes=$$('.plane',stage),disc=$('#disc');
+let pX=0,pY=0,tpX=0,tpY=0;
+if(fine&&!reduce)hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();tpX=(e.clientX-r.left)/r.width-.5;tpY=(e.clientY-r.top)/r.height-.5},{passive:true});
+hero.addEventListener('pointerleave',()=>{tpX=tpY=0});
+function stageFrame(){
+  pX+=(tpX-pX)*.07;pY+=(tpY-pY)*.07;
+  const sy=reduce?0:Math.min(scrollY,innerHeight*1.2);
+  planes.forEach(p=>{const d=+p.dataset.d,s=+p.dataset.s;p.style.transform=`translate3d(${(pX*d*-14).toFixed(2)}px,${(pY*d*-12+sy*s).toFixed(2)}px,0)`});
+}
+
+/* ====== HERO: money flow canvas ====== */
+const fc=$('#flux'),fx=fc.getContext('2d');let FW=0,FH=0,parts=[],traces=[],count=0,fm={x:-999,y:-999},lastPulse=0;
+function fsize(){const r=fc.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);FW=r.width;FH=r.height;fc.width=FW*d;fc.height=FH*d;fx.setTransform(d,0,0,d,0,0);
+  const n=FW<700?70:190;parts=Array.from({length:n},()=>newPart(Math.random()));
+  traces=Array.from({length:FW<700?7:14},()=>{let x=Math.random()*FW,y=Math.random()*FH;const pts=[[x,y]];for(let k=0;k<4;k++){if(k%2)y+=(Math.random()-.5)*160;else x+=(Math.random()-.3)*220;pts.push([x,y])}return pts})}
+function newPart(t){return{t:t??0,sy:.08+Math.random()*.84,sp:.0012+Math.random()*.0022,o:(Math.random()-.5),r:.7+Math.random()*1.7,blue:Math.random()<.18,dx:0,dy:0}}
+new ResizeObserver(fsize).observe(fc);
+hero.addEventListener('pointermove',e=>{const r=fc.getBoundingClientRect();fm.x=e.clientX-r.left;fm.y=e.clientY-r.top},{passive:true});
+hero.addEventListener('pointerleave',()=>{fm.x=fm.y=-999});
+let heroVis=true;new IntersectionObserver(([e])=>heroVis=e.isIntersecting).observe(hero);
+function flux(t){
+  if(heroVis){
+    stageFrame();
+    if(FW){
+      const cr=fc.getBoundingClientRect(),dr=disc.getBoundingClientRect();
+      const txp=dr.left-cr.left+dr.width*.5,typ=dr.top-cr.top+dr.height*.55;
+      fx.globalCompositeOperation='source-over';fx.fillStyle='rgba(6,17,11,.24)';fx.fillRect(0,0,FW,FH);
+      fx.strokeStyle='rgba(163,214,92,.035)';fx.lineWidth=1;
+      for(const tr of traces){fx.beginPath();fx.moveTo(tr[0][0],tr[0][1]);for(const p of tr)fx.lineTo(p[0],p[1]);fx.stroke();const e=tr[tr.length-1];fx.fillStyle='rgba(90,180,255,.08)';fx.fillRect(e[0]-1.5,e[1]-1.5,3,3)}
+      fx.globalCompositeOperation='lighter';
+      const mult=reduce?.15:1+C.days/20;
+      for(const p of parts){
+        p.t+=p.sp*mult;
+        if(p.t>=1){Object.assign(p,newPart(0));count++;if(t-lastPulse>380){lastPulse=t;disc.classList.remove('pulse');void disc.offsetWidth;disc.classList.add('pulse')}}
+        const sx=-20,sy=FH*p.sy,c1x=FW*.3,c1y=sy+p.o*160,c2x=txp-FW*.12,c2y=typ+p.o*220,u=p.t,iu=1-u;
+        let x=iu*iu*iu*sx+3*iu*iu*u*c1x+3*iu*u*u*c2x+u*u*u*txp,y=iu*iu*iu*sy+3*iu*iu*u*c1y+3*iu*u*u*c2y+u*u*u*typ;
+        const ddx=x-fm.x,ddy=y-fm.y,d=Math.hypot(ddx,ddy)||1;let px=0,py=0;
+        if(d<140){const f=(1-d/140)*55;px=ddx/d*f;py=ddy/d*f}
+        p.dx+=(px-p.dx)*.12;p.dy+=(py-p.dy)*.12;x+=p.dx;y+=p.dy;
+        const a=Math.min(1,u*5)*(1-Math.max(0,u-.88)*8);
+        fx.fillStyle=p.blue?`rgba(90,180,255,${.75*a})`:`rgba(163,214,92,${.6*a})`;
+        fx.beginPath();fx.arc(x,y,p.r,0,6.283);fx.fill();
+      }
+      fx.globalCompositeOperation='source-over';
+      if((t|0)%10<1)$('#heroCount').textContent=fmtN(count);
+    }
+  }
+  requestAnimationFrame(flux);
+}
+requestAnimationFrame(flux);
+
+/* ====== benchmark: scroll-scrubbed counter ====== */
+const statSec=$('#repere'),sn=$('#statN'),bars=$$('#cmp .bar i');
+function statFrame(){
+  const r=statSec.getBoundingClientRect();
+  const k=reduce?1:clamp((innerHeight-r.top)/(innerHeight*.75),0,1),e=1-Math.pow(1-k,3);
+  sn.textContent=Math.round(200*e);
+  bars[0].style.setProperty('--s',clamp(e*1.75,0,1));bars[1].style.setProperty('--s',e);
+}
+
+/* ====== CALCULATOR ====== */
+const num=v=>parseFloat(String(v).replace(/[^\d.,]/g,'').replace(',','.'))||0;
+const tank=$('#tank'),tx2=tank.getContext('2d');let TW=0,TH=0,tLevel=.5,tVis=false;
+function tsize(){const r=tank.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);TW=r.width;TH=r.height;tank.width=TW*d;tank.height=TH*d;tx2.setTransform(d,0,0,d,0,0)}
+new ResizeObserver(tsize).observe(tank);
+new IntersectionObserver(([e])=>tVis=e.isIntersecting).observe(tank);
+function calc(){
+  C.bill=num($('#cBill').value);C.real=num($('#cReal').value);C.term=num($('#cTerm').value);C.rate=num($('#cRate').value);
+  const rng=$('#cDays');rng.max=Math.max(1,Math.round(C.real));if(C.days>rng.max){C.days=+rng.max;rng.value=C.days}
+  rng.style.setProperty('--p',(C.days/rng.max*100)+'%');
+  const perDay=C.bill/30,late=Math.max(0,C.real-C.term);
+  $('#cDaysV').textContent=C.days+' '+T('j','d');
+  $('#rLocked').textContent=fmt(perDay*C.real);
+  $('#rLate').textContent=fmt(perDay*late);
+  $('#rFreeL').textContent=T(`Trésorerie libérée si vos clients paient ${C.days} jours plus tôt`,`Cash freed if your clients pay ${C.days} days sooner`);
+  $('#rFree').textContent=fmt(perDay*C.days);
+  $('#rCost').textContent=fmt(perDay*late*C.rate/100);
+  const pct=late>0?Math.min(1,C.days/late):1;$('#tankPct').textContent=Math.round(pct*100)+' %';
+  $('#waCalc').href=wa(calcMsg());
+  formRender&&formRender();
+  peakFrame();
+}
+function calcMsg(){
+  const perDay=C.bill/30,late=Math.max(0,C.real-C.term);
+  return T(`Bonjour Noé, voici mon calcul :\n- Facturation B2B mensuelle : ${fmt(C.bill)}\n- Délai réel : ${C.real} j (contrat : ${C.term} j)\n- Trésorerie immobilisée : ${fmt(perDay*C.real)}\n- Dont part due au retard : ${fmt(perDay*late)}\n- Libérée si mes clients paient ${C.days} j plus tôt : ${fmt(perDay*C.days)}\nJe souhaite réserver le diagnostic de 45 min.`,
+  `Hello Noé, here is my calculation:\n- Monthly B2B invoicing: ${fmt(C.bill)}\n- Actual payment time: ${C.real} d (contract: ${C.term} d)\n- Cash tied up: ${fmt(perDay*C.real)}\n- Of which due to late payment: ${fmt(perDay*late)}\n- Freed if clients pay ${C.days} d sooner: ${fmt(perDay*C.days)}\nI'd like to book the 45-min diagnostic.`);
+}
+['cBill','cReal','cTerm','cRate'].forEach(id=>{const el=$('#'+id);el.addEventListener('input',()=>{C.touched=true;calc()});el.addEventListener('blur',()=>{if(id==='cBill')el.value=fmtN(num(el.value))})});
+$('#cDays').addEventListener('input',e=>{C.days=+e.target.value;C.touched=true;calc()});
+function tankDraw(t){
+  if(tVis&&TW){
+    const late=Math.max(0,C.real-C.term),target=late>0?Math.min(1,C.days/late):1;tLevel+=(target-tLevel)*.06;
+    tx2.clearRect(0,0,TW,TH);const top=TH-(TH-8)*Math.max(.03,tLevel);
+    const g=tx2.createLinearGradient(0,top,0,TH);g.addColorStop(0,'#C9EE8F');g.addColorStop(.3,'#A3D65C');g.addColorStop(1,'#3E6A2A');
+    tx2.fillStyle=g;tx2.beginPath();tx2.moveTo(0,TH);
+    for(let i=0;i<=20;i++)tx2.lineTo(TW*i/20,top+Math.sin(i*.7+t*.004)*3.5+Math.sin(i*.4-t*.0025)*2.5);
+    tx2.lineTo(TW,TH);tx2.fill();
+    tx2.fillStyle='rgba(90,180,255,.7)';for(let b=0;b<7;b++){const bx=(b*37+t*.02)%TW,by=TH-((t*.04+b*53)%(TH-top+1));if(by>top+6)tx2.fillRect(bx,by,2,2)}
+    tx2.strokeStyle='rgba(237,243,230,.16)';tx2.fillStyle='#7F9583';tx2.font='500 9px "IBM Plex Mono",monospace';tx2.textAlign='right';
+    [0,25,50,75,100].forEach(k=>{const y=TH-(TH-8)*k/100;tx2.beginPath();tx2.moveTo(TW-10,y);tx2.lineTo(TW,y);tx2.stroke();if(k&&k<100)tx2.fillText(k,TW-13,y+3)});
+  }
+  requestAnimationFrame(tankDraw);
+}
+requestAnimationFrame(tankDraw);
+
+/* ====== PEAK: the gauge follows the scroll through the three workstreams ====== */
+const flow=$('#peakFlow'),gNum=$('#gNum'),gTrack=$('#gTrack'),gSteps=$$('#gSteps li'),chs=['contrats','suivi','relances'].map(id=>$('#'+id));
+let lastDays=-1;
+function peakFrame(){
+  const r=flow.getBoundingClientRect(),mid=innerHeight*.55;
+  const p=reduce?1:clamp((mid-r.top)/(r.height-innerHeight*.2),0,1);
+  const real=Math.max(1,C.real),term=clamp(C.term,0,real);
+  const days=Math.round(real-(real-term)*p);
+  if(days!==lastDays){gNum.textContent=days;lastDays=days}
+  gTrack.style.setProperty('--g',(days/real).toFixed(4));
+  gTrack.style.setProperty('--t',(term/real*100)+'%');
+  $('#gTerm').title=T('Délai prévu au contrat','Contract terms');
+  let cur=-1;chs.forEach((c,i)=>{const b=c.getBoundingClientRect();if(b.top<mid)cur=i});
+  gSteps.forEach((li,i)=>li.classList.toggle('on',i<=cur));
+  $('#gUnit').textContent=T('j','d');
+  $('#gCap').textContent=T(`Délai moyen de paiement. Vos clients paient à ${Math.round(real)} j ; votre contrat prévoit ${Math.round(term)} j. Chaque chantier rapproche les deux.`,`Average payment time. Your clients pay at ${Math.round(real)} d; your contract says ${Math.round(term)} d. Each workstream brings the two closer.`);
+}
+
+/* ====== CLAUSE BUILDER ====== */
+const CL=[
+ {fr:['Le délai de paiement, en jours.','« 30 jours après réception de la facture » vaut mieux que « paiement à convenir ».','Les factures sont payables à [30] jours à compter de leur date de réception par le Client, par virement, Orange Money ou MTN MoMo. Chaque facture mentionne sa date d\'échéance.'],
+  en:['Payment terms, in days.','“30 days from receipt of invoice” beats “payment to be agreed”.','Invoices are payable within [30] days of receipt by the Client, by bank transfer, Orange Money or MTN MoMo. Each invoice states its due date.'],on:true},
+ {fr:['La pénalité de retard.','Un taux écrit, accepté à la signature, qui donne un prix au retard.','Tout retard de paiement entraîne de plein droit l\'application d\'une pénalité de [X] % du montant TTC par mois de retard, tout mois commencé étant dû.'],
+  en:['The late-payment penalty.','A written rate, accepted at signing, that puts a price on delay.','Any late payment automatically incurs a penalty of [X]% of the amount including tax per month of delay, any month started being due in full.'],on:false},
+ {fr:['L\'acompte.','Une part versée à la commande. Un client qui a payé pour commencer a intérêt à ce que le travail aboutisse.','Un acompte de [30] % du montant total est versé à la signature du présent contrat. L\'exécution débute à réception de cet acompte.'],
+  en:['The deposit.','A share paid at order. A client who paid to start wants the work to succeed.','A deposit of [30]% of the total amount is paid on signing this contract. Work starts upon receipt of this deposit.'],on:false},
+ {fr:['La preuve de livraison.','Un bon de livraison ou un procès-verbal de réception signé. Sans lui, la facture se discute.','La livraison est constatée par un bon de livraison ou un procès-verbal de réception signé par le Client. À défaut de réserves écrites dans un délai de [5] jours ouvrés, la prestation est réputée acceptée.'],
+  en:['Proof of delivery.','A signed delivery note or acceptance report. Without it, the invoice is open to dispute.','Delivery is recorded by a delivery note or acceptance report signed by the Client. Absent written reservations within [5] working days, the service is deemed accepted.'],on:true},
+ {fr:['La réserve de propriété.','Pour les marchandises : prévue par écrit, elle vous laisse propriétaire jusqu\'au paiement complet.','Les marchandises livrées restent la propriété du Fournisseur jusqu\'au paiement intégral du prix, en principal et accessoires.'],
+  en:['Retention of title.','For goods: in writing, it keeps you owner until full payment.','Goods delivered remain the property of the Supplier until full payment of the price, principal and incidentals.'],on:false},
+ {fr:['Le règlement des litiges.','Quel tribunal ou quel arbitrage, et selon quelle procédure. Décidé à froid, pas en plein conflit.','Tout différend relatif au présent contrat fait d\'abord l\'objet d\'une tentative de règlement amiable de [15] jours. À défaut d\'accord, il est porté devant [la juridiction compétente du ressort du siège du Fournisseur].'],
+  en:['Dispute resolution.','Which court or arbitration, and what procedure. Decided calmly, not mid-conflict.','Any dispute relating to this contract is first subject to an attempt at amicable settlement for [15] days. Failing agreement, it is brought before [the competent court where the Supplier has its registered office].'],on:false},
+];
+const clBox=$('#clauses');
+function clRender(){
+  clBox.innerHTML=CL.map((c,i)=>{const d=c[lang];return `<label class="cl" for="cl${i}"><input type="checkbox" id="cl${i}" ${c.on?'checked':''}><div><b>${d[0]}</b><span>${d[1]}</span></div></label>`}).join('');
+  $$('input',clBox).forEach((x,i)=>x.onchange=()=>{CL[i].on=x.checked;clDraft()});clDraft();
+}
+function clDraft(){
+  const on=CL.filter(c=>c.on);
+  $('#clMeter').innerHTML=CL.map(c=>`<i class="${c.on?'on':''}"></i>`).join('');
+  $('#clDraft').textContent=on.length?T('Article [X] · Conditions de paiement\n\n','Article [X] · Payment terms\n\n')+on.map((c,i)=>`${i+1}. ${c[lang][2]}`).join('\n\n'):T('Cochez au moins une clause pour composer l\'article.','Tick at least one clause to build the article.');
+}
+rerender.push(clRender);clRender();
+
+/* ====== AGING ====== */
+const BK=[{c:'var(--ok)',fr:'Moins de 30 j',en:'Under 30 d',act:['Rappel courtois et confirmation de la date de paiement. La facture est-elle bien enregistrée ?','Polite reminder and confirmation of the payment date. Has the invoice been registered?']},
+ {c:'var(--warn)',fr:'30 à 60 j',en:'30–60 d',act:['Relance écrite avec la clause de pénalité, puis appel au comptable du client.','Written reminder citing the penalty clause, then a call to the client’s accountant.']},
+ {c:'var(--late)',fr:'60 à 90 j',en:'60–90 d',act:['Rendez-vous avec le directeur financier. Nouvelles livraisons conditionnées au règlement.','Meeting with the finance director. New deliveries conditional on payment.']},
+ {c:'var(--bad)',fr:'Plus de 90 j',en:'Over 90 d',act:['Mise en demeure écrite. Dossier complet prêt pour un avocat si nécessaire.','Written formal notice. Full file ready for a lawyer if needed.']}];
+const INV=[['Client A · BTP','F-1042',4200000,12,0],['Client B · Services','F-1038',1350000,24,0],['Client C · Négoce','F-1029',2800000,41,1],['Client D · Public','F-1021',6100000,55,1],['Client E · Transport','F-1017',950000,73,2],['Client F · BTP','F-1009',3400000,88,2],['Client G · Services','F-0994',1700000,112,3],['Client H · Agence','F-0987',2250000,146,3]];
+const NEXT=[['Rappel J+1','D+1 reminder'],['Relance J+7','D+7 reminder'],['Appel comptable','Call accountant'],['RDV direction','Meet finance'],['Mise en demeure','Formal notice']];
+let ageSel=3;
+function ageRender(){
+  const tot=BK.map((_,i)=>INV.filter(r=>r[4]===i).reduce((s,r)=>s+r[2],0)),all=tot.reduce((a,b)=>a+b,0);
+  $('#ageBar').innerHTML=BK.map((b,i)=>`<button type="button" style="--c:${b.c};flex-grow:${tot[i]}" aria-pressed="${ageSel===i}" aria-label="${b[lang]}">${Math.round(tot[i]/all*100)}%</button>`).join('');
+  $('#ageLegend').innerHTML=BK.map((b,i)=>`<div style="--c:${b.c}"><span><i></i>${b[lang]}</span><b class="num">${(tot[i]/1e6).toLocaleString(lang==='en'?'en-US':'fr-FR',{maximumFractionDigits:1})} M FCFA</b></div>`).join('');
+  $('#ageRows').innerHTML=INV.map(r=>{const nx=r[4]===0?NEXT[0]:r[4]===1?(r[3]>30?NEXT[2]:NEXT[1]):r[4]===2?NEXT[3]:NEXT[4];return `<tr class="${r[4]===ageSel?'':'dim'}" style="--c:${BK[r[4]].c}"><td><span class="dot"></span>${r[0]}</td><td class="mono">${r[1]}</td><td class="r">${fmtN(r[2])}</td><td class="r mono">${r[3]} ${T('j','d')}</td><td>${nx[lang==='en'?1:0]}</td></tr>`}).join('');
+  $$('#ageBar button').forEach((b,i)=>b.onclick=()=>{ageSel=i;ageRender()});
+  const b=BK[ageSel];$('#ageAction').innerHTML=`<span class="mono">${T('Action de la semaine','This week’s action')} · ${b[lang]}</span><span>${b.act[lang==='en'?1:0]}</span>`;
+}
+rerender.push(ageRender);ageRender();
+
+/* ====== REMINDERS ====== */
+const REM=[
+ {d:'J-5',ch:['WhatsApp ou e-mail','WhatsApp or email'],t:['Rappel courtois avant l\'échéance','Polite reminder before the due date'],
+  m:['Bonjour [Prénom],\n\nJe vous transmets en pièce jointe la facture n° [N] de [montant] FCFA, échéance le [date].\nPouvez-vous me confirmer qu\'elle est bien enregistrée pour paiement ?\n\nBonne journée,\n[Votre nom]','Hello [First name],\n\nPlease find attached invoice no. [N] for [amount] FCFA, due on [date].\nCould you confirm it has been registered for payment?\n\nBest regards,\n[Your name]']},
+ {d:'J+1',ch:['WhatsApp','WhatsApp'],t:['L\'échéance est passée','The due date has passed'],
+  m:['Bonjour [Prénom],\n\nLa facture n° [N] de [montant] FCFA était due hier.\nÀ quelle date le paiement est-il prévu ?\n\nMerci,\n[Votre nom]','Hello [First name],\n\nInvoice no. [N] for [amount] FCFA was due yesterday.\nWhen is payment scheduled?\n\nThank you,\n[Your name]']},
+ {d:'J+7',ch:['E-mail','Email'],t:['Deuxième relance écrite','Second written reminder'],
+  m:['Objet : Facture n° [N] échue le [date]\n\nBonjour [Prénom],\n\nSauf erreur de notre part, la facture n° [N] d\'un montant de [montant] FCFA, échue le [date], reste impayée.\nConformément à l\'article [X] de nos conditions de paiement, une pénalité de [X] % par mois de retard s\'applique.\nNous vous remercions de procéder au règlement au plus tard le [date].\n\nCordialement,\n[Votre nom]','Subject: Invoice no. [N] due on [date]\n\nHello [First name],\n\nUnless we are mistaken, invoice no. [N] for [amount] FCFA, due on [date], remains unpaid.\nUnder article [X] of our payment terms, a penalty of [X]% per month of delay applies.\nPlease arrange payment by [date] at the latest.\n\nKind regards,\n[Your name]']},
+ {d:'J+15',ch:['Appel téléphonique','Phone call'],t:['Appel au bon interlocuteur','Call the right person'],
+  m:['Qui appeler : le comptable ou le directeur financier, pas seulement votre contact habituel.\n\n1. La facture n° [N] est-elle reçue et validée ?\n2. Qui doit encore la signer ?\n3. Quelle est la date de paiement ?\n\nNotez le nom, la date et l\'engagement pris.\nConfirmez par écrit le jour même.','Who to call: the accountant or finance director, not just your usual contact.\n\n1. Has invoice no. [N] been received and approved?\n2. Who still needs to sign it?\n3. What is the payment date?\n\nWrite down the name, date and commitment.\nConfirm in writing the same day.']},
+ {d:'J+30',ch:['Lettre remise contre décharge','Letter delivered against receipt'],t:['Mise en demeure','Formal notice'],
+  m:['Objet : Mise en demeure de payer\n\nMadame, Monsieur,\n\nMalgré nos relances des [dates], la facture n° [N] d\'un montant de [montant] FCFA, échue le [date], demeure impayée.\nNous vous mettons en demeure de régler cette somme sous huit (8) jours à compter de la réception de la présente.\nÀ défaut, nous engagerons les procédures prévues par la loi, notamment l\'injonction de payer.\n\nVeuillez agréer, Madame, Monsieur, nos salutations distinguées.\n[Nom, fonction, signature]','Subject: Formal notice to pay\n\nDear Sir or Madam,\n\nDespite our reminders of [dates], invoice no. [N] for [amount] FCFA, due on [date], remains unpaid.\nWe hereby give you formal notice to pay this sum within eight (8) days of receipt of this letter.\nFailing this, we will initiate the procedures provided by law, including a payment order.\n\nYours faithfully,\n[Name, title, signature]']},
+];
+let remSel=1;
+function remRender(){
+  const L=lang==='en'?1:0;
+  $('#remSteps').innerHTML=REM.map((r,i)=>`<button type="button" class="chip" aria-pressed="${remSel===i}">${lang==='en'?r.d.replace('J','D'):r.d}</button>`).join('');
+  $$('#remSteps button').forEach((b,i)=>{b.onclick=()=>{remSel=i;remRender();$$('#remSteps button')[i].focus({preventScroll:true})}});
+  const r=REM[remSel];
+  $('#remCard').innerHTML=`<div class="rem-head"><b>${lang==='en'?r.d.replace('J','D'):r.d} · ${r.t[L]}</b><span>${r.ch[L]}</span></div><pre id="remMsg">${r.m[L].replace(/</g,'&lt;')}</pre><div class="row"><span class="small">${T('Modèle à adapter','Template to adapt')}</span><button class="copy" type="button" data-copy="#remMsg">${T('Copier le message','Copy message')}</button></div>`;
+}
+rerender.push(remRender);remRender();
+
+/* ====== SECTORS ====== */
+const SEC=[
+ {fr:'BTP',en:'Construction',trap:[['Des situations de travaux qui attendent la validation pendant des semaines.','Progress statements waiting weeks for approval.'],['La retenue de garantie, oubliée et jamais réclamée.','Retention money, forgotten and never claimed.'],['Des travaux supplémentaires faits sans ordre écrit ni avenant.','Extra work done without a written order or amendment.']],
+  fix:[['Une situation mensuelle signée par le maître d\'ouvrage ou son représentant.','A monthly statement signed by the project owner or their representative.'],['La date de libération de chaque retenue inscrite au tableau de suivi.','The release date of each retention entered in the tracker.'],['Aucun travail supplémentaire sans ordre écrit et chiffré.','No extra work without a written, priced order.']]},
+ {fr:'Services',en:'Services',trap:[['Des prestations récurrentes facturées sans preuve d\'exécution.','Recurring services invoiced without proof they were performed.'],['Une contestation de qualité qui arrive quand la facture tombe.','A quality complaint that appears when the invoice arrives.'],['Une facture envoyée au mauvais service, qui dort dans un bureau.','An invoice sent to the wrong department, sitting in a drawer.']],
+  fix:[['Un bon d\'intervention ou une feuille de présence signé chaque mois.','A job sheet or attendance sheet signed every month.'],['Un délai de réclamation écrit au contrat : passé ce délai, la prestation est acceptée.','A written complaint window in the contract: after it, the service is accepted.'],['Le nom du valideur et le circuit de la facture notés dès la signature.','The approver’s name and invoice route recorded at signing.']]},
+ {fr:'Négoce',en:'Trading',trap:[['Du crédit accordé sans plafond.','Credit granted with no limit.'],['De la marchandise livrée sans bon signé.','Goods delivered without a signed note.'],['Un client qui recommande alors qu\'il doit déjà.','A client who reorders while already owing.']],
+  fix:[['Un plafond d\'encours par client, écrit et suivi.','A written, tracked credit limit per client.'],['La réserve de propriété au contrat et un bon de livraison signé à chaque livraison.','Retention of title in the contract and a signed delivery note every time.'],['Les livraisons suspendues au-delà du plafond, sans exception.','Deliveries paused above the limit, no exceptions.']]},
+ {fr:'Transport',en:'Transport',trap:[['La lettre de voiture émargée perdue entre le chauffeur et le bureau.','The signed waybill lost between the driver and the office.'],['Des frais annexes (attente, manutention) contestés.','Extra charges (waiting, handling) disputed.'],['Une facturation groupée en fin de mois qui démarre le délai trop tard.','Monthly batch invoicing that starts the clock too late.']],
+  fix:[['La lettre de voiture signée, photographiée et envoyée le jour même.','The signed waybill photographed and sent the same day.'],['Une grille des frais annexes annexée au contrat.','A schedule of extra charges attached to the contract.'],['Une facture à la livraison ou à la quinzaine.','Invoicing at delivery or every two weeks.']]},
+ {fr:'Agences et cabinets',en:'Agencies & firms',trap:[['Un travail commencé sans acompte.','Work started without a deposit.'],['Des allers-retours sans fin sur les livrables.','Endless back-and-forth on deliverables.'],['La dernière tranche bloquée « jusqu\'à satisfaction ».','The final instalment held back “until satisfied”.']],
+  fix:[['Un acompte versé avant le démarrage.','A deposit paid before starting.'],['Le nombre de révisions incluses, écrit au devis.','The number of included revisions written in the quote.'],['Un échéancier par étape, chaque étape validée par écrit.','A payment schedule by milestone, each one approved in writing.']]},
+];
+let secSel=0;
+function secRender(){
+  const L=lang==='en'?1:0;
+  $('#sectTabs').innerHTML=SEC.map((s,i)=>`<button class="chip" role="tab" type="button" aria-selected="${secSel===i}">${s[lang]}</button>`).join('');
+  $$('#sectTabs button').forEach((b,i)=>b.onclick=()=>{secSel=i;secRender();$$('#sectTabs button')[i].focus({preventScroll:true})});
+  const s=SEC[secSel];
+  $('#sectBody').innerHTML=`<div class="trap"><h4>${T('Où l\'argent se bloque','Where the money gets stuck')}</h4><ul>${s.trap.map(x=>`<li>${x[L]}</li>`).join('')}</ul></div><div class="fix"><h4>${T('Ce qu\'on met en place','What we put in place')}</h4><ul>${s.fix.map(x=>`<li>${x[L]}</li>`).join('')}</ul></div>`;
+}
+rerender.push(secRender);secRender();
+
+/* ====== public circuit + OHADA: lines that draw with the scroll ====== */
+const circ=$('#circuit'),cNodes=$$('.node',circ),proc=$('#proc'),pItems=$$('li',proc);
+function drawFrame(){
+  let r=circ.getBoundingClientRect(),k=reduce?1:clamp((innerHeight*.8-r.top)/(r.height+innerHeight*.25),0,1);
+  circ.style.setProperty('--c',k.toFixed(3));cNodes.forEach((n,i)=>n.classList.toggle('lit',k>=i/(cNodes.length-1)-.02));
+  r=proc.getBoundingClientRect();k=reduce?1:clamp((innerHeight*.7-r.top)/r.height,0,1);
+  proc.style.setProperty('--d',k.toFixed(3));pItems.forEach((n,i)=>n.classList.toggle('lit',k>=(i+.2)/pItems.length));
+}
+
+/* ====== DIAG TIMELINE + PREP ====== */
+const TL=[[10,'0–10 min','Votre activité, vos clients, votre façon de facturer.','Your business, your clients, how you invoice.'],[15,'10–25 min','Vos délais réels, facture par facture.','Your actual payment times, invoice by invoice.'],[10,'25–35 min','La lecture de votre contrat type.','A read-through of your standard contract.'],[10,'35–45 min','L\'estimation de ce que les retards vous coûtent, et la suite possible.','The estimate of what late payment costs you, and possible next steps.']];
+let tlSel=0;
+function tlRender(){
+  $('#tline').innerHTML=TL.map((s,i)=>`<button type="button" style="flex-grow:${s[0]}" aria-pressed="${tlSel===i}">${s[1]}</button>`).join('');
+  $$('#tline button').forEach((b,i)=>{b.onclick=()=>{tlSel=i;tlRender();$$('#tline button')[i].focus({preventScroll:true})};if(fine)b.onpointerenter=()=>{if(tlSel!==i){tlSel=i;tlRender()}}});
+  const s=TL[tlSel];$('#tlineTxt').innerHTML=`<b>${s[1]}</b>${lang==='en'?s[3]:s[2]}`;
+  prepState();
+}
+function prepState(){const n=$$('.prep input:checked').length;$('#prepState').textContent=n===3?T('Tout est prêt. Réservez votre créneau.','All set. Book your slot.'):T(`${n} / 3 prêts`,`${n} / 3 ready`)}
+$$('.prep input').forEach(i=>i.onchange=prepState);
+rerender.push(tlRender);tlRender();
+
+/* ====== QUIZ ====== */
+const Q=[
+ ['Chaque client signe-t-il un contrat ou un bon de commande écrit avant le début du travail ?','Does every client sign a contract or written purchase order before work starts?','Faites signer un bon de commande avant tout démarrage, même pour les clients habituels.','Get a purchase order signed before starting, even for regular clients.'],
+ ['Le délai de paiement est-il écrit, en jours, dans ce document ?','Are payment terms written, in days, in that document?','Écrivez un délai précis : « 30 jours après réception de la facture ».','Write precise terms: “30 days from receipt of invoice”.'],
+ ['Une pénalité de retard est-elle prévue par écrit ?','Is a late-payment penalty set out in writing?','Ajoutez une pénalité de retard chiffrée, acceptée à la signature.','Add a stated late-payment penalty, accepted at signing.'],
+ ['Demandez-vous un acompte avant de commencer ?','Do you ask for a deposit before starting?','Demandez un acompte : le client qui a payé pour commencer veut que le travail aboutisse.','Ask for a deposit: a client who paid to start wants the work to succeed.'],
+ ['Le contrat précise-t-il comment un litige sera réglé, et devant qui ?','Does the contract say how a dispute will be settled, and by whom?','Prévoyez une clause de règlement des litiges, décidée à froid.','Add a dispute-resolution clause, decided calmly.'],
+ ['Quelqu\'un relance-t-il les factures à date fixe, avec une trace écrite ?','Does someone follow up invoices on fixed dates, in writing?','Nommez un responsable et un calendrier de relance J-5 à J+30.','Name one owner and a reminder calendar from D-5 to D+30.'],
+];
+let qi=0,ans=[];
+function qRender(){
+  $('#qbar').innerHTML=Q.map((_,i)=>`<i class="${ans[i]===true?'y':ans[i]===false?'n':i===qi?'cur':''}"></i>`).join('');
+  const done=qi>=Q.length,L=lang==='en';
+  $('#qn').textContent=done?T('Terminé','Done'):`${qi+1} / ${Q.length}`;
+  $('#qq').textContent=done?T('Votre résultat est à côté.','Your result is alongside.'):Q[qi][L?1:0];
+  $('#qYes').hidden=$('#qNo').hidden=done;
+  const yes=ans.filter(a=>a===true).length;
+  $('#ringN').textContent=yes;
+  const fg=$('#ringFg');fg.style.strokeDashoffset=326.7*(1-yes/6);fg.style.stroke=done?(yes>=5?'var(--ok)':yes>=3?'var(--warn)':'var(--bad)'):'var(--spark)';
+  if(done){
+    const v=yes>=5?[T('Solide','Solid'),T('Vos contrats couvrent l\'essentiel. Le gain se joue maintenant sur le suivi et la régularité.','Your contracts cover the essentials. The gain now lies in tracking and consistency.')]:yes>=3?[T('Fragile','Fragile'),T('La base existe, mais des failles laissent vos clients payer quand ils veulent.','The basics exist, but gaps let clients pay whenever they like.')]:[T('Exposé','Exposed'),T('Rien n\'oblige vos clients à payer à l\'heure. C\'est le premier chantier.','Nothing obliges your clients to pay on time. That’s the first workstream.')];
+    $('#verdict').innerHTML=`<h3>${v[0]}</h3><p class="muted">${v[1]}</p>`;
+    $('#advice').innerHTML=Q.map((q,i)=>ans[i]===false?`<li>${q[L?3:2]}</li>`:'').join('');
+    $('#quizCtas').hidden=false;
+    $('#waQuiz').href=wa(T(`Bonjour Noé, j'ai fait le test « Vos contrats vous protègent-ils ? » : ${yes}/6. Je souhaite en parler lors du diagnostic de 45 min.`,`Hello Noé, I took the “Do your contracts protect you?” test: ${yes}/6. I'd like to discuss it in the 45-min diagnostic.`));
+  }else{$('#verdict').innerHTML=`<p class="muted">${T('Répondez aux six questions pour voir votre score.','Answer all six questions to see your score.')}</p>`;$('#advice').innerHTML='';$('#quizCtas').hidden=true}
+}
+$('#qYes').onclick=()=>{ans[qi++]=true;qRender();if(qi>=Q.length)$('#qReset').focus()};$('#qNo').onclick=()=>{ans[qi++]=false;qRender();if(qi>=Q.length)$('#qReset').focus()};
+$('#qReset').onclick=()=>{qi=0;ans=[];qRender();$('#qYes').focus()};
+rerender.push(qRender);qRender();
+
+/* ====== glossary: drag + buttons ====== */
+const gl=$('#gloss');let gd=null;
+gl.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;gd={x:e.clientX,s:gl.scrollLeft,m:false}});
+addEventListener('pointermove',e=>{if(!gd)return;const dx=e.clientX-gd.x;if(Math.abs(dx)>4){gd.m=true;gl.classList.add('drag')}gl.scrollLeft=gd.s-dx});
+addEventListener('pointerup',()=>{if(gd){gl.classList.remove('drag');gd=null}});
+const gStep=()=>(gl.firstElementChild?.getBoundingClientRect().width||280)+14;
+$('#gPrev').onclick=()=>gl.scrollBy({left:-gStep(),behavior:reduce?'auto':'smooth'});
+$('#gNext').onclick=()=>gl.scrollBy({left:gStep(),behavior:reduce?'auto':'smooth'});
+
+/* ====== CONTACT FORM ====== */
+const SECT_OPT=[['BTP / second œuvre','Construction / finishing works'],['Services aux entreprises','B2B services'],['Négoce / fournisseur','Trading / supplier'],['Transport / logistique','Transport / logistics'],['Agence / cabinet / bureau d\'études','Agency / firm / engineering'],['Autre','Other']];
+const LATE=[['Souvent','Often'],['Parfois','Sometimes'],['Rarement','Rarely']],SIZE=[['Moins de 10','Under 10'],['10 à 50','10 to 50'],['Plus de 50','Over 50']];
+const F={sector:0,late:0,size:1};
+var formRender=function(){
+  const L=lang==='en'?1:0,sel=$('#fSector');
+  if(sel.dataset.l!==lang){sel.innerHTML=SECT_OPT.map((o,i)=>`<option value="${i}">${o[L]}</option>`).join('');sel.value=F.sector;sel.dataset.l=lang}
+  $('#fLate').innerHTML=LATE.map((o,i)=>`<button type="button" class="chip" aria-pressed="${F.late===i}">${o[L]}</button>`).join('');
+  $('#fSize').innerHTML=SIZE.map((o,i)=>`<button type="button" class="chip" aria-pressed="${F.size===i}">${o[L]}</button>`).join('');
+  $$('#fLate button').forEach((b,i)=>b.onclick=()=>{F.late=i;formRender();$$('#fLate button')[i].focus()});
+  $$('#fSize button').forEach((b,i)=>b.onclick=()=>{F.size=i;formRender();$$('#fSize button')[i].focus()});
+  const name=$('#fName').value.trim(),co=$('#fCo').value.trim(),city=$('#fCity').value.trim();
+  let m=T(`Bonjour Noé,${name?` je suis ${name}${co?` (${co})`:''}.`:co?` je vous écris pour ${co}.`:''}\nSecteur : ${SECT_OPT[F.sector][0]}\n${city?`Ville : ${city}\n`:''}Mes clients paient en retard : ${LATE[F.late][0].toLowerCase()}\nTaille de l'équipe : ${SIZE[F.size][0].toLowerCase()} employés\nJe souhaite réserver le diagnostic de 45 min.`,
+    `Hello Noé,${name?` I'm ${name}${co?` (${co})`:''}.`:co?` I'm writing for ${co}.`:''}\nSector: ${SECT_OPT[F.sector][1]}\n${city?`City: ${city}\n`:''}My clients pay late: ${LATE[F.late][1].toLowerCase()}\nTeam size: ${SIZE[F.size][1].toLowerCase()} employees\nI'd like to book the 45-min diagnostic.`);
+  if(C.touched)m+='\n\n'+calcMsg().split('\n').slice(1,-1).join('\n');
+  $('#fPreview').textContent=m;$('#waForm').href=wa(m);
+};
+$('#fSector').onchange=e=>{F.sector=+e.target.value;formRender()};
+['fName','fCo','fCity'].forEach(id=>$('#'+id).addEventListener('input',formRender));
+$('#ctaForm').addEventListener('submit',e=>e.preventDefault());
+rerender.push(formRender,calc);
+
+/* ====== SIGNATURE: the growth stem ====== */
+const stem=$('#stem'),stemNodes=$('#stemNodes'),bud=$('#stemBud'),stemSecs=$$('[data-stem]');
+const LEAF='<svg viewBox="0 0 40 24"><path d="M0 12C8 0 26-2 40 12 26 26 8 24 0 12Z"/></svg>';
+let nodeEls=[],stemH=0;
+function stemLayout(){
+  const docH=document.documentElement.scrollHeight-innerHeight;stemH=stem.getBoundingClientRect().height;
+  stemNodes.innerHTML=stemSecs.map((s,i)=>`<a class="stem-node${i%2?' even':''}" href="#${s.id}" tabindex="-1" style="top:${clamp((s.offsetTop-innerHeight*.3)/docH,0,1)*100}%"><i></i>${LEAF}<b>${lang==='en'?s.dataset.stemEn:s.dataset.stem}</b></a>`).join('');
+  nodeEls=$$('.stem-node',stemNodes);stemFrame();
+}
+function stemFrame(){
+  if(!stemH)return;
+  const docH=document.documentElement.scrollHeight-innerHeight,p=docH>0?clamp(scrollY/docH,0,1):0;
+  stem.style.setProperty('--grow',p.toFixed(4));
+  bud.style.top=(p*100)+'%';
+  let cur=-1;nodeEls.forEach((n,i)=>{const on=parseFloat(n.style.top)/100<=p+.002;n.classList.toggle('on',on);if(on)cur=i});
+  nodeEls.forEach((n,i)=>n.classList.toggle('cur',i===cur));
+  stem.classList.toggle('bloom',p>.985);
+}
+addEventListener('resize',()=>{clearTimeout(stemLayout._t);stemLayout._t=setTimeout(stemLayout,150)});
+addEventListener('load',stemLayout);
+rerender.push(stemLayout);
+
+/* ====== about portrait parallax ====== */
+const portrait=$('#portrait');
+function portraitFrame(){if(reduce)return;const r=portrait.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const k=(r.top+r.height/2-innerHeight/2)/innerHeight;portrait.style.setProperty('--py',(k*-40-20).toFixed(1)+'px')}
+
+/* ====== one scroll loop ====== */
+let ticking=false;
+function onScroll(){
+  if(ticking)return;ticking=true;
+  requestAnimationFrame(()=>{ticking=false;hdr.classList.toggle('scrolled',scrollY>8);statFrame();peakFrame();drawFrame();stemFrame();portraitFrame();if(!heroVis)stageFrame()});
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+
+/* ====== boot ====== */
+let saved='fr';try{saved=localStorage.getItem('ntg-lang')||'fr'}catch(e){}
+setLang(saved==='en'?'en':'fr');
+onScroll();
+})();
+</script>
+</body>
+</html>
