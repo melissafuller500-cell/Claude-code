@@ -11,8 +11,8 @@ const en = lang === 'en';
 const R = compute(D);
 const u = en ? 'd' : 'j';
 const L = en
-  ? { cap: (real: number, term: number, target: number) => `Average payment time. Your clients pay at ${real} d; your contract says ${term} d. Target with the three workstreams: ${target} d.`, sent: 'Invoice sent', paid: 'Money in', note: 'Figures from the calculator above. Change them and the gauge follows.', label: 'Average payment time gauge' }
-  : { cap: (real: number, term: number, target: number) => `Délai moyen de paiement. Vos clients paient à ${real} j ; votre contrat prévoit ${term} j. Objectif avec les trois chantiers : ${target} j.`, sent: 'Facture envoyée', paid: 'Argent reçu', note: 'Chiffres repris du calculateur plus haut. Modifiez-les, la jauge suit.', label: 'Jauge du délai moyen de paiement' };
+  ? { cap: (real: number, term: number, target: number) => `Average payment time. Your clients pay at ${real} d; your contract says ${term} d. Target with the three workstreams: ${target} d.`, sent: 'Invoice sent', paid: 'Money in', note: 'Figures from the calculator above. Change them and the gauge follows.', label: 'Average payment time gauge', steps: [['Before the order', 'Contracts'], ['Every week', 'Tracking'], ['Fixed dates', 'Reminders']] }
+  : { cap: (real: number, term: number, target: number) => `Délai moyen de paiement. Vos clients paient à ${real} j ; votre contrat prévoit ${term} j. Objectif avec les trois chantiers : ${target} j.`, sent: 'Facture envoyée', paid: 'Argent reçu', note: 'Chiffres repris du calculateur plus haut. Modifiez-les, la jauge suit.', label: 'Jauge du délai moyen de paiement', steps: [['Avant', 'Contrats'], ['Chaque semaine', 'Suivi'], ['Date fixe', 'Relances']] };
 ---
 <figure class="gauge" data-gauge data-lang={lang} style={`--g:${R.projected / D.real};--t:${(D.term / D.real) * 100}%`} aria-label={L.label}>
   <div class="g-num"><b class="num" data-g="num">{R.projected}</b><span>{u}</span><s class="num" data-g="from">{D.real} {u}</s></div>
@@ -21,6 +21,9 @@ const L = en
     <div class="g-track"><i></i><s></s><em></em></div>
     <span>{L.paid}</span>
   </div>
+  <ol class="g-steps" aria-hidden="true">
+    {L.steps.map(([k, v]) => <li><b>{k}</b>{v}</li>)}
+  </ol>
   <p class="small">{L.note}</p>
   <figcaption class="g-cap" data-g="cap" aria-live="polite">{L.cap(D.real, D.term, R.projected)}</figcaption>
 </figure>
@@ -42,5 +45,10 @@ const L = en
   .g-cap { font-size: 16px; color: var(--ink-soft); }
   .gauge[data-start] .g-track i { transform: scaleX(1); }
   .gauge[data-start] .g-track em { left: 100%; }
+  .g-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .g-steps li { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: 14px; line-height: 1.3; color: var(--ink-mute); transition: border-color 0.3s, background-color 0.3s, color 0.3s; }
+  .g-steps b { display: block; font: 600 14px var(--f-text); margin-bottom: 2px; }
+  .g-steps li:global(.on) { border-color: var(--leaf); color: var(--ink); background: rgba(163, 214, 92, 0.08); }
+  .g-steps li:global(.on) b { color: var(--leaf); }
   @media (max-width: 520px) { .g-pipe { grid-template-columns: minmax(0, 1fr); } .g-pipe span { display: none; } }
 </style>

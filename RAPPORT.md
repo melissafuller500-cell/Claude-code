@@ -159,3 +159,31 @@ Aucun framework d'interface, aucun framework CSS, aucun script tiers. Le JavaScr
 - Un brouillon dont le frontmatter est incomplet bloque le build (règle voulue par la section 8.1).
 - La page `/barometre/` est fournie comme gabarit non construit (`src/pages/_barometre.astro`), conformément à la
   phase 1.
+
+## 9. Itération 2 — site actif et interactif (3 octobre 2026)
+
+À la demande de Noé, le hero de la maquette d'origine est rétabli et l'interactivité renforcée, sans perdre en vitesse.
+
+| Ajout | Détail | Coût |
+|---|---|---|
+| Hero vivant | Particules (factures) qui convergent vers le portrait, cartes « relance envoyée / facture payée » qui changent d'état, mot NOÉ en filigrane, parallaxe au pointeur (souris uniquement), preuves sous les boutons | ~3 Ko gzip, démarré 1,8 s après le chargement, arrêté hors écran et onglet masqué, désactivé si « réduire les animations » |
+| Calculateur enrichi | Montant TTC expliqué, méthode de mesure du délai réel (formule pondérée), « agios économisés par an », curseur borné au retard réel, encart « la moyenne cache la répartition » | quelques centaines d'octets |
+| Jauge narrative | Le délai baisse chantier après chantier au défilement (60 → 55 → 50 → 45 j) | dans le module existant |
+| Compteur 200 jours + barres | Animés au défilement en CSS pur (aucun JavaScript) | 0 Ko |
+| « Votre secteur en 10 secondes » | Sélecteur en CSS pur, lien vers chaque fiche secteur (maillage interne) | 0 Ko |
+| Derniers articles sur l'accueil | 3 articles récents (fraîcheur, maillage) | 0 Ko |
+| Survols | Cartes et offres qui se soulèvent légèrement (désactivé sans souris ou en mouvement réduit) | 0 Ko |
+
+Non rétabli volontairement : le compteur « Factures encaissées pendant votre visite » (chiffre fictif, contraire à la règle « aucun indicateur qui ne mesure rien »),
+le bandeau défilant et la tige latérale (bruit visuel, coût en JavaScript au défilement).
+
+SEO / AEO / GEO :
+- Titre d'accueil avec mots-clés : « Retards de paiement des PME au Cameroun · Noé Tech Growth ». La marque n'est ajoutée aux autres titres que s'ils restent sous 65 caractères (avant : jusqu'à 73).
+- Organisation : `contactPoint` (e-mail, WhatsApp, langues), `knowsAbout`, `slogan`. Articles : `keywords`, `articleSection`, `wordCount`, `isPartOf`.
+- `llms.txt` généré à chaque build (guides, outils, secteurs, tous les articles FR et EN).
+- `sitemap.xml` : date réelle de dernière modification pour les guides, secteurs, glossaire et articles.
+- Libellés accessibles alignés sur le texte visible (logo, sélecteur de langue) ; métriques de la police de repli recalculées (plus de saut de ligne au chargement).
+- Blog : 6 articles FR publiés (dont 3 nouveaux : coût réel d'un retard, pièces pour prouver une créance, client qui conteste une facture) et 3 articles EN. **À relire par Noé** : ils sont en ligne dès le prochain déploiement.
+
+Mesures (Lighthouse mobile, 3 passages sur l'accueil) : 99 / 100 / 100 / 100, LCP 1,95 s, TBT 0 ms, CLS 0,001, 154 Ko.
+Articles et outils : 100 / 100 / 100 / 100. JavaScript de l'accueil : 8,8 Ko gzip (budget 40 Ko). 86 pages, HTML valide, 0 erreur au contrôle automatique.

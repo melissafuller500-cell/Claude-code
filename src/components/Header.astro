@@ -24,7 +24,7 @@ const isCurrent = (href: string) => path === href;
 ---
 <header class="hdr">
   <div class="wrap hdr-in">
-    <a class="brand" href={r('home', lang)} aria-label={`Noé Tech Growth · ${t.home}`}>
+    <a class="brand" href={r('home', lang)}>
       <Logo size={28} />
       <span>NOÉ<small>Tech Growth</small></span>
     </a>
@@ -37,7 +37,7 @@ const isCurrent = (href: string) => path === href;
       </ul>
     </nav>
 
-    <a class="lang" href={switchHref} hreflang={other} lang={other} aria-label={t.langSwitchLabel}>{t.langSwitchShort}</a>
+    <a class="lang" href={switchHref} hreflang={other} lang={other}>{t.langSwitchShort}<span class="sr-only"> · {t.langSwitchLabel}</span></a>
     <a class="btn sm cta-h" href={diag} aria-current={isCurrent(diag) ? 'page' : undefined}>{t.navDiagnostic}</a>
 
     <button class="burger" type="button" popovertarget="menu" aria-label={t.menuOpen}>
@@ -47,7 +47,7 @@ const isCurrent = (href: string) => path === href;
 
   <div id="menu" class="menu" popover>
     <div class="menu-top wrap">
-      <a class="brand" href={r('home', lang)} aria-label={`Noé Tech Growth · ${t.home}`}><Logo size={28} /><span>NOÉ<small>Tech Growth</small></span></a>
+      <a class="brand" href={r('home', lang)}><Logo size={28} /><span>NOÉ<small>Tech Growth</small></span></a>
       <button class="burger close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label={t.menuClose}><span></span><span></span></button>
     </div>
     <nav class="wrap" aria-label={t.navLabel}>

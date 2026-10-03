@@ -33,7 +33,7 @@ export function init(form: HTMLElement) {
 
   const render = () => {
     const c = read();
-    range.max = String(Math.max(1, Math.round(c.real)));
+    range.max = String(Math.max(1, Math.round(Math.max(0, c.real - c.term))));
     if (+range.value > +range.max) range.value = range.max;
     c.days = +range.value;
     range.style.setProperty('--p', `${(c.days / +range.max) * 100}%`);
@@ -44,6 +44,9 @@ export function init(form: HTMLElement) {
     out('freedL').textContent = lang === 'en' ? `Cash freed if your clients pay ${c.days} days sooner` : `Trésorerie libérée si vos clients paient ${c.days} jours plus tôt`;
     out('freed').textContent = fmtF(R.freed, lang);
     out('cost').textContent = fmtF(R.yearlyCost, lang);
+    out('saved').textContent = fmtF(R.saved, lang);
+    out('savedL').textContent = lang === 'en' ? `Overdraft interest saved per year with these ${c.days} days` : `Agios économisés par an grâce à ces ${c.days} jours`;
+    range.disabled = R.late <= 0;
     out('pct').textContent = `${Math.round(R.absorbed * 100)} %`;
     form.querySelector<HTMLElement>('.tank')!.style.setProperty('--lvl', String(R.absorbed));
     const msg = message(c, lang);

@@ -10,7 +10,7 @@ lang: "fr"
 translationKey: "calculer-delai-moyen-paiement"
 tool: "calculateur"
 guide: "balance-agee"
-draft: true
+draft: false
 ---
 
 Le délai moyen de paiement est le chiffre qui résume votre encaissement. Il se calcule en trois minutes à partir de deux montants que votre comptabilité connaît déjà.

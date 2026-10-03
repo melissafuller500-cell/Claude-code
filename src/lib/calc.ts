@@ -5,13 +5,16 @@ export const CALC_DEFAULTS: CalcInput = { bill: 10_000_000, real: 60, term: 30, 
 export function compute(c: CalcInput) {
   const perDay = c.bill / 30;
   const late = Math.max(0, c.real - c.term);
-  const days = Math.min(c.days, Math.max(0, c.real));
+  // On ne peut pas gagner plus de jours que le retard : au mieux, les clients paient à l'échéance du contrat.
+  const days = Math.min(c.days, late);
   return {
     locked: perDay * c.real,
     lateAmount: perDay * late,
     freed: perDay * days,
     yearlyCost: (perDay * late * c.rate) / 100,
-    absorbed: late > 0 ? Math.min(1, days / late) : 1,
+    /** Agios économisés chaque année grâce aux jours gagnés. */
+    saved: (perDay * days * c.rate) / 100,
+    absorbed: late > 0 ? days / late : 1,
     projected: Math.max(c.term, c.real - days),
     late,
     days,

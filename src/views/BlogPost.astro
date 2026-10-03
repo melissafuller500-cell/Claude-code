@@ -35,7 +35,7 @@ const iso = (x: Date) => x.toISOString().slice(0, 10);
 ---
 <Base {lang} title={d.title} description={d.description} {path} {alternates} ogType="article" published={d.pubDate} modified={d.updatedDate}
   crumbs={crumbs(lang, ['blog'], [{ name: cat.name, url: `${BLOG_CATEGORY_BASE[lang]}${cat.slug}/` }, { name: d.title, url: path }])} section="blog"
-  jsonLd={[article({ type: 'BlogPosting', title: d.title, description: d.description, url: path, image: ogFor(path), lang, published: d.pubDate, modified: d.updatedDate })]}>
+  jsonLd={[article({ type: 'BlogPosting', title: d.title, description: d.description, url: path, image: ogFor(path), lang, published: d.pubDate, modified: d.updatedDate, keywords: d.tags, section: cat.name, wordCount: (entry.body ?? '').split(/\s+/).length })]}>
   <article class="wrap post">
     <header class="ph">
       <p class="eyebrow"><a href={`${BLOG_CATEGORY_BASE[lang]}${cat.slug}/`}>{cat.name}</a></p>

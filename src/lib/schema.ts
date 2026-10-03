@@ -23,6 +23,18 @@ export function organization(lang: Lang) {
     address: { '@type': 'PostalAddress', addressCountry: SITE.country },
     email: SITE.email,
     telephone: '+' + SITE.whatsapp.number,
+    contactPoint: [{
+      '@type': 'ContactPoint',
+      contactType: lang === 'en' ? 'customer service' : 'service client',
+      email: SITE.email,
+      telephone: '+' + SITE.whatsapp.number,
+      availableLanguage: ['French', 'English'],
+      areaServed: SITE.country,
+    }],
+    knowsAbout: lang === 'en'
+      ? ['Late payment', 'Accounts receivable', 'Debt collection', 'Payment terms', 'Aging report', 'OHADA payment order', 'SME cash flow']
+      : ['Retards de paiement', 'Créances clients', 'Recouvrement amiable', 'Conditions de paiement', 'Balance âgée', 'Injonction de payer OHADA', 'Trésorerie des PME'],
+    slogan: lang === 'en' ? 'Get paid faster.' : 'Encaissez plus vite.',
     founder: { '@id': PERSON_ID },
     knowsLanguage: ['fr', 'en'],
     ...(SITE.sameAs.length ? { sameAs: SITE.sameAs } : {}),
@@ -81,6 +93,9 @@ export function faqPage(items: QA[], lang: Lang) {
 
 type ArticleInput = {
   type: 'BlogPosting' | 'Article';
+  keywords?: string[];
+  section?: string;
+  wordCount?: number;
   title: string;
   description: string;
   url: string;
@@ -102,6 +117,10 @@ export function article(a: ArticleInput) {
     dateModified: (a.modified ?? a.published).toISOString().slice(0, 10),
     author: { '@id': PERSON_ID, '@type': 'Person', name: SITE.founder.name, url: abs(a.lang === 'en' ? '/en/about/' : '/a-propos/') },
     publisher: { '@id': ORG_ID },
+    isPartOf: { '@id': SITE_ID },
+    ...(a.keywords?.length ? { keywords: a.keywords.join(', ') } : {}),
+    ...(a.section ? { articleSection: a.section } : {}),
+    ...(a.wordCount ? { wordCount: a.wordCount } : {}),
   };
 }
 

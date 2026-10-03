@@ -10,7 +10,7 @@ lang: "fr"
 translationKey: "relances-whatsapp"
 tool: "relances"
 guide: "balance-agee"
-draft: true
+draft: false
 ---
 
 Au Cameroun, WhatsApp est souvent le canal le plus rapide pour joindre un client, y compris pour parler d’argent. C’est un atout : le message est lu, la réponse arrive vite. C’est aussi un piège : une relance improvisée, envoyée un soir d’agacement, abîme la relation sans faire avancer le paiement. Cet article explique comment transformer WhatsApp en outil de relance organisé, avec un calendrier, des messages types et des règles simples.

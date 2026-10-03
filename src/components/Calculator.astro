@@ -15,8 +15,8 @@ const t = useUI(lang);
 const R = compute(D);
 const en = lang === 'en';
 const L = en
-  ? { bill: 'Monthly B2B invoicing', real: 'Actual payment time', term: 'Contract terms', rate: 'Your overdraft rate (yearly)', days: 'Days gained', slider: 'Move the slider: every day gained raises the level.', locked: 'Cash tied up at your clients’', late: 'Of which, due to late payment', freed: (d: number) => `Cash freed if your clients pay ${d} days sooner`, cost: 'Yearly cost of the delay if financed by overdraft', tank: 'Delay absorbed', est: 'Estimate based on your figures. Not a promised result. Nothing is saved.', wa: 'Send this calculation to Noé on WhatsApp', full: 'Open the full calculator', results: 'Results' }
-  : { bill: 'Facturation B2B par mois', real: 'Délai réel de paiement', term: 'Délai prévu au contrat', rate: 'Votre taux de découvert (annuel)', days: 'Jours gagnés', slider: 'Déplacez le curseur : chaque jour gagné fait monter le niveau.', locked: 'Trésorerie immobilisée chez vos clients', late: 'Dont part due au retard', freed: (d: number) => `Trésorerie libérée si vos clients paient ${d} jours plus tôt`, cost: 'Coût annuel du retard s’il est financé par découvert', tank: 'Retard résorbé', est: 'Estimation à partir de vos chiffres. Ce n’est pas un résultat promis. Rien n’est enregistré.', wa: 'Envoyer ce calcul à Noé sur WhatsApp', full: 'Ouvrir le calculateur complet', results: 'Résultats' };
+  ? { bill: 'Monthly B2B invoicing, incl. VAT', billH: 'What your clients owe you, VAT included. From a pre-VAT figure, multiply by about 1.19.', realH: 'Average of your last 20 paid invoices, weighted by amount.', termH: 'If nothing is written, enter what you allow in practice.', howS: 'How to measure your actual payment time', how: ['Take your last 20 paid invoices.', 'For each one, count the days between the invoice date and the date the money arrived.', 'Weight by amount: a 6 M invoice counts more than a 300,000 one.'], howF: 'Actual time = Σ (amount × days) ÷ Σ amounts', howN: 'Note the slowest clients as you go: that is usually where the money sleeps.', saved: (d: number) => `Overdraft interest saved per year with these ${d} days`, insightK: 'Averages hide the spread.', insight: '60 days on average can mean 12 clients paying at 30 days and 3 at 150. In that case, the lever is not “everyone pays sooner”: it is dealing with those 3 clients. The diagnostic identifies them.', real: 'Actual payment time', term: 'Contract terms', rate: 'Your overdraft rate (yearly)', days: 'Days gained', slider: 'Move the slider: every day of delay absorbed raises the level. At most, your clients pay on the contract due date.', locked: 'Cash tied up at your clients’', late: 'Of which, due to late payment', freed: (d: number) => `Cash freed if your clients pay ${d} days sooner`, cost: 'Yearly cost of the whole delay if financed by overdraft', tank: 'Delay absorbed', est: 'Estimate based on your figures. Not a promised result. Nothing is saved.', wa: 'Send this calculation to Noé on WhatsApp', full: 'Open the full calculator', results: 'Results' }
+  : { bill: 'Facturation B2B par mois, TTC', billH: 'Ce que vos clients vous doivent, TVA comprise. Depuis un montant HT, multipliez par 1,19 environ.', realH: 'Moyenne de vos 20 dernières factures encaissées, pondérée par le montant.', termH: 'Si rien n’est écrit, indiquez le délai que vous accordez en pratique.', howS: 'Comment mesurer votre délai réel', how: ['Prenez vos 20 dernières factures encaissées.', 'Pour chacune, comptez les jours entre la date de facture et la date d’encaissement.', 'Pondérez par le montant : une facture de 6 M pèse plus qu’une facture de 300 000.'], howF: 'Délai réel = Σ (montant × jours) ÷ Σ montants', howN: 'Notez au passage les clients les plus lents : c’est souvent là que l’argent dort.', saved: (d: number) => `Agios économisés par an grâce à ces ${d} jours`, insightK: 'La moyenne cache la répartition.', insight: '60 jours en moyenne peuvent venir de 12 clients à 30 jours et de 3 clients à 150 jours. Dans ce cas, le levier n’est pas « tout le monde paie plus tôt » : c’est traiter ces 3 clients. Le diagnostic les identifie.', real: 'Délai réel de paiement', term: 'Délai prévu au contrat', rate: 'Votre taux de découvert (annuel)', days: 'Jours gagnés', slider: 'Déplacez le curseur : chaque jour de retard résorbé fait monter le niveau. Au maximum, vos clients paient à l’échéance du contrat.', locked: 'Trésorerie immobilisée chez vos clients', late: 'Dont part due au retard', freed: (d: number) => `Trésorerie libérée si vos clients paient ${d} jours plus tôt`, cost: 'Coût annuel de tout le retard s’il est financé par découvert', tank: 'Retard résorbé', est: 'Estimation à partir de vos chiffres. Ce n’est pas un résultat promis. Rien n’est enregistré.', wa: 'Envoyer ce calcul à Noé sur WhatsApp', full: 'Ouvrir le calculateur complet', results: 'Résultats' };
 const msg = en
   ? `Hello Noé, here is my calculation:\n- Monthly B2B invoicing: ${fmtF(D.bill, lang)}\n- Actual payment time: ${D.real} d (contract: ${D.term} d)\n- Cash tied up: ${fmtF(R.locked, lang)}\n- Of which due to late payment: ${fmtF(R.lateAmount, lang)}\n- Freed if clients pay ${D.days} d sooner: ${fmtF(R.freed, lang)}\nI'd like to book the free 45-min diagnostic.`
   : `Bonjour Noé, voici mon calcul :\n- Facturation B2B mensuelle : ${fmtF(D.bill, lang)}\n- Délai réel : ${D.real} j (contrat : ${D.term} j)\n- Trésorerie immobilisée : ${fmtF(R.locked, lang)}\n- Dont part due au retard : ${fmtF(R.lateAmount, lang)}\n- Libérée si mes clients paient ${D.days} j plus tôt : ${fmtF(R.freed, lang)}\nJe souhaite réserver le diagnostic gratuit de 45 min.`;
@@ -26,25 +26,36 @@ const pct = Math.round(R.absorbed * 100);
   <div class="panel in">
     <div class="field">
       <label for={`cBill-${lang}`}>{L.bill}</label>
-      <div class="unit" data-u="FCFA"><input class="input mono" type="text" id={`cBill-${lang}`} name="bill" inputmode="numeric" value={fmtN(D.bill, lang)} autocomplete="off" /></div>
+      <div class="unit" data-u="FCFA"><input class="input mono" type="text" id={`cBill-${lang}`} name="bill" inputmode="numeric" value={fmtN(D.bill, lang)} autocomplete="off" aria-describedby={`hBill-${lang}`} /></div>
+      <span class="hint" id={`hBill-${lang}`}>{L.billH}</span>
     </div>
     <div class="two">
       <div class="field">
         <label for={`cReal-${lang}`}>{L.real}</label>
-        <div class="unit" data-u={t.days}><input class="input mono" type="text" id={`cReal-${lang}`} name="real" inputmode="numeric" value={D.real} autocomplete="off" /></div>
+        <div class="unit" data-u={t.days}><input class="input mono" type="text" id={`cReal-${lang}`} name="real" inputmode="numeric" value={D.real} autocomplete="off" aria-describedby={`hReal-${lang}`} /></div>
+        <span class="hint" id={`hReal-${lang}`}>{L.realH}</span>
       </div>
       <div class="field">
         <label for={`cTerm-${lang}`}>{L.term}</label>
-        <div class="unit" data-u={t.days}><input class="input mono" type="text" id={`cTerm-${lang}`} name="term" inputmode="numeric" value={D.term} autocomplete="off" /></div>
+        <div class="unit" data-u={t.days}><input class="input mono" type="text" id={`cTerm-${lang}`} name="term" inputmode="numeric" value={D.term} autocomplete="off" aria-describedby={`hTerm-${lang}`} /></div>
+        <span class="hint" id={`hTerm-${lang}`}>{L.termH}</span>
       </div>
     </div>
+    <details class="how">
+      <summary>{L.howS}</summary>
+      <div>
+        <ol>{L.how.map((x) => <li>{x}</li>)}</ol>
+        <code>{L.howF}</code>
+        <p>{L.howN}</p>
+      </div>
+    </details>
     <div class="field">
       <label for={`cRate-${lang}`}>{L.rate}</label>
       <div class="unit" data-u="%"><input class="input mono" type="text" id={`cRate-${lang}`} name="rate" inputmode="decimal" value={D.rate} autocomplete="off" /></div>
     </div>
     <div class="field">
       <label for={`cDays-${lang}`} class="row-lbl"><span>{L.days}</span><b data-out="daysV">{D.days} {t.days}</b></label>
-      <input type="range" id={`cDays-${lang}`} name="days" min="0" max={D.real} value={D.days} style={`--p:${(D.days / D.real) * 100}%`} aria-describedby={`cDaysH-${lang}`} />
+      <input type="range" id={`cDays-${lang}`} name="days" min="0" max={R.late} value={D.days} style={`--p:${(D.days / R.late) * 100}%`} aria-describedby={`cDaysH-${lang}`} />
       <span class="small" id={`cDaysH-${lang}`}>{L.slider}</span>
     </div>
   </div>
@@ -54,6 +65,7 @@ const pct = Math.round(R.absorbed * 100);
       <div class="res"><dt>{L.locked}</dt><dd class="num" data-out="locked">{fmtF(R.locked, lang)}</dd></div>
       <div class="res"><dt>{L.late}</dt><dd class="num" data-out="late">{fmtF(R.lateAmount, lang)}</dd></div>
       <div class="res hl"><dt data-out="freedL">{L.freed(D.days)}</dt><dd class="num" data-out="freed">{fmtF(R.freed, lang)}</dd></div>
+      <div class="res save"><dt data-out="savedL">{L.saved(D.days)}</dt><dd class="num" data-out="saved">{fmtF(R.saved, lang)}</dd></div>
       <div class="res bad"><dt>{L.cost}</dt><dd class="num" data-out="cost">{fmtF(R.yearlyCost, lang)}</dd></div>
     </dl>
     <div class="tank" style={`--lvl:${R.absorbed}`} aria-hidden="true">
@@ -61,6 +73,7 @@ const pct = Math.round(R.absorbed * 100);
       <i></i>
       <span class="lbl">{L.tank}</span>
     </div>
+    <p class="insight"><b class="big3">3/15</b><span><strong>{L.insightK}</strong> {L.insight}</span></p>
     <p class="sr-only" role="status" aria-live="polite" data-out="live"></p>
     <div class="foot">
       <p class="small">{L.est}</p>
@@ -99,6 +112,16 @@ const pct = Math.round(R.absorbed * 100);
   .res dd { margin: 0; font: 800 clamp(22px, 2.4vw, 30px)/1.15 var(--f-display); font-stretch: 108%; }
   .res.hl dd { color: var(--leaf); font-size: clamp(28px, 3.2vw, 40px); }
   .res.bad dd { color: var(--late); }
+  .res.save dd { color: var(--spark); }
+  .hint { font-size: 14px; color: var(--ink-mute); line-height: 1.45; }
+  .how { border: 1px solid var(--line); border-radius: 14px; background: var(--night); }
+  .how summary { cursor: pointer; padding: 12px 16px; min-height: 44px; font: 600 15px var(--f-text); color: var(--ink-soft); }
+  .how > div { padding: 0 16px 16px; display: grid; gap: 10px; font-size: 15px; color: var(--ink-soft); }
+  .how ol { padding-left: 18px; display: grid; gap: 6px; }
+  .how code { font: 500 14px var(--f-mono); color: var(--leaf); background: var(--forest-2); padding: 8px 10px; border-radius: 8px; overflow-x: auto; white-space: nowrap; }
+  .insight { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; background: rgba(90, 180, 255, 0.07); border: 1px solid rgba(90, 180, 255, 0.28); border-radius: var(--r-m); padding: 16px 18px; font-size: 15px; color: var(--ink-soft); }
+  .insight .big3 { font: 900 30px/1 var(--f-display); font-stretch: 118%; color: var(--spark); }
+  .insight strong { color: var(--ink); }
   .tank { position: relative; border-radius: 60px; border: 1px solid var(--line-2); background: var(--night); overflow: hidden; min-height: 280px; }
   .tank i { position: absolute; left: 0; right: 0; bottom: 0; height: calc(max(0.04, var(--lvl)) * 100%); background: linear-gradient(#c9ee8f, var(--leaf) 30%, #3e6a2a); transition: height 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
   .tank .pct { position: absolute; top: 16px; left: 0; right: 0; text-align: center; font: 700 18px var(--f-mono); z-index: 2; }

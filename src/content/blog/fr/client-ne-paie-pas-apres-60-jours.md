@@ -10,7 +10,7 @@ lang: "fr"
 translationKey: "client-ne-paie-pas-60-jours"
 tool: "relances"
 guide: "balance-agee"
-draft: true
+draft: false
 ---
 
 À 60 jours de retard, une facture entre dans la tranche où elle devient difficile à faire payer. Les rappels courtois ont été envoyés ; ils n’ont pas suffi. Ce n’est pas le moment de relancer plus souvent, mais de relancer **plus haut** et **plus précisément**.

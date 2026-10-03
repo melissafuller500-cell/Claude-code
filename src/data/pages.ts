@@ -9,13 +9,13 @@ export type PageMeta = { title: string; description: string; crumb: string; og?:
 export const PAGES: Record<RouteKey, Record<Lang, PageMeta>> = {
   home: {
     fr: {
-      title: 'Noé Tech Growth · Encaissez plus vite',
+      title: 'Retards de paiement des PME au Cameroun · Noé Tech Growth',
       crumb: 'Accueil',
       og: 'Encaissez plus vite.',
       description: 'PME B2B au Cameroun : contrats solides, suivi des impayés, relances à date fixe pour encaisser plus vite. Diagnostic gratuit de 45 minutes, prix affichés.',
     },
     en: {
-      title: 'Noé Tech Growth · Get paid faster',
+      title: 'Late payment for SMEs in Cameroon · Noé Tech Growth',
       crumb: 'Home',
       og: 'Get paid faster.',
       description: 'B2B SMEs in Cameroon: solid contracts, tracking of unpaid invoices and reminders on fixed dates to get paid faster. Free 45-minute diagnostic, clear prices.',

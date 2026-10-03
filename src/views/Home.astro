@@ -16,6 +16,9 @@ import { BENCHMARK, PROOFS } from '../data/editorial';
 import { METHOD, PAYMENT_METHODS } from '../data/offers';
 import { SITE } from '../data/site';
 import { faqPage } from '../lib/schema';
+import ArticleCard from '../components/ArticleCard.astro';
+import { published, byDateDesc } from '../lib/content';
+import { entryUrl } from '../i18n/routes';
 import { useUI } from '../i18n/ui';
 import { r, type Lang } from '../i18n/routes';
 
@@ -33,6 +36,7 @@ const C = en ? {
   tag: 'Profitable on paper. Short on cash.',
   lead: 'Solid contracts, weekly tracking of unpaid invoices and reminders on fixed dates. One result is measured: the number of days your clients take to pay.',
   second: 'What late payments cost you',
+  proof: ['Prices shown upfront', 'Excel + WhatsApp, no software to buy', 'Measured every month'],
   portraitAlt: 'Noé Mbwang, founder of Noé Tech Growth',
   fitH: 'Built for companies that invoice other companies.',
   fitLead: 'For owners and managers of SMEs with 10 to 50 employees that invoice other businesses, wherever they are in Cameroon.',
@@ -81,6 +85,7 @@ const C = en ? {
   tag: 'Rentable sur le papier. À court de trésorerie.',
   lead: 'Des contrats solides, un suivi des impayés chaque semaine, des relances à date fixe. Un seul résultat mesuré : le nombre de jours que vos clients mettent à payer.',
   second: 'Calculer ce que les retards vous coûtent',
+  proof: ['Prix affichés', 'Excel + WhatsApp, aucun logiciel à acheter', 'Mesuré chaque mois'],
   portraitAlt: 'Noé Mbwang, fondateur de Noé Tech Growth',
   fitH: 'Fait pour les entreprises qui facturent d’autres entreprises.',
   fitLead: 'Pour les dirigeants et gérants de PME de 10 à 50 employés qui facturent d’autres entreprises, où que vous soyez au Cameroun.',
@@ -130,10 +135,17 @@ const icons = [
   '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',
 ];
 const maxBar = Math.max(...B.bars.map((b) => b.value));
+const sectors = (await published('secteurs', lang)).sort((a, b) => a.data.order - b.data.order);
+const posts = (await published('blog', lang)).sort(byDateDesc).slice(0, 3);
+const ROUTES_BLOG = r('blog', lang);
+const P = en
+  ? { pick: 'Your sector in 10 seconds', pickL: 'Choose your sector', more: (n: string) => `Where the money gets stuck in ${n.toLowerCase()}`, blogH: 'Latest articles', blogAll: 'All articles' }
+  : { pick: 'Votre secteur en 10 secondes', pickL: 'Choisissez votre secteur', more: (n: string) => `Où l’argent se bloque : ${n}`, blogH: 'Derniers articles', blogAll: 'Tous les articles' };
 ---
 <Base {lang} title={meta.title} description={meta.description} {path} alternates={{ fr: '/', en: '/en/' }} withPerson jsonLd={[faqPage(FAQ_HOME, lang)]}>
   <!-- 1. Hero -->
-  <section class="hero">
+  <section class="hero" data-hero>
+    <canvas class="flux" data-flux aria-hidden="true"></canvas>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">{C.eyebrow}</p>
@@ -144,8 +156,9 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
           <a class="btn" href="#contact" data-track="cta_click" data-src="hero">{t.cta}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
           <a class="btn ghost" href="#calculateur">{C.second}</a>
         </div>
+        <ul class="proof">{C.proof.map((x) => <li>{x}</li>)}</ul>
       </div>
-      <HeroPortrait alt={C.portraitAlt} />
+      <HeroPortrait alt={C.portraitAlt} {lang} />
     </div>
   </section>
 
@@ -160,6 +173,23 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
         <div class="yes rv"><h3>{C.yesH}</h3><ul>{C.yes.map((x) => <li>{x}</li>)}</ul></div>
         <div class="no rv"><h3>{C.noH}</h3><ul>{C.no.map((x) => <li>{x}</li>)}</ul></div>
       </div>
+      {sectors.length > 0 && (
+        <div class="picker rv">
+          <h3 class="pk-h">{P.pick}</h3>
+          <fieldset class="pk-tabs">
+            <legend class="sr-only">{P.pickL}</legend>
+            {sectors.map((sec, i) => (
+              <label><input type="radio" name="pk-sector" value={String(i)} checked={i === 0} /><span>{sec.data.name}</span></label>
+            ))}
+          </fieldset>
+          {sectors.map((sec, i) => (
+            <div class="pk-panel" data-i={i}>
+              <p>{sec.data.answer}</p>
+              <a class="arrow-link" href={entryUrl('secteurs', sec.id)}>{P.more(sec.data.name)}</a>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </section>
 
@@ -211,7 +241,7 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
       </div>
       <ol class="chs">
         {C.ch.map((c, i) => (
-          <li class="ch rv">
+          <li class="ch rv" data-step={i}>
             <span class="when">{String(i + 1).padStart(2, '0')} · {c.when}</span>
             <h3>{c.h}</h3>
             <p class="muted">{c.p}</p>
@@ -226,7 +256,7 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
   {BENCHMARK.show && (
     <section class="sec band" id="repere" aria-labelledby="repere-h">
       <div class="wrap stat">
-        <p class="big num" aria-hidden="true">{BENCHMARK.value}<small>+ {t.days}</small></p>
+        <p class="big num" aria-hidden="true"><span class="count">{BENCHMARK.value}</span><small>+ {t.days}</small></p>
         <div>
           <p class="eyebrow">{C.benchEyebrow}</p>
           <h2 id="repere-h">{B.title}</h2>
@@ -291,6 +321,19 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
     </div>
   </section>
 
+  <!-- Derniers articles : maillage interne et fraîcheur -->
+  {posts.length > 0 && (
+    <section class="sec-tight" aria-labelledby="blog-h">
+      <div class="wrap">
+        <div class="blog-head">
+          <h2 id="blog-h">{P.blogH}</h2>
+          <a class="arrow-link" href={ROUTES_BLOG}>{P.blogAll}</a>
+        </div>
+        <div class="cards">{posts.map((post) => <ArticleCard {post} level="h3" />)}</div>
+      </div>
+    </section>
+  )}
+
   <!-- 10. FAQ (6 questions) -->
   <section class="sec" id="faq" aria-labelledby="faq-h">
     <div class="wrap">
@@ -313,8 +356,25 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
   </section>
 </Base>
 
+<script>
+  // Le hero animé démarre après le chargement complet, pendant un moment d'inactivité du navigateur.
+  const go = () => {
+    const el = document.querySelector<HTMLElement>('[data-hero]');
+    if (el) import('../scripts/hero').then((m) => m.init(el));
+  };
+  const idle = (cb: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(cb, { timeout: 2500 }) : setTimeout(cb, 600));
+  // Démarrage différé : la page est d'abord affichée et utilisable, l'animation vient ensuite.
+  const later = () => setTimeout(() => idle(go), 1800);
+  if (document.readyState === 'complete') later();
+  else addEventListener('load', later, { once: true });
+</script>
+
 <style>
-  .hero { background: radial-gradient(120% 90% at 80% 30%, #14341f 0%, var(--night) 62%); overflow: hidden; }
+  .hero { position: relative; isolation: isolate; background: radial-gradient(120% 90% at 80% 30%, #14341f 0%, var(--night) 62%); overflow: hidden; }
+  .flux { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+  .proof { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; color: var(--ink-soft); }
+  .proof li { display: inline-flex; align-items: center; gap: 8px; }
+  .proof li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf); }
   .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: center; gap: clamp(24px, 4vw, 64px); padding-block: clamp(32px, 6vw, 80px) clamp(48px, 7vw, 96px); }
   .hero-copy { display: grid; gap: 22px; min-width: 0; }
   .hero h1 { font-size: clamp(52px, 8vw, 112px); font-weight: 900; font-stretch: 120%; letter-spacing: -0.035em; line-height: 0.92; }
@@ -327,6 +387,26 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
   .fit .yes { background: var(--forest); border: 1px solid var(--line); }
   .fit .no { border: 1px dashed var(--line-2); }
   .fit h3 { margin-bottom: 18px; font-size: 22px; }
+  .picker { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(20px, 3vw, 28px); display: grid; gap: 16px; background: linear-gradient(160deg, rgba(27, 65, 40, 0.5), transparent 70%); }
+  .pk-h { font-size: 22px; }
+  .pk-tabs { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .pk-tabs label { position: relative; }
+  .pk-tabs input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  .pk-tabs span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink-soft); font-size: 15px; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+  .pk-tabs label:hover span { color: var(--ink); border-color: var(--leaf); }
+  .pk-tabs input:checked + span { background: var(--leaf); color: var(--on-leaf); border-color: var(--leaf); }
+  .pk-tabs input:focus-visible + span { outline: 2px solid var(--spark); outline-offset: 3px; }
+  .pk-panel { display: none; gap: 10px; max-width: 72ch; }
+  .pk-panel p { color: var(--ink-soft); font-size: 17px; }
+  .picker:has(input[value='0']:checked) .pk-panel[data-i='0'],
+  .picker:has(input[value='1']:checked) .pk-panel[data-i='1'],
+  .picker:has(input[value='2']:checked) .pk-panel[data-i='2'],
+  .picker:has(input[value='3']:checked) .pk-panel[data-i='3'],
+  .picker:has(input[value='4']:checked) .pk-panel[data-i='4'],
+  .picker:has(input[value='5']:checked) .pk-panel[data-i='5'] { display: grid; animation: pk-in 0.35s ease; }
+  @keyframes pk-in { from { opacity: 0; transform: translateY(6px); } }
+  @supports not selector(:has(*)) { .pk-panel { display: grid; margin-top: 8px; } }
+  .blog-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
   .fit ul { list-style: none; padding: 0; display: grid; gap: 12px; }
   .fit li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; }
   .fit .yes li::before { content: ''; width: 12px; height: 7px; margin-top: 8px; border: 2px solid var(--leaf); border-top: 0; border-right: 0; transform: rotate(-45deg); }
@@ -358,6 +438,18 @@ const maxBar = Math.max(...B.bars.map((b) => b.value));
 
   .stat { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(28px, 6vw, 88px); align-items: center; }
   .big { font: 900 clamp(110px, 18vw, 250px)/0.8 var(--f-display); font-stretch: 125%; letter-spacing: -0.05em; display: flex; align-items: flex-start; }
+  /* Compteur 0 → 200 et barres qui se remplissent au défilement : CSS seul, sans JavaScript. */
+  @property --n { syntax: '<integer>'; inherits: false; initial-value: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .count { font-size: 0; counter-reset: n var(--n); animation: count-up linear both; }
+      .count::after { content: counter(n); font-size: clamp(110px, 18vw, 250px); }
+      .bar i { transform-origin: left; animation: bar-grow linear both; }
+      .big .count, .cmp .bar i { animation-timeline: view(); animation-range: entry 0% entry 100%; }
+    }
+  }
+  @keyframes count-up { from { --n: 0; } to { --n: 200; } }
+  @keyframes bar-grow { from { transform: scaleX(0); } }
   .big small { font-size: 0.26em; color: var(--late); margin: 0.12em 0 0 0.08em; letter-spacing: -0.01em; }
   .stat h2 { font-size: clamp(26px, 3vw, 40px); margin: 16px 0; }
   .cmp { list-style: none; padding: 0; display: grid; gap: 12px; margin-top: 24px; max-width: 560px; }

@@ -35,11 +35,13 @@
   descent-override: 24%;
 }
 @font-face {
+  /* Métriques calculées sur Instrument Sans vs Arial/Liberation Sans : évite le saut de ligne au chargement. */
   font-family: 'Instrument Fallback';
-  src: local('Arial');
-  size-adjust: 97%;
-  ascent-override: 98%;
-  descent-override: 26%;
+  src: local('Arial'), local('Liberation Sans'), local('Helvetica'), local('Roboto');
+  size-adjust: 101.1%;
+  ascent-override: 96%;
+  descent-override: 24.7%;
+  line-gap-override: 0%;
 }
 
 :root {
@@ -169,6 +171,7 @@ ul, ol { margin: 0; }
   font: 600 16px/1.25 var(--f-text); text-decoration: none; text-align: center; cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
   box-shadow: 0 10px 24px -12px rgba(163, 214, 92, 0.55);
+  text-wrap: balance;
 }
 .btn:hover { background: #b6e374; }
 .btn svg { width: 18px; height: 18px; flex: none; transition: transform 0.25s; }
@@ -282,7 +285,9 @@ textarea.input { min-height: 120px; resize: vertical; line-height: 1.5; }
 /* ---------- apparition douce au défilement : CSS seul, aucun JavaScript ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .rv { animation: rv-in linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    .rv { animation: rv-in linear both; }
+    /* Sélecteur distinct : empêche le minifieur de fusionner animation-timeline dans le raccourci (invalide). */
+    .rv.rv { animation-timeline: view(); animation-range: entry 0% entry 60%; }
   }
 }
 @keyframes rv-in { from { opacity: 0; transform: translateY(24px); } }
@@ -321,3 +326,9 @@ textarea.input { min-height: 120px; resize: vertical; line-height: 1.5; }
 .ctabox-md .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
 .prose .ctabox-md a.btn { color: var(--on-leaf); text-decoration: none; }
 .prose .ctabox-md a.btn.ghost { color: var(--ink); }
+
+/* ---------- micro-interactions (survol) ---------- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .card, .ch, .leak, .offer { transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.2s, box-shadow 0.25s; }
+  .card:hover, .offer:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -24px rgba(163, 214, 92, 0.35); }
+}

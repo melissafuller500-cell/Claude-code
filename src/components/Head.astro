@@ -22,7 +22,9 @@ interface Props {
 
 const { title, description, lang, path, alternates = {}, ogImage, ogType = 'website', noindex = false, published, modified } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
-const fullTitle = title.includes(SITE.name) ? title : `${title} · ${SITE.name}`;
+// La marque n'est ajoutée que si le titre reste court (≈ 65 caractères affichés par Google).
+const withBrand = `${title} · ${SITE.name}`;
+const fullTitle = title.includes(SITE.name) || withBrand.length > 65 ? title : withBrand;
 const ogUrl = new URL(ogImage, SITE.url).href;
 const hasTranslation = Boolean(alternates.fr && alternates.en);
 const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
