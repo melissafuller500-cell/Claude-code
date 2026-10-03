@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import CtaBox from '../components/CtaBox.astro';
 import Logo from '../components/Logo.astro';
@@ -34,7 +34,7 @@ const C = en ? {
   <div class="wrap about">
     <figure class="portrait">
       {brand.portrait
-        ? <Image src={brand.portrait} alt={C.photo} widths={[360, 560]} sizes="(max-width: 900px) 90vw, 440px" formats={['avif', 'webp']} />
+        ? <Picture src={brand.portrait} alt={C.photo} widths={[360, 560]} sizes="(max-width: 900px) 90vw, 440px" formats={['avif', 'webp']} />
         : <div class="ph" aria-hidden="true"><Logo size={110} /></div>}
       <figcaption><b>Noé Mbwang</b><span>{C.founder}</span></figcaption>
     </figure>

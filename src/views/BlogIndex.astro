@@ -13,15 +13,17 @@ import { ogFor } from '../lib/og';
 import { useUI } from '../i18n/ui';
 import { ROUTES, BLOG_CATEGORY_BASE, type Lang } from '../i18n/routes';
 
-interface Props { lang: Lang; page: Page<CollectionEntry<'blog'>>; category?: CategoryKey; activeCategories: CategoryKey[] }
-const { lang, page, category, activeCategories } = Astro.props;
+interface Props { lang: Lang; page: Page<CollectionEntry<'blog'>>; category?: CategoryKey; activeCategories: CategoryKey[]; otherCategories?: CategoryKey[] }
+const { lang, page, category, activeCategories, otherCategories = [] } = Astro.props;
 const t = useUI(lang);
 const en = lang === 'en';
 const base = category ? `${BLOG_CATEGORY_BASE[lang]}${CATEGORIES[category][lang].slug}/` : ROUTES.blog[lang];
 const path = page.currentPage === 1 ? base : `${base}${page.currentPage}/`;
 const cat = category ? CATEGORIES[category][lang] : undefined;
 const other: Lang = en ? 'fr' : 'en';
-const alternates = page.currentPage === 1
+// Une catégorie n'a d'équivalent que si l'autre langue y publie aussi (pas de hreflang vers une page absente).
+const hasOther = !category || otherCategories.includes(category);
+const alternates = page.currentPage === 1 && hasOther
   ? { [lang]: base, [other]: category ? `${BLOG_CATEGORY_BASE[other]}${CATEGORIES[category][other].slug}/` : ROUTES.blog[other] }
   : undefined;
 const meta = PAGES.blog[lang];

@@ -14,11 +14,12 @@ export function init(form: HTMLFormElement) {
     if (from !== location.pathname) track('cta_click', { src: from });
   }
 
-  // Le résultat du calculateur accompagne le message, s'il existe.
-  try {
-    const saved = JSON.parse(sessionStorage.getItem('ntg-calc') || 'null');
-    if (saved?.msg && msg && !msg.value) msg.value = saved.msg.split('\n').slice(1, -1).join('\n');
-  } catch { /* rien */ }
+  // Le résultat du calculateur accompagne le message, tant que la personne ne l'a pas modifié.
+  let edited = false;
+  const fill = (full?: string) => { if (msg && full && !edited) msg.value = full.split('\n').slice(1, -1).join('\n'); };
+  try { fill(JSON.parse(sessionStorage.getItem('ntg-calc') || 'null')?.msg); } catch { /* rien */ }
+  msg?.addEventListener('input', () => (edited = true));
+  document.addEventListener('ntg:calc', () => { try { fill(JSON.parse(sessionStorage.getItem('ntg-calc') || 'null')?.msg); } catch { /* rien */ } });
 
   // Bouton flottant WhatsApp masqué quand le formulaire est à l'écran.
   const fab = document.getElementById('fab');

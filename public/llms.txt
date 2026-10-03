@@ -1,0 +1,34 @@
+# Noé Tech Growth
+
+> Noé Tech Growth aide les PME B2B du Cameroun à encaisser plus vite : contrats solides, suivi des impayés et relances à date fixe. Fondateur : Noé Mbwang. Diagnostic gratuit de 45 minutes ; offres à prix affichés en FCFA. Site en français, avec une version anglaise sous /en/.
+
+Le contenu est une information générale, pas un conseil juridique. Toutes les pages sont lisibles sans JavaScript.
+
+## Pages de référence
+
+- [Diagnostic gratuit de 45 minutes](https://noetechgrowth.com/diagnostic/): déroulé, préparation, formulaire
+- [Offres et prix](https://noetechgrowth.com/offres/): audit 50 000 FCFA, système dès 150 000 FCFA, suivi 35 000 FCFA/mois
+- [À propos de Noé Mbwang](https://noetechgrowth.com/a-propos/)
+
+## Guides
+
+- [Injonction de payer OHADA](https://noetechgrowth.com/guides/injonction-de-payer-ohada/): conditions, requête, signification sous 3 mois, opposition sous 10 jours (Acte uniforme révisé du 17 octobre 2023)
+- [Délai de paiement de l’État au Cameroun](https://noetechgrowth.com/guides/paiement-etat-cameroun/): engagement, liquidation, ordonnancement, paiement ; plus de 200 jours en 2025
+- [Balance âgée sur Excel](https://noetechgrowth.com/guides/balance-agee/): suivi hebdomadaire des impayés
+
+## Outils
+
+- [Calculateur du coût d’un retard de paiement](https://noetechgrowth.com/outils/calculateur-retard-paiement/)
+- [Test : votre contrat vous protège-t-il ?](https://noetechgrowth.com/outils/test-contrat/)
+- [Modèle de clause de conditions de paiement](https://noetechgrowth.com/outils/modele-conditions-paiement/)
+- [Calendrier et modèles de relance](https://noetechgrowth.com/outils/calendrier-relances/)
+
+## Ressources
+
+- [Secteurs](https://noetechgrowth.com/secteurs/): BTP, services, négoce, transport, agences et cabinets
+- [Glossaire](https://noetechgrowth.com/glossaire/)
+- [Blog](https://noetechgrowth.com/blog/) · [Flux RSS](https://noetechgrowth.com/rss.xml)
+
+## English
+
+- [Home](https://noetechgrowth.com/en/) · [Guides](https://noetechgrowth.com/en/guides/) · [Tools](https://noetechgrowth.com/en/tools/)

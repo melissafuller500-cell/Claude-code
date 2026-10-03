@@ -42,7 +42,7 @@ One line per invoice, with these columns:
 8. **Last contact**: date and name of the person
 9. **Next action**: what, who, when
 
-For the band, one formula is enough: `=IF(F2=0,"Not due",IF(F2<30,"< 30 d",IF(F2<60,"30-60 d",IF(F2<90,"60-90 d","> 90 d"))))`. A pivot table then gives the total by band and by client.
+For the band, one formula is enough: `=IF(F2=0,"Not due",IF(F2<30,"< 30 d",IF(F2<60,"30-60 d",IF(F2<90,"60-90 d","90 d +"))))`. A pivot table then gives the total by band and by client.
 
 For construction clients, add a line for each retention, with its release date: it is the money people most often forget to claim.
 

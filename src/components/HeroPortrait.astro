@@ -1,6 +1,6 @@
 ---
 /** Portrait détouré du hero sur fond simple. Sans fichier fourni, disque de marque neutre. */
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { brand } from '../lib/brand';
 import Logo from './Logo.astro';
 interface Props { alt: string }
@@ -9,7 +9,7 @@ const { alt } = Astro.props;
 <div class="stage">
   <div class="disc" aria-hidden="true"></div>
   {brand.cutout ? (
-    <Image src={brand.cutout} alt={alt} widths={[360, 520, 720]} sizes="(max-width: 900px) 78vw, 520px" formats={['avif', 'webp']} loading="eager" fetchpriority="high" class="cut" />
+    <Picture src={brand.cutout} alt={alt} widths={[360, 520, 720]} sizes="(max-width: 900px) 78vw, 520px" formats={['avif', 'webp']} loading="eager" fetchpriority="high" class="cut" />
   ) : (
     <div class="ph" aria-hidden="true"><Logo size={120} /></div>
   )}

@@ -78,6 +78,16 @@ async function deliver(env, d) {
   return sent;
 }
 
+/** Page d'erreur minimale pour les navigateurs sans JavaScript (le formulaire a été posté normalement). */
+function htmlError(lang, invalid) {
+  const en = lang === 'en';
+  const msg = invalid
+    ? (en ? 'Please go back and check your first name and your phone number or email.' : 'Revenez en arrière et vérifiez votre prénom et votre téléphone ou e-mail.')
+    : (en ? 'The message could not be sent. Please write to me on WhatsApp or by email instead.' : 'Le message n’a pas pu partir. Écrivez-moi plutôt sur WhatsApp ou par e-mail.');
+  const body = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Noé Tech Growth</title><style>body{margin:0;background:#06110B;color:#EDF3E6;font:18px/1.6 system-ui,sans-serif;padding:32px 16px}main{max-width:560px;margin:auto}a{color:#A3D65C}</style></head><body><main><h1>${en ? 'Something went wrong' : 'Un problème est survenu'}</h1><p>${msg}</p><p><a href="https://wa.me/237653400504">WhatsApp +237 653 40 05 04</a><br><a href="mailto:contact@noetechgrowth.com">contact@noetechgrowth.com</a></p><p><a href="${en ? '/en/diagnostic/' : '/diagnostic/'}">${en ? 'Back to the form' : 'Retour au formulaire'}</a></p></main></body></html>`;
+  return new Response(body, { status: invalid ? 422 : 502, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
+}
+
 export async function onRequestPost({ request, env }) {
   const wantsJson = (request.headers.get('accept') || '').includes('application/json');
   let raw;
@@ -85,12 +95,12 @@ export async function onRequestPost({ request, env }) {
   const { data, errors, spam } = validate(raw);
   const done = () => (wantsJson ? json({ ok: true }) : Response.redirect(new URL(THANKS[data.lang], request.url).href, 303));
   if (spam) return done(); // champ piège rempli : on fait semblant d'accepter
-  if (errors.length) return json({ ok: false, errors }, 422);
+  if (errors.length) return wantsJson ? json({ ok: false, errors }, 422) : htmlError(data.lang, true);
   try {
     await deliver(env, data);
   } catch (e) {
     console.error('diagnostic delivery failed', e);
-    return json({ ok: false, error: 'delivery_failed' }, 502);
+    return wantsJson ? json({ ok: false, error: 'delivery_failed' }, 502) : htmlError(data.lang, false);
   }
   return done();
 }

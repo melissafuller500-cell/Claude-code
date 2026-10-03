@@ -4,7 +4,7 @@ import { ROUTES } from '../i18n/routes';
 import { PAGES } from '../data/pages';
 const links = (['diagnostic', 'outils', 'offres', 'guides', 'blog'] as const).map((k) => ({ href: ROUTES[k].fr, label: PAGES[k].fr.crumb }));
 ---
-<Base lang="fr" title="Page introuvable" description="Cette page n’existe pas ou plus. Retrouvez le diagnostic gratuit de 45 minutes, les outils, les offres, les guides et le blog de Noé Tech Growth." path="/404/" noindex>
+<Base lang="fr" title="Page introuvable" description="Cette page n’existe pas ou plus. Retrouvez le diagnostic gratuit de 45 minutes, les outils, les offres, les guides et le blog de Noé Tech Growth." path="/404/" ogImage="/og/index.png" noindex>
   <section class="wrap sec nf">
     <p class="eyebrow">404</p>
     <h1>Cette page n’existe pas, ou plus.</h1>

@@ -42,7 +42,7 @@ Une ligne par facture, et ces colonnes :
 8. **Dernier contact** : date et nom de l’interlocuteur
 9. **Prochaine action** : quoi, qui, quand
 
-Pour la tranche, une formule suffit : `=SI(F2=0;"À échoir";SI(F2<30;"< 30 j";SI(F2<60;"30-60 j";SI(F2<90;"60-90 j";"> 90 j"))))`. Un tableau croisé dynamique donne ensuite le total par tranche et par client.
+Pour la tranche, une formule suffit : `=SI(F2=0;"À échoir";SI(F2<30;"< 30 j";SI(F2<60;"30-60 j";SI(F2<90;"60-90 j";"90 j et +"))))`. Un tableau croisé dynamique donne ensuite le total par tranche et par client.
 
 Pour les clients du BTP, ajoutez une ligne pour chaque retenue de garantie, avec sa date de libération : c’est l’argent qu’on oublie le plus souvent de réclamer.
 

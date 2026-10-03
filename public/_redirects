@@ -1,0 +1,37 @@
+# Redirections 301 de l'ancien site WordPress (section 4, phase 7).
+# Les URL réelles de l'ancien site n'étaient pas accessibles depuis l'environnement de build :
+# exporter son sitemap (ou la liste des pages de la Search Console) puis lancer
+#   node scripts/build-redirects.mjs ancien-sitemap.xml
+# pour ajouter une ligne par ancienne URL, au-dessus des règles génériques ci-dessous.
+
+# --- URL de l'ancien site (générées par scripts/build-redirects.mjs) ---
+
+# --- Règles génériques WordPress ---
+/index.php                 /                     301
+/wp-login.php              /                     301
+/wp-admin/*                /                     301
+/wp-content/*              /                     301
+/wp-includes/*             /                     301
+/wp-json/*                 /                     301
+/xmlrpc.php                /                     301
+/feed                      /rss.xml              301
+/feed/                     /rss.xml              301
+/comments/feed/            /rss.xml              301
+/category/*                /blog/                301
+/tag/*                     /blog/                301
+/author/*                  /a-propos/            301
+/page/*                    /                     301
+/sitemap.xml               /sitemap-index.xml    301
+/sitemap_index.xml         /sitemap-index.xml    301
+/wp-sitemap.xml            /sitemap-index.xml    301
+/contact                   /diagnostic/          301
+/contact/                  /diagnostic/          301
+/contactez-nous/           /diagnostic/          301
+/services/                 /offres/              301
+/nos-services/             /offres/              301
+/tarifs/                   /offres/              301
+/a-propos-de-nous/         /a-propos/            301
+/qui-sommes-nous/          /a-propos/            301
+/mentions-legales-2/       /mentions-legales/    301
+/politique-de-confidentialite/ /confidentialite/ 301
+/privacy-policy/           /confidentialite/     301

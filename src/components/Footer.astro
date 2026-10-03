@@ -35,7 +35,7 @@ const year = new Date().getFullYear();
     ))}
   </div>
   <div class="wrap bottom">
-    <span>© {year} {SITE.name} · {t.footer.about}</span>
+    <span>© {year} {SITE.name} · {SITE.areaServed[lang]}</span>
     <span class="legal">
       <a href={r('mentions', lang)}>{t.footer.legal}</a>
       <a href={r('confidentialite', lang)}>{t.footer.privacy}</a>

@@ -1,0 +1,12 @@
+# Configuration Cloudflare Pages (D3). Commande de build : npm run build · dossier de sortie : dist
+name = "noetechgrowth"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+# Événements de conversion (functions/api/event.js), sans cookie. Le dataset est créé à la première écriture.
+[[analytics_engine_datasets]]
+binding = "EVENTS"
+dataset = "ntg_events"
+
+# Les secrets du formulaire (RESEND_API_KEY, FORM_TO, FORM_FROM, FORM_WEBHOOK_URL) se définissent
+# dans le tableau de bord : Pages > noetechgrowth > Settings > Variables and Secrets. Jamais dans ce fichier.

@@ -1,0 +1,47 @@
+# noetechgrowth.com — robots.txt
+# Les robots de recherche et de citation des assistants IA sont explicitement autorisés (section 12).
+# Agents vérifiés en octobre 2026. Chaque groupe nommé remplace le groupe « * » pour ce robot :
+# la règle /api/ est donc répétée.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Moteurs de recherche
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+
+# Google (Gemini, AI Overviews)
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
+Sitemap: https://noetechgrowth.com/sitemap-index.xml
