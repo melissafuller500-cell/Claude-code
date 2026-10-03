@@ -97,6 +97,10 @@ Client : [Nom du client] | Facture : F-[N] | Montant : [montant] FCFA | Envoyée
 - **Oublier les paiements partiels.** Le reste dû doit apparaître sur sa propre ligne, avec la même ancienneté que la facture d’origine.
 - **Tenir le tableau à plusieurs.** Deux versions du même fichier, c’est deux vérités différentes.
 
+## Que faire des factures contestées ?
+
+Une facture contestée ne se relance pas comme une facture simplement en retard. Ajoutez une colonne « litige » : le motif (quantité, qualité, prix, pièce manquante), la personne qui s’en occupe et la date à laquelle le point doit être réglé. Tant que le litige est ouvert, la relance porte sur sa résolution, pas sur le paiement. Une fois réglé, la facture reprend sa place dans sa tranche, avec son ancienneté d’origine. Un litige qui dure plus de quinze jours sans réponse doit remonter au dirigeant : c’est souvent le signe d’une pièce manquante, comme un PV de réception jamais signé.
+
 ## Que présenter au dirigeant chaque mois ?
 
 Trois chiffres suffisent, sur une demi-page : le total dû par tranche, comparé au mois précédent ; les cinq plus gros débiteurs et l’action prévue pour chacun ; le délai moyen de paiement du mois. Si le total des tranches anciennes baisse et que le délai moyen recule, le travail porte.

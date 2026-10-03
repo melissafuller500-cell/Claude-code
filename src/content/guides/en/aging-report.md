@@ -97,6 +97,10 @@ Client: [Client name] | Invoice: F-[N] | Amount: [amount] FCFA | Sent: [date] | 
 - **Forgetting partial payments.** The remaining balance needs its own line, with the same age as the original invoice.
 - **Several people editing the sheet.** Two versions of the same file are two different truths.
 
+## What should you do with disputed invoices?
+
+A disputed invoice is not chased like an invoice that is simply late. Add a “dispute” column: the reason (quantity, quality, price, missing document), the person handling it and the date by which it must be settled. While the dispute is open, the follow-up is about resolving it, not about payment. Once settled, the invoice goes back to its band, with its original age. A dispute that goes more than fifteen days without an answer should go up to the owner: it is often the sign of a missing document, such as an acceptance report that was never signed.
+
 ## What should the owner see each month?
 
 Three figures are enough, on half a page: the total owed per band, compared with the previous month; the five largest debtors and the planned action for each; the month’s average payment time. If the older bands shrink and the average payment time comes down, the work is paying off.
