@@ -63,6 +63,29 @@ export function init(form: HTMLFormElement) {
     } catch {
       status.className = 'status error';
       status.textContent = form.dataset.msgError!;
+      // Plan B : le message déjà rédigé part sur WhatsApp en un clic.
+      const d = new FormData(form);
+      const en = d.get('lang') === 'en';
+      const text = [
+        en ? 'Hello Noé, I would like to book the free 45-min diagnostic.' : 'Bonjour Noé, je souhaite réserver le diagnostic gratuit de 45 min.',
+        `${en ? 'First name' : 'Prénom'} : ${d.get('prenom')}`,
+        d.get('entreprise') ? `${en ? 'Company' : 'Entreprise'} : ${d.get('entreprise')}` : '',
+        d.get('ville') ? `${en ? 'City' : 'Ville'} : ${d.get('ville')}` : '',
+        `${en ? 'Sector' : 'Secteur'} : ${d.get('secteur')}`,
+        `${en ? 'Clients pay late' : 'Clients en retard'} : ${d.get('retard')} · ${en ? 'Team' : 'Équipe'} : ${d.get('taille')}`,
+        `${en ? 'Contact' : 'Contact'} : ${d.get('contact')}`,
+        String(d.get('message') || ''),
+      ].filter(Boolean).join('\n');
+      const a = document.createElement('a');
+      a.className = 'btn sm';
+      a.href = `https://wa.me/237653400504?text=${encodeURIComponent(text)}`;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.dataset.track = 'whatsapp_click';
+      a.dataset.src = 'form-fallback';
+      a.textContent = en ? 'Send it on WhatsApp' : 'L’envoyer sur WhatsApp';
+      a.style.marginTop = '10px';
+      status.append(document.createElement('br'), a);
       status.focus();
       btn.disabled = false;
       btn.textContent = label;

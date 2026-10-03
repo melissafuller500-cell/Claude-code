@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "new:post": "node scripts/new-post.mjs",
     "verify": "node scripts/check-content.mjs && astro build && node scripts/verify.mjs",
-    "icons": "node scripts/build-icons.mjs"
+    "icons": "node scripts/build-icons.mjs",
+    "package": "astro build && node scripts/package.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.1",

@@ -46,6 +46,7 @@ export function person(lang: Lang) {
     '@type': 'Person',
     '@id': PERSON_ID,
     name: SITE.founder.name,
+    image: abs('/images/noe-mbwang.jpg'),
     jobTitle: SITE.founder.jobTitle[lang],
     url: abs(lang === 'en' ? '/en/about/' : '/a-propos/'),
     worksFor: { '@id': ORG_ID },

@@ -32,12 +32,15 @@ const C = en ? {
 ---
 <Base {lang} title={meta.title} description={meta.description} path={ROUTES.apropos[lang]} alternates={ROUTES.apropos} crumbs={crumbs(lang, ['apropos'])} withPerson>
   <div class="wrap about">
+    <div class="pw">
+    <Logo size={72} class="mark" />
     <figure class="portrait">
       {brand.portrait
         ? <Picture src={brand.portrait} alt={C.photo} widths={[360, 560]} sizes="(max-width: 900px) 90vw, 440px" formats={['avif', 'webp']} />
         : <div class="ph" aria-hidden="true"><Logo size={110} /></div>}
       <figcaption><b>Noé Mbwang</b><span>{C.founder}</span></figcaption>
     </figure>
+    </div>
     <div class="txt">
       <h1>{C.h1}</h1>
       <div class="callout"><b>{en ? 'In brief' : 'En bref'}</b><p>{C.answer}</p></div>
@@ -58,7 +61,9 @@ const C = en ? {
 </Base>
 <style>
   .about { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: start; padding-top: 24px; }
-  .portrait { margin: 0; position: sticky; top: calc(var(--hdr) + 20px); border-radius: 28px 46% 28px 28px; overflow: hidden; background: radial-gradient(circle at 34% 28%, #9dbb86 0%, #6f9562 38%, #3e6236 78%, #2b4a27 100%); aspect-ratio: 765 / 1024; }
+  .pw { position: sticky; top: calc(var(--hdr) + 20px); }
+  .pw :global(.mark) { position: absolute; right: -14px; top: -18px; z-index: 2; width: 72px; height: auto; filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.6)); }
+  .portrait { margin: 0; position: relative; border-radius: 28px 46% 28px 28px; overflow: hidden; background: radial-gradient(circle at 34% 28%, #9dbb86 0%, #6f9562 38%, #3e6236 78%, #2b4a27 100%); aspect-ratio: 765 / 1024; }
   .portrait :global(img) { width: 100%; height: 100%; object-fit: cover; }
   .ph { position: absolute; inset: 0; display: grid; place-items: center; }
   figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; justify-content: space-between; align-items: center; background: rgba(6, 17, 11, 0.85); border: 1px solid var(--line-2); border-radius: 14px; padding: 12px 14px; }
@@ -73,5 +78,5 @@ const C = en ? {
   .not { padding-left: 20px; display: grid; gap: 6px; color: var(--ink-soft); }
   .certs { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .certs li { border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; font-size: 15px; color: var(--ink-soft); }
-  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } .portrait { position: relative; top: 0; max-width: 300px; } }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } .pw { position: relative; top: 0; max-width: 300px; } .pw :global(.mark) { right: -6px; width: 56px; } }
 </style>

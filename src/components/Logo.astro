@@ -1,7 +1,6 @@
 ---
 /**
- * Marque provisoire dessinée à partir de la feuille du site d'origine.
- * À remplacer par le logo officiel : déposer src/assets/brand/logo-mark.(webp|png|svg).
+ * Logo officiel (src/assets/brand/logo-mark.webp) ; dessin de secours si le fichier manque.
  */
 import { brand } from '../lib/brand';
 import { Image } from 'astro:assets';
@@ -10,7 +9,7 @@ const { size = 30, class: cls } = Astro.props;
 const h = Math.round(size * 1.25);
 ---
 {brand.logo ? (
-  <Image src={brand.logo} alt="" width={size} class={cls} loading="eager" />
+  <Image src={brand.logo} alt="" width={size} densities={[1, 2]} class={cls} loading="eager" />
 ) : (
   <svg class={cls} width={size} height={h} viewBox="0 0 32 40" aria-hidden="true" focusable="false">
     <path d="M16 1C27 9 29 25 16 39 3 25 5 9 16 1Z" fill="#A3D65C" />

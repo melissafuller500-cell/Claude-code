@@ -13,7 +13,7 @@ import { published } from '../../lib/content';
 import { ogKey } from '../../lib/og';
 import { ROUTES, LANGS, entryUrl, langOf, type Lang, type RouteKey } from '../../i18n/routes';
 
-type Item = { title: string; eyebrow: string; lang: Lang };
+type Item = { title: string; eyebrow: string; lang: Lang; portrait?: boolean };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const items: { key: string; props: Item }[] = [];
@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (const k of Object.keys(ROUTES) as RouteKey[]) {
     for (const lang of LANGS) {
       const m = PAGES[k][lang];
-      items.push({ key: ogKey(ROUTES[k][lang]), props: { title: m.og ?? m.title, eyebrow: eyebrow(lang, k === 'home' ? (lang === 'en' ? 'B2B SMEs · Cameroon' : 'PME B2B · Cameroun') : m.crumb), lang } });
+      items.push({ key: ogKey(ROUTES[k][lang]), props: { title: m.og ?? m.title, eyebrow: eyebrow(lang, k === 'home' ? (lang === 'en' ? 'B2B SMEs · Cameroon' : 'PME B2B · Cameroun') : m.crumb), lang, portrait: k === 'home' || k === 'apropos' || k === 'diagnostic' } });
     }
   }
   const label = {
@@ -42,27 +42,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const font = (name: string) => fs.readFileSync(path.resolve('src/og', name));
+let logo: string | undefined;
+let face: string | undefined;
 let fonts: { name: string; data: Buffer; weight: 500 | 800; style: 'normal' }[] | undefined;
 
 export const GET: APIRoute = async ({ props }) => {
-  const { title, eyebrow, lang } = props as Item;
+  const { title, eyebrow, lang, portrait } = props as Item;
   fonts ??= [
     { name: 'Archivo', data: font('archivo-800.ttf'), weight: 800, style: 'normal' },
     { name: 'Archivo', data: font('archivo-500.ttf'), weight: 500, style: 'normal' },
   ];
-  const size = title.length > 70 ? 54 : title.length > 45 ? 64 : 76;
+  const size = portrait ? (title.length > 30 ? 52 : 72) : title.length > 70 ? 54 : title.length > 45 ? 64 : 76;
   const el = (type: string, style: Record<string, unknown>, children?: unknown) => ({ type, props: { style, children } });
-  const leaf = {
-    type: 'svg',
-    props: {
-      width: 64, height: 80, viewBox: '0 0 32 40',
-      children: [
-        { type: 'path', props: { d: 'M16 1C27 9 29 25 16 39 3 25 5 9 16 1Z', fill: '#A3D65C' } },
-        { type: 'path', props: { d: 'M16 6v31', stroke: '#0B1A0F', strokeWidth: 1.6, opacity: 0.55 } },
-        { type: 'circle', props: { cx: 16, cy: 19, r: 4.2, fill: '#5AB4FF', stroke: '#06110B', strokeWidth: 1.6 } },
-      ],
-    },
-  };
+  logo ??= `data:image/png;base64,${fs.readFileSync(path.resolve('src/og/logo-mark.png')).toString('base64')}`;
+  face ??= `data:image/png;base64,${fs.readFileSync(path.resolve('src/og/noe-cutout.png')).toString('base64')}`;
+  const leaf = { type: 'img', props: { src: logo, height: 96, width: Math.round(96 * 0.8), style: { objectFit: 'contain' } } };
   const tree = el(
     'div',
     { width: 1200, height: 630, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '64px 72px', background: 'radial-gradient(circle at 85% 20%, #1B4128 0%, #06110B 60%)', color: '#EDF3E6', fontFamily: 'Archivo' },
@@ -84,8 +78,19 @@ export const GET: APIRoute = async ({ props }) => {
       ]),
     ],
   );
+  if (portrait) {
+    const t = tree as { props: { children: unknown[]; style: Record<string, unknown> } };
+    t.props.style.position = 'relative';
+    t.props.children.push({ type: 'img', props: { src: face, width: 430, height: 575, style: { position: 'absolute', right: 40, bottom: 0 } } });
+    // Le titre laisse la place au portrait.
+    (t.props.children[1] as { props: { children: { props: { style: Record<string, unknown> } }[] } }).props.children[1].props.style.maxWidth = 640;
+    // Pied : domaine et pastille côte à côte, à gauche du portrait.
+    const foot = t.props.children[2] as { props: { style: Record<string, unknown> } };
+    foot.props.style.justifyContent = 'flex-start';
+    foot.props.style.gap = 28;
+  }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const svg = await satori(tree as any, { width: 1200, height: 630, fonts });
-  const png = await sharp(Buffer.from(svg)).png({ compressionLevel: 9, palette: true }).toBuffer();
+  const png = await sharp(Buffer.from(svg)).png({ compressionLevel: 9, palette: true, quality: portrait ? 95 : 90, colours: 256 }).toBuffer();
   return new Response(new Uint8Array(png), { headers: { 'Content-Type': 'image/png' } });
 };

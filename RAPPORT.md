@@ -61,17 +61,18 @@ Autres vérifications (section 18) :
 ## 3. Éléments à compléter par Noé
 
 1. **Identité légale (D8)** : forme juridique, RCCM, NIU, adresse → `src/data/editorial.ts`.
-2. **Visuels** : déposer `noe-cutout.webp` (portrait détouré du hero), `noe-portrait.jpg` (page À propos) et
-   `logo-mark.webp` dans `src/assets/brand/`. Ils sont pris en compte automatiquement (AVIF + WebP, tailles
-   adaptées). En attendant, un disque de marque neutre les remplace. Le dossier `assets/` d'origine n'a pas été fourni.
-   La marque actuelle (feuille + étincelle) est un dessin provisoire tiré de la feuille du site d'origine : remplacer
-   aussi les icônes (`npm run icons` après modification de `scripts/build-icons.mjs`).
+2. ~~Visuels~~ **fait** : logo officiel, portrait détouré (hero) et portrait (À propos) intégrés en AVIF/WebP ;
+   favicon, icône Apple, logo 512 px des données structurées et images de partage régénérés depuis le vrai logo ;
+   photo de Noé ajoutée à l'entité `Person` (JSON-LD). Sources d'origine conservées dans `assets-src/`.
 3. **Preuves** : aucun témoignage ni cas chiffré n'a été fourni, la section n'est donc pas affichée. Ajouter des
    éléments réels dans `PROOFS` (`src/data/editorial.ts`) pour l'afficher.
 4. **Profils publics** (LinkedIn, etc.) de Noé et de l'entreprise : `sameAs` dans `src/data/site.ts`. Ils
    alimentent les données structurées et la page À propos. Aucun n'a été inventé.
-5. **Formulaire** : créer un compte Resend, vérifier le domaine, renseigner `RESEND_API_KEY`, `FORM_TO`, `FORM_FROM`
-   dans Cloudflare Pages, puis envoyer une demande de test (critère de la phase 2).
+5. **Formulaire** : créer la boîte `contact@noetechgrowth.com` chez l'hébergeur. Sur un hébergement classique
+   (cPanel), rien d'autre à faire : `api/diagnostic.php` envoie les demandes à cette adresse (testé : e-mail bien
+   formé, `Reply-To` du visiteur, spam écarté, confirmation avec et sans JavaScript). Sur Cloudflare Pages, renseigner
+   les secrets Resend (README). Si l'hébergeur retenu n'est pas Cloudflare, mettre à jour `LEGAL.host` dans
+   `src/data/editorial.ts` (mentions légales et confidentialité).
 6. **Redirections de l'ancien site WordPress** : l'ancien site n'était pas joignable depuis l'environnement de build.
    Des règles génériques WordPress sont en place (`/wp-admin/*`, `/feed/`, `/category/*`, `/contact/`…). Exporter le
    sitemap de l'ancien site (ou la liste des pages de la Search Console), lancer
@@ -123,7 +124,19 @@ sans doublon (6 questions sur l'accueil dont une nouvelle sur la gratuité, 4 su
 sections « Méthode » et « Offres » fusionnées ; champ « retard » du formulaire en oui / non / parfois comme demandé.
 Prix et termes des offres inchangés.
 
-## 6. Dépendances (justification)
+## 6. Paquets prêts à déployer
+
+`npm run package` produit dans `release/` :
+
+- `noetechgrowth-hebergement-classique.zip` : à extraire dans `public_html` (Apache + PHP). Contient le site,
+  un `.htaccess` généré (HTTPS, sans www, 404, 26 redirections 301, en-têtes de sécurité, cache, compression)
+  et les scripts PHP du formulaire et des événements.
+- `noetechgrowth-cloudflare-pages.zip` : `dist/`, `functions/` et `wrangler.toml` pour `wrangler pages deploy`.
+
+Mesures après intégration des vraies images (Lighthouse mobile) : accueil 99/100/100/100 (LCP 1,8 s, 133 Ko),
+`/en/` 99/100/100/100, À propos 100/100/100/100, diagnostic 100/100/100/100.
+
+## 7. Dépendances (justification)
 
 | Paquet | Pourquoi |
 |---|---|
@@ -136,7 +149,7 @@ Prix et termes des offres inchangés.
 
 Aucun framework d'interface, aucun framework CSS, aucun script tiers. Le JavaScript est natif.
 
-## 7. Limites connues
+## 8. Limites connues
 
 - Les clics WhatsApp et e-mail ne sont pas comptés sur les pages sans JavaScript (articles, guides, secteurs) :
   c'est le prix du budget « 0 Ko » des articles. Les clics vers le diagnostic depuis ces pages sont comptés à

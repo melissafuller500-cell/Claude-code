@@ -1,0 +1,9 @@
+{
+  "name": "Noé Tech Growth",
+  "short_name": "Noé Tech Growth",
+  "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }, { "src": "/images/logo-512.png", "sizes": "512x512", "type": "image/png" }],
+  "theme_color": "#06110B",
+  "background_color": "#06110B",
+  "display": "browser",
+  "start_url": "/"
+}

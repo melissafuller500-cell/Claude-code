@@ -13,24 +13,40 @@ npm run build      # génère dist/
 npm run preview    # sert dist/
 npm run verify     # longueurs du contenu + build + contrôles (liens, hreflang, h1, JSON-LD, budgets JS)
 npm run new:post "Titre formulé comme une question ?"
+npm run package    # build + paquets prêts à déployer dans release/
 ```
 
 Node 22.12 ou plus récent.
 
-## Déploiement (Cloudflare Pages, D3)
+## Mettre en ligne
+
+`npm run package` construit le site et prépare deux paquets dans `release/` :
+
+### Option A — hébergement classique (cPanel, Apache + PHP) : le plus simple
+
+1. **Sauvegarder l'ancien site WordPress** (cPanel > Sauvegarde), puis vider le dossier `public_html`.
+2. Dans cPanel > Comptes de messagerie, **créer l'adresse `contact@noetechgrowth.com`** (le formulaire y envoie les demandes).
+3. Gestionnaire de fichiers > `public_html` > Téléverser `noetechgrowth-hebergement-classique.zip`, puis « Extraire ».
+   Vérifier que le fichier caché `.htaccess` est bien présent (afficher les fichiers cachés).
+4. Activer le certificat SSL (cPanel > SSL/TLS Status ou AutoSSL) : le `.htaccess` redirige tout vers `https://noetechgrowth.com`.
+5. Tester : envoyer le formulaire de `/diagnostic/` et vérifier la réception dans la boîte `contact@`.
+
+Le formulaire passe par `api/diagnostic.php` (fonction `mail()` du serveur) ; les événements de conversion sont
+écrits dans `api/data/events.csv` (non accessible depuis le web). PHP 8.0 minimum.
+
+### Option B — Cloudflare Pages (D3)
 
 1. Cloudflare > Workers & Pages > Create > Pages > connecter ce dépôt GitHub.
-2. Build command : `npm run build` · Output directory : `dist` · Branche de production : `main`.
-3. Variables et secrets (Settings > Variables and Secrets) pour le formulaire (D5) :
-   - `RESEND_API_KEY` : clé [Resend](https://resend.com) (envoi d'e-mail ; vérifier le domaine `noetechgrowth.com` chez Resend) ;
-   - `FORM_TO` : `contact@noetechgrowth.com` ;
-   - `FORM_FROM` : par exemple `Site Noé Tech Growth <site@noetechgrowth.com>` ;
-   - `FORM_WEBHOOK_URL` (facultatif) : une URL qui reçoit aussi chaque demande en JSON (Google Sheets via Apps Script, Make…).
-4. Mesure d'audience (D6) : activer *Web Analytics* sur le projet Pages (sans cookie, sans bannière).
-   Les événements de conversion sont écrits dans Workers Analytics Engine (`EVENTS`, voir `wrangler.toml`).
-5. Domaine : Custom domains > `noetechgrowth.com` et `www.noetechgrowth.com` (redirection de `www` vers l'apex).
+   Build command : `npm run build` · Output directory : `dist` · Branche de production : `main`.
+   Chaque `push` sur `main` reconstruit et publie le site.
+   (Sans GitHub : `npx wrangler pages deploy dist` depuis le contenu de `noetechgrowth-cloudflare-pages.zip`.)
+2. Secrets du formulaire (Settings > Variables and Secrets) : `RESEND_API_KEY` (compte [Resend](https://resend.com),
+   domaine vérifié), `FORM_TO` = `contact@noetechgrowth.com`, `FORM_FROM` = `Site Noé Tech Growth <contact@noetechgrowth.com>`,
+   et en option `FORM_WEBHOOK_URL`.
+3. Activer *Web Analytics* (sans cookie). Les événements de conversion vont dans Workers Analytics Engine (`wrangler.toml`).
+4. Custom domains : `noetechgrowth.com` et `www.noetechgrowth.com`.
 
-Chaque `push` sur `main` reconstruit et publie le site.
+Dans les deux cas, si l'envoi du formulaire échoue, le visiteur se voit proposer d'envoyer le même message sur WhatsApp.
 
 ## Arborescence
 
@@ -50,8 +66,8 @@ public/           polices woff2, robots.txt, llms.txt, _redirects, _headers, ic�
 scripts/          new-post, check-content, verify, build-redirects, build-icons
 ```
 
-## Visuels à fournir
+## Visuels
 
-Déposer dans `src/assets/brand/` (le site les utilise automatiquement, en AVIF/WebP) :
-`noe-cutout.webp` (portrait détouré du hero), `noe-portrait.jpg` (page À propos), `logo-mark.webp` (logo).
-Pour les icônes, remplacer le dessin dans `scripts/build-icons.mjs` puis `npm run icons`.
+`src/assets/brand/` : `noe-cutout.webp` (hero), `noe-portrait.jpg` (À propos), `logo-mark.webp` (logo), convertis
+automatiquement en AVIF/WebP aux bonnes tailles. Sources d'origine dans `assets-src/`. Après un changement de logo
+ou de portrait : `npm run icons` (favicon, icône Apple, logo 512 px, visuels des images de partage).

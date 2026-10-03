@@ -15,9 +15,10 @@ const { alt } = Astro.props;
   )}
 </div>
 <style>
-  .stage { position: relative; aspect-ratio: 4 / 4.4; width: 100%; max-width: 520px; justify-self: end; display: grid; place-items: end center; }
+  .stage { position: relative; aspect-ratio: 4 / 4.6; width: 100%; max-width: 520px; justify-self: end; display: grid; place-items: end center; }
   .disc { position: absolute; inset: 8% 4% 6% 4%; border-radius: 50%; background: radial-gradient(circle at 34% 28%, #9dbb86 0%, #6f9562 38%, #3e6236 78%, #2b4a27 100%); box-shadow: inset -30px -40px 80px rgba(6, 17, 11, 0.45); }
-  .cut { position: relative; width: 92%; height: auto; -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
+  .stage :global(picture) { display: contents; }
+  .stage :global(.cut) { position: relative; width: 86%; height: auto; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.45)); -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
   .ph { position: absolute; inset: 0; display: grid; place-items: center; }
   .ph :global(svg) { width: 34%; height: auto; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4)); }
   @media (max-width: 900px) { .stage { justify-self: center; max-width: 340px; } .stage:has(.ph) { max-width: 240px; } }
