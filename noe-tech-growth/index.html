@@ -224,7 +224,7 @@ p{margin:0}
 .spot::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,-500px) var(--my,-500px),rgba(163,214,92,.07),transparent 60%);border-radius:inherit}
 .paper .spot::before{display:none}
 .calc .in{display:grid;gap:22px;align-content:start}
-.field{display:grid;gap:8px;min-width:0}
+.field{display:grid;gap:8px;min-width:0;align-content:start}
 .field label,.field>.lbl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14.5px;color:var(--ink-soft)}
 .field label b{font:600 15px var(--f-mono);color:var(--leaf)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -238,7 +238,7 @@ input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:6px;ba
 input[type=range]::-moz-range-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--leaf) var(--p,25%),var(--forest-2) var(--p,25%))}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border-radius:50%;background:var(--ink);border:5px solid var(--leaf);box-shadow:0 4px 12px rgba(0,0,0,.4)}
 input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ink);border:5px solid var(--leaf)}
-.calc .out{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:22px}
+.calc .out{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:22px;align-content:start}
 .res{display:grid;gap:4px;padding-bottom:16px;border-bottom:1px solid var(--line)}
 .res span{font-size:14px;color:var(--ink-soft)}
 .res b{font:700 clamp(22px,2.4vw,30px)/1.1 var(--f-display);font-stretch:108%;letter-spacing:-.01em}
@@ -248,6 +248,19 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .tank canvas{position:absolute;inset:0;width:100%;height:100%}
 .tank .pct{position:absolute;top:16px;left:0;right:0;text-align:center;font:700 20px var(--f-mono);z-index:2}
 .tank .lbl{position:absolute;bottom:16px;left:6px;right:6px;text-align:center;font:500 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;z-index:2;color:var(--on-leaf)}
+.hint{font-size:13px;color:var(--ink-mute);line-height:1.45}
+.how{border:1px solid var(--line);border-radius:14px;background:var(--night)}
+.how summary{padding:12px 16px;font:600 14.5px var(--f-text);color:var(--ink-soft)}
+.how summary i{width:24px;height:24px}
+.how summary i::before,.how summary i::after{width:9px}
+.how>div{padding:0 16px 16px;display:grid;gap:10px;font-size:14px;color:var(--ink-soft)}
+.how ol{margin:0;padding-left:18px;display:grid;gap:6px}
+.how code{font:500 12.5px var(--f-mono);color:var(--leaf);background:var(--forest-2);padding:6px 10px;border-radius:8px;display:block;overflow-x:auto;white-space:nowrap}
+.res.save b{color:var(--spark)}
+input[type=range]:disabled{opacity:.35;cursor:not-allowed}
+.insight{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;background:rgba(90,180,255,.07);border:1px solid rgba(90,180,255,.28);border-radius:var(--r-m);padding:16px 18px;font-size:14.5px;color:var(--ink-soft)}
+.insight b.big3{font:900 30px/1 var(--f-display);font-stretch:118%;color:var(--spark);letter-spacing:-.02em}
+.insight strong{color:var(--ink)}
 .calc-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
 @media (max-width:900px){.calc{grid-template-columns:1fr}}
 @media (max-width:520px){.calc .out{grid-template-columns:minmax(0,1fr) 84px}.tank{min-height:260px}.two{grid-template-columns:1fr}}
@@ -699,27 +712,42 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <div class="calc">
       <div class="panel in spot">
         <div class="field">
-          <label for="cBill"><span data-en="Monthly B2B invoicing">Facturation B2B par mois</span></label>
-          <div class="unit" data-u="FCFA"><input type="text" id="cBill" inputmode="numeric" value="10 000 000" autocomplete="off"></div>
+          <label for="cBill"><span data-en="Monthly B2B invoicing, incl. VAT">Facturation B2B par mois, TTC</span></label>
+          <div class="unit" data-u="FCFA TTC"><input type="text" id="cBill" inputmode="numeric" value="10 000 000" autocomplete="off" aria-describedby="hBill"></div>
+          <span class="hint" id="hBill" data-en="Enter the amount including VAT: that’s what your clients owe you. From an excl.-VAT figure, multiply by about 1.19.">Saisissez le montant TTC : c'est ce que vos clients vous doivent, TVA comprise. Depuis un montant HT, multipliez par 1,19 environ.</span>
         </div>
         <div class="two">
           <div class="field">
             <label for="cReal"><span data-en="Actual payment time">Délai réel de paiement</span></label>
-            <div class="unit dayu" data-u="j"><input type="text" id="cReal" inputmode="numeric" value="60" autocomplete="off"></div>
+            <div class="unit dayu" data-u="j"><input type="text" id="cReal" inputmode="numeric" value="60" autocomplete="off" aria-describedby="hReal"></div>
+            <span class="hint" id="hReal" data-en="Average over your last 20 paid invoices, weighted by amount.">Moyenne de vos 20 dernières factures encaissées, pondérée par le montant.</span>
           </div>
           <div class="field">
             <label for="cTerm"><span data-en="Contract terms">Délai prévu au contrat</span></label>
-            <div class="unit dayu" data-u="j"><input type="text" id="cTerm" inputmode="numeric" value="30" autocomplete="off"></div>
+            <div class="unit dayu" data-u="j"><input type="text" id="cTerm" inputmode="numeric" value="30" autocomplete="off" aria-describedby="hTerm"></div>
+            <span class="hint" id="hTerm" data-en="If nothing is written, enter the time you allow in practice.">Si rien n'est écrit, indiquez le délai que vous accordez en pratique.</span>
           </div>
         </div>
+        <details class="how">
+          <summary><span data-en="How to measure your actual payment time">Comment mesurer votre délai réel</span><i aria-hidden="true"></i></summary>
+          <div>
+            <ol>
+              <li data-en="Take your last 20 <b>paid</b> invoices.">Prenez vos 20 dernières factures <b>encaissées</b>.</li>
+              <li data-en="For each one, count the days between the invoice date and the date the money landed.">Pour chacune, comptez les jours entre la date de facture et la date d'encaissement.</li>
+              <li data-en="Weight by amount: a 6 M invoice counts more than a 300,000 one.">Pondérez par le montant : une facture de 6 M pèse plus qu'une facture de 300 000.</li>
+            </ol>
+            <code data-en="Actual time = Σ (amount × days) ÷ Σ amounts">Délai réel = Σ (montant × jours) ÷ Σ montants</code>
+            <p data-en="Note the slowest clients as you go: they are usually where the money sleeps.">Notez au passage les clients les plus lents : c'est souvent là que l'argent dort.</p>
+          </div>
+        </details>
         <div class="field">
           <label for="cRate"><span data-en="Your overdraft rate (yearly)">Votre taux de découvert (annuel)</span></label>
           <div class="unit" data-u="%"><input type="text" id="cRate" inputmode="decimal" value="14" autocomplete="off"></div>
         </div>
         <div class="field">
           <label for="cDays"><span data-en="Days gained">Jours gagnés</span><b id="cDaysV">15 j</b></label>
-          <input type="range" id="cDays" min="0" max="60" value="15">
-          <span class="small" data-en="Move the slider: every day gained raises the level.">Déplacez le curseur : chaque jour gagné fait monter le niveau.</span>
+          <input type="range" id="cDays" min="0" max="30" value="15" aria-describedby="cDaysH">
+          <span class="small" id="cDaysH">Déplacez le curseur : chaque jour de retard résorbé fait monter le niveau. Au maximum, vos clients paient à l'échéance du contrat.</span>
         </div>
       </div>
       <div class="panel out spot">
@@ -727,12 +755,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
           <div class="res"><span data-en="Cash tied up at your clients’">Trésorerie immobilisée chez vos clients</span><b id="rLocked" class="num">20 000 000 FCFA</b></div>
           <div class="res"><span data-en="Of which, due to late payment">Dont part due au retard</span><b id="rLate" class="num">10 000 000 FCFA</b></div>
           <div class="res hl"><span id="rFreeL">Trésorerie libérée si vos clients paient 15 jours plus tôt</span><b id="rFree" class="num">5 000 000 FCFA</b></div>
-          <div class="res bad" style="border:0;padding:0"><span data-en="Yearly cost of the delay if financed by overdraft">Coût annuel du retard s'il est financé par découvert</span><b id="rCost" class="num">1 400 000 FCFA</b></div>
+          <div class="res save"><span id="rSaveL">Agios économisés par an grâce à ces 15 jours</span><b id="rSave" class="num">700 000 FCFA</b></div>
+          <div class="res bad" style="border:0;padding:0"><span data-en="Yearly cost of the whole delay if financed by overdraft">Coût annuel de tout le retard s'il est financé par découvert</span><b id="rCost" class="num">1 400 000 FCFA</b></div>
         </div>
         <div class="tank">
           <span class="pct num" id="tankPct">50 %</span>
           <canvas id="tank" aria-hidden="true"></canvas>
           <span class="lbl" data-en="Delay absorbed">Retard résorbé</span>
+        </div>
+        <div class="insight">
+          <b class="big3">3/15</b>
+          <p data-en="<strong>An average hides the spread.</strong> 60 days on average can mean 12 clients at 30 days and 3 at 150. In one real case, 3 clients out of 15 accounted for 78% of the delays. The lever was not “everyone pays 15 days sooner”: it was dealing with those 3 clients. The diagnostic identifies them."><strong>La moyenne cache la répartition.</strong> 60 jours en moyenne peuvent venir de 12 clients à 30 jours et de 3 clients à 150 jours. Dans un cas réel, 3 clients sur 15 concentraient 78 % des retards. Le levier n'était pas « tout le monde paie 15 jours plus tôt » : c'était traiter ces 3 clients. Le diagnostic les identifie.</p>
         </div>
         <div class="calc-foot">
           <span class="small" data-en="Estimate based on your figures. Not a promised result.">Estimation à partir de vos chiffres. Ce n'est pas un résultat promis.</span>
@@ -1197,7 +1230,7 @@ if(fine&&!reduce){
 document.addEventListener('pointermove',e=>{const s=e.target.closest('.spot');if(!s)return;const r=s.getBoundingClientRect();s.style.setProperty('--mx',e.clientX-r.left+'px');s.style.setProperty('--my',e.clientY-r.top+'px')},{passive:true});
 
 /* ====== shared state for calculator ====== */
-const C={bill:10e6,real:60,term:30,rate:14,days:15,touched:false};
+const C={bill:10e6,real:60,term:30,rate:14,days:15,want:15,touched:false};
 
 /* ====== HERO: layered stage (pointer + scroll depth) ====== */
 const hero=$('.hero'),stage=$('#stage'),planes=$$('.plane',stage),disc=$('#disc');
@@ -1268,14 +1301,19 @@ new ResizeObserver(tsize).observe(tank);
 new IntersectionObserver(([e])=>tVis=e.isIntersecting).observe(tank);
 function calc(){
   C.bill=num($('#cBill').value);C.real=num($('#cReal').value);C.term=num($('#cTerm').value);C.rate=num($('#cRate').value);
-  const rng=$('#cDays');rng.max=Math.max(1,Math.round(C.real));if(C.days>rng.max){C.days=+rng.max;rng.value=C.days}
-  rng.style.setProperty('--p',(C.days/rng.max*100)+'%');
-  const perDay=C.bill/30,late=Math.max(0,C.real-C.term);
+  const perDay=C.bill/30,late=Math.max(0,Math.round(C.real-C.term));
+  /* the slider can only absorb the delay: at most, clients pay on the contract due date */
+  const rng=$('#cDays');C.days=Math.min(C.want,late);
+  rng.disabled=late===0;rng.max=Math.max(1,late);rng.value=C.days;
+  rng.style.setProperty('--p',(late?C.days/late*100:0)+'%');
+  $('#cDaysH').textContent=late?T(`Déplacez le curseur : chaque jour de retard résorbé fait monter le niveau. Au maximum (${late} j), vos clients paient à l'échéance du contrat.`,`Move the slider: every day of delay absorbed raises the level. At most (${late} d), your clients pay on the contract due date.`):T('Aucun retard : vos clients paient dans le délai prévu.','No delay: your clients pay within the agreed terms.');
   $('#cDaysV').textContent=C.days+' '+T('j','d');
   $('#rLocked').textContent=fmt(perDay*C.real);
   $('#rLate').textContent=fmt(perDay*late);
   $('#rFreeL').textContent=T(`Trésorerie libérée si vos clients paient ${C.days} jours plus tôt`,`Cash freed if your clients pay ${C.days} days sooner`);
   $('#rFree').textContent=fmt(perDay*C.days);
+  $('#rSaveL').textContent=T(`Agios économisés par an grâce à ces ${C.days} jours`,`Overdraft interest saved per year with these ${C.days} days`);
+  $('#rSave').textContent=fmt(perDay*C.days*C.rate/100);
   $('#rCost').textContent=fmt(perDay*late*C.rate/100);
   const pct=late>0?Math.min(1,C.days/late):1;$('#tankPct').textContent=Math.round(pct*100)+' %';
   $('#waCalc').href=wa(calcMsg());
@@ -1283,15 +1321,15 @@ function calc(){
   peakFrame();
 }
 function calcMsg(){
-  const perDay=C.bill/30,late=Math.max(0,C.real-C.term);
-  return T(`Bonjour Noé, voici mon calcul :\n- Facturation B2B mensuelle : ${fmt(C.bill)}\n- Délai réel : ${C.real} j (contrat : ${C.term} j)\n- Trésorerie immobilisée : ${fmt(perDay*C.real)}\n- Dont part due au retard : ${fmt(perDay*late)}\n- Libérée si mes clients paient ${C.days} j plus tôt : ${fmt(perDay*C.days)}\nJe souhaite réserver le diagnostic de 45 min.`,
-  `Hello Noé, here is my calculation:\n- Monthly B2B invoicing: ${fmt(C.bill)}\n- Actual payment time: ${C.real} d (contract: ${C.term} d)\n- Cash tied up: ${fmt(perDay*C.real)}\n- Of which due to late payment: ${fmt(perDay*late)}\n- Freed if clients pay ${C.days} d sooner: ${fmt(perDay*C.days)}\nI'd like to book the 45-min diagnostic.`);
+  const perDay=C.bill/30,late=Math.max(0,Math.round(C.real-C.term));
+  return T(`Bonjour Noé, voici mon calcul :\n- Facturation B2B mensuelle TTC : ${fmt(C.bill)}\n- Délai réel : ${C.real} j (contrat ou pratique : ${C.term} j)\n- Trésorerie immobilisée : ${fmt(perDay*C.real)}\n- Dont part due au retard : ${fmt(perDay*late)}\n- Libérée si mes clients paient ${C.days} j plus tôt : ${fmt(perDay*C.days)}\n- Agios économisés par an : ${fmt(perDay*C.days*C.rate/100)}\nJe souhaite réserver le diagnostic de 45 min.`,
+  `Hello Noé, here is my calculation:\n- Monthly B2B invoicing incl. VAT: ${fmt(C.bill)}\n- Actual payment time: ${C.real} d (contract or practice: ${C.term} d)\n- Cash tied up: ${fmt(perDay*C.real)}\n- Of which due to late payment: ${fmt(perDay*late)}\n- Freed if clients pay ${C.days} d sooner: ${fmt(perDay*C.days)}\n- Overdraft interest saved per year: ${fmt(perDay*C.days*C.rate/100)}\nI'd like to book the 45-min diagnostic.`);
 }
 ['cBill','cReal','cTerm','cRate'].forEach(id=>{const el=$('#'+id);el.addEventListener('input',()=>{C.touched=true;calc()});el.addEventListener('blur',()=>{if(id==='cBill')el.value=fmtN(num(el.value))})});
-$('#cDays').addEventListener('input',e=>{C.days=+e.target.value;C.touched=true;calc()});
+$('#cDays').addEventListener('input',e=>{C.want=+e.target.value;C.touched=true;calc()});
 function tankDraw(t){
   if(tVis&&TW){
-    const late=Math.max(0,C.real-C.term),target=late>0?Math.min(1,C.days/late):1;tLevel+=(target-tLevel)*.06;
+    const late=Math.max(0,Math.round(C.real-C.term)),target=late>0?Math.min(1,C.days/late):1;tLevel+=(target-tLevel)*.06;
     tx2.clearRect(0,0,TW,TH);const top=TH-(TH-8)*Math.max(.03,tLevel);
     const g=tx2.createLinearGradient(0,top,0,TH);g.addColorStop(0,'#C9EE8F');g.addColorStop(.3,'#A3D65C');g.addColorStop(1,'#3E6A2A');
     tx2.fillStyle=g;tx2.beginPath();tx2.moveTo(0,TH);
