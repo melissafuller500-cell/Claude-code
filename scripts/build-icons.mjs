@@ -31,3 +31,5 @@ console.log('icônes générées depuis', SRC);
 await sharp('src/assets/brand/noe-cutout.webp').resize({ height: 600 }).png({ compressionLevel: 9 }).toFile('src/og/noe-cutout.png');
 // Photo publique de Noé Mbwang (données structurées Person).
 await sharp('src/assets/brand/noe-portrait.jpg').resize({ width: 600 }).jpeg({ quality: 82, mozjpeg: true }).toFile('public/images/noe-mbwang.jpg');
+// Petit logo transparent pour la floraison de la tige (fin de page).
+await sharp(SRC).resize({ height: 112 }).png({ compressionLevel: 9, palette: true }).toFile('public/images/logo-mark-112.png');

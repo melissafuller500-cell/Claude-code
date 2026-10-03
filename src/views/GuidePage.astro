@@ -31,7 +31,7 @@ const toolKeys = d.tools;
 const hasTemplate = (entry.body ?? '').includes('```modele');
 const en = lang === 'en';
 ---
-<Base {lang} title={d.title} description={d.description} {path} {alternates} ogType="article" published={d.pubDate} modified={d.updatedDate}
+<Base stem {lang} title={d.title} description={d.description} {path} {alternates} ogType="article" published={d.pubDate} modified={d.updatedDate}
   crumbs={crumbs(lang, ['guides'], [{ name: d.title, url: path }])} section="ressources"
   jsonLd={[article({ type: 'Article', title: d.title, description: d.description, url: path, image: ogFor(path), lang, published: d.pubDate, modified: d.updatedDate })]}>
   <PageHead title={d.title} answer={d.answer} answerLabel={t.inBrief}>

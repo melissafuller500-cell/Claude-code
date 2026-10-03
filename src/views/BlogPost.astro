@@ -33,7 +33,7 @@ const legal = !['tresorerie', 'suivi'].includes(d.category);
 const hasTemplate = (entry.body ?? '').includes('```modele');
 const iso = (x: Date) => x.toISOString().slice(0, 10);
 ---
-<Base {lang} title={d.title} description={d.description} {path} {alternates} ogType="article" published={d.pubDate} modified={d.updatedDate}
+<Base stem {lang} title={d.title} description={d.description} {path} {alternates} ogType="article" published={d.pubDate} modified={d.updatedDate}
   crumbs={crumbs(lang, ['blog'], [{ name: cat.name, url: `${BLOG_CATEGORY_BASE[lang]}${cat.slug}/` }, { name: d.title, url: path }])} section="blog"
   jsonLd={[article({ type: 'BlogPosting', title: d.title, description: d.description, url: path, image: ogFor(path), lang, published: d.pubDate, modified: d.updatedDate, keywords: d.tags, section: cat.name, wordCount: (entry.body ?? '').split(/\s+/).length })]}>
   <article class="wrap post">

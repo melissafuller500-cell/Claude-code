@@ -1,0 +1,40 @@
+---
+/**
+ * La tige (élément signature) : un fil vertical à gauche qui pousse avec le défilement, une feuille
+ * par section, un bouton bleu qui descend et remonte, et qui fleurit en logo en bas de page.
+ * Grand écran uniquement (≥ 1180 px). Décoratif pour les lecteurs d'écran (la navigation existe ailleurs).
+ * Les repères sont les éléments [data-stem] de la page, ou à défaut les titres <h2> du texte.
+ */
+---
+<aside class="stem" data-stemnav aria-hidden="true">
+  <div class="track"></div>
+  <div class="fill"></div>
+  <div class="nodes" data-nodes></div>
+  <div class="bud" data-bud></div>
+</aside>
+<script>
+  if (matchMedia('(min-width: 1180px)').matches) import('../scripts/stem').then((m) => m.init());
+</script>
+<style>
+  .stem { position: fixed; left: 30px; top: calc(var(--hdr) + 26px); bottom: 34px; width: 24px; z-index: 40; display: none; }
+  @media (min-width: 1180px) { .stem { display: block; } }
+  .track { position: absolute; left: 11px; top: 0; bottom: 0; width: 2px; background: var(--line); border-radius: 2px; }
+  .fill { position: absolute; left: 11px; top: 0; width: 2px; height: 100%; border-radius: 2px; background: linear-gradient(var(--leaf-deep), var(--leaf)); transform-origin: top; transform: scaleY(var(--grow, 0)); }
+  .nodes :global(.node) { position: absolute; left: 0; width: 24px; height: 24px; transform: translateY(-50%); display: grid; place-items: center; text-decoration: none; cursor: pointer; }
+  .nodes :global(.node i) { width: 8px; height: 8px; border-radius: 50%; background: var(--night); box-shadow: inset 0 0 0 1.5px var(--line-2); transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; }
+  .nodes :global(.node svg) { position: absolute; left: 14px; top: -4px; width: 22px; height: 14px; fill: var(--leaf); transform-origin: 0 50%; transform: rotate(-35deg) scale(0); transition: transform 0.6s cubic-bezier(0.3, 1.6, 0.4, 1); }
+  .nodes :global(.node.even svg) { transform: rotate(35deg) scale(0); top: 12px; }
+  .nodes :global(.node.on i) { background: var(--leaf); box-shadow: 0 0 0 3px rgba(163, 214, 92, 0.18); }
+  .nodes :global(.node.on svg) { transform: rotate(-35deg) scale(1); }
+  .nodes :global(.node.even.on svg) { transform: rotate(35deg) scale(1); }
+  .nodes :global(.node.cur i) { background: var(--spark); box-shadow: 0 0 0 4px rgba(90, 180, 255, 0.22); transform: scale(1.25); }
+  .nodes :global(.node b) { position: absolute; left: 34px; white-space: nowrap; font: 600 14px var(--f-text); color: var(--ink); background: var(--forest); border: 1px solid var(--line-2); padding: 5px 10px; border-radius: 8px; opacity: 0; transform: translateX(-6px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; }
+  .nodes :global(.node:hover b) { opacity: 1; transform: none; }
+  .bud { position: absolute; left: 12px; top: 0; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 50%; background: var(--spark); box-shadow: 0 0 0 5px rgba(90, 180, 255, 0.16), 0 4px 14px rgba(0, 0, 0, 0.4); transition: width 0.5s, height 0.5s, background-color 0.5s, border-radius 0.5s, box-shadow 0.5s; }
+  .stem:global(.bloom) .bud { width: 46px; height: 56px; border-radius: 0; background: url('/images/logo-mark-112.png') center / contain no-repeat; box-shadow: none; }
+  /* Place pour la tige : le contenu se décale quand elle est affichée. */
+  @media (min-width: 1180px) {
+    :global(body:has(.stem) main .wrap), :global(body:has(.stem) .crumbs) { padding-left: calc(var(--gut) + 56px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .fill, .bud, .nodes :global(*) { transition: none !important; } }
+</style>

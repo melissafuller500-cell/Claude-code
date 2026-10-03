@@ -142,7 +142,7 @@ const P = en
   ? { pick: 'Your sector in 10 seconds', pickL: 'Choose your sector', more: (n: string) => `Where the money gets stuck in ${n.toLowerCase()}`, blogH: 'Latest articles', blogAll: 'All articles' }
   : { pick: 'Votre secteur en 10 secondes', pickL: 'Choisissez votre secteur', more: (n: string) => `Où l’argent se bloque : ${n}`, blogH: 'Derniers articles', blogAll: 'Tous les articles' };
 ---
-<Base {lang} title={meta.title} description={meta.description} {path} alternates={{ fr: '/', en: '/en/' }} withPerson jsonLd={[faqPage(FAQ_HOME, lang)]}>
+<Base stem {lang} title={meta.title} description={meta.description} {path} alternates={{ fr: '/', en: '/en/' }} withPerson jsonLd={[faqPage(FAQ_HOME, lang)]}>
   <!-- 1. Hero -->
   <section class="hero" data-hero>
     <canvas class="flux" data-flux aria-hidden="true"></canvas>
@@ -163,7 +163,7 @@ const P = en
   </section>
 
   <!-- 2. Pour qui -->
-  <section class="sec" id="pour-qui" aria-labelledby="pour-qui-h">
+  <section class="sec" id="pour-qui" data-stem={en ? "Who it’s for" : "Pour qui"} aria-labelledby="pour-qui-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="pour-qui-h">{C.fitH}</h2>
@@ -194,7 +194,7 @@ const P = en
   </section>
 
   <!-- 3. Le problème -->
-  <section class="sec paper" id="probleme" aria-labelledby="probleme-h">
+  <section class="sec paper" id="probleme" data-stem={en ? "The problem" : "Le problème"} aria-labelledby="probleme-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="probleme-h">{C.probH}</h2>
@@ -220,7 +220,7 @@ const P = en
   </section>
 
   <!-- 4. Calculateur -->
-  <section class="sec" id="calculateur" aria-labelledby="calc-h">
+  <section class="sec" id="calculateur" data-stem={en ? "Calculator" : "Calculateur"} aria-labelledby="calc-h">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">{C.calcEyebrow}</p>
@@ -232,7 +232,7 @@ const P = en
   </section>
 
   <!-- 5. Les trois chantiers -->
-  <section class="sec peak" id="chantiers" aria-labelledby="chantiers-h">
+  <section class="sec peak" id="chantiers" data-stem={en ? "The method" : "Les trois chantiers"} aria-labelledby="chantiers-h">
     <div class="wrap peak-grid">
       <div class="peak-pin">
         <h2 id="chantiers-h">{C.chH}</h2>
@@ -254,7 +254,7 @@ const P = en
 
   <!-- 6. Repère chiffré (source vérifiée) -->
   {BENCHMARK.show && (
-    <section class="sec band" id="repere" aria-labelledby="repere-h">
+    <section class="sec band" id="repere" data-stem={en ? "Benchmark" : "Repère"} aria-labelledby="repere-h">
       <div class="wrap stat">
         <p class="big num" aria-hidden="true"><span class="count">{BENCHMARK.value}</span><small>+ {t.days}</small></p>
         <div>
@@ -287,7 +287,7 @@ const P = en
   )}
 
   <!-- 8. Offres + méthode -->
-  <section class="sec" id="offres" aria-labelledby="offres-h">
+  <section class="sec" id="offres" data-stem={en ? "Pricing" : "Offres"} aria-labelledby="offres-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="offres-h">{C.offersH}</h2>
@@ -307,7 +307,7 @@ const P = en
   </section>
 
   <!-- 9. À propos -->
-  <section class="sec band" id="a-propos" aria-labelledby="a-propos-h">
+  <section class="sec band" id="a-propos" data-stem={en ? "About" : "À propos"} aria-labelledby="a-propos-h">
     <div class="wrap about">
       <div>
         <p class="eyebrow">{C.aboutEyebrow}</p>
@@ -323,7 +323,7 @@ const P = en
 
   <!-- Derniers articles : maillage interne et fraîcheur -->
   {posts.length > 0 && (
-    <section class="sec-tight" aria-labelledby="blog-h">
+    <section class="sec-tight" id="articles" data-stem={en ? "Articles" : "Articles"} aria-labelledby="blog-h">
       <div class="wrap">
         <div class="blog-head">
           <h2 id="blog-h">{P.blogH}</h2>
@@ -335,7 +335,7 @@ const P = en
   )}
 
   <!-- 10. FAQ (6 questions) -->
-  <section class="sec" id="faq" aria-labelledby="faq-h">
+  <section class="sec" id="faq" data-stem={en ? "FAQ" : "FAQ"} aria-labelledby="faq-h">
     <div class="wrap">
       <h2 id="faq-h" class="sec-head">{C.faqH}</h2>
       <Faq items={FAQ_HOME} {lang} />
@@ -344,7 +344,7 @@ const P = en
   </section>
 
   <!-- 11. Contact -->
-  <section class="sec final" id="contact" aria-labelledby="contact-h">
+  <section class="sec final" id="contact" data-stem={en ? "Diagnostic" : "Diagnostic"} aria-labelledby="contact-h">
     <div class="wrap final-grid">
       <div>
         <p class="eyebrow">{C.contactEyebrow}</p>

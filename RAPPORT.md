@@ -187,3 +187,11 @@ SEO / AEO / GEO :
 
 Mesures (Lighthouse mobile, 3 passages sur l'accueil) : 99 / 100 / 100 / 100, LCP 1,95 s, TBT 0 ms, CLS 0,001, 154 Ko.
 Articles et outils : 100 / 100 / 100 / 100. JavaScript de l'accueil : 8,8 Ko gzip (budget 40 Ko). 86 pages, HTML valide, 0 erreur au contrôle automatique.
+
+### Ajout : la tige (navigation de défilement)
+
+Fil vertical à gauche, sur grand écran (≥ 1180 px) : il pousse avec le défilement, une feuille éclot à chaque section,
+le bouton bleu descend et remonte avec la page, et fleurit en logo en bas de page. Étiquette de section au survol, clic
+pour y aller. Présent sur l'accueil, les guides et les articles (repères = titres de section). Non chargé sur mobile ;
+transitions coupées si « réduire les animations ». Mesure bureau (Lighthouse, profil desktop) : 100 en performance,
+TBT 0 ms, CLS 0.

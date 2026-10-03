@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import Fab from '../components/Fab.astro';
 import Breadcrumbs, { type Crumb } from '../components/Breadcrumbs.astro';
 import JsonLd from '../components/JsonLd.astro';
+import Stem from '../components/Stem.astro';
 import { organization, website, person, breadcrumbList } from '../lib/schema';
 import { ogFor } from '../lib/og';
 import { useUI } from '../i18n/ui';
@@ -27,10 +28,11 @@ interface Props {
   published?: Date;
   modified?: Date;
   fab?: boolean;
+  stem?: boolean;
 }
 const {
   lang, title, description, path, alternates, ogImage, ogType, noindex, crumbs, jsonLd = [],
-  withPerson = false, section, published, modified, fab = true,
+  withPerson = false, section, published, modified, fab = true, stem = false,
 } = Astro.props;
 const t = useUI(lang);
 const graph = [
@@ -56,6 +58,7 @@ const graph = [
       <slot />
     </main>
     <Footer {lang} />
+    {stem && <Stem />}
     {fab && <Fab {lang} />}
   </body>
 </html>
