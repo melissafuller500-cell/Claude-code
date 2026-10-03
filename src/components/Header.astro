@@ -1,0 +1,106 @@
+---
+/**
+ * En-tête : Offres, Outils, Ressources, Blog, sélecteur FR/EN, bouton Diagnostic.
+ * Menu mobile : panneau plein écran opaque, piloté par l'API popover native (zéro JavaScript).
+ */
+import Logo from './Logo.astro';
+import { r, type Lang } from '../i18n/routes';
+import { useUI } from '../i18n/ui';
+import type { Alternates } from './Head.astro';
+
+interface Props { lang: Lang; path: string; alternates?: Alternates; section?: 'offres' | 'outils' | 'ressources' | 'blog' | 'diagnostic' }
+const { lang, path, alternates = {}, section } = Astro.props;
+const t = useUI(lang);
+const other: Lang = lang === 'fr' ? 'en' : 'fr';
+const switchHref = alternates[other] ?? r('home', other);
+const items = [
+  { key: 'offres', href: r('offres', lang), label: t.nav.offres },
+  { key: 'outils', href: r('outils', lang), label: t.nav.outils },
+  { key: 'ressources', href: r('ressources', lang), label: t.nav.ressources },
+  { key: 'blog', href: r('blog', lang), label: t.nav.blog },
+] as const;
+const diag = r('diagnostic', lang);
+const isCurrent = (href: string) => path === href;
+---
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href={r('home', lang)} aria-label={`Noé Tech Growth · ${t.home}`}>
+      <Logo size={28} />
+      <span>NOÉ<small>Tech Growth</small></span>
+    </a>
+
+    <nav class="nav-desk" aria-label={t.navLabel}>
+      <ul>
+        {items.map((it) => (
+          <li><a href={it.href} aria-current={isCurrent(it.href) ? 'page' : section === it.key ? 'true' : undefined}>{it.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <a class="lang" href={switchHref} hreflang={other} lang={other} aria-label={t.langSwitchLabel}>{t.langSwitchShort}</a>
+    <a class="btn sm cta-h" href={diag} aria-current={isCurrent(diag) ? 'page' : undefined}>{t.navDiagnostic}</a>
+
+    <button class="burger" type="button" popovertarget="menu" aria-label={t.menuOpen}>
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <div id="menu" class="menu" popover>
+    <div class="menu-top wrap">
+      <a class="brand" href={r('home', lang)} aria-label={`Noé Tech Growth · ${t.home}`}><Logo size={28} /><span>NOÉ<small>Tech Growth</small></span></a>
+      <button class="burger close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label={t.menuClose}><span></span><span></span></button>
+    </div>
+    <nav class="wrap" aria-label={t.navLabel}>
+      <ul>
+        {items.map((it) => (<li><a href={it.href} aria-current={isCurrent(it.href) ? 'page' : undefined}>{it.label}</a></li>))}
+        <li><a href={switchHref} hreflang={other} lang={other}>{t.langSwitch}</a></li>
+      </ul>
+      <a class="btn block" href={diag}>{t.cta}</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .hdr { position: sticky; top: 0; z-index: 50; height: var(--hdr); background: rgba(6, 17, 11, 0.94); border-bottom: 1px solid var(--line); }
+  @supports (backdrop-filter: blur(1px)) { .hdr { background: rgba(6, 17, 11, 0.82); backdrop-filter: blur(14px); } }
+  .hdr-in { height: 100%; display: flex; align-items: center; gap: 18px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; flex: none; min-height: 44px; }
+  .brand span { font: 800 17px/1 var(--f-display); font-stretch: 118%; letter-spacing: -0.01em; }
+  .brand small { display: block; font: 600 11px/1 var(--f-text); letter-spacing: 0.18em; color: var(--leaf); margin-top: 4px; text-transform: uppercase; }
+  .nav-desk ul { display: flex; gap: 2px; list-style: none; padding: 0; }
+  .nav-desk a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 15px; color: var(--ink-soft); padding: 0 14px; border-radius: 999px; transition: color 0.2s, background-color 0.2s; }
+  .nav-desk a:hover { color: var(--ink); }
+  .nav-desk a[aria-current] { color: var(--ink); background: var(--forest-2); }
+  .lang { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 1px solid var(--line-2); border-radius: 999px; font: 600 14px var(--f-text); text-decoration: none; color: var(--ink-soft); }
+  .lang:hover { color: var(--ink); border-color: var(--leaf); }
+  .burger { display: none; width: 44px; height: 44px; border: 1px solid var(--line-2); border-radius: 50%; background: transparent; cursor: pointer; position: relative; flex: none; }
+  .burger span { position: absolute; left: 12px; right: 12px; height: 2px; background: var(--ink); }
+  .burger span:first-child { top: 16px; }
+  .burger span:last-child { top: 25px; }
+  .burger.close span:first-child { top: 20px; transform: rotate(45deg); }
+  .burger.close span:last-child { top: 20px; transform: rotate(-45deg); }
+
+  .menu { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--night); color: var(--ink); overflow-y: auto; }
+  .menu:not(:popover-open) { display: none; }
+  .menu-top { height: var(--hdr); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+  .menu-top .burger { display: block; }
+  .menu nav ul { list-style: none; padding: 12px 0 28px; }
+  .menu nav li a { display: flex; align-items: center; min-height: 60px; border-bottom: 1px solid var(--line); text-decoration: none; font: 700 26px var(--f-display); font-stretch: 110%; }
+  .menu nav li a[aria-current] { color: var(--leaf); }
+
+  @media (max-width: 1000px) {
+    .nav-desk, .cta-h { display: none; }
+    .burger { display: block; }
+  }
+  /* Navigateurs sans popover : le bouton reste masqué et la navigation reste accessible en ligne. */
+  @supports not selector(:popover-open) {
+    .menu { display: none; }
+    @media (max-width: 1000px) {
+      .burger { display: none; }
+      .hdr { height: auto; position: static; }
+      .hdr-in { flex-wrap: wrap; padding-block: 10px; }
+      .nav-desk { display: block; order: 5; width: 100%; }
+      .nav-desk ul { flex-wrap: wrap; }
+    }
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { crumbs } from '../lib/crumbs';
+import { definedTerm } from '../lib/schema';
+import { alternatesFor, published, findByKey } from '../lib/content';
+import { useUI } from '../i18n/ui';
+import { ROUTES, entryUrl, langOf } from '../i18n/routes';
+
+interface Props { entry: CollectionEntry<'glossaire'> }
+const { entry } = Astro.props;
+const lang = langOf(entry.id);
+const t = useUI(lang);
+const d = entry.data;
+const { Content } = await render(entry);
+const path = entryUrl('glossaire', entry.id);
+const alternates = await alternatesFor('glossaire', entry);
+const all = await published('glossaire', lang);
+const related = d.related.map((k) => findByKey(all, k, lang)).filter(Boolean) as CollectionEntry<'glossaire'>[];
+const en = lang === 'en';
+const setName = en ? 'Noé Tech Growth glossary' : 'Glossaire Noé Tech Growth';
+---
+<Base {lang} title={d.title} description={d.description} {path} {alternates}
+  crumbs={crumbs(lang, ['glossaire'], [{ name: d.term, url: path }])} section="ressources"
+  jsonLd={[definedTerm({ name: d.term, description: d.definition, url: path, setUrl: ROUTES.glossaire[lang], setName, lang })]}>
+  <PageHead title={d.term} eyebrow={en ? 'Glossary' : 'Glossaire'}>
+    <div class="callout def">
+      <b>{en ? 'Definition' : 'Définition'}</b>
+      <p>{d.definition}</p>
+    </div>
+  </PageHead>
+  <div class="wrap">
+    <div class="prose"><Content /></div>
+    {related.length > 0 && (
+      <nav class="links" aria-labelledby="rel-h">
+        <h2 id="rel-h">{en ? 'Related terms' : 'Termes liés'}</h2>
+        <ul>{related.map((g) => <li><a class="arrow-link" href={entryUrl('glossaire', g.id)}>{g.data.term}</a></li>)}</ul>
+      </nav>
+    )}
+    <p><a class="arrow-link" href={ROUTES.glossaire[lang]}>{en ? 'All glossary terms' : 'Tous les termes du glossaire'}</a></p>
+    <CtaBox {lang} src="glossaire" />
+  </div>
+</Base>
+<style>
+  .def p { font-size: 19px; }
+  .links { margin-top: 40px; }
+  .links h2 { font-size: 22px; margin-bottom: 6px; }
+  .links ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 26px; }
+  .wrap { padding-bottom: 56px; }
+</style>

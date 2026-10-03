@@ -1,0 +1,7 @@
+---
+/** Rend un graphe JSON-LD. Les « </ » sont échappés pour rester sûrs dans un <script>. */
+interface Props { graph: object[] }
+const { graph } = Astro.props;
+const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+---
+<script type="application/ld+json" is:inline set:html={json} />

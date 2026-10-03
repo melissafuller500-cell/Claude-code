@@ -1,0 +1,40 @@
+---
+/**
+ * GABARIT NON CONSTRUIT (phase 1) — section 12 « Données originales ».
+ * Le préfixe « _ » empêche Astro de construire cette page. Pour la publier :
+ * 1. renseigner BAROMETRE ci-dessous avec des chiffres agrégés et anonymisés tirés des diagnostics
+ *    (jamais moins de 10 entreprises par chiffre, aucune donnée identifiable) ;
+ * 2. renommer le fichier en barometre.astro (et créer en/barometer.astro) ;
+ * 3. ajouter la route dans src/i18n/routes.ts et src/data/pages.ts.
+ */
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+
+const BAROMETRE = {
+  periode: 'À COMPLÉTER (ex. 1er semestre 2027)',
+  echantillon: 0, // nombre d'entreprises diagnostiquées
+  methode: 'À COMPLÉTER : comment le délai moyen a été mesuré, sur quelles factures.',
+  chiffres: [] as { label: string; valeur: string; note?: string }[],
+  publie: new Date('2027-01-01'),
+};
+const dataset = {
+  '@type': 'Dataset',
+  name: `Baromètre des délais de paiement des PME B2B au Cameroun, ${BAROMETRE.periode}`,
+  description: BAROMETRE.methode,
+  creator: { '@id': 'https://noetechgrowth.com/#organization' },
+  datePublished: BAROMETRE.publie.toISOString().slice(0, 10),
+  spatialCoverage: 'Cameroun',
+  isAccessibleForFree: true,
+};
+---
+<Base lang="fr" title="Baromètre des délais de paiement" description="À RÉDIGER (150 à 160 caractères)." path="/barometre/" jsonLd={[dataset]}>
+  <PageHead title={`Baromètre des délais de paiement, ${BAROMETRE.periode}`} answer="À RÉDIGER : réponse de 40 à 60 mots qui résume le chiffre principal, l’échantillon et la période." answerLabel="En bref" />
+  <div class="wrap prose">
+    <h2>Les chiffres</h2>
+    <dl>{BAROMETRE.chiffres.map((c) => <><dt>{c.label}</dt><dd>{c.valeur}{c.note && ` (${c.note})`}</dd></>)}</dl>
+    <h2>Méthode</h2>
+    <p>{BAROMETRE.methode} Échantillon : {BAROMETRE.echantillon} entreprises.</p>
+    <CtaBox lang="fr" src="barometre" />
+  </div>
+</Base>

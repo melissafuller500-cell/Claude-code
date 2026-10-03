@@ -1,0 +1,109 @@
+---
+/**
+ * Formulaire de diagnostic (section 13). Fonctionne sans JavaScript (POST classique puis page
+ * de confirmation) ; avec JavaScript, envoi sans rechargement et message de confirmation sur place.
+ * Anti-spam : champ piège invisible « website ». Réception : functions/api/diagnostic.js.
+ */
+import ContactRoutes from './ContactRoutes.astro';
+import { FORM_OPTIONS } from '../data/editorial';
+import { useUI } from '../i18n/ui';
+import { r, type Lang } from '../i18n/routes';
+
+interface Props { lang: Lang; id?: string }
+const { lang, id = 'formulaire' } = Astro.props;
+const t = useUI(lang);
+const en = lang === 'en';
+const L = en
+  ? { sector: 'Your sector', late: 'Do your clients pay late?', size: 'Team size', name: 'First name', company: 'Company', city: 'City', contact: 'Phone or email', contactHint: 'So I can reply to you. WhatsApp number welcome.', message: 'Your message (optional)', messageHint: 'If you used the calculator, your figures are added here.', send: t.cta, sending: 'Sending…', required: 'required', ok: 'Thank you. Your request has been received. I will reply within the day.', error: 'The message could not be sent. Please write to me on WhatsApp or by email instead.', invalid: 'Please check the highlighted fields.', privacy: 'Your details are only used to reply to you.', privacyLink: 'Privacy policy', honeypot: 'Leave this field empty' }
+  : { sector: 'Votre secteur', late: 'Vos clients paient-ils en retard ?', size: 'Taille de l’équipe', name: 'Prénom', company: 'Entreprise', city: 'Ville', contact: 'Téléphone ou e-mail', contactHint: 'Pour pouvoir vous répondre. Un numéro WhatsApp convient.', message: 'Votre message (facultatif)', messageHint: 'Si vous avez utilisé le calculateur, vos chiffres sont ajoutés ici.', send: t.cta, sending: 'Envoi en cours…', required: 'obligatoire', ok: 'Merci. Votre demande est bien reçue. Je vous réponds dans la journée.', error: 'Le message n’a pas pu partir. Écrivez-moi plutôt sur WhatsApp ou par e-mail.', invalid: 'Vérifiez les champs signalés.', privacy: 'Vos coordonnées servent uniquement à vous répondre.', privacyLink: 'Politique de confidentialité', honeypot: 'Laissez ce champ vide' };
+const p = (k: string) => `${id}-${k}`;
+---
+<div class="form-wrap" id={id}>
+  <form class="dform" method="post" action="/api/diagnostic" data-dform
+    data-msg-ok={L.ok} data-msg-error={L.error} data-msg-invalid={L.invalid} data-msg-sending={L.sending}>
+    <input type="hidden" name="lang" value={lang} />
+    <div class="hp" aria-hidden="true">
+      <label for={p('website')}>{L.honeypot}</label>
+      <input type="text" id={p('website')} name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="field">
+      <label for={p('sector')}>{L.sector}</label>
+      <select class="input" id={p('sector')} name="secteur" required>
+        {FORM_OPTIONS.sectors.map((o) => <option value={o.fr}>{o[lang]}</option>)}
+      </select>
+    </div>
+
+    <fieldset class="field">
+      <legend>{L.late}</legend>
+      <div class="seg">
+        {FORM_OPTIONS.late.map((o, i) => (
+          <label><input type="radio" name="retard" value={o.v} checked={i === 0} required /><span>{o[lang]}</span></label>
+        ))}
+      </div>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>{L.size}</legend>
+      <div class="seg">
+        {FORM_OPTIONS.size.map((o, i) => (
+          <label><input type="radio" name="taille" value={o.v} checked={i === 1} required /><span>{o[lang]}</span></label>
+        ))}
+      </div>
+    </fieldset>
+
+    <div class="two">
+      <div class="field">
+        <label for={p('name')}>{L.name} <span class="req">({L.required})</span></label>
+        <input class="input" id={p('name')} name="prenom" autocomplete="given-name" required maxlength="80" aria-describedby={p('name-err')} />
+        <p class="err" id={p('name-err')} hidden></p>
+      </div>
+      <div class="field">
+        <label for={p('company')}>{L.company}</label>
+        <input class="input" id={p('company')} name="entreprise" autocomplete="organization" maxlength="120" />
+      </div>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label for={p('city')}>{L.city}</label>
+        <input class="input" id={p('city')} name="ville" autocomplete="address-level2" maxlength="80" />
+      </div>
+      <div class="field">
+        <label for={p('contact')}>{L.contact} <span class="req">({L.required})</span></label>
+        <input class="input" id={p('contact')} name="contact" autocomplete="tel" required maxlength="120"
+          pattern="^\s*(\+?[0-9][0-9 \(\)\.\-]{7,19}|[^@\s]+@[^@\s]+\.[^@\s]+)\s*$" aria-describedby={`${p('contact-hint')} ${p('contact-err')}`} />
+        <p class="hint" id={p('contact-hint')}>{L.contactHint}</p>
+        <p class="err" id={p('contact-err')} hidden></p>
+      </div>
+    </div>
+    <div class="field">
+      <label for={p('message')}>{L.message}</label>
+      <textarea class="input" id={p('message')} name="message" rows="4" maxlength="2000" aria-describedby={p('message-hint')}></textarea>
+      <p class="hint" id={p('message-hint')}>{L.messageHint}</p>
+    </div>
+
+    <button class="btn block" type="submit">{L.send}</button>
+    <p class="small">{L.privacy} <a class="link" href={r('confidentialite', lang)}>{L.privacyLink}</a>.</p>
+    <div class="status" role="status" aria-live="polite" tabindex="-1" data-status></div>
+  </form>
+  <ContactRoutes {lang} formHref={`#${id}`} src="form" compact />
+</div>
+
+<script>
+  import { lazy } from '../scripts/lazy';
+  lazy('[data-dform]', () => import('../scripts/form'));
+</script>
+
+<style>
+  .form-wrap { display: grid; gap: 14px; scroll-margin-top: calc(var(--hdr) + 16px); }
+  .dform { background: var(--forest); border: 1px solid var(--line-2); border-radius: var(--r-l); padding: clamp(20px, 3vw, 32px); display: grid; gap: 20px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .req { color: var(--ink-mute); font-weight: 400; font-size: 14px; }
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .status:empty { display: none; }
+  .status { border-radius: 14px; padding: 14px 16px; font-weight: 600; }
+  .status.ok { background: rgba(139, 208, 106, 0.14); border: 1px solid var(--ok); color: var(--ink); }
+  .status.error { background: rgba(229, 96, 79, 0.12); border: 1px solid var(--bad); color: var(--ink); }
+  .status:focus { outline: 2px solid var(--spark); }
+  @media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
+</style>

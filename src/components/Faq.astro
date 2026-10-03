@@ -1,0 +1,15 @@
+---
+/** FAQ en <details> natifs. Le JSON-LD FAQPage est produit par la page à partir des mêmes données. */
+import type { QA } from '../data/faq';
+import type { Lang } from '../i18n/routes';
+interface Props { items: QA[]; lang: Lang }
+const { items, lang } = Astro.props;
+---
+<div class="faq">
+  {items.map((it) => (
+    <details>
+      <summary><span>{it.q[lang]}</span><i aria-hidden="true"></i></summary>
+      <p class="ans">{it.a[lang]}</p>
+    </details>
+  ))}
+</div>

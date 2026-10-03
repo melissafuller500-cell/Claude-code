@@ -1,0 +1,26 @@
+{
+  "note": "Données fictives, présentées comme exemple.",
+  "buckets": [
+    { "color": "ok", "fr": "Moins de 30 j", "en": "Under 30 d", "actionFr": "Rappel courtois et confirmation de la date de paiement. La facture est-elle bien enregistrée ?", "actionEn": "Polite reminder and confirmation of the payment date. Has the invoice been registered?" },
+    { "color": "warn", "fr": "30 à 60 j", "en": "30–60 d", "actionFr": "Relance écrite avec la clause de pénalité, puis appel au comptable du client.", "actionEn": "Written reminder citing the penalty clause, then a call to the client’s accountant." },
+    { "color": "late", "fr": "60 à 90 j", "en": "60–90 d", "actionFr": "Rendez-vous avec le directeur financier. Nouvelles livraisons conditionnées au règlement.", "actionEn": "Meeting with the finance director. New deliveries conditional on payment." },
+    { "color": "bad", "fr": "Plus de 90 j", "en": "Over 90 d", "actionFr": "Mise en demeure écrite. Dossier complet prêt pour un avocat si nécessaire.", "actionEn": "Written formal notice. Full file ready for a lawyer if needed." }
+  ],
+  "invoices": [
+    { "client": "Client A · BTP", "clientEn": "Client A · Construction", "ref": "F-1042", "amount": 4200000, "late": 12, "bucket": 0, "next": 0 },
+    { "client": "Client B · Services", "clientEn": "Client B · Services", "ref": "F-1038", "amount": 1350000, "late": 24, "bucket": 0, "next": 0 },
+    { "client": "Client C · Négoce", "clientEn": "Client C · Trading", "ref": "F-1029", "amount": 2800000, "late": 41, "bucket": 1, "next": 2 },
+    { "client": "Client D · Public", "clientEn": "Client D · Public", "ref": "F-1021", "amount": 6100000, "late": 55, "bucket": 1, "next": 2 },
+    { "client": "Client E · Transport", "clientEn": "Client E · Transport", "ref": "F-1017", "amount": 950000, "late": 73, "bucket": 2, "next": 3 },
+    { "client": "Client F · BTP", "clientEn": "Client F · Construction", "ref": "F-1009", "amount": 3400000, "late": 88, "bucket": 2, "next": 3 },
+    { "client": "Client G · Services", "clientEn": "Client G · Services", "ref": "F-0994", "amount": 1700000, "late": 112, "bucket": 3, "next": 4 },
+    { "client": "Client H · Agence", "clientEn": "Client H · Agency", "ref": "F-0987", "amount": 2250000, "late": 146, "bucket": 3, "next": 4 }
+  ],
+  "nextActions": [
+    { "fr": "Rappel J+1", "en": "D+1 reminder" },
+    { "fr": "Relance J+7", "en": "D+7 reminder" },
+    { "fr": "Appel comptable", "en": "Call accountant" },
+    { "fr": "RDV direction", "en": "Meet finance" },
+    { "fr": "Mise en demeure", "en": "Formal notice" }
+  ]
+}

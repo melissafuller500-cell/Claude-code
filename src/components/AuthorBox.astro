@@ -1,0 +1,21 @@
+---
+import { useUI } from '../i18n/ui';
+import { r, type Lang } from '../i18n/routes';
+import Logo from './Logo.astro';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useUI(lang);
+---
+<aside class="author" aria-label={lang === 'en' ? 'About the author' : 'À propos de l’auteur'}>
+  <Logo size={40} />
+  <div>
+    <p class="n">Noé Mbwang</p>
+    <p class="muted">{t.authorBox}</p>
+    <a class="arrow-link" href={r('apropos', lang)}>{t.authorLink}</a>
+  </div>
+</aside>
+<style>
+  .author { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding: 22px; border: 1px solid var(--line); border-radius: var(--r-m); background: var(--forest); margin-block: 32px; }
+  .n { font: 800 20px var(--f-display); font-stretch: 110%; margin-bottom: 6px; }
+  .muted { font-size: 16px; }
+</style>

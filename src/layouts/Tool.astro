@@ -1,0 +1,51 @@
+---
+/** Gabarit des pages outils (section 7) : titre, explication statique, outil, appel au diagnostic. */
+import Base from './Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { crumbs } from '../lib/crumbs';
+import { ROUTES, type Lang, type RouteKey } from '../i18n/routes';
+import { useUI } from '../i18n/ui';
+
+interface Props { lang: Lang; key: RouteKey; h1: string; answer: string; related: { href: string; label: string }[] }
+const { lang, key, h1, answer, related } = Astro.props;
+const meta = PAGES[key][lang];
+const t = useUI(lang);
+const app = {
+  '@type': 'WebApplication',
+  name: h1,
+  url: new URL(ROUTES[key][lang], 'https://noetechgrowth.com').href,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  inLanguage: lang,
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: 0, priceCurrency: 'XAF' },
+  description: meta.description,
+};
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES[key][lang]} alternates={ROUTES[key]}
+  crumbs={crumbs(lang, ['outils', key])} section="outils" jsonLd={[app]}>
+  <PageHead title={h1} answer={answer} answerLabel={t.inBrief} />
+  <div class="wrap prose-intro"><slot name="intro" /></div>
+  <section class="wrap sec-tight tool" aria-label={h1}>
+    <slot />
+  </section>
+  <div class="wrap">
+    <CtaBox {lang} src={key} />
+    <nav class="rel" aria-labelledby="rel-h">
+      <h2 id="rel-h">{t.related}</h2>
+      <ul>{related.map((r) => <li><a class="arrow-link" href={r.href}>{r.label}</a></li>)}</ul>
+    </nav>
+  </div>
+</Base>
+<style>
+  .prose-intro { display: grid; gap: 16px; max-width: 820px; margin-inline: auto; }
+  @media (min-width: 1240px) { .prose-intro { margin-inline: auto; max-width: var(--maxw); } .prose-intro > :global(*) { max-width: 820px; } }
+  .prose-intro :global(h2) { font-size: clamp(24px, 2.4vw, 32px); margin-top: 8px; }
+  .prose-intro :global(p), .prose-intro :global(li) { color: var(--ink-soft); }
+  .prose-intro :global(ul), .prose-intro :global(ol) { padding-left: 22px; display: grid; gap: 6px; }
+  .rel { padding-bottom: 64px; }
+  .rel h2 { font-size: 24px; margin-bottom: 8px; }
+  .rel ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 28px; }
+</style>

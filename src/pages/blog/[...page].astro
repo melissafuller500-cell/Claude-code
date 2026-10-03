@@ -1,0 +1,12 @@
+---
+import type { GetStaticPathsOptions } from 'astro';
+import BlogIndex from '../../views/BlogIndex.astro';
+import { published, byDateDesc } from '../../lib/content';
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await published('blog', 'fr')).sort(byDateDesc);
+  const activeCategories = [...new Set(posts.map((p) => p.data.category))];
+  return paginate(posts, { pageSize: 12, props: { activeCategories } });
+}
+const { page, activeCategories } = Astro.props;
+---
+<BlogIndex lang="fr" {page} {activeCategories} />

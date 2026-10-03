@@ -1,0 +1,49 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { crumbs } from '../lib/crumbs';
+import { article } from '../lib/schema';
+import { ogFor } from '../lib/og';
+import { alternatesFor, published } from '../lib/content';
+import { useUI, fmtDate } from '../i18n/ui';
+import { ROUTES, entryUrl, langOf } from '../i18n/routes';
+
+interface Props { entry: CollectionEntry<'secteurs'> }
+const { entry } = Astro.props;
+const lang = langOf(entry.id);
+const t = useUI(lang);
+const d = entry.data;
+const { Content } = await render(entry);
+const path = entryUrl('secteurs', entry.id);
+const alternates = await alternatesFor('secteurs', entry);
+const others = (await published('secteurs', lang)).filter((e) => e.id !== entry.id).sort((a, b) => a.data.order - b.data.order);
+const en = lang === 'en';
+---
+<Base {lang} title={d.title} description={d.description} {path} {alternates} ogType="article" published={d.pubDate} modified={d.updatedDate}
+  crumbs={crumbs(lang, ['secteurs'], [{ name: d.name, url: path }])} section="ressources"
+  jsonLd={[article({ type: 'Article', title: d.title, description: d.description, url: path, image: ogFor(path), lang, published: d.pubDate, modified: d.updatedDate })]}>
+  <PageHead title={d.title} eyebrow={d.name} answer={d.answer} answerLabel={t.inBrief}>
+    <p slot="meta" class="small">{t.by} <a class="link" href={ROUTES.apropos[lang]}>Noé Mbwang</a> · {d.updatedDate ? t.updated : t.published} <time datetime={(d.updatedDate ?? d.pubDate).toISOString().slice(0, 10)}>{fmtDate(d.updatedDate ?? d.pubDate, lang)}</time></p>
+  </PageHead>
+  <div class="wrap">
+    <div class="prose"><Content /></div>
+    <nav class="links" aria-labelledby="tools-h">
+      <h2 id="tools-h">{en ? 'Tools for this sector' : 'Les outils pour ce secteur'}</h2>
+      <ul>{d.tools.map((k) => <li><a class="arrow-link" href={ROUTES[k][lang]}>{PAGES[k][lang].title}</a></li>)}</ul>
+      <h2>{en ? 'Other sectors' : 'Les autres secteurs'}</h2>
+      <ul>{others.map((o) => <li><a class="arrow-link" href={entryUrl('secteurs', o.id)}>{o.data.name}</a></li>)}</ul>
+    </nav>
+    <CtaBox {lang} src="secteur" />
+    <p class="disclaimer">{t.disclaimer}</p>
+  </div>
+</Base>
+<style>
+  .links { margin-top: 48px; display: grid; gap: 6px; }
+  .links h2 { font-size: 22px; margin-top: 14px; }
+  .links ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 26px; }
+  .wrap { padding-bottom: 56px; }
+  .disclaimer { margin-top: 8px; }
+</style>

@@ -1,0 +1,392 @@
+---
+/**
+ * Landing page (section 6). Ordre : hero, pour qui, problème, calculateur, trois chantiers,
+ * repère chiffré, preuves (masquée tant que vide), offres + méthode, à propos, FAQ, contact.
+ */
+import Base from '../layouts/Base.astro';
+import HeroPortrait from '../components/HeroPortrait.astro';
+import Calculator from '../components/Calculator.astro';
+import Gauge from '../components/Gauge.astro';
+import OfferCards from '../components/OfferCards.astro';
+import Faq from '../components/Faq.astro';
+import DiagnosticForm from '../components/DiagnosticForm.astro';
+import { PAGES } from '../data/pages';
+import { FAQ_HOME } from '../data/faq';
+import { BENCHMARK, PROOFS } from '../data/editorial';
+import { METHOD, PAYMENT_METHODS } from '../data/offers';
+import { SITE } from '../data/site';
+import { faqPage } from '../lib/schema';
+import { useUI } from '../i18n/ui';
+import { r, type Lang } from '../i18n/routes';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useUI(lang);
+const meta = PAGES.home[lang];
+const path = r('home', lang);
+const en = lang === 'en';
+const B = BENCHMARK[lang];
+
+const C = en ? {
+  eyebrow: 'B2B SMEs · Cameroon',
+  h1a: 'Get paid', h1b: 'faster.',
+  tag: 'Profitable on paper. Short on cash.',
+  lead: 'Solid contracts, weekly tracking of unpaid invoices and reminders on fixed dates. One result is measured: the number of days your clients take to pay.',
+  second: 'What late payments cost you',
+  portraitAlt: 'Noé Mbwang, founder of Noé Tech Growth',
+  fitH: 'Built for companies that invoice other companies.',
+  fitLead: 'For owners and managers of SMEs with 10 to 50 employees that invoice other businesses, wherever they are in Cameroon.',
+  yesH: 'You’re in the right place if you are',
+  yes: ['A construction, finishing-works or subcontracting company', 'A B2B service provider: maintenance, cleaning, security, IT', 'A supplier or trader selling to professionals', 'A transport or logistics company', 'An agency, consultancy or engineering firm'],
+  noH: 'This isn’t for you if you’re looking for',
+  no: ['Help for a cash-paid retail shop', 'Debt recovery through the courts', 'Invoicing software'],
+  probH: 'You did the work. You’re still waiting for the money.',
+  probLead: 'An SME can be profitable on paper and still run out of cash because its clients pay late. Salaries, suppliers and taxes don’t wait. It often starts inside your own company, in three precise places.',
+  leaks: [
+    ['Leak 1 · The contract', 'The contract says nothing about payment terms, or what happens when they are missed.', 'Without a written date, there is no late payment. There’s just a client taking their time.'],
+    ['Leak 2 · Tracking', 'Nobody knows, on any given day, who owes how much and since when.', 'Invoices sit in a binder, payments on the bank statement, and the reconciliation lives in the owner’s head.'],
+    ['Leak 3 · Reminders', 'Reminders go out when someone remembers.', 'Your client knows it. They pay first the suppliers who follow up on fixed dates.'],
+  ],
+  costsH: 'What late payment costs you, on top of the wait.',
+  costsLead: 'None of these costs appear on the invoice. All of them appear in your accounts.',
+  costs: ['The overdraft and its interest, to pay salaries your clients already owe you.', 'Your own suppliers paid late, and worse terms next time.', 'Orders turned down because cash can’t keep up.', 'Your evenings spent chasing payments instead of running the business.'],
+  calcEyebrow: 'Calculator',
+  calcH: 'How much of your money is sleeping at your clients’?',
+  calcLead: 'Three figures are enough. A fourth shows what the delay costs if you cover it with an overdraft. Nothing is saved.',
+  chH: 'Three workstreams. One number to bring down.',
+  chLead: 'That number is your average payment time: the days between sending an invoice and the money landing in your account.',
+  ch: [
+    { when: 'Before the order', h: 'Solid contracts', p: 'A contract that protects your cash fits in a few clear clauses, written before the work starts, not on the day the client stops answering.', links: [[r('clauses', lang), 'Payment-terms template'], [r('test', lang), 'Contract test']] },
+    { when: 'Every week', h: 'Tracking unpaid invoices', p: 'A table, updated every week, that answers one question: who owes how much, and since when? Excel is enough.', links: [['/en/guides/aging-report/', 'Aging report guide']] },
+    { when: 'On fixed dates', h: 'Systematic reminders', p: 'Reminders stop depending on the mood of the day. They follow a calendar the client has known since signing.', links: [[r('relances', lang), 'Reminder schedule and templates']] },
+  ],
+  proofsH: 'What clients say',
+  offersH: 'We start by measuring. Then three steps, prices shown.',
+  offersLead: 'Every engagement starts with the free 45-minute diagnostic. The three paid steps follow, only if they make sense for you.',
+  pay: 'Payment',
+  offersMore: 'Details of the offers',
+  aboutEyebrow: 'About',
+  aboutH: 'Trained in law, focused on a single problem.',
+  aboutP: 'I’m Noé Mbwang, founder of Noé Tech Growth. I hold a Master’s in Public International Law and Political Science. I work on one thing: helping B2B SMEs get paid faster. AI is a means. The result I measure is your clients’ average payment time.',
+  aboutMore: 'My background and method',
+  faqH: 'The questions I get asked.',
+  faqMore: 'More questions about the diagnostic',
+  contactEyebrow: 'Diagnostic',
+  contactH1: '45 minutes to know', contactH2: 'your number.',
+  contactLead: 'Tell me your sector, whether your clients pay late, and the size of your team. I reply within the day, wherever you are in Cameroon. The diagnostic is free.',
+  benchEyebrow: 'Benchmark',
+} : {
+  eyebrow: 'PME B2B · Cameroun',
+  h1a: 'Encaissez', h1b: 'plus vite.',
+  tag: 'Rentable sur le papier. À court de trésorerie.',
+  lead: 'Des contrats solides, un suivi des impayés chaque semaine, des relances à date fixe. Un seul résultat mesuré : le nombre de jours que vos clients mettent à payer.',
+  second: 'Calculer ce que les retards vous coûtent',
+  portraitAlt: 'Noé Mbwang, fondateur de Noé Tech Growth',
+  fitH: 'Fait pour les entreprises qui facturent d’autres entreprises.',
+  fitLead: 'Pour les dirigeants et gérants de PME de 10 à 50 employés qui facturent d’autres entreprises, où que vous soyez au Cameroun.',
+  yesH: 'Vous êtes au bon endroit si vous êtes',
+  yes: ['Entreprise du BTP, du second œuvre ou sous-traitant', 'Prestataire de services aux entreprises : maintenance, nettoyage, sécurité, informatique', 'Fournisseur ou négociant pour professionnels', 'Transporteur ou logisticien', 'Agence, cabinet ou bureau d’études'],
+  noH: 'Ce n’est pas pour vous si vous cherchez',
+  no: ['Une aide pour un commerce payé au comptant', 'Un recouvrement devant les tribunaux', 'Un logiciel de facturation'],
+  probH: 'Vous avez fait le travail. Vous attendez encore l’argent.',
+  probLead: 'Une PME peut être rentable sur le papier et manquer de trésorerie parce que ses clients paient tard. Les salaires, les fournisseurs et les impôts, eux, n’attendent pas. Le problème commence souvent chez vous, à trois endroits précis.',
+  leaks: [
+    ['Fuite 1 · Le contrat', 'Le contrat ne dit rien du délai de paiement, ni de ce qui se passe en cas de retard.', 'Sans date écrite, il n’y a pas de retard. Il y a seulement un client qui prend son temps.'],
+    ['Fuite 2 · Le suivi', 'Personne ne sait, à un jour donné, qui doit combien et depuis quand.', 'Les factures sont dans un classeur, les paiements sur le relevé bancaire, et le rapprochement dans la tête du dirigeant.'],
+    ['Fuite 3 · Les relances', 'Les relances partent quand quelqu’un y pense.', 'Le client le sait. Il paie d’abord les fournisseurs qui relancent à date fixe.'],
+  ],
+  costsH: 'Ce que le retard vous coûte, en plus de l’attente.',
+  costsLead: 'Aucun de ces coûts n’apparaît sur la facture. Tous apparaissent dans vos comptes.',
+  costs: ['Le découvert et ses agios, pour payer des salaires que vos clients vous doivent déjà.', 'Vos propres fournisseurs payés en retard, et de moins bonnes conditions la fois suivante.', 'Des commandes refusées parce que la trésorerie ne suit pas.', 'Vos soirées passées à relancer au lieu de diriger.'],
+  calcEyebrow: 'Calculateur',
+  calcH: 'Combien d’argent dort chez vos clients ?',
+  calcLead: 'Trois chiffres suffisent. Un quatrième montre ce que le retard vous coûte si vous le financez par découvert. Rien n’est enregistré.',
+  chH: 'Trois chantiers. Un seul chiffre à faire baisser.',
+  chLead: 'Ce chiffre, c’est votre délai moyen de paiement : le nombre de jours entre l’envoi d’une facture et l’arrivée de l’argent sur votre compte.',
+  ch: [
+    { when: 'Avant la commande', h: 'Contrats solides', p: 'Un contrat qui protège votre encaissement tient en quelques clauses claires, écrites avant le début du travail, pas le jour où le client ne répond plus.', links: [[r('clauses', lang), 'Modèle de conditions de paiement'], [r('test', lang), 'Test de contrat']] },
+    { when: 'Chaque semaine', h: 'Suivi des impayés', p: 'Un tableau, tenu à jour chaque semaine, qui répond à une seule question : qui doit combien, et depuis quand ? Excel suffit.', links: [['/guides/balance-agee/', 'Guide de la balance âgée']] },
+    { when: 'À date fixe', h: 'Relances systématiques', p: 'La relance cesse de dépendre de l’humeur du jour. Elle suit un calendrier que le client connaît depuis la signature.', links: [[r('relances', lang), 'Calendrier et modèles de relance']] },
+  ],
+  proofsH: 'Ce qu’en disent les clients',
+  offersH: 'On commence par mesurer. Puis trois étapes, des prix affichés.',
+  offersLead: 'Tout commence par le diagnostic gratuit de 45 minutes. Les trois étapes payantes suivent, seulement si elles ont un sens pour vous.',
+  pay: 'Paiement',
+  offersMore: 'Le détail des offres',
+  aboutEyebrow: 'À propos',
+  aboutH: 'Juriste de formation, concentré sur un seul problème.',
+  aboutP: 'Je suis Noé Mbwang, fondateur de Noé Tech Growth. J’ai un Master en Droit Public International et Science Politique. Je travaille sur une seule chose : aider les PME B2B à encaisser plus vite. L’IA est un moyen. Le résultat que je mesure, c’est le délai moyen de paiement de vos clients.',
+  aboutMore: 'Mon parcours et ma méthode',
+  faqH: 'Les questions qu’on me pose.',
+  faqMore: 'D’autres questions sur le diagnostic',
+  contactEyebrow: 'Diagnostic',
+  contactH1: '45 minutes pour connaître', contactH2: 'votre chiffre.',
+  contactLead: 'Indiquez votre secteur, si vos clients paient en retard, et la taille de votre équipe. Je vous réponds dans la journée, où que vous soyez au Cameroun. Le diagnostic est gratuit.',
+  benchEyebrow: 'Repère',
+};
+const icons = [
+  '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/>',
+  '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/>',
+  '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',
+];
+const maxBar = Math.max(...B.bars.map((b) => b.value));
+---
+<Base {lang} title={meta.title} description={meta.description} {path} alternates={{ fr: '/', en: '/en/' }} withPerson jsonLd={[faqPage(FAQ_HOME, lang)]}>
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{C.eyebrow}</p>
+        <h1>{C.h1a} <em>{C.h1b}</em></h1>
+        <p class="tag">{C.tag}</p>
+        <p class="lead">{C.lead}</p>
+        <div class="ctas">
+          <a class="btn" href="#contact" data-track="cta_click" data-src="hero">{t.cta}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+          <a class="btn ghost" href="#calculateur">{C.second}</a>
+        </div>
+      </div>
+      <HeroPortrait alt={C.portraitAlt} />
+    </div>
+  </section>
+
+  <!-- 2. Pour qui -->
+  <section class="sec" id="pour-qui" aria-labelledby="pour-qui-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="pour-qui-h">{C.fitH}</h2>
+        <p class="lead">{C.fitLead}</p>
+      </div>
+      <div class="fit">
+        <div class="yes rv"><h3>{C.yesH}</h3><ul>{C.yes.map((x) => <li>{x}</li>)}</ul></div>
+        <div class="no rv"><h3>{C.noH}</h3><ul>{C.no.map((x) => <li>{x}</li>)}</ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Le problème -->
+  <section class="sec paper" id="probleme" aria-labelledby="probleme-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="probleme-h">{C.probH}</h2>
+        <p class="lead">{C.probLead}</p>
+      </div>
+      <div class="leaks">
+        {C.leaks.map((l, i) => (
+          <article class="leak rv">
+            <p class="k"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={icons[i]} /><span>{l[0]}</span></p>
+            <h3>{l[1]}</h3>
+            <p class="muted">{l[2]}</p>
+          </article>
+        ))}
+      </div>
+      <div class="costs">
+        <div class="rv">
+          <h3>{C.costsH}</h3>
+          <p class="muted" style="margin-top:14px">{C.costsLead}</p>
+        </div>
+        <ul>{C.costs.map((c) => <li class="rv">{c}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Calculateur -->
+  <section class="sec" id="calculateur" aria-labelledby="calc-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{C.calcEyebrow}</p>
+        <h2 id="calc-h">{C.calcH}</h2>
+        <p class="lead">{C.calcLead}</p>
+      </div>
+      <Calculator {lang} toolHref={r('calculateur', lang)} />
+    </div>
+  </section>
+
+  <!-- 5. Les trois chantiers -->
+  <section class="sec peak" id="chantiers" aria-labelledby="chantiers-h">
+    <div class="wrap peak-grid">
+      <div class="peak-pin">
+        <h2 id="chantiers-h">{C.chH}</h2>
+        <p class="lead">{C.chLead}</p>
+        <Gauge {lang} />
+      </div>
+      <ol class="chs">
+        {C.ch.map((c, i) => (
+          <li class="ch rv">
+            <span class="when">{String(i + 1).padStart(2, '0')} · {c.when}</span>
+            <h3>{c.h}</h3>
+            <p class="muted">{c.p}</p>
+            <p class="links">{c.links.map(([href, label]) => <a class="arrow-link" href={href}>{label}</a>)}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6. Repère chiffré (source vérifiée) -->
+  {BENCHMARK.show && (
+    <section class="sec band" id="repere" aria-labelledby="repere-h">
+      <div class="wrap stat">
+        <p class="big num" aria-hidden="true">{BENCHMARK.value}<small>+ {t.days}</small></p>
+        <div>
+          <p class="eyebrow">{C.benchEyebrow}</p>
+          <h2 id="repere-h">{B.title}</h2>
+          <p class="muted">{B.text}</p>
+          <ul class="cmp">
+            {B.bars.map((b) => (
+              <li><span class="small">{b.label}</span><span class="bar"><i style={`width:${(b.value / maxBar) * 100}%`}></i></span></li>
+            ))}
+          </ul>
+          <p class="small src">{B.source} <a class="link" href={BENCHMARK.url} rel="noopener" target="_blank" hreflang="fr">{B.linkLabel}</a></p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 7. Preuves : affichée uniquement avec des éléments réels fournis par Noé -->
+  {PROOFS.length > 0 && (
+    <section class="sec" id="preuves" aria-labelledby="preuves-h">
+      <div class="wrap">
+        <h2 id="preuves-h" class="sec-head">{C.proofsH}</h2>
+        <div class="cards">
+          {PROOFS.map((p) => (
+            <figure class="card"><blockquote>{p.quote[lang]}</blockquote>{p.result && <p><b>{p.result[lang]}</b></p>}<figcaption class="meta">{p.author}{p.company && ` · ${p.company}`}</figcaption></figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 8. Offres + méthode -->
+  <section class="sec" id="offres" aria-labelledby="offres-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="offres-h">{C.offersH}</h2>
+        <p class="lead">{C.offersLead}</p>
+      </div>
+      <ol class="method">
+        {METHOD.map((m) => (
+          <li><span class="k">{m.k[lang]}</span><h3>{m.h[lang]}</h3><p class="muted">{m.p[lang]}</p></li>
+        ))}
+      </ol>
+      <OfferCards {lang} />
+      <div class="pay">
+        <p class="m"><span class="sr-only">{C.pay} :</span>{PAYMENT_METHODS[lang].map((m) => <span>{m}</span>)}</p>
+        <a class="arrow-link" href={r('offres', lang)}>{C.offersMore}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. À propos -->
+  <section class="sec band" id="a-propos" aria-labelledby="a-propos-h">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">{C.aboutEyebrow}</p>
+        <h2 id="a-propos-h">{C.aboutH}</h2>
+      </div>
+      <div class="about-txt">
+        <p class="lead">{C.aboutP}</p>
+        <p class="certs">{SITE.founder.certifications.map((c) => <span>{c}</span>)}</p>
+        <a class="arrow-link" href={r('apropos', lang)}>{C.aboutMore}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ (6 questions) -->
+  <section class="sec" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h" class="sec-head">{C.faqH}</h2>
+      <Faq items={FAQ_HOME} {lang} />
+      <p style="margin-top:20px"><a class="arrow-link" href={r('diagnostic', lang)}>{C.faqMore}</a></p>
+    </div>
+  </section>
+
+  <!-- 11. Contact -->
+  <section class="sec final" id="contact" aria-labelledby="contact-h">
+    <div class="wrap final-grid">
+      <div>
+        <p class="eyebrow">{C.contactEyebrow}</p>
+        <h2 id="contact-h">{C.contactH1} <em>{C.contactH2}</em></h2>
+        <p class="lead">{C.contactLead}</p>
+      </div>
+      <DiagnosticForm {lang} id="formulaire" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { background: radial-gradient(120% 90% at 80% 30%, #14341f 0%, var(--night) 62%); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: center; gap: clamp(24px, 4vw, 64px); padding-block: clamp(32px, 6vw, 80px) clamp(48px, 7vw, 96px); }
+  .hero-copy { display: grid; gap: 22px; min-width: 0; }
+  .hero h1 { font-size: clamp(52px, 8vw, 112px); font-weight: 900; font-stretch: 120%; letter-spacing: -0.035em; line-height: 0.92; }
+  .hero h1 em { font-style: normal; color: var(--leaf); display: block; }
+  .tag { font: 700 clamp(19px, 1.8vw, 24px)/1.3 var(--f-display); font-stretch: 105%; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero h1 { font-size: clamp(48px, 14vw, 84px); } }
+
+  .fit { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 16px; }
+  .fit > div { border-radius: var(--r-l); padding: clamp(22px, 3vw, 34px); }
+  .fit .yes { background: var(--forest); border: 1px solid var(--line); }
+  .fit .no { border: 1px dashed var(--line-2); }
+  .fit h3 { margin-bottom: 18px; font-size: 22px; }
+  .fit ul { list-style: none; padding: 0; display: grid; gap: 12px; }
+  .fit li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; }
+  .fit .yes li::before { content: ''; width: 12px; height: 7px; margin-top: 8px; border: 2px solid var(--leaf); border-top: 0; border-right: 0; transform: rotate(-45deg); }
+  .fit .no li { color: var(--ink-soft); }
+  .fit .no li::before { content: ''; width: 12px; height: 2px; margin-top: 12px; background: var(--bad); }
+  @media (max-width: 900px) { .fit { grid-template-columns: 1fr; } }
+
+  .leaks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .leak { background: #fff; border-radius: var(--r-l); padding: 28px 26px 30px; display: grid; gap: 12px; align-content: start; box-shadow: 0 1px 0 rgba(18, 36, 26, 0.06), 0 24px 40px -30px rgba(18, 36, 26, 0.35); }
+  .leak .k { font: 600 14px var(--f-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--late-ink); display: flex; align-items: center; gap: 10px; }
+  .leak .k svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+  .costs { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); margin-top: clamp(48px, 7vw, 88px); align-items: start; }
+  .costs h3 { font-size: clamp(26px, 3vw, 38px); font-weight: 800; }
+  .costs ul { list-style: none; padding: 0; }
+  .costs li { padding: 18px 0 18px 30px; border-top: 1px solid rgba(18, 36, 26, 0.14); font-size: 18px; line-height: 1.45; position: relative; }
+  .costs li:last-child { border-bottom: 1px solid rgba(18, 36, 26, 0.14); }
+  .costs li::before { content: ''; position: absolute; left: 2px; top: 27px; width: 12px; height: 2px; background: var(--late-ink); }
+  @media (max-width: 900px) { .leaks, .costs { grid-template-columns: 1fr; } }
+
+  .peak { background: linear-gradient(var(--night), #081a10 40%, var(--night)); }
+  .peak-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+  .peak-pin { position: sticky; top: calc(var(--hdr) + 24px); display: grid; gap: 20px; }
+  .chs { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .ch { background: var(--forest); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(22px, 3vw, 32px); display: grid; gap: 12px; }
+  .when { font: 600 14px var(--f-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--spark); }
+  .ch h3 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; }
+  .links { display: flex; flex-wrap: wrap; gap: 0 20px; }
+  @media (max-width: 1000px) { .peak-grid { grid-template-columns: 1fr; } .peak-pin { position: static; } }
+
+  .stat { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(28px, 6vw, 88px); align-items: center; }
+  .big { font: 900 clamp(110px, 18vw, 250px)/0.8 var(--f-display); font-stretch: 125%; letter-spacing: -0.05em; display: flex; align-items: flex-start; }
+  .big small { font-size: 0.26em; color: var(--late); margin: 0.12em 0 0 0.08em; letter-spacing: -0.01em; }
+  .stat h2 { font-size: clamp(26px, 3vw, 40px); margin: 16px 0; }
+  .cmp { list-style: none; padding: 0; display: grid; gap: 12px; margin-top: 24px; max-width: 560px; }
+  .cmp li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: center; }
+  .bar { height: 12px; background: var(--forest-2); border-radius: 999px; overflow: hidden; display: block; }
+  .bar i { display: block; height: 100%; border-radius: 999px; background: var(--late); }
+  .src { margin-top: 18px; }
+  @media (max-width: 760px) { .stat { grid-template-columns: 1fr; } }
+
+  .method { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); margin-bottom: 40px; }
+  .method li { padding: 24px 24px 24px 0; display: grid; gap: 10px; align-content: start; }
+  .method li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .method .k { font: 600 14px var(--f-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--leaf); }
+  .method h3 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 800; }
+  .pay { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 28px; }
+  .pay .m { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pay .m span:not(.sr-only) { border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; font: 600 14px var(--f-text); color: var(--ink-soft); }
+  @media (max-width: 900px) { .method { grid-template-columns: 1fr; } .method li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); } }
+
+  .about { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 5vw, 80px); align-items: start; }
+  .about h2 { margin-top: 16px; }
+  .about-txt { display: grid; gap: 20px; }
+  .certs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .certs span { border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; font-size: 14px; color: var(--ink-soft); }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+
+  .final { background: radial-gradient(90% 80% at 15% 100%, #1b4128 0%, var(--night) 60%); }
+  .final-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .final h2 { font-size: clamp(36px, 4.4vw, 60px); font-weight: 900; font-stretch: 118%; margin: 16px 0 20px; }
+  .final h2 em { font-style: normal; color: var(--leaf); }
+  @media (max-width: 900px) { .final-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,42 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import Calculator from '../../components/Calculator.astro';
+import { ROUTES, type Lang } from '../../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const related = en
+  ? [{ href: ROUTES.relances.en, label: 'Reminder schedule and templates' }, { href: '/en/guides/aging-report/', label: 'Guide: the aging report' }, { href: ROUTES.test.en, label: 'Test: does your contract protect you?' }]
+  : [{ href: ROUTES.relances.fr, label: 'Calendrier et modèles de relance' }, { href: '/guides/balance-agee/', label: 'Guide : la balance âgée' }, { href: ROUTES.test.fr, label: 'Test : votre contrat vous protège-t-il ?' }];
+---
+{en ? (
+  <Tool lang="en" key="calculateur" h1="Late payment cost calculator" {related}
+    answer="An invoice paid at 60 days instead of 30 leaves a month of revenue sitting at your clients’. With 10,000,000 FCFA invoiced per month, that is 10,000,000 FCFA of cash tied up by the delay alone, and about 1,400,000 FCFA a year if you fill the gap with a 14% overdraft.">
+    <Fragment slot="intro">
+      <h2>How the calculation works</h2>
+      <p>The calculator uses four figures you know: what you invoice to other businesses each month, the number of days your clients actually take to pay, the payment terms written in your contracts, and the yearly rate of your overdraft.</p>
+      <ul>
+        <li><strong>Cash tied up</strong> = monthly invoicing ÷ 30 × actual payment time.</li>
+        <li><strong>Share due to late payment</strong> = monthly invoicing ÷ 30 × (actual time − contract terms).</li>
+        <li><strong>Yearly cost of the delay</strong> = that share × your yearly overdraft rate.</li>
+      </ul>
+      <p>The slider shows the cash freed for every day your clients pay sooner. It is an estimate: it assumes regular invoicing and a 30-day month, and it leaves out costs that are harder to count, such as orders turned down or time spent chasing payments. Nothing you type is saved or sent.</p>
+    </Fragment>
+    <Calculator lang="en" />
+  </Tool>
+) : (
+  <Tool lang="fr" key="calculateur" h1="Calculateur du coût d’un retard de paiement" {related}
+    answer="Une facture payée à 60 jours au lieu de 30 laisse un mois de chiffre d’affaires chez vos clients. Avec 10 000 000 FCFA facturés par mois, cela fait 10 000 000 FCFA immobilisés par le seul retard, et environ 1 400 000 FCFA par an si vous comblez le trou avec un découvert à 14 %.">
+    <Fragment slot="intro">
+      <h2>Comment fonctionne le calcul</h2>
+      <p>Le calculateur utilise quatre chiffres que vous connaissez : ce que vous facturez à d’autres entreprises chaque mois, le nombre de jours que vos clients mettent réellement à payer, le délai écrit dans vos contrats, et le taux annuel de votre découvert.</p>
+      <ul>
+        <li><strong>Trésorerie immobilisée</strong> = facturation mensuelle ÷ 30 × délai réel de paiement.</li>
+        <li><strong>Part due au retard</strong> = facturation mensuelle ÷ 30 × (délai réel − délai prévu au contrat).</li>
+        <li><strong>Coût annuel du retard</strong> = cette part × votre taux de découvert annuel.</li>
+      </ul>
+      <p>Le curseur montre la trésorerie libérée pour chaque jour de paiement gagné. C’est une estimation : elle suppose une facturation régulière et un mois de 30 jours, et elle laisse de côté des coûts plus difficiles à compter, comme les commandes refusées ou le temps passé à relancer. Rien de ce que vous saisissez n’est enregistré ni envoyé.</p>
+    </Fragment>
+    <Calculator lang="fr" />
+  </Tool>
+)}

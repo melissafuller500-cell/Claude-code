@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import Head, { type Alternates } from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Fab from '../components/Fab.astro';
+import Breadcrumbs, { type Crumb } from '../components/Breadcrumbs.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { organization, website, person, breadcrumbList } from '../lib/schema';
+import { ogFor } from '../lib/og';
+import { useUI } from '../i18n/ui';
+import type { Lang } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  alternates?: Alternates;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  crumbs?: Crumb[];
+  jsonLd?: object[];
+  withPerson?: boolean;
+  section?: 'offres' | 'outils' | 'ressources' | 'blog' | 'diagnostic';
+  published?: Date;
+  modified?: Date;
+  fab?: boolean;
+}
+const {
+  lang, title, description, path, alternates, ogImage, ogType, noindex, crumbs, jsonLd = [],
+  withPerson = false, section, published, modified, fab = true,
+} = Astro.props;
+const t = useUI(lang);
+const graph = [
+  organization(lang),
+  website(lang),
+  ...(withPerson ? [person(lang)] : []),
+  ...(crumbs ? [breadcrumbList(crumbs)] : []),
+  ...jsonLd,
+];
+---
+<!doctype html>
+<html lang={lang} dir="ltr">
+  <head>
+    <Head {title} {description} {lang} {path} {alternates} ogImage={ogImage ?? ogFor(path)} {ogType} {noindex} {published} {modified} />
+    <JsonLd {graph} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <Header {lang} {path} {alternates} {section} />
+    {crumbs && <Breadcrumbs items={crumbs} {lang} />}
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer {lang} />
+    {fab && <Fab {lang} />}
+  </body>
+</html>
+<style>main:focus { outline: none; }</style>

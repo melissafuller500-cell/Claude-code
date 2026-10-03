@@ -1,0 +1,15 @@
+{
+  "questions": [
+    { "fr": "Chaque client signe-t-il un contrat ou un bon de commande écrit avant le début du travail ?", "en": "Does every client sign a contract or written purchase order before work starts?", "adviceFr": "Faites signer un bon de commande avant tout démarrage, même pour les clients habituels.", "adviceEn": "Get a purchase order signed before starting, even for regular clients." },
+    { "fr": "Le délai de paiement est-il écrit, en jours, dans ce document ?", "en": "Are payment terms written, in days, in that document?", "adviceFr": "Écrivez un délai précis : « 30 jours après réception de la facture ».", "adviceEn": "Write precise terms: “30 days from receipt of invoice”." },
+    { "fr": "Une pénalité de retard est-elle prévue par écrit ?", "en": "Is a late-payment penalty set out in writing?", "adviceFr": "Ajoutez une pénalité de retard chiffrée, acceptée à la signature.", "adviceEn": "Add a stated late-payment penalty, accepted at signing." },
+    { "fr": "Demandez-vous un acompte avant de commencer ?", "en": "Do you ask for a deposit before starting?", "adviceFr": "Demandez un acompte : le client qui a payé pour commencer veut que le travail aboutisse.", "adviceEn": "Ask for a deposit: a client who paid to start wants the work to succeed." },
+    { "fr": "Le contrat précise-t-il comment un litige sera réglé, et devant qui ?", "en": "Does the contract say how a dispute will be settled, and by whom?", "adviceFr": "Prévoyez une clause de règlement des litiges, décidée à froid.", "adviceEn": "Add a dispute-resolution clause, decided calmly." },
+    { "fr": "Quelqu'un relance-t-il les factures à date fixe, avec une trace écrite ?", "en": "Does someone follow up invoices on fixed dates, in writing?", "adviceFr": "Nommez un responsable et un calendrier de relance J-5 à J+30.", "adviceEn": "Name one owner and a reminder calendar from D-5 to D+30." }
+  ],
+  "verdicts": [
+    { "min": 5, "tone": "ok", "fr": ["Solide", "Vos contrats couvrent l'essentiel. Le gain se joue maintenant sur le suivi et la régularité."], "en": ["Solid", "Your contracts cover the essentials. The gain now lies in tracking and consistency."] },
+    { "min": 3, "tone": "warn", "fr": ["Fragile", "La base existe, mais des failles laissent vos clients payer quand ils veulent."], "en": ["Fragile", "The basics exist, but gaps let clients pay whenever they like."] },
+    { "min": 0, "tone": "bad", "fr": ["Exposé", "Rien n'oblige vos clients à payer à l'heure. C'est le premier chantier."], "en": ["Exposed", "Nothing obliges your clients to pay on time. That’s the first workstream."] }
+  ]
+}

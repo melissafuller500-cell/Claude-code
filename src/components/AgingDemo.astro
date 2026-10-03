@@ -1,0 +1,92 @@
+---
+/**
+ * Démonstration de balance âgée (données fictives). Le tableau complet et les actions par tranche
+ * sont dans le HTML ; le script ne fait que mettre une tranche en avant.
+ */
+import data from '../data/balance-agee.json';
+import { fmtN } from '../lib/format';
+import type { Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const tot = data.buckets.map((_, i) => data.invoices.filter((r) => r.bucket === i).reduce((s, r) => s + r.amount, 0));
+const all = tot.reduce((a, b) => a + b, 0);
+const sel = 3;
+const L = en
+  ? { h: 'Interactive example: an aging report', note: 'Fictional data. Choose a band to highlight its invoices and this week’s action.', bands: 'Age bands', client: 'Client', inv: 'Invoice', amount: 'Amount (FCFA)', late: 'Overdue', next: 'Next action', action: 'This week’s action', d: 'd' }
+  : { h: 'Exemple interactif : une balance âgée', note: 'Données fictives. Choisissez une tranche pour mettre en avant ses factures et l’action de la semaine.', bands: 'Tranches d’âge', client: 'Client', inv: 'Facture', amount: 'Montant (FCFA)', late: 'Retard', next: 'Prochaine action', action: 'Action de la semaine', d: 'j' };
+const colors: Record<string, string> = { ok: 'var(--ok)', warn: 'var(--warn)', late: 'var(--late)', bad: 'var(--bad)' };
+---
+<section class="aging" data-aging aria-labelledby="aging-h">
+  <h2 id="aging-h">{L.h}</h2>
+  <p class="small">{L.note}</p>
+  <div class="bar" role="group" aria-label={L.bands}>
+    {data.buckets.map((b, i) => (
+      <button type="button" style={`--c:${colors[b.color]};flex-grow:${tot[i]}`} aria-pressed={String(i === sel)} data-b={i}>
+        <span class="sr-only">{en ? b.en : b.fr} : </span>{Math.round((tot[i] / all) * 100)} %
+      </button>
+    ))}
+  </div>
+  <dl class="legend">
+    {data.buckets.map((b, i) => (
+      <div style={`--c:${colors[b.color]}`}><dt><i aria-hidden="true"></i>{en ? b.en : b.fr}</dt><dd class="num">{fmtN(tot[i], lang)} FCFA</dd></div>
+    ))}
+  </dl>
+  <div class="tbl-wrap" tabindex="0" role="region" aria-label={L.h}>
+    <table>
+      <thead><tr><th scope="col">{L.client}</th><th scope="col">{L.inv}</th><th scope="col" class="r">{L.amount}</th><th scope="col" class="r">{L.late}</th><th scope="col">{L.next}</th></tr></thead>
+      <tbody>
+        {data.invoices.map((r) => (
+          <tr data-row={r.bucket} class={r.bucket === sel ? '' : 'dim'} style={`--c:${colors[data.buckets[r.bucket].color]}`}>
+            <td><span class="dot" aria-hidden="true"></span>{en ? r.clientEn : r.client}</td>
+            <td class="mono">{r.ref}</td>
+            <td class="r num">{fmtN(r.amount, lang)}</td>
+            <td class="r num">{r.late} {L.d}</td>
+            <td>{data.nextActions[r.next][lang]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <ul class="actions">
+    {data.buckets.map((b, i) => (
+      <li data-act={i} class={i === sel ? 'on' : ''}><b>{L.action} · {en ? b.en : b.fr}</b><span>{en ? b.actionEn : b.actionFr}</span></li>
+    ))}
+  </ul>
+</section>
+<script>
+  import { lazy } from '../scripts/lazy';
+  lazy('[data-aging]', async () => ({
+    init(el: HTMLElement) {
+      const pick = (n: number) => {
+        el.querySelectorAll<HTMLButtonElement>('[data-b]').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.b! === n)));
+        el.querySelectorAll<HTMLElement>('[data-row]').forEach((r) => r.classList.toggle('dim', +r.dataset.row! !== n));
+        el.querySelectorAll<HTMLElement>('[data-act]').forEach((a) => a.classList.toggle('on', +a.dataset.act! === n));
+      };
+      el.addEventListener('click', (e) => {
+        const b = (e.target as Element).closest<HTMLButtonElement>('[data-b]');
+        if (b) pick(+b.dataset.b!);
+      });
+    },
+  }));
+</script>
+<style>
+  .aging { display: grid; gap: 16px; margin-block: 40px; }
+  h2 { font-size: clamp(24px, 2.4vw, 30px); }
+  .bar { display: flex; height: 56px; border-radius: 14px; overflow: hidden; gap: 3px; }
+  .bar button { border: 0; background: var(--c); color: var(--on-leaf); font: 700 15px var(--f-mono); cursor: pointer; min-width: 48px; transition: box-shadow 0.25s; }
+  .bar button[aria-pressed='true'] { box-shadow: inset 0 0 0 3px var(--ink), inset 0 0 0 6px var(--night); }
+  .legend { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .legend dt { font-size: 14px; color: var(--ink-mute); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: var(--c); margin-right: 6px; }
+  .legend dd { margin: 0; font: 700 15px var(--f-mono); }
+  .r { text-align: right; }
+  tr.dim td { color: var(--ink-mute); }
+  tr:not(.dim) td { background: rgba(90, 180, 255, 0.07); color: var(--ink); }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: 9px; }
+  .actions { list-style: none; padding: 0; display: grid; gap: 8px; }
+  .actions li { display: grid; gap: 4px; border: 1px solid var(--line); border-radius: var(--r-m); padding: 14px 16px; color: var(--ink-soft); }
+  .actions li.on { border-color: rgba(90, 180, 255, 0.5); background: rgba(90, 180, 255, 0.08); color: var(--ink); }
+  .actions b { font: 600 14px var(--f-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--spark); }
+  @media (max-width: 640px) { .legend { grid-template-columns: 1fr 1fr; } }
+</style>

@@ -1,0 +1,32 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import ClauseBuilder from '../../components/ClauseBuilder.astro';
+import { ROUTES, type Lang } from '../../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const related = en
+  ? [{ href: ROUTES.test.en, label: 'Test: does your contract protect you?' }, { href: '/en/glossary/late-payment-penalty/', label: 'Glossary: late-payment penalty' }, { href: '/en/guides/ohada-payment-order/', label: 'Guide: the OHADA payment order' }]
+  : [{ href: ROUTES.test.fr, label: 'Test : votre contrat vous protège-t-il ?' }, { href: '/glossaire/penalite-de-retard/', label: 'Glossaire : pénalité de retard' }, { href: '/guides/injonction-de-payer-ohada/', label: 'Guide : l’injonction de payer OHADA' }];
+---
+{en ? (
+  <Tool lang="en" key="clauses" h1="Payment terms clause template" {related}
+    answer="A good payment-terms article fits in a few sentences: payment within a set number of days of receipt, the accepted payment methods, a late-payment penalty, a deposit before work starts, proof of delivery, retention of title for goods, and how disputes are settled. Tick what you need and copy the result.">
+    <Fragment slot="intro">
+      <h2>How to use this template</h2>
+      <p>Each clause answers a question your client may raise when the invoice falls due: when do I have to pay, what happens if I’m late, how do you prove delivery, who settles a disagreement. Written before the work starts, these answers are accepted at signing; written afterwards, they are negotiated under pressure.</p>
+      <p>Replace every [bracket] with your own figure: the number of days, the penalty rate, the deposit percentage. Put the article in your contract, and repeat the payment terms on your quotes and invoices. This is indicative wording: adapt it to your business and have it reviewed before use. It is not legal advice.</p>
+    </Fragment>
+    <ClauseBuilder lang="en" />
+  </Tool>
+) : (
+  <Tool lang="fr" key="clauses" h1="Modèle de clause de conditions de paiement" {related}
+    answer="Un bon article « Conditions de paiement » tient en quelques phrases : un paiement à un nombre de jours précis après réception, les moyens de paiement acceptés, une pénalité de retard, un acompte avant le démarrage, la preuve de livraison, la réserve de propriété pour les marchandises et le règlement des litiges. Cochez, puis copiez.">
+    <Fragment slot="intro">
+      <h2>Comment utiliser ce modèle</h2>
+      <p>Chaque clause répond à une question que votre client peut poser le jour où la facture tombe : quand dois-je payer, que se passe-t-il si je suis en retard, comment prouvez-vous la livraison, qui tranche un désaccord. Écrites avant le début du travail, ces réponses sont acceptées à la signature ; écrites après, elles se négocient sous la pression.</p>
+      <p>Remplacez chaque [crochet] par votre propre chiffre : nombre de jours, taux de pénalité, pourcentage d’acompte. Placez l’article dans votre contrat, et reprenez le délai de paiement sur vos devis et vos factures. C’est une formulation indicative : adaptez-la à votre activité et faites-la relire avant usage. Ce n’est pas un conseil juridique.</p>
+    </Fragment>
+    <ClauseBuilder lang="fr" />
+  </Tool>
+)}

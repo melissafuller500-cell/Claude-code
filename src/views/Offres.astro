@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import OfferCards from '../components/OfferCards.astro';
+import Faq from '../components/Faq.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { FAQ_OFFRES } from '../data/faq';
+import { OFFERS, METHOD, PAYMENT_METHODS } from '../data/offers';
+import { faqPage, ORG_ID, abs } from '../lib/schema';
+import { crumbs } from '../lib/crumbs';
+import { ROUTES, type Lang } from '../i18n/routes';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const meta = PAGES.offres[lang];
+const en = lang === 'en';
+const C = en ? {
+  h1: 'Three steps, prices shown',
+  answer: 'Everything starts with a free 45-minute diagnostic. Then three steps: a Cash & Contracts Audit at 50,000 FCFA, a Collection System from 150,000 FCFA (templates, tracker, reminder scripts, training), and a monthly follow-up at 35,000 FCFA. Payment by Orange Money, MTN MoMo or bank transfer.',
+  label: 'In short', methodH: 'How it works', offersH: 'The offers', payH: 'How to pay', faqH: 'Questions about the offers',
+} : {
+  h1: 'Trois étapes, des prix affichés',
+  answer: 'Tout commence par un diagnostic gratuit de 45 minutes. Puis trois étapes : un Audit Trésorerie et Contrats à 50 000 FCFA, un Système Encaissement à partir de 150 000 FCFA (modèles, tableau de suivi, scripts de relance, formation) et un suivi mensuel à 35 000 FCFA. Paiement par Orange Money, MTN MoMo ou virement.',
+  label: 'En bref', methodH: 'Comment ça se passe', offersH: 'Les offres', payH: 'Comment payer', faqH: 'Questions sur les offres',
+};
+const service = {
+  '@type': 'Service',
+  name: en ? 'Getting paid faster: contracts, tracking, reminders' : 'Encaisser plus vite : contrats, suivi, relances',
+  serviceType: en ? 'Accounts receivable management consulting' : 'Conseil en gestion du poste clients',
+  provider: { '@id': ORG_ID },
+  areaServed: { '@type': 'Country', name: en ? 'Cameroon' : 'Cameroun' },
+  url: abs(ROUTES.offres[lang]),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: C.offersH,
+    itemListElement: [
+      { '@type': 'Offer', name: en ? 'Free 45-minute diagnostic' : 'Diagnostic gratuit de 45 minutes', price: 0, priceCurrency: 'XAF', description: METHOD[0].p[lang] },
+      ...OFFERS.map((o) => ({
+        '@type': 'Offer',
+        name: o.name[lang],
+        description: o.summary[lang],
+        priceCurrency: 'XAF',
+        ...(o.from
+          ? { priceSpecification: { '@type': 'PriceSpecification', minPrice: o.price, priceCurrency: 'XAF' } }
+          : o.perMonth
+            ? { price: o.price, priceSpecification: { '@type': 'UnitPriceSpecification', price: o.price, priceCurrency: 'XAF', unitCode: 'MON', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } } }
+            : { price: o.price }),
+      })),
+    ],
+  },
+};
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES.offres[lang]} alternates={ROUTES.offres}
+  crumbs={crumbs(lang, ['offres'])} section="offres" jsonLd={[service, faqPage(FAQ_OFFRES, lang)]}>
+  <PageHead title={C.h1} answer={C.answer} answerLabel={C.label} />
+  <section class="wrap sec-tight" aria-labelledby="m-h">
+    <h2 id="m-h" class="sec-head">{C.methodH}</h2>
+    <ol class="method">
+      {METHOD.map((m) => <li><span class="k">{m.k[lang]}</span><h3>{m.h[lang]}</h3><p class="muted">{m.p[lang]}</p></li>)}
+    </ol>
+  </section>
+  <section class="wrap sec-tight" aria-labelledby="o-h">
+    <h2 id="o-h" class="sec-head">{C.offersH}</h2>
+    <OfferCards {lang} />
+    <h2 class="pay-h">{C.payH}</h2>
+    <p class="m">{PAYMENT_METHODS[lang].map((m) => <span>{m}</span>)}</p>
+    <CtaBox {lang} src="offres" />
+  </section>
+  <section class="wrap sec" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="sec-head">{C.faqH}</h2>
+    <Faq items={FAQ_OFFRES} {lang} />
+  </section>
+</Base>
+<style>
+  .method { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .method li { padding: 24px 24px 24px 0; display: grid; gap: 10px; align-content: start; }
+  .method li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .k { font: 600 14px var(--f-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--leaf); }
+  .method h3 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 800; }
+  .pay-h { font-size: 24px; margin: 40px 0 14px; }
+  .m { display: flex; flex-wrap: wrap; gap: 8px; }
+  .m span { border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; font: 600 14px var(--f-text); color: var(--ink-soft); }
+  @media (max-width: 900px) { .method { grid-template-columns: 1fr; } .method li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); } }
+</style>

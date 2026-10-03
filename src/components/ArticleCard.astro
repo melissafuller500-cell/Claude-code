@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { entryUrl, langOf } from '../i18n/routes';
+import { useUI, fmtDate } from '../i18n/ui';
+import { CATEGORIES } from '../data/editorial';
+interface Props { post: CollectionEntry<'blog'>; level?: 'h2' | 'h3' }
+const { post, level = 'h2' } = Astro.props;
+const lang = langOf(post.id);
+const t = useUI(lang);
+const H = level;
+---
+<article class="card">
+  <p class="meta">{CATEGORIES[post.data.category][lang].name} · {t.formats[post.data.format]}{post.data.draft && ' · DRAFT'}</p>
+  <H class="ct"><a href={entryUrl('blog', post.id)}>{post.data.title}</a></H>
+  <p>{post.data.description}</p>
+  <p class="meta"><time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{fmtDate(post.data.pubDate, lang)}</time></p>
+</article>
+<style>.ct { font-size: 21px; }</style>

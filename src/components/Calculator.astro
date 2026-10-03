@@ -1,0 +1,109 @@
+---
+/**
+ * Calculateur du coût des retards. Le HTML contient déjà un résultat complet (valeurs par défaut),
+ * lisible sans JavaScript ; le script, chargé à l'approche de l'écran, le rend interactif.
+ * Aucune donnée n'est envoyée : seul l'événement « utilisation du calculateur » est compté.
+ */
+import { compute, CALC_DEFAULTS as D } from '../lib/calc';
+import { fmtF, fmtN, useUI } from '../i18n/ui';
+import { waLink } from '../data/site';
+import type { Lang } from '../i18n/routes';
+
+interface Props { lang: Lang; headingLevel?: 'h2' | 'h3'; toolHref?: string }
+const { lang, toolHref } = Astro.props;
+const t = useUI(lang);
+const R = compute(D);
+const en = lang === 'en';
+const L = en
+  ? { bill: 'Monthly B2B invoicing', real: 'Actual payment time', term: 'Contract terms', rate: 'Your overdraft rate (yearly)', days: 'Days gained', slider: 'Move the slider: every day gained raises the level.', locked: 'Cash tied up at your clients’', late: 'Of which, due to late payment', freed: (d: number) => `Cash freed if your clients pay ${d} days sooner`, cost: 'Yearly cost of the delay if financed by overdraft', tank: 'Delay absorbed', est: 'Estimate based on your figures. Not a promised result. Nothing is saved.', wa: 'Send this calculation to Noé on WhatsApp', full: 'Open the full calculator', results: 'Results' }
+  : { bill: 'Facturation B2B par mois', real: 'Délai réel de paiement', term: 'Délai prévu au contrat', rate: 'Votre taux de découvert (annuel)', days: 'Jours gagnés', slider: 'Déplacez le curseur : chaque jour gagné fait monter le niveau.', locked: 'Trésorerie immobilisée chez vos clients', late: 'Dont part due au retard', freed: (d: number) => `Trésorerie libérée si vos clients paient ${d} jours plus tôt`, cost: 'Coût annuel du retard s’il est financé par découvert', tank: 'Retard résorbé', est: 'Estimation à partir de vos chiffres. Ce n’est pas un résultat promis. Rien n’est enregistré.', wa: 'Envoyer ce calcul à Noé sur WhatsApp', full: 'Ouvrir le calculateur complet', results: 'Résultats' };
+const msg = en
+  ? `Hello Noé, here is my calculation:\n- Monthly B2B invoicing: ${fmtF(D.bill, lang)}\n- Actual payment time: ${D.real} d (contract: ${D.term} d)\n- Cash tied up: ${fmtF(R.locked, lang)}\n- Of which due to late payment: ${fmtF(R.lateAmount, lang)}\n- Freed if clients pay ${D.days} d sooner: ${fmtF(R.freed, lang)}\nI'd like to book the free 45-min diagnostic.`
+  : `Bonjour Noé, voici mon calcul :\n- Facturation B2B mensuelle : ${fmtF(D.bill, lang)}\n- Délai réel : ${D.real} j (contrat : ${D.term} j)\n- Trésorerie immobilisée : ${fmtF(R.locked, lang)}\n- Dont part due au retard : ${fmtF(R.lateAmount, lang)}\n- Libérée si mes clients paient ${D.days} j plus tôt : ${fmtF(R.freed, lang)}\nJe souhaite réserver le diagnostic gratuit de 45 min.`;
+const pct = Math.round(R.absorbed * 100);
+---
+<form class="calc" data-calc data-lang={lang} onsubmit="return false" aria-label={en ? 'Late payment calculator' : 'Calculateur du coût des retards'}>
+  <div class="panel in">
+    <div class="field">
+      <label for={`cBill-${lang}`}>{L.bill}</label>
+      <div class="unit" data-u="FCFA"><input class="input mono" type="text" id={`cBill-${lang}`} name="bill" inputmode="numeric" value={fmtN(D.bill, lang)} autocomplete="off" /></div>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label for={`cReal-${lang}`}>{L.real}</label>
+        <div class="unit" data-u={t.days}><input class="input mono" type="text" id={`cReal-${lang}`} name="real" inputmode="numeric" value={D.real} autocomplete="off" /></div>
+      </div>
+      <div class="field">
+        <label for={`cTerm-${lang}`}>{L.term}</label>
+        <div class="unit" data-u={t.days}><input class="input mono" type="text" id={`cTerm-${lang}`} name="term" inputmode="numeric" value={D.term} autocomplete="off" /></div>
+      </div>
+    </div>
+    <div class="field">
+      <label for={`cRate-${lang}`}>{L.rate}</label>
+      <div class="unit" data-u="%"><input class="input mono" type="text" id={`cRate-${lang}`} name="rate" inputmode="decimal" value={D.rate} autocomplete="off" /></div>
+    </div>
+    <div class="field">
+      <label for={`cDays-${lang}`} class="row-lbl"><span>{L.days}</span><b data-out="daysV">{D.days} {t.days}</b></label>
+      <input type="range" id={`cDays-${lang}`} name="days" min="0" max={D.real} value={D.days} style={`--p:${(D.days / D.real) * 100}%`} aria-describedby={`cDaysH-${lang}`} />
+      <span class="small" id={`cDaysH-${lang}`}>{L.slider}</span>
+    </div>
+  </div>
+
+  <div class="panel out" role="group" aria-label={L.results}>
+    <dl class="res-list">
+      <div class="res"><dt>{L.locked}</dt><dd class="num" data-out="locked">{fmtF(R.locked, lang)}</dd></div>
+      <div class="res"><dt>{L.late}</dt><dd class="num" data-out="late">{fmtF(R.lateAmount, lang)}</dd></div>
+      <div class="res hl"><dt data-out="freedL">{L.freed(D.days)}</dt><dd class="num" data-out="freed">{fmtF(R.freed, lang)}</dd></div>
+      <div class="res bad"><dt>{L.cost}</dt><dd class="num" data-out="cost">{fmtF(R.yearlyCost, lang)}</dd></div>
+    </dl>
+    <div class="tank" style={`--lvl:${R.absorbed}`} aria-hidden="true">
+      <span class="pct num" data-out="pct">{pct} %</span>
+      <i></i>
+      <span class="lbl">{L.tank}</span>
+    </div>
+    <p class="sr-only" role="status" aria-live="polite" data-out="live"></p>
+    <div class="foot">
+      <p class="small">{L.est}</p>
+      <div class="ctas">
+        <a class="btn sm" data-out="wa" href={waLink(msg)} target="_blank" rel="noopener" data-track="whatsapp_click" data-src="calculator">{L.wa}</a>
+        {toolHref && <a class="arrow-link" href={toolHref}>{L.full}</a>}
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+  import { lazy } from '../scripts/lazy';
+  lazy('[data-calc]', () => import('../scripts/calculator'));
+</script>
+
+<style>
+  .calc { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; }
+  .in { display: grid; gap: 20px; align-content: start; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .unit { position: relative; }
+  .unit::after { content: attr(data-u); position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font: 600 14px var(--f-text); color: var(--ink-mute); pointer-events: none; }
+  .unit .input { padding-right: 64px; font-size: 18px; }
+  .row-lbl { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .row-lbl b { font: 700 16px var(--f-mono); color: var(--leaf); }
+  input[type='range'] { -webkit-appearance: none; appearance: none; width: 100%; height: 44px; background: transparent; cursor: pointer; margin: 0; }
+  input[type='range']::-webkit-slider-runnable-track { height: 6px; border-radius: 6px; background: linear-gradient(90deg, var(--leaf) var(--p, 25%), var(--forest-2) var(--p, 25%)); }
+  input[type='range']::-moz-range-track { height: 6px; border-radius: 6px; background: linear-gradient(90deg, var(--leaf) var(--p, 25%), var(--forest-2) var(--p, 25%)); }
+  input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; margin-top: -11px; border-radius: 50%; background: var(--ink); border: 6px solid var(--leaf); }
+  input[type='range']::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--ink); border: 6px solid var(--leaf); }
+  .out { display: grid; grid-template-columns: minmax(0, 1fr) 110px; gap: 20px; }
+  .res-list { margin: 0; display: grid; gap: 14px; align-content: start; min-width: 0; }
+  .res { display: grid; gap: 2px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .res:last-child { border: 0; padding: 0; }
+  .res dt { font-size: 15px; color: var(--ink-soft); }
+  .res dd { margin: 0; font: 800 clamp(22px, 2.4vw, 30px)/1.15 var(--f-display); font-stretch: 108%; }
+  .res.hl dd { color: var(--leaf); font-size: clamp(28px, 3.2vw, 40px); }
+  .res.bad dd { color: var(--late); }
+  .tank { position: relative; border-radius: 60px; border: 1px solid var(--line-2); background: var(--night); overflow: hidden; min-height: 280px; }
+  .tank i { position: absolute; left: 0; right: 0; bottom: 0; height: calc(max(0.04, var(--lvl)) * 100%); background: linear-gradient(#c9ee8f, var(--leaf) 30%, #3e6a2a); transition: height 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .tank .pct { position: absolute; top: 16px; left: 0; right: 0; text-align: center; font: 700 18px var(--f-mono); z-index: 2; }
+  .tank .lbl { position: absolute; bottom: 30px; left: 8px; right: 8px; text-align: center; font: 700 14px/1.2 var(--f-text); z-index: 2; color: var(--on-leaf); }
+  .foot { grid-column: 1 / -1; display: grid; gap: 14px; }
+  @media (max-width: 900px) { .calc { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .out { grid-template-columns: minmax(0, 1fr) 76px; } .tank { min-height: 240px; } .two { grid-template-columns: 1fr; } .tank .lbl { display: none; } }
+</style>

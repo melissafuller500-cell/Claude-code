@@ -1,0 +1,63 @@
+---
+/** Index des guides, des secteurs et du glossaire. */
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { crumbs } from '../lib/crumbs';
+import { definedTermSet } from '../lib/schema';
+import { published } from '../lib/content';
+import { useUI } from '../i18n/ui';
+import { ROUTES, entryUrl, type Lang } from '../i18n/routes';
+
+interface Props { lang: Lang; kind: 'guides' | 'secteurs' | 'glossaire' }
+const { lang, kind } = Astro.props;
+const t = useUI(lang);
+const en = lang === 'en';
+const meta = PAGES[kind][lang];
+const entries = await published(kind, lang);
+type Item = { href: string; title: string; text: string };
+let items: Item[] = [];
+if (kind === 'guides') items = (entries as Awaited<ReturnType<typeof published<'guides'>>>).map((e) => ({ href: entryUrl('guides', e.id), title: e.data.title, text: e.data.description }));
+if (kind === 'secteurs') items = (entries as Awaited<ReturnType<typeof published<'secteurs'>>>).sort((a, b) => a.data.order - b.data.order).map((e) => ({ href: entryUrl('secteurs', e.id), title: e.data.name, text: e.data.answer }));
+if (kind === 'glossaire') items = (entries as Awaited<ReturnType<typeof published<'glossaire'>>>).sort((a, b) => a.data.term.localeCompare(b.data.term, lang)).map((e) => ({ href: entryUrl('glossaire', e.id), title: e.data.term, text: e.data.definition }));
+const C = {
+  guides: en
+    ? { h1: 'Guides for getting paid faster', answer: 'Three in-depth guides for B2B SMEs in Cameroon: how the OHADA payment order works and which file to prepare, how the State’s payment circuit works and what you control in it, and how to build and keep an aging report in Excel. Each guide cites its sources and links to the matching tools.' }
+    : { h1: 'Guides pour encaisser plus vite', answer: 'Trois guides de fond pour les PME B2B au Cameroun : comment fonctionne l’injonction de payer OHADA et quel dossier préparer, comment fonctionne le circuit de paiement de l’État et ce que vous y contrôlez, et comment construire et tenir une balance âgée sur Excel. Chaque guide cite ses sources et renvoie aux outils.' },
+  secteurs: en
+    ? { h1: 'Every trade has its own payment traps', answer: 'The three workstreams stay the same in every sector: solid contracts, weekly tracking and reminders on fixed dates. What changes is where the money gets stuck. Each sector page lists the usual traps, the clauses that matter and a worked example in FCFA, with links to the tools.' }
+    : { h1: 'Chaque métier a ses propres pièges d’encaissement', answer: 'Les trois chantiers restent les mêmes dans tous les secteurs : contrats solides, suivi chaque semaine, relances à date fixe. Ce qui change, c’est l’endroit où l’argent se bloque. Chaque fiche secteur liste les pièges habituels, les clauses qui comptent et un exemple chiffré en FCFA, avec les outils.' },
+  glossaire: en
+    ? { h1: 'The words that matter for your cash', answer: 'This glossary defines, in one sentence each, the terms that come up when you work on getting paid: average payment time, aging report, deposit, late-payment penalty, formal notice, payment order, retention of title, retention money and acceptance report. Each term has its own page with an example.' }
+    : { h1: 'Les mots qui comptent pour votre trésorerie', answer: 'Ce glossaire définit, en une phrase chacun, les termes qui reviennent quand on travaille sur l’encaissement : délai moyen de paiement, balance âgée, acompte, pénalité de retard, mise en demeure, injonction de payer, réserve de propriété, retenue de garantie et PV de réception. Chaque terme a sa page, avec un exemple.' },
+}[kind];
+const jsonLd = kind === 'glossaire'
+  ? [definedTermSet({ name: en ? 'Noé Tech Growth glossary' : 'Glossaire Noé Tech Growth', url: ROUTES.glossaire[lang], lang, terms: items.map((i) => ({ name: i.title, description: i.text, url: i.href })) })]
+  : [{ '@type': 'ItemList', itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, url: new URL(i.href, 'https://noetechgrowth.com').href, name: i.title })) }];
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES[kind][lang]} alternates={ROUTES[kind]}
+  crumbs={crumbs(lang, [kind])} section="ressources" {jsonLd}>
+  <PageHead title={C.h1} answer={C.answer} answerLabel={t.inBrief} />
+  <div class="wrap">
+    {kind === 'glossaire' ? (
+      <dl class="terms">
+        {items.map((i) => <div class="card"><dt><a href={i.href}>{i.title}</a></dt><dd>{i.text}</dd></div>)}
+      </dl>
+    ) : (
+      <ul class="cards" role="list">
+        {items.map((i) => <li class="card"><h2 class="ct"><a href={i.href}>{i.title}</a></h2><p>{i.text}</p></li>)}
+      </ul>
+    )}
+    <CtaBox {lang} src={kind} />
+  </div>
+</Base>
+<style>
+  .cards { list-style: none; padding: 0; }
+  .ct { font-size: 22px; }
+  .terms { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+  .terms dt { font: 800 20px var(--f-display); font-stretch: 110%; }
+  .terms dt a { color: var(--leaf); }
+  .terms dd { margin: 0; color: var(--ink-soft); font-size: 16px; }
+  .wrap { padding-bottom: 48px; }
+</style>

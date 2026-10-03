@@ -1,0 +1,66 @@
+---
+import Logo from './Logo.astro';
+import { r, type Lang } from '../i18n/routes';
+import { useUI } from '../i18n/ui';
+import { PAGES } from '../data/pages';
+import { SITE, waLink, mailLink } from '../data/site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useUI(lang);
+const p = (k: keyof typeof PAGES) => ({ href: r(k, lang), label: PAGES[k][lang].crumb });
+const cols = [
+  { title: t.footer.sections, links: [p('home'), p('diagnostic'), p('offres'), p('blog'), p('apropos')] },
+  { title: t.footer.tools, links: [p('calculateur'), p('test'), p('clauses'), p('relances')] },
+  { title: t.footer.resources, links: [p('guides'), p('secteurs'), p('glossaire'), p('ressources')] },
+];
+const year = new Date().getFullYear();
+---
+<footer class="ftr">
+  <div class="wrap grid">
+    <div class="id">
+      <a class="brand" href={r('home', lang)}><Logo size={34} /><span>NOÉ<small>Tech Growth</small></span></a>
+      <p class="muted">{SITE.tagline[lang]}</p>
+      <h2 class="h">{t.footer.contact}</h2>
+      <ul class="contact">
+        <li>WhatsApp · <a href={waLink(t.contact.waDefault)} rel="noopener" target="_blank" data-track="whatsapp_click">{SITE.whatsapp.display}</a></li>
+        <li>E-mail · <a href={mailLink(t.contact.mailSubject)} data-track="email_click">{SITE.email}</a></li>
+      </ul>
+    </div>
+    {cols.map((c) => (
+      <nav aria-label={c.title}>
+        <h2 class="h">{c.title}</h2>
+        <ul>{c.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+      </nav>
+    ))}
+  </div>
+  <div class="wrap bottom">
+    <span>© {year} {SITE.name} · {t.footer.about}</span>
+    <span class="legal">
+      <a href={r('mentions', lang)}>{t.footer.legal}</a>
+      <a href={r('confidentialite', lang)}>{t.footer.privacy}</a>
+      <a href={lang === 'en' ? '/en/rss.xml' : '/rss.xml'}>{t.footer.rss}</a>
+    </span>
+  </div>
+</footer>
+
+<style>
+  .ftr { border-top: 1px solid var(--line); background: var(--forest); padding-block: 56px calc(28px + env(safe-area-inset-bottom, 0px)); }
+  .grid { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 32px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand span { font: 800 18px/1 var(--f-display); font-stretch: 118%; }
+  .brand small { display: block; font: 600 11px/1 var(--f-text); letter-spacing: 0.18em; color: var(--leaf); margin-top: 4px; text-transform: uppercase; }
+  .id { display: grid; gap: 14px; align-content: start; }
+  .id p { font-size: 15px; max-width: 42ch; }
+  .h { font: 600 14px var(--f-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); margin: 6px 0 4px; }
+  ul { list-style: none; padding: 0; display: grid; gap: 2px; }
+  nav a, .legal a, .contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink-soft); text-decoration: none; font-size: 15px; }
+  .contact li { font-size: 15px; color: var(--ink-mute); }
+  .contact a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); }
+  nav a:hover, .legal a:hover, .contact a:hover { color: var(--leaf); }
+  .bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-mute); }
+  .legal { display: flex; flex-wrap: wrap; gap: 0 20px; }
+  .legal a { font-size: 14px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } .id { grid-column: 1 / -1; } }
+  @media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+</style>

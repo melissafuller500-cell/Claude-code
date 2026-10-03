@@ -1,0 +1,10 @@
+---
+import V from '../../views/BlogPost.astro';
+import { published } from '../../lib/content';
+import { slugOf } from '../../i18n/routes';
+export async function getStaticPaths() {
+  return (await published('blog', 'fr')).map((entry) => ({ params: { slug: slugOf(entry.id) }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<V {entry} />

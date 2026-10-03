@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { crumbs } from '../lib/crumbs';
+import { ROUTES, type Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const meta = PAGES.outils[lang];
+const en = lang === 'en';
+const tools = (['calculateur', 'test', 'clauses', 'relances'] as const).map((k) => ({ href: ROUTES[k][lang], title: PAGES[k][lang].title, text: PAGES[k][lang].description }));
+const answer = en
+  ? 'Four free tools to act on late payments today: a calculator of what delays cost you, a six-question contract test, a payment-terms clause template, and a reminder schedule with copy-ready messages. They work offline once the page is loaded, and nothing you type is saved or sent.'
+  : 'Quatre outils gratuits pour agir dès aujourd’hui sur les retards de paiement : un calculateur de ce que les retards vous coûtent, un test de contrat en six questions, un modèle de clause de conditions de paiement et un calendrier de relances avec des messages prêts à copier. Rien n’est enregistré ni envoyé.';
+const list = { '@type': 'ItemList', itemListElement: tools.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(t.href, 'https://noetechgrowth.com').href, name: t.title })) };
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES.outils[lang]} alternates={ROUTES.outils} crumbs={crumbs(lang, ['outils'])} section="outils" jsonLd={[list]}>
+  <PageHead title={en ? 'Free tools to get paid faster' : 'Outils gratuits pour encaisser plus vite'} answer={answer} answerLabel={en ? 'In brief' : 'En bref'} />
+  <section class="wrap sec-tight" aria-label={meta.crumb}>
+    <ul class="cards" role="list">
+      {tools.map((t) => <li class="card"><h2 class="ct"><a href={t.href}>{t.title}</a></h2><p>{t.text}</p></li>)}
+    </ul>
+    <CtaBox {lang} src="outils" />
+  </section>
+</Base>
+<style>.cards { list-style: none; padding: 0; } .ct { font-size: 22px; }</style>

@@ -1,0 +1,37 @@
+{
+  "clauses": [
+    {
+      "id": "delai", "default": true,
+      "fr": { "title": "Le délai de paiement, en jours.", "why": "« 30 jours après réception de la facture » vaut mieux que « paiement à convenir ».", "text": "Les factures sont payables à [30] jours à compter de leur date de réception par le Client, par virement, Orange Money ou MTN MoMo. Chaque facture mentionne sa date d'échéance." },
+      "en": { "title": "Payment terms, in days.", "why": "“30 days from receipt of invoice” beats “payment to be agreed”.", "text": "Invoices are payable within [30] days of receipt by the Client, by bank transfer, Orange Money or MTN MoMo. Each invoice states its due date." }
+    },
+    {
+      "id": "penalite", "default": false,
+      "fr": { "title": "La pénalité de retard.", "why": "Un taux écrit, accepté à la signature, qui donne un prix au retard.", "text": "Tout retard de paiement entraîne de plein droit l'application d'une pénalité de [X] % du montant TTC par mois de retard, tout mois commencé étant dû." },
+      "en": { "title": "The late-payment penalty.", "why": "A written rate, accepted at signing, that puts a price on delay.", "text": "Any late payment automatically incurs a penalty of [X]% of the amount including tax per month of delay, any month started being due in full." }
+    },
+    {
+      "id": "acompte", "default": false,
+      "fr": { "title": "L'acompte.", "why": "Une part versée à la commande. Un client qui a payé pour commencer a intérêt à ce que le travail aboutisse.", "text": "Un acompte de [30] % du montant total est versé à la signature du présent contrat. L'exécution débute à réception de cet acompte." },
+      "en": { "title": "The deposit.", "why": "A share paid at order. A client who paid to start wants the work to succeed.", "text": "A deposit of [30]% of the total amount is paid on signing this contract. Work starts upon receipt of this deposit." }
+    },
+    {
+      "id": "livraison", "default": true,
+      "fr": { "title": "La preuve de livraison.", "why": "Un bon de livraison ou un procès-verbal de réception signé. Sans lui, la facture se discute.", "text": "La livraison est constatée par un bon de livraison ou un procès-verbal de réception signé par le Client. À défaut de réserves écrites dans un délai de [5] jours ouvrés, la prestation est réputée acceptée." },
+      "en": { "title": "Proof of delivery.", "why": "A signed delivery note or acceptance report. Without it, the invoice is open to dispute.", "text": "Delivery is recorded by a delivery note or acceptance report signed by the Client. Absent written reservations within [5] working days, the service is deemed accepted." }
+    },
+    {
+      "id": "propriete", "default": false,
+      "fr": { "title": "La réserve de propriété.", "why": "Pour les marchandises : prévue par écrit, elle vous laisse propriétaire jusqu'au paiement complet.", "text": "Les marchandises livrées restent la propriété du Fournisseur jusqu'au paiement intégral du prix, en principal et accessoires." },
+      "en": { "title": "Retention of title.", "why": "For goods: in writing, it keeps you owner until full payment.", "text": "Goods delivered remain the property of the Supplier until full payment of the price, principal and incidentals." }
+    },
+    {
+      "id": "litiges", "default": false,
+      "fr": { "title": "Le règlement des litiges.", "why": "Quel tribunal ou quel arbitrage, et selon quelle procédure. Décidé à froid, pas en plein conflit.", "text": "Tout différend relatif au présent contrat fait d'abord l'objet d'une tentative de règlement amiable de [15] jours. À défaut d'accord, il est porté devant [la juridiction compétente du ressort du siège du Fournisseur]." },
+      "en": { "title": "Dispute resolution.", "why": "Which court or arbitration, and what procedure. Decided calmly, not mid-conflict.", "text": "Any dispute relating to this contract is first subject to an attempt at amicable settlement for [15] days. Failing agreement, it is brought before [the competent court where the Supplier has its registered office]." }
+    }
+  ],
+  "heading": { "fr": "Article [X] · Conditions de paiement", "en": "Article [X] · Payment terms" },
+  "empty": { "fr": "Cochez au moins une clause pour composer l'article.", "en": "Tick at least one clause to build the article." },
+  "warning": { "fr": "Formulation indicative, à adapter à votre activité et à faire relire avant usage.", "en": "Indicative wording, to adapt to your business and have reviewed before use." }
+}

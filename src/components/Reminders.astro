@@ -1,0 +1,43 @@
+---
+/** Calendrier de relances : les cinq modèles sont tous dans le HTML, chacun avec son bouton Copier. */
+import data from '../data/relances.json';
+import type { Lang } from '../i18n/routes';
+interface Props { lang: Lang; headingLevel?: 'h2' | 'h3' }
+const { lang, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
+const en = lang === 'en';
+---
+<ol class="rems">
+  {data.steps.map((s, i) => (
+    <li class="rem" id={`relance-${s.d.fr.toLowerCase().replace('+', 'plus').replace('-', 'moins')}`}>
+      <div class="rh">
+        <span class="d mono">{s.d[lang]}</span>
+        <H class="t">{s.title[lang]}</H>
+        <span class="ch">{s.channel[lang]}</span>
+      </div>
+      <pre id={`rem-msg-${i}`}>{s.message[lang]}</pre>
+      <div class="row">
+        <span class="small">{en ? 'Template to adapt: replace the [brackets].' : 'Modèle à adapter : remplacez les [crochets].'}</span>
+        <button class="copy" type="button" data-copy={`#rem-msg-${i}`}>{en ? 'Copy message' : 'Copier le message'}</button>
+      </div>
+    </li>
+  ))}
+</ol>
+<script>
+  import { bindCopy } from '../scripts/copy';
+  import { bindClickTracking } from '../scripts/track';
+  bindCopy();
+  bindClickTracking();
+</script>
+<style>
+  .rems { list-style: none; padding: 0 0 0 28px; display: grid; gap: 16px; position: relative; }
+  .rems::before { content: ''; position: absolute; left: 8px; top: 18px; bottom: 18px; width: 2px; background: linear-gradient(var(--leaf), var(--late), var(--bad)); }
+  .rem { position: relative; background: var(--forest); border: 1px solid var(--line); border-radius: var(--r-l); padding: 22px 24px; display: grid; gap: 14px; }
+  .rem::before { content: ''; position: absolute; left: -26px; top: 26px; width: 14px; height: 14px; border-radius: 50%; background: var(--night); border: 2px solid var(--leaf); }
+  .rh { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+  .d { font-size: 16px; font-weight: 700; color: var(--spark); }
+  .t { font-size: 22px; }
+  .ch { font-size: 14px; color: var(--ink-mute); margin-left: auto; }
+  pre { margin: 0; background: var(--night); border: 1px solid var(--line); border-radius: 14px; padding: 18px; color: var(--ink-soft); white-space: pre-wrap; word-break: break-word; font: 400 15px/1.6 var(--f-mono); }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+</style>

@@ -1,0 +1,24 @@
+---
+/** Portrait détouré du hero sur fond simple. Sans fichier fourni, disque de marque neutre. */
+import { Image } from 'astro:assets';
+import { brand } from '../lib/brand';
+import Logo from './Logo.astro';
+interface Props { alt: string }
+const { alt } = Astro.props;
+---
+<div class="stage">
+  <div class="disc" aria-hidden="true"></div>
+  {brand.cutout ? (
+    <Image src={brand.cutout} alt={alt} widths={[360, 520, 720]} sizes="(max-width: 900px) 78vw, 520px" formats={['avif', 'webp']} loading="eager" fetchpriority="high" class="cut" />
+  ) : (
+    <div class="ph" aria-hidden="true"><Logo size={120} /></div>
+  )}
+</div>
+<style>
+  .stage { position: relative; aspect-ratio: 4 / 4.4; width: 100%; max-width: 520px; justify-self: end; display: grid; place-items: end center; }
+  .disc { position: absolute; inset: 8% 4% 6% 4%; border-radius: 50%; background: radial-gradient(circle at 34% 28%, #9dbb86 0%, #6f9562 38%, #3e6236 78%, #2b4a27 100%); box-shadow: inset -30px -40px 80px rgba(6, 17, 11, 0.45); }
+  .cut { position: relative; width: 92%; height: auto; -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
+  .ph { position: absolute; inset: 0; display: grid; place-items: center; }
+  .ph :global(svg) { width: 34%; height: auto; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4)); }
+  @media (max-width: 900px) { .stage { justify-self: center; max-width: 340px; } .stage:has(.ph) { max-width: 240px; } }
+</style>

@@ -1,0 +1,100 @@
+---
+/** Mentions légales et confidentialité. Identité légale : D8 (champs « À COMPLÉTER », page non indexée tant qu'ils sont vides). */
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { PAGES } from '../data/pages';
+import { SITE } from '../data/site';
+import { LEGAL, legalComplete } from '../data/editorial';
+import { crumbs } from '../lib/crumbs';
+import { ROUTES, type Lang } from '../i18n/routes';
+interface Props { lang: Lang; kind: 'mentions' | 'confidentialite' }
+const { lang, kind } = Astro.props;
+const meta = PAGES[kind][lang];
+const en = lang === 'en';
+const noindex = kind === 'mentions' && !legalComplete();
+const updated = new Date('2026-10-03');
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES[kind][lang]} alternates={ROUTES[kind]} crumbs={crumbs(lang, [kind])} {noindex}>
+  <PageHead title={meta.title} />
+  <div class="wrap prose legal">
+    {kind === 'mentions' ? (
+      en ? (
+        <>
+          <h2>Publisher</h2>
+          <ul>
+            <li>Name: {SITE.name}</li>
+            <li>Legal form: {LEGAL.form}</li>
+            <li>Trade register (RCCM): {LEGAL.rccm}</li>
+            <li>Taxpayer number (NIU): {LEGAL.niu}</li>
+            <li>Address: {LEGAL.address}</li>
+            <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · WhatsApp: {SITE.whatsapp.display}</li>
+          </ul>
+          <h2>Publication director</h2>
+          <p>{LEGAL.director}.</p>
+          <h2>Hosting</h2>
+          <p>{LEGAL.host.name}, {LEGAL.host.address}. <a href={LEGAL.host.url} rel="noopener">{LEGAL.host.url}</a></p>
+          <h2>Intellectual property</h2>
+          <p>The texts, tools and templates on this site are the property of {SITE.name}. You may use the templates for your own company. Reproducing the site’s content elsewhere requires written permission.</p>
+          <h2>Nature of the information</h2>
+          <p>The content of this site is general information, not legal advice. Any court procedure is handled by a lawyer or a bailiff.</p>
+        </>
+      ) : (
+        <>
+          <h2>Éditeur</h2>
+          <ul>
+            <li>Nom : {SITE.name}</li>
+            <li>Forme juridique : {LEGAL.form}</li>
+            <li>RCCM : {LEGAL.rccm}</li>
+            <li>NIU : {LEGAL.niu}</li>
+            <li>Adresse : {LEGAL.address}</li>
+            <li>E-mail : <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · WhatsApp : {SITE.whatsapp.display}</li>
+          </ul>
+          <h2>Directeur de la publication</h2>
+          <p>{LEGAL.director}.</p>
+          <h2>Hébergement</h2>
+          <p>{LEGAL.host.name}, {LEGAL.host.address}. <a href={LEGAL.host.url} rel="noopener">{LEGAL.host.url}</a></p>
+          <h2>Propriété intellectuelle</h2>
+          <p>Les textes, outils et modèles de ce site appartiennent à {SITE.name}. Vous pouvez utiliser les modèles pour votre propre entreprise. Toute reproduction du contenu du site ailleurs nécessite une autorisation écrite.</p>
+          <h2>Nature des informations</h2>
+          <p>Le contenu de ce site est une information générale, pas un conseil juridique. Une procédure relève d’un avocat ou d’un huissier.</p>
+        </>
+      )
+    ) : en ? (
+      <>
+        <p>This page explains which personal data the site collects, why, and for how long. Last updated: 3 October 2026.</p>
+        <h2>Diagnostic form</h2>
+        <p>When you send the form, we receive: your sector, whether your clients pay late, your team size, your first name, your company, your city, your phone number or email, and your message. These data are used only to reply to your diagnostic request.</p>
+        <p>The form is processed by a function hosted by {LEGAL.host.name}, then forwarded by email to {SITE.email}. These data are not sold or shared for advertising.</p>
+        <h2>Retention</h2>
+        <p>Requests that do not lead to an engagement are deleted 12 months after the last exchange. Client data are kept for as long as the engagement lasts, then for the period required by accounting obligations.</p>
+        <h2>Audience measurement</h2>
+        <p>The site measures visits and a few actions (clicks on the main button, form sent, WhatsApp or email clicks, use of the calculator, quiz completed, template copied) without cookies and without identifying you. No advertising or social-network tracker is used.</p>
+        <h2>Tools</h2>
+        <p>The calculator and the contract test run in your browser. What you type is not sent. The calculator’s result is kept in your browser for the current session only, to pre-fill the form message.</p>
+        <h2>WhatsApp and email</h2>
+        <p>If you contact us via WhatsApp or email, those services’ own privacy rules also apply.</p>
+        <h2>Your rights</h2>
+        <p>You can ask to access, correct or delete your data by writing to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+      </>
+    ) : (
+      <>
+        <p>Cette page explique quelles données personnelles le site collecte, pourquoi, et combien de temps. Dernière mise à jour : 3 octobre 2026.</p>
+        <h2>Formulaire de diagnostic</h2>
+        <p>Quand vous envoyez le formulaire, nous recevons : votre secteur, si vos clients paient en retard, la taille de votre équipe, votre prénom, votre entreprise, votre ville, votre téléphone ou e-mail, et votre message. Ces données servent uniquement à répondre à votre demande de diagnostic.</p>
+        <p>Le formulaire est traité par une fonction hébergée chez {LEGAL.host.name}, puis transmis par e-mail à {SITE.email}. Ces données ne sont ni vendues ni partagées à des fins publicitaires.</p>
+        <h2>Durée de conservation</h2>
+        <p>Les demandes qui ne donnent pas lieu à un accompagnement sont supprimées 12 mois après le dernier échange. Les données des clients sont conservées pendant la durée de l’accompagnement, puis pendant la durée imposée par les obligations comptables.</p>
+        <h2>Mesure d’audience</h2>
+        <p>Le site mesure les visites et quelques actions (clic sur le bouton principal, envoi du formulaire, clic WhatsApp ou e-mail, utilisation du calculateur, fin du test, copie d’un modèle), sans cookie et sans vous identifier. Aucun traceur publicitaire ou de réseau social n’est utilisé.</p>
+        <h2>Outils</h2>
+        <p>Le calculateur et le test de contrat fonctionnent dans votre navigateur. Ce que vous saisissez n’est pas envoyé. Le résultat du calculateur est gardé dans votre navigateur pour la session en cours uniquement, afin de préremplir le message du formulaire.</p>
+        <h2>WhatsApp et e-mail</h2>
+        <p>Si vous nous contactez par WhatsApp ou par e-mail, les règles de confidentialité propres à ces services s’appliquent aussi.</p>
+        <h2>Vos droits</h2>
+        <p>Vous pouvez demander l’accès, la rectification ou la suppression de vos données en écrivant à <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+      </>
+    )}
+    <p class="small"><time datetime={updated.toISOString().slice(0, 10)}>{en ? 'Updated 3 October 2026' : 'Mis à jour le 3 octobre 2026'}</time></p>
+  </div>
+</Base>
+<style>.legal { padding-bottom: 64px; }</style>

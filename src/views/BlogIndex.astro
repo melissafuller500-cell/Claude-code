@@ -1,0 +1,79 @@
+---
+/** Index du blog et pages de catégorie : paginés (12 par page), URL canonique propre à chaque page. */
+import type { Page } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { CATEGORIES, CATEGORY_KEYS, type CategoryKey } from '../data/editorial';
+import { crumbs } from '../lib/crumbs';
+import { ogFor } from '../lib/og';
+import { useUI } from '../i18n/ui';
+import { ROUTES, BLOG_CATEGORY_BASE, type Lang } from '../i18n/routes';
+
+interface Props { lang: Lang; page: Page<CollectionEntry<'blog'>>; category?: CategoryKey; activeCategories: CategoryKey[] }
+const { lang, page, category, activeCategories } = Astro.props;
+const t = useUI(lang);
+const en = lang === 'en';
+const base = category ? `${BLOG_CATEGORY_BASE[lang]}${CATEGORIES[category][lang].slug}/` : ROUTES.blog[lang];
+const path = page.currentPage === 1 ? base : `${base}${page.currentPage}/`;
+const cat = category ? CATEGORIES[category][lang] : undefined;
+const other: Lang = en ? 'fr' : 'en';
+const alternates = page.currentPage === 1
+  ? { [lang]: base, [other]: category ? `${BLOG_CATEGORY_BASE[other]}${CATEGORIES[category][other].slug}/` : ROUTES.blog[other] }
+  : undefined;
+const meta = PAGES.blog[lang];
+const title = cat
+  ? `${en ? 'Blog' : 'Blog'} · ${cat.name}${page.currentPage > 1 ? ` · ${t.pageN(page.currentPage)}` : ''}`
+  : `${meta.title}${page.currentPage > 1 ? ` · ${t.pageN(page.currentPage)}` : ''}`;
+const description = cat ? `${cat.intro}`.slice(0, 160) : meta.description;
+const h1 = cat ? cat.name : en ? 'Blog: late payment, debt recovery, cash flow' : 'Blog : retards de paiement, recouvrement, trésorerie';
+const intro = cat
+  ? cat.intro
+  : en
+    ? 'Short, sourced answers to the questions SME owners in Cameroon ask about getting paid: one question per article, a worked example in FCFA, and a template to copy when the topic lends itself to one.'
+    : 'Des réponses courtes et sourcées aux questions que se posent les dirigeants de PME au Cameroun sur l’encaissement : une question par article, un exemple chiffré en FCFA, et un modèle à copier quand le sujet s’y prête.';
+const extra = cat ? [{ name: cat.name, url: base }] : [];
+const pageCrumb = page.currentPage > 1 ? [{ name: t.pageN(page.currentPage), url: path }] : [];
+const pageUrl = (n: number) => (n === 1 ? base : `${base}${n}/`);
+---
+<Base {lang} {title} {description} {path} {alternates} ogImage={ogFor(ROUTES.blog[lang])} section="blog"
+  crumbs={crumbs(lang, ['blog'], [...extra, ...pageCrumb])}>
+  <PageHead title={h1} lead={intro} />
+  <div class="wrap">
+    {activeCategories.length > 0 && (
+      <nav class="cats" aria-label={t.categories}>
+        <a class="chip" href={ROUTES.blog[lang]} aria-current={!category ? 'page' : undefined}>{t.allCategories}</a>
+        {CATEGORY_KEYS.filter((k) => activeCategories.includes(k)).map((k) => (
+          <a class="chip" href={`${BLOG_CATEGORY_BASE[lang]}${CATEGORIES[k][lang].slug}/`} aria-current={k === category ? 'page' : undefined}>{CATEGORIES[k][lang].name}</a>
+        ))}
+      </nav>
+    )}
+    {page.data.length ? (
+      <div class="cards list">{page.data.map((p) => <ArticleCard post={p} />)}</div>
+    ) : (
+      <p class="callout">{t.noPosts}</p>
+    )}
+    {page.lastPage > 1 && (
+      <nav class="pager" aria-label={t.pagination}>
+        {page.url.prev ? <a class="chip" href={page.url.prev} rel="prev">← {t.prev}</a> : <span />}
+        <ol>
+          {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((n) => (
+            <li><a class="chip" href={pageUrl(n)} aria-current={n === page.currentPage ? 'page' : undefined}>{n}</a></li>
+          ))}
+        </ol>
+        {page.url.next ? <a class="chip" href={page.url.next} rel="next">{t.next} →</a> : <span />}
+      </nav>
+    )}
+    <CtaBox {lang} src="blog" />
+  </div>
+</Base>
+<style>
+  .cats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .list { margin-bottom: 32px; }
+  .pager { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .pager ol { list-style: none; padding: 0; display: flex; gap: 6px; }
+  .wrap { padding-bottom: 48px; }
+</style>

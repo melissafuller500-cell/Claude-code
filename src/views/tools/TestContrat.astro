@@ -1,0 +1,32 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import Quiz from '../../components/Quiz.astro';
+import { ROUTES, type Lang } from '../../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const related = en
+  ? [{ href: ROUTES.clauses.en, label: 'Payment-terms clause template' }, { href: '/en/guides/ohada-payment-order/', label: 'Guide: the OHADA payment order' }, { href: ROUTES.calculateur.en, label: 'Late payment cost calculator' }]
+  : [{ href: ROUTES.clauses.fr, label: 'Modèle de conditions de paiement' }, { href: '/guides/injonction-de-payer-ohada/', label: 'Guide : l’injonction de payer OHADA' }, { href: ROUTES.calculateur.fr, label: 'Calculateur du coût des retards' }];
+---
+{en ? (
+  <Tool lang="en" key="test" h1="Does your contract protect you from late payment?" {related}
+    answer="A contract protects your cash when it is signed before the work starts, states the payment terms in days, sets a late-payment penalty, asks for a deposit, says how disputes are settled, and is backed by reminders sent on fixed dates. Six questions are enough to see where you stand.">
+    <Fragment slot="intro">
+      <h2>Why these six questions</h2>
+      <p>Most late payments start before the invoice: a job started without a signed order, terms left “to be agreed”, no price for delay. Without a written due date, there is no late payment, only a client taking their time. The questions follow the order of a business relationship: before the order, in the contract, then after the invoice.</p>
+      <p>Answer yes or no. Each “no” comes with the fix to make first. The score is calculated in your browser and nothing is sent. The test gives an indication; it does not replace a review of your contracts, which is part of the free diagnostic.</p>
+    </Fragment>
+    <Quiz lang="en" />
+  </Tool>
+) : (
+  <Tool lang="fr" key="test" h1="Votre contrat vous protège-t-il des retards de paiement ?" {related}
+    answer="Un contrat protège votre trésorerie quand il est signé avant le début du travail, fixe un délai de paiement en jours, prévoit une pénalité de retard, demande un acompte, dit comment un litige sera réglé, et s’appuie sur des relances envoyées à date fixe. Six questions suffisent pour savoir où vous en êtes.">
+    <Fragment slot="intro">
+      <h2>Pourquoi ces six questions</h2>
+      <p>La plupart des retards commencent avant la facture : un travail démarré sans bon de commande signé, un délai « à convenir », aucun prix pour le retard. Sans date écrite, il n’y a pas de retard, seulement un client qui prend son temps. Les questions suivent l’ordre d’une relation commerciale : avant la commande, dans le contrat, puis après la facture.</p>
+      <p>Répondez par oui ou par non. Chaque « non » s’accompagne de la correction à faire en premier. Le score est calculé dans votre navigateur et rien n’est envoyé. Le test donne une indication ; il ne remplace pas l’examen de vos contrats, qui fait partie du diagnostic gratuit.</p>
+    </Fragment>
+    <Quiz lang="fr" />
+  </Tool>
+)}

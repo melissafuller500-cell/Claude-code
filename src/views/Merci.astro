@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ContactRoutes from '../components/ContactRoutes.astro';
+import { PAGES } from '../data/pages';
+import { ROUTES, type Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const meta = PAGES.merci[lang];
+const en = lang === 'en';
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES.merci[lang]} alternates={ROUTES.merci} noindex
+  crumbs={[{ name: PAGES.home[lang].crumb, url: ROUTES.home[lang] }, { name: PAGES.diagnostic[lang].crumb, url: ROUTES.diagnostic[lang] }, { name: meta.crumb, url: ROUTES.merci[lang] }]}>
+  <PageHead title={en ? 'Thank you, your request has been received.' : 'Merci, votre demande est bien reçue.'}
+    lead={en ? 'I will reply within the day. If it’s urgent, you can also write to me directly:' : 'Je vous réponds dans la journée. Si c’est urgent, vous pouvez aussi m’écrire directement :'}>
+    <ContactRoutes {lang} formHref={`${ROUTES.diagnostic[lang]}#formulaire`} src="thanks" />
+    <p><a class="arrow-link" href={ROUTES.outils[lang]}>{en ? 'In the meantime, try the free tools' : 'En attendant, essayez les outils gratuits'}</a></p>
+  </PageHead>
+</Base>

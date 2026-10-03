@@ -1,0 +1,32 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import Reminders from '../../components/Reminders.astro';
+import { ROUTES, type Lang } from '../../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const related = en
+  ? [{ href: '/en/guides/aging-report/', label: 'Guide: the aging report' }, { href: '/en/glossary/formal-notice/', label: 'Glossary: formal notice' }, { href: ROUTES.calculateur.en, label: 'Late payment cost calculator' }]
+  : [{ href: '/guides/balance-agee/', label: 'Guide : la balance âgée' }, { href: '/glossaire/mise-en-demeure/', label: 'Glossaire : mise en demeure' }, { href: ROUTES.calculateur.fr, label: 'Calculateur du coût des retards' }];
+---
+{en ? (
+  <Tool lang="en" key="relances" h1="Unpaid invoice reminder schedule and templates" {related}
+    answer="A reminder works when it goes out on a date set in advance, not when someone remembers. A simple schedule: a polite reminder 5 days before the due date, a WhatsApp message the day after, a written reminder at 7 days, a call to the accountant at 15 days, and a formal notice at 30 days.">
+    <Fragment slot="intro">
+      <h2>How to use this schedule</h2>
+      <p>Your client pays first the suppliers who follow up on fixed dates. The schedule below starts before the due date: the D-5 message checks that the invoice has been registered, which removes the most common excuse. Each later step is a little firmer, and each one leaves a written, dated trace.</p>
+      <p>Dates and tone are adjusted client by client, and written into your payment terms so the client knows them from the start. Copy a message, replace the [brackets], and send it. The formal notice is the last step before a procedure such as the payment order: it shows the client was warned.</p>
+    </Fragment>
+    <Reminders lang="en" />
+  </Tool>
+) : (
+  <Tool lang="fr" key="relances" h1="Calendrier et modèles de relance de facture impayée" {related}
+    answer="Une relance fonctionne quand elle part à une date fixée d’avance, pas quand quelqu’un y pense. Un calendrier simple : un rappel courtois 5 jours avant l’échéance, un message WhatsApp le lendemain, une relance écrite à 7 jours, un appel au comptable à 15 jours, et une mise en demeure à 30 jours.">
+    <Fragment slot="intro">
+      <h2>Comment utiliser ce calendrier</h2>
+      <p>Votre client paie d’abord les fournisseurs qui relancent à date fixe. Le calendrier ci-dessous commence avant l’échéance : le message de J-5 vérifie que la facture est bien enregistrée, ce qui supprime l’excuse la plus fréquente. Chaque étape suivante est un peu plus ferme, et chacune laisse une trace écrite et datée.</p>
+      <p>Les dates et le ton se règlent client par client, et s’écrivent dans vos conditions de paiement pour que le client les connaisse dès le départ. Copiez un message, remplacez les [crochets], envoyez. La mise en demeure est la dernière étape avant une procédure comme l’injonction de payer : elle prouve que le client a été averti.</p>
+    </Fragment>
+    <Reminders lang="fr" />
+  </Tool>
+)}

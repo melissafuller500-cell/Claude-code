@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { ROUTES } from '../i18n/routes';
+import { PAGES } from '../data/pages';
+const links = (['diagnostic', 'outils', 'offres', 'guides', 'blog'] as const).map((k) => ({ href: ROUTES[k].fr, label: PAGES[k].fr.crumb }));
+---
+<Base lang="fr" title="Page introuvable" description="Cette page n’existe pas ou plus. Retrouvez le diagnostic gratuit de 45 minutes, les outils, les offres, les guides et le blog de Noé Tech Growth." path="/404/" noindex>
+  <section class="wrap sec nf">
+    <p class="eyebrow">404</p>
+    <h1>Cette page n’existe pas, ou plus.</h1>
+    <p class="lead">L’adresse a peut-être changé avec la nouvelle version du site. Voici les pages les plus utiles :</p>
+    <ul>{links.map((l) => <li><a class="arrow-link" href={l.href}>{l.label}</a></li>)}</ul>
+    <p class="lead" lang="en">This page doesn’t exist. <a class="link" href="/en/">Go to the English home page</a>.</p>
+    <a class="btn" href="/">Retour à l’accueil</a>
+  </section>
+</Base>
+<style>
+  .nf { display: grid; gap: 20px; justify-items: start; }
+  ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 24px; }
+</style>

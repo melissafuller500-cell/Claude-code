@@ -1,0 +1,16 @@
+---
+import type { GetStaticPathsOptions } from 'astro';
+import BlogIndex from '../../../../../views/BlogIndex.astro';
+import { published, byDateDesc } from '../../../../../lib/content';
+import { CATEGORIES, CATEGORY_KEYS } from '../../../../../data/editorial';
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await published('blog', 'en')).sort(byDateDesc);
+  const activeCategories = [...new Set(posts.map((p) => p.data.category))];
+  // Une catégorie sans article n'est pas construite (pas de page vide indexée).
+  return CATEGORY_KEYS.filter((k) => activeCategories.includes(k)).flatMap((k) =>
+    paginate(posts.filter((p) => p.data.category === k), { pageSize: 12, params: { cat: CATEGORIES[k]['en'].slug }, props: { category: k, activeCategories } }),
+  );
+}
+const { page, category, activeCategories } = Astro.props;
+---
+<BlogIndex lang="en" {page} {category} {activeCategories} />

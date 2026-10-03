@@ -1,0 +1,46 @@
+---
+/**
+ * La jauge « un seul chiffre à faire baisser » (élément signature). Reliée au calculateur :
+ * elle affiche le délai réel, le délai prévu au contrat et le délai visé après les jours gagnés.
+ */
+import { compute, CALC_DEFAULTS as D } from '../lib/calc';
+import type { Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const R = compute(D);
+const u = en ? 'd' : 'j';
+const L = en
+  ? { cap: (real: number, term: number, target: number) => `Average payment time. Your clients pay at ${real} d; your contract says ${term} d. Target with the three workstreams: ${target} d.`, sent: 'Invoice sent', paid: 'Money in', note: 'Figures from the calculator above. Change them and the gauge follows.', label: 'Average payment time gauge' }
+  : { cap: (real: number, term: number, target: number) => `Délai moyen de paiement. Vos clients paient à ${real} j ; votre contrat prévoit ${term} j. Objectif avec les trois chantiers : ${target} j.`, sent: 'Facture envoyée', paid: 'Argent reçu', note: 'Chiffres repris du calculateur plus haut. Modifiez-les, la jauge suit.', label: 'Jauge du délai moyen de paiement' };
+---
+<figure class="gauge" data-gauge data-lang={lang} style={`--g:${R.projected / D.real};--t:${(D.term / D.real) * 100}%`} aria-label={L.label}>
+  <div class="g-num"><b class="num" data-g="num">{R.projected}</b><span>{u}</span><s class="num" data-g="from">{D.real} {u}</s></div>
+  <div class="g-pipe" aria-hidden="true">
+    <span>{L.sent}</span>
+    <div class="g-track"><i></i><s></s><em></em></div>
+    <span>{L.paid}</span>
+  </div>
+  <figcaption class="g-cap" data-g="cap" aria-live="polite">{L.cap(D.real, D.term, R.projected)}</figcaption>
+  <p class="small">{L.note}</p>
+</figure>
+<script>
+  import { lazy } from '../scripts/lazy';
+  lazy('[data-gauge]', () => import('../scripts/gauge'));
+</script>
+<style>
+  .gauge { margin: 0; background: var(--forest); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(20px, 3vw, 28px); display: grid; gap: 18px; }
+  .g-num { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .g-num b { font: 900 clamp(72px, 9vw, 128px)/0.85 var(--f-display); font-stretch: 125%; letter-spacing: -0.05em; color: var(--leaf); }
+  .g-num span { font: 800 28px var(--f-display); color: var(--ink-soft); }
+  .g-num s { font: 700 20px var(--f-mono); color: var(--late); margin-left: 8px; }
+  .g-pipe { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; font: 600 14px var(--f-text); color: var(--ink-mute); }
+  .g-track { height: 12px; border-radius: 999px; background: var(--forest-2); position: relative; }
+  .g-track i { position: absolute; inset: 0; border-radius: 999px; background: linear-gradient(90deg, var(--leaf-deep), var(--leaf)); transform-origin: left; transform: scaleX(var(--g, 1)); transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .g-track em { position: absolute; top: 50%; left: calc(var(--g, 1) * 100%); width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: var(--spark); box-shadow: 0 0 0 5px rgba(90, 180, 255, 0.2); transition: left 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .g-track s { position: absolute; top: -7px; bottom: -7px; width: 2px; background: var(--ink-soft); left: var(--t, 50%); }
+  .g-cap { font-size: 16px; color: var(--ink-soft); }
+  .gauge[data-start] .g-track i { transform: scaleX(1); }
+  .gauge[data-start] .g-track em { left: 100%; }
+  @media (max-width: 520px) { .g-pipe { grid-template-columns: minmax(0, 1fr); } .g-pipe span { display: none; } }
+</style>

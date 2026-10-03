@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import CtaBox from '../components/CtaBox.astro';
+import { PAGES } from '../data/pages';
+import { crumbs } from '../lib/crumbs';
+import { published } from '../lib/content';
+import { useUI } from '../i18n/ui';
+import { ROUTES, entryUrl, type Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useUI(lang);
+const en = lang === 'en';
+const meta = PAGES.ressources[lang];
+const guides = await published('guides', lang);
+const sectors = (await published('secteurs', lang)).sort((a, b) => a.data.order - b.data.order);
+const terms = (await published('glossaire', lang)).sort((a, b) => a.data.term.localeCompare(b.data.term, lang));
+const answer = en
+  ? 'Everything here is free to read: three in-depth guides on the OHADA payment order, getting paid by the State and the aging report; five sector pages showing where money gets stuck in construction, services, trading, transport and agencies; and a glossary of the terms that matter for your cash.'
+  : 'Tout est en accès libre : trois guides de fond sur l’injonction de payer OHADA, le paiement par l’État et la balance âgée ; cinq fiches secteurs qui montrent où l’argent se bloque dans le BTP, les services, le négoce, le transport et les agences ; et un glossaire des mots qui comptent pour votre trésorerie.';
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES.ressources[lang]} alternates={ROUTES.ressources} crumbs={crumbs(lang, ['ressources'])} section="ressources">
+  <PageHead title={en ? 'Resources' : 'Ressources'} answer={answer} answerLabel={t.inBrief} />
+  <div class="wrap grid">
+    <section aria-labelledby="g-h">
+      <h2 id="g-h"><a href={ROUTES.guides[lang]}>{PAGES.guides[lang].crumb}</a></h2>
+      <ul>{guides.map((g) => <li><a class="arrow-link" href={entryUrl('guides', g.id)}>{g.data.title}</a></li>)}</ul>
+    </section>
+    <section aria-labelledby="s-h">
+      <h2 id="s-h"><a href={ROUTES.secteurs[lang]}>{PAGES.secteurs[lang].crumb}</a></h2>
+      <ul>{sectors.map((s) => <li><a class="arrow-link" href={entryUrl('secteurs', s.id)}>{s.data.name}</a></li>)}</ul>
+    </section>
+    <section aria-labelledby="gl-h">
+      <h2 id="gl-h"><a href={ROUTES.glossaire[lang]}>{PAGES.glossaire[lang].crumb}</a></h2>
+      <ul>{terms.map((g) => <li><a class="arrow-link" href={entryUrl('glossaire', g.id)}>{g.data.term}</a></li>)}</ul>
+    </section>
+  </div>
+  <div class="wrap"><CtaBox {lang} src="ressources" /></div>
+</Base>
+<style>
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  section { background: var(--forest); border: 1px solid var(--line); border-radius: var(--r-l); padding: 24px; }
+  h2 { font-size: 26px; margin-bottom: 10px; }
+  h2 a { text-decoration: none; }
+  h2 a:hover { color: var(--leaf); }
+  ul { list-style: none; padding: 0; }
+  .arrow-link { color: var(--ink-soft); }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>

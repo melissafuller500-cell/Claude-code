@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import DiagnosticForm from '../components/DiagnosticForm.astro';
+import Faq from '../components/Faq.astro';
+import { PAGES } from '../data/pages';
+import { FAQ_DIAGNOSTIC } from '../data/faq';
+import { TIMELINE, PREP } from '../data/offers';
+import { faqPage } from '../lib/schema';
+import { crumbs } from '../lib/crumbs';
+import { ROUTES, type Lang } from '../i18n/routes';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const meta = PAGES.diagnostic[lang];
+const en = lang === 'en';
+const C = en ? {
+  h1: 'The free 45-minute diagnostic',
+  answer: 'The diagnostic is a free 45-minute conversation, on WhatsApp, by phone or in person. We look at how long your clients actually take to pay and at one contract you use. You leave with an estimate, in FCFA, of what late payments cost your company each month.',
+  label: 'In short',
+  stepsH: 'The 45 minutes, in order',
+  prepH: 'To prepare before the meeting',
+  prepNote: 'Nothing is mandatory: we can start from what you have.',
+  formH: 'Book your diagnostic',
+  formLead: 'Tell me your sector, whether your clients pay late, and the size of your team. I reply within the day, wherever you are in Cameroon.',
+  faqH: 'Questions about the diagnostic',
+  afterH: 'And afterwards?',
+  after: 'If the figures justify it, I suggest the first paid step, the Cash & Contracts Audit (50,000 FCFA). If they don’t, I tell you so. You are under no obligation.',
+  afterLink: 'See the offers and prices',
+} : {
+  h1: 'Le diagnostic gratuit de 45 minutes',
+  answer: 'Le diagnostic est un échange gratuit de 45 minutes, sur WhatsApp, par téléphone ou en personne. Nous regardons le délai réel de paiement de vos clients et un contrat que vous utilisez. Vous repartez avec une estimation, en FCFA, de ce que les retards de paiement coûtent chaque mois à votre entreprise.',
+  label: 'En bref',
+  stepsH: 'Les 45 minutes, dans l’ordre',
+  prepH: 'À préparer avant le rendez-vous',
+  prepNote: 'Rien n’est obligatoire : on peut partir de ce que vous avez.',
+  formH: 'Réservez votre diagnostic',
+  formLead: 'Indiquez votre secteur, si vos clients paient en retard, et la taille de votre équipe. Je vous réponds dans la journée, où que vous soyez au Cameroun.',
+  faqH: 'Questions sur le diagnostic',
+  afterH: 'Et ensuite ?',
+  after: 'Si les chiffres le justifient, je vous propose la première étape payante, l’Audit Trésorerie et Contrats (50 000 FCFA). S’ils ne le justifient pas, je vous le dis. Vous ne vous engagez à rien.',
+  afterLink: 'Voir les offres et les prix',
+};
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES.diagnostic[lang]} alternates={ROUTES.diagnostic}
+  crumbs={crumbs(lang, ['diagnostic'])} section="diagnostic" jsonLd={[faqPage(FAQ_DIAGNOSTIC, lang)]}>
+  <PageHead title={C.h1} answer={C.answer} answerLabel={C.label} />
+
+  <section class="sec-tight wrap grid2" aria-label={C.stepsH}>
+    <div class="panel">
+      <h2 class="h3">{C.stepsH}</h2>
+      <ol class="tl">
+        {TIMELINE.map((s) => (
+          <li style={`--w:${s.min}`}><b class="mono">{s.label}</b><span>{s[lang]}</span></li>
+        ))}
+      </ol>
+    </div>
+    <div class="panel">
+      <h2 class="h3">{C.prepH}</h2>
+      <ul class="prep">
+        {PREP.map((p, i) => <li><label><input type="checkbox" id={`prep-${i}`} /> <span>{p[lang]}</span></label></li>)}
+      </ul>
+      <p class="small">{C.prepNote}</p>
+    </div>
+  </section>
+
+  <section class="sec-tight wrap form-sec" aria-labelledby="form-h">
+    <div>
+      <h2 id="form-h">{C.formH}</h2>
+      <p class="lead">{C.formLead}</p>
+      <div class="after">
+        <h3>{C.afterH}</h3>
+        <p class="muted">{C.after}</p>
+        <a class="arrow-link" href={ROUTES.offres[lang]}>{C.afterLink}</a>
+      </div>
+    </div>
+    <DiagnosticForm {lang} id="formulaire" />
+  </section>
+
+  <section class="sec wrap" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="sec-head">{C.faqH}</h2>
+    <Faq items={FAQ_DIAGNOSTIC} {lang} />
+  </section>
+</Base>
+<style>
+  .grid2 { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 16px; }
+  .h3 { font-size: clamp(22px, 2vw, 28px); margin-bottom: 18px; }
+  .tl { list-style: none; padding: 0; display: grid; gap: 0; }
+  .tl li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .tl b { color: var(--spark); font-size: 15px; }
+  .prep { list-style: none; padding: 0; display: grid; gap: 4px; margin-bottom: 14px; }
+  .prep label { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; min-height: 44px; padding-top: 10px; cursor: pointer; color: var(--ink-soft); }
+  .prep input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--leaf); }
+  .form-sec { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(24px, 5vw, 64px); align-items: start; }
+  .form-sec h2 { margin-bottom: 16px; }
+  .after { margin-top: 32px; display: grid; gap: 10px; }
+  @media (max-width: 900px) { .grid2, .form-sec { grid-template-columns: 1fr; } .tl li { grid-template-columns: 1fr; gap: 4px; } }
+</style>

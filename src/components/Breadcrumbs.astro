@@ -1,0 +1,26 @@
+---
+import { useUI } from '../i18n/ui';
+import type { Lang } from '../i18n/routes';
+export type Crumb = { name: string; url: string };
+interface Props { items: Crumb[]; lang: Lang }
+const { items, lang } = Astro.props;
+const t = useUI(lang);
+---
+<nav class="crumbs wrap" aria-label={t.breadcrumbLabel}>
+  <ol>
+    {items.map((c, i) => (
+      <li>
+        {i < items.length - 1 ? <a href={c.url}>{c.name}</a> : <span aria-current="page">{c.name}</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+<style>
+  .crumbs { padding-top: 18px; }
+  ol { list-style: none; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; font-size: 14px; color: var(--ink-mute); }
+  li { display: inline-flex; align-items: center; }
+  li + li::before { content: '/'; margin-right: 6px; color: var(--line-2); }
+  a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink-soft); text-decoration: none; padding-right: 2px; }
+  a:hover { color: var(--leaf); text-decoration: underline; }
+  span { color: var(--ink-mute); }
+</style>

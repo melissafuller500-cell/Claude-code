@@ -1,0 +1,20 @@
+---
+import { useUI } from '../i18n/ui';
+import type { Lang } from '../i18n/routes';
+interface Props { lang: Lang; items: { title: string; url: string }[] }
+const { lang, items } = Astro.props;
+const t = useUI(lang);
+---
+{items.length > 0 && (
+  <section class="sources" aria-labelledby="sources-h">
+    <h2 id="sources-h">{t.sources}</h2>
+    <ol>{items.map((s) => <li><a href={s.url} rel="noopener" target="_blank">{s.title}</a></li>)}</ol>
+  </section>
+)}
+<style>
+  .sources { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 20px; }
+  h2 { font-size: 22px; margin-bottom: 12px; }
+  ol { padding-left: 22px; display: grid; gap: 8px; font-size: 15px; }
+  a { color: var(--ink-soft); overflow-wrap: anywhere; }
+  a:hover { color: var(--leaf); }
+</style>

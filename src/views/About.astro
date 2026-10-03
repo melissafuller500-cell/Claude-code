@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import CtaBox from '../components/CtaBox.astro';
+import Logo from '../components/Logo.astro';
+import { PAGES } from '../data/pages';
+import { SITE } from '../data/site';
+import { brand } from '../lib/brand';
+import { crumbs } from '../lib/crumbs';
+import { ROUTES, type Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const meta = PAGES.apropos[lang];
+const en = lang === 'en';
+const C = en ? {
+  h1: 'Noé Mbwang, founder of Noé Tech Growth',
+  answer: 'Noé Mbwang founded Noé Tech Growth to help B2B SMEs in Cameroon get paid faster. Trained in law, with a Master’s in Public International Law and Political Science, he works on one problem: the number of days your clients take to pay. He sets up contracts, tracking and reminders; he does not give legal advice.',
+  pathH: 'Background', path: ['I hold a Master’s in Public International Law and Political Science. Studying law taught me to read a contract for what it really commits each party to, and to see how much a written date, a signed delivery note or a dated reminder changes when a dispute arises.', 'I then trained in data analysis, to measure rather than guess. I work on a single question: how to bring down the number of days between sending an invoice and the money arriving.'],
+  methodH: 'Method', method: [['Measure first', 'Every engagement starts with your average payment time, measured on your real invoices. It is measured again every month.'], ['Three workstreams', 'Solid contracts before the order, weekly tracking of unpaid invoices, reminders on fixed dates.'], ['Simple tools', 'Excel and WhatsApp, which your team already uses. No software to buy.'], ['AI as a means', 'I use Claude to prepare reminders, template contracts and reports faster. Every document is reviewed before it reaches you.']],
+  notH: 'What I don’t do', not: ['Legal advice or court recovery: these are matters for a lawyer or a bailiff.', 'Selling invoicing software.', 'Promising a result: we measure, and the measurement says whether the work is paying off.'],
+  certH: 'Certifications', workH: 'Working together', work: 'I work with companies all over Cameroon: the diagnostic, documents and monthly follow-up go through WhatsApp and email. Prices are shown upfront.',
+  photo: 'Portrait of Noé Mbwang', founder: 'Founder',
+} : {
+  h1: 'Noé Mbwang, fondateur de Noé Tech Growth',
+  answer: 'Noé Mbwang a fondé Noé Tech Growth pour aider les PME B2B du Cameroun à encaisser plus vite. Juriste de formation, titulaire d’un Master en Droit Public International et Science Politique, il travaille sur un seul problème : le nombre de jours que vos clients mettent à payer. Il met en place contrats, suivi et relances ; il ne fait pas de conseil juridique.',
+  pathH: 'Parcours', path: ['J’ai un Master en Droit Public International et Science Politique. Le droit m’a appris à lire un contrat pour ce qu’il engage vraiment, et à mesurer ce que change, le jour d’un désaccord, une date écrite, un bon de livraison signé ou une relance datée.', 'Je me suis ensuite formé à l’analyse de données, pour mesurer plutôt que supposer. Je travaille sur une seule question : comment réduire le nombre de jours entre l’envoi d’une facture et l’arrivée de l’argent.'],
+  methodH: 'Méthode', method: [['Mesurer d’abord', 'Tout accompagnement commence par votre délai moyen de paiement, mesuré sur vos vraies factures. Il est mesuré à nouveau chaque mois.'], ['Trois chantiers', 'Des contrats solides avant la commande, un suivi des impayés chaque semaine, des relances à date fixe.'], ['Des outils simples', 'Excel et WhatsApp, que votre équipe utilise déjà. Aucun logiciel à acheter.'], ['L’IA comme moyen', 'J’utilise Claude pour préparer plus vite relances, contrats types et rapports. Chaque document est relu avant de vous être remis.']],
+  notH: 'Ce que je ne fais pas', not: ['Du conseil juridique ou du recouvrement judiciaire : cela relève d’un avocat ou d’un huissier.', 'Vendre un logiciel de facturation.', 'Promettre un résultat : on mesure, et la mesure dit si le travail porte.'],
+  certH: 'Certifications', workH: 'Travailler ensemble', work: 'Je travaille avec des entreprises partout au Cameroun : le diagnostic, les documents et le suivi mensuel passent par WhatsApp et l’e-mail. Les prix sont affichés.',
+  photo: 'Portrait de Noé Mbwang', founder: 'Fondateur',
+};
+---
+<Base {lang} title={meta.title} description={meta.description} path={ROUTES.apropos[lang]} alternates={ROUTES.apropos} crumbs={crumbs(lang, ['apropos'])} withPerson>
+  <div class="wrap about">
+    <figure class="portrait">
+      {brand.portrait
+        ? <Image src={brand.portrait} alt={C.photo} widths={[360, 560]} sizes="(max-width: 900px) 90vw, 440px" formats={['avif', 'webp']} />
+        : <div class="ph" aria-hidden="true"><Logo size={110} /></div>}
+      <figcaption><b>Noé Mbwang</b><span>{C.founder}</span></figcaption>
+    </figure>
+    <div class="txt">
+      <h1>{C.h1}</h1>
+      <div class="callout"><b>{en ? 'In brief' : 'En bref'}</b><p>{C.answer}</p></div>
+      <h2>{C.pathH}</h2>
+      {C.path.map((p) => <p class="muted">{p}</p>)}
+      <h2>{C.methodH}</h2>
+      <dl class="method">{C.method.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+      <h2>{C.notH}</h2>
+      <ul class="not">{C.not.map((x) => <li>{x}</li>)}</ul>
+      <h2>{C.certH}</h2>
+      <ul class="certs">{SITE.founder.certifications.map((c) => <li>{c}</li>)}</ul>
+      <h2>{C.workH}</h2>
+      <p class="muted">{C.work} <a class="link" href={ROUTES.offres[lang]}>{PAGES.offres[lang].crumb}</a></p>
+      {SITE.founder.sameAs.length > 0 && <ul class="profiles">{SITE.founder.sameAs.map((u) => <li><a class="link" href={u} rel="me noopener">{new URL(u).hostname}</a></li>)}</ul>}
+    </div>
+  </div>
+  <div class="wrap"><CtaBox {lang} src="about" /></div>
+</Base>
+<style>
+  .about { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: start; padding-top: 24px; }
+  .portrait { margin: 0; position: sticky; top: calc(var(--hdr) + 20px); border-radius: 28px 46% 28px 28px; overflow: hidden; background: radial-gradient(circle at 34% 28%, #9dbb86 0%, #6f9562 38%, #3e6236 78%, #2b4a27 100%); aspect-ratio: 765 / 1024; }
+  .portrait :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .ph { position: absolute; inset: 0; display: grid; place-items: center; }
+  figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; justify-content: space-between; align-items: center; background: rgba(6, 17, 11, 0.85); border: 1px solid var(--line-2); border-radius: 14px; padding: 12px 14px; }
+  figcaption b { font: 800 17px var(--f-display); }
+  figcaption span { font: 600 14px var(--f-text); color: var(--leaf); text-transform: uppercase; letter-spacing: 0.08em; }
+  .txt { display: grid; gap: 16px; max-width: 72ch; }
+  .txt h1 { font-size: clamp(36px, 5vw, 60px); }
+  .txt h2 { font-size: 26px; margin-top: 18px; }
+  .method { margin: 0; display: grid; gap: 12px; }
+  .method dt { font-weight: 600; }
+  .method dd { margin: 0; color: var(--ink-soft); }
+  .not { padding-left: 20px; display: grid; gap: 6px; color: var(--ink-soft); }
+  .certs { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .certs li { border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; font-size: 15px; color: var(--ink-soft); }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } .portrait { position: relative; top: 0; max-width: 300px; } }
+</style>
