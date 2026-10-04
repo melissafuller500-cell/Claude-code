@@ -1,0 +1,31 @@
+---
+// Category / vehicle page filters. Client-side only; the canonical URL stays the unfiltered page.
+import Icon from './Icon.astro';
+interface Props { count: number; prices?: number[] }
+const { count, prices = [] } = Astro.props;
+const steps = [10, 25, 50, 100, 200].filter((s) => prices.some((p) => p > s) && prices.some((p) => p <= s));
+---
+<div class="flex flex-wrap items-center gap-x-5 gap-y-3 rounded-md border border-line-200 bg-surface-0 px-4 py-3 text-sm">
+  <span class="tag-mono text-text-600" data-filter-count>{count} product{count === 1 ? '' : 's'}</span>
+  <button type="button" class="inline-flex items-center gap-1.5 font-medium text-link-blue underline underline-offset-4" data-vehicle-open>
+    <Icon name="car" size={18} />Filter by vehicle
+  </button>
+  <label class="inline-flex cursor-pointer items-center gap-2">
+    <input type="checkbox" data-filter-stock class="h-4 w-4 accent-[#1E8E4E]" />
+    In stock only
+  </label>
+  {steps.length > 0 && (
+    <label class="inline-flex items-center gap-2">
+      <span>Price</span>
+      <select data-filter-price class="h-9 rounded border border-line-200 bg-surface-0 px-2">
+        <option value="">Any</option>
+        {steps.map((s) => <option value={s}>Up to ${s}</option>)}
+      </select>
+    </label>
+  )}
+</div>
+<div data-filter-note hidden class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md bg-ink-900 px-4 py-2.5 text-sm text-white dark-frame">
+  <Icon name="car" size={18} class="text-line-yellow" />
+  <span data-filter-note-text></span>
+  <button type="button" data-filter-toggle class="font-medium text-line-yellow underline underline-offset-4">Show all parts</button>
+</div>

@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import FaqList from '../components/FaqList.astro';
+import { FAQ } from '../content/copy';
+---
+<PageLayout title="Frequently Asked Questions | BayStock Auto Parts" description="Answers about BayStock's $250 minimum, volume pricing, shipping times, fitment, warranty, returns, and resale certificates." h1="Frequently asked questions" crumb="FAQ">
+  <div class="max-w-3xl"><FaqList items={FAQ} headingLevel="h2" /></div>
+  <p class="mt-8 text-text-600">Still have a question? <a href="/contact/" class="link">Contact us</a> or ask the parts assistant.</p>
+</PageLayout>

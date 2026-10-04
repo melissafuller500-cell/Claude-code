@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { makes, vehicles, productsForVehicle, kitsForVehicle } from '../../lib/catalog';
+---
+<BaseLayout title="Shop Parts by Vehicle | BayStock Auto Parts" description="Find BayStock parts by vehicle make and model, with fitment by year. Filters, ignition, brakes, suspension, and kits. Buy one or buy in bulk.">
+  <div class="container-bay py-8 md:py-12">
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Vehicles', href: '/vehicles/' }]} />
+    <h1 class="mt-4 text-5xl md:text-6xl">Shop by vehicle</h1>
+    <p class="mt-3 max-w-2xl text-lg text-text-600">Every make and model we stock parts for. New models appear as products that fit them are added.</p>
+    <button type="button" class="btn btn-primary mt-6" data-vehicle-open><Icon name="car" size={20} />Select your vehicle</button>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {makes.map((m) => (
+        <section class="rounded-lg border border-line-200 bg-surface-0 p-5" aria-labelledby={`mk-${m.slug}`}>
+          <h2 id={`mk-${m.slug}`} class="text-3xl"><a href={`/vehicles/${m.slug}/`} class="no-underline hover:underline">{m.name}</a></h2>
+          <ul class="mt-3 divide-y divide-line-200">
+            {vehicles.filter((v) => v.makeSlug === m.slug).map((v) => (
+              <li><a href={`/vehicles/${v.makeSlug}/${v.modelSlug}/`} class="flex items-center justify-between py-2.5 no-underline hover:text-link-blue">
+                <span class="font-medium">{v.model}</span>
+                <span class="tag-mono text-[0.75rem] text-text-600">{Math.min(...v.years)}–{Math.max(...v.years)} · {productsForVehicle(v.make, v.model).length + kitsForVehicle(v.make, v.model).length} parts</span>
+              </a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

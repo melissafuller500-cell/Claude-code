@@ -1,0 +1,21 @@
+---
+import PartImage from './PartImage.astro';
+import Icon from './Icon.astro';
+import { CATEGORY_ICONS } from '../config/site';
+import { productCount } from '../lib/catalog';
+interface Props { slug: string; name: string }
+const { slug, name } = Astro.props;
+const count = productCount(slug);
+---
+<a href={`/parts/${slug}/`} class="bin-card group flex flex-col overflow-hidden no-underline">
+  <div class="relative m-2.5 mb-0 aspect-[4/3] overflow-hidden rounded bg-surface-50">
+    <PartImage path={slug} set="categories" alt="" sizes="(min-width: 1024px) 220px, 45vw" class="h-full w-full" icon={CATEGORY_ICONS[slug]} plain />
+  </div>
+  <div class="flex items-end justify-between gap-2 px-3.5 py-3">
+    <div>
+      <h3 class="font-sans text-[0.9375rem] font-semibold leading-snug tracking-normal">{name}</h3>
+      <p class="tag-mono mt-0.5 text-[0.75rem] text-text-600">{count ? `${count} product${count === 1 ? '' : 's'}` : 'Coming soon'}</p>
+    </div>
+    <Icon name="arrow" size={18} class="shrink-0 text-text-600 transition-transform group-hover:translate-x-0.5 group-hover:text-text-900" />
+  </div>
+</a>

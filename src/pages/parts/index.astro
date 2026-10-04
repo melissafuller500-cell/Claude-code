@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CategoryTile from '../../components/CategoryTile.astro';
+import { CATEGORIES } from '../../config/site';
+import { products } from '../../lib/catalog';
+---
+<BaseLayout title="All Auto Parts Categories | BayStock Auto Parts" description="Browse all 16 BayStock part categories: sensors, ignition, filters, brake pads, suspension, and more. Volume pricing and free shipping over $250.">
+  <div class="container-bay py-8 md:py-12">
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Parts', href: '/parts/' }]} />
+    <h1 class="mt-4 text-5xl md:text-6xl">All parts</h1>
+    <p class="mt-3 max-w-2xl text-lg text-text-600">{products.length} products across {CATEGORIES.length} categories. Every part has four prices, and the unit price drops at 3, 10, and 50.</p>
+    <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {CATEGORIES.map((c) => <CategoryTile slug={c.slug} name={c.name} />)}
+    </div>
+  </div>
+</BaseLayout>

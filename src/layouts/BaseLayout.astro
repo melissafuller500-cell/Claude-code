@@ -10,56 +10,113 @@ import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileCartBar from '../components/MobileCartBar.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import ChatLauncher from '../components/ChatLauncher.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Icon from '../components/Icon.astro';
+import VehicleSelector from '../islands/VehicleSelector';
+import Cart from '../islands/Cart';
 import { SITE } from '../config/site';
+import { COPY } from '../content/copy';
+import { vehicles, IS_SAMPLE_CATALOG } from '../lib/catalog';
+import { PAYMENT_MODE } from 'astro:env/server';
+import { PUBLIC_GOOGLE_SITE_VERIFICATION, PUBLIC_BING_SITE_VERIFICATION } from 'astro:env/client';
 
 interface Props {
   title: string;
   description: string;
   noindex?: boolean;
-  /** Light catalog surface (default) or white */
-  surface?: 'gray' | 'white';
+  /** Canonical path override (filtered views point at the unfiltered page). */
+  canonicalPath?: string;
   ogImage?: string;
+  ogType?: 'website' | 'article' | 'product';
 }
-const { title, description, noindex = false, surface = 'gray', ogImage } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).href : null;
+const { title, description, noindex = false, canonicalPath, ogImage, ogType = 'website' } = Astro.props;
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL(ogImage ?? '/og-image.png', Astro.site).href;
+const siteUrl = new URL('/', Astro.site).href;
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}#organization`,
+      name: SITE.name,
+      url: siteUrl,
+      logo: new URL('/logo.png', Astro.site).href,
+      contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: SITE.supportEmail, telephone: SITE.phone, areaServed: 'US', availableLanguage: 'en' },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      name: SITE.name,
+      url: siteUrl,
+      inLanguage: 'en-US',
+      publisher: { '@id': `${siteUrl}#organization` },
+      potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${siteUrl}search/?q={search_term_string}` }, 'query-input': 'required name=search_term_string' },
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <meta name="theme-color" content="#0E1114" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {PUBLIC_GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={PUBLIC_GOOGLE_SITE_VERIFICATION} />}
+    {PUBLIC_BING_SITE_VERIFICATION && <meta name="msvalidate.01" content={PUBLIC_BING_SITE_VERIFICATION} />}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType === 'product' ? 'website' : ogType} />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:locale" content="en_US" />
-    <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+    <meta name="twitter:image" content={ogImageUrl} />
 
+    <JsonLd data={orgLd} />
     <slot name="head" />
     <ClientRouter />
   </head>
-  <body class:list={['min-h-dvh flex flex-col', surface === 'white' ? 'bg-surface-0' : 'bg-surface-50']}>
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded focus:bg-line-yellow focus:px-4 focus:py-3 focus:font-semibold focus:text-ink-900">
-      Skip to content
-    </a>
+  <body class="flex min-h-dvh flex-col bg-surface-50">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:rounded focus:bg-line-yellow focus:px-4 focus:py-3 focus:font-semibold focus:text-ink-900">Skip to content</a>
+    {IS_SAMPLE_CATALOG && (
+      <div class="bg-line-yellow px-4 py-1.5 text-center text-[0.8125rem] font-medium text-ink-900">
+        Preview: the products shown are sample listings with placeholder prices and are not for sale.
+      </div>
+    )}
     <Header />
     <main id="main" class="flex-1">
       <slot />
     </main>
     <Footer />
     <MobileCartBar />
+    <ChatLauncher />
+    <ConsentBanner />
+
+    <div data-toast hidden role="status" aria-live="polite" class="toast fixed left-1/2 top-24 z-[65] flex -translate-x-1/2 items-center gap-3 rounded-md bg-ink-900 px-4 py-3 text-sm text-white shadow-xl ring-1 ring-white/10">
+      <Icon name="check" size={18} class="text-line-yellow" />
+      <span data-toast-text></span>
+      <a href="/cart/" class="font-semibold text-line-yellow underline underline-offset-4">View cart</a>
+    </div>
+
+    <VehicleSelector client:idle vehicles={vehicles} />
+    <Cart client:idle variant="drawer" paymentMode={PAYMENT_MODE} copy={{ aboveOrderButton: COPY.aboveOrderButton, orderButton: COPY.orderButton, cartEmpty: COPY.cartEmpty, prop65: COPY.prop65 }} />
+    <script>
+      import '../scripts/site';
+    </script>
   </body>
 </html>

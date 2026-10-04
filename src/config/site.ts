@@ -39,3 +39,10 @@ export const DISCLAIMER =
 
 export const usd = (n: number) =>
   n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 });
+
+export const CATEGORY_ICONS: Record<string, string> = {
+  sensors: 'sensor', 'ignition-coils': 'coil', 'spark-plugs': 'plug', 'ignition-kits': 'ignkit',
+  'brake-pads': 'brake', 'cabin-air-filters': 'filter', 'engine-air-filters': 'airfilter', 'oil-filters': 'oil',
+  'wiper-blades': 'wiper', 'bulbs-leds': 'bulb', 'clips-fasteners': 'clip', suspension: 'spring',
+  'mounts-bushings': 'mount', 'switches-handles': 'switch', 'cooling-fuel': 'cooling', 'shop-supplies': 'toolbox',
+};

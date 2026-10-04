@@ -1,0 +1,25 @@
+---
+import JsonLd from './JsonLd.astro';
+import type { QA } from '../content/copy';
+interface Props { items: QA[]; schema?: boolean; headingLevel?: 'h2' | 'h3' }
+const { items, schema = true, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
+---
+<div class="divide-y divide-line-200 rounded-md border border-line-200 bg-surface-0">
+  {items.map((qa) => (
+    <details class="group">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
+        <H class="font-sans text-base font-semibold tracking-normal">{qa.q}</H>
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line-200 transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="px-5 pb-5 text-text-600">{qa.a}</p>
+    </details>
+  ))}
+</div>
+{schema && (
+  <JsonLd data={{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((qa) => ({ '@type': 'Question', name: qa.q, acceptedAnswer: { '@type': 'Answer', text: qa.a } })),
+  }} />
+)}

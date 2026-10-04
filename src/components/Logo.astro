@@ -3,7 +3,7 @@
 interface Props { class?: string }
 const { class: cls = '' } = Astro.props;
 ---
-<a href="/" class={`group inline-flex items-center gap-2.5 no-underline ${cls}`} aria-label="BayStock Auto Parts, home">
+<a href="/" class={`group inline-flex items-center gap-2.5 no-underline ${cls}`}>
   <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" class="shrink-0">
     <rect x="1" y="1" width="30" height="30" rx="4" fill="#1B2026" stroke="#5B6673" stroke-width="1" />
     <rect x="7" y="8" width="18" height="3" rx="1" fill="#FFFFFF" opacity="0.92" />
@@ -12,6 +12,6 @@ const { class: cls = '' } = Astro.props;
   </svg>
   <span class="flex flex-col leading-none">
     <span class="font-display text-[1.45rem] font-bold tracking-[0.02em] text-white">BAYSTOCK</span>
-    <span class="tag-mono mt-0.5 text-[0.6rem] tracking-[0.22em] text-on-dark-muted">AUTO PARTS</span>
+    <span class="tag-mono mt-0.5 text-[0.6rem] tracking-[0.22em] text-on-dark-muted"><span class="sr-only">&nbsp;</span>AUTO PARTS</span>
   </span>
 </a>

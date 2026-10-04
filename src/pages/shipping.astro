@@ -1,0 +1,26 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SHIPPING_COPY } from '../content/copy';
+import { SHIPPING_RATES, usd } from '../config/site';
+---
+<PageLayout title="Shipping Policy | BayStock Auto Parts" description="BayStock shipping rates by order weight, from $9, with free ground shipping over $250. Delivery times, tracking, and areas we do not ship to." h1="Shipping" crumb="Shipping">
+  <div class="grid gap-10 lg:grid-cols-12">
+    <div class="lg:col-span-7"><p class="text-lg leading-relaxed">{SHIPPING_COPY}</p></div>
+    <div class="lg:col-span-5">
+      <table class="w-full overflow-hidden rounded-lg border border-line-200 bg-surface-0 text-[0.9375rem]">
+        <caption class="px-4 pb-3 text-left font-display text-2xl font-bold">Shipping rates</caption>
+        <thead class="bg-surface-50 text-left"><tr><th scope="col" class="px-4 py-3 font-medium">Order weight</th><th scope="col" class="px-4 py-3 text-right font-medium">Shipping</th></tr></thead>
+        <tbody class="divide-y divide-line-200">
+          {SHIPPING_RATES.map((r, i) => (
+            <tr>
+              <td class="px-4 py-3">{r.max_lb === null ? `Over ${SHIPPING_RATES[i - 1].max_lb} lb` : i === 0 ? `Up to ${r.max_lb} lb` : `Over ${SHIPPING_RATES[i - 1].max_lb} lb, up to ${r.max_lb} lb`}</td>
+              <td class="tag-mono px-4 py-3 text-right">{usd(r.price)}</td>
+            </tr>
+          ))}
+          <tr class="bg-[#e7f5ec]"><td class="px-4 py-3 font-medium">Any weight, order subtotal $250 or more</td><td class="px-4 py-3 text-right font-semibold text-ok-green">Free</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-3 text-sm text-text-600">Order weight is the sum of each product’s weight multiplied by its quantity. A kit’s weight is the sum of its parts.</p>
+    </div>
+  </div>
+</PageLayout>

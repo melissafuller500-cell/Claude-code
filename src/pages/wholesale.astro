@@ -1,0 +1,57 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TierStrip from '../components/TierStrip.astro';
+import Icon from '../components/Icon.astro';
+import { WHOLESALE_SECTIONS } from '../content/copy';
+import { products, productUrl, primaryFitment } from '../lib/catalog';
+import { usd } from '../config/site';
+const example = products.find((p) => p.caseQty && p.soldAs === 'each') ?? products[0];
+const icons = ['tag', 'factory', 'box', 'truck', 'kit', 'car', 'whatsapp', 'list'];
+---
+<PageLayout title="Wholesale Pricing and Volume Discounts | BayStock" description="How BayStock pricing works: four price tiers on every part, no minimum order, and free ground shipping over $250. No membership needed." h1="How BayStock pricing works" crumb="Wholesale pricing">
+  <div class="grid gap-10 lg:grid-cols-12">
+    <div class="space-y-4 lg:col-span-7">
+      {WHOLESALE_SECTIONS.map((s, i) => (
+        <section class="flex gap-4 rounded-lg border border-line-200 bg-surface-0 p-5 md:p-6">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-ink-900 text-line-yellow"><Icon name={icons[i] as any} size={20} /></span>
+          <div>
+            <h2 class="text-2xl md:text-3xl">{s.h}</h2>
+            <p class="mt-2 text-[1.0625rem] text-text-600">{s.p}</p>
+          </div>
+        </section>
+      ))}
+    </div>
+    <aside class="lg:col-span-5">
+      <div class="sticky top-36 space-y-4">
+        {example && (
+          <div class="rounded-lg border border-line-200 bg-surface-0 p-5">
+            <p class="label-section text-text-600">Example</p>
+            <p class="mt-2"><a href={productUrl(example)} class="font-semibold no-underline hover:underline">{example.name}</a></p>
+            <p class="text-sm text-text-600">Fits {primaryFitment(example)} · <span class="tag-mono">{example.sku}</span></p>
+            <table class="mt-4 w-full text-sm">
+              <caption class="sr-only">Tier prices for {example.sku}</caption>
+              <thead class="text-left text-text-600"><tr><th scope="col" class="pb-2 font-medium">Quantity</th><th scope="col" class="pb-2 text-right font-medium">Unit price</th><th scope="col" class="pb-2 text-right font-medium">You save</th></tr></thead>
+              <tbody class="divide-y divide-line-200">
+                {example.prices.map((t, i) => (
+                  <tr>
+                    <td class="tag-mono py-2">{i < 3 ? `${t.min}–${example.prices[i + 1].min - 1}` : `${t.min}+`}</td>
+                    <td class="tag-mono py-2 text-right">{usd(t.price)}</td>
+                    <td class="tag-mono py-2 text-right text-ok-green">{i === 0 ? '—' : `${Math.round((1 - t.price / example.prices[0].price) * 100)}%`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div class="mt-4"><TierStrip prices={example.prices} qty={10} size="md" /></div>
+          </div>
+        )}
+        <div class="dark-frame rounded-lg bg-ink-900 p-5 text-white">
+          <p class="font-display text-2xl font-bold">Ready to order?</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="/parts/" class="btn btn-primary no-underline">Browse parts</a>
+            <a href="/quick-order/" class="btn btn-ghost-dark no-underline">Quick order</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</PageLayout>

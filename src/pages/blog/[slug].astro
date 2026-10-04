@@ -1,0 +1,58 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import Icon from '../../components/Icon.astro';
+import { getPosts, postUrl, fmtDate, type Post } from '../../lib/blog';
+import { CATEGORIES, SITE } from '../../config/site';
+import { fitTitle, fitDescription } from '../../lib/catalog';
+import { imageUrl } from '../../lib/images';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((p) => ({ params: { slug: p.id }, props: { post: p } }));
+}
+const { post } = Astro.props as { post: Post };
+const { Content } = await render(post);
+const cat = CATEGORIES.find((c) => c.slug === post.data.category);
+const related = cat ? { href: `/parts/${cat.slug}/`, label: `Shop ${cat.name.toLowerCase()}` } : post.data.category === 'wholesale' ? { href: '/wholesale/', label: 'How BayStock pricing works' } : { href: '/parts/', label: 'Browse all parts' };
+const url = postUrl(post);
+const img = (await imageUrl('blog', post.data.cover ?? post.id, Astro.site!)) ?? new URL('/og-image.png', Astro.site).href;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  image: [img],
+  author: { '@type': 'Organization', name: post.data.author },
+  publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: new URL('/logo.png', Astro.site).href } },
+  datePublished: post.data.published.toISOString(),
+  dateModified: post.data.updated.toISOString(),
+  mainEntityOfPage: new URL(url, Astro.site).href,
+};
+---
+<BaseLayout title={fitTitle(`${post.data.title} | BayStock`, post.data.title)} description={fitDescription(post.data.description)} ogType="article" ogImage={img}>
+  <article>
+    <header class="dark-frame relative overflow-hidden bg-ink-900 text-white">
+      <div class="pointer-events-none absolute -right-32 -top-32 h-[380px] w-[380px] rounded-full bg-line-yellow/10 blur-3xl" aria-hidden="true"></div>
+      <div class="container-bay relative py-10 md:py-14">
+        <Breadcrumbs dark items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: post.data.title, href: url }]} />
+        <h1 class="mt-4 max-w-4xl text-4xl text-white md:text-6xl">{post.data.title}</h1>
+        <p class="tag-mono mt-5 text-sm text-on-dark-muted">By {post.data.author} · Last updated <time datetime={post.data.updated.toISOString()}>{fmtDate(post.data.updated)}</time></p>
+      </div>
+    </header>
+    <div class="container-bay grid gap-10 py-10 md:py-14 lg:grid-cols-12">
+      <div class="prose-bay text-[1.0625rem] leading-relaxed lg:col-span-8"><Content /></div>
+      <aside class="lg:col-span-4">
+        <div class="dark-frame sticky top-36 rounded-lg bg-ink-900 p-6 text-white">
+          <p class="label-section text-line-yellow">Shop the parts</p>
+          <p class="mt-2 font-display text-2xl font-bold">Four prices on every part, free shipping over $250.</p>
+          <a href={related.href} class="btn btn-primary mt-5 w-full no-underline">{related.label}<Icon name="arrow" size={18} /></a>
+          <button type="button" class="btn btn-ghost-dark mt-3 w-full" data-vehicle-open><Icon name="car" size={18} />Find parts for my vehicle</button>
+        </div>
+      </aside>
+    </div>
+  </article>
+  <JsonLd data={ld} />
+</BaseLayout>

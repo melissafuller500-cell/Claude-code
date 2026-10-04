@@ -1,21 +1,16 @@
 ---
 // Mobile only: cart total and the amount left to reach free shipping.
 import { RULES, usd } from '../config/site';
-const total = 0;
-const left = Math.max(0, RULES.freeShippingThreshold - total);
-const pct = Math.min(100, (total / RULES.freeShippingThreshold) * 100);
 ---
-<div class="dark-frame fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-900 text-white md:hidden" data-mobile-cart-bar>
-  <div class="h-1 w-full bg-ink-700" role="progressbar" aria-label="Progress toward free shipping" aria-valuemin="0" aria-valuemax={RULES.freeShippingThreshold} aria-valuenow={total}>
-    <div class="h-full bg-line-yellow transition-[width] duration-500" style={`width:${pct}%`}></div>
+<div class="dark-frame fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-900 pb-[env(safe-area-inset-bottom)] text-white md:hidden" data-mobile-cart-bar>
+  <div class="h-1 w-full bg-ink-700" role="progressbar" aria-label="Progress toward free shipping" aria-valuemin="0" aria-valuemax={RULES.freeShippingThreshold} aria-valuenow="0">
+    <div class="h-full bg-line-yellow transition-[width] duration-500" style="width:0%" data-free-ship-bar></div>
   </div>
   <a href="/cart/" class="flex h-14 items-center justify-between gap-3 px-4 no-underline">
-    <span class="text-sm text-on-dark-muted" data-free-ship-msg>
-      {left > 0 ? <>Add <span class="tag-mono text-white">{usd(left)}</span> more for free shipping.</> : <span class="text-white">Free shipping unlocked.</span>}
-    </span>
+    <span class="text-sm text-on-dark-muted" data-free-ship-msg>Add <span class="tag-mono text-white">{usd(RULES.freeShippingThreshold)}</span> more for free shipping.</span>
     <span class="inline-flex items-center gap-2 rounded bg-line-yellow px-3 py-2 text-ink-900">
       <span class="sr-only">Cart total</span>
-      <span class="tag-mono text-[0.9375rem]">{usd(total)}</span>
+      <span class="tag-mono text-[0.9375rem]" data-cart-total>{usd(0)}</span>
     </span>
   </a>
 </div>

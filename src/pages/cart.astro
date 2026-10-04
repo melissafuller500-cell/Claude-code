@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cart from '../islands/Cart';
+import { COPY } from '../content/copy';
+import { PAYMENT_MODE } from 'astro:env/server';
+---
+<BaseLayout title="Your Cart | BayStock Auto Parts" description="Review your cart, shipping, and order details." noindex>
+  <div class="container-bay py-8 md:py-12">
+    <h1 class="text-5xl md:text-6xl">Your cart</h1>
+    <div class="mt-6">
+      <Cart client:load variant="page" paymentMode={PAYMENT_MODE} copy={{ aboveOrderButton: COPY.aboveOrderButton, orderButton: COPY.orderButton, cartEmpty: COPY.cartEmpty, prop65: COPY.prop65 }} />
+    </div>
+  </div>
+</BaseLayout>

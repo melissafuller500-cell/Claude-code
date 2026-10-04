@@ -1,0 +1,60 @@
+---
+// Optimized product/category image. Source files live in src/assets/<set>/ at
+// 2000px; the build emits AVIF and WebP at 400, 800, and 1200px with fixed
+// dimensions. A neutral placeholder tile is shown when no file exists yet.
+import { Picture } from 'astro:assets';
+import { findImage } from '../lib/images';
+import Icon from './Icon.astro';
+
+interface Props {
+  path?: string;          // e.g. /images/products/bs-caf-0012.webp (the CSV value) or a bare file name
+  set?: 'products' | 'categories' | 'blog' | 'site';
+  alt: string;
+  sizes?: string;
+  eager?: boolean;
+  illustrative?: boolean;
+  label?: 'short' | 'long';
+  class?: string;
+  icon?: string;
+  /** Placeholder shows only a large icon (category tiles). */
+  plain?: boolean;
+  /** Render nothing at all when the file does not exist (decorative images). */
+  optional?: boolean;
+}
+const { path = '', set = 'products', alt, sizes = '(min-width: 1024px) 300px, 50vw', eager = false, illustrative = false, label = 'short', class: cls = '', icon = 'box', plain = false, optional = false } = Astro.props;
+
+const img = findImage(set, path);
+---
+{(img || !optional) && (
+<div class={`relative overflow-hidden ${cls}`}>
+  {img ? (
+    <Picture
+      src={img}
+      alt={alt}
+      formats={['avif', 'webp']}
+      widths={[400, 800, 1200].filter((w) => w <= img.width)}
+      sizes={sizes}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : 'auto'}
+      decoding="async"
+      class="h-full w-full object-contain"
+    />
+  ) : (
+    plain ? (
+      <div class="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_50%_40%,#ffffff_0%,#eceef1_70%)] text-text-900" role={alt ? 'img' : undefined} aria-label={alt || undefined}>
+        <Icon name={icon as any} size={56} class="opacity-80 transition-transform duration-300 group-hover:scale-110" />
+      </div>
+    ) : (
+      <div class="flex h-full w-full flex-col items-center justify-center gap-2 text-steel-500" role={alt ? 'img' : undefined} aria-label={alt || undefined}>
+        <Icon name={icon as any} size={40} />
+        <span class="tag-mono text-[0.6875rem] tracking-wide">IMAGE COMING SOON</span>
+      </div>
+    )
+  )}
+  {img && illustrative && (
+    <span class="absolute bottom-1.5 left-1.5 right-1.5 w-fit rounded-sm bg-surface-0/90 px-1.5 py-0.5 text-[0.625rem] leading-snug text-text-600">
+      {label === 'long' ? 'Image for illustration. Check fitment and specifications before ordering.' : 'Image for illustration'}
+    </span>
+  )}
+</div>
+)}

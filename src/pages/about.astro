@@ -1,0 +1,37 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Icon from '../components/Icon.astro';
+import { ABOUT_COPY, REASONS } from '../content/copy';
+const icon: Record<string, string> = { factory: 'factory', check: 'check', car: 'car', shield: 'shield', truck: 'truck', tag: 'tag', chat: 'chat' };
+---
+<PageLayout title="About BayStock Auto Parts" description="BayStock sells replacement auto parts to car owners and repair shops, bought direct from manufacturers in Asia and shipped from a US warehouse." h1="Parts for one car or a whole shop" crumb="About">
+  <p class="prose-bay text-xl leading-relaxed">{ABOUT_COPY}</p>
+
+  <section class="mt-14" aria-labelledby="h-why">
+    <h2 id="h-why" class="text-4xl">Why buy from BayStock</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {REASONS.map((r) => (
+        <li class="rounded-lg border border-line-200 bg-surface-0 p-6">
+          <span class="flex h-10 w-10 items-center justify-center rounded bg-ink-900 text-line-yellow"><Icon name={icon[r.icon] as any} size={20} /></span>
+          <h3 class="mt-4 text-2xl">{r.title}</h3>
+          <p class="mt-2 text-text-600">{r.copy}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="mt-14 grid gap-4 md:grid-cols-2" aria-labelledby="h-stock">
+    <h2 id="h-stock" class="text-4xl md:col-span-2">What we stock, and what we do not</h2>
+    <div class="rounded-lg border border-line-200 bg-surface-0 p-6">
+      <h3 class="flex items-center gap-2 text-2xl"><Icon name="check" size={22} class="text-ok-green" />We stock</h3>
+      <p class="mt-2 text-text-600">Fast-moving replacement parts for popular US cars and trucks: sensors, ignition coils and spark plugs, brake pads, filters, wiper blades, bulbs, clips and fasteners, suspension parts, mounts, switches, cooling and fuel parts, and shop supplies, plus kits for one job.</p>
+    </div>
+    <div class="rounded-lg border border-line-200 bg-surface-0 p-6">
+      <h3 class="flex items-center gap-2 text-2xl"><Icon name="close" size={22} class="text-alert-red" />We do not offer</h3>
+      <ul class="mt-2 list-disc space-y-1 pl-5 text-text-600">
+        <li>Urgent same-day delivery.</li>
+        <li>Emissions-defeat products, such as delete kits or defeat tuners.</li>
+      </ul>
+    </div>
+  </section>
+</PageLayout>

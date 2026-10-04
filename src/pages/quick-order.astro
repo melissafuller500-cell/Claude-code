@@ -1,0 +1,7 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import QuickOrder from '../islands/QuickOrder';
+---
+<PageLayout title="Quick Order | BayStock Auto Parts" description="Type or paste SKUs and quantities and add them all to the cart at once." h1="Quick order" crumb="Quick order" lead="Type or paste part numbers and quantities and add them all to the cart at once. Orders over $250 ship free." noindex>
+  <QuickOrder client:load />
+</PageLayout>

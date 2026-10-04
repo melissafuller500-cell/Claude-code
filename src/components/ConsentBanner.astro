@@ -1,0 +1,64 @@
+---
+// Cookie consent. Analytics and ad pixels load only after "Accept".
+// Rendered only when at least one tracking ID is configured.
+import { PUBLIC_GA4_ID, PUBLIC_GOOGLE_ADS_ID, PUBLIC_META_PIXEL_ID } from 'astro:env/client';
+const enabled = !!(PUBLIC_GA4_ID || PUBLIC_GOOGLE_ADS_ID || PUBLIC_META_PIXEL_ID);
+---
+{enabled && (
+  <div data-consent hidden class="fixed inset-x-2 bottom-[4.75rem] z-[58] rounded-lg border border-line-200 bg-surface-0 p-4 shadow-2xl md:inset-x-auto md:bottom-5 md:left-5 md:max-w-md"
+    data-ga={PUBLIC_GA4_ID} data-ads={PUBLIC_GOOGLE_ADS_ID} data-meta={PUBLIC_META_PIXEL_ID}>
+    <p class="text-sm">We use cookies for analytics and advertising only if you agree. Read our <a href="/privacy/" class="link">privacy policy</a>.</p>
+    <div class="mt-3 flex gap-2">
+      <button type="button" class="btn btn-primary min-h-10 flex-1 text-sm" data-consent-accept>Accept</button>
+      <button type="button" class="btn min-h-10 flex-1 border border-line-200 text-sm" data-consent-decline>Decline</button>
+    </div>
+  </div>
+)}
+<script>
+  const KEY = 'bs-consent';
+  function loadScript(src: string) {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = src;
+    document.head.appendChild(s);
+  }
+  function loadTracking(el: HTMLElement) {
+    if ((window as any).__bsTracking) return;
+    (window as any).__bsTracking = true;
+    const { ga, ads, meta } = el.dataset;
+    const gid = ga || ads;
+    if (gid) {
+      loadScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gid)}`);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer!.push(arguments); };
+      window.gtag('js', new Date());
+      if (ga) window.gtag('config', ga);
+      if (ads) window.gtag('config', ads);
+    }
+    if (meta) {
+      const f: any = (window.fbq = function (...args: unknown[]) { f.callMethod ? f.callMethod(...args) : f.queue.push(args); });
+      f.queue = []; f.loaded = true; f.version = '2.0';
+      loadScript('https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', meta);
+      window.fbq('track', 'PageView');
+    }
+  }
+  function initConsent() {
+    const el = document.querySelector<HTMLElement>('[data-consent]');
+    if (!el) return;
+    let choice: string | null = null;
+    try { choice = localStorage.getItem(KEY); } catch { /* blocked */ }
+    if (choice === 'accepted') loadTracking(el);
+    else if (!choice) el.hidden = false;
+    el.querySelector('[data-consent-accept]')?.addEventListener('click', () => {
+      try { localStorage.setItem(KEY, 'accepted'); } catch { /* blocked */ }
+      el.hidden = true;
+      loadTracking(el);
+    });
+    el.querySelector('[data-consent-decline]')?.addEventListener('click', () => {
+      try { localStorage.setItem(KEY, 'declined'); } catch { /* blocked */ }
+      el.hidden = true;
+    });
+  }
+  document.addEventListener('astro:page-load', initConsent);
+</script>

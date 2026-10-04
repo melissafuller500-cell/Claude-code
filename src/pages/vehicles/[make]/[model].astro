@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import JsonLd from '../../../components/JsonLd.astro';
+import Icon from '../../../components/Icon.astro';
+import { CATEGORIES } from '../../../config/site';
+import { vehicles, productsForVehicle, kitsForVehicle, productUrl, kitUrl, fitTitle, fitDescription } from '../../../lib/catalog';
+import { itemList } from '../../../lib/schema';
+
+export function getStaticPaths() {
+  return vehicles.map((v) => ({ params: { make: v.makeSlug, model: v.modelSlug }, props: { v } }));
+}
+const { v } = Astro.props;
+const list = productsForVehicle(v.make, v.model);
+const vKits = kitsForVehicle(v.make, v.model);
+const groups = CATEGORIES.map((c) => ({ ...c, items: list.filter((p) => p.category === c.slug) })).filter((g) => g.items.length);
+const name = `${v.make} ${v.model}`;
+---
+<BaseLayout
+  title={fitTitle(`${name} Parts at Wholesale Prices | BayStock`, `${name} Parts at Wholesale Prices`, `${name} Parts | BayStock`)}
+  description={fitDescription(`Parts for the ${name}: filters, ignition, sensors, brakes, and kits, with fitment by year. Buy one or buy in bulk. Free shipping over $250.`)}
+>
+  <section class="dark-frame relative overflow-hidden bg-ink-900 text-white">
+    <div class="pointer-events-none absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-line-yellow/10 blur-3xl" aria-hidden="true"></div>
+    <div class="container-bay relative py-10 md:py-14">
+      <Breadcrumbs dark items={[{ name: 'Home', href: '/' }, { name: 'Vehicles', href: '/vehicles/' }, { name: v.make, href: `/vehicles/${v.makeSlug}/` }, { name: v.model, href: `/vehicles/${v.makeSlug}/${v.modelSlug}/` }]} />
+      <h1 class="mt-4 text-5xl text-white md:text-7xl">Parts for {name}</h1>
+      <p class="mt-4 max-w-2xl text-lg text-on-dark-muted">Every BayStock part that fits the {name}, grouped by category. Choose a year to narrow the list to exact fitment.</p>
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <label for="year-select" class="text-sm text-on-dark-muted">Year</label>
+        <select id="year-select" data-year-select data-make={v.make} data-model={v.model} class="h-12 min-w-40 rounded border border-steel-500/70 bg-ink-700 px-3 text-base text-white">
+          <option value="">All years ({Math.min(...v.years)}–{Math.max(...v.years)})</option>
+          {v.years.map((y) => <option value={y}>{y}</option>)}
+        </select>
+        <span class="tag-mono text-sm text-on-dark-muted">{list.length + vKits.length} parts</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-bay py-8 md:py-10" data-vehicle-filter data-make={v.make} data-model={v.model}>
+    <div data-filter-note hidden class="mb-6 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md bg-surface-0 px-4 py-2.5 text-sm ring-1 ring-line-200">
+      <Icon name="car" size={18} />
+      <span data-filter-note-text></span>
+      <button type="button" data-filter-toggle class="font-medium text-link-blue underline underline-offset-4">Show all parts</button>
+    </div>
+
+    {vKits.length > 0 && (
+      <section class="mb-12" aria-labelledby="h-vkits" data-group>
+        <h2 id="h-vkits" class="text-3xl">Kits for the {name}</h2>
+        <div class="mt-5 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">{vKits.map((k) => <ProductCard kit={k} />)}</div>
+      </section>
+    )}
+
+    {groups.map((g) => (
+      <section class="mb-12" aria-labelledby={`h-${g.slug}`} data-group>
+        <div class="flex items-end justify-between gap-3">
+          <h2 id={`h-${g.slug}`} class="text-3xl">{g.name}</h2>
+          <a href={`/parts/${g.slug}/`} class="link text-sm">All {g.name.toLowerCase()}</a>
+        </div>
+        <div class="mt-5 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">{g.items.map((p) => <ProductCard product={p} />)}</div>
+      </section>
+    ))}
+    <div data-filter-empty hidden class="rounded-md border border-dashed border-line-200 bg-surface-0 p-8 text-center">
+      <p>No parts are listed for that year yet.</p>
+      <button type="button" data-filter-toggle class="link mt-2">Show all years</button>
+    </div>
+    <p class="text-sm text-text-600">{v.make} and {v.model} are named for compatibility only. BayStock is not affiliated with any vehicle manufacturer.</p>
+  </div>
+  <JsonLd data={itemList([...vKits.map((k) => ({ name: k.name, url: kitUrl(k) })), ...list.map((p) => ({ name: p.name, url: productUrl(p) }))], Astro.site!)} />
+</BaseLayout>
+
+<script>
+  import { getVehicle, setVehicle } from '../../../scripts/store';
+  function bindYear() {
+    const sel = document.querySelector<HTMLSelectElement>('[data-year-select]');
+    if (!sel || sel.dataset.bound) return;
+    sel.dataset.bound = '1';
+    const { make, model } = sel.dataset as { make: string; model: string };
+    const fromUrl = Number(new URLSearchParams(location.search).get('year'));
+    const saved = getVehicle();
+    if (fromUrl && [...sel.options].some((o) => o.value === String(fromUrl))) {
+      sel.value = String(fromUrl);
+      setVehicle({ year: fromUrl, make, model });
+    } else if (saved && saved.make === make && saved.model === model) {
+      sel.value = String(saved.year);
+    }
+    sel.addEventListener('change', () => {
+      const y = Number(sel.value);
+      if (y) setVehicle({ year: y, make, model });
+      else if (getVehicle()?.make === make && getVehicle()?.model === model) setVehicle(null);
+    });
+  }
+  document.addEventListener('astro:page-load', bindYear);
+</script>

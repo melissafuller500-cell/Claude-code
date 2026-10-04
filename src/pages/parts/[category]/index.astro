@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import FilterBar from '../../../components/FilterBar.astro';
+import FaqList from '../../../components/FaqList.astro';
+import JsonLd from '../../../components/JsonLd.astro';
+import Icon from '../../../components/Icon.astro';
+import { CATEGORIES, usd, CATEGORY_ICONS } from '../../../config/site';
+import { CATEGORY_INTROS, type QA } from '../../../content/copy';
+import { products, kits, productUrl, kitUrl, fitTitle, fitDescription } from '../../../lib/catalog';
+import { itemList } from '../../../lib/schema';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { category: c.slug }, props: { category: c } }));
+}
+const { category } = Astro.props;
+const list = products.filter((p) => p.category === category.slug);
+const lower = category.name.charAt(0).toLowerCase() + category.name.slice(1);
+const relatedKits = kits.filter((k) => k.components.some((c) => list.some((p) => p.sku === c.sku)));
+
+const p1 = list.map((p) => p.prices[0].price);
+const p50 = list.map((p) => p.prices[3].price);
+const range = (a: number[]) => (Math.min(...a) === Math.max(...a) ? usd(a[0]) : `${usd(Math.min(...a))} to ${usd(Math.max(...a))}`);
+
+// Buying guide: three questions answered from the catalog data and published policies.
+const guide: QA[] = [
+  {
+    q: `How do I know which ${lower} fit my vehicle?`,
+    a: `Every ${lower} listing shows the makes, models, and years it fits, plus the original part numbers it replaces. Choose your vehicle with the vehicle selector and this page shows only the parts that fit. If you are unsure, send us the vehicle’s year, make, model, and engine before ordering.`,
+  },
+  {
+    q: `How much do ${lower} cost when you buy in quantity?`,
+    a: list.length
+      ? `Each listing has four unit prices: 1–2, 3–9, 10–49, and 50 or more. In this category, the single-unit price runs from ${range(p1)}, and the 50-unit price from ${range(p50)}. The tier is set by the quantity of each product, and any mix of products counts toward free shipping at $250.`
+      : `Each listing has four unit prices: 1–2, 3–9, 10–49, and 50 or more. The tier is set by the quantity of each product, and any mix of products counts toward free shipping at $250. Orders below $250 pay shipping by weight, starting at $9.`,
+  },
+  {
+    q: `What warranty and returns cover ${lower}?`,
+    a: `Every part carries a 12-month warranty against defects in materials and workmanship, counted from delivery. Unused parts in their original packaging can be returned within 30 days of delivery. Email us with your order number to start a claim or a return.`,
+  },
+];
+const title = fitTitle(`${category.name} at Wholesale Prices | BayStock`, `${category.name} at Wholesale Prices`, `${category.name} | BayStock`);
+---
+<BaseLayout
+  title={title}
+  description={fitDescription(`Shop ${lower} for popular US cars and trucks. Buy one or buy in bulk, with volume pricing from 3 units. Free shipping over $250.`)}
+>
+  <section class="border-b border-line-200 bg-surface-0">
+    <div class="container-bay grid gap-6 py-8 md:grid-cols-[1fr_auto] md:items-end md:py-12">
+      <div>
+        <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Parts', href: '/parts/' }, { name: category.name, href: `/parts/${category.slug}/` }]} />
+        <h1 class="mt-4 text-5xl md:text-6xl">{category.name}</h1>
+        <p class="mt-3 max-w-3xl text-lg text-text-600">{CATEGORY_INTROS[category.slug]}</p>
+      </div>
+      <span class="hidden h-24 w-24 items-center justify-center rounded-lg bg-surface-50 md:flex" aria-hidden="true"><Icon name={CATEGORY_ICONS[category.slug] as any} size={52} /></span>
+    </div>
+  </section>
+
+  <div class="container-bay py-8 md:py-10" data-vehicle-filter>
+    {list.length > 0 ? (
+      <>
+        <FilterBar count={list.length} prices={p1} />
+        <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          {list.map((p, i) => <ProductCard product={p} eager={i < 4} />)}
+        </div>
+        <div data-filter-empty hidden class="mt-6 rounded-md border border-dashed border-line-200 bg-surface-0 p-8 text-center">
+          <p>No parts in this category match your filters.</p>
+          <button type="button" data-filter-toggle class="link mt-2">Show all parts</button>
+        </div>
+      </>
+    ) : (
+      <div class="rounded-md border border-dashed border-line-200 bg-surface-0 p-8 text-center md:p-12">
+        <p class="text-lg">This shelf is being stocked. Products in this category are added as they arrive.</p>
+        <div class="mt-5 flex flex-wrap justify-center gap-3">
+          <a href="/parts/" class="btn btn-primary no-underline">Browse other categories</a>
+          <a href="/contact/" class="btn border border-line-200 bg-surface-0 no-underline">Ask about a part</a>
+        </div>
+      </div>
+    )}
+
+    {relatedKits.length > 0 && (
+      <section class="mt-14" aria-labelledby="h-cat-kits">
+        <h2 id="h-cat-kits" class="text-3xl">Kits with these parts</h2>
+        <div class="mt-5 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          {relatedKits.map((k) => <ProductCard kit={k} />)}
+        </div>
+      </section>
+    )}
+
+    <section class="mt-14 grid gap-6 lg:grid-cols-12" aria-labelledby="h-guide">
+      <div class="lg:col-span-4">
+        <p class="label-section text-text-600">Buying guide</p>
+        <h2 id="h-guide" class="mt-2 text-3xl md:text-4xl">Buying guide: {lower}</h2>
+      </div>
+      <div class="lg:col-span-8"><FaqList items={guide} /></div>
+    </section>
+  </div>
+  {list.length > 0 && <JsonLd data={itemList([...list.map((p) => ({ name: p.name, url: productUrl(p) })), ...relatedKits.map((k) => ({ name: k.name, url: kitUrl(k) }))], Astro.site!)} />}
+</BaseLayout>

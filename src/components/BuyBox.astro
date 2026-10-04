@@ -1,0 +1,60 @@
+---
+// Product and kit page price calculator: tier strip, quantity with plus/minus,
+// unit price (animates when a tier is crossed), line total, nudge, case shortcut.
+import TierStrip from './TierStrip.astro';
+import Icon from './Icon.astro';
+import { usd } from '../config/site';
+import type { Tier } from '../lib/catalog';
+interface Props {
+  sku: string; prices: Tier[]; inStock: boolean; unit: string; label?: string | null; caseQty?: number | null; caRestricted?: boolean;
+}
+const { sku, prices, inStock, unit, label, caseQty, caRestricted } = Astro.props;
+const unitText = unit === 'each' ? 'each' : `per ${unit}`;
+---
+<div class="rounded-md border border-line-200 bg-surface-0 p-4 md:p-5" data-buy data-sku={sku} data-prices={JSON.stringify(prices)} data-instock={String(inStock)}>
+  <div class="flex flex-wrap items-end justify-between gap-3">
+    <div>
+      <p class="text-sm text-text-600">Unit price</p>
+      <p class="flex items-baseline gap-2">
+        <span class="tag-mono text-[2.25rem] leading-none text-text-900" data-unit-price aria-live="polite">{usd(prices[0].price)}</span>
+        <span class="text-sm text-text-600">{unitText}</span>
+      </p>
+    </div>
+    {label && <span class="tag-mono rounded-sm bg-surface-50 px-2 py-1 text-[0.75rem] text-text-900">{label}</span>}
+  </div>
+
+  <div class="mt-4">
+    <TierStrip prices={prices} size="md" unitLabel={unitText} interactive />
+    <p class="mt-1.5 text-[0.75rem] text-text-600">Tap a tier to set the quantity. Tiers count this product only.</p>
+  </div>
+
+  {inStock ? (
+    <>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <div class="flex items-center rounded border border-line-200">
+          <button type="button" data-dec class="h-12 w-12 text-xl" aria-label="Decrease quantity">−</button>
+          <label for="buy-qty" class="sr-only">Quantity</label>
+          <input id="buy-qty" data-qty type="number" min="1" max="9999" value="1" inputmode="numeric" class="tag-mono h-12 w-16 border-x border-line-200 text-center text-lg [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none" />
+          <button type="button" data-inc class="h-12 w-12 text-xl" aria-label="Increase quantity">+</button>
+        </div>
+        {caseQty && (
+          <button type="button" data-set-qty={caseQty} class="h-12 rounded border border-dashed border-text-900 px-4 text-sm font-medium hover:bg-surface-50">
+            Case of {caseQty}
+          </button>
+        )}
+        <p class="ml-auto text-right">
+          <span class="block text-[0.75rem] text-text-600">Line total</span>
+          <span class="tag-mono text-xl" data-line-total>{usd(prices[0].price)}</span>
+        </p>
+      </div>
+      <p data-qty-error hidden class="mt-2 text-sm text-alert-red" role="alert"></p>
+      <p data-nudge class="mt-3 rounded bg-surface-50 px-3 py-2 text-sm font-medium"></p>
+      <button type="button" data-add class="btn btn-primary mt-4 h-14 w-full text-base">
+        <Icon name="cart" size={20} /><span data-add-label>Add to cart</span>
+      </button>
+    </>
+  ) : (
+    <p class="mt-4 rounded bg-[#fdecea] px-3 py-3 text-sm font-medium text-alert-red">Out of stock. Message us for a restock date.</p>
+  )}
+  {caRestricted && <p class="mt-3 text-sm font-semibold text-alert-red">Not for sale in California</p>}
+</div>

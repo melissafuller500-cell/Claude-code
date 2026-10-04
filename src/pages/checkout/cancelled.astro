@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Payment Cancelled | BayStock Auto Parts" description="Your payment was cancelled. Your cart has been kept." noindex>
+  <div class="container-bay py-12 md:py-16">
+    <h1 class="text-5xl md:text-6xl">Payment cancelled</h1>
+    <p class="mt-4 max-w-xl text-lg text-text-600">No payment was taken. Your cart is still saved in this browser, so you can review it and try again.</p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="/cart/" class="btn btn-primary no-underline">Back to cart</a>
+      <a href="/contact/" class="btn border border-line-200 bg-surface-0 no-underline">Contact us</a>
+    </div>
+  </div>
+</BaseLayout>

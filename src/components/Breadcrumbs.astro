@@ -1,0 +1,23 @@
+---
+import JsonLd from './JsonLd.astro';
+interface Props { items: { name: string; href: string }[]; dark?: boolean }
+const { items, dark = false } = Astro.props;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name, item: new URL(it.href, Astro.site).href })),
+};
+---
+<nav aria-label="Breadcrumb" class:list={['text-[0.8125rem]', dark ? 'text-on-dark-muted' : 'text-text-600']}>
+  <ol class="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+    {items.map((it, i) => (
+      <li class="flex items-center gap-1.5">
+        {i > 0 && <span aria-hidden="true">/</span>}
+        {i === items.length - 1
+          ? <span aria-current="page" class:list={[dark ? 'text-white' : 'text-text-900']}>{it.name}</span>
+          : <a href={it.href} class="underline-offset-2 hover:underline">{it.name}</a>}
+      </li>
+    ))}
+  </ol>
+</nav>
+<JsonLd data={ld} />

@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchResults from '../islands/SearchResults';
+---
+<BaseLayout title="Search Parts | BayStock Auto Parts" description="Search BayStock parts by name, SKU, original part number, or vehicle." noindex>
+  <div class="container-bay py-8 md:py-12">
+    <h1 class="text-5xl md:text-6xl">Search parts</h1>
+    <div class="mt-6"><SearchResults client:load /></div>
+  </div>
+</BaseLayout>

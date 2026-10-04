@@ -1,0 +1,25 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PartImage from '../../components/PartImage.astro';
+import { getPosts, postUrl, fmtDate } from '../../lib/blog';
+const posts = await getPosts();
+---
+<PageLayout title="Shop Notes: Auto Parts Guides | BayStock Auto Parts" description="Practical guides for car owners, shop owners, and technicians: replacement intervals, what to stock, and how to match parts by original number." h1="Shop notes" crumb="Blog" lead="Practical guides for car owners, shop owners, and technicians.">
+  {posts.length ? (
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((p) => (
+        <a href={postUrl(p)} class="bin-card group flex flex-col overflow-hidden no-underline">
+          <div class="relative aspect-[16/9] overflow-hidden bg-ink-900">
+            <PartImage path={p.data.cover ?? p.id} set="blog" alt="" class="h-full w-full [&_img]:object-cover" plain icon="toolbox" />
+            <div class="absolute bottom-0 left-0 h-1 w-full bg-line-yellow"></div>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="tag-mono text-[0.75rem] text-text-600">Updated {fmtDate(p.data.updated)} · {p.data.author}</p>
+            <h2 class="mt-2 text-2xl leading-tight group-hover:underline">{p.data.title}</h2>
+            <p class="mt-2 text-sm text-text-600">{p.data.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  ) : <p class="text-lg">Articles are on the way.</p>}
+</PageLayout>

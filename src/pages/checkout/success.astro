@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CheckoutSuccess from '../../islands/CheckoutSuccess';
+import { COPY } from '../../content/copy';
+import { PAYMENT_MODE } from 'astro:env/server';
+---
+<BaseLayout title="Order Received | BayStock Auto Parts" description="Your BayStock order has been received." noindex>
+  <div class="container-bay py-8 md:py-12">
+    <p class="label-section text-ok-green">Thank you</p>
+    <h1 class="mt-2 text-5xl md:text-6xl">Order received</h1>
+    <div class="mt-6">
+      <CheckoutSuccess client:load mode={PAYMENT_MODE} copy={{ orderPlaced: COPY.orderPlaced('{orderNumber}', '{email}'), noWhatsApp: COPY.noWhatsApp }} />
+    </div>
+  </div>
+</BaseLayout>

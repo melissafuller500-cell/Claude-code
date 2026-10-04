@@ -1,20 +1,29 @@
 ---
-// Bin-tag product card: SKU on top, fitment under the name, four-tier strip at the bottom.
-// Part number, fitment, and price are visible without scrolling.
-import { existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+// Bin-tag product card: SKU on top, fitment under the name, live four-tier
+// price strip, quantity, and add to cart. Part number, fitment, and price are
+// visible without scrolling.
 import TierStrip from './TierStrip.astro';
-import Icon from './Icon.astro';
-import { type Product, primaryFitment, soldAsLabel } from '../lib/catalog';
-interface Props { product: Product }
-const { product: p } = Astro.props;
-const href = `/parts/${p.category}/${p.slug}/`;
-const hasImage = existsSync(fileURLToPath(new URL(`../../public${p.imageMain}`, import.meta.url)));
+import PartImage from './PartImage.astro';
+import { type Product, type Kit, primaryFitment, soldAsLabel, productUrl, kitUrl, fitmentAttr, unitWord } from '../lib/catalog';
+import { usd, CATEGORY_ICONS } from '../config/site';
+interface Props { product?: Product; kit?: Kit; eager?: boolean }
+const { product, kit, eager = false } = Astro.props;
+const p = (product ?? kit)!;
+const isKit = !product;
+const href = product ? productUrl(product) : kitUrl(kit!);
 const fit = primaryFitment(p);
 const more = p.fitment.length - 1;
-const label = soldAsLabel(p);
+const label = product ? soldAsLabel(product) : 'Kit';
+const unit = product ? unitWord(product) : 'kit';
+const saving = kit ? kit.separatePrice - kit.prices[0].price : 0;
+const uid = `${p.sku.toLowerCase()}-${Math.random().toString(36).slice(2, 7)}`;
 ---
-<article class="bin-card group relative flex flex-col overflow-hidden">
+<article
+  class="bin-card group relative flex flex-col overflow-hidden"
+  data-fitment={fitmentAttr(p)}
+  data-instock={String(p.inStock)}
+  data-price={p.prices[0].price}
+>
   <div class="flex items-center justify-between gap-2 border-b border-dashed border-line-200 px-3.5 py-2">
     <span class="tag-mono text-[0.75rem] tracking-wide text-text-900">{p.sku}</span>
     {p.inStock
@@ -22,28 +31,41 @@ const label = soldAsLabel(p);
       : <span class="text-[0.75rem] font-medium text-alert-red">Out of stock</span>}
   </div>
 
-  <div class="relative mx-3.5 mt-3.5 aspect-[4/3] overflow-hidden rounded bg-surface-50">
-    {hasImage
-      ? <img src={p.imageMain} alt={`${p.name} for ${fit}`} width="400" height="300" loading="lazy" decoding="async" class="h-full w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.03]" />
-      : <div class="flex h-full w-full flex-col items-center justify-center gap-2 text-steel-500" role="img" aria-label={`${p.name} for ${fit}, image coming soon`}>
-          <Icon name="box" size={40} />
-          <span class="tag-mono text-[0.6875rem] tracking-wide">IMAGE COMING SOON</span>
-        </div>}
-    {hasImage && p.imageType === 'illustrative' && (
-      <span class="absolute bottom-1.5 left-1.5 rounded-sm bg-surface-0/90 px-1.5 py-0.5 text-[0.625rem] text-text-600">Image for illustration</span>
-    )}
-  </div>
+  <a href={href} class="relative mx-3.5 mt-3.5 block aspect-[4/3] overflow-hidden rounded bg-surface-50" tabindex="-1" aria-hidden="true">
+    <PartImage path={product?.imageMain ?? kit?.slug} set="products" alt="" eager={eager} illustrative={product?.imageType === 'illustrative'} class="h-full w-full transition-transform duration-300 group-hover:scale-[1.03]" icon={isKit ? 'kit' : CATEGORY_ICONS[product!.category]} plain />
+    <span data-fit-badge hidden class="absolute left-2 top-2 rounded-sm bg-ok-green px-1.5 py-0.5 text-[0.6875rem] font-semibold text-white">Fits your vehicle</span>
+    {isKit && saving > 0 && <span class="absolute right-2 top-2 rounded-sm bg-line-yellow px-1.5 py-0.5 text-[0.6875rem] font-semibold text-ink-900">Save {usd(saving)}</span>}
+  </a>
 
   <div class="flex flex-1 flex-col px-3.5 pb-3.5 pt-3">
     <h3 class="font-sans text-[0.975rem] font-semibold leading-snug tracking-normal text-text-900">
-      <a href={href} class="no-underline after:absolute after:inset-0 hover:underline">{p.name}</a>
+      <a href={href} class="no-underline hover:underline">{p.name}</a>
     </h3>
     <p class="mt-1 text-[0.8125rem] leading-snug text-text-600">
       Fits {fit}{more > 0 && <span> + {more} more</span>}
     </p>
     {label && <p class="tag-mono mt-2 inline-flex w-fit rounded-sm bg-surface-50 px-1.5 py-0.5 text-[0.6875rem] text-text-900">{label}</p>}
-    <div class="mt-auto pt-3">
-      <TierStrip prices={p.prices} unitLabel={p.soldAs === 'each' ? 'each' : `per ${p.soldAs}`} />
+    {product?.caRestricted && <p class="mt-1.5 text-[0.75rem] font-medium text-alert-red">Not for sale in California</p>}
+
+    <div class="mt-auto pt-3" data-buy data-sku={p.sku} data-prices={JSON.stringify(p.prices)} data-instock={String(p.inStock)}>
+      <TierStrip prices={p.prices} unitLabel={unit === 'each' ? 'each' : `per ${unit}`} interactive />
+      <p data-nudge class="mt-1.5 min-h-[1.25rem] text-[0.75rem] text-text-600"></p>
+      {p.inStock ? (
+        <div class="mt-1 flex items-stretch gap-2">
+          <div class="flex items-center rounded border border-line-200">
+            <button type="button" data-dec class="h-10 w-8 text-text-600 hover:text-text-900" aria-label={`Decrease quantity of ${p.sku}`}>−</button>
+            <label for={`q-${uid}`} class="sr-only">Quantity of {p.sku}</label>
+            <input id={`q-${uid}`} data-qty type="number" min="1" max="9999" value="1" inputmode="numeric" class="tag-mono h-10 w-10 border-0 p-0 text-center text-sm [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none" />
+            <button type="button" data-inc class="h-10 w-8 text-text-600 hover:text-text-900" aria-label={`Increase quantity of ${p.sku}`}>+</button>
+          </div>
+          <button type="button" data-add class="btn btn-primary h-10 min-h-0 flex-1 px-2 text-[0.8125rem]">
+            <span data-add-label>Add</span><span class="tag-mono" data-line-total>{usd(p.prices[0].price)}</span>
+          </button>
+        </div>
+      ) : (
+        <p class="mt-1 rounded bg-surface-50 px-2 py-2 text-[0.75rem] text-text-600">Out of stock. Message us for a restock date.</p>
+      )}
+      <p data-qty-error hidden class="mt-1 text-[0.75rem] text-alert-red"></p>
     </div>
   </div>
 </article>

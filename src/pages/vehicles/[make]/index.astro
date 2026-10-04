@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Icon from '../../../components/Icon.astro';
+import { makes, vehicles, productsForVehicle, kitsForVehicle, fitTitle } from '../../../lib/catalog';
+
+export function getStaticPaths() {
+  return makes.map((m) => ({ params: { make: m.slug }, props: { make: m } }));
+}
+const { make } = Astro.props;
+const models = vehicles.filter((v) => v.makeSlug === make.slug);
+---
+<BaseLayout title={fitTitle(`${make.name} Parts at Wholesale Prices | BayStock`, `${make.name} Parts | BayStock`)} description={`Replacement parts for ${make.name} cars and trucks: filters, ignition, brakes, suspension, and kits, with fitment by year. Free shipping over $250.`}>
+  <div class="container-bay py-8 md:py-12">
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Vehicles', href: '/vehicles/' }, { name: make.name, href: `/vehicles/${make.slug}/` }]} />
+    <h1 class="mt-4 text-5xl md:text-6xl">{make.name} parts</h1>
+    <p class="mt-3 max-w-2xl text-lg text-text-600">Choose a model to see every part that fits it, grouped by category.</p>
+    <ul class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {models.map((v) => (
+        <li><a href={`/vehicles/${v.makeSlug}/${v.modelSlug}/`} class="bin-card group flex items-center justify-between gap-2 px-4 py-5 no-underline">
+          <span>
+            <span class="block font-display text-3xl font-bold leading-none">{v.model}</span>
+            <span class="tag-mono mt-1.5 block text-[0.75rem] text-text-600">{Math.min(...v.years)}–{Math.max(...v.years)} · {productsForVehicle(v.make, v.model).length + kitsForVehicle(v.make, v.model).length} parts</span>
+          </span>
+          <Icon name="arrow" size={18} class="text-text-600 transition-transform group-hover:translate-x-0.5" />
+        </a></li>
+      ))}
+    </ul>
+    <p class="mt-10 text-sm text-text-600">{make.name} is named for compatibility only. BayStock is not affiliated with any vehicle manufacturer.</p>
+  </div>
+</BaseLayout>

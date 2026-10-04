@@ -1,0 +1,10 @@
+---
+interface Props { label?: string; title: string; id?: string; dark?: boolean; level?: 'h2' | 'h3'; class?: string }
+const { label, title, id, dark = false, level = 'h2', class: cls = '' } = Astro.props;
+const H = level;
+---
+<div class={cls}>
+  {label && <p class:list={['label-section', dark ? 'text-line-yellow' : 'text-text-600']}>{label}</p>}
+  <H id={id} class:list={['mt-2 text-[2rem] leading-[1.02] md:text-[2.75rem]', dark ? 'text-white' : 'text-text-900']}>{title}</H>
+  <slot />
+</div>

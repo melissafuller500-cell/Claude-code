@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import DraftNote from '../components/DraftNote.astro';
+import { SITE } from '../config/site';
+---
+<PageLayout title="Terms of Sale | BayStock Auto Parts" description="Terms of sale for BayStock Auto Parts: orders, pricing and payment, shipping, warranty limits, returns, and governing law." h1="Terms of sale" crumb="Terms">
+  <article class="prose-bay">
+    <DraftNote />
+    <p>These terms apply to every order placed on baystockparts.com with {SITE.legalName} (“BayStock”, “we”), {SITE.address}.</p>
+
+    <h2>Orders</h2>
+    <p>Placing an order on the site is a request to buy. You are not charged on the website. We confirm the order with you on WhatsApp or by email and send payment instructions. A contract is formed when we confirm your order and receive payment. We may decline or cancel an order, for example if a part is out of stock or a price was listed in error; if you have paid, we refund you in full.</p>
+
+    <h2>Pricing</h2>
+    <p>Prices are in US dollars. Each product has four unit prices, for 1–2, 3–9, 10–49, and 50 or more, set by the quantity of that product in your order. Products sold as a pair, a set, or a kit are priced for all the pieces included. Prices are recalculated by our system when you place your order, and the totals in your confirmation are the totals you pay. Where sales tax applies, it is added to your payment request.</p>
+
+    <h2>Shipping</h2>
+    <p>We ship by ground to the 48 contiguous states only, and not to PO boxes. Orders with a subtotal of $250 or more ship free; smaller orders pay shipping by weight, starting at $9. Orders ship once payment is received. Delivery times are estimates, not guarantees. Some products are not for sale in California and cannot be shipped to a California address.</p>
+
+    <h2>Fitment</h2>
+    <p>Each listing shows the vehicles it fits and the original part numbers it replaces, for reference only. You are responsible for confirming that a part fits your vehicle before installation. Our parts are aftermarket replacement parts and are not made by or affiliated with any vehicle manufacturer.</p>
+
+    <h2>Warranty</h2>
+    <p>Every part is covered for 12 months from delivery against defects in materials and workmanship. Our only obligation under this warranty is to replace the part or refund its price. The warranty does not cover wear from normal use, incorrect installation, labor costs, or damage caused by other failed components. To the extent permitted by law, we are not liable for indirect, incidental, or consequential damages, including labor, towing, or loss of use.</p>
+
+    <h2>Returns</h2>
+    <p>You may return unused parts in their original packaging within 30 days of delivery. Email {SITE.supportEmail} with your order number to get a return authorization. If we sent the wrong part or it arrived damaged, we pay the return shipping. Refunds go back to the original payment method after the parts are received and checked.</p>
+
+    <h2>Installation and safety</h2>
+    <p>Parts should be installed by a qualified person following the vehicle maker’s service information. Safety-related parts, such as brake components, must be installed and tested correctly.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the State of {'{GOVERNING_STATE}'}, without regard to its conflict-of-law rules.</p>
+
+    <h2>Contact</h2>
+    <p>{SITE.legalName}, {SITE.address}, {SITE.phone}, {SITE.supportEmail}.</p>
+    <p>Effective date: {'{EFFECTIVE_DATE}'}</p>
+  </article>
+</PageLayout>

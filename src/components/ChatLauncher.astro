@@ -1,0 +1,37 @@
+---
+// "Parts assistant" button. The chat code is downloaded only when it is opened.
+import Icon from './Icon.astro';
+---
+<div data-chat-root transition:persist="chat">
+  <button type="button" data-chat-open class="fixed bottom-[4.75rem] right-3 z-[54] inline-flex h-12 w-12 items-center justify-center gap-2 rounded-full bg-ink-900 text-sm font-semibold text-white shadow-lg ring-2 ring-line-yellow transition-transform hover:-translate-y-0.5 md:bottom-5 md:right-5 md:w-auto md:pl-4 md:pr-5" aria-expanded="false" aria-label="Parts assistant">
+    <Icon name="chat" size={20} class="text-line-yellow" />
+    <span class="hidden md:inline">Parts assistant</span>
+  </button>
+  <div data-chat-host></div>
+</div>
+<script>
+  let unmount: (() => void) | null = null;
+  function bindChat() {
+    const btn = document.querySelector<HTMLButtonElement>('[data-chat-open]');
+    const host = document.querySelector<HTMLElement>('[data-chat-host]');
+    if (!btn || !host || btn.dataset.bound) return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', async () => {
+      if (unmount) {
+        unmount();
+        unmount = null;
+        btn.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      btn.setAttribute('aria-expanded', 'true');
+      const { mountChat } = await import('../islands/chat-mount');
+      unmount = mountChat(host, () => {
+        unmount?.();
+        unmount = null;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+      });
+    });
+  }
+  document.addEventListener('astro:page-load', bindChat);
+</script>

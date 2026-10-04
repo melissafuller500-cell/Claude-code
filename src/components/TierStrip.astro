@@ -1,28 +1,35 @@
 ---
 // Four cells: 1+, 3+, 10+, 50+. The active tier is filled yellow.
+// Inside a [data-buy] box the cells are live and clickable (see scripts/site.ts).
 import { usd } from '../config/site';
 import type { Tier } from '../lib/catalog';
-interface Props { prices: Tier[]; qty?: number; size?: 'sm' | 'md'; unitLabel?: string }
-const { prices, qty = 1, size = 'sm', unitLabel = 'each' } = Astro.props;
+interface Props { prices: Tier[]; qty?: number; size?: 'sm' | 'md'; unitLabel?: string; interactive?: boolean }
+const { prices, qty = 1, size = 'sm', unitLabel = 'each', interactive = false } = Astro.props;
 const active = prices.reduce((idx, t, i) => (qty >= t.min ? i : idx), 0);
+const Cell = interactive ? 'button' : 'div';
 ---
-<ol class="grid grid-cols-4 overflow-hidden rounded border border-line-200 text-center" aria-label={`Unit price by quantity, ${unitLabel}`} data-tier-strip>
+<ol class="grid grid-cols-4 overflow-hidden rounded border border-line-200 text-center" aria-label={`Unit price by quantity, ${unitLabel}`}>
   {prices.map((t, i) => (
-    <li
-      class:list={[
-        'flex flex-col justify-center border-line-200 transition-colors duration-200',
-        i > 0 && 'border-l',
-        size === 'sm' ? 'py-1.5' : 'py-2.5',
-        i === active ? 'bg-line-yellow text-ink-900' : 'bg-surface-0 text-text-900',
-      ]}
-      aria-current={i === active ? 'true' : undefined}
-    >
-      <span class:list={['tag-mono leading-none', size === 'sm' ? 'text-[0.6875rem]' : 'text-xs', i === active ? 'text-ink-900' : 'text-text-600']}>
-        {t.min}+
-      </span>
-      <span class:list={['tag-mono mt-1 leading-none', size === 'sm' ? 'text-[0.8125rem]' : 'text-base']}>
-        {usd(t.price)}
-      </span>
+    <li class:list={['flex border-line-200', i > 0 && 'border-l']}>
+      <Cell
+        type={interactive ? 'button' : undefined}
+        data-tier-i={i}
+        class:list={[
+          'flex w-full flex-col justify-center transition-colors duration-200',
+          size === 'sm' ? 'py-1.5' : 'py-2.5',
+          interactive && 'cursor-pointer hover:bg-surface-50',
+          i === active ? 'bg-line-yellow text-ink-900' : 'bg-surface-0 text-text-900',
+        ]}
+        aria-current={i === active ? 'true' : undefined}
+      >
+        <span data-tier-min class:list={['tag-mono leading-none', size === 'sm' ? 'text-[0.6875rem]' : 'text-xs', i === active ? 'text-ink-900' : 'text-text-600']}>
+          {t.min}+
+        </span>
+        <span class:list={['tag-mono mt-1 leading-none', size === 'sm' ? 'text-[0.8125rem]' : 'text-base']}>
+          {usd(t.price)}
+        </span>
+        <span class="sr-only"> {unitLabel}</span>
+      </Cell>
     </li>
   ))}
 </ol>

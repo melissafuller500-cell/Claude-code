@@ -1,4 +1,0 @@
-# Pre-launch: keep preview builds out of search results.
-# The launch robots.txt (sitemap, AI crawlers allowed) is generated in phase 5.
-User-agent: *
-Disallow: /

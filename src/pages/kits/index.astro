@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { kits, kitUrl } from '../../lib/catalog';
+import { itemList } from '../../lib/schema';
+---
+<BaseLayout title="Service Kits for One Job | BayStock Auto Parts" description="Service kits group the parts replaced together for one vehicle, at a lower price than buying them separately. Volume pricing and free shipping over $250.">
+  <section class="border-b border-line-200 bg-surface-0">
+    <div class="container-bay py-8 md:py-12">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Kits', href: '/kits/' }]} />
+      <h1 class="mt-4 text-5xl md:text-6xl">Service kits</h1>
+      <p class="mt-3 max-w-3xl text-lg text-text-600">Kits group the parts that are replaced together, such as the oil, engine air, and cabin filters for one vehicle, at a lower price than buying them separately.</p>
+    </div>
+  </section>
+  <div class="container-bay py-8 md:py-10" data-vehicle-filter>
+    {kits.length ? (
+      <>
+        <FilterBar count={kits.length} />
+        <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          {kits.map((k) => <ProductCard kit={k} />)}
+        </div>
+        <div data-filter-empty hidden class="mt-6 rounded-md border border-dashed border-line-200 bg-surface-0 p-8 text-center"><p>No kits match your vehicle yet.</p><button type="button" data-filter-toggle class="link mt-2">Show all kits</button></div>
+      </>
+    ) : (
+      <p class="rounded-md border border-dashed border-line-200 bg-surface-0 p-8 text-center text-lg">Kits are being put together. Check back soon, or browse <a href="/parts/" class="link">all parts</a>.</p>
+    )}
+  </div>
+  {kits.length > 0 && <JsonLd data={itemList(kits.map((k) => ({ name: k.name, url: kitUrl(k) })), Astro.site!)} />}
+</BaseLayout>

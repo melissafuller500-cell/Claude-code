@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BuyBox from '../../components/BuyBox.astro';
+import PartImage from '../../components/PartImage.astro';
+import FaqList from '../../components/FaqList.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import Icon from '../../components/Icon.astro';
+import { usd } from '../../config/site';
+import { PRODUCT_STRIP, COPY, type QA } from '../../content/copy';
+import { kits, productsBySku, primaryFitment, fitsSentence, soldAsLabel, productUrl, kitUrl, fitTitle, fitDescription, fitmentAttr, vehicles } from '../../lib/catalog';
+import { offerFor } from '../../lib/schema';
+import { imageUrl } from '../../lib/images';
+
+export function getStaticPaths() {
+  return kits.map((k) => ({ params: { slug: k.slug }, props: { kit: k } }));
+}
+const { kit: k } = Astro.props;
+const fit = primaryFitment(k);
+const main = k.fitment[0];
+const url = kitUrl(k);
+const parts = k.components.map((c) => ({ ...c, product: productsBySku.get(c.sku)! }));
+const saving = Math.round((k.separatePrice - k.prices[0].price) * 100) / 100;
+const titleFit = main.universal ? 'Universal' : `${main.make} ${main.model} ${main.from}-${main.to}`;
+const title = fitTitle(`${k.name} for ${titleFit} | BayStock`, `${k.name} for ${titleFit}`, `${k.name} for ${main.universal ? 'Universal' : `${main.model} ${main.from}-${main.to}`}`, `${k.name} ${k.sku}`);
+const description = fitDescription(`${k.name} with ${parts.length} parts for one job. Fits ${fit}. ${usd(k.prices[0].price)} per kit, less in quantity. Free shipping over $250.`);
+const img = (await imageUrl('products', k.slug, Astro.site!)) ?? new URL('/og-image.png', Astro.site).href;
+const qa: QA[] = [
+  { q: `Which vehicles does the ${k.name} (${k.sku}) fit?`, a: `${fitsSentence(k, 'This kit')} The fitment is the set of vehicles that every part in the kit fits.` },
+  { q: `What is the price of ${k.sku} at 10 and at 50?`, a: `At 10 to 49 kits the unit price is ${usd(k.prices[2].price)} per kit, and at 50 or more it is ${usd(k.prices[3].price)} per kit. A single kit is ${usd(k.prices[0].price)}.` },
+  { q: `What is in the ${k.name}?`, a: parts.map((pp) => `${pp.qty} × ${pp.product.name} (${pp.sku})`).join('; ') + '.' },
+];
+const vehicleLink = (f: typeof main) => {
+  const v = vehicles.find((x) => x.make === f.make && x.model === f.model);
+  return v ? `/vehicles/${v.makeSlug}/${v.modelSlug}/` : null;
+};
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: k.name,
+  sku: k.sku,
+  mpn: k.sku,
+  brand: { '@type': 'Brand', name: 'BayStock' },
+  description: k.description,
+  image: [img],
+  url: new URL(url, Astro.site).href,
+  offers: offerFor({ url, price: k.prices[0].price, inStock: k.inStock, site: Astro.site! }),
+};
+---
+<BaseLayout title={title} description={description} ogType="product" ogImage={img}>
+  <div class="container-bay py-6 md:py-8" data-track-view={k.sku} data-price={k.prices[0].price}>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Kits', href: '/kits/' }, { name: k.name, href: url }]} />
+    <div class="mt-5 grid gap-8 lg:grid-cols-12 lg:gap-10">
+      <div class="lg:col-span-6">
+        <div class="sticky top-36 overflow-hidden rounded-lg border border-line-200 bg-surface-0">
+          <PartImage path={k.slug} alt={`${k.name} for ${fit}`} eager sizes="(min-width: 1024px) 600px, 100vw" illustrative label="long" class="aspect-square w-full" icon="kit" plain />
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <p class="tag-mono inline-flex items-center gap-2 rounded-sm border border-dashed border-text-900/40 px-2 py-1 text-sm">KIT {k.sku}</p>
+        <h1 class="mt-3 text-[2.25rem] leading-[1.02] md:text-5xl">{k.name} — {main.universal ? 'Universal fit' : `Fits ${fit}`}</h1>
+        <p class="mt-3 text-text-600">{fitsSentence(k, 'This kit')} <a href="#fitment" class="link">See all vehicles</a></p>
+        <p data-fit-check={fitmentAttr(k)} hidden></p>
+        {saving > 0 && <p class="mt-4 inline-flex items-center gap-2 rounded bg-line-yellow px-3 py-2 font-semibold text-ink-900"><Icon name="tag" size={18} />{COPY.kitSaving(usd(saving))}</p>}
+        <div class="mt-6"><BuyBox sku={k.sku} prices={k.prices} inStock={k.inStock} unit="kit" label="Kit" caRestricted={k.caRestricted} /></div>
+        <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+          {k.inStock ? <span class="inline-flex items-center gap-2 font-semibold text-ok-green"><span class="h-2 w-2 rounded-full bg-ok-green"></span>In stock</span> : <span class="font-semibold text-alert-red">Out of stock</span>}
+          <span class="inline-flex items-center gap-2 text-text-600"><Icon name="truck" size={18} />{COPY.shippingLine}</span>
+        </div>
+        <ul class="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-line-200 bg-line-200 sm:grid-cols-4">
+          {PRODUCT_STRIP.map((r) => <li class="flex flex-col items-start gap-2 bg-surface-0 p-3 text-[0.8125rem] font-medium leading-tight"><Icon name={r.icon as any} size={20} />{r.text}</li>)}
+        </ul>
+
+        <section class="mt-8" aria-labelledby="h-box">
+          <h2 id="h-box" class="text-2xl">What is in the kit</h2>
+          <table class="mt-3 w-full overflow-hidden rounded-md border border-line-200 bg-surface-0 text-sm">
+            <thead class="bg-surface-50 text-left"><tr><th scope="col" class="px-4 py-2.5 font-medium">Part</th><th scope="col" class="px-4 py-2.5 text-right font-medium">Qty</th><th scope="col" class="px-4 py-2.5 text-right font-medium">Separately</th></tr></thead>
+            <tbody class="divide-y divide-line-200">
+              {parts.map((pp) => (
+                <tr>
+                  <td class="px-4 py-2.5"><span class="tag-mono block text-[0.75rem] text-text-600">{pp.sku}</span><a href={productUrl(pp.product)} class="link">{pp.product.name}</a>{soldAsLabel(pp.product) && <span class="block text-[0.75rem] text-text-600">{soldAsLabel(pp.product)}</span>}</td>
+                  <td class="tag-mono px-4 py-2.5 text-right">{pp.qty}</td>
+                  <td class="tag-mono px-4 py-2.5 text-right">{usd(pp.product.prices[0].price * pp.qty)}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot class="border-t border-line-200 bg-surface-50">
+              <tr><th scope="row" colspan="2" class="px-4 py-2.5 text-left font-medium">Bought separately</th><td class="tag-mono px-4 py-2.5 text-right line-through">{usd(k.separatePrice)}</td></tr>
+              <tr><th scope="row" colspan="2" class="px-4 py-2.5 text-left font-semibold">Kit price</th><td class="tag-mono px-4 py-2.5 text-right font-semibold">{usd(k.prices[0].price)}</td></tr>
+            </tfoot>
+          </table>
+        </section>
+        <section class="mt-8" aria-labelledby="h-desc">
+          <h2 id="h-desc" class="text-2xl">Description</h2>
+          <p class="mt-3 text-[1.0625rem] leading-relaxed">{k.description}</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-2">
+      <section id="fitment" aria-labelledby="h-fit">
+        <h2 id="h-fit" class="text-3xl">Fitment</h2>
+        <p class="mt-2 text-text-600">{fitsSentence(k, 'This kit')}</p>
+        <table class="mt-4 w-full overflow-hidden rounded-md border border-line-200 bg-surface-0 text-sm">
+          <thead class="bg-surface-50 text-left"><tr><th scope="col" class="px-4 py-2.5 font-medium">Make</th><th scope="col" class="px-4 py-2.5 font-medium">Model</th><th scope="col" class="px-4 py-2.5 font-medium">Years</th></tr></thead>
+          <tbody class="divide-y divide-line-200">
+            {k.fitment.map((f) => f.universal
+              ? <tr><td class="px-4 py-2.5" colspan="3">Universal</td></tr>
+              : <tr><td class="px-4 py-2.5">{f.make}</td><td class="px-4 py-2.5">{vehicleLink(f) ? <a href={vehicleLink(f)!} class="link">{f.model}</a> : f.model}</td><td class="tag-mono px-4 py-2.5">{f.from}–{f.to}</td></tr>)}
+          </tbody>
+        </table>
+      </section>
+      <div class="space-y-8">
+        <section class="rounded-md border border-line-200 bg-surface-0 p-5" aria-labelledby="h-wr">
+          <h2 id="h-wr" class="text-2xl">Warranty and returns</h2>
+          <p class="mt-2 text-text-600">Every part in the kit is covered for 12 months from delivery against defects in materials and workmanship. Unused kits in original packaging can be returned within 30 days of delivery.</p>
+          <p class="mt-3 flex gap-4 text-sm"><a href="/warranty/" class="link">Warranty details</a><a href="/returns/" class="link">Returns policy</a></p>
+        </section>
+        {k.prop65 && (
+          <section aria-label="California Proposition 65 warning" class="flex gap-3 rounded-md border border-line-200 bg-surface-0 p-4 text-sm">
+            <svg class="mt-0.5 shrink-0" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2Z" fill="#FFC400" stroke="#14181D" stroke-width="1.5" stroke-linejoin="round" /><path d="M12 9v5M12 17v.5" stroke="#14181D" stroke-width="2" stroke-linecap="round" /></svg>
+            <p><strong>California Proposition 65.</strong> {COPY.prop65}</p>
+          </section>
+        )}
+      </div>
+    </div>
+
+    <section class="mt-12" aria-labelledby="h-qa">
+      <h2 id="h-qa" class="text-3xl">Questions about {k.sku}</h2>
+      <div class="mt-4"><FaqList items={qa} /></div>
+    </section>
+  </div>
+  <JsonLd data={ld} />
+</BaseLayout>

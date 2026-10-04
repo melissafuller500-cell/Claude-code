@@ -1,0 +1,70 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+---
+<PageLayout title="Contact BayStock Auto Parts" description="Questions about fitment, an order, or a resale certificate? Contact BayStock by form, email, or phone." h1="Contact us" crumb="Contact">
+  <div class="grid gap-10 lg:grid-cols-12">
+    <form class="space-y-4 rounded-lg border border-line-200 bg-surface-0 p-5 md:p-7 lg:col-span-7" data-contact-form novalidate>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div><label for="c-name" class="mb-1.5 block text-sm font-medium">Name</label><input id="c-name" name="name" required autocomplete="name" class="h-12 w-full rounded border border-line-200 px-3 text-base" /></div>
+        <div><label for="c-business" class="mb-1.5 block text-sm font-medium">Business name (optional)</label><input id="c-business" name="business" autocomplete="organization" class="h-12 w-full rounded border border-line-200 px-3 text-base" /></div>
+        <div><label for="c-email" class="mb-1.5 block text-sm font-medium">Email</label><input id="c-email" name="email" type="email" required autocomplete="email" class="h-12 w-full rounded border border-line-200 px-3 text-base" /></div>
+        <div><label for="c-phone" class="mb-1.5 block text-sm font-medium">Phone (optional)</label><input id="c-phone" name="phone" type="tel" autocomplete="tel" class="h-12 w-full rounded border border-line-200 px-3 text-base" /></div>
+      </div>
+      <div><label for="c-order" class="mb-1.5 block text-sm font-medium">Order number (optional)</label><input id="c-order" name="order" placeholder="BS-YYMMDD-0001" class="tag-mono h-12 w-full rounded border border-line-200 px-3 text-base" /></div>
+      <div><label for="c-message" class="mb-1.5 block text-sm font-medium">Message</label><textarea id="c-message" name="message" required rows="6" maxlength="5000" class="w-full rounded border border-line-200 p-3 text-base" placeholder="For fitment questions, include the vehicle's year, make, model, and engine."></textarea></div>
+      <div class="absolute -left-[9999px]" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <p data-contact-status class="hidden rounded p-3 text-sm font-medium" role="status"></p>
+      <button type="submit" class="btn btn-primary w-full sm:w-auto">Send message</button>
+    </form>
+    <aside class="space-y-3 lg:col-span-5">
+      {[
+        ['mail', 'Email', SITE.supportEmail],
+        ['phone', 'Phone', SITE.phone],
+        ['pin', 'Address', SITE.address],
+        ['clock', 'Support hours', SITE.supportHours],
+      ].map(([icon, label, value]) => (
+        <div class="flex gap-4 rounded-lg border border-line-200 bg-surface-0 p-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-ink-900 text-line-yellow"><Icon name={icon as any} size={20} /></span>
+          <div><p class="text-sm text-text-600">{label}</p><p class="font-medium">{value}</p></div>
+        </div>
+      ))}
+      <p class="px-1 text-sm text-text-600">{SITE.legalName}</p>
+    </aside>
+  </div>
+</PageLayout>
+<script>
+  function bindContact() {
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+    if (!form || form.dataset.bound) return;
+    form.dataset.bound = '1';
+    const status = form.querySelector<HTMLElement>('[data-contact-status]')!;
+    const show = (ok: boolean, text: string) => {
+      status.textContent = text;
+      status.className = `rounded p-3 text-sm font-medium ${ok ? 'bg-[#e7f5ec] text-ok-green' : 'bg-[#fdecea] text-alert-red'}`;
+    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      if (!String(data.name).trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email)) || String(data.message).trim().length < 5) {
+        show(false, 'Please enter your name, a valid email, and a message.');
+        return;
+      }
+      const btn = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+      btn.disabled = true;
+      try {
+        const res = await fetch('/api/contact/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const body = await res.json().catch(() => ({}));
+        if (res.ok) {
+          form.reset();
+          show(true, 'Thank you. Your message was sent, and we will reply by email.');
+        } else show(false, body.error ?? 'Your message could not be sent. Please email us instead.');
+      } catch {
+        show(false, 'Network error. Please try again or email us.');
+      }
+      btn.disabled = false;
+    });
+  }
+  document.addEventListener('astro:page-load', bindContact);
+</script>
