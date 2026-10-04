@@ -1,44 +1,115 @@
 ---
 /**
- * En-tête : Offres, Outils, Ressources, Blog, sélecteur FR/EN, bouton Diagnostic.
- * Menu mobile : panneau plein écran opaque, piloté par l'API popover native (zéro JavaScript).
+ * En-tête : Offres, Outils, Ressources, Blog, À propos, sélecteur FR/EN, bouton Diagnostic.
+ * Ordinateur : sous-menus déroulants au survol et au clavier (focus), en CSS seul.
+ * La rubrique de la page courante est signalée dans la barre, et la page exacte dans son sous-menu.
+ * Mobile : panneau plein écran (API popover native, zéro JavaScript) avec les mêmes sous-pages.
  */
 import Logo from './Logo.astro';
-import { r, type Lang } from '../i18n/routes';
+import { ROUTES, r, entryUrl, BLOG_CATEGORY_BASE, type Lang } from '../i18n/routes';
 import { useUI } from '../i18n/ui';
+import { PAGES } from '../data/pages';
+import { CATEGORIES, CATEGORY_KEYS } from '../data/editorial';
+import { published } from '../lib/content';
 import type { Alternates } from './Head.astro';
 
-interface Props { lang: Lang; path: string; alternates?: Alternates; section?: 'offres' | 'outils' | 'ressources' | 'blog' | 'diagnostic' }
-const { lang, path, alternates = {}, section } = Astro.props;
+interface Props { lang: Lang; path: string; alternates?: Alternates; section?: string }
+const { lang, path, alternates = {} } = Astro.props;
 const t = useUI(lang);
-const other: Lang = lang === 'fr' ? 'en' : 'fr';
+const en = lang === 'en';
+const other: Lang = en ? 'fr' : 'en';
 const switchHref = alternates[other] ?? r('home', other);
-const items = [
-  { key: 'offres', href: r('offres', lang), label: t.nav.offres },
-  { key: 'outils', href: r('outils', lang), label: t.nav.outils },
-  { key: 'ressources', href: r('ressources', lang), label: t.nav.ressources },
-  { key: 'blog', href: r('blog', lang), label: t.nav.blog },
-] as const;
-const diag = r('diagnostic', lang);
+
+type Link = { href: string; label: string; desc?: string };
+type Group = { title?: string; links: Link[] };
+type Item = { key: string; href: string; label: string; match: string[]; groups?: Group[]; wide?: boolean };
+
+const p = (k: keyof typeof ROUTES, desc?: string): Link => ({ href: r(k, lang), label: PAGES[k][lang].crumb, desc });
+const guides = await published('guides', lang);
+const sectors = (await published('secteurs', lang)).sort((a, b) => a.data.order - b.data.order);
+const posts = await published('blog', lang);
+const cats = CATEGORY_KEYS.filter((k) => posts.some((x) => x.data.category === k));
+
+const items: Item[] = [
+  {
+    key: 'offres', href: r('offres', lang), label: t.nav.offres, match: [r('offres', lang), r('diagnostic', lang)],
+    groups: [{ links: [
+      { href: r('offres', lang), label: en ? 'Offers and prices' : 'Offres et prix', desc: en ? 'Audit, Collection System, monthly follow-up' : 'Audit, Système Encaissement, suivi mensuel' },
+      { href: r('diagnostic', lang), label: en ? 'Free 45-minute diagnostic' : 'Diagnostic gratuit de 45 minutes', desc: en ? 'How it works, what to prepare, booking' : 'Déroulé, préparation, réservation' },
+    ] }],
+  },
+  {
+    key: 'outils', href: r('outils', lang), label: t.nav.outils, match: [r('outils', lang)],
+    groups: [{ links: [
+      p('calculateur', en ? 'What late payments cost you' : 'Ce que les retards vous coûtent'),
+      p('test', en ? 'Six questions, one minute' : 'Six questions, une minute'),
+      p('clauses', en ? 'A payment-terms article to copy' : 'Un article de conditions de paiement à copier'),
+      p('relances', en ? 'From D-5 to formal notice' : 'De J-5 à la mise en demeure'),
+      { href: r('outils', lang), label: en ? 'All tools' : 'Tous les outils' },
+    ] }],
+  },
+  {
+    key: 'ressources', href: r('ressources', lang), label: t.nav.ressources, wide: true,
+    match: [r('ressources', lang), r('guides', lang), r('secteurs', lang), r('glossaire', lang)],
+    groups: [
+      { title: PAGES.guides[lang].crumb, links: [...guides.map((g) => ({ href: entryUrl('guides', g.id), label: g.data.title })), { href: r('guides', lang), label: en ? 'All guides' : 'Tous les guides' }] },
+      { title: PAGES.secteurs[lang].crumb, links: [...sectors.map((s) => ({ href: entryUrl('secteurs', s.id), label: s.data.name })), { href: r('secteurs', lang), label: en ? 'All sectors' : 'Tous les secteurs' }] },
+      { title: PAGES.glossaire[lang].crumb, links: [{ href: r('glossaire', lang), label: en ? 'Every term, defined in one sentence' : 'Tous les termes, définis en une phrase' }] },
+    ],
+  },
+  {
+    key: 'blog', href: r('blog', lang), label: t.nav.blog, match: [r('blog', lang)],
+    groups: [{ links: [
+      { href: r('blog', lang), label: en ? 'All articles' : 'Tous les articles' },
+      ...cats.map((k) => ({ href: `${BLOG_CATEGORY_BASE[lang]}${CATEGORIES[k][lang].slug}/`, label: CATEGORIES[k][lang].name })),
+    ] }],
+  },
+  { key: 'apropos', href: r('apropos', lang), label: PAGES.apropos[lang].crumb, match: [r('apropos', lang)] },
+];
+
+const home = r('home', lang);
+const isActive = (it: Item) => it.match.some((m) => m !== home && path.startsWith(m));
 const isCurrent = (href: string) => path === href;
+const diag = r('diagnostic', lang);
 ---
 <header class="hdr">
   <div class="wrap hdr-in">
-    <a class="brand" href={r('home', lang)}>
+    <a class="brand" href={home}>
       <Logo size={28} />
       <span>NOÉ<small>Tech Growth</small></span>
     </a>
 
     <nav class="nav-desk" aria-label={t.navLabel}>
-      <ul>
+      <ul class="top">
         {items.map((it) => (
-          <li><a href={it.href} aria-current={isCurrent(it.href) ? 'page' : section === it.key ? 'true' : undefined}>{it.label}</a></li>
+          <li class:list={['item', { 'has-sub': it.groups, active: isActive(it), wide: it.wide }]}>
+            <a class="top-link" href={it.href} aria-current={path === it.href ? 'page' : isActive(it) ? 'true' : undefined}>
+              {it.label}
+              {it.groups && <svg class="caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" /></svg>}
+            </a>
+            {it.groups && (
+              <div class="sub">
+                <div class="sub-in">
+                  {it.groups.map((g) => (
+                    <div class="grp">
+                      {g.title && <p class="grp-t">{g.title}</p>}
+                      <ul>
+                        {g.links.map((l) => (
+                          <li><a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}><span>{l.label}</span>{l.desc && <small>{l.desc}</small>}</a></li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
         ))}
       </ul>
     </nav>
 
     <a class="lang" href={switchHref} hreflang={other} lang={other}>{t.langSwitchShort}<span class="sr-only"> · {t.langSwitchLabel}</span></a>
-    <a class="btn sm cta-h" href={diag} aria-current={isCurrent(diag) ? 'page' : undefined}>{t.navDiagnostic}</a>
+    <a class="btn sm cta-h" href={diag} aria-current={path === diag ? 'page' : undefined}>{t.navDiagnostic}</a>
 
     <button class="burger" type="button" popovertarget="menu" aria-label={t.menuOpen}>
       <span></span><span></span>
@@ -47,13 +118,28 @@ const isCurrent = (href: string) => path === href;
 
   <div id="menu" class="menu" popover>
     <div class="menu-top wrap">
-      <a class="brand" href={r('home', lang)}><Logo size={28} /><span>NOÉ<small>Tech Growth</small></span></a>
+      <a class="brand" href={home}><Logo size={28} /><span>NOÉ<small>Tech Growth</small></span></a>
       <button class="burger close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label={t.menuClose}><span></span><span></span></button>
     </div>
-    <nav class="wrap" aria-label={t.navLabel}>
-      <ul>
-        {items.map((it) => (<li><a href={it.href} aria-current={isCurrent(it.href) ? 'page' : undefined}>{it.label}</a></li>))}
-        <li><a href={switchHref} hreflang={other} lang={other}>{t.langSwitch}</a></li>
+    <nav class="wrap" aria-label={lang === 'fr' ? 'Menu mobile' : 'Mobile menu'}>
+      <ul class="m-list">
+        {items.map((it) => (
+          <li>
+            {it.groups ? (
+              <details open={isActive(it)}>
+                <summary class:list={{ active: isActive(it) }}>{it.label}</summary>
+                <ul class="m-sub">
+                  {it.groups.flatMap((g) => g.links).map((l) => (
+                    <li><a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a></li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <a class="m-link" href={it.href} aria-current={isActive(it) ? 'page' : undefined}>{it.label}</a>
+            )}
+          </li>
+        ))}
+        <li><a class="m-link" href={switchHref} hreflang={other} lang={other}>{t.langSwitch}</a></li>
       </ul>
       <a class="btn block" href={diag}>{t.cta}</a>
     </nav>
@@ -63,14 +149,38 @@ const isCurrent = (href: string) => path === href;
 <style>
   .hdr { position: sticky; top: 0; z-index: 50; height: var(--hdr); background: rgba(6, 17, 11, 0.94); border-bottom: 1px solid var(--line); }
   @supports (backdrop-filter: blur(1px)) { .hdr { background: rgba(6, 17, 11, 0.82); backdrop-filter: blur(14px); } }
-  .hdr-in { height: 100%; display: flex; align-items: center; gap: 18px; }
+  .hdr-in { position: relative; height: 100%; display: flex; align-items: center; gap: 14px; }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; flex: none; min-height: 44px; }
   .brand span { font: 800 17px/1 var(--f-display); font-stretch: 118%; letter-spacing: -0.01em; }
   .brand small { display: block; font: 600 11px/1 var(--f-text); letter-spacing: 0.18em; color: var(--leaf); margin-top: 4px; text-transform: uppercase; }
-  .nav-desk ul { display: flex; gap: 2px; list-style: none; padding: 0; }
-  .nav-desk a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 15px; color: var(--ink-soft); padding: 0 14px; border-radius: 999px; transition: color 0.2s, background-color 0.2s; }
-  .nav-desk a:hover { color: var(--ink); }
-  .nav-desk a[aria-current] { color: var(--ink); background: var(--forest-2); }
+
+  /* ----- barre et sous-menus (ordinateur) ----- */
+  .top { display: flex; gap: 2px; list-style: none; padding: 0; margin: 0; height: var(--hdr); align-items: center; }
+  .item { position: relative; height: 100%; display: flex; align-items: center; }
+  .top-link { position: relative; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; text-decoration: none; font-size: 15px; color: var(--ink-soft); padding: 0 12px; border-radius: 999px; transition: color 0.2s, background-color 0.2s; }
+  .caret { width: 10px; height: 7px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform 0.25s; }
+  .item:hover .top-link, .item:focus-within .top-link { color: var(--ink); background: var(--forest-2); }
+  .item:hover .caret, .item:focus-within .caret { transform: rotate(180deg); }
+  /* Rubrique courante : pastille et trait vert sous le libellé. */
+  .item.active .top-link { color: var(--ink); background: var(--forest-2); }
+  .item.active .top-link::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: -11px; height: 2px; border-radius: 2px; background: var(--leaf); }
+
+  .sub { position: absolute; top: calc(100% - 6px); left: 50%; translate: -50% 0; padding-top: 6px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 0.18s, transform 0.18s, visibility 0s linear 0.18s; z-index: 60; }
+  .item:hover .sub, .item:focus-within .sub { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .sub-in { min-width: 300px; background: var(--forest); border: 1px solid var(--line-2); border-radius: 18px; padding: 10px; box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.8); display: grid; gap: 4px; }
+  /* Méga-menu Ressources : aligné sur le bord droit du contenu pour ne jamais déborder de l'écran. */
+  .item.wide { position: static; }
+  .wide .sub { left: auto; right: var(--gut); width: min(760px, calc(100% - 2 * var(--gut))); translate: 0 0; top: calc(var(--hdr) - 6px); }
+  .wide .sub-in { grid-template-columns: repeat(3, minmax(200px, 1fr)); min-width: 680px; gap: 10px; padding: 14px; }
+  .grp-t { font: 600 13px var(--f-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--leaf); padding: 6px 12px 4px; }
+  .sub ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+  .sub a { display: grid; gap: 2px; padding: 10px 12px; border-radius: 12px; text-decoration: none; color: var(--ink); font-size: 15px; line-height: 1.3; border-left: 2px solid transparent; transition: background-color 0.15s; }
+  .sub a small { font-size: 14px; color: var(--ink-mute); }
+  .sub a:hover, .sub a:focus-visible { background: var(--forest-2); }
+  /* Page courante dans le sous-menu. */
+  .sub a[aria-current='page'] { background: rgba(163, 214, 92, 0.1); border-left-color: var(--leaf); }
+  .sub a[aria-current='page'] span { color: var(--leaf); font-weight: 600; }
+
   .lang { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 1px solid var(--line-2); border-radius: 999px; font: 600 14px var(--f-text); text-decoration: none; color: var(--ink-soft); }
   .lang:hover { color: var(--ink); border-color: var(--leaf); }
   .burger { display: none; width: 44px; height: 44px; border: 1px solid var(--line-2); border-radius: 50%; background: transparent; cursor: pointer; position: relative; flex: none; }
@@ -80,27 +190,37 @@ const isCurrent = (href: string) => path === href;
   .burger.close span:first-child { top: 20px; transform: rotate(45deg); }
   .burger.close span:last-child { top: 20px; transform: rotate(-45deg); }
 
+  /* ----- panneau mobile ----- */
   .menu { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--night); color: var(--ink); overflow-y: auto; }
   .menu:not(:popover-open) { display: none; }
   .menu-top { height: var(--hdr); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
   .menu-top .burger { display: block; }
-  .menu nav ul { list-style: none; padding: 12px 0 28px; }
-  .menu nav li a { display: flex; align-items: center; min-height: 60px; border-bottom: 1px solid var(--line); text-decoration: none; font: 700 26px var(--f-display); font-stretch: 110%; }
-  .menu nav li a[aria-current] { color: var(--leaf); }
+  .m-list { list-style: none; padding: 8px 0 24px; margin: 0; }
+  .m-list > li { border-bottom: 1px solid var(--line); }
+  .m-link, .m-list summary { display: flex; align-items: center; justify-content: space-between; min-height: 60px; text-decoration: none; font: 700 24px var(--f-display); font-stretch: 110%; cursor: pointer; list-style: none; }
+  .m-list summary::-webkit-details-marker { display: none; }
+  .m-list summary::after { content: '+'; font: 400 26px var(--f-text); color: var(--ink-mute); }
+  .m-list details[open] summary::after { content: '–'; }
+  .m-list summary.active, .m-link[aria-current='page'] { color: var(--leaf); }
+  .m-sub { list-style: none; padding: 0 0 14px 4px; margin: 0; display: grid; gap: 2px; }
+  .m-sub a { display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 10px; text-decoration: none; color: var(--ink-soft); font-size: 17px; border-left: 2px solid transparent; }
+  .m-sub a[aria-current='page'] { color: var(--leaf); background: rgba(163, 214, 92, 0.1); border-left-color: var(--leaf); font-weight: 600; }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     .nav-desk, .cta-h { display: none; }
     .burger { display: block; }
   }
-  /* Navigateurs sans popover : le bouton reste masqué et la navigation reste accessible en ligne. */
+  @media (prefers-reduced-motion: reduce) { .sub, .caret { transition: none; } }
+  /* Navigateurs sans popover : navigation affichée en ligne. */
   @supports not selector(:popover-open) {
     .menu { display: none; }
-    @media (max-width: 1000px) {
+    @media (max-width: 1080px) {
       .burger { display: none; }
       .hdr { height: auto; position: static; }
       .hdr-in { flex-wrap: wrap; padding-block: 10px; }
       .nav-desk { display: block; order: 5; width: 100%; }
-      .nav-desk ul { flex-wrap: wrap; }
+      .top { flex-wrap: wrap; height: auto; }
+      .sub { display: none; }
     }
   }
 </style>

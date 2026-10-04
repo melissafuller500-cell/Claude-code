@@ -7,8 +7,8 @@ export const SITE = {
   name: 'Noé Tech Growth',
   /** Description en une phrase, identique partout (site, JSON-LD, profils externes). */
   tagline: {
-    fr: 'Noé Tech Growth aide les PME B2B du Cameroun à encaisser plus vite : contrats solides, suivi des impayés et relances à date fixe.',
-    en: 'Noé Tech Growth helps B2B SMEs in Cameroon get paid faster: solid contracts, tracking of unpaid invoices and reminders on fixed dates.',
+    fr: 'J’aide les PME B2B à encaisser plus vite : contrats solides, suivi des impayés, relances systématiques.',
+    en: 'I help B2B SMEs get paid faster: solid contracts, tracking of unpaid invoices, systematic reminders.',
   },
   founder: {
     name: 'Noé Mbwang',

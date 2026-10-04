@@ -12,13 +12,13 @@ export const PAGES: Record<RouteKey, Record<Lang, PageMeta>> = {
       title: 'Retards de paiement des PME au Cameroun · Noé Tech Growth',
       crumb: 'Accueil',
       og: 'Encaissez plus vite.',
-      description: 'PME B2B au Cameroun : contrats solides, suivi des impayés, relances à date fixe pour encaisser plus vite. Diagnostic gratuit de 45 minutes, prix affichés.',
+      description: 'J’aide les PME B2B à encaisser plus vite : contrats solides, suivi des impayés, relances systématiques. Partout au Cameroun. Diagnostic gratuit de 45 minutes.',
     },
     en: {
       title: 'Late payment for SMEs in Cameroon · Noé Tech Growth',
       crumb: 'Home',
       og: 'Get paid faster.',
-      description: 'B2B SMEs in Cameroon: solid contracts, tracking of unpaid invoices and reminders on fixed dates to get paid faster. Free 45-minute diagnostic, clear prices.',
+      description: 'I help B2B SMEs get paid faster: solid contracts, tracking of unpaid invoices, systematic reminders. Anywhere in Cameroon. A free 45-minute diagnostic.',
     },
   },
   diagnostic: {
@@ -41,12 +41,12 @@ export const PAGES: Record<RouteKey, Record<Lang, PageMeta>> = {
     fr: {
       title: 'Offres et prix : audit des créances, système, suivi',
       crumb: 'Offres',
-      description: 'Trois étapes, prix affichés en FCFA : audit trésorerie et contrats 50 000, système encaissement dès 150 000, suivi mensuel 35 000. Diagnostic gratuit.',
+      description: 'Trois étapes, prix affichés en FCFA : audit trésorerie et contrats 50 000, système encaissement 150 000 à 250 000, suivi mensuel 35 000. Diagnostic gratuit.',
     },
     en: {
       title: 'Pricing: receivables audit, system, follow-up',
       crumb: 'Pricing',
-      description: 'Three steps, prices shown in FCFA: cash and contracts audit 50,000, collection system from 150,000, monthly follow-up 35,000. The diagnostic is free.',
+      description: 'Three steps, prices shown in FCFA: cash and contracts audit 50,000, collection system 150,000 to 250,000, monthly follow-up 35,000. The diagnostic is free.',
     },
   },
   outils: {

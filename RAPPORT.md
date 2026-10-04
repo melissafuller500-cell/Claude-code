@@ -195,3 +195,27 @@ le bouton bleu descend et remonte avec la page, et fleurit en logo en bas de pag
 pour y aller. Présent sur l'accueil, les guides et les articles (repères = titres de section). Non chargé sur mobile ;
 transitions coupées si « réduire les animations ». Mesure bureau (Lighthouse, profil desktop) : 100 en performance,
 TBT 0 ms, CLS 0.
+
+## 10. Itération 3 — menus déroulants et alignement sur le document maître (4 octobre 2026)
+
+**Barre d'en-tête**
+- Chaque rubrique (Offres, Outils, Ressources, Blog) déroule ses sous-pages au survol de la souris et au clavier (`:focus-within`), sans JavaScript. Ressources ouvre un panneau large en trois colonnes : Guides, Secteurs, Glossaire.
+- La rubrique de la page en cours est marquée dans la barre (fond + soulignement vert). Dans le menu déroulant, la page en cours est en vert avec un filet à gauche (`aria-current="page"`).
+- Mobile (≤ 1080 px) : menu plein écran, rubriques repliables ; la rubrique en cours est ouverte et la page en cours surlignée.
+
+**Alignement sur `NTG_Positionnement_Identite_Maitre.pdf`**
+- Phrase de positionnement reprise mot pour mot (« relances systématiques ») : slogan, méta-descriptions, hero, pied de page, données structurées, llms.txt.
+- Cible : « Pour les dirigeants et gérants de PME qui facturent d’autres entreprises et décident eux-mêmes du crédit client, où que vous soyez au Cameroun. » Formulaire : Moins de 10 / 10 à 50 / 50 à 100 / Plus de 100. Le guide balance âgée ne cite plus de tranche d'effectif.
+- Système Encaissement affiché en fourchette 150 000 – 250 000 FCFA (carte, page Offres, JSON-LD `maxPrice`, llms.txt).
+- Appel à l'action : « Réserver le diagnostic gratuit de 45 minutes ».
+- À propos : bio longue du document maître, « Actif depuis février 2025 », bénéfice concret de l'IA pour le client.
+- Données structurées : `legalName` « AI Systems for Business Growth SARLU », `foundingDate` 2025-02.
+
+**À confirmer par Noé**
+- E-mail : le site garde contact@noetechgrowth.com (choix explicite). Le document maître liste encore noembwang@gmail.com : le mettre à jour, et créer la boîte avant la mise en ligne.
+- Couleur de thème `#06110B` : c'est la palette vert-noir du site (D7, couleurs du fichier d'origine). Aucune palette bleu marine / #FF6600 n'apparaît dans le document maître ; changer de palette serait une refonte de l'identité.
+- « Documents livrés en quelques jours plutôt qu’en quelques semaines » (page À propos) : à valider ou retirer.
+- Dates du blog : ce sont les vraies dates de publication. Ne pas antidater ; publier ensuite au rythme D2.
+- RCCM, NIU, adresse : toujours À COMPLÉTER (la page mentions légales reste en noindex).
+
+**Contrôles** : `npm run verify` sans erreur (86 pages), html-validate sans erreur.

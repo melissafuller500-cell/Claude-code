@@ -37,7 +37,7 @@ export const PROOFS: Proof[] = [];
 /** D8 : identité légale. Tant qu'un champ vaut TODO, la page est en noindex et hors sitemap. */
 export const TODO = 'À COMPLÉTER';
 export const LEGAL = {
-  form: TODO, // forme juridique
+  form: 'SARLU · AI Systems for Business Growth SARLU (nom commercial : Noé Tech Growth)',
   rccm: TODO,
   niu: TODO,
   address: TODO,
@@ -98,6 +98,7 @@ export const FORM_OPTIONS = {
   size: [
     { v: 'moins-10', fr: 'Moins de 10', en: 'Under 10' },
     { v: '10-50', fr: '10 à 50', en: '10 to 50' },
-    { v: 'plus-50', fr: 'Plus de 50', en: 'Over 50' },
+    { v: '50-100', fr: '50 à 100', en: '50 to 100' },
+    { v: 'plus-100', fr: 'Plus de 100', en: 'Over 100' },
   ],
 };

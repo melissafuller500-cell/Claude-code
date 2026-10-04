@@ -17,11 +17,11 @@ const meta = PAGES.offres[lang];
 const en = lang === 'en';
 const C = en ? {
   h1: 'Three steps, prices shown',
-  answer: 'Everything starts with a free 45-minute diagnostic. Then three steps: a Cash & Contracts Audit at 50,000 FCFA, a Collection System from 150,000 FCFA (templates, tracker, reminder scripts, training), and a monthly follow-up at 35,000 FCFA. Payment by Orange Money, MTN MoMo or bank transfer.',
+  answer: 'Everything starts with a free 45-minute diagnostic. Then three steps: a Cash & Contracts Audit at 50,000 FCFA, a Collection System at 150,000 to 250,000 FCFA (templates, tracker, reminder scripts, training), and a monthly follow-up at 35,000 FCFA. Payment by Orange Money, MTN MoMo or bank transfer.',
   label: 'In short', methodH: 'How it works', offersH: 'The offers', payH: 'How to pay', faqH: 'Questions about the offers',
 } : {
   h1: 'Trois étapes, des prix affichés',
-  answer: 'Tout commence par un diagnostic gratuit de 45 minutes. Puis trois étapes : un Audit Trésorerie et Contrats à 50 000 FCFA, un Système Encaissement à partir de 150 000 FCFA (modèles, tableau de suivi, scripts de relance, formation) et un suivi mensuel à 35 000 FCFA. Paiement par Orange Money, MTN MoMo ou virement.',
+  answer: 'Tout commence par un diagnostic gratuit de 45 minutes. Puis trois étapes : un Audit Trésorerie et Contrats à 50 000 FCFA, un Système Encaissement de 150 000 à 250 000 FCFA (modèles, tableau de suivi, scripts de relance, formation) et un suivi mensuel à 35 000 FCFA. Paiement par Orange Money, MTN MoMo ou virement.',
   label: 'En bref', methodH: 'Comment ça se passe', offersH: 'Les offres', payH: 'Comment payer', faqH: 'Questions sur les offres',
 };
 const service = {
@@ -42,7 +42,7 @@ const service = {
         description: o.summary[lang],
         priceCurrency: 'XAF',
         ...(o.from
-          ? { priceSpecification: { '@type': 'PriceSpecification', minPrice: o.price, priceCurrency: 'XAF' } }
+          ? { priceSpecification: { '@type': 'PriceSpecification', minPrice: o.price, ...(o.maxPrice ? { maxPrice: o.maxPrice } : {}), priceCurrency: 'XAF' } }
           : o.perMonth
             ? { price: o.price, priceSpecification: { '@type': 'UnitPriceSpecification', price: o.price, priceCurrency: 'XAF', unitCode: 'MON', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } } }
             : { price: o.price }),

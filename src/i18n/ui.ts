@@ -13,7 +13,7 @@ const fr = {
   nav: { offres: 'Offres', outils: 'Outils', ressources: 'Ressources', blog: 'Blog' },
   navDiagnostic: 'Diagnostic gratuit',
   /** Libellé unique de l'appel à l'action principal (section 13). */
-  cta: 'Réserver le diagnostic gratuit de 45 min',
+  cta: 'Réserver le diagnostic gratuit de 45 minutes',
   ctaShort: 'Diagnostic gratuit',
   breadcrumbLabel: 'Fil d’Ariane',
   home: 'Accueil',
@@ -88,7 +88,7 @@ const en: UI = {
   langSwitchLabel: 'Lire cette page en français',
   nav: { offres: 'Pricing', outils: 'Tools', ressources: 'Resources', blog: 'Blog' },
   navDiagnostic: 'Free diagnostic',
-  cta: 'Book the free 45-min diagnostic',
+  cta: 'Book the free 45-minute diagnostic',
   ctaShort: 'Free diagnostic',
   breadcrumbLabel: 'Breadcrumb',
   home: 'Home',

@@ -25,7 +25,7 @@ export async function GET() {
     '## Pages de référence',
     '',
     `- [Diagnostic gratuit de 45 minutes](${abs(ROUTES.diagnostic.fr)}): déroulé, préparation, formulaire`,
-    `- [Offres et prix](${abs(ROUTES.offres.fr)}): audit 50 000 FCFA, système à partir de 150 000 FCFA, suivi 35 000 FCFA par mois`,
+    `- [Offres et prix](${abs(ROUTES.offres.fr)}): audit 50 000 FCFA, système de 150 000 à 250 000 FCFA, suivi 35 000 FCFA par mois`,
     `- [À propos de ${SITE.founder.name}](${abs(ROUTES.apropos.fr)})`,
     '',
     '## Guides',

@@ -66,8 +66,8 @@ export function rehypeContent() {
 
     // 4 : encadré d'appel au diagnostic au milieu du texte, à la place d'un paragraphe « [[cta]] »
     const C = lang === 'en'
-      ? { title: 'What are late payments costing you?', text: 'In 45 minutes we look at your actual payment times and one standard contract. You leave with a figure. The diagnostic is free.', btn: 'Book the free 45-min diagnostic', diag: '/en/diagnostic/#formulaire', wa: 'Message on WhatsApp', mail: 'Send an email', waMsg: 'Hello Noé, I’d like to book the free 45-min diagnostic.', subj: 'Free 45-min diagnostic' }
-      : { title: 'Combien vous coûtent vos retards de paiement ?', text: 'En 45 minutes, on regarde vos délais réels et un contrat type. Vous repartez avec une estimation chiffrée. Le diagnostic est gratuit.', btn: 'Réserver le diagnostic gratuit de 45 min', diag: '/diagnostic/#formulaire', wa: 'Écrire sur WhatsApp', mail: 'Envoyer un e-mail', waMsg: 'Bonjour Noé, je souhaite réserver le diagnostic gratuit de 45 min.', subj: 'Diagnostic gratuit de 45 min' };
+      ? { title: 'What are late payments costing you?', text: 'In 45 minutes we look at your actual payment times and one standard contract. You leave with a figure. The diagnostic is free.', btn: 'Book the free 45-minute diagnostic', diag: '/en/diagnostic/#formulaire', wa: 'Message on WhatsApp', mail: 'Send an email', waMsg: 'Hello Noé, I’d like to book the free 45-min diagnostic.', subj: 'Free 45-min diagnostic' }
+      : { title: 'Combien vous coûtent vos retards de paiement ?', text: 'En 45 minutes, on regarde vos délais réels et un contrat type. Vous repartez avec une estimation chiffrée. Le diagnostic est gratuit.', btn: 'Réserver le diagnostic gratuit de 45 minutes', diag: '/diagnostic/#formulaire', wa: 'Écrire sur WhatsApp', mail: 'Envoyer un e-mail', waMsg: 'Bonjour Noé, je souhaite réserver le diagnostic gratuit de 45 min.', subj: 'Diagnostic gratuit de 45 min' };
     const ctaBox = () => h('aside', { className: ['ctabox', 'ctabox-md'], ariaLabel: C.title }, [
       h('p', { className: ['h'] }, [txt(C.title)]),
       h('p', { className: ['muted'] }, [txt(C.text)]),

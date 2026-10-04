@@ -69,7 +69,7 @@ Regardez d’abord le total par tranche, puis les clients qui concentrent les mo
 
 ## Faut-il un logiciel ?
 
-Non, pas pour commencer. Une PME de 10 à 50 personnes a rarement plus de quelques dizaines de factures ouvertes en même temps : un classeur Excel ou Google Sheets suffit, à condition d’être tenu chaque semaine. Un logiciel de facturation peut produire la balance âgée automatiquement, mais il ne décide pas des actions et ne relance personne. Le gain vient de la routine, pas de l’outil.
+Non, pas pour commencer. Une PME de quelques dizaines de personnes a rarement plus de quelques dizaines de factures ouvertes en même temps : un classeur Excel ou Google Sheets suffit, à condition d’être tenu chaque semaine. Un logiciel de facturation peut produire la balance âgée automatiquement, mais il ne décide pas des actions et ne relance personne. Le gain vient de la routine, pas de l’outil.
 
 Deux précautions simples : un seul fichier de référence, stocké à un endroit partagé, et une copie datée chaque mois pour pouvoir comparer.
 

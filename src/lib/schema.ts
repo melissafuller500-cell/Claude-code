@@ -15,6 +15,8 @@ export function organization(lang: Lang) {
     '@type': 'ProfessionalService',
     '@id': ORG_ID,
     name: SITE.name,
+    legalName: 'AI Systems for Business Growth SARLU',
+    foundingDate: '2025-02',
     url: SITE.url + '/',
     logo: { '@type': 'ImageObject', url: LOGO, width: 512, height: 512 },
     image: LOGO,

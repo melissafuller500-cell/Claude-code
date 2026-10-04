@@ -69,7 +69,7 @@ Look at the total per band first, then at the clients who account for most of th
 
 ## Do you need software?
 
-No, not to start. An SME with 10 to 50 people rarely has more than a few dozen open invoices at any time: an Excel or Google Sheets file is enough, as long as it is updated every week. Invoicing software can produce the aging report automatically, but it doesn’t decide the actions and doesn’t chase anyone. The gain comes from the routine, not the tool.
+No, not to start. An SME with a few dozen people rarely has more than a few dozen open invoices at any time: an Excel or Google Sheets file is enough, as long as it is updated every week. Invoicing software can produce the aging report automatically, but it doesn’t decide the actions and doesn’t chase anyone. The gain comes from the routine, not the tool.
 
 Two simple precautions: one reference file, stored in a shared place, and a dated copy every month so you can compare.
 
