@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { CATEGORIES } from '../config/site';
+---
+<BaseLayout title="Page Not Found | BayStock Auto Parts" description="This page could not be found. Search the catalog or browse a category." noindex>
+  <section class="container-bay py-16 md:py-24">
+    <p class="tag-mono text-sm text-text-600">ERROR 404 · BIN EMPTY</p>
+    <h1 class="mt-3 max-w-2xl text-5xl md:text-6xl">That part is not on this shelf.</h1>
+    <form role="search" class="relative mt-8 max-w-xl" action="#" data-search-form>
+      <label for="search-404" class="sr-only">Search parts by name, SKU, original part number, or vehicle</label>
+      <Icon name="search" size={20} class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-text-600" />
+      <input id="search-404" type="search" placeholder="Part name, SKU, OE number, or vehicle" class="h-14 w-full rounded border border-line-200 bg-surface-0 pl-12 pr-4 text-base" />
+    </form>
+    <h2 class="mt-12 text-2xl">Browse a category</h2>
+    <ul class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+      {CATEGORIES.map((c) => (
+        <li><a href={`/parts/${c.slug}/`} class="flex h-12 items-center justify-between rounded border border-line-200 bg-surface-0 px-4 text-sm no-underline hover:border-text-900">{c.name}<Icon name="chevron" size={16} class="text-text-600" /></a></li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

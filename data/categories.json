@@ -1,0 +1,18 @@
+[
+  { "slug": "sensors", "name": "Sensors" },
+  { "slug": "ignition-coils", "name": "Ignition coils" },
+  { "slug": "spark-plugs", "name": "Spark plugs" },
+  { "slug": "ignition-kits", "name": "Coil and plug kits" },
+  { "slug": "brake-pads", "name": "Brake pads" },
+  { "slug": "cabin-air-filters", "name": "Cabin air filters" },
+  { "slug": "engine-air-filters", "name": "Engine air filters" },
+  { "slug": "oil-filters", "name": "Oil filters" },
+  { "slug": "wiper-blades", "name": "Wiper blades" },
+  { "slug": "bulbs-leds", "name": "Bulbs and LEDs" },
+  { "slug": "clips-fasteners", "name": "Clips, drain plugs, and washers" },
+  { "slug": "suspension", "name": "Suspension parts" },
+  { "slug": "mounts-bushings", "name": "Mounts and bushings" },
+  { "slug": "switches-handles", "name": "Switches and door handles" },
+  { "slug": "cooling-fuel", "name": "Cooling and fuel parts" },
+  { "slug": "shop-supplies", "name": "Shop supplies" }
+]

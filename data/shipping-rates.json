@@ -1,0 +1,13 @@
+{
+  "_note": "Only the $9 starting rate is confirmed. Other rates are starting points for the owner to check against the warehouse's real rates.",
+  "currency": "USD",
+  "free_shipping_threshold": 250,
+  "rates": [
+    { "max_lb": 2, "price": 9 },
+    { "max_lb": 5, "price": 13 },
+    { "max_lb": 10, "price": 18 },
+    { "max_lb": 20, "price": 26 },
+    { "max_lb": 40, "price": 38 },
+    { "max_lb": null, "price": 55 }
+  ]
+}

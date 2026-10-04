@@ -1,0 +1,49 @@
+---
+// Bin-tag product card: SKU on top, fitment under the name, four-tier strip at the bottom.
+// Part number, fitment, and price are visible without scrolling.
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import TierStrip from './TierStrip.astro';
+import Icon from './Icon.astro';
+import { type Product, primaryFitment, soldAsLabel } from '../lib/catalog';
+interface Props { product: Product }
+const { product: p } = Astro.props;
+const href = `/parts/${p.category}/${p.slug}/`;
+const hasImage = existsSync(fileURLToPath(new URL(`../../public${p.imageMain}`, import.meta.url)));
+const fit = primaryFitment(p);
+const more = p.fitment.length - 1;
+const label = soldAsLabel(p);
+---
+<article class="bin-card group relative flex flex-col overflow-hidden">
+  <div class="flex items-center justify-between gap-2 border-b border-dashed border-line-200 px-3.5 py-2">
+    <span class="tag-mono text-[0.75rem] tracking-wide text-text-900">{p.sku}</span>
+    {p.inStock
+      ? <span class="inline-flex items-center gap-1.5 text-[0.75rem] font-medium text-ok-green"><span class="h-1.5 w-1.5 rounded-full bg-ok-green"></span>In stock</span>
+      : <span class="text-[0.75rem] font-medium text-alert-red">Out of stock</span>}
+  </div>
+
+  <div class="relative mx-3.5 mt-3.5 aspect-[4/3] overflow-hidden rounded bg-surface-50">
+    {hasImage
+      ? <img src={p.imageMain} alt={`${p.name} for ${fit}`} width="400" height="300" loading="lazy" decoding="async" class="h-full w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.03]" />
+      : <div class="flex h-full w-full flex-col items-center justify-center gap-2 text-steel-500" role="img" aria-label={`${p.name} for ${fit}, image coming soon`}>
+          <Icon name="box" size={40} />
+          <span class="tag-mono text-[0.6875rem] tracking-wide">IMAGE COMING SOON</span>
+        </div>}
+    {hasImage && p.imageType === 'illustrative' && (
+      <span class="absolute bottom-1.5 left-1.5 rounded-sm bg-surface-0/90 px-1.5 py-0.5 text-[0.625rem] text-text-600">Image for illustration</span>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col px-3.5 pb-3.5 pt-3">
+    <h3 class="font-sans text-[0.975rem] font-semibold leading-snug tracking-normal text-text-900">
+      <a href={href} class="no-underline after:absolute after:inset-0 hover:underline">{p.name}</a>
+    </h3>
+    <p class="mt-1 text-[0.8125rem] leading-snug text-text-600">
+      Fits {fit}{more > 0 && <span> + {more} more</span>}
+    </p>
+    {label && <p class="tag-mono mt-2 inline-flex w-fit rounded-sm bg-surface-50 px-1.5 py-0.5 text-[0.6875rem] text-text-900">{label}</p>}
+    <div class="mt-auto pt-3">
+      <TierStrip prices={p.prices} unitLabel={p.soldAs === 'each' ? 'each' : `per ${p.soldAs}`} />
+    </div>
+  </div>
+</article>

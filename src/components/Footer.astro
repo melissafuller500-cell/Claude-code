@@ -1,0 +1,76 @@
+---
+import Logo from './Logo.astro';
+import { SITE, DISCLAIMER } from '../config/site';
+
+const columns = [
+  {
+    title: 'Shop',
+    links: [
+      { href: '/parts/', label: 'Categories' },
+      { href: '/vehicles/', label: 'Vehicles' },
+      { href: '/kits/', label: 'Service kits' },
+      { href: '/quick-order/', label: 'Quick order' },
+    ],
+  },
+  {
+    title: 'Buying',
+    links: [
+      { href: '/wholesale/', label: 'Wholesale pricing' },
+      { href: '/shipping/', label: 'Shipping' },
+      { href: '/returns/', label: 'Returns' },
+      { href: '/warranty/', label: 'Warranty' },
+      { href: '/faq/', label: 'FAQ' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { href: '/about/', label: 'About' },
+      { href: '/contact/', label: 'Contact' },
+      { href: '/blog/', label: 'Blog' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { href: '/privacy/', label: 'Privacy policy' },
+      { href: '/terms/', label: 'Terms of sale' },
+    ],
+  },
+];
+---
+<footer class="dark-frame relative bg-ink-900 pb-20 text-white md:pb-0">
+  <div class="h-1 w-full" style="background: var(--hazard)" aria-hidden="true"></div>
+  <div class="container-bay grid gap-10 py-12 md:py-16 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <Logo />
+      <p class="mt-4 max-w-sm text-[0.9375rem] text-on-dark-muted">
+        Auto parts for car owners and repair shops, with four price tiers on every part and free ground shipping on orders over $250.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
+      {columns.map((col) => (
+        <nav aria-label={col.title}>
+          <h2 class="label-section text-line-yellow">{col.title}</h2>
+          <ul class="mt-4 space-y-2.5 text-[0.9375rem]">
+            {col.links.map((l) => (
+              <li><a href={l.href} class="text-on-dark-muted no-underline transition-colors hover:text-white">{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      ))}
+    </div>
+  </div>
+
+  <div class="border-t border-white/[0.08]">
+    <div class="container-bay grid gap-6 py-8 text-sm text-on-dark-muted md:grid-cols-2">
+      <address class="not-italic leading-relaxed">
+        <span class="block text-white">{SITE.legalName}</span>
+        <span class="block">{SITE.address}</span>
+        <span class="tag-mono block">{SITE.phone}</span>
+        <span class="block">{SITE.supportEmail}</span>
+      </address>
+      <p class="md:text-right">{DISCLAIMER}</p>
+    </div>
+  </div>
+</footer>

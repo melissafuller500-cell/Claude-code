@@ -1,0 +1,154 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import BayLine from './BayLine.astro';
+import { usd } from '../config/site';
+
+const nav = [
+  { href: '/parts/', label: 'All parts' },
+  { href: '/kits/', label: 'Service kits' },
+  { href: '/vehicles/', label: 'Vehicles' },
+  { href: '/wholesale/', label: 'How pricing works' },
+  { href: '/shipping/', label: 'Shipping' },
+  { href: '/contact/', label: 'Contact' },
+];
+const path = Astro.url.pathname;
+// Cart contents live in localStorage and are priced from server data (phase 4).
+const cartTotal = usd(0);
+---
+<header class="dark-frame sticky top-0 z-40 bg-ink-900 text-white" data-site-header>
+  <div class="container-bay flex h-16 items-center gap-3 lg:h-[72px] lg:gap-6">
+    <button
+      type="button"
+      class="-ml-2 inline-flex h-11 w-11 items-center justify-center rounded text-white lg:hidden"
+      aria-controls="mobile-nav"
+      aria-expanded="false"
+      data-nav-toggle
+    >
+      <span class="sr-only" data-nav-label>Open menu</span>
+      <Icon name="menu" size={24} class="nav-icon-open" />
+      <Icon name="close" size={24} class="nav-icon-close hidden" />
+    </button>
+
+    <Logo />
+
+    <form role="search" class="relative hidden flex-1 md:block" data-site-search action="#" data-search-form>
+      <label for="site-search" class="sr-only">Search parts by name, SKU, original part number, or vehicle</label>
+      <Icon name="search" size={18} class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-on-dark-muted" />
+      <input
+        id="site-search"
+        type="search"
+        autocomplete="off"
+        placeholder="Part name, SKU, OE number, or vehicle"
+        class="h-11 w-full rounded border border-steel-500/70 bg-ink-700 pl-10 pr-3 text-[0.9375rem] text-white placeholder:text-on-dark-muted focus:border-line-yellow"
+      />
+    </form>
+
+    <button
+      type="button"
+      class="hidden h-11 items-center gap-2 rounded border border-steel-500/70 px-3.5 text-sm font-medium text-white transition-colors hover:border-white md:inline-flex"
+      data-vehicle-open
+    >
+      <Icon name="car" size={20} class="text-line-yellow" />
+      <span>Select vehicle</span>
+    </button>
+
+    <a href="/quick-order/" class="hidden h-11 items-center gap-2 px-1 text-sm font-medium text-white no-underline hover:text-line-yellow lg:inline-flex">
+      <Icon name="list" size={20} />
+      Quick order
+    </a>
+
+    <a
+      href="/cart/"
+      class="ml-auto inline-flex h-11 items-center gap-2.5 rounded bg-line-yellow pl-3 pr-3.5 text-ink-900 no-underline shadow-[inset_0_-3px_0_rgb(0_0_0/0.18)] transition-colors hover:bg-[#ffd23f] md:ml-0"
+      aria-label={`Cart, total ${cartTotal}`}
+      data-cart-link
+    >
+      <Icon name="cart" size={20} />
+      <span class="tag-mono text-[0.9375rem]" data-cart-total>{cartTotal}</span>
+    </a>
+  </div>
+
+  <!-- Mobile: search and vehicle on their own row so they stay one tap away -->
+  <div class="container-bay flex gap-2 pb-3 md:hidden">
+    <form role="search" class="relative flex-1" action="#" data-search-form>
+      <label for="site-search-m" class="sr-only">Search parts by name, SKU, original part number, or vehicle</label>
+      <Icon name="search" size={18} class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-on-dark-muted" />
+      <input
+        id="site-search-m"
+        type="search"
+        autocomplete="off"
+        placeholder="Part, SKU, or OE number"
+        class="h-11 w-full rounded border border-steel-500/70 bg-ink-700 pl-9 pr-3 text-base text-white placeholder:text-on-dark-muted"
+      />
+    </form>
+    <button type="button" class="inline-flex h-11 items-center gap-1.5 rounded border border-steel-500/70 px-3 text-sm font-medium" data-vehicle-open>
+      <Icon name="car" size={20} class="text-line-yellow" />
+      Vehicle
+    </button>
+  </div>
+
+  <nav aria-label="Main" class="hidden border-t border-white/[0.07] bg-ink-900 lg:block">
+    <ul class="container-bay flex h-10 items-center gap-7 text-[0.875rem]">
+      {nav.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={[
+              'no-underline transition-colors hover:text-white',
+              path.startsWith(item.href) ? 'text-white' : 'text-on-dark-muted',
+            ]}
+            aria-current={path.startsWith(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+      <li class="ml-auto tag-mono text-[0.75rem] tracking-wide text-on-dark-muted">
+        Free ground shipping over $250 · No minimum order
+      </li>
+    </ul>
+  </nav>
+
+  <BayLine />
+
+  <nav id="mobile-nav" aria-label="Main" class="hidden border-t border-white/10 bg-ink-900 lg:hidden" data-nav-panel>
+    <ul class="container-bay flex flex-col py-2">
+      {[...nav, { href: '/quick-order/', label: 'Quick order' }, { href: '/faq/', label: 'FAQ' }].map((item) => (
+        <li>
+          <a href={item.href} class="flex h-12 items-center justify-between border-b border-white/[0.07] text-base no-underline">
+            {item.label}
+            <Icon name="chevron" size={18} class="text-steel-500" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  function bindHeader() {
+    const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+    const panel = document.querySelector<HTMLElement>('[data-nav-panel]');
+    if (!toggle || !panel || toggle.dataset.bound) return;
+    toggle.dataset.bound = '1';
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('hidden', !open);
+      toggle.querySelector('.nav-icon-open')?.classList.toggle('hidden', open);
+      toggle.querySelector('.nav-icon-close')?.classList.toggle('hidden', !open);
+      const label = toggle.querySelector('[data-nav-label]');
+      if (label) label.textContent = open ? 'Close menu' : 'Open menu';
+    });
+  }
+  // Search results are wired in phase 3; until then the forms do not submit.
+  function bindSearch() {
+    document.querySelectorAll<HTMLFormElement>('[data-search-form]').forEach((f) => {
+      if (f.dataset.bound) return;
+      f.dataset.bound = '1';
+      f.addEventListener('submit', (e) => e.preventDefault());
+    });
+  }
+  document.addEventListener('astro:page-load', () => { bindHeader(); bindSearch(); });
+</script>
