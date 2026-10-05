@@ -1,0 +1,139 @@
+# Dosepedia
+
+> Independent, educational reference on prescription and controlled substances in the United States. Plain-language profiles written from primary sources (FDA prescribing information, DEA rules and the Federal Register, NIDA, CDC). Dosepedia sells nothing and does not give personal medical advice. Emergency: call 911; Poison Help 1-800-222-1222; SAMHSA helpline 1-800-662-4357.
+
+Profiles are drafts pending medical review; facts are current as of October 2026.
+
+## Tools
+- [Drugs A to Z](https://dosepedia.com/drugs/): all 106 profiles
+- [Combination checker](https://dosepedia.com/interactions/)
+- [Compare drugs](https://dosepedia.com/compare/)
+- [Overdose help](https://dosepedia.com/overdose/)
+- [Withdrawal timelines](https://dosepedia.com/withdrawal/)
+- [Legal status and US schedules](https://dosepedia.com/legal-status/)
+- [Glossary](https://dosepedia.com/glossary/)
+
+## Opioids
+- [Buprenorphine](https://dosepedia.com/drugs/buprenorphine/): Buprenorphine is a partial opioid agonist and one of the most effective treatments for opioid use disorder. Guide: https://dosepedia.com/blog/buprenorphine-explained/
+- [Butorphanol](https://dosepedia.com/drugs/butorphanol/): Butorphanol is a prescription opioid that activates kappa opioid receptors and partly blocks mu receptors. Guide: https://dosepedia.com/blog/butorphanol-explained/
+- [Carfentanil](https://dosepedia.com/drugs/carfentanil/): Carfentanil is a synthetic opioid about 100 times more potent than fentanyl and 10,000 times more potent than morphine. Guide: https://dosepedia.com/blog/carfentanil-explained/
+- [Codeine](https://dosepedia.com/drugs/codeine/): Codeine is a mild opioid used for pain and, in some products, for cough. Guide: https://dosepedia.com/blog/codeine-explained/
+- [Diphenoxylate and atropine](https://dosepedia.com/drugs/diphenoxylate/): Lomotil combines diphenoxylate, an opioid-related drug that slows the gut, with a small dose of atropine added to discourage misuse. Guide: https://dosepedia.com/blog/diphenoxylate-explained/
+- [Fentanyl](https://dosepedia.com/drugs/fentanyl/): Fentanyl is a synthetic opioid about 50 times stronger than heroin and 100 times stronger than morphine. Guide: https://dosepedia.com/blog/fentanyl-explained/
+- [Heroin](https://dosepedia.com/drugs/heroin/): Heroin is an illegal opioid made from morphine. Guide: https://dosepedia.com/blog/heroin-explained/
+- [Hydrocodone](https://dosepedia.com/drugs/hydrocodone/): Hydrocodone is a prescription opioid for severe pain, most often combined with acetaminophen in products such as Norco and Vicodin. Guide: https://dosepedia.com/blog/hydrocodone-explained/
+- [Hydromorphone](https://dosepedia.com/drugs/hydromorphone/): Hydromorphone (Dilaudid) is a potent opioid, about five times stronger than morphine by mouth, used for severe pain in hospitals, after surgery, and in cancer care. Guide: https://dosepedia.com/blog/hydromorphone-explained/
+- [Levorphanol](https://dosepedia.com/drugs/levorphanol/): Levorphanol is a potent, long-acting prescription opioid for severe pain. Guide: https://dosepedia.com/blog/levorphanol-explained/
+- [Loperamide](https://dosepedia.com/drugs/loperamide/): Loperamide (Imodium) is an over-the-counter diarrhea medicine that acts on opioid receptors in the gut. Guide: https://dosepedia.com/blog/loperamide-explained/
+- [Meperidine](https://dosepedia.com/drugs/meperidine/): Meperidine (Demerol), called pethidine outside the US, is a synthetic opioid for short-term acute pain. Guide: https://dosepedia.com/blog/meperidine-explained/
+- [Methadone](https://dosepedia.com/drugs/methadone/): Methadone is a long-acting opioid used to treat opioid use disorder and severe pain. Guide: https://dosepedia.com/blog/methadone-explained/
+- [Morphine](https://dosepedia.com/drugs/morphine/): Morphine is the original opioid pain medicine, extracted from the opium poppy, and the standard against which other opioids are measured. Guide: https://dosepedia.com/blog/morphine-explained/
+- [Naloxone](https://dosepedia.com/drugs/naloxone/): Naloxone is an emergency medicine that reverses opioid overdose by knocking opioids off their receptors. Guide: https://dosepedia.com/blog/naloxone-explained/
+- [Naltrexone](https://dosepedia.com/drugs/naltrexone/): Naltrexone is a prescription medicine that blocks opioid receptors. Guide: https://dosepedia.com/blog/naltrexone-explained/
+- [Oxycodone](https://dosepedia.com/drugs/oxycodone/): Oxycodone is a strong prescription opioid used for pain severe enough to need an opioid when other treatments are not enough. Guide: https://dosepedia.com/blog/oxycodone-explained/
+- [Oxymorphone](https://dosepedia.com/drugs/oxymorphone/): Oxymorphone is a strong prescription opioid for severe pain, roughly twice as potent as oxycodone by mouth. Guide: https://dosepedia.com/blog/oxymorphone-explained/
+- [Promethazine with codeine](https://dosepedia.com/drugs/promethazine-codeine/): Promethazine with codeine is a prescription cough syrup that combines codeine, an opioid, with promethazine, a sedating antihistamine. Guide: https://dosepedia.com/blog/promethazine-codeine-explained/
+- [Tapentadol](https://dosepedia.com/drugs/tapentadol/): Tapentadol (Nucynta) is a prescription opioid that also blocks norepinephrine reuptake. Guide: https://dosepedia.com/blog/tapentadol-explained/
+- [Tramadol](https://dosepedia.com/drugs/tramadol/): Tramadol is a prescription pain medicine that acts as a weak opioid and also raises serotonin and norepinephrine levels. Guide: https://dosepedia.com/blog/tramadol-explained/
+
+## Benzodiazepines and sedatives
+- [Alprazolam](https://dosepedia.com/drugs/alprazolam/): Alprazolam (brand name Xanax) is a short-acting benzodiazepine prescribed for generalized anxiety disorder and panic disorder. Guide: https://dosepedia.com/blog/alprazolam-explained/
+- [Butalbital](https://dosepedia.com/drugs/butalbital/): Butalbital is a barbiturate sedative sold only in combinations, such as Fioricet (with acetaminophen and caffeine) and Fiorinal (with aspirin and caffeine), for tension headaches. Guide: https://dosepedia.com/blog/butalbital-explained/
+- [Carisoprodol](https://dosepedia.com/drugs/carisoprodol/): Carisoprodol (Soma) is a muscle relaxant for short-term relief of acute, painful muscle conditions, used for no more than two or three weeks. Guide: https://dosepedia.com/blog/carisoprodol-explained/
+- [Chlordiazepoxide](https://dosepedia.com/drugs/chlordiazepoxide/): Chlordiazepoxide (Librium) was the first benzodiazepine, introduced in 1960. Guide: https://dosepedia.com/blog/chlordiazepoxide-explained/
+- [Clonazepam](https://dosepedia.com/drugs/clonazepam/): Clonazepam (Klonopin) is a long-acting benzodiazepine used for panic disorder and certain seizure disorders. Guide: https://dosepedia.com/blog/clonazepam-explained/
+- [Clorazepate](https://dosepedia.com/drugs/clorazepate/): Clorazepate (Tranxene) is a long-acting benzodiazepine used for anxiety, as an add-on treatment for partial seizures, and for alcohol withdrawal. Guide: https://dosepedia.com/blog/clorazepate-explained/
+- [Cyclobenzaprine](https://dosepedia.com/drugs/cyclobenzaprine/): Cyclobenzaprine (Flexeril) is a prescription muscle relaxant for short-term relief of muscle spasm. Guide: https://dosepedia.com/blog/cyclobenzaprine-explained/
+- [Daridorexant](https://dosepedia.com/drugs/daridorexant/): Daridorexant (Quviviq) is a prescription insomnia medicine that blocks orexin, a brain chemical that keeps people awake. Guide: https://dosepedia.com/blog/daridorexant-explained/
+- [Diazepam](https://dosepedia.com/drugs/diazepam/): Diazepam (Valium) is a long-acting benzodiazepine used for anxiety, alcohol withdrawal, muscle spasms, and seizures. Guide: https://dosepedia.com/blog/diazepam-explained/
+- [Diphenhydramine](https://dosepedia.com/drugs/diphenhydramine/): Diphenhydramine (Benadryl) is an over-the-counter antihistamine for allergies that also causes drowsiness and is sold as a sleep aid. Guide: https://dosepedia.com/blog/diphenhydramine-explained/
+- [Eszopiclone](https://dosepedia.com/drugs/eszopiclone/): Eszopiclone (Lunesta) is a Z-drug sleep medicine for trouble falling or staying asleep. Guide: https://dosepedia.com/blog/eszopiclone-explained/
+- [GHB](https://dosepedia.com/drugs/ghb/): GHB (gamma-hydroxybutyrate) is a central nervous system depressant sold illegally as a clear liquid or powder. Guide: https://dosepedia.com/blog/ghb-explained/
+- [Lorazepam](https://dosepedia.com/drugs/lorazepam/): Lorazepam (Ativan) is an intermediate-acting benzodiazepine used for anxiety, short-term insomnia caused by anxiety, and, by injection, for status epilepticus and sedation before procedures. Guide: https://dosepedia.com/blog/lorazepam-explained/
+- [Midazolam](https://dosepedia.com/drugs/midazolam/): Midazolam is a fast, short-acting benzodiazepine used to sedate people for procedures and surgery and, as Nayzilam nasal spray, to stop seizure clusters at home. Guide: https://dosepedia.com/blog/midazolam-explained/
+- [Oxazepam](https://dosepedia.com/drugs/oxazepam/): Oxazepam is an intermediate-acting benzodiazepine for anxiety and alcohol withdrawal. Guide: https://dosepedia.com/blog/oxazepam-explained/
+- [Phenobarbital](https://dosepedia.com/drugs/phenobarbital/): Phenobarbital is a long-acting barbiturate used mainly for seizures and, in hospitals, for alcohol withdrawal. Guide: https://dosepedia.com/blog/phenobarbital-explained/
+- [Suvorexant](https://dosepedia.com/drugs/suvorexant/): Suvorexant (Belsomra) is a sleep medicine that blocks orexin, a brain chemical that keeps you awake, rather than boosting GABA like benzodiazepines and Z-drugs. Guide: https://dosepedia.com/blog/suvorexant-explained/
+- [Temazepam](https://dosepedia.com/drugs/temazepam/): Temazepam (Restoril) is a benzodiazepine sleeping pill approved for short-term treatment of insomnia, usually 7 to 10 days. Guide: https://dosepedia.com/blog/temazepam-explained/
+- [Triazolam](https://dosepedia.com/drugs/triazolam/): Triazolam (Halcion) is a short-acting benzodiazepine sleeping pill for short-term insomnia, usually 7 to 10 days. Guide: https://dosepedia.com/blog/triazolam-explained/
+- [Zaleplon](https://dosepedia.com/drugs/zaleplon/): Zaleplon (Sonata) is a very short-acting prescription sleep medicine, a Z-drug related to zolpidem, for trouble falling asleep. Guide: https://dosepedia.com/blog/zaleplon-explained/
+- [Zolpidem](https://dosepedia.com/drugs/zolpidem/): Zolpidem (Ambien) is a prescription sleep medicine that acts on the same brain receptors as benzodiazepines. Guide: https://dosepedia.com/blog/zolpidem-explained/
+
+## Stimulants
+- [Amphetamine](https://dosepedia.com/drugs/amphetamine/): Adderall is a mix of four amphetamine salts (about three parts dextroamphetamine to one part levoamphetamine) used to treat ADHD and narcolepsy. Guide: https://dosepedia.com/blog/amphetamine-explained/
+- [Armodafinil](https://dosepedia.com/drugs/armodafinil/): Armodafinil (Nuvigil) is a prescription wakefulness medicine for narcolepsy, sleepiness from obstructive sleep apnea, and shift work disorder. Guide: https://dosepedia.com/blog/armodafinil-explained/
+- [Caffeine](https://dosepedia.com/drugs/caffeine/): Caffeine is the world's most widely used psychoactive substance, found in coffee, tea, soda, energy drinks, and over-the-counter alertness pills. Guide: https://dosepedia.com/blog/caffeine-explained/
+- [Cocaine](https://dosepedia.com/drugs/cocaine/): Cocaine is a stimulant made from the leaves of the coca plant. Guide: https://dosepedia.com/blog/cocaine-explained/
+- [Dexmethylphenidate](https://dosepedia.com/drugs/dexmethylphenidate/): Dexmethylphenidate (Focalin) is the more active half of methylphenidate, so it works at about half the dose. Guide: https://dosepedia.com/blog/dexmethylphenidate-explained/
+- [Dextroamphetamine](https://dosepedia.com/drugs/dextroamphetamine/): Dextroamphetamine is the more active form (isomer) of amphetamine. Guide: https://dosepedia.com/blog/dextroamphetamine-explained/
+- [Diethylpropion](https://dosepedia.com/drugs/diethylpropion/): Diethylpropion, called amfepramone outside the US, is a prescription appetite suppressant for a few weeks of use in obesity. Guide: https://dosepedia.com/blog/diethylpropion-explained/
+- [Khat](https://dosepedia.com/drugs/khat/): Khat is a shrub whose fresh leaves are chewed for a stimulant effect in East Africa and the Arabian Peninsula. Guide: https://dosepedia.com/blog/khat-explained/
+- [Lisdexamfetamine](https://dosepedia.com/drugs/lisdexamfetamine/): Lisdexamfetamine (Vyvanse) is an inactive prodrug that the body slowly converts into dextroamphetamine. Guide: https://dosepedia.com/blog/lisdexamfetamine-explained/
+- [Methamphetamine](https://dosepedia.com/drugs/methamphetamine/): Methamphetamine is a powerful stimulant. Guide: https://dosepedia.com/blog/methamphetamine-explained/
+- [Methylphenidate](https://dosepedia.com/drugs/methylphenidate/): Methylphenidate (Ritalin, Concerta) is the most widely used ADHD medicine besides amphetamines. Guide: https://dosepedia.com/blog/methylphenidate-explained/
+- [Modafinil](https://dosepedia.com/drugs/modafinil/): Modafinil (Provigil) is a wakefulness-promoting medicine for excessive sleepiness from narcolepsy, obstructive sleep apnea, and shift work disorder. Guide: https://dosepedia.com/blog/modafinil-explained/
+- [Phendimetrazine](https://dosepedia.com/drugs/phendimetrazine/): Phendimetrazine (Bontril) is a prescription appetite suppressant for short-term use, a few weeks, alongside diet and exercise in people with obesity. Guide: https://dosepedia.com/blog/phendimetrazine-explained/
+- [Phentermine](https://dosepedia.com/drugs/phentermine/): Phentermine (Adipex-P) is an appetite suppressant related to amphetamine, used for a few weeks as part of a weight-loss program in people with obesity. Guide: https://dosepedia.com/blog/phentermine-explained/
+- [Pseudoephedrine](https://dosepedia.com/drugs/pseudoephedrine/): Pseudoephedrine (Sudafed) is a decongestant sold without a prescription but kept behind the pharmacy counter. Guide: https://dosepedia.com/blog/pseudoephedrine-explained/
+- [Solriamfetol](https://dosepedia.com/drugs/solriamfetol/): Solriamfetol (Sunosi) is a prescription medicine that improves wakefulness in adults with narcolepsy or obstructive sleep apnea. Guide: https://dosepedia.com/blog/solriamfetol-explained/
+- [Synthetic cathinones](https://dosepedia.com/drugs/synthetic-cathinones/): Synthetic cathinones are lab-made stimulants related to khat, sold as 'bath salts', 'flakka', or disguised as molly or other drugs. Guide: https://dosepedia.com/blog/synthetic-cathinones-explained/
+
+## Gabapentinoids, dissociatives, and others
+- [Brivaracetam](https://dosepedia.com/drugs/brivaracetam/): Brivaracetam (Briviact) is a prescription antiseizure medicine for partial-onset seizures in people 1 month and older. Guide: https://dosepedia.com/blog/brivaracetam-explained/
+- [Cenobamate](https://dosepedia.com/drugs/cenobamate/): Cenobamate (Xcopri) is a prescription antiseizure medicine for partial-onset seizures in adults, approved in 2019. Guide: https://dosepedia.com/blog/cenobamate-explained/
+- [Dextromethorphan](https://dosepedia.com/drugs/dextromethorphan/): Dextromethorphan (DXM) is the cough suppressant in many over-the-counter medicines, such as Delsym, Robitussin DM, and NyQuil. Guide: https://dosepedia.com/blog/dextromethorphan-explained/
+- [Dronabinol](https://dosepedia.com/drugs/dronabinol/): Dronabinol (Marinol) is synthetic THC, the main psychoactive compound in cannabis, made as an FDA-approved medicine. Guide: https://dosepedia.com/blog/dronabinol-explained/
+- [Esketamine](https://dosepedia.com/drugs/esketamine/): Esketamine (Spravato) is a nasal spray for treatment-resistant depression and for depression with suicidal thoughts. Guide: https://dosepedia.com/blog/esketamine-explained/
+- [Gabapentin](https://dosepedia.com/drugs/gabapentin/): Gabapentin (Neurontin) is one of the most prescribed medicines in the US, approved for shingles nerve pain, partial seizures, and (as Horizant) restless legs syndrome. Guide: https://dosepedia.com/blog/gabapentin-explained/
+- [Ketamine](https://dosepedia.com/drugs/ketamine/): Ketamine is a dissociative anesthetic used in operating rooms, emergency departments, and battlefield medicine. Guide: https://dosepedia.com/blog/ketamine-explained/
+- [Lacosamide](https://dosepedia.com/drugs/lacosamide/): Lacosamide (Vimpat) is a prescription antiseizure medicine for partial-onset seizures and, as add-on therapy, generalized tonic-clonic seizures. Guide: https://dosepedia.com/blog/lacosamide-explained/
+- [Nitrous oxide](https://dosepedia.com/drugs/nitrous-oxide/): Nitrous oxide is a gas used in dentistry and as a whipped-cream propellant. Guide: https://dosepedia.com/blog/nitrous-oxide-explained/
+- [Pregabalin](https://dosepedia.com/drugs/pregabalin/): Pregabalin (Lyrica) is a nerve pain and antiseizure medicine used for diabetic nerve pain, shingles pain, fibromyalgia, spinal cord injury pain, and partial seizures. Guide: https://dosepedia.com/blog/pregabalin-explained/
+- [Sodium oxybate](https://dosepedia.com/drugs/sodium-oxybate/): Sodium oxybate (Xyrem) is the sodium salt of GHB (gamma-hydroxybutyrate), used to treat cataplexy and daytime sleepiness in narcolepsy. Guide: https://dosepedia.com/blog/sodium-oxybate-explained/
+- [Zuranolone](https://dosepedia.com/drugs/zuranolone/): Zuranolone (Zurzuvae) is the first pill approved specifically for postpartum depression, taken once a day for 14 days. Guide: https://dosepedia.com/blog/zuranolone-explained/
+
+## Cannabis and psychedelics
+- [2C-B](https://dosepedia.com/drugs/2c-b/): 2C-B is a synthetic psychedelic related to mescaline, first made in 1974. Guide: https://dosepedia.com/blog/2c-b-explained/
+- [5-MeO-DMT](https://dosepedia.com/drugs/5-meo-dmt/): 5-MeO-DMT is a very potent, short-acting psychedelic found in the venom of the Sonoran Desert toad and some plants, and also made synthetically. Guide: https://dosepedia.com/blog/5-meo-dmt-explained/
+- [Amanita muscaria](https://dosepedia.com/drugs/amanita-muscaria/): Amanita muscaria, the red-and-white fly agaric mushroom, contains muscimol and ibotenic acid, which act on GABA and glutamate receptors, not like psilocybin. Guide: https://dosepedia.com/blog/amanita-muscaria-explained/
+- [Ayahuasca](https://dosepedia.com/drugs/ayahuasca/): Ayahuasca is a psychedelic brew from the Amazon, usually made from Banisteriopsis caapi vine and Psychotria viridis leaves. Guide: https://dosepedia.com/blog/ayahuasca-explained/
+- [Cannabis](https://dosepedia.com/drugs/cannabis/): Cannabis is a plant whose main psychoactive compound is THC. Guide: https://dosepedia.com/blog/cannabis-explained/
+- [CBD](https://dosepedia.com/drugs/cbd/): CBD (cannabidiol) is a non-intoxicating compound from cannabis and hemp. Guide: https://dosepedia.com/blog/cbd-explained/
+- [Delta-8 THC](https://dosepedia.com/drugs/delta-8-thc/): Delta-8 THC is an intoxicating cannabinoid usually made by chemically converting hemp-derived CBD. Guide: https://dosepedia.com/blog/delta-8-thc-explained/
+- [DMT](https://dosepedia.com/drugs/dmt/): DMT (dimethyltryptamine) is a powerful, short-acting psychedelic found in many plants. Guide: https://dosepedia.com/blog/dmt-explained/
+- [Ibogaine](https://dosepedia.com/drugs/ibogaine/): Ibogaine is a psychedelic from the root bark of the African iboga shrub. Guide: https://dosepedia.com/blog/ibogaine-explained/
+- [LSD](https://dosepedia.com/drugs/lsd/): LSD (lysergic acid diethylamide) is a very potent psychedelic, active in millionths of a gram, with effects lasting 8 to 12 hours. Guide: https://dosepedia.com/blog/lsd-explained/
+- [MDMA](https://dosepedia.com/drugs/mdma/): MDMA, sold as ecstasy or molly, is a stimulant and empathy-enhancing drug that releases large amounts of serotonin. Guide: https://dosepedia.com/blog/mdma-explained/
+- [Mescaline](https://dosepedia.com/drugs/mescaline/): Mescaline is a psychedelic found in the peyote cactus and some other cacti, such as San Pedro. Guide: https://dosepedia.com/blog/mescaline-explained/
+- [Nabilone](https://dosepedia.com/drugs/nabilone/): Nabilone (Cesamet) is a prescription synthetic cannabinoid, similar to THC, for nausea and vomiting from chemotherapy that has not responded to standard medicines. Guide: https://dosepedia.com/blog/nabilone-explained/
+- [Psilocybin](https://dosepedia.com/drugs/psilocybin/): Psilocybin is the psychedelic compound in "magic mushrooms". Guide: https://dosepedia.com/blog/psilocybin-explained/
+- [Salvia divinorum](https://dosepedia.com/drugs/salvia/): Salvia divinorum is a Mexican plant whose active compound, salvinorin A, causes intense but very brief hallucinations when smoked or chewed. Guide: https://dosepedia.com/blog/salvia-explained/
+- [Synthetic cannabinoids](https://dosepedia.com/drugs/synthetic-cannabinoids/): Synthetic cannabinoids, sold as K2 or Spice, are lab-made chemicals sprayed onto plant material or sold as vape liquids. Guide: https://dosepedia.com/blog/synthetic-cannabinoids-explained/
+
+## Anabolic steroids
+- [Methandrostenolone](https://dosepedia.com/drugs/methandrostenolone/): Methandrostenolone (Dianabol, 'D-bol') is an oral anabolic steroid developed in the 1950s that was the first widely misused steroid in sport. Guide: https://dosepedia.com/blog/methandrostenolone-explained/
+- [Nandrolone](https://dosepedia.com/drugs/nandrolone/): Nandrolone is an injectable anabolic steroid. Guide: https://dosepedia.com/blog/nandrolone-explained/
+- [Oxandrolone](https://dosepedia.com/drugs/oxandrolone/): Oxandrolone (Anavar, Oxandrin) is an oral anabolic steroid once prescribed for weight loss after surgery, trauma, or infection. Guide: https://dosepedia.com/blog/oxandrolone-explained/
+- [Oxymetholone](https://dosepedia.com/drugs/oxymetholone/): Oxymetholone (Anadrol-50) is an oral anabolic steroid approved for anemias caused by the bone marrow not making enough red blood cells. Guide: https://dosepedia.com/blog/oxymetholone-explained/
+- [SARMs](https://dosepedia.com/drugs/sarms/): SARMs (selective androgen receptor modulators) are experimental drugs designed to build muscle with fewer side effects than steroids. Guide: https://dosepedia.com/blog/sarms-explained/
+- [Stanozolol](https://dosepedia.com/drugs/stanozolol/): Stanozolol (Winstrol) is an anabolic steroid once prescribed in the US for hereditary angioedema. Guide: https://dosepedia.com/blog/stanozolol-explained/
+- [Testosterone](https://dosepedia.com/drugs/testosterone/): Testosterone is the main male sex hormone, prescribed to men with confirmed low testosterone caused by a medical condition (hypogonadism). Guide: https://dosepedia.com/blog/testosterone-explained/
+- [Trenbolone](https://dosepedia.com/drugs/trenbolone/): Trenbolone ('tren') is a very potent anabolic steroid approved only as a growth implant for cattle. Guide: https://dosepedia.com/blog/trenbolone-explained/
+
+## Emerging and unscheduled substances
+- [7-OH (7-hydroxymitragynine)](https://dosepedia.com/drugs/7-hydroxymitragynine/): 7-OH (7-hydroxymitragynine) is a potent opioid compound found in trace amounts in kratom and sold in concentrated tablets, gummies, and shots in gas stations and vape shops. Guide: https://dosepedia.com/blog/7-hydroxymitragynine-explained/
+- [Bromazolam](https://dosepedia.com/drugs/bromazolam/): Bromazolam is a designer benzodiazepine never approved anywhere as a medicine. Guide: https://dosepedia.com/blog/bromazolam-explained/
+- [Etizolam](https://dosepedia.com/drugs/etizolam/): Etizolam is a benzodiazepine-like drug prescribed for anxiety in Japan, Italy, and India but never approved in the US. Guide: https://dosepedia.com/blog/etizolam-explained/
+- [HHC](https://dosepedia.com/drugs/hhc/): HHC (hexahydrocannabinol) is a semi-synthetic cannabinoid made from hemp-derived CBD, with effects similar to THC. Guide: https://dosepedia.com/blog/hhc-explained/
+- [Kratom](https://dosepedia.com/drugs/kratom/): Kratom is a Southeast Asian tree whose leaves contain mitragynine and 7-hydroxymitragynine (7-OH), which act on opioid receptors. Guide: https://dosepedia.com/blog/kratom-explained/
+- [Medetomidine](https://dosepedia.com/drugs/medetomidine/): Medetomidine is a powerful veterinary sedative that, since late 2024, has replaced xylazine as a common adulterant in illicit fentanyl in Philadelphia, Chicago, and other cities. Guide: https://dosepedia.com/blog/medetomidine-explained/
+- [Nitazenes](https://dosepedia.com/drugs/nitazenes/): Nitazenes are a group of synthetic opioids, first made in the 1950s but never approved as medicines, that have appeared in the illicit drug supply since 2019. Guide: https://dosepedia.com/blog/nitazenes-explained/
+- [PCP](https://dosepedia.com/drugs/pcp/): PCP (phencyclidine), also called angel dust, is a dissociative drug developed as an anesthetic in the 1950s and abandoned because of severe agitation and hallucinations in patients. Guide: https://dosepedia.com/blog/pcp-explained/
+- [Phenibut](https://dosepedia.com/drugs/phenibut/): Phenibut is a sedative related to GABA and baclofen, prescribed for anxiety and sleep in Russia and Latvia. Guide: https://dosepedia.com/blog/phenibut-explained/
+- [Tianeptine](https://dosepedia.com/drugs/tianeptine/): Tianeptine is an antidepressant approved in some European, Asian, and Latin American countries but never in the US. Guide: https://dosepedia.com/blog/tianeptine-explained/
+- [Xylazine](https://dosepedia.com/drugs/xylazine/): Xylazine is a veterinary sedative that has spread through the illicit fentanyl supply as "tranq". Guide: https://dosepedia.com/blog/xylazine-explained/
+
+## About
+- [Editorial policy](https://dosepedia.com/editorial-policy/)
+- [Medical review team](https://dosepedia.com/medical-review-team/)
+- [Blog](https://dosepedia.com/blog/)
