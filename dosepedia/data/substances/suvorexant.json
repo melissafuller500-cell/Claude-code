@@ -1,0 +1,380 @@
+{
+  "slug": "suvorexant",
+  "name": "Suvorexant",
+  "brands": [
+    "Belsomra"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
+  },
+  "subclass": "Orexin receptor antagonist",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Suvorexant (Belsomra) facts: how this orexin-blocking sleep medicine works, dosing basics, risks, interactions, overdose, and legal access.",
+  "quick": "Suvorexant (Belsomra) is a sleep medicine that blocks orexin, a brain chemical that keeps you awake, rather than boosting GABA like benzodiazepines and Z-drugs. It is a Schedule IV controlled substance, but studies show little withdrawal when it is stopped.",
+  "facts": [
+    [
+      "Generic name",
+      "Suvorexant"
+    ],
+    [
+      "Brand names",
+      "Belsomra"
+    ],
+    [
+      "Drug class",
+      "Dual orexin receptor antagonist"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Insomnia (sleep onset and maintenance)"
+    ],
+    [
+      "Forms",
+      "Tablets"
+    ],
+    [
+      "Onset",
+      "About 30 minutes"
+    ],
+    [
+      "Half-life",
+      "About 12 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP3A4"
+    ],
+    [
+      "Contraindication",
+      "Narcolepsy"
+    ]
+  ],
+  "profile": {
+    "onset": "About 30 minutes",
+    "duration": "7 hours or more",
+    "half_life": "About 12 hours",
+    "naloxone": "No",
+    "dependence": "Low",
+    "medical": "Insomnia",
+    "groups": [
+      "depressant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is suvorexant used for?",
+      "blocks": [
+        {
+          "p": "Suvorexant is approved for insomnia with difficulty falling asleep or staying asleep.[[1]]"
+        },
+        {
+          "p": "Orexins are brain chemicals that promote wakefulness. By blocking their receptors, suvorexant helps switch off wake signals. Similar medicines include lemborexant (Dayvigo) and daridorexant (Quviviq)."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is suvorexant usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use suvorexant. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Group",
+              "Typical dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Adults",
+                "10 mg within 30 minutes of bed",
+                "Maximum 20 mg once a night"
+              ],
+              [
+                "With moderate CYP3A4 inhibitors",
+                "5 mg",
+                "Maximum 10 mg"
+              ],
+              [
+                "With strong CYP3A4 inhibitors",
+                "Not recommended",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Take only with at least 7 hours left before waking. Taking it with or soon after a large meal delays its effect."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of suvorexant?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include next-day drowsiness, headache, dizziness, and abnormal dreams.[[1]]"
+        },
+        {
+          "p": "**Other risks** include next-day impairment of driving at 20 mg, sleep paralysis, hallucinations when falling asleep or waking, cataplexy-like muscle weakness, complex sleep behaviors, and worsening depression.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with suvorexant?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Alcohol",
+                "Additive impairment",
+                "Avoid"
+              ],
+              [
+                "Opioids, benzodiazepines, other sedatives",
+                "Additive sedation",
+                "Use caution"
+              ],
+              [
+                "Ketoconazole, clarithromycin, ritonavir",
+                "Sharply raise suvorexant levels",
+                "Not recommended"
+              ],
+              [
+                "Rifampin, carbamazepine",
+                "Lower suvorexant levels",
+                "Reduced effect"
+              ],
+              [
+                "Digoxin",
+                "Slightly raises digoxin levels",
+                "Monitor"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does suvorexant overdose look like?",
+      "blocks": [
+        {
+          "p": "Experience with overdose is limited. High doses cause dose-related sleepiness. Combined with alcohol or other sedatives the effects are harder to predict.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse suvorexant, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Does suvorexant cause withdrawal?",
+      "blocks": [
+        {
+          "p": "In clinical trials, stopping suvorexant after up to a year of use did not cause withdrawal symptoms or significant rebound insomnia. It is Schedule IV because high doses produced drug-liking similar to zolpidem in people who misuse sedatives.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Nights 1 to 3",
+              "title": "Sleep may be lighter",
+              "text": "Some people notice a return of their original insomnia."
+            },
+            {
+              "when": "Week 1",
+              "title": "No typical withdrawal",
+              "text": "Trials showed no withdrawal syndrome."
+            },
+            {
+              "when": "Ongoing",
+              "title": "Underlying insomnia",
+              "text": "CBT-I treats the cause long-term."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get suvorexant legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, suvorexant is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** suvorexant is brand-only and costs more than generic sleep medicines; insurers often require trying a generic first."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order suvorexant online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill suvorexant prescriptions online and ship them. Buying suvorexant from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether suvorexant is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells suvorexant with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is suvorexant legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Japan",
+                "Approved prescription medicine"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How is Belsomra different from Ambien?",
+      "Belsomra blocks wake-promoting orexin signals, while Ambien enhances GABA. Belsomra has a lower risk of dependence and withdrawal."
+    ],
+    [
+      "Is suvorexant addictive?",
+      "It has a low risk of dependence, but it is Schedule IV because people who misuse sedatives liked high doses in studies."
+    ],
+    [
+      "Who should not take suvorexant?",
+      "People with narcolepsy should not take it, because it blocks the same system that is missing in narcolepsy."
+    ]
+  ],
+  "sources": [
+    [
+      "Belsomra (suvorexant) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=suvorexant"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

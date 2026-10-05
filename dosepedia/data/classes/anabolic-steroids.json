@@ -1,0 +1,11 @@
+{
+  "slug": "anabolic-steroids",
+  "name": "Anabolic steroids",
+  "description": "Testosterone and nandrolone: medical uses, the 2025 FDA testosterone label changes, misuse for muscle building, health risks, and legal status.",
+  "intro": "Anabolic-androgenic steroids are synthetic or natural versions of testosterone. They treat hormone deficiencies but are also misused to build muscle. All are Schedule III under the Anabolic Steroid Control Act.",
+  "blocks": [
+    {
+      "p": "Misuse at high doses can cause heart enlargement, high blood pressure, blood clots, infertility, mood changes, and, in women, irreversible masculinization. Stopping after misuse can cause depression."
+    }
+  ]
+}

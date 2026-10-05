@@ -1,0 +1,340 @@
+{
+  "slug": "dmt",
+  "name": "DMT",
+  "brands": [],
+  "aka": [
+    "Dimethyltryptamine",
+    "Dimitri",
+    "Ayahuasca",
+    "Yagé",
+    "Spirit molecule"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Serotonergic psychedelic (tryptamine)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "DMT and ayahuasca facts: effects, duration, dangerous MAOI interactions, religious exemptions, clinical research, and US legal status.",
+  "quick": "DMT (dimethyltryptamine) is a powerful, short-acting psychedelic found in many plants. Smoked or vaped, it lasts 5 to 20 minutes. In ayahuasca, a South American brew, it is combined with plants containing MAO inhibitors, which make it active by mouth for 4 to 6 hours and create dangerous drug interactions. DMT is Schedule I, with court-recognized religious exemptions for ayahuasca.",
+  "facts": [
+    [
+      "Chemical name",
+      "N,N-dimethyltryptamine"
+    ],
+    [
+      "Common names",
+      "DMT, Dimitri; ayahuasca, yagé (brew)"
+    ],
+    [
+      "Drug class",
+      "Serotonergic psychedelic (tryptamine)"
+    ],
+    [
+      "US legal status",
+      "Schedule I; religious exemptions for some ayahuasca churches"
+    ],
+    [
+      "How it is used",
+      "Smoked or vaped; ayahuasca drunk as a brew"
+    ],
+    [
+      "Onset",
+      "Seconds (smoked); 30 to 60 minutes (ayahuasca)"
+    ],
+    [
+      "Duration",
+      "5 to 20 minutes (smoked); 4 to 6 hours (ayahuasca)"
+    ],
+    [
+      "Half-life",
+      "About 15 minutes"
+    ],
+    [
+      "Medical status",
+      "Investigational for depression"
+    ],
+    [
+      "Physical dependence",
+      "No"
+    ]
+  ],
+  "profile": {
+    "onset": "Seconds (smoked); 30 to 60 minutes (ayahuasca)",
+    "duration": "5 to 20 minutes (smoked); 4 to 6 hours (ayahuasca)",
+    "half_life": "About 15 minutes",
+    "naloxone": "No",
+    "dependence": "Low",
+    "medical": "Investigational (depression)",
+    "groups": [
+      "psychedelic",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is dmt?",
+      "blocks": [
+        {
+          "p": "DMT occurs naturally in many plants and in trace amounts in animals. Taken by mouth, it is broken down by the enzyme MAO before it can act. Ayahuasca combines a DMT-containing plant with the vine Banisteriopsis caapi, whose harmala alkaloids block MAO.[[1]]"
+        },
+        {
+          "p": "DMT and the related 5-MeO-DMT are being studied in early clinical trials for depression."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of dmt, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Smoked DMT produces an intense, rapid experience within seconds: vivid geometric visuals, a sense of entering other worlds or meeting entities, and loss of sense of self, lasting 5 to 20 minutes.[[1]]"
+        },
+        {
+          "p": "Ayahuasca effects begin within an hour and last 4 to 6 hours. Vomiting and diarrhea are common and are considered part of the ceremony in traditional use. Heart rate and blood pressure rise."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of dmt?",
+      "blocks": [
+        {
+          "p": "**Psychological risks:** intense fear, confusion, and, in people with a history of psychosis or bipolar disorder, lasting psychiatric effects.[[1]]"
+        },
+        {
+          "p": "**Ayahuasca and medicines:** because ayahuasca contains MAO inhibitors, combining it with SSRIs, many other antidepressants, stimulants, MDMA, tramadol, or some foods and supplements can cause serotonin syndrome or a dangerous rise in blood pressure."
+        },
+        {
+          "p": "**Retreats:** deaths and assaults have been reported at unregulated ayahuasca retreats, sometimes linked to added plants, other drugs, or lack of medical screening."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with dmt?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Lithium",
+                "Seizures and dangerous reactions reported",
+                "Avoid"
+              ],
+              [
+                "MAOIs (and ayahuasca)",
+                "Greatly intensified, unpredictable effects",
+                "High risk"
+              ],
+              [
+                "SSRIs and SNRIs",
+                "Usually blunted effects; serotonin syndrome possible with some combinations",
+                "Use caution"
+              ],
+              [
+                "Cannabis",
+                "More intense, sometimes frightening experiences",
+                "Use caution"
+              ],
+              [
+                "Stimulants (amphetamines, cocaine)",
+                "Anxiety, heart strain, overheating",
+                "Use caution"
+              ],
+              [
+                "SSRIs and SNRIs with ayahuasca",
+                "Serotonin syndrome",
+                "Dangerous; antidepressants often need stopping weeks before under medical care"
+              ],
+              [
+                "Stimulants, MDMA, tramadol with ayahuasca",
+                "Serotonin syndrome or hypertensive crisis",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on DMT?",
+      "blocks": [
+        {
+          "p": "Physical overdose from smoked DMT alone is rare. Danger signs, especially with ayahuasca, include very high blood pressure, severe headache, chest pain, seizures, high temperature, muscle rigidity, and confusion, which can signal serotonin syndrome.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone is having a dangerous reaction",
+            "items": [
+              "Call 911 for a seizure, chest pain, a very high temperature, trouble breathing, unresponsiveness, or if the person may harm themselves or others.",
+              "Move them to a quiet, safe place away from roads, water, heights, and crowds. Stay with them and speak calmly.",
+              "Do not leave the person alone and do not give them other drugs or alcohol to calm them down.",
+              "If they become unresponsive, place them on their side and give naloxone in case opioids are involved."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is DMT addictive?",
+      "blocks": [
+        {
+          "p": "Dmt is not considered physically addictive and does not cause a withdrawal syndrome. Unlike other psychedelics, smoked DMT shows little tolerance with repeated use. Some people use it compulsively, but this is uncommon.[[1]]"
+        },
+        {
+          "p": "**Hallucinogen persisting perception disorder (HPPD):** a small number of people have lasting visual disturbances, such as trails, halos, or flashes, after use. It can be distressing and last months or longer.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is dmt legal in the US?",
+      "blocks": [
+        {
+          "p": "Dmt is a Schedule I controlled substance under federal law, meaning it is considered to have a high potential for abuse and no currently accepted medical use. It cannot be prescribed, and possessing, making, or selling it is a federal crime.[[2]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[3]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[4]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Religious exemptions:** in 2006 the Supreme Court ruled in Gonzales v. O Centro that the government must allow the União do Vegetal church to use ayahuasca in ceremonies under the Religious Freedom Restoration Act. Some other churches have received DEA exemptions or court rulings; others have not.[[5]]"
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with dmt use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[6]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[7]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is dmt legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Peru",
+                "Ayahuasca recognized as national cultural heritage; traditional use legal"
+              ],
+              [
+                "Brazil",
+                "Ayahuasca legal for religious use"
+              ],
+              [
+                "United Kingdom",
+                "Class A"
+              ],
+              [
+                "Canada",
+                "Schedule III; some churches have exemptions"
+              ],
+              [
+                "International",
+                "DMT: Schedule I of the 1971 Convention (plants themselves are not listed)"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How long does a DMT trip last?",
+      "Smoked or vaped, about 5 to 20 minutes. Ayahuasca lasts 4 to 6 hours."
+    ],
+    [
+      "Is ayahuasca legal in the US?",
+      "DMT is Schedule I, but some churches, including the União do Vegetal, have legal protection to use ayahuasca in ceremonies."
+    ],
+    [
+      "Can you drink ayahuasca on antidepressants?",
+      "No. Ayahuasca contains MAO inhibitors, and combining it with SSRIs or similar drugs can cause serotonin syndrome. Stopping antidepressants must be done with a prescriber."
+    ],
+    [
+      "Is DMT in the human body?",
+      "Trace amounts of DMT have been found in animals and humans, but its role is unknown."
+    ]
+  ],
+  "sources": [
+    [
+      "Psychedelic and Dissociative Drugs",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs-medicines"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "Gonzales v. O Centro Espirita Beneficente Uniao do Vegetal, 546 U.S. 418 (2006)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/supct/html/04-1084.ZS.html"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "cannabis-psychedelics",
+  "name": "Cannabis and psychedelics",
+  "description": "Cannabis, psilocybin, LSD, MDMA, DMT, mescaline, and synthetic cannabinoids: effects, risks, research, state programs, and 2026 legal status.",
+  "intro": "Cannabis acts on cannabinoid receptors; classic psychedelics such as psilocybin, LSD, DMT, and mescaline act on serotonin 5-HT2A receptors; MDMA releases serotonin and other chemicals. Research into several of them as treatments is advancing quickly.",
+  "blocks": [
+    {
+      "p": "In April 2026, marijuana in state-licensed medical programs moved to Schedule III, while adult-use cannabis remained Schedule I. Psilocybin is available in state-regulated programs in Oregon and Colorado, and a psilocybin treatment for depression was under FDA review in 2026. All classic psychedelics and MDMA remain Schedule I federally."
+    },
+    {
+      "warn": "Psychedelics combined with lithium have caused seizures. MDMA or psychedelics combined with MAOIs, including ayahuasca, can cause serotonin syndrome."
+    }
+  ]
+}

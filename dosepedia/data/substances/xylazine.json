@@ -1,0 +1,319 @@
+{
+  "slug": "xylazine",
+  "name": "Xylazine",
+  "brands": [],
+  "aka": [
+    "Tranq",
+    "Tranq dope",
+    "Sleep cut",
+    "Rompun"
+  ],
+  "kind": "unregulated",
+  "class": {
+    "name": "Emerging and unscheduled substances",
+    "slug": "emerging"
+  },
+  "subclass": "Veterinary sedative (alpha-2 adrenergic agonist)",
+  "schedule": {
+    "us": "",
+    "label": "Not federally controlled"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Xylazine (tranq) facts: why a veterinary sedative is in the fentanyl supply, effects, severe wounds, overdose response with naloxone, withdrawal, test strips, and federal scheduling.",
+  "quick": "Xylazine is a veterinary sedative that has spread through the illicit fentanyl supply as \"tranq\". It is not approved for people. It deepens and prolongs sedation, is not reversed by naloxone, and causes severe skin wounds. It is not yet federally controlled, but the House passed a bill in September 2026 to place it in Schedule III, and many states already control it.",
+  "facts": [
+    [
+      "Chemical",
+      "Xylazine hydrochloride"
+    ],
+    [
+      "Street names",
+      "Tranq, tranq dope, sleep cut"
+    ],
+    [
+      "Drug class",
+      "Alpha-2 adrenergic agonist (sedative)"
+    ],
+    [
+      "Approved use",
+      "Veterinary sedation only (horses, cattle, other animals)"
+    ],
+    [
+      "US legal status",
+      "Not federally controlled; House passed Schedule III bill (September 2026); controlled in many states"
+    ],
+    [
+      "Found with",
+      "Mostly illicit fentanyl"
+    ],
+    [
+      "Onset",
+      "Minutes"
+    ],
+    [
+      "Duration",
+      "Hours"
+    ],
+    [
+      "Half-life",
+      "Unknown in humans; likely hours"
+    ],
+    [
+      "Reversal agent",
+      "None for humans; give naloxone for the fentanyl"
+    ]
+  ],
+  "profile": {
+    "onset": "Minutes",
+    "duration": "Hours",
+    "half_life": "Hours (limited human data)",
+    "naloxone": "No (but give it for fentanyl)",
+    "dependence": "High",
+    "medical": "Veterinary only",
+    "groups": [
+      "depressant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is xylazine?",
+      "blocks": [
+        {
+          "p": "Xylazine is a sedative and muscle relaxant approved by the FDA only for animals. It is added to illicit fentanyl, probably to extend its effects cheaply. In 2023 the White House declared fentanyl mixed with xylazine an emerging threat.[[1]]"
+        },
+        {
+          "p": "Most people who are exposed do not seek it out; it is mixed into the fentanyl supply, and buyers often do not know it is there."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of xylazine, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Xylazine causes deep sedation, slow heart rate, low blood pressure, and slowed breathing. Combined with fentanyl, people may stay sedated for hours, which raises the risk of overdose, injury, assault, and pressure wounds.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of xylazine?",
+      "blocks": [
+        {
+          "p": "**Severe wounds:** xylazine causes skin ulcers and dead tissue, often far from the injection site and even in people who smoke or snort it. Untreated wounds can lead to amputation. Early wound care helps.[[1]]"
+        },
+        {
+          "p": "**Overdose:** combined with fentanyl, xylazine deepens sedation and slows breathing and heart rate. Naloxone reverses the fentanyl but not the xylazine.[[1]]"
+        },
+        {
+          "p": "**Prolonged sedation** leaves people vulnerable to injury, hypothermia, and assault."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with xylazine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Fentanyl and other opioids",
+                "Deeper, longer sedation; overdose; naloxone only partly helps",
+                "Very high risk"
+              ],
+              [
+                "Benzodiazepines, alcohol",
+                "Additive sedation and slow breathing",
+                "Very high risk"
+              ],
+              [
+                "Blood pressure medicines (clonidine)",
+                "Additive drops in blood pressure and heart rate",
+                "High risk"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "How do you respond to a xylazine overdose?",
+      "blocks": [
+        {
+          "p": "A person may be deeply sedated, hard or impossible to wake, with slow breathing, a slow heartbeat, and low blood pressure. Because xylazine is almost always mixed with fentanyl, always give naloxone. Naloxone restores breathing from the fentanyl even if the person stays sleepy from the xylazine.[[1]][[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before xylazine does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        },
+        {
+          "p": "Focus on breathing: if the person is breathing after naloxone but still sedated, place them on their side and stay with them. Do not give more naloxone just to wake them fully if they are breathing adequately. Xylazine test strips are available in many areas."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is xylazine addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "People exposed regularly to fentanyl with xylazine can develop xylazine withdrawal on top of opioid withdrawal. It can be severe and is not relieved by opioid medicines alone.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Hours to day 1",
+              "title": "Symptoms begin",
+              "text": "Anxiety, irritability, restlessness, high blood pressure."
+            },
+            {
+              "when": "Days 1 to 4",
+              "title": "Peak",
+              "text": "Severe agitation, dysphoria, fast heartbeat, high blood pressure."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Resolves",
+              "text": "Symptoms ease with treatment."
+            }
+          ]
+        },
+        {
+          "p": "Hospitals treat xylazine withdrawal with alpha-2 agonists such as clonidine, dexmedetomidine, or tizanidine, alongside buprenorphine or methadone for opioid withdrawal."
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is xylazine legal in the US?",
+      "blocks": [
+        {
+          "p": "**Federal law:** xylazine is an FDA-approved veterinary drug and is not a federal controlled substance. The FDA restricted imports of xylazine ingredients in 2023 to keep it in legitimate veterinary channels.[[1]]"
+        },
+        {
+          "p": "**Pending legislation:** the Combating Illicit Xylazine Act, which would place xylazine in Schedule III while protecting veterinary and agricultural use, passed the House unanimously in September 2026 and was awaiting Senate action.[[3]]"
+        },
+        {
+          "p": "**State law:** many states, including Pennsylvania, Florida, Ohio, and West Virginia, have added xylazine to their controlled substance schedules. Selling it for human consumption can be prosecuted under several state and federal laws."
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with xylazine use?",
+      "blocks": [
+        {
+          "p": "Xylazine wounds need medical care. Many syringe services programs and health centers offer wound care, test strips, and naloxone."
+        },
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[4]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[5]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is xylazine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C since 2024"
+              ],
+              [
+                "Canada",
+                "Veterinary prescription drug; xylazine in street drugs is monitored"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[6]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Does naloxone work on xylazine?",
+      "No, but give it anyway. Xylazine is almost always mixed with fentanyl, and naloxone reverses the fentanyl and restores breathing."
+    ],
+    [
+      "Why does xylazine cause wounds?",
+      "The exact cause is unclear. It narrows blood vessels and reduces blood flow to the skin, and wounds can appear even away from injection sites."
+    ],
+    [
+      "Is xylazine illegal?",
+      "Not federally yet. It is a veterinary drug. Many states control it, and Congress was considering a law to place it in Schedule III."
+    ],
+    [
+      "Are there xylazine test strips?",
+      "Yes. They are available from many health departments and harm reduction programs."
+    ]
+  ],
+  "sources": [
+    [
+      "FDA alerts health care professionals of risks to patients exposed to xylazine in illicit drugs",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-alerts-health-care-professionals-risks-patients-exposed-xylazine-illicit-drugs"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "H.R.1266, Combating Illicit Xylazine Act (119th Congress)",
+      "Congress.gov",
+      "https://www.congress.gov/bill/119th-congress/house-bill/1266"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

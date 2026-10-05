@@ -1,0 +1,11 @@
+{
+  "slug": "gabapentinoids-dissociatives",
+  "name": "Gabapentinoids, dissociatives, and others",
+  "description": "Gabapentin, pregabalin, ketamine, esketamine, sodium oxybate (GHB), and dronabinol: uses, risks, misuse, and legal status.",
+  "intro": "This cluster groups medicines with distinctive actions: gabapentinoids for nerve pain and seizures, dissociative anesthetics used in surgery and depression, sodium oxybate for narcolepsy, and synthetic THC.",
+  "blocks": [
+    {
+      "p": "Gabapentin and pregabalin add to opioid overdose risk; the FDA warned in 2019 about serious breathing problems when they are combined with opioids or other sedatives. Ketamine and esketamine are Schedule III. Sodium oxybate is the medical form of GHB, available only through a restricted pharmacy program."
+    }
+  ]
+}

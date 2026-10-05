@@ -1,0 +1,344 @@
+{
+  "slug": "nitazenes",
+  "name": "Nitazenes",
+  "brands": [],
+  "aka": [
+    "Benzimidazole-opioids",
+    "Isotonitazene",
+    "Protonitazene",
+    "Metonitazene",
+    "N-pyrrolidino etonitazene"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Emerging and unscheduled substances",
+    "slug": "emerging"
+  },
+  "subclass": "Synthetic opioids (benzimidazole-opioids)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Nitazenes facts: a class of synthetic opioids that can be stronger than fentanyl, overdose and naloxone, test strips, DEA Schedule I actions, and how to stay safer.",
+  "quick": "Nitazenes are a group of synthetic opioids, first made in the 1950s but never approved as medicines, that have appeared in the illicit drug supply since 2019. Some are many times stronger than fentanyl. They are found in fake pills and powders, are not detected by fentanyl test strips, and can need several doses of naloxone. Many are in Schedule I.",
+  "facts": [
+    [
+      "Chemical class",
+      "2-benzylbenzimidazole opioids"
+    ],
+    [
+      "Examples",
+      "Isotonitazene, metonitazene, protonitazene, N-pyrrolidino etonitazene (etonitazepyne)"
+    ],
+    [
+      "Drug class",
+      "Synthetic mu-opioid agonists"
+    ],
+    [
+      "US legal status",
+      "Many permanently or temporarily Schedule I; new variants appear"
+    ],
+    [
+      "Medical use",
+      "None"
+    ],
+    [
+      "Potency",
+      "Varies; some exceed fentanyl"
+    ],
+    [
+      "Found in",
+      "Counterfeit pills (oxycodone, benzodiazepines), powders, heroin and fentanyl"
+    ],
+    [
+      "Detected by fentanyl strips",
+      "No; separate nitazene strips exist"
+    ],
+    [
+      "Onset",
+      "Minutes"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone; multiple doses may be needed"
+    ]
+  ],
+  "profile": {
+    "onset": "Minutes",
+    "duration": "Hours (varies)",
+    "half_life": "Varies by compound",
+    "naloxone": "Yes, multiple doses may be needed",
+    "dependence": "Very high",
+    "medical": "None",
+    "groups": [
+      "opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is nitazenes?",
+      "blocks": [
+        {
+          "p": "Nitazenes were developed by a Swiss drug company in the 1950s as possible pain medicines but were never approved because of their danger. Since 2019, illicit manufacturers have produced dozens of variants.[[1]]"
+        },
+        {
+          "p": "They are sold as powders or pressed into counterfeit pills made to look like oxycodone or benzodiazepines, and are sometimes mixed into heroin or fentanyl. Buyers usually do not know they are taking them."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of nitazenes, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Nitazenes cause typical opioid effects: euphoria, drowsiness, pinpoint pupils, and slowed breathing. Because some are extremely potent and doses are unpredictable, the gap between a sedating dose and a fatal one can be tiny.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of nitazenes?",
+      "blocks": [
+        {
+          "p": "**Overdose:** nitazenes have caused clusters of overdose deaths in the US, UK, and elsewhere. Some, such as etonitazene and N-pyrrolidino etonitazene, are many times more potent than fentanyl.[[1]]"
+        },
+        {
+          "p": "**Hidden in pills:** they have been found in fake pills sold as oxycodone, Xanax, and other medicines, affecting people with no opioid tolerance."
+        },
+        {
+          "p": "**Testing:** fentanyl test strips do not detect nitazenes. Nitazene-specific test strips are available in some areas."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with nitazenes?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines, including fake Xanax",
+                "Deep sedation, stopped breathing",
+                "Very high risk"
+              ],
+              [
+                "Alcohol",
+                "Additive breathing suppression",
+                "Very high risk"
+              ],
+              [
+                "Fentanyl, heroin, other opioids",
+                "Extreme overdose risk",
+                "Very high risk"
+              ],
+              [
+                "Xylazine",
+                "Deeper sedation not reversed by naloxone",
+                "Very high risk"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does a nitazene overdose look like?",
+      "blocks": [
+        {
+          "p": "Nitazene overdose looks like any opioid overdose: pinpoint pupils, unresponsiveness, slow or stopped breathing, and blue or gray lips. It can come on fast and be very deep.[[1]][[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before nitazenes does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        },
+        {
+          "p": "Give naloxone and repeat every 2 to 3 minutes if there is no response. Some nitazene overdoses need several doses, and the effects can outlast naloxone, so the person needs emergency care and monitoring."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is nitazenes addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "Nitazenes cause opioid dependence and withdrawal like other potent opioids.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "6 to 12 hours",
+              "title": "Early withdrawal",
+              "text": "Anxiety, sweating, runny nose, muscle aches."
+            },
+            {
+              "when": "Days 1 to 3",
+              "title": "Peak",
+              "text": "Vomiting, diarrhea, cramps, insomnia, cravings."
+            },
+            {
+              "when": "Days 5 to 10",
+              "title": "Lingering",
+              "text": "Fatigue, low mood, cravings."
+            }
+          ]
+        },
+        {
+          "p": "Buprenorphine and methadone treat dependence on nitazenes as they do for other opioids."
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is nitazenes legal in the US?",
+      "blocks": [
+        {
+          "p": "Nitazenes have no accepted medical use. The DEA has placed many in Schedule I, some permanently and others by temporary emergency order; in October 2025 it temporarily added seven more variants through October 2027. Congress has considered bills to schedule the entire class at once.[[3]][[1]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[4]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[5]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Analogues:** unscheduled variants sold for human consumption can be prosecuted as controlled substance analogues under the Federal Analogue Act."
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with nitazenes use?",
+      "blocks": [
+        {
+          "p": "Medicines for opioid use disorder work for people exposed to nitazenes. Buprenorphine can be started by telemedicine.[[6]]"
+        },
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[7]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[8]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is nitazenes legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A (many named compounds)"
+              ],
+              [
+                "European Union",
+                "Monitored by the EU Drugs Agency; controlled in member states"
+              ],
+              [
+                "International",
+                "Several, including isotonitazene and metonitazene, in Schedule I of the 1961 Single Convention"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Are nitazenes stronger than fentanyl?",
+      "Some are. Potency varies widely by compound, and several are many times stronger than fentanyl."
+    ],
+    [
+      "Does naloxone work on nitazenes?",
+      "Yes, but more doses may be needed. Keep giving naloxone every 2 to 3 minutes and call 911."
+    ],
+    [
+      "Do fentanyl test strips detect nitazenes?",
+      "No. Separate nitazene test strips are available in some areas."
+    ],
+    [
+      "Where are nitazenes found?",
+      "In counterfeit pills, powders sold as heroin or fentanyl, and sometimes other drugs. Pills not from a pharmacy can contain them."
+    ]
+  ],
+  "sources": [
+    [
+      "Benzimidazole-opioids (nitazenes)",
+      "DEA Diversion Control Division",
+      "https://deadiversion.usdoj.gov/drug_chem_info/nitazenes/nitazenes.html"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "Temporary placement of seven benzimidazole-opioids in Schedule I",
+      "Federal Register, October 2025",
+      "https://public-inspection.federalregister.gov/2025-19542.pdf"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "Expansion of Buprenorphine Treatment via Telemedicine Encounter, final rule",
+      "Federal Register, January 17, 2025",
+      "https://www.govinfo.gov/content/pkg/FR-2025-01-17/html/2025-01049.htm"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

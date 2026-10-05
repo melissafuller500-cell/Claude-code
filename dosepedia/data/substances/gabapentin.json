@@ -1,0 +1,381 @@
+{
+  "slug": "gabapentin",
+  "name": "Gabapentin",
+  "brands": [
+    "Neurontin",
+    "Gralise",
+    "Horizant"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Gabapentinoids, dissociatives, and others",
+    "slug": "gabapentinoids-dissociatives"
+  },
+  "subclass": "Gabapentinoid",
+  "schedule": {
+    "us": "",
+    "label": "Not federally controlled"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Gabapentin (Neurontin) facts: uses for shingles pain and seizures, off-label uses, dosing basics, breathing warnings, misuse, state scheduling, withdrawal, and legal access.",
+  "quick": "Gabapentin (Neurontin) is one of the most prescribed medicines in the US, approved for shingles nerve pain, partial seizures, and (as Horizant) restless legs syndrome. It is not a federal controlled substance, but several states classify it as Schedule V because it is misused, especially with opioids.",
+  "facts": [
+    [
+      "Generic name",
+      "Gabapentin"
+    ],
+    [
+      "Brand names",
+      "Neurontin, Gralise; Horizant (gabapentin enacarbil)"
+    ],
+    [
+      "Drug class",
+      "Gabapentinoid"
+    ],
+    [
+      "US legal status",
+      "Prescription only; not federally controlled; Schedule V in several states"
+    ],
+    [
+      "Approved uses",
+      "Postherpetic neuralgia; partial-onset seizures (add-on); restless legs (Horizant)"
+    ],
+    [
+      "Forms",
+      "Capsules, tablets, oral solution, extended-release tablets"
+    ],
+    [
+      "Onset",
+      "Hours to days for pain relief"
+    ],
+    [
+      "Half-life",
+      "5 to 7 hours"
+    ],
+    [
+      "Cleared by",
+      "Kidneys, unchanged"
+    ],
+    [
+      "Key warning",
+      "Breathing problems with opioids or sedatives"
+    ]
+  ],
+  "profile": {
+    "onset": "2 to 3 hours (peak)",
+    "duration": "6 to 8 hours",
+    "half_life": "5 to 7 hours",
+    "naloxone": "No",
+    "dependence": "Low to moderate",
+    "medical": "Shingles pain; seizures; restless legs",
+    "groups": [
+      "depressant",
+      "gabapentinoid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is gabapentin used for?",
+      "blocks": [
+        {
+          "p": "Gabapentin is approved for postherpetic neuralgia (nerve pain after shingles) in adults and as an add-on treatment for partial-onset seizures in people 3 and older. Gabapentin enacarbil (Horizant) is approved for restless legs syndrome and postherpetic neuralgia.[[1]]"
+        },
+        {
+          "p": "It is also widely prescribed off-label for other nerve pain, alcohol use disorder, anxiety, hot flashes, and insomnia, with varying evidence."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is gabapentin usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use gabapentin. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Condition",
+              "Typical adult dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Postherpetic neuralgia",
+                "300 mg day 1, 300 mg twice day 2, 300 mg three times day 3",
+                "Up to 1,800 mg a day"
+              ],
+              [
+                "Partial seizures (12 and older)",
+                "300 mg three times a day",
+                "Usual 900 to 1,800 mg a day; up to 3,600 mg"
+              ],
+              [
+                "Kidney impairment",
+                "Reduced by kidney function",
+                "Dose adjustment required"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Gabapentin absorption is saturable: higher single doses are absorbed less efficiently, so it is taken in divided doses."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of gabapentin?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include dizziness, drowsiness, unsteadiness, fatigue, swelling of the legs, and blurred vision.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include breathing problems with opioids or in lung disease, allergic reactions (DRESS), suicidal thoughts (antiseizure class warning), and misuse, mainly by people who also use opioids.[[1]]"
+        },
+        {
+          "warn": "The FDA warns that gabapentin and pregabalin can cause serious, sometimes fatal, breathing problems when combined with opioids or other sedatives, and in older adults and people with lung disease.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with gabapentin?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids",
+                "Slowed breathing; higher overdose risk; opioids raise gabapentin levels",
+                "Use lowest doses; monitor"
+              ],
+              [
+                "Alcohol",
+                "Additive sedation",
+                "Avoid"
+              ],
+              [
+                "Benzodiazepines and sleep medicines",
+                "Additive sedation",
+                "Use caution"
+              ],
+              [
+                "Antacids with aluminum or magnesium",
+                "Lower gabapentin absorption by about 20%",
+                "Take gabapentin 2 hours after"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does gabapentin overdose look like?",
+      "blocks": [
+        {
+          "p": "Gabapentin overdose causes double vision, slurred speech, drowsiness, lethargy, and diarrhea. Serious overdoses usually involve opioids or other sedatives, which can stop breathing.[[1]][[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse gabapentin, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is gabapentin withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "Stopping gabapentin after regular use can cause withdrawal. The label advises tapering over at least one week.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 2",
+              "title": "Symptoms begin",
+              "text": "Anxiety, insomnia, sweating, nausea, pain."
+            },
+            {
+              "when": "Days 2 to 10",
+              "title": "Peak",
+              "text": "Agitation, confusion, and in people with epilepsy, seizures."
+            },
+            {
+              "when": "Weeks",
+              "title": "Recovery",
+              "text": "Symptoms usually resolve within weeks."
+            }
+          ]
+        },
+        {
+          "warn": "In people with epilepsy, stopping gabapentin suddenly can trigger seizures, including prolonged seizures."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get gabapentin legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, gabapentin is a prescription-only medicine. It is not a federal controlled substance, so the only legal way to get it is with a prescription from a licensed clinician, filled by a licensed pharmacy."
+        },
+        {
+          "ul": [
+            "**Refills:** refills follow ordinary prescription rules, but some states treat it as a controlled substance with tighter limits.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[3]][[4]]",
+            "**Cost:** generic gabapentin is among the least expensive prescription medicines.",
+            "**State rules:** several states, including Alabama, Kentucky, Michigan, Tennessee, Virginia, and West Virginia, list gabapentin as a Schedule V controlled substance, and many others require pharmacies to report it to the state prescription monitoring program."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order gabapentin online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill gabapentin prescriptions online and ship them. Buying gabapentin from a website that does not require a prescription is illegal, and the product is often fake.[[3]][[5]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether gabapentin is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells gabapentin with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[3]][[4]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is gabapentin legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C since 2019; prescription only"
+              ],
+              [
+                "Canada",
+                "Prescription medicine"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[6]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is gabapentin a controlled substance?",
+      "Not federally. Several states classify it as Schedule V, and many track it in their prescription monitoring programs."
+    ],
+    [
+      "Is gabapentin a narcotic?",
+      "No. It is not an opioid, but it can be misused and adds to opioid overdose risk."
+    ],
+    [
+      "Can gabapentin help with anxiety or sleep?",
+      "It is sometimes used off-label for these, but evidence is limited and it is not FDA-approved for them."
+    ],
+    [
+      "How long does gabapentin stay in your system?",
+      "Its half-life is 5 to 7 hours in healthy kidneys, so it is mostly gone within 2 days."
+    ]
+  ],
+  "sources": [
+    [
+      "Neurontin (gabapentin) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=gabapentin"
+    ],
+    [
+      "FDA warns about serious breathing problems with seizure and nerve pain medicines gabapentin and pregabalin",
+      "US Food and Drug Administration, 2019",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-warns-about-serious-breathing-problems-seizure-and-nerve-pain-medicines-gabapentin-neurontin"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

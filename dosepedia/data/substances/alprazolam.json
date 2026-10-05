@@ -5,10 +5,13 @@
     "Xanax",
     "Xanax XR"
   ],
+  "aka": [],
+  "kind": "rx",
   "class": {
-    "name": "Benzodiazepines",
-    "slug": "benzodiazepines"
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
   },
+  "subclass": "Benzodiazepine",
   "schedule": {
     "us": "IV",
     "label": "Schedule IV"
@@ -59,6 +62,18 @@
       "Use with opioids; misuse and addiction; dependence and withdrawal"
     ]
   ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "4 to 6 hours (immediate release)",
+    "half_life": "About 11 hours",
+    "naloxone": "No",
+    "dependence": "High",
+    "medical": "Anxiety; panic disorder",
+    "groups": [
+      "depressant",
+      "benzodiazepine"
+    ]
+  },
   "sections": [
     {
       "id": "uses",
@@ -123,9 +138,9 @@
           "boxed": {
             "title": "FDA boxed warnings",
             "items": [
-              "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.",
-              "Alprazolam can be misused and can lead to addiction, which raises the risk of overdose and death.",
-              "Regular use can cause physical dependence. Stopping suddenly or cutting the dose quickly can cause withdrawal reactions, including seizures, that can be life-threatening."
+              "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.[[2]]",
+              "Benzodiazepines can be misused and can lead to addiction, which raises the risk of overdose and death.[[3]]",
+              "Regular use can cause physical dependence. Stopping suddenly or cutting the dose quickly can cause withdrawal reactions, including seizures, that can be life-threatening.[[3]]"
             ]
           }
         },
@@ -133,7 +148,7 @@
           "p": "**Common side effects** include drowsiness, tiredness, lightheadedness, poor coordination, memory problems, slurred speech, irritability, constipation, and changes in appetite or sex drive.[[1]]"
         },
         {
-          "p": "**Serious risks** include impaired driving, falls (especially in older adults), worsening depression, and breathing problems in people with lung disease or sleep apnea. Use late in pregnancy can cause sedation and withdrawal symptoms in the newborn.[[1]][[2]]"
+          "p": "**Serious risks** include impaired driving, falls (especially in older adults), worsening depression, and breathing problems in people with lung disease or sleep apnea. Use late in pregnancy can cause sedation and withdrawal symptoms in the newborn.[[1]][[3]]"
         }
       ]
     },
@@ -160,7 +175,7 @@
                 "Avoid"
               ],
               [
-                "Other sedatives and sleep medicines",
+                "Other sedatives, sleep medicines, gabapentinoids",
                 "Additive drowsiness and impaired coordination",
                 "Use caution"
               ],
@@ -183,13 +198,13 @@
           }
         },
         {
-          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements.[[1]]"
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
         }
       ]
     },
     {
       "id": "overdose",
-      "q": "What does an alprazolam overdose look like?",
+      "q": "What does alprazolam overdose look like?",
       "blocks": [
         {
           "p": "Signs include extreme drowsiness, confusion, slurred speech, poor coordination, slow reflexes, and loss of consciousness. Overdose is far more dangerous when alprazolam is combined with opioids or alcohol, because breathing can slow or stop.[[1]]"
@@ -198,7 +213,7 @@
           "emergency": {
             "title": "If someone may have overdosed",
             "items": [
-              "Call 911 (US) if the person is unresponsive, hard to wake, or breathing slowly.",
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
               "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
               "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse alprazolam, but it will not harm the person.",
               "Stay with the person and place them on their side if they are drowsy or vomiting."
@@ -206,7 +221,7 @@
           }
         },
         {
-          "p": "Hospitals can treat benzodiazepine overdose with supportive care and, in selected cases, the antidote flumazenil.[[1]][[8]]"
+          "p": "Hospitals can treat benzodiazepine overdose with supportive care and, in selected cases, the antidote flumazenil.[[1]][[4]]"
         }
       ]
     },
@@ -215,19 +230,19 @@
       "q": "What is alprazolam withdrawal like, and how long does it last?",
       "blocks": [
         {
-          "p": "People who take alprazolam regularly, even as prescribed, can become physically dependent within weeks. Because alprazolam leaves the body quickly, withdrawal tends to start sooner and feel more intense than with longer-acting benzodiazepines.[[1]][[3]]"
+          "p": "People who take alprazolam regularly, even as prescribed, can become physically dependent within weeks. Because alprazolam leaves the body quickly, withdrawal tends to start sooner and feel more intense than with longer-acting benzodiazepines.[[3]]"
         },
         {
           "timeline": [
             {
               "when": "Days 1 to 2",
               "title": "Symptoms begin",
-              "text": "Rebound anxiety, insomnia, restlessness, sweating, and tremor usually appear within one to two days of the last dose."
+              "text": "Rebound anxiety, insomnia, restlessness, sweating, and tremor."
             },
             {
               "when": "Weeks 1 to 4",
               "title": "Acute withdrawal",
-              "text": "Symptoms commonly continue for two to four weeks or longer. They can include panic, irritability, muscle pain, nausea, sensitivity to light and sound, and, in severe cases, seizures."
+              "text": "Panic, irritability, muscle pain, nausea, sensitivity to light and sound, and in severe cases seizures or delirium."
             },
             {
               "when": "Months",
@@ -237,34 +252,34 @@
           ]
         },
         {
-          "warn": "Stopping alprazolam abruptly can cause seizures. The dose should be reduced gradually under the care of a prescriber."
+          "warn": "Stopping alprazolam abruptly after regular use can cause seizures. The dose should be reduced gradually under the care of a prescriber."
         },
         {
-          "p": "The FDA label advises lowering the daily dose by no more than 0.5 mg every three days, and notes that some people need a slower reduction. Clinical guidance from addiction medicine specialists favors slower, individualized tapers, often small reductions every few weeks, sometimes after switching to a longer-acting benzodiazepine.[[1]][[4]]"
+          "p": "The FDA label advises lowering the daily dose by no more than 0.5 mg every three days, and notes that some people need a slower reduction. Clinical guidance from addiction medicine specialists favors slower, individualized tapers, often small reductions every few weeks, sometimes after switching to a longer-acting benzodiazepine.[[5]]"
         }
       ]
     },
     {
       "id": "legal-access",
-      "q": "How do you buy alprazolam legally in the US?",
+      "q": "How do you get alprazolam legally in the US?",
       "blocks": [
         {
-          "p": "In the United States, the only legal way to buy alprazolam is with a prescription. It is a Schedule IV controlled substance, so it can be purchased only from a licensed pharmacy after a clinician registered with the Drug Enforcement Administration (DEA) prescribes it. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+          "p": "In the United States, alprazolam is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[6]]"
         },
         {
           "ul": [
-            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
-            "**Telehealth:** federal flexibilities allow DEA-registered clinicians to prescribe controlled medicines by telemedicine without a prior in-person visit through December 31, 2026. State rules can be stricter.[[7]]",
-            "**Monitoring:** most states require prescribers or pharmacists to check a prescription drug monitoring program, which records controlled-substance prescriptions.",
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[7]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[8]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
             "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[9]][[10]]",
             "**Cost:** generic alprazolam is widely available and is covered by most insurance plans."
           ]
         },
         {
-          "warn": "Pills sold as Xanax outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or other potent drugs, and they cannot be told apart by appearance.[[11]]"
+          "warn": "Pills sold as Xanax or \"bars\" outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[11]]"
         },
         {
-          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because limits on quantity and paperwork vary."
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
         }
       ]
     },
@@ -273,7 +288,7 @@
       "q": "Can you order alprazolam online?",
       "blocks": [
         {
-          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill alprazolam prescriptions online and ship them. Ordering alprazolam from a website that does not ask for a prescription is illegal, and the pills are often fake.[[9]][[11]]"
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill alprazolam prescriptions online and ship them. Buying alprazolam from a website that does not require a prescription is illegal, and the product is often fake.[[9]][[11]]"
         },
         {
           "steps": [
@@ -296,7 +311,7 @@
         },
         {
           "ul": [
-            "It sells alprazolam or Xanax with no prescription, or after only a short online questionnaire.",
+            "It sells alprazolam with no prescription, or after only a short online questionnaire.",
             "It takes orders through social media, messaging apps, or email.",
             "It asks for payment in cryptocurrency, gift cards, or money transfers.",
             "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
@@ -320,10 +335,6 @@
             ],
             "rows": [
               [
-                "United States",
-                "Schedule IV, prescription only"
-              ],
-              [
                 "United Kingdom",
                 "Class C; available on private prescription, not routinely on the NHS"
               ],
@@ -343,7 +354,7 @@
           }
         },
         {
-          "p": "Possessing alprazolam without a valid prescription is an offence in each of these countries."
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[12]]"
         }
       ]
     }
@@ -389,14 +400,19 @@
       "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=alprazolam"
     ],
     [
+      "FDA warns about serious risks and death when combining opioid pain or cough medicines with benzodiazepines",
+      "US Food and Drug Administration, 2016",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or"
+    ],
+    [
       "FDA requiring Boxed Warning updated to improve safe use of benzodiazepine drug class",
       "US Food and Drug Administration, 2020",
       "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class"
     ],
     [
-      "Clinical Guidelines for Withdrawal Management and Treatment of Drug Dependence in Closed Settings",
-      "World Health Organization",
-      "https://www.ncbi.nlm.nih.gov/books/NBK310652/"
+      "Poison Help",
+      "Health Resources and Services Administration",
+      "https://poisonhelp.hrsa.gov/"
     ],
     [
       "Joint Clinical Practice Guideline on Benzodiazepine Tapering",
@@ -409,7 +425,7 @@
       "https://www.deadiversion.usdoj.gov/schedules/"
     ],
     [
-      "21 CFR 1306.22, Refilling of prescriptions",
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
       "Electronic Code of Federal Regulations",
       "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
     ],
@@ -417,11 +433,6 @@
       "Prescribing controlled substances via telehealth",
       "US Department of Health and Human Services",
       "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
-    ],
-    [
-      "Poison Help",
-      "Health Resources and Services Administration",
-      "https://poisonhelp.hrsa.gov/"
     ],
     [
       "BeSafeRx: Your Source for Online Pharmacy Information",
@@ -437,6 +448,11 @@
       "One Pill Can Kill",
       "US Drug Enforcement Administration",
       "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
     ]
   ]
 }

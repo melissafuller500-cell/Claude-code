@@ -1,0 +1,418 @@
+{
+  "slug": "lorazepam",
+  "name": "Lorazepam",
+  "brands": [
+    "Ativan",
+    "Loreev XR"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
+  },
+  "subclass": "Intermediate-acting benzodiazepine",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Lorazepam (Ativan) facts: uses for anxiety, insomnia and seizures, dosing basics, risks, interactions, overdose, withdrawal, and legal access.",
+  "quick": "Lorazepam (Ativan) is an intermediate-acting benzodiazepine used for anxiety, short-term insomnia caused by anxiety, and, by injection, for status epilepticus and sedation before procedures. It is a Schedule IV controlled substance.",
+  "facts": [
+    [
+      "Generic name",
+      "Lorazepam"
+    ],
+    [
+      "Brand names",
+      "Ativan, Loreev XR"
+    ],
+    [
+      "Drug class",
+      "Intermediate-acting benzodiazepine"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Anxiety; insomnia due to anxiety; status epilepticus and pre-procedure sedation (injection)"
+    ],
+    [
+      "Forms",
+      "Tablets, extended-release capsules, oral concentrate, injection"
+    ],
+    [
+      "Onset",
+      "20 to 30 minutes by mouth"
+    ],
+    [
+      "Half-life",
+      "About 12 hours"
+    ],
+    [
+      "Broken down by",
+      "Glucuronidation (no CYP enzymes)"
+    ],
+    [
+      "FDA boxed warnings",
+      "Use with opioids; misuse and addiction; dependence and withdrawal"
+    ]
+  ],
+  "profile": {
+    "onset": "20 to 30 minutes",
+    "duration": "6 to 8 hours",
+    "half_life": "About 12 hours",
+    "naloxone": "No",
+    "dependence": "High",
+    "medical": "Anxiety; seizures; sedation",
+    "groups": [
+      "depressant",
+      "benzodiazepine"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is lorazepam used for?",
+      "blocks": [
+        {
+          "p": "Lorazepam tablets are approved for anxiety disorders and short-term relief of anxiety, including anxiety with depression. Injected lorazepam is a first-line treatment for status epilepticus and is used for sedation before surgery.[[1]]"
+        },
+        {
+          "p": "Because lorazepam is cleared by glucuronidation rather than CYP liver enzymes, it has fewer drug interactions and is often preferred in older adults and people with liver disease."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is lorazepam usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use lorazepam. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Use",
+              "Typical adult dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Anxiety",
+                "2 to 3 mg a day in 2 or 3 doses",
+                "Range 1 to 10 mg a day"
+              ],
+              [
+                "Insomnia due to anxiety",
+                "2 to 4 mg at bedtime",
+                "Short-term only"
+              ],
+              [
+                "Older adults",
+                "1 to 2 mg a day in divided doses",
+                "Adjust to response"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of lorazepam?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.[[2]]",
+              "Benzodiazepines can be misused and can lead to addiction, which raises the risk of overdose and death.[[3]]",
+              "Regular use can cause physical dependence. Stopping suddenly or cutting the dose quickly can cause withdrawal reactions, including seizures, that can be life-threatening.[[3]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include sedation, dizziness, weakness, and unsteadiness. Memory problems for events after a dose can occur.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with lorazepam?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids (oxycodone, fentanyl, codeine)",
+                "Slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Other sedatives, sleep medicines, gabapentinoids",
+                "Additive drowsiness and impaired coordination",
+                "Use caution"
+              ],
+              [
+                "Valproate",
+                "Raises lorazepam levels",
+                "Reduce lorazepam dose by about half"
+              ],
+              [
+                "Probenecid",
+                "Raises lorazepam levels",
+                "Reduce dose"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does lorazepam overdose look like?",
+      "blocks": [
+        {
+          "p": "Lorazepam overdose causes drowsiness, confusion, lethargy, poor coordination, low blood pressure, and coma. Combined with opioids or alcohol, breathing can stop.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse lorazepam, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is lorazepam withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take lorazepam regularly, even as prescribed, can become physically dependent within weeks. With an intermediate half-life, withdrawal typically begins within a day or two of the last dose.[[3]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 2",
+              "title": "Symptoms begin",
+              "text": "Rebound anxiety, insomnia, restlessness, sweating, and tremor."
+            },
+            {
+              "when": "Weeks 1 to 4",
+              "title": "Acute withdrawal",
+              "text": "Panic, irritability, muscle pain, nausea, sensitivity to light and sound, and in severe cases seizures or delirium."
+            },
+            {
+              "when": "Months",
+              "title": "Protracted symptoms in some people",
+              "text": "A minority have lingering anxiety, poor sleep, low mood, or tingling that can last weeks to more than 12 months."
+            }
+          ]
+        },
+        {
+          "warn": "Stopping lorazepam abruptly after regular use can cause seizures. The dose should be reduced gradually under the care of a prescriber."
+        },
+        {
+          "p": "A gradual taper, sometimes after switching to a longer-acting benzodiazepine such as diazepam, reduces symptoms and the risk of seizures.[[4]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get lorazepam legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, lorazepam is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[8]][[9]]",
+            "**Cost:** generic lorazepam is inexpensive."
+          ]
+        },
+        {
+          "warn": "Pills sold as Ativan outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[10]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order lorazepam online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill lorazepam prescriptions online and ship them. Buying lorazepam from a website that does not require a prescription is illegal, and the product is often fake.[[8]][[10]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether lorazepam is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells lorazepam with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[8]][[9]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is lorazepam legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule IV (targeted substance); prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Schedule IV of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[11]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is lorazepam stronger than alprazolam?",
+      "Roughly 1 mg of lorazepam equals about 0.5 mg of alprazolam. Lorazepam lasts somewhat longer."
+    ],
+    [
+      "Why is lorazepam used in hospitals?",
+      "It works quickly by injection, is a first-line treatment for prolonged seizures, and has few drug interactions."
+    ],
+    [
+      "How long does lorazepam stay in your system?",
+      "Its half-life is about 12 hours. Urine tests usually detect it for 3 to 6 days."
+    ],
+    [
+      "Is lorazepam safe for older adults?",
+      "It is preferred over some benzodiazepines because it does not build up, but all benzodiazepines raise the risk of falls, confusion, and fractures in older adults."
+    ]
+  ],
+  "sources": [
+    [
+      "Ativan (lorazepam) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=lorazepam"
+    ],
+    [
+      "FDA warns about serious risks and death when combining opioid pain or cough medicines with benzodiazepines",
+      "US Food and Drug Administration, 2016",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or"
+    ],
+    [
+      "FDA requiring Boxed Warning updated to improve safe use of benzodiazepine drug class",
+      "US Food and Drug Administration, 2020",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class"
+    ],
+    [
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering",
+      "American Society of Addiction Medicine, 2025",
+      "https://www.asam.org/quality-care/clinical-guidelines/benzodiazepine-tapering"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

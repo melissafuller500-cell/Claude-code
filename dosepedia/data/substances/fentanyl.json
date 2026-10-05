@@ -1,0 +1,437 @@
+{
+  "slug": "fentanyl",
+  "name": "Fentanyl",
+  "brands": [
+    "Duragesic",
+    "Actiq",
+    "Fentora",
+    "Sublimaze"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Synthetic opioid agonist",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Fentanyl facts: medical uses, why illicit fentanyl drives overdose deaths, overdose signs, naloxone, test strips, withdrawal, and US law.",
+  "quick": "Fentanyl is a synthetic opioid about 50 times stronger than heroin and 100 times stronger than morphine. Pharmaceutical fentanyl is used in anesthesia and for severe pain in people already tolerant to opioids. Illegally made fentanyl, pressed into fake pills or mixed into other drugs, is the main cause of overdose deaths in the United States.",
+  "facts": [
+    [
+      "Generic name",
+      "Fentanyl citrate"
+    ],
+    [
+      "Brand names",
+      "Duragesic (patch), Actiq, Fentora (for cancer pain), Sublimaze (injection)"
+    ],
+    [
+      "Drug class",
+      "Synthetic opioid agonist"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only; illicit analogues are Schedule I"
+    ],
+    [
+      "Approved uses",
+      "Anesthesia; severe chronic pain and breakthrough cancer pain in opioid-tolerant patients"
+    ],
+    [
+      "Potency",
+      "About 100 times morphine; 2 mg can be lethal for a person without tolerance"
+    ],
+    [
+      "Onset",
+      "Seconds when injected or smoked; 12 to 24 hours for a patch"
+    ],
+    [
+      "Half-life",
+      "3 to 7 hours (injection); about 20 to 27 hours (patch)"
+    ],
+    [
+      "Broken down by",
+      "Liver enzyme CYP3A4"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone; repeat doses may be needed"
+    ]
+  ],
+  "profile": {
+    "onset": "Seconds to minutes (illicit); 12 to 24 hours (patch)",
+    "duration": "30 to 90 minutes (injected); 72 hours (patch)",
+    "half_life": "3 to 7 hours; 20 to 27 hours via patch",
+    "naloxone": "Yes, may need repeat doses",
+    "dependence": "Very high",
+    "medical": "Anesthesia; severe pain in opioid-tolerant patients",
+    "groups": [
+      "opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is fentanyl used for?",
+      "blocks": [
+        {
+          "p": "Pharmaceutical fentanyl is used by injection during surgery and anesthesia, and as a skin patch (Duragesic) for severe, persistent pain in people who are already opioid-tolerant. Fast-acting forms that dissolve in the mouth are approved only for breakthrough cancer pain in opioid-tolerant patients.[[1]]"
+        },
+        {
+          "p": "Most fentanyl involved in overdoses is not pharmaceutical. It is made illegally, often from precursor chemicals shipped from overseas, and is sold as powder, mixed into heroin, cocaine, or methamphetamine, or pressed into counterfeit pills that look like oxycodone, Xanax, or Adderall.[[2]][[3]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is fentanyl usually prescribed?",
+      "blocks": [
+        {
+          "p": "Fentanyl products are dosed in micrograms, not milligrams. The patch and the mouth-dissolving forms are for opioid-tolerant patients only. Starting them in someone without tolerance can be fatal. The figures below come from the FDA labels and are not personal dosing advice.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "How it is used",
+              "Key label restrictions"
+            ],
+            "rows": [
+              [
+                "Transdermal patch (Duragesic)",
+                "12 to 100 mcg per hour; changed every 72 hours",
+                "Opioid-tolerant patients only; heat increases absorption"
+              ],
+              [
+                "Buccal and lozenge forms (Fentora, Actiq)",
+                "Titrated from the lowest dose for breakthrough cancer pain",
+                "Opioid-tolerant cancer patients only"
+              ],
+              [
+                "Injection",
+                "Given by clinicians in hospitals and surgery",
+                "Continuous monitoring of breathing"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Heat from fever, heating pads, hot tubs, or saunas increases how much fentanyl passes through the skin from a patch and can cause overdose. Used patches still contain enough fentanyl to kill a child or pet; fold them sticky sides together and flush or return them."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of fentanyl?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Fentanyl exposes users to risks of addiction, misuse, and abuse, which can lead to overdose and death.",
+              "Life-threatening slowed breathing can occur, especially when starting treatment or after a dose increase.",
+              "Accidental ingestion, especially by children, can cause a fatal overdose.",
+              "Use with benzodiazepines or other central nervous system depressants, including alcohol, can cause profound sedation, slowed breathing, coma, and death.",
+              "Prolonged use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated.",
+              "Patch and transmucosal forms are only for opioid-tolerant patients; use in others can cause fatal breathing problems.",
+              "Exposure of a patch to heat, and accidental exposure of children to a patch, can cause fatal overdose."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include drowsiness, nausea, constipation, confusion, sweating, and skin irritation from patches.[[1]]"
+        },
+        {
+          "p": "**Illicit fentanyl** is the most dangerous drug in the US supply. Doses vary widely from pill to pill and batch to batch, so a person cannot know how much they are taking. It is increasingly mixed with xylazine, nitazenes, and sedatives that naloxone does not fully reverse.[[2]]"
+        },
+        {
+          "warn": "Touching fentanyl powder or being near it does not cause overdose. Overdose happens when it is swallowed, injected, smoked, or snorted. First responders should not delay helping someone out of fear of skin contact."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with fentanyl?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines (alprazolam, diazepam, clonazepam)",
+                "Profound sedation, slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Gabapentin, pregabalin, sleep medicines, muscle relaxants",
+                "Additive sedation and breathing problems",
+                "Use caution; lower doses"
+              ],
+              [
+                "Ritonavir, ketoconazole, clarithromycin, fluconazole",
+                "Block CYP3A4 and raise fentanyl levels",
+                "Boxed warning; avoid or monitor closely"
+              ],
+              [
+                "Xylazine (in illicit supply)",
+                "Deeper sedation not reversed by naloxone; severe wounds",
+                "Give naloxone and call 911"
+              ],
+              [
+                "Stimulants (cocaine, methamphetamine)",
+                "Overdose when the stimulant wears off; heart strain",
+                "Very high risk"
+              ],
+              [
+                "Other opioids",
+                "Additive breathing suppression",
+                "Avoid unless directed by prescriber"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does fentanyl overdose look like?",
+      "blocks": [
+        {
+          "p": "Fentanyl overdose can happen within seconds to minutes. Signs include pinpoint pupils, sudden unresponsiveness, slow, shallow, or stopped breathing, choking or gurgling, a stiff chest that makes breathing hard, and blue or gray lips and nails.[[2]][[4]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before fentanyl does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        },
+        {
+          "p": "Fentanyl test strips can detect fentanyl in pills, powders, and injectables before use, and they are now legal in most states. They do not detect nitazenes or xylazine, which need separate strips.[[2]]"
+        },
+        {
+          "p": "Because illicit fentanyl is so potent, overdoses may need more than one dose of naloxone. Keep giving doses every 2 to 3 minutes until help arrives or the person breathes normally."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is fentanyl withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take fentanyl regularly for more than a few weeks become physically dependent, even when they take it exactly as prescribed. Dependence is not the same as addiction, but it means stopping suddenly causes withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "4 to 12 hours",
+              "title": "Early symptoms",
+              "text": "Anxiety, restlessness, yawning, sweating, runny nose, watery eyes, and muscle aches."
+            },
+            {
+              "when": "Days 1 to 3",
+              "title": "Peak withdrawal",
+              "text": "Diarrhea, stomach cramps, nausea and vomiting, goosebumps, dilated pupils, fast heartbeat, and strong cravings. Rarely dangerous in healthy adults, but dehydration can be serious."
+            },
+            {
+              "when": "Days 5 to 10, then weeks",
+              "title": "Lingering symptoms",
+              "text": "Poor sleep, low mood, low energy, and cravings can continue for weeks. Tolerance falls quickly, which raises the risk of overdose if use restarts."
+            }
+          ]
+        },
+        {
+          "warn": "After a break, the body loses tolerance within days. Returning to a previous dose of fentanyl can cause a fatal overdose."
+        },
+        {
+          "p": "The FDA warns against stopping opioids abruptly in people who are physically dependent. A prescriber can taper the dose gradually, often by 10% or less per month for long-term users, and medicines such as clonidine or lofexidine can ease symptoms. For opioid use disorder, buprenorphine and methadone cut the risk of death roughly in half.[[5]]"
+        },
+        {
+          "p": "Fentanyl is stored in fat tissue, so in people who used it heavily it can linger for days. Starting buprenorphine too early can trigger sudden, severe withdrawal; clinicians increasingly use low-dose or high-dose buprenorphine starts designed for fentanyl.[[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get fentanyl legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, fentanyl is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[7]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[8]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[9]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[10]][[11]]",
+            "**Patient access:** fentanyl patches are filled at retail pharmacies only for patients already taking opioids daily. Mouth-dissolving fentanyl is limited to opioid-tolerant cancer patients."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order fentanyl online?",
+      "blocks": [
+        {
+          "p": "Not legally, except as a prescribed fentanyl patch filled by a licensed pharmacy, including mail-order pharmacies. Any website, social media account, or messaging contact selling fentanyl powder or pills is illegal, and those products cause most overdose deaths in the US.[[3]]"
+        },
+        {
+          "warn": "Pills bought online or on social media as oxycodone, Percocet, Xanax, or Adderall frequently contain fentanyl. The DEA found that many of the fake pills it seized contained a potentially lethal dose.[[3]]"
+        },
+        {
+          "p": "The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm that an online pharmacy is licensed.[[10]][[11]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is fentanyl legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule I of the Controlled Drugs and Substances Act; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug; prescription only"
+              ],
+              [
+                "International",
+                "Schedule I of the 1961 Single Convention on Narcotic Drugs"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[12]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How much fentanyl is lethal?",
+      "The DEA estimates that 2 mg, about the amount that fits on the tip of a pencil, can be lethal for a person without opioid tolerance. Illicit pills contain unpredictable amounts."
+    ],
+    [
+      "Does naloxone work on fentanyl?",
+      "Yes. Naloxone reverses fentanyl overdose, but more than one dose may be needed. Give a dose, wait 2 to 3 minutes, and repeat if the person is still not breathing normally."
+    ],
+    [
+      "Can you overdose by touching fentanyl?",
+      "No. Brief skin contact or being near fentanyl does not cause overdose. Wash hands with soap and water after contact."
+    ],
+    [
+      "What are fentanyl test strips?",
+      "Small paper strips that detect fentanyl in a sample of a drug dissolved in water. They are legal in most states and available from many health departments and harm reduction programs."
+    ],
+    [
+      "How long does fentanyl stay in your system?",
+      "Injected fentanyl has a half-life of 3 to 7 hours, but in people who use it heavily it can be detected in urine for a week or more because it is stored in fat."
+    ],
+    [
+      "Why is fentanyl in fake pills?",
+      "It is cheap to make and very potent, so small amounts can be pressed into pills made to look like real medicines. There is no way to tell by appearance."
+    ]
+  ],
+  "sources": [
+    [
+      "Duragesic (fentanyl) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=fentanyl"
+    ],
+    [
+      "Fentanyl DrugFacts",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/fentanyl"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, 2022",
+      "Centers for Disease Control and Prevention, MMWR",
+      "https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

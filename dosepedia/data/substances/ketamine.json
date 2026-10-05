@@ -1,0 +1,366 @@
+{
+  "slug": "ketamine",
+  "name": "Ketamine",
+  "brands": [
+    "Ketalar"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Gabapentinoids, dissociatives, and others",
+    "slug": "gabapentinoids-dissociatives"
+  },
+  "subclass": "Dissociative anesthetic (NMDA receptor antagonist)",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Ketamine facts: approved use as an anesthetic, off-label depression clinics, compounded at-home ketamine warnings, recreational risks, bladder damage, overdose, and legal access.",
+  "quick": "Ketamine is a dissociative anesthetic used in operating rooms, emergency departments, and battlefield medicine. It is also given off-label in clinics for depression. It is a Schedule III controlled substance. Recreational use causes dissociation (a \"K-hole\"), and frequent use can severely damage the bladder.",
+  "facts": [
+    [
+      "Generic name",
+      "Ketamine hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Ketalar"
+    ],
+    [
+      "Street names",
+      "K, Special K, Kit Kat"
+    ],
+    [
+      "Drug class",
+      "Dissociative anesthetic (NMDA receptor antagonist)"
+    ],
+    [
+      "US legal status",
+      "Schedule III, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Anesthesia induction and maintenance; procedural sedation"
+    ],
+    [
+      "Forms",
+      "Injection (FDA-approved); compounded nasal and oral forms (not FDA-approved)"
+    ],
+    [
+      "Onset",
+      "30 seconds IV; 3 to 5 minutes IM"
+    ],
+    [
+      "Duration",
+      "Anesthesia 5 to 15 minutes; recovery 1 to 2 hours"
+    ],
+    [
+      "Half-life",
+      "About 2.5 hours"
+    ]
+  ],
+  "profile": {
+    "onset": "Seconds to minutes",
+    "duration": "45 minutes to 2 hours",
+    "half_life": "About 2.5 hours",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "Anesthesia; off-label depression",
+    "groups": [
+      "dissociative"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is ketamine used for?",
+      "blocks": [
+        {
+          "p": "Ketamine injection is FDA-approved as the only anesthetic for short procedures, to induce anesthesia before other agents, and alongside other anesthetics. It keeps breathing and blood pressure better than many anesthetics, which makes it valuable in emergencies and low-resource settings.[[1]]"
+        },
+        {
+          "p": "Ketamine infusions are used off-label at clinics for treatment-resistant depression. Its nasal relative, esketamine (Spravato), is FDA-approved for depression. In 2023 the FDA warned about compounded ketamine sold through telehealth for at-home use, citing reports of dangerous breathing problems, high blood pressure, and misuse.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is ketamine usually prescribed?",
+      "blocks": [
+        {
+          "p": "Ketamine is given by trained clinicians with monitoring. These label figures are for anesthesia and are not personal dosing advice.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Route",
+              "Typical induction dose",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "Intravenous",
+                "1 to 4.5 mg/kg",
+                "Anesthesia within about 30 seconds"
+              ],
+              [
+                "Intramuscular",
+                "6.5 to 13 mg/kg",
+                "Anesthesia within 3 to 4 minutes"
+              ],
+              [
+                "Depression infusions (off-label)",
+                "Typically 0.5 mg/kg over 40 minutes",
+                "Not FDA-approved; given in clinics with monitoring"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of ketamine?",
+      "blocks": [
+        {
+          "p": "**Emergence reactions:** vivid dreams, confusion, hallucinations, and agitation can occur as anesthesia wears off, more often in adults.[[1]]"
+        },
+        {
+          "p": "**Other effects** include raised blood pressure and heart rate, increased saliva, nausea and vomiting, and, rarely, slowed breathing with rapid IV injection.[[1]]"
+        },
+        {
+          "p": "**Frequent recreational use** causes ketamine bladder syndrome (ulcerative cystitis), with painful, frequent urination and blood in the urine that can become permanent; abdominal pain (\"K-cramps\"); memory problems; and dependence.[[3]]"
+        },
+        {
+          "warn": "Compounded ketamine sold for at-home use is not FDA-approved. The FDA has warned that taking it without monitoring can cause dangerous sedation, dissociation, breathing problems, and high blood pressure.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with ketamine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Alcohol",
+                "Vomiting while sedated; slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Opioids, benzodiazepines, GHB",
+                "Deep sedation; slowed breathing",
+                "Avoid outside monitored care"
+              ],
+              [
+                "Stimulants",
+                "Raised blood pressure and heart strain",
+                "Use caution"
+              ],
+              [
+                "Theophylline, aminophylline",
+                "Lower seizure threshold",
+                "Use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does ketamine overdose look like?",
+      "blocks": [
+        {
+          "p": "Too much ketamine causes deep dissociation (a \"K-hole\"), inability to move or speak, confusion, very high blood pressure, and, especially with alcohol or opioids, vomiting and choking or slowed breathing.[[1]][[3]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, breathing slowly, having a seizure, very hot, or violently agitated.",
+              "Place an unresponsive person on their side so they do not choke if they vomit.",
+              "Keep them away from roads, water, and heights. People on dissociatives often cannot feel pain or judge danger.",
+              "If opioids could be involved, give naloxone. It will not harm the person."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is ketamine addictive, and what happens when you stop?",
+      "blocks": [
+        {
+          "p": "Ketamine can cause psychological dependence and tolerance, and frequent users sometimes use daily. Physical withdrawal is milder than with opioids or sedatives.[[3]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Early symptoms",
+              "text": "Cravings, anxiety, low mood, fatigue, poor sleep."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Ongoing",
+              "text": "Depression and cravings; bladder symptoms may improve."
+            },
+            {
+              "when": "Months",
+              "title": "Recovery",
+              "text": "Memory and mood improve; bladder damage may persist."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get ketamine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, ketamine is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[4]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[5]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[6]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[7]][[8]]",
+            "**Depression clinics:** ketamine infusions for depression are an off-label use, generally given in clinics with monitoring and usually not covered by insurance. Esketamine (Spravato), the FDA-approved nasal form, is given in certified settings."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order ketamine online?",
+      "blocks": [
+        {
+          "p": "Some telehealth companies prescribe compounded ketamine tablets or troches for use at home. This is legal when a DEA-registered clinician prescribes it after a proper evaluation, but these products are not FDA-approved, and the FDA has warned about their risks without monitoring.[[2]]"
+        },
+        {
+          "p": "Ketamine sold without a prescription, online or otherwise, is illegal and may contain other drugs."
+        },
+        {
+          "p": "The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm that a pharmacy is licensed.[[7]][[8]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is ketamine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B since 2014"
+              ],
+              [
+                "Canada",
+                "Schedule I"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug"
+              ],
+              [
+                "International",
+                "Not under UN control; WHO essential medicine"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is ketamine approved for depression?",
+      "Ketamine itself is not. Esketamine nasal spray (Spravato), a closely related drug, is FDA-approved for treatment-resistant depression."
+    ],
+    [
+      "What is a K-hole?",
+      "A state of intense dissociation at higher doses, with detachment from the body and surroundings and difficulty moving or speaking."
+    ],
+    [
+      "Can ketamine damage the bladder?",
+      "Yes. Frequent use can cause severe, sometimes permanent, bladder inflammation and scarring."
+    ],
+    [
+      "Is at-home ketamine safe?",
+      "The FDA has warned that compounded at-home ketamine is not approved and can cause dangerous side effects without monitoring."
+    ]
+  ],
+  "sources": [
+    [
+      "Ketalar (ketamine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=ketamine"
+    ],
+    [
+      "FDA warns patients and health care providers about potential risks associated with compounded ketamine",
+      "US Food and Drug Administration, 2023",
+      "https://www.fda.gov/drugs/human-drug-compounding/fda-warns-patients-and-health-care-providers-about-potential-risks-associated-compounded-ketamine"
+    ],
+    [
+      "Psychedelic and Dissociative Drugs",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs-medicines"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

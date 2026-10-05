@@ -1,0 +1,377 @@
+{
+  "slug": "carisoprodol",
+  "name": "Carisoprodol",
+  "brands": [
+    "Soma"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
+  },
+  "subclass": "Centrally acting muscle relaxant",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Carisoprodol (Soma) facts: short-term use for muscle pain, dosing basics, risks, the dangerous opioid-benzo combination, overdose, withdrawal, and legal access.",
+  "quick": "Carisoprodol (Soma) is a muscle relaxant for short-term relief of acute, painful muscle conditions, used for no more than two or three weeks. The body converts it to meprobamate, an older sedative. It became a federal Schedule IV controlled substance in 2012 because of misuse.",
+  "facts": [
+    [
+      "Generic name",
+      "Carisoprodol"
+    ],
+    [
+      "Brand names",
+      "Soma"
+    ],
+    [
+      "Drug class",
+      "Centrally acting skeletal muscle relaxant"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only (since 2012)"
+    ],
+    [
+      "Approved uses",
+      "Acute, painful musculoskeletal conditions, short-term"
+    ],
+    [
+      "Forms",
+      "Tablets"
+    ],
+    [
+      "Onset",
+      "About 30 minutes"
+    ],
+    [
+      "Half-life",
+      "About 2 hours; meprobamate about 10 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP2C19 to meprobamate"
+    ],
+    [
+      "Maximum duration",
+      "2 to 3 weeks"
+    ]
+  ],
+  "profile": {
+    "onset": "About 30 minutes",
+    "duration": "4 to 6 hours",
+    "half_life": "About 2 hours (meprobamate about 10)",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "Acute muscle pain (short-term)",
+    "groups": [
+      "depressant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is carisoprodol used for?",
+      "blocks": [
+        {
+          "p": "Carisoprodol is approved for relief of discomfort from acute, painful musculoskeletal conditions in adults, for up to two or three weeks, alongside rest and physical therapy.[[1]]"
+        },
+        {
+          "p": "Its sedating effects come largely from its metabolite meprobamate, a barbiturate-like anti-anxiety drug from the 1950s. Most guidelines recommend other muscle relaxants or non-drug treatment first."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is carisoprodol usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use carisoprodol. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Group",
+              "Typical dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Adults 16 to 64",
+                "250 to 350 mg three times a day and at bedtime",
+                "Maximum 2 to 3 weeks"
+              ],
+              [
+                "Adults 65 and over",
+                "Not recommended",
+                "Not studied"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of carisoprodol?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include drowsiness, dizziness, and headache.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include dependence, withdrawal, seizures, and misuse. Combined with opioids and benzodiazepines, a combination sometimes called the \"holy trinity\", carisoprodol has been involved in many overdose deaths.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with carisoprodol?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids and benzodiazepines",
+                "Profound sedation and slowed breathing; overdose deaths",
+                "Avoid"
+              ],
+              [
+                "Alcohol",
+                "Additive sedation",
+                "Avoid"
+              ],
+              [
+                "Omeprazole, fluvoxamine (CYP2C19 inhibitors)",
+                "Raise carisoprodol levels",
+                "Use caution"
+              ],
+              [
+                "Rifampin, St. John's wort",
+                "Lower carisoprodol levels",
+                "May reduce effect"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does carisoprodol overdose look like?",
+      "blocks": [
+        {
+          "p": "Carisoprodol overdose causes stupor, coma, shock, seizures, slowed breathing, and abnormal muscle movements. It is often fatal when combined with opioids or alcohol.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse carisoprodol, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is carisoprodol withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "After high doses or prolonged use, stopping carisoprodol can cause withdrawal similar to meprobamate or barbiturate withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 2",
+              "title": "Symptoms begin",
+              "text": "Insomnia, anxiety, tremor, vomiting, stomach cramps."
+            },
+            {
+              "when": "Days 2 to 7",
+              "title": "Peak",
+              "text": "Muscle twitching, hallucinations, and, rarely, seizures."
+            },
+            {
+              "when": "Weeks",
+              "title": "Recovery",
+              "text": "Gradual return to normal."
+            }
+          ]
+        },
+        {
+          "p": "People who have used carisoprodol daily for weeks should taper with a prescriber."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get carisoprodol legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, carisoprodol is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** generic carisoprodol is inexpensive."
+          ]
+        },
+        {
+          "warn": "Pills sold as Soma outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[7]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order carisoprodol online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill carisoprodol prescriptions online and ship them. Buying carisoprodol from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether carisoprodol is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells carisoprodol with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is carisoprodol legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "European Union",
+                "Marketing authorizations suspended in 2008 because of misuse"
+              ],
+              [
+                "Canada",
+                "Prescription medicine; not widely marketed"
+              ],
+              [
+                "International",
+                "Not under UN control; controlled nationally"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is Soma a narcotic?",
+      "No. It is a muscle relaxant, but it is a Schedule IV controlled substance because its metabolite meprobamate is sedating and habit-forming."
+    ],
+    [
+      "How long can you take carisoprodol?",
+      "Only two to three weeks. Muscle problems lasting longer need other treatment."
+    ],
+    [
+      "Why is carisoprodol dangerous with opioids?",
+      "Both depress the central nervous system. With an opioid and a benzodiazepine, the combination has caused many fatal overdoses."
+    ],
+    [
+      "Is carisoprodol banned anywhere?",
+      "Yes. The European Union suspended its marketing in 2008 because of misuse and safety concerns."
+    ]
+  ],
+  "sources": [
+    [
+      "Soma (carisoprodol) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=carisoprodol"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

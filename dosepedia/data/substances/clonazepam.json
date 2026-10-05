@@ -1,0 +1,415 @@
+{
+  "slug": "clonazepam",
+  "name": "Clonazepam",
+  "brands": [
+    "Klonopin"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
+  },
+  "subclass": "Long-acting benzodiazepine",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Clonazepam (Klonopin) facts: uses for panic disorder and seizures, dosing basics, risks, interactions, overdose, withdrawal, and legal access.",
+  "quick": "Clonazepam (Klonopin) is a long-acting benzodiazepine used for panic disorder and certain seizure disorders. It is a Schedule IV controlled substance. It works well for many people but causes dependence, and it must be tapered rather than stopped suddenly.",
+  "facts": [
+    [
+      "Generic name",
+      "Clonazepam"
+    ],
+    [
+      "Brand names",
+      "Klonopin"
+    ],
+    [
+      "Drug class",
+      "Long-acting benzodiazepine"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Panic disorder; seizure disorders (Lennox-Gastaut, akinetic, myoclonic, absence)"
+    ],
+    [
+      "Forms",
+      "Tablets, orally disintegrating tablets"
+    ],
+    [
+      "Onset",
+      "20 to 60 minutes"
+    ],
+    [
+      "Half-life",
+      "30 to 40 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP3A4"
+    ],
+    [
+      "FDA boxed warnings",
+      "Use with opioids; misuse and addiction; dependence and withdrawal"
+    ]
+  ],
+  "profile": {
+    "onset": "20 to 60 minutes",
+    "duration": "6 to 12 hours",
+    "half_life": "30 to 40 hours",
+    "naloxone": "No",
+    "dependence": "High",
+    "medical": "Panic disorder; seizures",
+    "groups": [
+      "depressant",
+      "benzodiazepine"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is clonazepam used for?",
+      "blocks": [
+        {
+          "p": "Clonazepam is approved for panic disorder with or without agoraphobia, and alone or as an add-on for several seizure types, including Lennox-Gastaut syndrome and absence seizures.[[1]]"
+        },
+        {
+          "p": "Off-label, it is sometimes used for REM sleep behavior disorder, restless legs, and akathisia."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is clonazepam usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use clonazepam. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Condition",
+              "Typical adult dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Panic disorder",
+                "0.25 mg twice a day, raised to 1 mg a day after 3 days",
+                "Maximum 4 mg a day"
+              ],
+              [
+                "Seizure disorders",
+                "No more than 1.5 mg a day in three doses to start",
+                "Raised 0.5 to 1 mg every 3 days; maximum 20 mg a day"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of clonazepam?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.[[2]]",
+              "Benzodiazepines can be misused and can lead to addiction, which raises the risk of overdose and death.[[3]]",
+              "Regular use can cause physical dependence. Stopping suddenly or cutting the dose quickly can cause withdrawal reactions, including seizures, that can be life-threatening.[[3]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include drowsiness, dizziness, poor coordination, fatigue, depression, and memory problems.[[1]]"
+        },
+        {
+          "p": "**Suicidal thoughts:** like other antiseizure medicines, clonazepam carries a warning about a small increase in suicidal thoughts and behavior.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with clonazepam?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids (oxycodone, fentanyl, codeine)",
+                "Slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Other sedatives, sleep medicines, gabapentinoids",
+                "Additive drowsiness and impaired coordination",
+                "Use caution"
+              ],
+              [
+                "Strong CYP3A4 inhibitors (ketoconazole, clarithromycin)",
+                "Raise clonazepam levels",
+                "Use caution"
+              ],
+              [
+                "Carbamazepine, phenytoin",
+                "Lower clonazepam levels",
+                "Monitor seizure control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does clonazepam overdose look like?",
+      "blocks": [
+        {
+          "p": "Clonazepam overdose causes deep drowsiness, confusion, poor coordination, slowed reflexes, and coma. With opioids or alcohol, breathing can stop.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse clonazepam, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is clonazepam withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take clonazepam regularly, even as prescribed, can become physically dependent within weeks. Its long half-life means withdrawal often begins a few days after the last dose.[[3]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 2 to 5",
+              "title": "Symptoms begin",
+              "text": "Rebound anxiety, insomnia, restlessness, sweating, and tremor."
+            },
+            {
+              "when": "Weeks 1 to 4",
+              "title": "Acute withdrawal",
+              "text": "Panic, irritability, muscle pain, nausea, sensitivity to light and sound, and in severe cases seizures or delirium."
+            },
+            {
+              "when": "Months",
+              "title": "Protracted symptoms in some people",
+              "text": "A minority have lingering anxiety, poor sleep, low mood, or tingling that can last weeks to more than 12 months."
+            }
+          ]
+        },
+        {
+          "warn": "Stopping clonazepam abruptly after regular use can cause seizures. The dose should be reduced gradually under the care of a prescriber."
+        },
+        {
+          "p": "The label advises lowering the dose by 0.125 mg twice a day every three days for panic disorder, but many people need a much slower taper. In people with epilepsy, stopping suddenly can trigger continuous seizures (status epilepticus).[[4]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get clonazepam legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, clonazepam is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[8]][[9]]",
+            "**Cost:** generic clonazepam is inexpensive and widely covered."
+          ]
+        },
+        {
+          "warn": "Pills sold as Klonopin outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[10]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order clonazepam online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill clonazepam prescriptions online and ship them. Buying clonazepam from a website that does not require a prescription is illegal, and the product is often fake.[[8]][[10]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether clonazepam is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells clonazepam with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[8]][[9]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is clonazepam legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule IV (targeted substance); prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Schedule IV of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[11]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is clonazepam the same as Klonopin?",
+      "Yes. Klonopin is the brand name for clonazepam."
+    ],
+    [
+      "How long does clonazepam stay in your system?",
+      "Its half-life is 30 to 40 hours, so it takes about a week to clear. Urine tests can detect it for 5 to 10 days or longer."
+    ],
+    [
+      "Is clonazepam better than Xanax for panic disorder?",
+      "Clonazepam lasts longer, which avoids between-dose rebound anxiety. Both carry the same risks of dependence. Antidepressants and therapy are first-line treatments."
+    ],
+    [
+      "Can clonazepam be stopped suddenly?",
+      "No. Stopping suddenly can cause severe withdrawal and, in people with epilepsy, prolonged seizures."
+    ]
+  ],
+  "sources": [
+    [
+      "Klonopin (clonazepam) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=clonazepam"
+    ],
+    [
+      "FDA warns about serious risks and death when combining opioid pain or cough medicines with benzodiazepines",
+      "US Food and Drug Administration, 2016",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or"
+    ],
+    [
+      "FDA requiring Boxed Warning updated to improve safe use of benzodiazepine drug class",
+      "US Food and Drug Administration, 2020",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class"
+    ],
+    [
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering",
+      "American Society of Addiction Medicine, 2025",
+      "https://www.asam.org/quality-care/clinical-guidelines/benzodiazepine-tapering"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

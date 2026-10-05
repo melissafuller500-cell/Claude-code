@@ -1,0 +1,351 @@
+{
+  "slug": "cocaine",
+  "name": "Cocaine",
+  "brands": [
+    "Goprelto",
+    "Numbrino"
+  ],
+  "aka": [
+    "Coke",
+    "Blow",
+    "Snow",
+    "Crack",
+    "Rock"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Stimulant and local anesthetic",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Cocaine facts: medical use as a nasal anesthetic, effects, heart risks, fentanyl contamination, overdose, crack versus powder, treatment, and US penalties.",
+  "quick": "Cocaine is a stimulant made from the leaves of the coca plant. It has a narrow medical use as a nasal anesthetic, which is why it is Schedule II rather than Schedule I. Illicit cocaine, sold as powder or as smokable crack, is a major cause of heart attacks and overdose deaths, increasingly because it is contaminated with fentanyl.",
+  "facts": [
+    [
+      "Chemical name",
+      "Cocaine hydrochloride (powder); cocaine base (crack)"
+    ],
+    [
+      "Medical brands",
+      "Goprelto, Numbrino (4% nasal solution)"
+    ],
+    [
+      "Street names",
+      "Coke, blow, snow; crack, rock"
+    ],
+    [
+      "Drug class",
+      "Stimulant; local anesthetic"
+    ],
+    [
+      "US legal status",
+      "Schedule II"
+    ],
+    [
+      "How it is used",
+      "Snorted, smoked (crack), or injected"
+    ],
+    [
+      "Onset",
+      "Seconds (smoked or injected) to minutes (snorted)"
+    ],
+    [
+      "Duration",
+      "5 to 90 minutes"
+    ],
+    [
+      "Half-life",
+      "About 1 hour"
+    ],
+    [
+      "Reversal agent",
+      "None"
+    ]
+  ],
+  "profile": {
+    "onset": "Seconds to minutes",
+    "duration": "5 to 90 minutes",
+    "half_life": "About 1 hour",
+    "naloxone": "No (but give it if opioids may be involved)",
+    "dependence": "Very high",
+    "medical": "Nasal anesthesia in procedures",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is cocaine?",
+      "blocks": [
+        {
+          "p": "Cocaine blocks the reuptake of dopamine, norepinephrine, and serotonin, which produces euphoria and stimulation. It also blocks nerve signals, which made it the first local anesthetic. FDA-approved 4% nasal solutions are still used to numb and shrink the lining of the nose before procedures.[[1]][[2]]"
+        },
+        {
+          "p": "Powder cocaine is cocaine hydrochloride, usually snorted. Crack is cocaine processed into a base that can be smoked, reaching the brain faster and more intensely."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of cocaine, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Cocaine causes euphoria, energy, talkativeness, alertness, and reduced need for sleep and food, along with a fast heart rate, high blood pressure, dilated pupils, and raised temperature.[[2]]"
+        },
+        {
+          "p": "The high is short: 15 to 30 minutes when snorted and 5 to 10 minutes when smoked. This short duration drives repeated use in binges."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of cocaine?",
+      "blocks": [
+        {
+          "p": "**Heart:** cocaine is a leading cause of drug-related heart attacks, even in young people without heart disease. It also causes dangerous heart rhythms, aortic tears, and strokes.[[2]]"
+        },
+        {
+          "p": "**Other harms:** nosebleeds and damage to the nasal septum from snorting, lung damage from smoking crack, seizures, paranoia, and psychosis."
+        },
+        {
+          "p": "**Levamisole:** a deworming drug often used to cut cocaine can destroy white blood cells and cause skin tissue to die."
+        },
+        {
+          "warn": "Cocaine is frequently contaminated with fentanyl. People who do not use opioids have no tolerance, and many cocaine-related deaths now involve fentanyl. Test with fentanyl test strips and carry naloxone."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with cocaine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Alcohol",
+                "Forms cocaethylene, more toxic to the heart than either drug",
+                "High risk"
+              ],
+              [
+                "Heroin or fentanyl (\"speedball\")",
+                "Overdose when cocaine wears off; heart strain",
+                "Very high risk"
+              ],
+              [
+                "Other stimulants",
+                "Extreme heart strain, overheating",
+                "Very high risk"
+              ],
+              [
+                "MAOIs",
+                "Dangerous rise in blood pressure",
+                "Potentially fatal"
+              ],
+              [
+                "Beta-blockers (in emergencies)",
+                "May worsen blood pressure in cocaine toxicity",
+                "Clinicians use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does cocaine overdose look like?",
+      "blocks": [
+        {
+          "p": "Cocaine overdose can cause chest pain, a racing or irregular heartbeat, very high temperature, severe agitation, seizures, stroke, and sudden collapse. Heart attack can happen even with first-time use.[[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is cocaine addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "Cocaine is highly addictive. Withdrawal is mainly psychological but can be severe and is a common trigger for relapse.[[2]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Hours to days",
+              "title": "Crash",
+              "text": "Exhaustion, depression, increased appetite, cravings."
+            },
+            {
+              "when": "Weeks 1 to 10",
+              "title": "Withdrawal",
+              "text": "Low mood, poor concentration, irritability, cravings."
+            },
+            {
+              "when": "Months",
+              "title": "Extinction",
+              "text": "Cravings triggered by cues can persist for months."
+            }
+          ]
+        },
+        {
+          "p": "There is no FDA-approved medicine for cocaine use disorder. Contingency management and cognitive behavioral therapy have the strongest evidence.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is cocaine legal in the US?",
+      "blocks": [
+        {
+          "p": "Cocaine is Schedule II because of its limited medical use as a topical anesthetic, used by clinicians in hospitals and clinics. It is never dispensed to patients to take home.[[3]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[4]]",
+            "**Trafficking:** trafficking 500 grams or more of cocaine powder, or 28 grams or more of crack, carries a mandatory minimum of 5 years in federal prison. The Fair Sentencing Act of 2010 reduced, but did not eliminate, the gap between crack and powder penalties.[[5]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with cocaine use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[6]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[7]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is cocaine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A"
+              ],
+              [
+                "Canada",
+                "Schedule I"
+              ],
+              [
+                "Bolivia and Peru",
+                "Coca leaf legal for traditional chewing and tea; cocaine prohibited"
+              ],
+              [
+                "International",
+                "Cocaine and coca leaf: Schedule I of the 1961 Single Convention"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is cocaine used in medicine?",
+      "Yes, as a 4% nasal solution to numb and shrink the nasal lining before procedures. It is only used by clinicians."
+    ],
+    [
+      "How long does cocaine stay in your system?",
+      "Cocaine itself clears in hours, but its metabolite benzoylecgonine is detectable in urine for 2 to 4 days, and longer after heavy use."
+    ],
+    [
+      "Why is cocaine with alcohol dangerous?",
+      "The liver combines them into cocaethylene, which lasts longer and is more toxic to the heart."
+    ],
+    [
+      "Can naloxone help in a cocaine overdose?",
+      "Naloxone does not reverse cocaine, but give it if the person is unresponsive or breathing poorly, because fentanyl is often present."
+    ],
+    [
+      "What is the difference between crack and cocaine?",
+      "Crack is cocaine converted into a smokable base. It reaches the brain faster, producing a shorter, more intense high and a higher risk of addiction."
+    ]
+  ],
+  "sources": [
+    [
+      "Goprelto (cocaine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=cocaine"
+    ],
+    [
+      "Cocaine DrugFacts",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/cocaine"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

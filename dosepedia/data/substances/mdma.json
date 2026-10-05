@@ -1,0 +1,354 @@
+{
+  "slug": "mdma",
+  "name": "MDMA",
+  "brands": [],
+  "aka": [
+    "Ecstasy",
+    "Molly",
+    "E",
+    "X",
+    "Midomafetamine"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Entactogen (amphetamine derivative)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "MDMA (ecstasy, molly) facts: effects, overheating and water risks, adulterants, serotonin syndrome, PTSD research and the FDA decision, and US law.",
+  "quick": "MDMA, sold as ecstasy or molly, is a stimulant and empathy-enhancing drug that releases large amounts of serotonin. It is Schedule I in the US. Main dangers are overheating, dangerously low sodium from drinking too much water, serotonin syndrome, and pills or powders that contain other drugs. The FDA declined to approve MDMA-assisted therapy for PTSD in 2024.",
+  "facts": [
+    [
+      "Chemical name",
+      "3,4-methylenedioxymethamphetamine (midomafetamine)"
+    ],
+    [
+      "Street names",
+      "Ecstasy, molly, E, X"
+    ],
+    [
+      "Drug class",
+      "Entactogen; amphetamine derivative"
+    ],
+    [
+      "US legal status",
+      "Schedule I"
+    ],
+    [
+      "Medical status",
+      "Investigational; FDA declined approval for PTSD in 2024"
+    ],
+    [
+      "How it is used",
+      "Pills, capsules, powder or crystals swallowed or snorted"
+    ],
+    [
+      "Onset",
+      "30 to 60 minutes"
+    ],
+    [
+      "Duration",
+      "3 to 6 hours"
+    ],
+    [
+      "Half-life",
+      "About 8 hours"
+    ],
+    [
+      "Reversal agent",
+      "None"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "3 to 6 hours",
+    "half_life": "About 8 hours",
+    "naloxone": "No",
+    "dependence": "Low to moderate",
+    "medical": "Investigational (PTSD)",
+    "groups": [
+      "stimulant",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is mdma?",
+      "blocks": [
+        {
+          "p": "MDMA releases serotonin, dopamine, and norepinephrine and raises oxytocin, which produces euphoria, energy, and feelings of closeness. It was patented in 1912, used in therapy in the 1970s and 1980s, and placed in Schedule I in 1985.[[1]]"
+        },
+        {
+          "p": "In August 2024 the FDA declined to approve Lykos Therapeutics' MDMA-assisted therapy for PTSD and asked for another phase 3 trial. Australia has allowed authorised psychiatrists to prescribe MDMA for PTSD since 2023.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of mdma, and how long do they last?",
+      "blocks": [
+        {
+          "p": "MDMA causes euphoria, emotional warmth, energy, heightened senses, and talkativeness, along with jaw clenching, teeth grinding, sweating, raised heart rate and blood pressure, and higher body temperature.[[1]]"
+        },
+        {
+          "p": "Effects start in 30 to 60 minutes and last 3 to 6 hours. Many people feel low, tired, and irritable for several days afterward."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of mdma?",
+      "blocks": [
+        {
+          "p": "**Overheating:** MDMA impairs temperature control. In hot, crowded settings with dancing, body temperature can rise high enough to cause muscle breakdown, kidney failure, and death.[[1]]"
+        },
+        {
+          "p": "**Low sodium (hyponatremia):** MDMA causes the body to hold water. Drinking large amounts of water can dilute blood sodium and cause brain swelling, seizures, and death. Sipping about 500 mL (a pint) an hour while active is a common harm reduction guide."
+        },
+        {
+          "p": "**Adulterants:** pills and powders sold as ecstasy or molly often contain synthetic cathinones (\"bath salts\"), methamphetamine, or ketamine, and sometimes fentanyl.[[1]]"
+        },
+        {
+          "p": "**Mood:** repeated heavy use is linked to depression, anxiety, and memory problems."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with mdma?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "MAOIs (including some antidepressants and ayahuasca)",
+                "Severe serotonin syndrome; potentially fatal",
+                "Avoid"
+              ],
+              [
+                "SSRIs, SNRIs, tramadol, dextromethorphan",
+                "Serotonin syndrome; SSRIs also blunt effects",
+                "High risk"
+              ],
+              [
+                "Ritonavir and some HIV medicines",
+                "Sharply raise MDMA levels; deaths reported",
+                "Avoid"
+              ],
+              [
+                "Stimulants, alcohol",
+                "Overheating, dehydration, heart strain",
+                "High risk"
+              ],
+              [
+                "Lithium",
+                "Seizures reported",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does an MDMA overdose look like?",
+      "blocks": [
+        {
+          "p": "Warning signs include feeling very hot or not sweating despite heat, confusion, muscle rigidity or twitching, a racing heartbeat, severe headache, vomiting, fainting, and seizures. Severe headache, confusion, and vomiting after heavy water intake can signal low sodium.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is mdma addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "MDMA is less addictive than other stimulants, but some people use it compulsively. After use, a \"comedown\" of low mood, fatigue, and poor concentration commonly lasts several days.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 2",
+              "title": "Comedown",
+              "text": "Fatigue, low mood, irritability, poor appetite."
+            },
+            {
+              "when": "Days 3 to 5",
+              "title": "Midweek low",
+              "text": "Low mood and anxiety may peak."
+            },
+            {
+              "when": "Weeks",
+              "title": "Recovery",
+              "text": "Mood normalizes; frequent use slows recovery."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is mdma legal in the US?",
+      "blocks": [
+        {
+          "p": "Mdma is a Schedule I controlled substance under federal law, meaning it is considered to have a high potential for abuse and no currently accepted medical use. It cannot be prescribed, and possessing, making, or selling it is a federal crime.[[3]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[4]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[5]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Research:** MDMA-assisted therapy for PTSD remains investigational in the US after the FDA's 2024 decision. An April 2026 executive order directed the FDA to speed reviews of breakthrough-designated psychedelic therapies.[[6]]"
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with mdma use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[7]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[8]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is mdma legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Australia",
+                "Schedule 8 for prescribing by authorised psychiatrists for PTSD since 2023; otherwise prohibited"
+              ],
+              [
+                "United Kingdom",
+                "Class A"
+              ],
+              [
+                "Canada",
+                "Schedule I"
+              ],
+              [
+                "International",
+                "Schedule I of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is molly the same as ecstasy?",
+      "Both names refer to MDMA. \"Molly\" was marketed as pure powder, but tests show both often contain other drugs."
+    ],
+    [
+      "How much water should you drink on MDMA?",
+      "Harm reduction groups advise sipping about 500 mL (a pint) an hour if active, less if resting. Too much water can be fatal."
+    ],
+    [
+      "Is MDMA approved for PTSD?",
+      "Not in the US. The FDA declined approval in 2024. Australia allows authorised psychiatrists to prescribe it."
+    ],
+    [
+      "Can you take MDMA with antidepressants?",
+      "MAOIs combined with MDMA can be fatal. SSRIs and SNRIs blunt its effects and can contribute to serotonin syndrome."
+    ],
+    [
+      "How long does MDMA stay in your system?",
+      "Urine tests usually detect it for 2 to 4 days."
+    ]
+  ],
+  "sources": [
+    [
+      "MDMA (Ecstasy/Molly)",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/mdma-ecstasymolly"
+    ],
+    [
+      "Change to classification of psilocybin and MDMA to enable prescribing by authorised psychiatrists",
+      "Therapeutic Goods Administration, Australia",
+      "https://www.tga.gov.au/news/media-releases/change-classification-psilocybin-and-mdma-enable-prescribing-authorised-psychiatrists"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "Executive order aims to accelerate approval of therapeutic psychedelics",
+      "Morgan Lewis, April 2026",
+      "https://www.morganlewis.com/pubs/2026/04/you-are-not-hallucinating-executive-order-aims-to-accelerate-approval-of-therapeutic-psychedelics"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

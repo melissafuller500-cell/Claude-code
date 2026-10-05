@@ -1,0 +1,21 @@
+{
+  "slug": "benzodiazepines-sedatives",
+  "name": "Benzodiazepines and sedatives",
+  "description": "Benzodiazepines, Z-drugs, barbiturates, and other sedatives: how they work, dependence and withdrawal, overdose with opioids, and safe tapering.",
+  "intro": "Sedatives slow the brain. Benzodiazepines, Z-drug sleep medicines, barbiturates, and muscle relaxants such as carisoprodol mostly enhance GABA, the brain's main calming chemical. Suvorexant works differently, by blocking the wake-promoting chemical orexin.",
+  "blocks": [
+    {
+      "p": "Most medicines in this cluster are Schedule IV. They work well short-term but can cause physical dependence within weeks, and stopping suddenly after regular use can cause seizures. Tapers should be gradual and supervised."
+    },
+    {
+      "boxed": {
+        "title": "Class-wide FDA boxed warning for benzodiazepines (2020)",
+        "items": [
+          "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.",
+          "Benzodiazepines can be misused and can lead to addiction.",
+          "Regular use can cause physical dependence, and stopping suddenly can cause life-threatening withdrawal, including seizures."
+        ]
+      }
+    }
+  ]
+}

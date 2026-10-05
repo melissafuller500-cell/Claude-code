@@ -1,0 +1,379 @@
+{
+  "slug": "cannabis",
+  "name": "Cannabis",
+  "brands": [],
+  "aka": [
+    "Marijuana",
+    "Weed",
+    "Pot",
+    "Grass",
+    "Bud"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Cannabinoid (plant)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Cannabis (marijuana) facts: effects, risks, cannabis use disorder, hyperemesis, the 2026 Schedule III change for medical marijuana, state laws, and the hemp THC ban.",
+  "quick": "Cannabis is a plant whose main psychoactive compound is THC. Adult-use (recreational) cannabis remains Schedule I under federal law, but in April 2026 marijuana in state-licensed medical programs and FDA-approved cannabis products moved to Schedule III. Most states allow medical use and about half allow adult use. Cannabis can cause dependence, psychosis in some users, and a severe vomiting syndrome.",
+  "facts": [
+    [
+      "Main compounds",
+      "THC (psychoactive), CBD (not intoxicating)"
+    ],
+    [
+      "Common names",
+      "Marijuana, weed, pot, bud; concentrates: wax, shatter, dabs"
+    ],
+    [
+      "Drug class",
+      "Cannabinoid"
+    ],
+    [
+      "US legal status",
+      "Adult-use: Schedule I; state-licensed medical and FDA-approved products: Schedule III (since April 2026)"
+    ],
+    [
+      "FDA-approved products",
+      "Epidiolex (CBD, not controlled); dronabinol and nabilone (synthetic THC and analog)"
+    ],
+    [
+      "How it is used",
+      "Smoked, vaped, eaten, or drunk"
+    ],
+    [
+      "Onset",
+      "Minutes (inhaled); 30 minutes to 2 hours (edibles)"
+    ],
+    [
+      "Duration",
+      "2 to 4 hours (inhaled); 6 to 8 hours or more (edibles)"
+    ],
+    [
+      "Half-life",
+      "THC: about 1 to 3 days in occasional users; longer in daily users"
+    ],
+    [
+      "Overdose risk",
+      "Not fatal alone in adults; dangerous for children"
+    ]
+  ],
+  "profile": {
+    "onset": "Minutes (inhaled); 30 minutes to 2 hours (edibles)",
+    "duration": "2 to 8 hours",
+    "half_life": "1 to 3 days; longer in daily users",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "State medical programs; FDA-approved cannabinoids",
+    "groups": [
+      "cannabinoid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is cannabis?",
+      "blocks": [
+        {
+          "p": "Cannabis refers to the dried flowers, leaves, and extracts of the Cannabis sativa plant. THC activates cannabinoid receptors in the brain, producing a high. CBD does not cause a high and has different effects.[[1]]"
+        },
+        {
+          "p": "THC levels have risen sharply: average potency in seized cannabis rose from about 4% in the 1990s to over 15% today, and concentrates often exceed 60%.[[1]]"
+        },
+        {
+          "p": "Medical cannabis is used under state programs for conditions including chronic pain, chemotherapy nausea, multiple sclerosis spasticity, and some seizure disorders. The FDA has approved the CBD medicine Epidiolex for rare epilepsies, and synthetic THC (dronabinol) for nausea and appetite loss."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of cannabis, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Cannabis can cause relaxation, euphoria, altered perception of time, increased appetite, red eyes, dry mouth, and a faster heartbeat. It also impairs short-term memory, coordination, and reaction time.[[1]]"
+        },
+        {
+          "p": "Inhaled cannabis acts within minutes and lasts 2 to 4 hours. Edibles take 30 minutes to 2 hours to start and can last 6 to 8 hours or more, which leads many people to take more before the first dose has fully worked.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of cannabis?",
+      "blocks": [
+        {
+          "p": "**Cannabis use disorder:** about 3 in 10 people who use cannabis have some degree of cannabis use disorder. The risk is higher with daily use, high-potency products, and use that starts before age 18.[[2]]"
+        },
+        {
+          "p": "**Mental health:** high-potency cannabis is linked to a higher risk of psychosis and schizophrenia, especially with heavy use in teens and young adults and in people with a family history.[[1]]"
+        },
+        {
+          "p": "**Cannabinoid hyperemesis syndrome:** some long-term heavy users develop repeated bouts of severe vomiting and abdominal pain, often relieved by hot showers. It only resolves by stopping cannabis.[[2]]"
+        },
+        {
+          "p": "**Driving, pregnancy, and youth:** cannabis impairs driving, has been linked to lower birth weight when used in pregnancy, and can affect attention and memory in the developing teenage brain.[[2]]"
+        },
+        {
+          "warn": "Edibles that look like candy or snacks have caused many emergency visits in young children. Store them locked away and call Poison Help at 1-800-222-1222 if a child eats one."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with cannabis?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Alcohol",
+                "Stronger impairment; more vomiting and dizziness",
+                "Higher risk of accidents"
+              ],
+              [
+                "Sedatives, opioids, sleep medicines",
+                "Additive drowsiness",
+                "Use caution"
+              ],
+              [
+                "Psychedelics",
+                "More intense or frightening experiences",
+                "Use caution"
+              ],
+              [
+                "Warfarin",
+                "THC and CBD can raise warfarin levels",
+                "Monitor INR"
+              ],
+              [
+                "Clobazam, valproate (with CBD)",
+                "CBD raises levels; liver effects",
+                "Medical supervision"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on cannabis?",
+      "blocks": [
+        {
+          "p": "Fatal overdose from cannabis alone is extremely rare in adults, but taking too much can cause severe anxiety and panic, paranoia, vomiting, a racing heart, confusion, and, rarely, psychosis. Children who eat edibles can become very drowsy, have trouble breathing, or have seizures and need emergency care.[[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone has taken too much",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, unresponsiveness, or if a child may have eaten a cannabis product.",
+              "For an adult who is awake but anxious or sick, move them to a calm place and stay with them. Symptoms usually ease over several hours.",
+              "Call Poison Help at 1-800-222-1222 for advice, including for any child or pet exposure.",
+              "Do not drive. Edibles can keep building for hours after they are eaten."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is cannabis addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "Regular use can cause dependence. People who use daily often feel withdrawal when they stop.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Symptoms begin",
+              "text": "Irritability, anxiety, trouble sleeping, reduced appetite."
+            },
+            {
+              "when": "Days 2 to 6",
+              "title": "Peak",
+              "text": "Vivid dreams, restlessness, low mood, cravings, sweating."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Resolves",
+              "text": "Most symptoms fade; sleep can take longer to normalize."
+            }
+          ]
+        },
+        {
+          "p": "Cognitive behavioral therapy, motivational enhancement, and contingency management help with cannabis use disorder. No medicine is FDA-approved for it."
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is cannabis legal in the US?",
+      "blocks": [
+        {
+          "p": "**Federal law (2026):** on April 22, 2026, the Justice Department moved FDA-approved products containing marijuana, and marijuana produced and sold under state-licensed medical marijuana programs, from Schedule I to Schedule III. Adult-use (recreational) marijuana remains Schedule I. A separate DEA hearing on rescheduling all marijuana ended in July 2026, and a decision was pending as of October 2026.[[3]]"
+        },
+        {
+          "p": "**State law:** most states have medical cannabis programs, and about half allow adults 21 and over to buy cannabis from licensed stores. Rules on possession limits, home growing, and public use vary widely. Crossing state lines with cannabis remains a federal offense."
+        },
+        {
+          "p": "**Hemp and THC products:** the 2018 Farm Bill legalized hemp with up to 0.3% delta-9 THC, which allowed delta-8 THC and other intoxicating hemp products. A 2025 federal law redefines hemp using total THC and caps finished products at 0.4 mg of total THC per container, starting November 12, 2026, which will make most intoxicating hemp products federally illegal.[[4]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[5]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[6]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Employment and firearms:** federal workplaces and many employers still test for THC, and federal law bars people who use Schedule I substances, including adult-use cannabis, from owning firearms."
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with cannabis use?",
+      "blocks": [
+        {
+          "p": "Treatment for cannabis use disorder is usually outpatient counseling. Many people cut down successfully with support."
+        },
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[7]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[8]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is cannabis legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Canada",
+                "Legal for adults since 2018 under the Cannabis Act"
+              ],
+              [
+                "Uruguay",
+                "Legal for adults since 2013"
+              ],
+              [
+                "Germany",
+                "Legal for adults to possess and grow limited amounts since 2024"
+              ],
+              [
+                "United Kingdom",
+                "Class B; medical cannabis by specialist prescription since 2018"
+              ],
+              [
+                "International",
+                "Schedule I of the 1961 Single Convention (removed from Schedule IV in 2020)"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is marijuana Schedule III now?",
+      "Partly. Since April 2026, marijuana in state-licensed medical programs and FDA-approved products are Schedule III. Adult-use marijuana is still Schedule I while a broader decision is pending."
+    ],
+    [
+      "Is cannabis addictive?",
+      "It can be. About 3 in 10 people who use cannabis have some degree of cannabis use disorder, and daily users often have withdrawal when they stop."
+    ],
+    [
+      "How long does THC stay in your system?",
+      "Occasional users usually test positive for 3 to 7 days; daily users can test positive for 30 days or more."
+    ],
+    [
+      "What is cannabinoid hyperemesis syndrome?",
+      "Repeated severe vomiting in heavy long-term users, often eased by hot showers. It goes away only after stopping cannabis."
+    ],
+    [
+      "Is delta-8 THC legal?",
+      "Under a 2025 federal law, intoxicating hemp products such as delta-8 THC become federally illegal on November 12, 2026, and many states already ban them."
+    ],
+    [
+      "Can you drive after using cannabis?",
+      "No. Cannabis slows reaction time and impairs coordination. Driving under its influence is illegal in every state."
+    ]
+  ],
+  "sources": [
+    [
+      "Cannabis (Marijuana)",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/cannabis-marijuana"
+    ],
+    [
+      "Cannabis and Public Health",
+      "Centers for Disease Control and Prevention",
+      "https://www.cdc.gov/cannabis/"
+    ],
+    [
+      "Rescheduling of FDA-approved products containing marijuana and state-licensed medical marijuana to Schedule III",
+      "Federal Register, April 28, 2026",
+      "https://www.federalregister.gov/documents/2026/04/28/2026-08176/schedules-of-controlled-substances-rescheduling-of-food-and-drug-administration-approved-products"
+    ],
+    [
+      "New federal restrictions on hemp and hemp-derived products",
+      "DLA Piper, November 2025",
+      "https://www.dlapiper.com/insights/publications/2025/11/new-federal-restrictions-on-hemp-and-hemp-derived-products"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

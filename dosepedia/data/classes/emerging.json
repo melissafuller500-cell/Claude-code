@@ -1,0 +1,14 @@
+{
+  "slug": "emerging",
+  "name": "Emerging and unscheduled substances",
+  "description": "Kratom, tianeptine, xylazine, nitazenes, and PCP: what they are, why they are dangerous, overdose response, and changing 2026 legal status.",
+  "intro": "New and re-emerging substances are reshaping the drug supply. Some are sold openly in gas stations and online; others are hidden in fentanyl and counterfeit pills. Their legal status is changing fast.",
+  "blocks": [
+    {
+      "p": "In 2026 the DEA proposed Schedule I for tianeptine, began scheduling concentrated 7-OH kratom products, and continued emergency scheduling of nitazenes, while Congress moved to place xylazine in Schedule III."
+    },
+    {
+      "warn": "Fentanyl test strips do not detect nitazenes or xylazine. Separate strips exist. Always give naloxone for a suspected opioid overdose, even if xylazine may be involved."
+    }
+  ]
+}

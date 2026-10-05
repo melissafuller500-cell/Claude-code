@@ -1,0 +1,335 @@
+{
+  "slug": "lsd",
+  "name": "LSD",
+  "brands": [],
+  "aka": [
+    "Acid",
+    "Lucy",
+    "Tabs",
+    "Blotter",
+    "Lysergic acid diethylamide"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Serotonergic psychedelic (ergoline)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "LSD (acid) facts: effects, duration, risks, NBOMe counterfeits, interactions with lithium, clinical trials for anxiety, and US legal status and penalties.",
+  "quick": "LSD (lysergic acid diethylamide) is a very potent psychedelic, active in millionths of a gram, with effects lasting 8 to 12 hours. It is Schedule I in the US. It has very low physical toxicity, but it can cause frightening experiences and risky behavior, and blotters sold as LSD sometimes contain more dangerous NBOMe drugs. A form of LSD is in late-stage trials for generalized anxiety disorder.",
+  "facts": [
+    [
+      "Chemical name",
+      "Lysergic acid diethylamide"
+    ],
+    [
+      "Street names",
+      "Acid, tabs, blotter, Lucy"
+    ],
+    [
+      "Drug class",
+      "Serotonergic psychedelic (ergoline)"
+    ],
+    [
+      "US legal status",
+      "Schedule I"
+    ],
+    [
+      "Medical status",
+      "Investigational (MM120 for generalized anxiety disorder in phase 3)"
+    ],
+    [
+      "How it is used",
+      "Blotter paper, liquid drops, gel tabs, swallowed"
+    ],
+    [
+      "Active dose",
+      "Micrograms"
+    ],
+    [
+      "Onset",
+      "30 to 90 minutes"
+    ],
+    [
+      "Duration",
+      "8 to 12 hours"
+    ],
+    [
+      "Physical dependence",
+      "No"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 90 minutes",
+    "duration": "8 to 12 hours",
+    "half_life": "About 3.5 hours",
+    "naloxone": "No",
+    "dependence": "Low",
+    "medical": "Investigational (anxiety)",
+    "groups": [
+      "psychedelic",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is lsd?",
+      "blocks": [
+        {
+          "p": "LSD is a semi-synthetic compound first made in 1938 from ergot, a fungus on rye. It strongly activates serotonin 5-HT2A receptors and is active at doses of micrograms.[[1]]"
+        },
+        {
+          "p": "MindMed's MM120, a form of LSD, received FDA breakthrough therapy designation for generalized anxiety disorder in 2024 and entered phase 3 trials."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of lsd, and how long do they last?",
+      "blocks": [
+        {
+          "p": "LSD alters perception, causing vivid colors, patterns, visual distortions, mixed senses (synesthesia), changes in thinking and sense of self, and strong emotions. Physical effects include dilated pupils, higher heart rate and temperature, sweating, and sleeplessness.[[1]]"
+        },
+        {
+          "p": "Effects begin within 30 to 90 minutes and last 8 to 12 hours, with residual effects afterward."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of lsd?",
+      "blocks": [
+        {
+          "p": "**Psychological risks:** panic, paranoia, and confusion can lead to accidents or self-harm. People with a personal or family history of psychosis are at higher risk.[[1]]"
+        },
+        {
+          "p": "**Counterfeits:** blotters sold as LSD sometimes contain NBOMe compounds (such as 25I-NBOMe), which are active at similar doses but have caused seizures, very high temperatures, and deaths. A bitter or numbing taste is a warning sign."
+        },
+        {
+          "p": "**HPPD:** rare lasting visual disturbances.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with lsd?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Lithium",
+                "Seizures and dangerous reactions reported",
+                "Avoid"
+              ],
+              [
+                "MAOIs (and ayahuasca)",
+                "Greatly intensified, unpredictable effects",
+                "High risk"
+              ],
+              [
+                "SSRIs and SNRIs",
+                "Usually blunted effects; serotonin syndrome possible with some combinations",
+                "Use caution"
+              ],
+              [
+                "Cannabis",
+                "More intense, sometimes frightening experiences",
+                "Use caution"
+              ],
+              [
+                "Stimulants (amphetamines, cocaine)",
+                "Anxiety, heart strain, overheating",
+                "Use caution"
+              ],
+              [
+                "Tramadol",
+                "Seizures and serotonin syndrome",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on LSD?",
+      "blocks": [
+        {
+          "p": "LSD itself has very low physical toxicity, and deaths from LSD alone are extremely rare. Very large doses can cause vomiting, high temperature, and extreme agitation. Most serious harm comes from accidents, dangerous behavior, other drugs, or NBOMe counterfeits.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone is having a dangerous reaction",
+            "items": [
+              "Call 911 for a seizure, chest pain, a very high temperature, trouble breathing, unresponsiveness, or if the person may harm themselves or others.",
+              "Move them to a quiet, safe place away from roads, water, heights, and crowds. Stay with them and speak calmly.",
+              "Do not leave the person alone and do not give them other drugs or alcohol to calm them down.",
+              "If they become unresponsive, place them on their side and give naloxone in case opioids are involved."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is LSD addictive?",
+      "blocks": [
+        {
+          "p": "Lsd is not considered physically addictive and does not cause a withdrawal syndrome. Tolerance develops after a single dose and lasts several days, and there is cross-tolerance with psilocybin. Some people use it compulsively, but this is uncommon.[[1]]"
+        },
+        {
+          "p": "**Hallucinogen persisting perception disorder (HPPD):** a small number of people have lasting visual disturbances, such as trails, halos, or flashes, after use. It can be distressing and last months or longer.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is lsd legal in the US?",
+      "blocks": [
+        {
+          "p": "Lsd is a Schedule I controlled substance under federal law, meaning it is considered to have a high potential for abuse and no currently accepted medical use. It cannot be prescribed, and possessing, making, or selling it is a federal crime.[[2]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[3]]",
+            "**Trafficking:** trafficking 1 gram or more of a mixture containing LSD carries a mandatory minimum of 5 years in federal prison, and 10 grams or more carries 10 years. Because the weight includes the blotter paper, small numbers of doses can trigger these minimums.[[4]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Research:** LSD can be studied only under DEA Schedule I research registration and FDA oversight. In April 2026, an executive order directed the FDA to speed reviews of breakthrough-designated psychedelic therapies.[[5]]"
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with lsd use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[6]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[7]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is lsd legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A"
+              ],
+              [
+                "Canada",
+                "Schedule III"
+              ],
+              [
+                "Australia",
+                "Schedule 9 prohibited substance"
+              ],
+              [
+                "International",
+                "Schedule I of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How long does an LSD trip last?",
+      "Usually 8 to 12 hours."
+    ],
+    [
+      "Is LSD addictive?",
+      "No. It does not cause physical dependence, and tolerance builds after one dose."
+    ],
+    [
+      "What is NBOMe?",
+      "A group of synthetic psychedelics sometimes sold as LSD. They are more toxic and have caused deaths."
+    ],
+    [
+      "Is LSD being studied as medicine?",
+      "Yes. A form of LSD called MM120 has been in phase 3 trials for generalized anxiety disorder."
+    ],
+    [
+      "Does LSD show on drug tests?",
+      "Standard drug screens do not test for LSD. Specialized tests can detect it for 1 to 3 days."
+    ]
+  ],
+  "sources": [
+    [
+      "Psychedelic and Dissociative Drugs",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs-medicines"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "Executive order aims to accelerate approval of therapeutic psychedelics",
+      "Morgan Lewis, April 2026",
+      "https://www.morganlewis.com/pubs/2026/04/you-are-not-hallucinating-executive-order-aims-to-accelerate-approval-of-therapeutic-psychedelics"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

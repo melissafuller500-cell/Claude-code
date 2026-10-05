@@ -1,0 +1,325 @@
+{
+  "slug": "mescaline",
+  "name": "Mescaline",
+  "brands": [],
+  "aka": [
+    "Peyote",
+    "San Pedro",
+    "Buttons",
+    "Mesc"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Serotonergic psychedelic (phenethylamine)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Mescaline (peyote, San Pedro) facts: effects, duration, risks, the Native American Church peyote exemption, conservation concerns, and US legal status.",
+  "quick": "Mescaline is a psychedelic found in the peyote cactus and some other cacti, such as San Pedro. Effects last 10 to 12 hours. It is Schedule I in the US, but federal regulations protect the religious use of peyote by members of the Native American Church. Nausea and vomiting are common, and wild peyote is threatened by overharvesting.",
+  "facts": [
+    [
+      "Chemical name",
+      "3,4,5-trimethoxyphenethylamine"
+    ],
+    [
+      "Sources",
+      "Peyote (Lophophora williamsii); San Pedro and Peruvian torch cacti"
+    ],
+    [
+      "Drug class",
+      "Serotonergic psychedelic (phenethylamine)"
+    ],
+    [
+      "US legal status",
+      "Schedule I; religious exemption for peyote in the Native American Church"
+    ],
+    [
+      "How it is used",
+      "Dried cactus \"buttons\" chewed or brewed as tea; powder"
+    ],
+    [
+      "Onset",
+      "1 to 2 hours"
+    ],
+    [
+      "Duration",
+      "10 to 12 hours"
+    ],
+    [
+      "Half-life",
+      "About 6 hours"
+    ],
+    [
+      "Physical dependence",
+      "No"
+    ],
+    [
+      "Conservation",
+      "Peyote is slow-growing and overharvested"
+    ]
+  ],
+  "profile": {
+    "onset": "1 to 2 hours",
+    "duration": "10 to 12 hours",
+    "half_life": "About 6 hours",
+    "naloxone": "No",
+    "dependence": "Low",
+    "medical": "None (religious use protected)",
+    "groups": [
+      "psychedelic",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is mescaline?",
+      "blocks": [
+        {
+          "p": "Mescaline is the main psychoactive compound in peyote, a small spineless cactus native to Texas and Mexico, used in Indigenous ceremonies for thousands of years. It is also found in San Pedro and related cacti from the Andes.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of mescaline, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Mescaline produces vivid colors and visual patterns, altered sense of time and self, and strong emotions. Physical effects include nausea and vomiting (common early on), dilated pupils, sweating, and raised heart rate and temperature.[[1]]"
+        },
+        {
+          "p": "Effects begin within 1 to 2 hours and last 10 to 12 hours."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of mescaline?",
+      "blocks": [
+        {
+          "p": "**Psychological risks:** fear, confusion, and risky behavior during the long experience; higher risk of lasting effects in people with a history of psychosis.[[1]]"
+        },
+        {
+          "p": "**Physical risks:** vomiting and raised heart rate and blood pressure; caution with heart disease."
+        },
+        {
+          "p": "**Misidentification and mislabeling:** products sold as mescaline are sometimes other drugs."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with mescaline?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Lithium",
+                "Seizures and dangerous reactions reported",
+                "Avoid"
+              ],
+              [
+                "MAOIs (and ayahuasca)",
+                "Greatly intensified, unpredictable effects",
+                "High risk"
+              ],
+              [
+                "SSRIs and SNRIs",
+                "Usually blunted effects; serotonin syndrome possible with some combinations",
+                "Use caution"
+              ],
+              [
+                "Cannabis",
+                "More intense, sometimes frightening experiences",
+                "Use caution"
+              ],
+              [
+                "Stimulants (amphetamines, cocaine)",
+                "Anxiety, heart strain, overheating",
+                "Use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on mescaline?",
+      "blocks": [
+        {
+          "p": "Physical overdose is uncommon because large amounts are needed and vomiting is common. Very high doses can cause high blood pressure, fast heartbeat, and dangerous agitation.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone is having a dangerous reaction",
+            "items": [
+              "Call 911 for a seizure, chest pain, a very high temperature, trouble breathing, unresponsiveness, or if the person may harm themselves or others.",
+              "Move them to a quiet, safe place away from roads, water, heights, and crowds. Stay with them and speak calmly.",
+              "Do not leave the person alone and do not give them other drugs or alcohol to calm them down.",
+              "If they become unresponsive, place them on their side and give naloxone in case opioids are involved."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is mescaline addictive?",
+      "blocks": [
+        {
+          "p": "Mescaline is not considered physically addictive and does not cause a withdrawal syndrome. Tolerance builds quickly and is shared with LSD and psilocybin. Some people use it compulsively, but this is uncommon.[[1]]"
+        },
+        {
+          "p": "**Hallucinogen persisting perception disorder (HPPD):** a small number of people have lasting visual disturbances, such as trails, halos, or flashes, after use. It can be distressing and last months or longer.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is mescaline legal in the US?",
+      "blocks": [
+        {
+          "p": "Mescaline is a Schedule I controlled substance under federal law, meaning it is considered to have a high potential for abuse and no currently accepted medical use. It cannot be prescribed, and possessing, making, or selling it is a federal crime.[[2]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[3]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[4]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Native American Church:** federal regulations exempt the nondrug use of peyote in bona fide religious ceremonies of the Native American Church, and the American Indian Religious Freedom Act Amendments of 1994 protect this use in all states.[[5]]"
+        },
+        {
+          "p": "**Cacti:** growing San Pedro cactus as an ornamental is generally legal, but extracting or consuming mescaline is not."
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with mescaline use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[6]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[7]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is mescaline legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Mexico",
+                "Prohibited except for Indigenous religious use"
+              ],
+              [
+                "Canada",
+                "Schedule III; peyote itself exempt"
+              ],
+              [
+                "United Kingdom",
+                "Class A (mescaline); cacti not controlled unless prepared"
+              ],
+              [
+                "International",
+                "Mescaline: Schedule I of the 1971 Convention; peyote cactus not listed"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How long does mescaline last?",
+      "About 10 to 12 hours."
+    ],
+    [
+      "Is peyote legal for anyone in the US?",
+      "Only for members of the Native American Church in religious ceremonies."
+    ],
+    [
+      "Is San Pedro cactus legal?",
+      "Growing it as an ornamental plant is generally legal, but extracting or consuming mescaline is illegal."
+    ],
+    [
+      "Why is peyote endangered?",
+      "It grows very slowly and wild populations in Texas and Mexico have been overharvested."
+    ]
+  ],
+  "sources": [
+    [
+      "Psychedelic and Dissociative Drugs",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs-medicines"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "21 CFR 1307.31, Native American Church (peyote exemption)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/section-1307.31"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

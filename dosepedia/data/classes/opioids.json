@@ -1,0 +1,25 @@
+{
+  "slug": "opioids",
+  "name": "Opioids",
+  "description": "Opioids explained: how they relieve pain, why they cause overdose and dependence, naloxone, and treatment with buprenorphine and methadone.",
+  "intro": "Opioids act on mu-opioid receptors in the brain and spinal cord to relieve pain. The same receptors control breathing, which is why opioids can cause fatal overdose, especially with sedatives, alcohol, or illicit fentanyl.",
+  "blocks": [
+    {
+      "p": "This cluster covers prescription opioids used for pain (oxycodone, hydrocodone, morphine, hydromorphone, tapentadol, tramadol, codeine, fentanyl), medicines that treat opioid use disorder (buprenorphine and methadone), and heroin."
+    },
+    {
+      "p": "**Naloxone reverses opioid overdose.** It is sold without a prescription and is safe to give to anyone who may be overdosing. Treatment with buprenorphine or methadone cuts the risk of death from opioid use disorder by about half."
+    },
+    {
+      "boxed": {
+        "title": "FDA boxed warnings shared by prescription opioids",
+        "items": [
+          "Addiction, abuse, and misuse, which can lead to overdose and death.",
+          "Life-threatening slowed breathing.",
+          "Profound sedation, coma, and death when combined with benzodiazepines or other CNS depressants.",
+          "Neonatal opioid withdrawal syndrome with prolonged use in pregnancy."
+        ]
+      }
+    }
+  ]
+}

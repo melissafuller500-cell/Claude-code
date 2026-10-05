@@ -1,0 +1,355 @@
+{
+  "slug": "methamphetamine",
+  "name": "Methamphetamine",
+  "brands": [
+    "Desoxyn"
+  ],
+  "aka": [
+    "Meth",
+    "Crystal",
+    "Ice",
+    "Crank",
+    "Glass",
+    "Tina"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Amphetamine-type stimulant",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Methamphetamine facts: the rarely used prescription Desoxyn, effects of illicit meth, health risks, overdose, fentanyl contamination, treatment, and US penalties.",
+  "quick": "Methamphetamine is a powerful stimulant. A prescription form, Desoxyn, is approved for ADHD but rarely used. Nearly all methamphetamine in the US is made illegally as crystal or powder, and it is increasingly involved in overdose deaths, often together with fentanyl. It is a Schedule II controlled substance.",
+  "facts": [
+    [
+      "Chemical name",
+      "Methamphetamine (N-methylamphetamine)"
+    ],
+    [
+      "Prescription brand",
+      "Desoxyn (rarely prescribed)"
+    ],
+    [
+      "Street names",
+      "Meth, crystal, ice, crank, glass, Tina"
+    ],
+    [
+      "Drug class",
+      "Amphetamine-type stimulant"
+    ],
+    [
+      "US legal status",
+      "Schedule II; illicit manufacture and sale are federal crimes"
+    ],
+    [
+      "How it is used",
+      "Smoked, snorted, injected, or swallowed"
+    ],
+    [
+      "Onset",
+      "Seconds (smoked or injected) to 20 minutes (swallowed)"
+    ],
+    [
+      "Duration",
+      "8 to 24 hours"
+    ],
+    [
+      "Half-life",
+      "About 10 hours"
+    ],
+    [
+      "Reversal agent",
+      "None"
+    ]
+  ],
+  "profile": {
+    "onset": "Seconds to 20 minutes",
+    "duration": "8 to 24 hours",
+    "half_life": "About 10 hours",
+    "naloxone": "No (but give it if opioids may be involved)",
+    "dependence": "Very high",
+    "medical": "ADHD (Desoxyn, rarely)",
+    "groups": [
+      "stimulant",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is methamphetamine?",
+      "blocks": [
+        {
+          "p": "Methamphetamine is chemically close to amphetamine but enters the brain faster and releases more dopamine, which makes it more euphoric and more addictive. Desoxyn tablets are FDA-approved for ADHD but are rarely prescribed.[[1]][[2]]"
+        },
+        {
+          "p": "Illicit methamphetamine is mostly produced in large labs abroad and is purer and cheaper than a decade ago. It is sold as clear crystals (\"ice\") or powder.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of methamphetamine, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Methamphetamine causes intense euphoria, alertness, energy, talkativeness, reduced appetite, faster breathing and heart rate, higher blood pressure, and raised body temperature.[[2]]"
+        },
+        {
+          "p": "Effects start within seconds when smoked or injected and last 8 to 24 hours, much longer than cocaine. Binges lasting days without sleep are common."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of methamphetamine?",
+      "blocks": [
+        {
+          "p": "**Heart and brain:** heart attack, dangerous heart rhythms, heart failure, stroke, and very high body temperature.[[2]]"
+        },
+        {
+          "p": "**Mental health:** anxiety, paranoia, hallucinations, aggression, and psychosis that can persist after use stops.[[2]]"
+        },
+        {
+          "p": "**Physical:** severe dental decay (\"meth mouth\"), skin sores from picking, weight loss, and HIV and hepatitis risk from injection and sexual behavior."
+        },
+        {
+          "warn": "Fentanyl is increasingly found in methamphetamine. People who do not use opioids have no tolerance, so even small amounts of fentanyl can be fatal. Carry naloxone and use fentanyl test strips."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with methamphetamine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Fentanyl and other opioids",
+                "Overdose; opioid effects hit when meth wears off",
+                "Leading cause of stimulant-involved deaths"
+              ],
+              [
+                "Other stimulants (cocaine, MDMA, ADHD medicines)",
+                "Extreme heart strain, overheating",
+                "Very high risk"
+              ],
+              [
+                "MAOIs",
+                "Dangerous rise in blood pressure",
+                "Potentially fatal"
+              ],
+              [
+                "Alcohol",
+                "Masks drunkenness, leading to alcohol poisoning; heart strain",
+                "High risk"
+              ],
+              [
+                "SSRIs, MDMA, tramadol",
+                "Serotonin syndrome",
+                "High risk"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does methamphetamine overdose look like?",
+      "blocks": [
+        {
+          "p": "Methamphetamine overdose can cause chest pain, very fast or irregular heartbeat, very high body temperature, severe agitation or paranoia, seizures, stroke, and collapse. Many overdose deaths involving methamphetamine also involve fentanyl.[[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is methamphetamine addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "Methamphetamine is highly addictive. Withdrawal is not usually physically dangerous but is intensely unpleasant and a common trigger for relapse.[[2]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Crash",
+              "text": "Exhaustion, very long sleep, hunger, low mood."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Acute withdrawal",
+              "text": "Depression, anxiety, irritability, poor concentration, strong cravings."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Recovery",
+              "text": "Cravings and low mood can persist for months; brain changes partly recover with time."
+            }
+          ]
+        },
+        {
+          "p": "There is no FDA-approved medicine for methamphetamine use disorder. Contingency management, which gives rewards for drug-free tests, is the most effective treatment, and naltrexone plus bupropion has shown benefit in a clinical trial.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is methamphetamine legal in the US?",
+      "blocks": [
+        {
+          "p": "Methamphetamine is Schedule II: it has a recognized medical use as Desoxyn, but making, selling, or possessing it without a prescription is a federal crime. Pseudoephedrine, a precursor, is sold behind the pharmacy counter with ID and monthly limits under the Combat Methamphetamine Epidemic Act.[[3]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[4]]",
+            "**Trafficking:** trafficking 5 grams or more of pure methamphetamine, or 50 grams or more of a mixture, carries a mandatory minimum of 5 years in federal prison; ten times those amounts carries 10 years.[[5]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with methamphetamine use?",
+      "blocks": [
+        {
+          "p": "Contingency management programs are offered through some treatment centers and, since 2023, through several state Medicaid programs."
+        },
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[6]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[7]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is methamphetamine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A"
+              ],
+              [
+                "Canada",
+                "Schedule I"
+              ],
+              [
+                "Australia",
+                "Schedule 9 prohibited substance"
+              ],
+              [
+                "International",
+                "Schedule II of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is methamphetamine ever prescribed?",
+      "Yes, as Desoxyn for ADHD, but very rarely. Other stimulants are preferred."
+    ],
+    [
+      "How long does meth stay in your system?",
+      "Its half-life is about 10 hours. Urine tests detect it for 2 to 4 days, longer after heavy use."
+    ],
+    [
+      "Is there a medicine to treat meth addiction?",
+      "No medicine is FDA-approved yet. Contingency management works best, and a combination of naltrexone and bupropion helped in a large trial."
+    ],
+    [
+      "Can naloxone reverse a meth overdose?",
+      "No, but give it anyway if the person is unresponsive or not breathing well, because fentanyl is often present."
+    ],
+    [
+      "What is \"meth mouth\"?",
+      "Severe tooth decay and gum disease from dry mouth, teeth grinding, and poor hygiene during heavy use."
+    ]
+  ],
+  "sources": [
+    [
+      "Desoxyn (methamphetamine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=methamphetamine"
+    ],
+    [
+      "Methamphetamine DrugFacts",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/methamphetamine"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

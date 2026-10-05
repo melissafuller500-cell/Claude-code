@@ -1,0 +1,425 @@
+{
+  "slug": "methadone",
+  "name": "Methadone",
+  "brands": [
+    "Methadose",
+    "Dolophine"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Long-acting opioid agonist",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Methadone facts: treatment for opioid use disorder and pain, how opioid treatment programs work, heart rhythm risks, interactions, overdose, and withdrawal.",
+  "quick": "Methadone is a long-acting opioid used to treat opioid use disorder and severe pain. As treatment for addiction, it cuts the risk of death by about half, but it is dispensed for that purpose only through federally certified opioid treatment programs. It is a Schedule II controlled substance with a long, unpredictable half-life that makes early dosing risky.",
+  "facts": [
+    [
+      "Generic name",
+      "Methadone hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Methadose, Dolophine"
+    ],
+    [
+      "Drug class",
+      "Long-acting opioid agonist; NMDA antagonist"
+    ],
+    [
+      "US legal status",
+      "Schedule II; opioid use disorder treatment only in certified programs"
+    ],
+    [
+      "Approved uses",
+      "Opioid use disorder; severe pain"
+    ],
+    [
+      "Forms",
+      "Tablets, dispersible tablets, oral concentrate, injection"
+    ],
+    [
+      "Onset",
+      "30 to 60 minutes"
+    ],
+    [
+      "Half-life",
+      "8 to 59 hours; often about 24 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP3A4, CYP2B6, CYP2C19"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone; repeat or continuous dosing often needed"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "Pain relief 4 to 8 hours; withdrawal prevention 24 to 36 hours",
+    "half_life": "8 to 59 hours",
+    "naloxone": "Yes, often needs repeat doses",
+    "dependence": "High",
+    "medical": "Opioid use disorder; severe pain",
+    "groups": [
+      "opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is methadone used for?",
+      "blocks": [
+        {
+          "p": "Methadone is approved for detoxification and maintenance treatment of opioid use disorder, and for severe pain when other treatments are inadequate.[[1]]"
+        },
+        {
+          "p": "As a treatment for opioid use disorder, methadone is taken once a day. It prevents withdrawal and reduces cravings without producing a high in tolerant patients, and it blocks the effects of other opioids. Treatment with methadone or buprenorphine reduces the risk of death by about 50%.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is methadone usually prescribed?",
+      "blocks": [
+        {
+          "p": "Methadone builds up in the body over several days, so doses are raised slowly. Most methadone deaths in treatment happen in the first two weeks. The figures below come from the FDA label and are not personal dosing advice.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Use",
+              "Typical starting dose",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Opioid use disorder",
+                "20 to 30 mg on day 1",
+                "No more than 40 mg on the first day; usual maintenance 80 to 120 mg a day"
+              ],
+              [
+                "Pain (opioid-naive)",
+                "2.5 mg every 8 to 12 hours",
+                "Increase no more often than every 3 to 5 days"
+              ],
+              [
+                "Switching from other opioids",
+                "Conversion is not linear",
+                "Only by clinicians experienced with methadone"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of methadone?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Methadone exposes users to risks of addiction, misuse, and abuse, which can lead to overdose and death.",
+              "Life-threatening slowed breathing can occur, especially when starting treatment or after a dose increase.",
+              "Accidental ingestion, especially by children, can cause a fatal overdose.",
+              "Use with benzodiazepines or other central nervous system depressants, including alcohol, can cause profound sedation, slowed breathing, coma, and death.",
+              "Prolonged use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated.",
+              "QT prolongation and a dangerous heart rhythm (torsades de pointes) have occurred, mostly at higher doses.",
+              "For opioid use disorder, methadone must be dispensed only by certified opioid treatment programs."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include constipation, sweating, drowsiness, weight gain, lowered sex drive, and dizziness.[[1]]"
+        },
+        {
+          "p": "**Delayed overdose:** methadone's peak breathing effect comes later and lasts longer than its pain relief. Taking extra doses for pain can cause overdose hours later, often during sleep."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with methadone?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines (alprazolam, diazepam, clonazepam)",
+                "Profound sedation, slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Gabapentin, pregabalin, sleep medicines, muscle relaxants",
+                "Additive sedation and breathing problems",
+                "Use caution; lower doses"
+              ],
+              [
+                "Drugs that prolong QT (some antibiotics, antipsychotics, antiarrhythmics)",
+                "Dangerous heart rhythm",
+                "Avoid or monitor ECG"
+              ],
+              [
+                "Rifampin, carbamazepine, phenytoin, efavirenz",
+                "Lower methadone levels; withdrawal",
+                "Dose adjustment needed"
+              ],
+              [
+                "Fluconazole, ciprofloxacin, some HIV drugs",
+                "Raise methadone levels",
+                "Monitor closely"
+              ],
+              [
+                "Other opioids",
+                "Additive breathing suppression",
+                "Avoid unless directed by prescriber"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does methadone overdose look like?",
+      "blocks": [
+        {
+          "p": "Methadone overdose causes deep sleepiness, slow or stopped breathing, and pinpoint pupils. Because methadone lasts so long, a person revived with naloxone can slip back into overdose hours later and needs hospital monitoring.[[1]][[3]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before methadone does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is methadone withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take methadone regularly for more than a few weeks become physically dependent, even when they take it exactly as prescribed. Dependence is not the same as addiction, but it means stopping suddenly causes withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "24 to 48 hours",
+              "title": "Early symptoms",
+              "text": "Anxiety, restlessness, yawning, sweating, runny nose, watery eyes, and muscle aches."
+            },
+            {
+              "when": "Days 3 to 8",
+              "title": "Peak withdrawal",
+              "text": "Diarrhea, stomach cramps, nausea and vomiting, goosebumps, dilated pupils, fast heartbeat, and strong cravings. Rarely dangerous in healthy adults, but dehydration can be serious."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Lingering symptoms",
+              "text": "Poor sleep, low mood, low energy, and cravings can continue for weeks. Tolerance falls quickly, which raises the risk of overdose if use restarts."
+            }
+          ]
+        },
+        {
+          "warn": "After a break, the body loses tolerance within days. Returning to a previous dose of methadone can cause a fatal overdose."
+        },
+        {
+          "p": "The FDA warns against stopping opioids abruptly in people who are physically dependent. A prescriber can taper the dose gradually, often by 10% or less per month for long-term users, and medicines such as clonidine or lofexidine can ease symptoms. For opioid use disorder, buprenorphine and methadone cut the risk of death roughly in half.[[4]]"
+        },
+        {
+          "p": "Methadone withdrawal starts later and lasts longer than withdrawal from short-acting opioids, but is often milder at its peak. Stopping methadone treatment raises the risk of overdose death, so tapers should be voluntary, slow, and supported."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get methadone legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, methadone is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[6]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[8]][[9]]",
+            "**For opioid use disorder:** methadone is available only through federally certified opioid treatment programs (OTPs). Since a 2024 federal rule, programs can offer more take-home doses and start treatment by telehealth with buprenorphine; methadone itself still requires an in-person first visit.[[10]]",
+            "**For pain:** any DEA-registered clinician can prescribe methadone tablets, which are filled at retail pharmacies."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you get methadone treatment online?",
+      "blocks": [
+        {
+          "p": "Methadone for opioid use disorder cannot be ordered online. It is dispensed at opioid treatment programs, which can be found through FindTreatment.gov or the SAMHSA helpline at 1-800-662-4357.[[2]][[11]]"
+        },
+        {
+          "p": "Methadone prescribed for pain can be filled by licensed retail or mail-order pharmacies like other Schedule II medicines. Any seller offering methadone without a prescription is illegal.[[8]]"
+        },
+        {
+          "p": "Buprenorphine, the other main medicine for opioid use disorder, can be started by telemedicine and filled at ordinary pharmacies.[[12]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is methadone legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule I of the Controlled Drugs and Substances Act; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug; prescription only"
+              ],
+              [
+                "International",
+                "Schedule I of the 1961 Single Convention on Narcotic Drugs"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[13]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Does methadone treatment work?",
+      "Yes. Decades of research show methadone treatment reduces illicit opioid use, HIV and hepatitis C transmission, crime, and overdose deaths, cutting death risk by about half."
+    ],
+    [
+      "Why do I have to go to a clinic for methadone?",
+      "Federal law limits methadone for opioid use disorder to certified opioid treatment programs. Stable patients can receive take-home doses for up to 28 days under the 2024 rules."
+    ],
+    [
+      "Is methadone just replacing one drug with another?",
+      "No. At a stable dose, methadone does not cause a high in tolerant patients, allows normal functioning, and treats a medical condition, like insulin for diabetes."
+    ],
+    [
+      "How long does methadone stay in your system?",
+      "Its half-life ranges from 8 to 59 hours. Urine tests can detect it for up to 1 to 2 weeks."
+    ],
+    [
+      "Is methadone dangerous for the heart?",
+      "At higher doses it can prolong the QT interval and cause dangerous heart rhythms. Programs check ECGs in people at risk."
+    ]
+  ],
+  "sources": [
+    [
+      "Methadose (methadone) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=methadone"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, 2022",
+      "Centers for Disease Control and Prevention, MMWR",
+      "https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "Medications for the Treatment of Opioid Use Disorder, final rule (42 CFR Part 8)",
+      "Federal Register, February 2, 2024",
+      "https://www.federalregister.gov/documents/2024/02/02/2024-01693/medications-for-the-treatment-of-opioid-use-disorder"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "Expansion of Buprenorphine Treatment via Telemedicine Encounter, final rule",
+      "Federal Register, January 17, 2025",
+      "https://www.govinfo.gov/content/pkg/FR-2025-01-17/html/2025-01049.htm"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

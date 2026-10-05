@@ -14,13 +14,16 @@ Preview locally: `cd dist && python3 -m http.server` and open http://localhost:8
 
 ## Content
 
-- `data/substances/*.json` — one drug profile per file. Pages stay `noindex` and show a *Draft* badge until `reviewer` is set.
-- `data/classes/*.json` — drug-class pages (a basic page is generated for any class without a file).
+- `data/substances/*.json` — 50 substance profiles. Each has a `kind`: `rx` (prescription medicine, with dosing, legal access, and online ordering sections), `nomed` (no US medical route: effects, US law and penalties, getting help), or `unregulated` (kratom, tianeptine, xylazine). Pages stay `noindex` and show a *Draft* badge until `reviewer` is set. The `profile` block feeds the compare tool and combination checker.
+- `data/classes/*.json` — the 7 drug clusters (every substance's `class.slug` must have a file).
+- `tools/profiles/` — the generator that wrote the substance JSON from shared templates.
 - `data/blog/*.md` — posts with front matter; only `status: published` posts go into the sitemap and RSS feed.
 - `src/` — shared CSS, JS, and the contact dialog.
 
 ## Pages generated
 
-Home, Drugs A–Z, drug profiles, class pages, Withdrawal, Interaction checker, Legal status, Blog, About, Editorial policy, Medical review team, Contact, 404, plus `sitemap.xml`, `robots.txt`, and `blog/feed.xml`.
+Home, filterable Drugs A–Z, 50 substance profiles, 7 cluster pages, 6 schedule pages, combination checker, compare tool, withdrawal timelines, overdose guide, legal status, glossary, blog, about pages, contact, 404, plus `sitemap.xml`, `robots.txt`, and `blog/feed.xml` (78 HTML pages).
+
+Legal content is current as of October 2026 (medical marijuana to Schedule III, hemp THC limits, tianeptine and 7-OH scheduling, xylazine bill, telehealth flexibilities through December 31, 2026).
 
 Internal links are relative, so `dist/` can be hosted at a domain root or a sub-path. The contact form posts to `/contact.php`, which needs a server-side handler on the host.

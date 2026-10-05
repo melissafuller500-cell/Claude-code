@@ -1,0 +1,432 @@
+{
+  "slug": "codeine",
+  "name": "Codeine",
+  "brands": [
+    "Tylenol with Codeine",
+    "Tuzistra XR"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Opioid agonist (prodrug)",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Codeine facts: uses, why it is risky in children and ultra-rapid metabolizers, schedules II to V, interactions, overdose, withdrawal, and legal access.",
+  "quick": "Codeine is a mild opioid used for pain and, in some products, for cough. The body converts it into morphine, and how fast that happens varies with genetics, which makes codeine dangerous for some people. Plain codeine is Schedule II, combinations with acetaminophen are Schedule III, and low-dose cough syrups are Schedule V.",
+  "facts": [
+    [
+      "Generic name",
+      "Codeine sulfate or phosphate"
+    ],
+    [
+      "Brand names",
+      "Tylenol with Codeine (No. 3, No. 4); cough products"
+    ],
+    [
+      "Drug class",
+      "Opioid agonist (prodrug converted to morphine)"
+    ],
+    [
+      "US legal status",
+      "Schedule II alone; III with acetaminophen; V in low-dose cough syrups"
+    ],
+    [
+      "Approved uses",
+      "Mild to moderately severe pain; cough (combination products, adults only)"
+    ],
+    [
+      "Forms",
+      "Tablets; tablets with acetaminophen; oral solution; cough syrups"
+    ],
+    [
+      "Onset",
+      "30 to 60 minutes"
+    ],
+    [
+      "Half-life",
+      "About 3 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP2D6 (to morphine) and CYP3A4"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "4 to 6 hours",
+    "half_life": "About 3 hours",
+    "naloxone": "Yes",
+    "dependence": "Moderate",
+    "medical": "Mild to moderate pain; cough",
+    "groups": [
+      "opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is codeine used for?",
+      "blocks": [
+        {
+          "p": "Codeine is approved for mild to moderately severe pain when non-opioid treatments are not enough, and in combination products to suppress cough in adults.[[1]]"
+        },
+        {
+          "p": "Codeine itself has little effect. The liver enzyme CYP2D6 converts about 5 to 10% of it into morphine. People who are \"ultra-rapid metabolizers\" convert it fast and can reach dangerous morphine levels from normal doses, while \"poor metabolizers\" get little pain relief. The share of ultra-rapid metabolizers varies widely by ancestry."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is codeine usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use codeine. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical adult dose",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Codeine sulfate tablets",
+                "15 to 60 mg every 4 hours as needed",
+                "Maximum 360 mg a day"
+              ],
+              [
+                "Acetaminophen with codeine 300/30 mg (No. 3)",
+                "1 to 2 tablets every 4 hours as needed",
+                "Keep acetaminophen under 4,000 mg a day"
+              ],
+              [
+                "Children under 12",
+                "Contraindicated",
+                "Also contraindicated under 18 after tonsil or adenoid surgery"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of codeine?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Codeine exposes users to risks of addiction, misuse, and abuse, which can lead to overdose and death.",
+              "Life-threatening slowed breathing can occur, especially when starting treatment or after a dose increase.",
+              "Accidental ingestion, especially by children, can cause a fatal overdose.",
+              "Use with benzodiazepines or other central nervous system depressants, including alcohol, can cause profound sedation, slowed breathing, coma, and death.",
+              "Prolonged use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated.",
+              "Ultra-rapid metabolism of codeine has caused life-threatening breathing problems and deaths in children.",
+              "Codeine is contraindicated in children under 12, and in anyone under 18 after removal of tonsils or adenoids.[[2]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include constipation, drowsiness, nausea, lightheadedness, and sweating.[[1]]"
+        },
+        {
+          "p": "**Breastfeeding:** the FDA advises against codeine while breastfeeding because babies of ultra-rapid metabolizers have been harmed by morphine in breast milk.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with codeine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines (alprazolam, diazepam, clonazepam)",
+                "Profound sedation, slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Gabapentin, pregabalin, sleep medicines, muscle relaxants",
+                "Additive sedation and breathing problems",
+                "Use caution; lower doses"
+              ],
+              [
+                "Fluoxetine, paroxetine, bupropion, quinidine",
+                "Block CYP2D6, reducing pain relief; stopping them raises morphine levels",
+                "Monitor closely"
+              ],
+              [
+                "Promethazine (in cough syrups)",
+                "Additive sedation",
+                "Use caution; misused as \"lean\""
+              ],
+              [
+                "Other opioids",
+                "Additive breathing suppression",
+                "Avoid unless directed by prescriber"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does codeine overdose look like?",
+      "blocks": [
+        {
+          "p": "Codeine overdose causes pinpoint pupils, extreme drowsiness, confusion, and slow or stopped breathing. Ultra-rapid metabolizers, especially children, can overdose on ordinary doses.[[2]][[3]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before codeine does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is codeine withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take codeine regularly for more than a few weeks become physically dependent, even when they take it exactly as prescribed. Dependence is not the same as addiction, but it means stopping suddenly causes withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "8 to 24 hours",
+              "title": "Early symptoms",
+              "text": "Anxiety, restlessness, yawning, sweating, runny nose, watery eyes, and muscle aches."
+            },
+            {
+              "when": "Days 1 to 3",
+              "title": "Peak withdrawal",
+              "text": "Diarrhea, stomach cramps, nausea and vomiting, goosebumps, dilated pupils, fast heartbeat, and strong cravings. Rarely dangerous in healthy adults, but dehydration can be serious."
+            },
+            {
+              "when": "Days 5 to 10",
+              "title": "Lingering symptoms",
+              "text": "Poor sleep, low mood, low energy, and cravings can continue for weeks. Tolerance falls quickly, which raises the risk of overdose if use restarts."
+            }
+          ]
+        },
+        {
+          "warn": "After a break, the body loses tolerance within days. Returning to a previous dose of codeine can cause a fatal overdose."
+        },
+        {
+          "p": "The FDA warns against stopping opioids abruptly in people who are physically dependent. A prescriber can taper the dose gradually, often by 10% or less per month for long-term users, and medicines such as clonidine or lofexidine can ease symptoms. For opioid use disorder, buprenorphine and methadone cut the risk of death roughly in half.[[4]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get codeine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, codeine is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[8]][[9]]",
+            "**Cost:** acetaminophen with codeine is inexpensive and widely covered.",
+            "**Schedules:** plain codeine is Schedule II. Most prescriptions are acetaminophen with codeine, which is Schedule III. Cough syrups with small amounts of codeine are Schedule V; a few states allow some to be sold by a pharmacist without a prescription, with ID and quantity limits.[[5]]"
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order codeine online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill codeine prescriptions online and ship them. Buying codeine from a website that does not require a prescription is illegal, and the product is often fake.[[8]][[10]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether codeine is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells codeine with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[8]][[9]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is codeine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B; low-strength combinations sold in pharmacies"
+              ],
+              [
+                "Canada",
+                "Schedule I; low-dose combinations available from pharmacists in some provinces"
+              ],
+              [
+                "Australia",
+                "Prescription only since 2018 (Schedule 4 or 8 depending on product)"
+              ],
+              [
+                "International",
+                "Schedule II of the 1961 Single Convention"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[11]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is codeine safe for children?",
+      "No. It is contraindicated in children under 12, and in anyone under 18 after tonsil or adenoid surgery, because some children turn codeine into morphine very quickly."
+    ],
+    [
+      "Why does codeine not work for some people?",
+      "About 5 to 10% of people of European ancestry are poor CYP2D6 metabolizers and convert little codeine into morphine, so they get little pain relief."
+    ],
+    [
+      "Is codeine cough syrup legal without a prescription?",
+      "Federally, low-dose codeine cough syrups are Schedule V. A few states let pharmacists sell them without a prescription, with ID and limits; most require a prescription."
+    ],
+    [
+      "What is \"lean\"?",
+      "A street name for codeine-promethazine cough syrup mixed with soft drinks. The combination causes heavy sedation and has caused fatal overdoses, especially with alcohol."
+    ],
+    [
+      "How long does codeine stay in your system?",
+      "Its half-life is about 3 hours. Urine tests usually detect it for 1 to 2 days."
+    ]
+  ],
+  "sources": [
+    [
+      "Tylenol with Codeine (codeine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=codeine"
+    ],
+    [
+      "FDA restricts use of prescription codeine pain and cough medicines and tramadol pain medicines in children",
+      "US Food and Drug Administration, 2017",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-restricts-use-prescription-codeine-pain-and-cough-medicines-and"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, 2022",
+      "Centers for Disease Control and Prevention, MMWR",
+      "https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

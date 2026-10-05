@@ -1,0 +1,341 @@
+{
+  "slug": "kratom",
+  "name": "Kratom",
+  "brands": [],
+  "aka": [
+    "Mitragyna speciosa",
+    "Kakuam",
+    "Thang",
+    "Ketum",
+    "7-OH"
+  ],
+  "kind": "unregulated",
+  "class": {
+    "name": "Emerging and unscheduled substances",
+    "slug": "emerging"
+  },
+  "subclass": "Plant with opioid-like alkaloids",
+  "schedule": {
+    "us": "",
+    "label": "Not federally controlled"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Kratom facts: effects at low and high doses, 7-OH products and the 2026 DEA scheduling action, dependence, withdrawal, liver injury, interactions, and state bans.",
+  "quick": "Kratom is a Southeast Asian tree whose leaves contain mitragynine and 7-hydroxymitragynine (7-OH), which act on opioid receptors. At low doses it is stimulating; at higher doses it is sedating and opioid-like. Kratom leaf is not federally controlled, but it is not approved for any medical use, several states ban it, and in 2026 the DEA moved to place concentrated 7-OH products in Schedule I.",
+  "facts": [
+    [
+      "Botanical name",
+      "Mitragyna speciosa"
+    ],
+    [
+      "Main alkaloids",
+      "Mitragynine; 7-hydroxymitragynine (7-OH)"
+    ],
+    [
+      "Drug class",
+      "Plant product with partial opioid agonist and stimulant effects"
+    ],
+    [
+      "US legal status",
+      "Leaf not federally controlled; three 7-OH-related compounds Schedule I since August 2026; concentrated 7-OH proposed for Schedule I"
+    ],
+    [
+      "FDA status",
+      "Not approved for any use; import alerts and warnings"
+    ],
+    [
+      "How it is used",
+      "Powder, capsules, teas, extracts, 7-OH tablets and shots"
+    ],
+    [
+      "Onset",
+      "10 to 30 minutes"
+    ],
+    [
+      "Duration",
+      "2 to 6 hours"
+    ],
+    [
+      "Half-life",
+      "Mitragynine: about 24 hours (varies)"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone may help with high doses or 7-OH"
+    ]
+  ],
+  "profile": {
+    "onset": "10 to 30 minutes",
+    "duration": "2 to 6 hours",
+    "half_life": "About 24 hours (mitragynine; varies)",
+    "naloxone": "Partly",
+    "dependence": "Moderate to high",
+    "medical": "None approved",
+    "groups": [
+      "opioid",
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is kratom?",
+      "blocks": [
+        {
+          "p": "Kratom leaves have been used for centuries in Thailand, Malaysia, and Indonesia. In the US, kratom is sold in smoke shops, gas stations, and online as powder, capsules, and drinks, often marketed for pain, energy, mood, or opioid withdrawal.[[1]]"
+        },
+        {
+          "p": "Products concentrated in 7-hydroxymitragynine (7-OH), a much more potent opioid alkaloid, spread rapidly from 2023. The FDA recommended scheduling 7-OH in 2025, and the DEA announced temporary Schedule I action in July 2026.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of kratom, and how long do they last?",
+      "blocks": [
+        {
+          "p": "At low doses kratom can cause alertness, energy, and sociability. At higher doses it causes pain relief, sedation, and euphoria, along with nausea, constipation, itching, sweating, and dizziness.[[1]]"
+        },
+        {
+          "p": "Effects start within 10 to 30 minutes and last 2 to 6 hours."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of kratom?",
+      "blocks": [
+        {
+          "p": "**Dependence:** regular daily use, especially of extracts and 7-OH products, can cause opioid-like dependence and withdrawal.[[1]]"
+        },
+        {
+          "p": "**Liver injury, seizures, and heart effects** have been reported, along with weight loss, constipation, and, rarely, psychosis.[[3]]"
+        },
+        {
+          "p": "**Contamination:** kratom products have been recalled for salmonella and heavy metals such as lead and nickel. Labels often do not match contents.[[3]]"
+        },
+        {
+          "p": "**Deaths:** most kratom-associated deaths involved other substances, but some involved kratom alone. Concentrated 7-OH products carry a higher overdose risk.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with kratom?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Opioids",
+                "Additive sedation and breathing suppression",
+                "High risk"
+              ],
+              [
+                "Benzodiazepines, alcohol, sedatives",
+                "Additive sedation",
+                "High risk"
+              ],
+              [
+                "Drugs metabolized by CYP2D6 and CYP3A4",
+                "Kratom inhibits these enzymes, raising levels of many medicines",
+                "Check with a pharmacist"
+              ],
+              [
+                "Stimulants",
+                "Heart strain, seizures",
+                "Use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does a kratom overdose look like?",
+      "blocks": [
+        {
+          "p": "Kratom alone can cause agitation, fast heartbeat, high blood pressure, confusion, vomiting, and seizures. High doses, 7-OH products, or kratom mixed with sedatives or opioids can cause severe sedation and slowed breathing. Naloxone may help in these cases.[[3]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before kratom does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is kratom addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "People who use kratom daily often develop dependence. Withdrawal resembles mild to moderate opioid withdrawal and is more severe after heavy use or 7-OH products.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "12 to 24 hours",
+              "title": "Symptoms begin",
+              "text": "Cravings, restlessness, runny nose, muscle aches, irritability."
+            },
+            {
+              "when": "Days 2 to 4",
+              "title": "Peak",
+              "text": "Jerky movements, sweating, diarrhea, insomnia, anxiety, hot and cold flashes."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Resolves",
+              "text": "Physical symptoms ease; low mood and cravings can linger."
+            }
+          ]
+        },
+        {
+          "p": "Clinicians have successfully treated kratom and 7-OH dependence with buprenorphine, the same medicine used for opioid use disorder."
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is kratom legal in the US?",
+      "blocks": [
+        {
+          "p": "**Federal law:** kratom leaf is not a federally controlled substance. The FDA has not approved it for any use, has warned consumers not to use it, and blocks imports of kratom marketed as a dietary supplement or for medical use.[[3]]"
+        },
+        {
+          "p": "**7-OH (2026):** in July 2026 the DEA announced it would temporarily place 7-hydroxymitragynine above a threshold of 0.05% in plant material, and three related synthetic compounds, in Schedule I. The synthetic compounds became Schedule I in August 2026; check the current status of concentrated 7-OH products, which remained pending in early autumn 2026. Natural kratom leaf below the threshold is not covered.[[2]]"
+        },
+        {
+          "p": "**State law:** several states, including Alabama, Arkansas, Indiana, Rhode Island, Vermont, and Wisconsin, ban kratom, and others ban 7-OH products, set age limits, or require labeling under a Kratom Consumer Protection Act. Some cities and counties have their own bans."
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with kratom use?",
+      "blocks": [
+        {
+          "p": "Kratom and 7-OH dependence can be treated with the same medicines used for opioid use disorder, including buprenorphine."
+        },
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[4]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[5]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is kratom legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Thailand",
+                "Legalized in 2021 and regulated under a 2022 kratom act"
+              ],
+              [
+                "Malaysia",
+                "Controlled under the Poisons Act"
+              ],
+              [
+                "United Kingdom",
+                "Illegal to sell or supply under the Psychoactive Substances Act 2016"
+              ],
+              [
+                "Australia",
+                "Schedule 9 prohibited substance"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[6]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is kratom an opioid?",
+      "It is not a classic opioid, but its alkaloids activate opioid receptors and it can cause opioid-like dependence and withdrawal."
+    ],
+    [
+      "Is kratom legal?",
+      "Kratom leaf is not federally controlled, but several states ban it, and the DEA began scheduling concentrated 7-OH and related compounds in 2026."
+    ],
+    [
+      "What is 7-OH?",
+      "7-hydroxymitragynine, a potent opioid alkaloid present in small amounts in kratom and concentrated in some products. It is much stronger than mitragynine."
+    ],
+    [
+      "Can kratom help with opioid withdrawal?",
+      "Some people use it that way, but it is not approved or proven, and it causes its own dependence. Buprenorphine and methadone are proven treatments."
+    ],
+    [
+      "Does kratom show on drug tests?",
+      "Standard opioid tests do not detect it, but specific kratom tests exist."
+    ]
+  ],
+  "sources": [
+    [
+      "Kratom",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/kratom"
+    ],
+    [
+      "DEA to temporarily schedule 7-OH and related substances to protect public safety",
+      "US Drug Enforcement Administration, July 2026",
+      "https://www.dea.gov/press-releases/2026/07/01/dea-temporarily-schedule-7-oh-and-related-substances-protect-public"
+    ],
+    [
+      "FDA and Kratom",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/news-events/public-health-focus/fda-and-kratom"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

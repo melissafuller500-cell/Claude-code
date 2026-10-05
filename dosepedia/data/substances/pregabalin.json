@@ -1,0 +1,398 @@
+{
+  "slug": "pregabalin",
+  "name": "Pregabalin",
+  "brands": [
+    "Lyrica",
+    "Lyrica CR"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Gabapentinoids, dissociatives, and others",
+    "slug": "gabapentinoids-dissociatives"
+  },
+  "subclass": "Gabapentinoid",
+  "schedule": {
+    "us": "V",
+    "label": "Schedule V"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Pregabalin (Lyrica) facts: uses for nerve pain, fibromyalgia and seizures, dosing basics, breathing warnings, misuse, withdrawal, and legal access.",
+  "quick": "Pregabalin (Lyrica) is a nerve pain and antiseizure medicine used for diabetic nerve pain, shingles pain, fibromyalgia, spinal cord injury pain, and partial seizures. It is a Schedule V controlled substance because it can be misused, and stopping it suddenly can cause withdrawal.",
+  "facts": [
+    [
+      "Generic name",
+      "Pregabalin"
+    ],
+    [
+      "Brand names",
+      "Lyrica, Lyrica CR"
+    ],
+    [
+      "Drug class",
+      "Gabapentinoid (calcium channel alpha-2-delta ligand)"
+    ],
+    [
+      "US legal status",
+      "Schedule V, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Diabetic nerve pain, postherpetic neuralgia, fibromyalgia, spinal cord injury pain, partial-onset seizures (add-on)"
+    ],
+    [
+      "Forms",
+      "Capsules, extended-release tablets, oral solution"
+    ],
+    [
+      "Onset",
+      "Pain relief within the first week"
+    ],
+    [
+      "Half-life",
+      "About 6 hours"
+    ],
+    [
+      "Cleared by",
+      "Kidneys, unchanged"
+    ],
+    [
+      "Key warning",
+      "Breathing problems with opioids or sedatives"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour (peak); pain relief within a week",
+    "duration": "8 to 12 hours",
+    "half_life": "About 6 hours",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "Nerve pain; fibromyalgia; seizures",
+    "groups": [
+      "depressant",
+      "gabapentinoid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is pregabalin used for?",
+      "blocks": [
+        {
+          "p": "Pregabalin is approved for nerve pain from diabetic neuropathy, shingles (postherpetic neuralgia), and spinal cord injury; for fibromyalgia; and as an add-on for partial-onset seizures in people 1 month and older.[[1]]"
+        },
+        {
+          "p": "It binds to a part of nerve calcium channels (alpha-2-delta), calming overactive nerve signaling. It is not an opioid, but it can cause euphoria at high doses and is sometimes misused, especially with opioids."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is pregabalin usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use pregabalin. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Condition",
+              "Typical adult dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Diabetic nerve pain",
+                "50 mg three times a day",
+                "Maximum 300 mg a day"
+              ],
+              [
+                "Postherpetic neuralgia",
+                "75 mg twice or 50 mg three times a day",
+                "Maximum 600 mg a day"
+              ],
+              [
+                "Fibromyalgia",
+                "75 mg twice a day",
+                "Usual 300 to 450 mg a day"
+              ],
+              [
+                "Kidney impairment",
+                "Reduced by kidney function",
+                "Dose adjustment required"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of pregabalin?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include dizziness, drowsiness, swelling of the hands and feet, weight gain, blurred vision, dry mouth, and trouble concentrating.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include allergic swelling of the face and throat (angioedema), breathing problems with sedatives, suicidal thoughts (a class warning for antiseizure drugs), and misuse.[[1]]"
+        },
+        {
+          "warn": "The FDA warns that gabapentin and pregabalin can cause serious, sometimes fatal, breathing problems when combined with opioids or other sedatives, and in older adults and people with lung disease.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with pregabalin?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids",
+                "Slowed breathing; higher overdose risk",
+                "Use lowest doses; monitor"
+              ],
+              [
+                "Alcohol",
+                "Additive sedation",
+                "Avoid"
+              ],
+              [
+                "Benzodiazepines and sleep medicines",
+                "Additive sedation and breathing problems",
+                "Use caution"
+              ],
+              [
+                "ACE inhibitors (lisinopril)",
+                "Higher risk of angioedema",
+                "Use caution"
+              ],
+              [
+                "Pioglitazone",
+                "More swelling and weight gain",
+                "Monitor"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does pregabalin overdose look like?",
+      "blocks": [
+        {
+          "p": "Pregabalin overdose causes drowsiness, confusion, agitation, restlessness, and, rarely, seizures or coma. Most deaths involve opioids or other sedatives taken at the same time.[[1]][[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse pregabalin, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is pregabalin withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "Stopping pregabalin suddenly after regular use can cause withdrawal. The label advises tapering over at least one week.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 2",
+              "title": "Symptoms begin",
+              "text": "Insomnia, nausea, headache, anxiety, sweating, diarrhea."
+            },
+            {
+              "when": "Days 2 to 7",
+              "title": "Peak",
+              "text": "Restlessness, pain, and in people with epilepsy, seizures."
+            },
+            {
+              "when": "Weeks",
+              "title": "Recovery",
+              "text": "Most symptoms resolve within weeks; longer after high doses."
+            }
+          ]
+        },
+        {
+          "warn": "In people with epilepsy, stopping pregabalin suddenly can trigger more frequent seizures."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get pregabalin legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, pregabalin is a Schedule V controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule V prescriptions can be refilled as the prescriber authorizes. Some states set stricter limits.",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** generic pregabalin is widely available and inexpensive."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order pregabalin online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill pregabalin prescriptions online and ship them. Buying pregabalin from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether pregabalin is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells pregabalin with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is pregabalin legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C since 2019; prescription only"
+              ],
+              [
+                "Canada",
+                "Prescription medicine; not a scheduled controlled drug"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is pregabalin a controlled substance?",
+      "Yes, in the US it is Schedule V, the lowest schedule, because it can be misused."
+    ],
+    [
+      "Is pregabalin the same as gabapentin?",
+      "They work the same way, but pregabalin is absorbed more predictably and is more potent per milligram. Gabapentin is not federally controlled."
+    ],
+    [
+      "Does pregabalin cause weight gain?",
+      "Yes, in some people, along with swelling of the legs."
+    ],
+    [
+      "How long does pregabalin take to work for nerve pain?",
+      "Many people notice benefit within the first week."
+    ]
+  ],
+  "sources": [
+    [
+      "Lyrica (pregabalin) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=pregabalin"
+    ],
+    [
+      "FDA warns about serious breathing problems with seizure and nerve pain medicines gabapentin and pregabalin",
+      "US Food and Drug Administration, 2019",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-warns-about-serious-breathing-problems-seizure-and-nerve-pain-medicines-gabapentin-neurontin"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

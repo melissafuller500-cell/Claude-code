@@ -1,0 +1,356 @@
+{
+  "slug": "esketamine",
+  "name": "Esketamine",
+  "brands": [
+    "Spravato"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Gabapentinoids, dissociatives, and others",
+    "slug": "gabapentinoids-dissociatives"
+  },
+  "subclass": "NMDA receptor antagonist (nasal)",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Esketamine (Spravato) facts: how it treats depression, the in-clinic dosing schedule, monitoring rules, boxed warnings, side effects, and how to access it.",
+  "quick": "Esketamine (Spravato) is a nasal spray for treatment-resistant depression and for depression with suicidal thoughts. It is a form of ketamine, given only in certified clinics where patients are monitored for at least two hours. It is a Schedule III controlled substance and is never dispensed to take home.",
+  "facts": [
+    [
+      "Generic name",
+      "Esketamine hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Spravato"
+    ],
+    [
+      "Drug class",
+      "NMDA receptor antagonist"
+    ],
+    [
+      "US legal status",
+      "Schedule III; restricted distribution (REMS)"
+    ],
+    [
+      "Approved uses",
+      "Treatment-resistant depression (with an oral antidepressant or alone); major depression with suicidal thoughts or actions"
+    ],
+    [
+      "Forms",
+      "Nasal spray device, 28 mg each"
+    ],
+    [
+      "Onset",
+      "Within hours to days"
+    ],
+    [
+      "Monitoring",
+      "At least 2 hours after each dose"
+    ],
+    [
+      "Half-life",
+      "7 to 12 hours"
+    ],
+    [
+      "Where it is given",
+      "Certified healthcare settings only"
+    ]
+  ],
+  "profile": {
+    "onset": "Minutes (dissociation); hours to days (mood)",
+    "duration": "Dissociation about 1 to 2 hours",
+    "half_life": "7 to 12 hours",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "Treatment-resistant depression",
+    "groups": [
+      "dissociative"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is esketamine used for?",
+      "blocks": [
+        {
+          "p": "Esketamine is approved for adults with treatment-resistant depression, either with an oral antidepressant or, since January 2025, on its own, and with an oral antidepressant for major depression with acute suicidal thoughts or behavior.[[1]]"
+        },
+        {
+          "p": "It is the S-form of ketamine. It works on the glutamate system rather than serotonin, which may explain why it can help people for whom standard antidepressants failed."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is esketamine usually prescribed?",
+      "blocks": [
+        {
+          "p": "Spravato is self-administered under the direct supervision of a clinician at a certified treatment center. The schedule below comes from the label and is not personal dosing advice.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Phase",
+              "Schedule",
+              "Dose"
+            ],
+            "rows": [
+              [
+                "Induction (weeks 1 to 4)",
+                "Twice a week",
+                "56 mg on day 1, then 56 or 84 mg"
+              ],
+              [
+                "Maintenance (weeks 5 to 8)",
+                "Once a week",
+                "56 or 84 mg"
+              ],
+              [
+                "Maintenance (week 9 onward)",
+                "Every 1 to 2 weeks",
+                "Lowest frequency that maintains remission"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Patients must not drive or operate machinery until the next day after a restful sleep, and need someone to take them home."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of esketamine?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Sedation, dissociation, and breathing depression; patients must be monitored for at least 2 hours after each dose.",
+              "Potential for abuse and misuse.",
+              "Increased risk of suicidal thoughts and behaviors in children, teens, and young adults taking antidepressants."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include dissociation, dizziness, nausea, sedation, spinning sensation, numbness, anxiety, raised blood pressure, vomiting, and feeling drunk.[[1]]"
+        },
+        {
+          "p": "**Who should not use it:** people with aneurysms or arteriovenous malformations, or a history of bleeding in the brain, because it raises blood pressure.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with esketamine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines, opioids, alcohol",
+                "More sedation",
+                "Monitor closely"
+              ],
+              [
+                "Stimulants, MAOIs",
+                "Raised blood pressure",
+                "Monitor blood pressure"
+              ],
+              [
+                "Nasal steroids or decongestants",
+                "May change absorption",
+                "Use at least 1 hour before Spravato"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What happens if someone gets too much esketamine?",
+      "blocks": [
+        {
+          "p": "Because it is only given under supervision in measured doses, overdose is rare. Excess effects would include heavy sedation, dissociation, and high blood pressure.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, breathing slowly, having a seizure, very hot, or violently agitated.",
+              "Place an unresponsive person on their side so they do not choke if they vomit.",
+              "Keep them away from roads, water, and heights. People on dissociatives often cannot feel pain or judge danger.",
+              "If opioids could be involved, give naloxone. It will not harm the person."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when esketamine treatment stops?",
+      "blocks": [
+        {
+          "p": "No withdrawal syndrome was seen in trials. Stopping maintenance treatment raises the risk of depression returning; trials showed relapse was more likely in patients who stopped than in those who continued.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Weeks",
+              "title": "Watch mood",
+              "text": "Depression can return gradually."
+            },
+            {
+              "when": "Months",
+              "title": "Relapse risk",
+              "text": "Higher after stopping maintenance."
+            },
+            {
+              "when": "Ongoing",
+              "title": "Plan with the prescriber",
+              "text": "Decide together on frequency and duration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get esketamine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, esketamine is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Restricted program (REMS):** Spravato is only dispensed to certified healthcare settings, and patients must be enrolled. Pharmacies do not give it to patients to take home.",
+            "**Cost:** most insurers, including Medicare and many Medicaid programs, cover Spravato with prior authorization."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you get Spravato online?",
+      "blocks": [
+        {
+          "p": "No. Spravato cannot be ordered online or delivered to your home. A clinician can evaluate you by telehealth, but every dose must be taken at a certified treatment center under supervision. The manufacturer's website lists certified centers.[[1]]"
+        },
+        {
+          "p": "Any website offering esketamine for home use is not legitimate."
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is esketamine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "European Union",
+                "Approved prescription medicine (Spravato)"
+              ],
+              [
+                "United Kingdom",
+                "Licensed but not recommended by NICE; Class B"
+              ],
+              [
+                "Canada",
+                "Approved prescription medicine"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[7]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How fast does Spravato work?",
+      "Some people notice improvement within hours to days, faster than typical antidepressants, which take weeks."
+    ],
+    [
+      "Can I drive after Spravato?",
+      "No. You must not drive until the next day after a restful sleep."
+    ],
+    [
+      "Is Spravato the same as ketamine?",
+      "It is the S-form of ketamine, given as a nasal spray. Ketamine infusions for depression are off-label; Spravato is FDA-approved."
+    ],
+    [
+      "Can Spravato be used alone?",
+      "Yes. Since January 2025, it is approved without an oral antidepressant for treatment-resistant depression."
+    ]
+  ],
+  "sources": [
+    [
+      "Spravato (esketamine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=esketamine"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

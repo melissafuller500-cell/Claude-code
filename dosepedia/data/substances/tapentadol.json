@@ -1,0 +1,421 @@
+{
+  "slug": "tapentadol",
+  "name": "Tapentadol",
+  "brands": [
+    "Nucynta",
+    "Nucynta ER"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Opioid agonist with norepinephrine reuptake inhibition",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Tapentadol (Nucynta) facts: uses, dosing basics, risks, serotonin warnings, interactions, overdose, withdrawal, and legal access in the US.",
+  "quick": "Tapentadol (Nucynta) is a prescription opioid that also blocks norepinephrine reuptake. It is used for acute pain and, in extended-release form, for chronic pain and diabetic nerve pain. It is a Schedule II controlled substance.",
+  "facts": [
+    [
+      "Generic name",
+      "Tapentadol hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Nucynta, Nucynta ER"
+    ],
+    [
+      "Drug class",
+      "Opioid agonist; norepinephrine reuptake inhibitor"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Acute pain (IR); chronic pain and diabetic peripheral neuropathy pain (ER)"
+    ],
+    [
+      "Forms",
+      "Immediate-release and extended-release tablets"
+    ],
+    [
+      "Onset",
+      "About 30 minutes"
+    ],
+    [
+      "Half-life",
+      "About 4 hours"
+    ],
+    [
+      "Broken down by",
+      "Glucuronidation (not CYP enzymes)"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone"
+    ]
+  ],
+  "profile": {
+    "onset": "About 30 minutes",
+    "duration": "4 to 6 hours (immediate release)",
+    "half_life": "About 4 hours",
+    "naloxone": "Yes",
+    "dependence": "High",
+    "medical": "Acute and chronic pain; diabetic nerve pain",
+    "groups": [
+      "opioid",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is tapentadol used for?",
+      "blocks": [
+        {
+          "p": "Immediate-release tapentadol is approved for acute pain severe enough to require an opioid. Extended-release tapentadol is approved for severe chronic pain needing daily treatment and for nerve pain from diabetic peripheral neuropathy.[[1]]"
+        },
+        {
+          "p": "Because it is broken down mainly by glucuronidation rather than CYP enzymes, tapentadol has fewer drug-enzyme interactions than oxycodone or tramadol."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is tapentadol usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use tapentadol. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical adult dose",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Immediate release (Nucynta)",
+                "50 to 100 mg every 4 to 6 hours",
+                "Day 1 maximum 700 mg; then 600 mg a day"
+              ],
+              [
+                "Extended release (Nucynta ER)",
+                "50 mg twice a day (opioid-naive)",
+                "Maximum 500 mg a day; swallow whole"
+              ],
+              [
+                "Moderate liver impairment",
+                "50 mg no more often than every 8 hours",
+                "Avoid in severe impairment"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of tapentadol?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Tapentadol exposes users to risks of addiction, misuse, and abuse, which can lead to overdose and death.",
+              "Life-threatening slowed breathing can occur, especially when starting treatment or after a dose increase.",
+              "Accidental ingestion, especially by children, can cause a fatal overdose.",
+              "Use with benzodiazepines or other central nervous system depressants, including alcohol, can cause profound sedation, slowed breathing, coma, and death.",
+              "Prolonged use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include nausea, dizziness, vomiting, drowsiness, constipation, and headache. Constipation is often milder than with other opioids.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include slowed breathing, seizures, and serotonin syndrome with serotonergic drugs.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with tapentadol?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines (alprazolam, diazepam, clonazepam)",
+                "Profound sedation, slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Gabapentin, pregabalin, sleep medicines, muscle relaxants",
+                "Additive sedation and breathing problems",
+                "Use caution; lower doses"
+              ],
+              [
+                "MAOIs",
+                "High blood pressure crisis, serotonin syndrome",
+                "Contraindicated within 14 days"
+              ],
+              [
+                "SSRIs, SNRIs, tricyclics, triptans",
+                "Serotonin syndrome",
+                "Use caution"
+              ],
+              [
+                "Other opioids",
+                "Additive breathing suppression",
+                "Avoid unless directed by prescriber"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does tapentadol overdose look like?",
+      "blocks": [
+        {
+          "p": "Tapentadol overdose causes pinpoint pupils, extreme drowsiness, slow or stopped breathing, and limpness. Seizures can occur.[[1]][[2]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before tapentadol does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is tapentadol withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take tapentadol regularly for more than a few weeks become physically dependent, even when they take it exactly as prescribed. Dependence is not the same as addiction, but it means stopping suddenly causes withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "8 to 24 hours",
+              "title": "Early symptoms",
+              "text": "Anxiety, restlessness, yawning, sweating, runny nose, watery eyes, and muscle aches."
+            },
+            {
+              "when": "Days 1 to 3",
+              "title": "Peak withdrawal",
+              "text": "Diarrhea, stomach cramps, nausea and vomiting, goosebumps, dilated pupils, fast heartbeat, and strong cravings. Rarely dangerous in healthy adults, but dehydration can be serious."
+            },
+            {
+              "when": "Days 5 to 10",
+              "title": "Lingering symptoms",
+              "text": "Poor sleep, low mood, low energy, and cravings can continue for weeks. Tolerance falls quickly, which raises the risk of overdose if use restarts."
+            }
+          ]
+        },
+        {
+          "warn": "After a break, the body loses tolerance within days. Returning to a previous dose of tapentadol can cause a fatal overdose."
+        },
+        {
+          "p": "The FDA warns against stopping opioids abruptly in people who are physically dependent. A prescriber can taper the dose gradually, often by 10% or less per month for long-term users, and medicines such as clonidine or lofexidine can ease symptoms. For opioid use disorder, buprenorphine and methadone cut the risk of death roughly in half.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get tapentadol legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, tapentadol is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[4]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[5]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[6]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[7]][[8]]",
+            "**Cost:** tapentadol is brand-only in the US and costly; many insurers require prior authorization."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order tapentadol online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill tapentadol prescriptions online and ship them. Buying tapentadol from a website that does not require a prescription is illegal, and the product is often fake.[[7]][[9]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether tapentadol is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells tapentadol with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[7]][[8]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is tapentadol legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule I; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug"
+              ],
+              [
+                "International",
+                "Not under UN control; controlled nationally"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[10]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is tapentadol stronger than tramadol?",
+      "Yes. Tapentadol is a stronger opioid and is Schedule II, while tramadol is Schedule IV."
+    ],
+    [
+      "Does tapentadol cause less constipation?",
+      "Studies show somewhat less constipation than equally effective doses of oxycodone, but it can still occur."
+    ],
+    [
+      "Is there a generic for Nucynta?",
+      "As of 2026, tapentadol is sold in the US mainly as the brand Nucynta."
+    ],
+    [
+      "How long does tapentadol stay in your system?",
+      "Its half-life is about 4 hours, and most is cleared within a day."
+    ]
+  ],
+  "sources": [
+    [
+      "Nucynta (tapentadol) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=tapentadol"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, 2022",
+      "Centers for Disease Control and Prevention, MMWR",
+      "https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

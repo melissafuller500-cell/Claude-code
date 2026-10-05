@@ -1,0 +1,391 @@
+{
+  "slug": "dexmethylphenidate",
+  "name": "Dexmethylphenidate",
+  "brands": [
+    "Focalin",
+    "Focalin XR",
+    "Azstarys"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Methylphenidate-type stimulant",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Dexmethylphenidate (Focalin) facts: uses for ADHD, dosing basics, boxed warning, risks, interactions, overdose, and how to get it legally.",
+  "quick": "Dexmethylphenidate (Focalin) is the more active half of methylphenidate, so it works at about half the dose. It is used for ADHD and is a Schedule II controlled substance.",
+  "facts": [
+    [
+      "Generic name",
+      "Dexmethylphenidate hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Focalin, Focalin XR; Azstarys (with serdexmethylphenidate)"
+    ],
+    [
+      "Drug class",
+      "CNS stimulant"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only"
+    ],
+    [
+      "Approved uses",
+      "ADHD (age 6 and up)"
+    ],
+    [
+      "Forms",
+      "Tablets, extended-release capsules"
+    ],
+    [
+      "Onset",
+      "About 30 minutes"
+    ],
+    [
+      "Duration",
+      "4 to 6 hours (IR); up to 12 hours (XR)"
+    ],
+    [
+      "Half-life",
+      "About 2 to 3 hours"
+    ],
+    [
+      "Relation to methylphenidate",
+      "The d-isomer; about twice as potent per mg"
+    ]
+  ],
+  "profile": {
+    "onset": "About 30 minutes",
+    "duration": "4 to 12 hours depending on form",
+    "half_life": "2 to 3 hours",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "ADHD",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is dexmethylphenidate used for?",
+      "blocks": [
+        {
+          "p": "Dexmethylphenidate is approved for ADHD in people 6 and older. Methylphenidate is a 50:50 mix of two mirror-image forms; dexmethylphenidate is only the active d-form.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is dexmethylphenidate usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use dexmethylphenidate. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical starting dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Focalin (new to methylphenidate)",
+                "2.5 mg twice a day, at least 4 hours apart",
+                "Maximum 20 mg a day"
+              ],
+              [
+                "Focalin XR (adults)",
+                "10 mg once in the morning",
+                "Maximum 40 mg a day"
+              ],
+              [
+                "Focalin XR (children)",
+                "5 mg once in the morning",
+                "Maximum 30 mg a day"
+              ],
+              [
+                "Switching from methylphenidate",
+                "Half the methylphenidate dose",
+                ""
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of dexmethylphenidate?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warning",
+            "items": [
+              "Dexmethylphenidate has a high potential for abuse and misuse, which can lead to a substance use disorder, including addiction. Misuse and abuse of CNS stimulants can result in overdose and death, and this risk is increased with higher doses or unapproved methods of administration, such as snorting or injection.[[2]]",
+              "Prescribers should assess each patient's risk before prescribing, monitor for signs of misuse throughout treatment, and counsel patients not to share their medicine.[[2]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include reduced appetite, stomach pain, insomnia, headache, and anxiety. Serious risks match methylphenidate.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with dexmethylphenidate?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "MAOIs (phenelzine, selegiline, linezolid)",
+                "Dangerous rise in blood pressure",
+                "Contraindicated within 14 days"
+              ],
+              [
+                "Other stimulants, decongestants (pseudoephedrine)",
+                "High blood pressure, fast heart rate",
+                "Use caution"
+              ],
+              [
+                "SSRIs, SNRIs, tramadol, triptans",
+                "Serotonin syndrome (rare)",
+                "Use caution"
+              ],
+              [
+                "Alcohol",
+                "Masks drunkenness; heart strain",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does dexmethylphenidate overdose look like?",
+      "blocks": [
+        {
+          "p": "Overdose causes agitation, tremor, confusion, hallucinations, very high temperature, fast heartbeat, high blood pressure, and seizures.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop dexmethylphenidate?",
+      "blocks": [
+        {
+          "p": "Stopping dexmethylphenidate after regular prescribed use does not cause dangerous physical withdrawal. ADHD symptoms return, and some people feel tired or low for a few days. After heavy misuse, a \"crash\" with exhaustion, increased sleep and appetite, and depression is common.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Crash",
+              "text": "Fatigue, long sleep, increased appetite, low mood, irritability."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Low mood and cravings",
+              "text": "Low energy, poor concentration, and cravings after heavy use."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Recovery",
+              "text": "Mood and energy normalize; depression should be watched for."
+            }
+          ]
+        },
+        {
+          "p": "There is no need to taper prescribed stimulants for safety, but anyone who feels severe depression or suicidal thoughts after stopping should contact a clinician or call or text 988."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get dexmethylphenidate legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, dexmethylphenidate is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[4]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[5]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[6]][[7]]",
+            "**Cost:** generic dexmethylphenidate IR and XR are available.",
+            "**Shortages:** prescription stimulants were in short supply from 2022, and some strengths remained hard to find into 2025. If a pharmacy is out, ask about another strength, form, or nearby pharmacy, or ask the prescriber about alternatives."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order dexmethylphenidate online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill dexmethylphenidate prescriptions online and ship them. Buying dexmethylphenidate from a website that does not require a prescription is illegal, and the product is often fake.[[6]][[8]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether dexmethylphenidate is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells dexmethylphenidate with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[6]][[7]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is dexmethylphenidate legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B; limited use"
+              ],
+              [
+                "Canada",
+                "Schedule I"
+              ],
+              [
+                "International",
+                "Methylphenidate and its isomers: Schedule II of the 1971 Convention"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is Focalin stronger than Ritalin?",
+      "Per milligram, yes, about twice as potent, because it contains only the active form. Effects at equivalent doses are similar."
+    ],
+    [
+      "What is Azstarys?",
+      "A once-daily capsule combining dexmethylphenidate with serdexmethylphenidate, a prodrug that is converted to dexmethylphenidate over the day."
+    ],
+    [
+      "How long does Focalin XR last?",
+      "Up to about 12 hours."
+    ]
+  ],
+  "sources": [
+    [
+      "Focalin (dexmethylphenidate) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=dexmethylphenidate"
+    ],
+    [
+      "FDA updating warnings to improve safe use of prescription stimulants used to treat ADHD and other conditions",
+      "US Food and Drug Administration, 2023",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-updating-warnings-improve-safe-use-prescription-stimulants-used-treat-adhd-and-other-conditions"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

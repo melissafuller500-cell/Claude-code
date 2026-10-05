@@ -1,0 +1,417 @@
+{
+  "slug": "methylphenidate",
+  "name": "Methylphenidate",
+  "brands": [
+    "Ritalin",
+    "Concerta",
+    "Metadate CD",
+    "Quillichew ER",
+    "Daytrana",
+    "Jornay PM"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Methylphenidate-type stimulant",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Methylphenidate (Ritalin, Concerta) facts: uses for ADHD and narcolepsy, forms and dosing basics, boxed warning, risks, interactions, and legal access.",
+  "quick": "Methylphenidate (Ritalin, Concerta) is the most widely used ADHD medicine besides amphetamines. It blocks the reuptake of dopamine and norepinephrine rather than releasing them. It is a Schedule II controlled substance available in many short- and long-acting forms, including a skin patch.",
+  "facts": [
+    [
+      "Generic name",
+      "Methylphenidate hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Ritalin, Concerta, Metadate CD, Daytrana (patch), Jornay PM, Quillichew ER"
+    ],
+    [
+      "Drug class",
+      "CNS stimulant (dopamine and norepinephrine reuptake inhibitor)"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only"
+    ],
+    [
+      "Approved uses",
+      "ADHD; narcolepsy (Ritalin)"
+    ],
+    [
+      "Forms",
+      "Tablets, extended-release tablets and capsules, chewables, liquids, patch"
+    ],
+    [
+      "Onset",
+      "20 to 60 minutes"
+    ],
+    [
+      "Duration",
+      "3 to 4 hours (IR); 8 to 12 hours (ER)"
+    ],
+    [
+      "Half-life",
+      "2 to 3 hours"
+    ],
+    [
+      "Broken down by",
+      "Carboxylesterase CES1 (not CYP)"
+    ]
+  ],
+  "profile": {
+    "onset": "20 to 60 minutes",
+    "duration": "3 to 12 hours depending on form",
+    "half_life": "2 to 3 hours",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "ADHD; narcolepsy",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is methylphenidate used for?",
+      "blocks": [
+        {
+          "p": "Methylphenidate is approved for ADHD in people 6 and older and, as Ritalin, for narcolepsy.[[1]]"
+        },
+        {
+          "p": "It blocks the transporters that recycle dopamine and norepinephrine. Some people respond better to methylphenidate and others to amphetamines, so clinicians may try both."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is methylphenidate usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use methylphenidate. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical starting dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Ritalin (adults)",
+                "20 to 30 mg a day in 2 or 3 doses",
+                "Range 10 to 60 mg a day"
+              ],
+              [
+                "Ritalin (children 6 and up)",
+                "5 mg twice a day before breakfast and lunch",
+                "Raise by 5 to 10 mg weekly; maximum 60 mg a day"
+              ],
+              [
+                "Concerta (adults)",
+                "18 or 36 mg once in the morning",
+                "Maximum 72 mg a day"
+              ],
+              [
+                "Concerta (children 6 to 12)",
+                "18 mg once in the morning",
+                "Maximum 54 mg a day"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of methylphenidate?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warning",
+            "items": [
+              "Methylphenidate has a high potential for abuse and misuse, which can lead to a substance use disorder, including addiction. Misuse and abuse of CNS stimulants can result in overdose and death, and this risk is increased with higher doses or unapproved methods of administration, such as snorting or injection.[[2]]",
+              "Prescribers should assess each patient's risk before prescribing, monitor for signs of misuse throughout treatment, and counsel patients not to share their medicine.[[2]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include decreased appetite, trouble sleeping, stomach pain, headache, nervousness, and weight loss.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include heart problems, high blood pressure, psychosis or mania, prolonged painful erections (priapism), circulation problems, and slowed growth in children. The patch can cause permanent skin color loss.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with methylphenidate?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "MAOIs (phenelzine, selegiline, linezolid)",
+                "Dangerous rise in blood pressure",
+                "Contraindicated within 14 days"
+              ],
+              [
+                "Other stimulants, decongestants (pseudoephedrine)",
+                "High blood pressure, fast heart rate",
+                "Use caution"
+              ],
+              [
+                "SSRIs, SNRIs, tramadol, triptans",
+                "Serotonin syndrome (rare)",
+                "Use caution"
+              ],
+              [
+                "Alcohol",
+                "Masks drunkenness; heart strain",
+                "Avoid"
+              ],
+              [
+                "Warfarin, some antiseizure drugs, tricyclics",
+                "Methylphenidate may raise their levels",
+                "Monitor"
+              ],
+              [
+                "Risperidone",
+                "Higher risk of movement side effects when doses change",
+                "Monitor"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does methylphenidate overdose look like?",
+      "blocks": [
+        {
+          "p": "Overdose causes vomiting, agitation, tremor, muscle twitching, confusion, hallucinations, sweating, flushing, very high temperature, fast heartbeat, high blood pressure, and seizures.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop methylphenidate?",
+      "blocks": [
+        {
+          "p": "Stopping methylphenidate after regular prescribed use does not cause dangerous physical withdrawal. ADHD symptoms return, and some people feel tired or low for a few days. After heavy misuse, a \"crash\" with exhaustion, increased sleep and appetite, and depression is common.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Crash",
+              "text": "Fatigue, long sleep, increased appetite, low mood, irritability."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Low mood and cravings",
+              "text": "Low energy, poor concentration, and cravings after heavy use."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Recovery",
+              "text": "Mood and energy normalize; depression should be watched for."
+            }
+          ]
+        },
+        {
+          "p": "There is no need to taper prescribed stimulants for safety, but anyone who feels severe depression or suicidal thoughts after stopping should contact a clinician or call or text 988."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get methylphenidate legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, methylphenidate is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[4]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[5]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[6]][[7]]",
+            "**Cost:** generic methylphenidate is widely covered; some long-acting brands need prior authorization.",
+            "**Shortages:** prescription stimulants were in short supply from 2022, and some strengths remained hard to find into 2025. If a pharmacy is out, ask about another strength, form, or nearby pharmacy, or ask the prescriber about alternatives."
+          ]
+        },
+        {
+          "warn": "Pills sold as Ritalin outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[8]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order methylphenidate online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill methylphenidate prescriptions online and ship them. Buying methylphenidate from a website that does not require a prescription is illegal, and the product is often fake.[[6]][[8]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether methylphenidate is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells methylphenidate with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[6]][[7]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is methylphenidate legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B; prescription only (Schedule 2 controlled drug)"
+              ],
+              [
+                "Canada",
+                "Schedule I of the Controlled Drugs and Substances Act; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug"
+              ],
+              [
+                "International",
+                "Schedule II of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "What is the difference between Ritalin and Concerta?",
+      "Both are methylphenidate. Ritalin is immediate release and lasts 3 to 4 hours; Concerta uses a pump system to release drug over about 12 hours."
+    ],
+    [
+      "Is methylphenidate weaker than Adderall?",
+      "Not exactly. They work differently, and response varies by person. Roughly, 10 mg of methylphenidate has similar effects to 5 mg of mixed amphetamine salts."
+    ],
+    [
+      "How long does methylphenidate stay in your system?",
+      "Its half-life is 2 to 3 hours. Urine tests usually detect it for 1 to 2 days, and many standard drug tests do not screen for it."
+    ]
+  ],
+  "sources": [
+    [
+      "Ritalin (methylphenidate) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=methylphenidate"
+    ],
+    [
+      "FDA updating warnings to improve safe use of prescription stimulants used to treat ADHD and other conditions",
+      "US Food and Drug Administration, 2023",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-updating-warnings-improve-safe-use-prescription-stimulants-used-treat-adhd-and-other-conditions"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

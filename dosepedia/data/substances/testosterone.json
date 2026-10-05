@@ -1,0 +1,431 @@
+{
+  "slug": "testosterone",
+  "name": "Testosterone",
+  "brands": [
+    "AndroGel",
+    "Testim",
+    "Depo-Testosterone",
+    "Xyosted",
+    "Aveed",
+    "Jatenzo",
+    "Kyzatrex",
+    "Tlando",
+    "Natesto"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Anabolic steroids",
+    "slug": "anabolic-steroids"
+  },
+  "subclass": "Androgen (anabolic steroid)",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Testosterone facts: treatment of male hypogonadism, forms and dosing basics, the 2025 FDA label changes, risks, misuse, stopping, and how to get it legally.",
+  "quick": "Testosterone is the main male sex hormone, prescribed to men with confirmed low testosterone caused by a medical condition (hypogonadism). It comes as gels, injections, patches, nasal gel, pellets, and pills. It is a Schedule III controlled substance because of misuse for muscle building. In 2025 the FDA removed heart attack and stroke language from its boxed warnings and added blood pressure warnings.",
+  "facts": [
+    [
+      "Generic name",
+      "Testosterone (cypionate, enanthate, undecanoate; gels and solutions)"
+    ],
+    [
+      "Brand names",
+      "AndroGel, Testim, Depo-Testosterone, Xyosted, Aveed, Jatenzo, Kyzatrex, Tlando, Natesto"
+    ],
+    [
+      "Drug class",
+      "Androgen; anabolic steroid"
+    ],
+    [
+      "US legal status",
+      "Schedule III, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Male hypogonadism with confirmed low levels and symptoms"
+    ],
+    [
+      "Forms",
+      "Gel, solution, injection, patch, nasal gel, pellets, capsules"
+    ],
+    [
+      "Testing before treatment",
+      "Two low morning blood levels on separate days"
+    ],
+    [
+      "Half-life",
+      "Depends on form: hours (gel) to weeks (undecanoate injection)"
+    ],
+    [
+      "Key monitoring",
+      "Testosterone level, red blood cell count (hematocrit), blood pressure, prostate"
+    ],
+    [
+      "Gel warning",
+      "Children and partners can absorb it from skin contact"
+    ]
+  ],
+  "profile": {
+    "onset": "Days to weeks for symptom change",
+    "duration": "Depends on form",
+    "half_life": "Hours to weeks depending on form",
+    "naloxone": "No",
+    "dependence": "Low (therapeutic); moderate with misuse",
+    "medical": "Male hypogonadism",
+    "groups": [
+      "steroid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is testosterone used for?",
+      "blocks": [
+        {
+          "p": "Testosterone is approved for men with low testosterone due to conditions of the testes, pituitary, or hypothalamus (primary or secondary hypogonadism), confirmed by symptoms and at least two low morning blood tests. Labels state it is not established for low testosterone due to aging alone.[[1]][[2]]"
+        },
+        {
+          "p": "Off-label, testosterone is used in gender-affirming hormone therapy for transgender men and, in low doses, for some women with low sexual desire."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is testosterone usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use testosterone. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Form",
+              "Typical starting dose",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Gel 1.62% (AndroGel)",
+                "40.5 mg once daily on shoulders or upper arms",
+                "Adjusted to blood levels; wash hands and cover the site"
+              ],
+              [
+                "Cypionate or enanthate injection",
+                "50 to 400 mg every 2 to 4 weeks",
+                "Levels peak and trough between doses"
+              ],
+              [
+                "Subcutaneous autoinjector (Xyosted)",
+                "75 mg once a week",
+                "Boxed warning: blood pressure increases"
+              ],
+              [
+                "Oral undecanoate (Jatenzo, Kyzatrex, Tlando)",
+                "Twice daily with food",
+                "Blood pressure monitoring required"
+              ],
+              [
+                "Undecanoate injection (Aveed)",
+                "750 mg, again at 4 weeks, then every 10 weeks",
+                "Given in clinic; 30-minute observation"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Clinicians recheck testosterone and hematocrit within a few months of starting and then regularly, and check blood pressure and prostate health."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of testosterone?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings (vary by product)",
+            "items": [
+              "Gels and solutions: children and women can absorb testosterone from skin contact, causing early puberty, genital enlargement, or virilization.",
+              "Xyosted and oral testosterone undecanoate: can raise blood pressure, which increases the risk of heart attack and stroke.",
+              "Aveed: serious oil microembolism reactions and allergic reactions during or right after the injection."
+            ]
+          }
+        },
+        {
+          "p": "**2025 label changes:** after the TRAVERSE trial found no increase in major heart events compared with placebo in men with hypogonadism, the FDA removed boxed warning language about increased heart attack and stroke risk, required a blood pressure warning on all testosterone products, and kept the limitation on use for age-related low testosterone.[[2]]"
+        },
+        {
+          "p": "**Common side effects** include acne, skin reactions at the application site, increased red blood cells, breast swelling, and reduced sperm count.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include too many red blood cells (raising clot risk), worsening sleep apnea, blood clots in veins, worsening of urinary symptoms from an enlarged prostate, and infertility, since testosterone suppresses sperm production.[[1]]"
+        },
+        {
+          "warn": "Testosterone suppresses sperm production and is not a treatment for infertility. Men who want children should discuss alternatives such as clomiphene or hCG with a specialist."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with testosterone?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Warfarin",
+                "Increases anticoagulant effect",
+                "Monitor INR"
+              ],
+              [
+                "Insulin and diabetes medicines",
+                "Can lower blood sugar",
+                "Monitor glucose"
+              ],
+              [
+                "Corticosteroids",
+                "More fluid retention",
+                "Use caution with heart or kidney disease"
+              ],
+              [
+                "Other anabolic steroids or stimulants (misuse)",
+                "Heart, liver, and blood pressure strain",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on testosterone?",
+      "blocks": [
+        {
+          "p": "Testosterone does not cause an acute overdose like opioids or sedatives. Harm comes from long-term high levels: high red blood cell counts, high blood pressure, blood clots, heart enlargement, mood changes, and aggression. Some injectable forms can cause sudden reactions during the injection.[[1]][[3]]"
+        },
+        {
+          "emergency": {
+            "title": "When to get emergency help",
+            "items": [
+              "Call 911 for chest pain, sudden shortness of breath, signs of a stroke (face drooping, arm weakness, slurred speech), or fainting.",
+              "Call 911 for coughing, throat tightness, or trouble breathing during or right after an injection.",
+              "Get urgent care for a painful, swollen leg, which can signal a blood clot, or for yellowing of the skin or eyes.",
+              "Call Poison Help at 1-800-222-1222 if a child has touched or swallowed a testosterone gel or other product."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop testosterone?",
+      "blocks": [
+        {
+          "p": "Prescribed testosterone does not cause withdrawal in the usual sense, but it switches off the body's own production. After stopping, symptoms of low testosterone can return for weeks to months while natural production recovers, and it may not fully recover after long or high-dose use.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Weeks 1 to 4",
+              "title": "Levels fall",
+              "text": "Fatigue, low mood, reduced sex drive, and hot flashes as levels drop."
+            },
+            {
+              "when": "Months 1 to 3",
+              "title": "Recovery begins",
+              "text": "The brain restarts signals to the testes; symptoms of low testosterone peak."
+            },
+            {
+              "when": "3 to 12 months or more",
+              "title": "Natural production returns",
+              "text": "Recovery may be slow or incomplete after years of use or high doses."
+            }
+          ]
+        },
+        {
+          "p": "People who misused high doses can develop anabolic steroid dependence. Stopping can bring depression, including suicidal thoughts, fatigue, and cravings; medical support helps.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get testosterone legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, testosterone is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[4]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[5]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[6]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[7]][[8]]",
+            "**Cost:** generic testosterone cypionate injection and gels are widely covered after documented low levels; brand-name and oral forms often need prior authorization.",
+            "**Telehealth clinics:** many online \"men's health\" services prescribe testosterone. Legitimate ones require two morning blood tests, a clinical evaluation, and ongoing monitoring."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order testosterone online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill testosterone prescriptions online and ship them. Buying testosterone from a website that does not require a prescription is illegal, and the product is often fake.[[7]][[9]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether testosterone is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells testosterone with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[7]][[8]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is testosterone legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; possession for personal use without prescription not an offence, supply illegal"
+              ],
+              [
+                "Canada",
+                "Schedule IV; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine; controlled in most states"
+              ],
+              [
+                "International",
+                "Not under UN control; banned in sport by the World Anti-Doping Agency"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[10]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Does testosterone therapy increase heart attack risk?",
+      "The large TRAVERSE trial found no increase in major heart events in men with hypogonadism, and in 2025 the FDA removed that language from boxed warnings. It can raise blood pressure, which is now a class warning."
+    ],
+    [
+      "Can I get testosterone for low energy as I age?",
+      "Labels state testosterone is not established for age-related low testosterone without an underlying condition. Two low morning tests and symptoms are needed for diagnosis."
+    ],
+    [
+      "Does testosterone affect fertility?",
+      "Yes. It lowers sperm production and can cause infertility, usually reversible after stopping, but not always."
+    ],
+    [
+      "Is buying testosterone online legal?",
+      "Only with a prescription from a licensed clinician, filled by a licensed pharmacy. Products sold without a prescription are illegal and may be counterfeit or contaminated."
+    ]
+  ],
+  "sources": [
+    [
+      "AndroGel (testosterone) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=testosterone"
+    ],
+    [
+      "FDA issues class-wide labeling changes for testosterone products",
+      "US Food and Drug Administration, 2025",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-issues-class-wide-labeling-changes-testosterone-products"
+    ],
+    [
+      "Anabolic Steroids",
+      "MedlinePlus, US National Library of Medicine",
+      "https://medlineplus.gov/anabolicsteroids.html"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

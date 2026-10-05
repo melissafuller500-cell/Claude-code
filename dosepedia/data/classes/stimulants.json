@@ -1,0 +1,14 @@
+{
+  "slug": "stimulants",
+  "name": "Stimulants",
+  "description": "Stimulants explained: ADHD medicines, modafinil, phentermine, methamphetamine, and cocaine. Effects, heart risks, misuse, and legal access.",
+  "intro": "Stimulants increase dopamine and norepinephrine in the brain, raising alertness, attention, and energy. Prescription stimulants are the most effective treatment for ADHD; illicit stimulants such as methamphetamine and cocaine are highly addictive and strain the heart.",
+  "blocks": [
+    {
+      "p": "Prescription amphetamines and methylphenidates are Schedule II. In 2023 the FDA updated their boxed warning to emphasize the risks of misuse, addiction, and overdose, especially by snorting or injecting."
+    },
+    {
+      "warn": "Street stimulants and counterfeit Adderall pills are increasingly contaminated with fentanyl. Carry naloxone even if you do not use opioids."
+    }
+  ]
+}

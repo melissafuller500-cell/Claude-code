@@ -1,0 +1,359 @@
+{
+  "slug": "psilocybin",
+  "name": "Psilocybin",
+  "brands": [],
+  "aka": [
+    "Magic mushrooms",
+    "Shrooms",
+    "Mushies"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Serotonergic psychedelic (tryptamine)",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Psilocybin (magic mushrooms) facts: effects, risks, Oregon and Colorado programs, clinical trials and the 2026 FDA review of COMP360, interactions, and US law.",
+  "quick": "Psilocybin is the psychedelic compound in \"magic mushrooms\". It is Schedule I under federal law, but Oregon and Colorado run state-regulated psilocybin services for adults, and a synthetic psilocybin treatment for depression was under rolling FDA review in 2026. Physical toxicity is low, but frightening experiences, risky behavior, and psychosis in vulnerable people are real risks.",
+  "facts": [
+    [
+      "Chemical",
+      "Psilocybin (converted to psilocin in the body)"
+    ],
+    [
+      "Common names",
+      "Magic mushrooms, shrooms"
+    ],
+    [
+      "Drug class",
+      "Serotonergic psychedelic (tryptamine)"
+    ],
+    [
+      "US legal status",
+      "Schedule I federally; state-regulated programs in Oregon and Colorado"
+    ],
+    [
+      "Medical status",
+      "Investigational; COMP360 new drug application under rolling FDA review (2026)"
+    ],
+    [
+      "How it is used",
+      "Dried mushrooms eaten or brewed as tea; synthetic capsules in trials"
+    ],
+    [
+      "Onset",
+      "20 to 40 minutes"
+    ],
+    [
+      "Duration",
+      "4 to 6 hours"
+    ],
+    [
+      "Half-life",
+      "Psilocin: about 2 to 3 hours"
+    ],
+    [
+      "Physical dependence",
+      "No"
+    ]
+  ],
+  "profile": {
+    "onset": "20 to 40 minutes",
+    "duration": "4 to 6 hours",
+    "half_life": "About 2 to 3 hours (psilocin)",
+    "naloxone": "No",
+    "dependence": "Low",
+    "medical": "Investigational (depression); state programs",
+    "groups": [
+      "psychedelic",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is psilocybin?",
+      "blocks": [
+        {
+          "p": "Psilocybin is found in more than 200 species of mushrooms. The body converts it to psilocin, which activates serotonin 5-HT2A receptors and alters perception, mood, and thinking.[[1]]"
+        },
+        {
+          "p": "Psilocybin has been studied for treatment-resistant depression, major depression, end-of-life distress, and addiction. Compass Pathways' synthetic psilocybin, COMP360, completed phase 3 trials for treatment-resistant depression and was under rolling FDA review in 2026, with the company expecting to complete its application by the end of 2026.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of psilocybin, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Effects include changes in vision and hearing, intensified emotions, a distorted sense of time, feelings of connection or insight, and sometimes anxiety, confusion, or fear. Physical effects include nausea, yawning, dilated pupils, and raised heart rate and blood pressure.[[1]]"
+        },
+        {
+          "p": "Effects begin in 20 to 40 minutes, peak after 1 to 2 hours, and last 4 to 6 hours. The experience depends strongly on dose, mindset, and setting."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of psilocybin?",
+      "blocks": [
+        {
+          "p": "**Psychological risks:** panic, paranoia, and frightening experiences (\"bad trips\") can lead to dangerous behavior, accidents, or self-harm. People with a personal or family history of psychosis or bipolar disorder are at higher risk of lasting psychiatric effects.[[1]]"
+        },
+        {
+          "p": "**Mistaken identity:** wild mushrooms can be confused with poisonous species, some of which cause fatal liver failure."
+        },
+        {
+          "p": "**Physical risks** are low in healthy adults, but rising heart rate and blood pressure can be dangerous for people with heart disease."
+        },
+        {
+          "p": "**HPPD:** rare lasting visual disturbances after use.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with psilocybin?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Lithium",
+                "Seizures and dangerous reactions reported",
+                "Avoid"
+              ],
+              [
+                "MAOIs (and ayahuasca)",
+                "Greatly intensified, unpredictable effects",
+                "High risk"
+              ],
+              [
+                "SSRIs and SNRIs",
+                "Usually blunted effects; serotonin syndrome possible with some combinations",
+                "Use caution"
+              ],
+              [
+                "Cannabis",
+                "More intense, sometimes frightening experiences",
+                "Use caution"
+              ],
+              [
+                "Stimulants (amphetamines, cocaine)",
+                "Anxiety, heart strain, overheating",
+                "Use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on psilocybin?",
+      "blocks": [
+        {
+          "p": "Psilocybin has very low physical toxicity, and deaths from psilocybin alone are extremely rare. Large doses can cause overwhelming fear, confusion, vomiting, high blood pressure, and dangerous behavior. Seizures and severe reactions are more likely when mixed with lithium or other drugs.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone is having a dangerous reaction",
+            "items": [
+              "Call 911 for a seizure, chest pain, a very high temperature, trouble breathing, unresponsiveness, or if the person may harm themselves or others.",
+              "Move them to a quiet, safe place away from roads, water, heights, and crowds. Stay with them and speak calmly.",
+              "Do not leave the person alone and do not give them other drugs or alcohol to calm them down.",
+              "If they become unresponsive, place them on their side and give naloxone in case opioids are involved."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is psilocybin addictive?",
+      "blocks": [
+        {
+          "p": "Psilocybin is not considered physically addictive and does not cause a withdrawal syndrome. Tolerance builds within a day or two and fades after about a week. Some people use it compulsively, but this is uncommon.[[3]]"
+        },
+        {
+          "p": "**Hallucinogen persisting perception disorder (HPPD):** a small number of people have lasting visual disturbances, such as trails, halos, or flashes, after use. It can be distressing and last months or longer.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is psilocybin legal in the US?",
+      "blocks": [
+        {
+          "p": "Psilocybin is a Schedule I controlled substance under federal law, meaning it is considered to have a high potential for abuse and no currently accepted medical use. It cannot be prescribed, and possessing, making, or selling it is a federal crime.[[4]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[5]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[6]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Oregon:** since 2023, adults 21 and over can take psilocybin at licensed service centers under the supervision of a licensed facilitator. Products cannot be taken home, and a prescription is not required.[[7]]"
+        },
+        {
+          "p": "**Colorado:** voters passed the Natural Medicine Health Act in 2022. Licensed healing centers began offering supervised psilocybin sessions in 2025, and personal possession, use, and sharing by adults 21 and over are decriminalized."
+        },
+        {
+          "p": "**New Mexico:** the Medical Psilocybin Act of 2025 created a program for qualifying patients, to begin by the end of 2027. Several cities, including Denver, Oakland, Seattle, and Washington, DC, have made enforcement against psilocybin a low priority."
+        },
+        {
+          "p": "**Federal research:** in April 2026, an executive order directed the FDA to speed review of breakthrough-designated psychedelic treatments. Any approved psilocybin medicine would also need DEA rescheduling before it could be prescribed.[[8]]"
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with psilocybin use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[9]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[10]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is psilocybin legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Australia",
+                "Schedule 8 for prescribing by authorised psychiatrists for treatment-resistant depression since 2023; otherwise prohibited"
+              ],
+              [
+                "Canada",
+                "Schedule III; access through Health Canada exemptions and the Special Access Program"
+              ],
+              [
+                "Netherlands",
+                "Mushrooms banned since 2008; psilocybin truffles sold legally"
+              ],
+              [
+                "United Kingdom",
+                "Class A"
+              ],
+              [
+                "International",
+                "Schedule I of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[11]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is psilocybin legal in Oregon?",
+      "Yes, within the state program: adults 21 and over can use it at licensed service centers with a facilitator. It remains illegal under federal law."
+    ],
+    [
+      "Is psilocybin FDA-approved?",
+      "Not yet. COMP360, a synthetic psilocybin for treatment-resistant depression, was under rolling FDA review in 2026."
+    ],
+    [
+      "Are magic mushrooms addictive?",
+      "Psilocybin is not physically addictive and does not cause withdrawal. Tolerance builds quickly."
+    ],
+    [
+      "Can you take psilocybin on antidepressants?",
+      "SSRIs often blunt its effects. Lithium combined with psychedelics has been linked to seizures and should be avoided."
+    ],
+    [
+      "How long does psilocybin stay in your system?",
+      "Psilocin is mostly cleared within a day, and standard drug tests do not detect it."
+    ]
+  ],
+  "sources": [
+    [
+      "Psilocybin (Magic Mushrooms)",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/psilocybin-magic-mushrooms"
+    ],
+    [
+      "Compass Pathways Form 8-K, July 7, 2026 (COMP360 phase 3 results and NDA status)",
+      "US Securities and Exchange Commission",
+      "https://www.sec.gov/Archives/edgar/data/0001816590/000181659026000047/cmps-20260707.htm"
+    ],
+    [
+      "Psychedelic and Dissociative Drugs",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs-medicines"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "Oregon Psilocybin Services",
+      "Oregon Health Authority",
+      "https://www.oregon.gov/oha/ph/preventionwellness/pages/oregon-psilocybin-services.aspx"
+    ],
+    [
+      "Executive order aims to accelerate approval of therapeutic psychedelics",
+      "Morgan Lewis, April 2026",
+      "https://www.morganlewis.com/pubs/2026/04/you-are-not-hallucinating-executive-order-aims-to-accelerate-approval-of-therapeutic-psychedelics"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

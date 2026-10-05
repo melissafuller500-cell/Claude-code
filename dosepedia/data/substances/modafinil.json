@@ -1,0 +1,388 @@
+{
+  "slug": "modafinil",
+  "name": "Modafinil",
+  "brands": [
+    "Provigil"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Wakefulness-promoting agent",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Modafinil (Provigil) facts: uses for narcolepsy, sleep apnea and shift work, dosing basics, rash and birth control warnings, interactions, and legal access.",
+  "quick": "Modafinil (Provigil) is a wakefulness-promoting medicine for excessive sleepiness from narcolepsy, obstructive sleep apnea, and shift work disorder. It is milder than amphetamines and a Schedule IV controlled substance. It can make hormonal birth control less effective.",
+  "facts": [
+    [
+      "Generic name",
+      "Modafinil"
+    ],
+    [
+      "Brand names",
+      "Provigil; related armodafinil (Nuvigil)"
+    ],
+    [
+      "Drug class",
+      "Wakefulness-promoting agent"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Excessive sleepiness from narcolepsy, obstructive sleep apnea, shift work disorder"
+    ],
+    [
+      "Forms",
+      "Tablets"
+    ],
+    [
+      "Onset",
+      "About 1 hour; peak 2 to 4 hours"
+    ],
+    [
+      "Half-life",
+      "About 15 hours"
+    ],
+    [
+      "Broken down by",
+      "Liver (CYP3A4); induces CYP3A4"
+    ],
+    [
+      "Key warning",
+      "Serious rash; reduced birth control effectiveness"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour",
+    "duration": "10 to 12 hours",
+    "half_life": "About 15 hours",
+    "naloxone": "No",
+    "dependence": "Low",
+    "medical": "Narcolepsy; sleep apnea; shift work disorder",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is modafinil used for?",
+      "blocks": [
+        {
+          "p": "Modafinil is approved to improve wakefulness in adults with excessive sleepiness from narcolepsy, obstructive sleep apnea (alongside CPAP, not instead of it), and shift work disorder.[[1]]"
+        },
+        {
+          "p": "It is thought to work mainly by blocking dopamine reuptake, more weakly than stimulants, and by affecting other wake-promoting systems such as orexin and histamine."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is modafinil usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use modafinil. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Condition",
+              "Typical dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Narcolepsy, sleep apnea",
+                "200 mg once in the morning",
+                "Doses up to 400 mg showed no added benefit"
+              ],
+              [
+                "Shift work disorder",
+                "200 mg about 1 hour before the shift",
+                ""
+              ],
+              [
+                "Severe liver impairment",
+                "100 mg",
+                "Half the usual dose"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of modafinil?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include headache, nausea, nervousness, runny nose, back pain, diarrhea, anxiety, and insomnia.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include rare but life-threatening skin reactions (Stevens-Johnson syndrome), allergic reactions, psychiatric symptoms such as mania or psychosis, and chest pain or palpitations in people with heart disease.[[1]]"
+        },
+        {
+          "warn": "Modafinil can make hormonal birth control, including pills, patches, rings, and implants, less effective during treatment and for one month after stopping. Use another method too."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with modafinil?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Hormonal birth control",
+                "Lower hormone levels; contraceptive failure",
+                "Use backup contraception"
+              ],
+              [
+                "Cyclosporine, some HIV drugs",
+                "Lower levels",
+                "Monitor"
+              ],
+              [
+                "Omeprazole, diazepam, phenytoin (CYP2C19 substrates)",
+                "Higher levels",
+                "Monitor"
+              ],
+              [
+                "MAOIs",
+                "Possible interaction",
+                "Use caution"
+              ],
+              [
+                "Alcohol",
+                "Not well studied",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does modafinil overdose look like?",
+      "blocks": [
+        {
+          "p": "Overdose causes insomnia, restlessness, agitation, confusion, anxiety, fast heartbeat, high blood pressure, and chest pain. Deaths from modafinil alone are rare.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop modafinil?",
+      "blocks": [
+        {
+          "p": "Stopping modafinil does not usually cause withdrawal. Sleepiness returns. A few people feel tired or low for several days.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Day 1",
+              "title": "Sleepiness returns",
+              "text": "The underlying condition reappears."
+            },
+            {
+              "when": "Days 2 to 7",
+              "title": "Possible fatigue",
+              "text": "Mild tiredness or low mood in some people."
+            },
+            {
+              "when": "Ongoing",
+              "title": "Treat the cause",
+              "text": "CPAP, scheduled naps, and other treatments."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get modafinil legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, modafinil is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** generic modafinil is inexpensive; insurers often require a documented diagnosis."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order modafinil online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill modafinil prescriptions online and ship them. Buying modafinil from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether modafinil is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells modafinil with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is modafinil legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Prescription-only medicine; not a controlled drug"
+              ],
+              [
+                "Canada",
+                "Prescription medicine"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is modafinil a stimulant?",
+      "It promotes wakefulness and has mild stimulant-like effects, but it is weaker than amphetamines and has a lower risk of misuse."
+    ],
+    [
+      "Is modafinil a \"smart drug\"?",
+      "Studies in healthy, rested people show small effects on some tasks at best. Buying it without a prescription online is illegal and products may be counterfeit."
+    ],
+    [
+      "Does modafinil affect birth control?",
+      "Yes. It can make hormonal birth control fail during use and for a month after stopping."
+    ],
+    [
+      "What is armodafinil?",
+      "Armodafinil (Nuvigil) is the longer-lasting active half of modafinil, given at lower doses."
+    ]
+  ],
+  "sources": [
+    [
+      "Provigil (modafinil) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=modafinil"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

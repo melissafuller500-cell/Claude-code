@@ -1,0 +1,382 @@
+{
+  "slug": "dronabinol",
+  "name": "Dronabinol",
+  "brands": [
+    "Marinol",
+    "Syndros"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Gabapentinoids, dissociatives, and others",
+    "slug": "gabapentinoids-dissociatives"
+  },
+  "subclass": "Synthetic cannabinoid (THC)",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Dronabinol (Marinol) facts: synthetic THC for chemotherapy nausea and AIDS appetite loss, dosing basics, risks, interactions, drug tests, and legal access.",
+  "quick": "Dronabinol (Marinol) is synthetic THC, the main psychoactive compound in cannabis, made as an FDA-approved medicine. It treats nausea and vomiting from chemotherapy and appetite loss with weight loss in AIDS. Capsules are Schedule III and the oral solution (Syndros) is Schedule II.",
+  "facts": [
+    [
+      "Generic name",
+      "Dronabinol (synthetic delta-9-THC)"
+    ],
+    [
+      "Brand names",
+      "Marinol (capsules), Syndros (oral solution)"
+    ],
+    [
+      "Drug class",
+      "Cannabinoid"
+    ],
+    [
+      "US legal status",
+      "Capsules Schedule III; oral solution Schedule II"
+    ],
+    [
+      "Approved uses",
+      "Chemotherapy nausea and vomiting; AIDS-related anorexia with weight loss"
+    ],
+    [
+      "Forms",
+      "Capsules in sesame oil; oral solution"
+    ],
+    [
+      "Onset",
+      "30 minutes to 1 hour"
+    ],
+    [
+      "Duration",
+      "4 to 6 hours (appetite effect up to 24 hours)"
+    ],
+    [
+      "Half-life",
+      "25 to 36 hours (terminal)"
+    ],
+    [
+      "Drug tests",
+      "Positive for THC"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "4 to 6 hours",
+    "half_life": "25 to 36 hours",
+    "naloxone": "No",
+    "dependence": "Low to moderate",
+    "medical": "Chemotherapy nausea; AIDS appetite loss",
+    "groups": [
+      "cannabinoid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is dronabinol used for?",
+      "blocks": [
+        {
+          "p": "Dronabinol is approved for nausea and vomiting from cancer chemotherapy in people who have not responded to standard anti-nausea medicines, and for appetite loss with weight loss in people with AIDS.[[1]]"
+        },
+        {
+          "p": "It is chemically identical to the delta-9-THC in cannabis, but in measured doses without the other compounds in the plant. Nabilone (Cesamet) is a related synthetic cannabinoid."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is dronabinol usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use dronabinol. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Use",
+              "Typical adult dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Chemotherapy nausea (capsules)",
+                "5 mg/m² 1 to 3 hours before chemotherapy, then every 2 to 4 hours",
+                "4 to 6 doses a day; maximum 15 mg/m² per dose"
+              ],
+              [
+                "AIDS anorexia (capsules)",
+                "2.5 mg twice a day, before lunch and dinner",
+                "Maximum 20 mg a day"
+              ],
+              [
+                "Older adults",
+                "2.5 mg once a day before dinner or at bedtime",
+                "Higher risk of dizziness and falls"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of dronabinol?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include feeling high, dizziness, drowsiness, confusion, abnormal thinking, paranoia, nausea, and abdominal pain.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include psychiatric reactions (mania, psychosis, worsened depression), fainting and fast heartbeat, seizures, and falls in older adults. Syndros contains alcohol and propylene glycol.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with dronabinol?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Alcohol, sedatives, opioids",
+                "Additive drowsiness and impairment",
+                "Use caution"
+              ],
+              [
+                "Disulfiram, metronidazole (with Syndros)",
+                "Reaction to the alcohol in the solution",
+                "Contraindicated"
+              ],
+              [
+                "Warfarin",
+                "May raise warfarin effect",
+                "Monitor INR"
+              ],
+              [
+                "Stimulants and anticholinergic drugs",
+                "Fast heartbeat, high blood pressure",
+                "Use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What happens if someone takes too much dronabinol?",
+      "blocks": [
+        {
+          "p": "Too much dronabinol causes strong intoxication, anxiety or panic, paranoia, confusion, fast heartbeat, dizziness on standing, and drowsiness. Fatal overdose from THC alone is very rare, but children are at higher risk.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone has taken too much",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, unresponsiveness, or if a child may have eaten a cannabis product.",
+              "For an adult who is awake but anxious or sick, move them to a calm place and stay with them. Symptoms usually ease over several hours.",
+              "Call Poison Help at 1-800-222-1222 for advice, including for any child or pet exposure.",
+              "Do not drive. Edibles can keep building for hours after they are eaten."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is dronabinol withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "Stopping dronabinol after regular high-dose use can cause mild withdrawal, similar to cannabis withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Symptoms begin",
+              "text": "Irritability, trouble sleeping, restlessness."
+            },
+            {
+              "when": "Days 3 to 7",
+              "title": "Peak",
+              "text": "Vivid dreams, low appetite, anxiety, sweating."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Resolves",
+              "text": "Sleep and mood return to normal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get dronabinol legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, dronabinol is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** generic dronabinol capsules are available; insurers usually require a qualifying diagnosis.",
+            "**Drug tests:** dronabinol causes a positive test for THC. Employers and courts may require documentation of the prescription."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order dronabinol online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill dronabinol prescriptions online and ship them. Buying dronabinol from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether dronabinol is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells dronabinol with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is dronabinol legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Not licensed; nabilone and Sativex used instead"
+              ],
+              [
+                "Canada",
+                "Prescription medicine (nabilone more common)"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug"
+              ],
+              [
+                "International",
+                "Schedule II of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is dronabinol the same as marijuana?",
+      "It is synthetic THC, the main active compound in cannabis, but it is an FDA-approved medicine with measured doses."
+    ],
+    [
+      "Will dronabinol make me fail a drug test?",
+      "Yes. It is THC, so tests for cannabis will be positive. Keep documentation of your prescription."
+    ],
+    [
+      "Does dronabinol get you high?",
+      "It can, especially at higher doses. Many people feel mild euphoria, dizziness, or drowsiness."
+    ],
+    [
+      "Why are Marinol and Syndros in different schedules?",
+      "Marinol capsules were moved to Schedule III in 1999. Syndros, a liquid approved in 2016, was placed in Schedule II."
+    ]
+  ],
+  "sources": [
+    [
+      "Marinol (dronabinol) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=dronabinol"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

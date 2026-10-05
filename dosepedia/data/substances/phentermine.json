@@ -1,0 +1,385 @@
+{
+  "slug": "phentermine",
+  "name": "Phentermine",
+  "brands": [
+    "Adipex-P",
+    "Lomaira",
+    "Qsymia"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Sympathomimetic appetite suppressant",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Phentermine (Adipex-P) facts: short-term use for weight loss, dosing basics, heart and blood pressure risks, interactions, and legal access.",
+  "quick": "Phentermine (Adipex-P) is an appetite suppressant related to amphetamine, used for a few weeks as part of a weight-loss program in people with obesity. It is the most prescribed weight-loss medicine in the US and a Schedule IV controlled substance. Combined with topiramate (Qsymia), it is approved for long-term use.",
+  "facts": [
+    [
+      "Generic name",
+      "Phentermine hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Adipex-P, Lomaira; with topiramate: Qsymia"
+    ],
+    [
+      "Drug class",
+      "Sympathomimetic amine (anorectic)"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Short-term treatment of obesity (BMI 30 or more, or 27 or more with a risk factor)"
+    ],
+    [
+      "Forms",
+      "Tablets, capsules"
+    ],
+    [
+      "Onset",
+      "About 1 hour"
+    ],
+    [
+      "Half-life",
+      "About 20 hours"
+    ],
+    [
+      "Duration of use",
+      "A few weeks (phentermine alone)"
+    ],
+    [
+      "Key warning",
+      "Heart and lung complications; avoid with heart disease"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour",
+    "duration": "12 to 14 hours",
+    "half_life": "About 20 hours",
+    "naloxone": "No",
+    "dependence": "Low to moderate",
+    "medical": "Short-term obesity treatment",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is phentermine used for?",
+      "blocks": [
+        {
+          "p": "Phentermine is approved as a short-term (a few weeks) add-on to diet, exercise, and behavior change for adults with a BMI of 30 or more, or 27 or more with conditions such as high blood pressure or diabetes.[[1]]"
+        },
+        {
+          "p": "Phentermine/topiramate (Qsymia) is approved for long-term weight management. Newer GLP-1 medicines such as semaglutide and tirzepatide produce more weight loss but cost much more."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is phentermine usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use phentermine. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Adipex-P 37.5 mg",
+                "One tablet before breakfast or 1 to 2 hours after",
+                "Avoid late doses (insomnia)"
+              ],
+              [
+                "Lomaira 8 mg",
+                "8 mg up to three times a day, 30 minutes before meals",
+                ""
+              ],
+              [
+                "Qsymia (with topiramate)",
+                "3.75/23 mg for 14 days, then 7.5/46 mg",
+                "Long-term use; pregnancy prevention program"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of phentermine?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include dry mouth, insomnia, restlessness, constipation, fast heartbeat, and raised blood pressure.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include primary pulmonary hypertension and heart valve disease (reported mainly with the older fen-phen combination), and worsening of heart disease. It should not be used with uncontrolled high blood pressure, heart disease, hyperthyroidism, glaucoma, or during pregnancy.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with phentermine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "MAOIs",
+                "High blood pressure crisis",
+                "Contraindicated within 14 days"
+              ],
+              [
+                "Other weight-loss drugs and stimulants",
+                "Heart and blood pressure risks",
+                "Avoid"
+              ],
+              [
+                "Alcohol",
+                "Adverse reactions",
+                "Avoid"
+              ],
+              [
+                "Insulin and diabetes medicines",
+                "Lower glucose as weight drops",
+                "Dose may need lowering"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does phentermine overdose look like?",
+      "blocks": [
+        {
+          "p": "Overdose causes restlessness, tremor, rapid breathing, confusion, aggression, hallucinations, panic, high or low blood pressure, irregular heartbeat, and seizures.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop phentermine?",
+      "blocks": [
+        {
+          "p": "Stopping phentermine after regular prescribed use does not cause dangerous physical withdrawal. ADHD symptoms return, and some people feel tired or low for a few days. After heavy misuse, a \"crash\" with exhaustion, increased sleep and appetite, and depression is common.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Crash",
+              "text": "Fatigue, long sleep, increased appetite, low mood, irritability."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Low mood and cravings",
+              "text": "Low energy, poor concentration, and cravings after heavy use."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Recovery",
+              "text": "Mood and energy normalize; depression should be watched for."
+            }
+          ]
+        },
+        {
+          "p": "There is no need to taper prescribed stimulants for safety, but anyone who feels severe depression or suicidal thoughts after stopping should contact a clinician or call or text 988."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get phentermine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, phentermine is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** generic phentermine is inexpensive; many insurers do not cover weight-loss medicines."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order phentermine online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill phentermine prescriptions online and ship them. Buying phentermine from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether phentermine is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells phentermine with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is phentermine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; not licensed for weight loss"
+              ],
+              [
+                "European Union",
+                "Marketing authorizations withdrawn in 2000"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Schedule IV of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How long can you take phentermine?",
+      "Alone, it is approved for a few weeks. Some clinicians prescribe it longer off-label. Qsymia, which includes phentermine, is approved for long-term use."
+    ],
+    [
+      "Is phentermine like Adderall?",
+      "It is chemically related to amphetamine but has much weaker effects on dopamine and a lower risk of misuse."
+    ],
+    [
+      "How much weight do people lose on phentermine?",
+      "On average about 3 to 5% of body weight beyond diet alone over 12 weeks; results vary."
+    ],
+    [
+      "Was phentermine part of fen-phen?",
+      "Yes. Fen-phen combined fenfluramine with phentermine. Fenfluramine was withdrawn in 1997 because of heart valve damage; phentermine stayed on the market."
+    ]
+  ],
+  "sources": [
+    [
+      "Adipex-P (phentermine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=phentermine"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "slug": "buprenorphine",
+  "name": "Buprenorphine",
+  "brands": [
+    "Suboxone",
+    "Subutex",
+    "Zubsolv",
+    "Sublocade",
+    "Brixadi",
+    "Butrans",
+    "Belbuca"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Partial opioid agonist",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Buprenorphine (Suboxone) facts: how it treats opioid use disorder, how to start it, telehealth access, risks, interactions, overdose, and withdrawal.",
+  "quick": "Buprenorphine is a partial opioid agonist and one of the most effective treatments for opioid use disorder. It eases withdrawal and cravings, blocks other opioids, and has a ceiling on its breathing effect that makes it safer than full opioids. Since 2023, any clinician with a DEA registration for Schedule III can prescribe it, and it can be started by telemedicine.",
+  "facts": [
+    [
+      "Generic name",
+      "Buprenorphine (often combined with naloxone)"
+    ],
+    [
+      "Brand names",
+      "Suboxone, Zubsolv, Sublocade, Brixadi; for pain: Butrans, Belbuca"
+    ],
+    [
+      "Drug class",
+      "Partial mu-opioid agonist"
+    ],
+    [
+      "US legal status",
+      "Schedule III, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Opioid use disorder; chronic pain (patch and buccal film)"
+    ],
+    [
+      "Forms",
+      "Sublingual tablets and films, monthly and weekly injections, skin patch, buccal film"
+    ],
+    [
+      "Onset",
+      "30 to 60 minutes (sublingual)"
+    ],
+    [
+      "Half-life",
+      "24 to 42 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP3A4"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone (higher doses may be needed)"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "24 hours or more",
+    "half_life": "24 to 42 hours",
+    "naloxone": "Yes, higher doses may be needed",
+    "dependence": "Moderate",
+    "medical": "Opioid use disorder; chronic pain",
+    "groups": [
+      "opioid",
+      "partial-opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is buprenorphine used for?",
+      "blocks": [
+        {
+          "p": "Buprenorphine is approved to treat opioid use disorder, as daily tablets or films placed under the tongue (usually combined with naloxone to discourage injection) and as weekly or monthly injections given by a clinician. Lower-dose patches and films are approved for chronic pain.[[1]]"
+        },
+        {
+          "p": "As a partial agonist, buprenorphine activates opioid receptors enough to prevent withdrawal and cravings, but its effect on breathing levels off at higher doses. It binds very tightly, which blocks the effect of other opioids."
+        },
+        {
+          "p": "The 2023 MAT Act removed the special \"X-waiver\" requirement. Any clinician with a DEA registration that includes Schedule III can now prescribe buprenorphine for opioid use disorder.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is buprenorphine usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use buprenorphine. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical adult dose (opioid use disorder)",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Buprenorphine/naloxone film or tablet",
+                "Start 2 to 4 mg once withdrawal has begun; target 16 mg a day",
+                "Range 4 to 24 mg a day"
+              ],
+              [
+                "Monthly injection (Sublocade)",
+                "300 mg monthly for 2 months, then 100 mg monthly",
+                "After at least 7 days on sublingual buprenorphine"
+              ],
+              [
+                "Weekly or monthly injection (Brixadi)",
+                "Weekly or monthly doses",
+                "Can start without prior sublingual treatment"
+              ],
+              [
+                "Pain patch (Butrans)",
+                "5 to 20 mcg per hour, changed every 7 days",
+                "Not for opioid use disorder"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Treatment is usually started once a person is in mild to moderate withdrawal, 12 to 24 hours after short-acting opioids. Starting earlier can cause precipitated withdrawal. With fentanyl, clinicians may use specialized low-dose or high-dose starts."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of buprenorphine?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include constipation, headache, nausea, sweating, insomnia, and mouth numbness with films. Injections can cause pain and lumps at the injection site.[[1]]"
+        },
+        {
+          "p": "**Precipitated withdrawal:** taking buprenorphine while full opioids still occupy the receptors can cause sudden, intense withdrawal. This is unpleasant but not usually dangerous, and clinicians can manage it."
+        },
+        {
+          "p": "**Serious risks** include slowed breathing when combined with benzodiazepines, alcohol, or other sedatives, liver injury (rare), and dental problems with films and tablets dissolved in the mouth. The FDA advises rinsing with water and waiting an hour before brushing.[[1]]"
+        },
+        {
+          "warn": "Combining buprenorphine with benzodiazepines or alcohol has caused fatal overdoses. Still, the FDA advises that people on both should not be denied buprenorphine treatment; the risk of untreated opioid use disorder is higher.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with buprenorphine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines and other sedatives",
+                "Slowed breathing, overdose",
+                "Use caution; do not deny treatment"
+              ],
+              [
+                "Alcohol",
+                "Additive sedation",
+                "Avoid"
+              ],
+              [
+                "Full opioid agonists (oxycodone, heroin, fentanyl)",
+                "Blocked effect; precipitated withdrawal if buprenorphine is started too soon",
+                "Wait for withdrawal before starting"
+              ],
+              [
+                "Ketoconazole, ritonavir, clarithromycin",
+                "Raise buprenorphine levels",
+                "Monitor"
+              ],
+              [
+                "Rifampin, carbamazepine",
+                "Lower buprenorphine levels",
+                "May need higher dose"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does buprenorphine overdose look like?",
+      "blocks": [
+        {
+          "p": "Buprenorphine alone rarely causes fatal overdose in adults because of its ceiling effect, but overdose can occur with sedatives or alcohol and in children who swallow a film or tablet. Signs are extreme sleepiness, slow breathing, and pinpoint pupils.[[1]][[4]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before buprenorphine does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        },
+        {
+          "p": "Keep buprenorphine locked away. Even one film can be fatal to a small child."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is buprenorphine withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "Buprenorphine causes physical dependence, but its long half-life means withdrawal starts later and is usually milder than with full opioids.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Symptoms begin",
+              "text": "Restlessness, aches, runny nose, sweating, poor sleep."
+            },
+            {
+              "when": "Days 3 to 10",
+              "title": "Peak symptoms",
+              "text": "Stomach upset, diarrhea, anxiety, cravings; usually milder than oxycodone or heroin withdrawal."
+            },
+            {
+              "when": "Weeks",
+              "title": "Lingering symptoms",
+              "text": "Low mood, poor sleep, and cravings may last weeks."
+            }
+          ]
+        },
+        {
+          "warn": "Stopping buprenorphine treatment raises the risk of relapse and overdose. Longer treatment, often years, is linked to better outcomes."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get buprenorphine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, buprenorphine is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[8]][[9]]",
+            "**Cost:** generic buprenorphine/naloxone is covered by Medicaid in every state and by most insurers; many plans have removed prior authorization.",
+            "**Telehealth:** under a 2025 DEA rule, buprenorphine for opioid use disorder can be started by telemedicine, including audio-only visits, for an initial six-month supply; continued treatment can use other telemedicine forms or an in-person visit.[[10]]",
+            "**No X-waiver:** since 2023 any clinician with a Schedule III DEA registration can prescribe it for opioid use disorder.[[2]]"
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order buprenorphine online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill buprenorphine prescriptions online and ship them. Buying buprenorphine from a website that does not require a prescription is illegal, and the product is often fake.[[8]][[11]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether buprenorphine is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells buprenorphine with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[8]][[9]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is buprenorphine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule I; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8; opioid dependence treatment program"
+              ],
+              [
+                "International",
+                "Schedule III of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[12]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "What is the difference between Suboxone and Subutex?",
+      "Suboxone combines buprenorphine with naloxone, which discourages injection. Subutex was buprenorphine alone, now sold as generic mono-product tablets, often used in pregnancy."
+    ],
+    [
+      "Can I start buprenorphine by telehealth?",
+      "Yes. A DEA rule allows buprenorphine for opioid use disorder to be started by telemedicine, including audio-only calls, for an initial six-month supply."
+    ],
+    [
+      "Does buprenorphine get you high?",
+      "In people with opioid tolerance, therapeutic doses relieve withdrawal and cravings without a significant high. People with no tolerance can feel strong effects."
+    ],
+    [
+      "How long should treatment last?",
+      "There is no set limit. Longer treatment is associated with lower relapse and death rates, and many people stay on it for years."
+    ],
+    [
+      "Is buprenorphine safe in pregnancy?",
+      "Yes. Buprenorphine and methadone are recommended treatments for opioid use disorder in pregnancy."
+    ],
+    [
+      "What is precipitated withdrawal?",
+      "Sudden severe withdrawal caused by starting buprenorphine while other opioids are still active. Waiting until mild withdrawal begins, or using a specialized start, prevents it."
+    ]
+  ],
+  "sources": [
+    [
+      "Suboxone (buprenorphine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=buprenorphine"
+    ],
+    [
+      "Waiver Elimination (MAT Act)",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/substance-use/treatment/resources/mat-act"
+    ],
+    [
+      "FDA warns about serious risks and death when combining opioid pain or cough medicines with benzodiazepines",
+      "US Food and Drug Administration, 2016",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "Expansion of Buprenorphine Treatment via Telemedicine Encounter, final rule",
+      "Federal Register, January 17, 2025",
+      "https://www.govinfo.gov/content/pkg/FR-2025-01-17/html/2025-01049.htm"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

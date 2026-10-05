@@ -1,0 +1,350 @@
+{
+  "slug": "nandrolone",
+  "name": "Nandrolone",
+  "brands": [
+    "Deca-Durabolin (discontinued)"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Anabolic steroids",
+    "slug": "anabolic-steroids"
+  },
+  "subclass": "Anabolic steroid",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Nandrolone (Deca-Durabolin) facts: approved use for anemia of kidney disease, compounded availability, misuse in sport, risks, stopping, and US law.",
+  "quick": "Nandrolone is an injectable anabolic steroid. Nandrolone decanoate is FDA-approved for anemia of kidney disease, but the brand Deca-Durabolin left the US market in 2002 and it is now mainly compounded. It is a Schedule III controlled substance, widely misused for muscle building, and banned in sport.",
+  "facts": [
+    [
+      "Generic name",
+      "Nandrolone decanoate"
+    ],
+    [
+      "Brand names",
+      "Deca-Durabolin (no longer marketed in the US)"
+    ],
+    [
+      "Drug class",
+      "Anabolic-androgenic steroid (19-nortestosterone)"
+    ],
+    [
+      "US legal status",
+      "Schedule III, prescription only"
+    ],
+    [
+      "Approved use",
+      "Anemia of renal insufficiency (historical labeling)"
+    ],
+    [
+      "Availability",
+      "Compounding pharmacies and outsourcing facilities"
+    ],
+    [
+      "Forms",
+      "Intramuscular injection"
+    ],
+    [
+      "Half-life",
+      "About 6 to 12 days (decanoate ester)"
+    ],
+    [
+      "Detection in sport",
+      "Metabolites detectable for months"
+    ],
+    [
+      "Banned in sport",
+      "Yes (WADA)"
+    ]
+  ],
+  "profile": {
+    "onset": "Days to weeks",
+    "duration": "Weeks per injection",
+    "half_life": "About 6 to 12 days",
+    "naloxone": "No",
+    "dependence": "Moderate with misuse",
+    "medical": "Anemia of kidney disease (rarely used)",
+    "groups": [
+      "steroid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is nandrolone used for?",
+      "blocks": [
+        {
+          "p": "Nandrolone decanoate was approved for anemia caused by kidney failure, before erythropoietin-stimulating medicines largely replaced it. It has also been studied for HIV wasting and osteoporosis.[[1]]"
+        },
+        {
+          "p": "It has strong muscle-building (anabolic) effects with somewhat weaker masculinizing effects than testosterone, which is why it is popular for non-medical use in bodybuilding."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is nandrolone usually prescribed?",
+      "blocks": [
+        {
+          "p": "Nandrolone is rarely prescribed today. Historical labeling for anemia of kidney disease is summarized below; it is not personal dosing advice.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Group",
+              "Historical labeled dose",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "Women",
+                "50 to 100 mg once a week",
+                "Deep intramuscular injection"
+              ],
+              [
+                "Men",
+                "100 to 200 mg once a week",
+                "Treatment periods with breaks"
+              ],
+              [
+                "Children 2 to 13",
+                "25 to 50 mg every 3 to 4 weeks",
+                "Risk to growth plates"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of nandrolone?",
+      "blocks": [
+        {
+          "p": "**Common effects** include acne, fluid retention, raised red blood cells, and suppressed natural testosterone production.[[2]]"
+        },
+        {
+          "p": "**Serious risks**, especially with high-dose misuse, include heart enlargement, high blood pressure, unfavorable cholesterol, blood clots, infertility, breast enlargement in men, low libido, mood changes and depression, and, in women, deepened voice, body hair, and menstrual changes that may be permanent.[[2]]"
+        },
+        {
+          "p": "**Underground products:** steroids sold without a prescription are often mislabeled, underdosed, or contaminated, and shared needles spread infections."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with nandrolone?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Warfarin",
+                "Increases anticoagulant effect",
+                "Monitor INR"
+              ],
+              [
+                "Insulin and diabetes medicines",
+                "Can lower blood sugar",
+                "Monitor glucose"
+              ],
+              [
+                "Other anabolic steroids or stimulants",
+                "Heart and blood pressure strain",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "Can you overdose on nandrolone?",
+      "blocks": [
+        {
+          "p": "Nandrolone does not cause an acute overdose like sedatives or opioids. Harm builds over time with high doses: heart enlargement, high blood pressure, clots, mood changes, and hormone disruption.[[2]]"
+        },
+        {
+          "emergency": {
+            "title": "When to get emergency help",
+            "items": [
+              "Call 911 for chest pain, sudden shortness of breath, signs of a stroke (face drooping, arm weakness, slurred speech), or fainting.",
+              "Call 911 for coughing, throat tightness, or trouble breathing during or right after an injection.",
+              "Get urgent care for a painful, swollen leg, which can signal a blood clot, or for yellowing of the skin or eyes.",
+              "Call Poison Help at 1-800-222-1222 if a child has touched or swallowed a testosterone gel or other product."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop nandrolone?",
+      "blocks": [
+        {
+          "p": "After a course, natural testosterone production is suppressed, which can cause low mood, fatigue, low libido, and erectile problems for weeks to months. Nandrolone suppresses production strongly, and recovery can be slow.[[2]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Weeks 1 to 4",
+              "title": "Levels fall",
+              "text": "Fatigue, low libido, low mood."
+            },
+            {
+              "when": "Months 1 to 3",
+              "title": "Low testosterone",
+              "text": "Symptoms of hypogonadism can peak; depression risk."
+            },
+            {
+              "when": "3 to 12 months",
+              "title": "Recovery",
+              "text": "Natural production gradually returns; medical help can speed it."
+            }
+          ]
+        },
+        {
+          "p": "Depression after stopping steroids can be severe and has been linked to suicide attempts. A clinician can help, including with medicines to restart hormone production."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get nandrolone legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, nandrolone is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[4]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[5]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[6]][[7]]",
+            "**Availability:** no brand-name nandrolone is marketed in the US. A clinician can prescribe nandrolone decanoate prepared by a compounding pharmacy for a legitimate medical need.",
+            "**Sport:** nandrolone is prohibited at all times by the World Anti-Doping Agency, and its metabolites can be detected for months."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order nandrolone online?",
+      "blocks": [
+        {
+          "p": "Only with a valid prescription, filled by a licensed compounding pharmacy that is registered to ship to your state. Websites and social media sellers offering \"deca\" without a prescription are illegal, and their products are frequently counterfeit or contaminated.[[6]]"
+        },
+        {
+          "p": "Possessing anabolic steroids without a prescription is a federal crime under the Anabolic Steroid Control Act.[[3]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is nandrolone legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; possession for personal use not an offence, supply illegal"
+              ],
+              [
+                "Canada",
+                "Schedule IV"
+              ],
+              [
+                "Australia",
+                "Schedule 4; controlled in most states"
+              ],
+              [
+                "International",
+                "Not under UN control; banned by the World Anti-Doping Agency"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is nandrolone still available in the US?",
+      "Deca-Durabolin left the market in 2002. Nandrolone decanoate can still be prescribed and is prepared by compounding pharmacies."
+    ],
+    [
+      "Is nandrolone safer than other steroids?",
+      "No. High doses carry serious heart, hormone, and mental health risks, and it strongly suppresses natural testosterone."
+    ],
+    [
+      "How long can nandrolone be detected?",
+      "Its metabolites can be detected in urine for many months after use, which is why it causes many failed sports drug tests."
+    ]
+  ],
+  "sources": [
+    [
+      "Nandrolone decanoate (nandrolone) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=nandrolone"
+    ],
+    [
+      "Anabolic Steroids",
+      "MedlinePlus, US National Library of Medicine",
+      "https://medlineplus.gov/anabolicsteroids.html"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "slug": "tramadol",
+  "name": "Tramadol",
+  "brands": [
+    "Ultram",
+    "Ultracet",
+    "ConZip"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Opioid agonist with serotonin and norepinephrine reuptake inhibition",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Tramadol (Ultram) facts: uses, dosing basics, seizure and serotonin syndrome risks, interactions, overdose, withdrawal, and how to get it legally.",
+  "quick": "Tramadol is a prescription pain medicine that acts as a weak opioid and also raises serotonin and norepinephrine levels. It is a Schedule IV controlled substance. It is often thought of as mild, but it can cause addiction, seizures, serotonin syndrome, and fatal overdose.",
+  "facts": [
+    [
+      "Generic name",
+      "Tramadol hydrochloride"
+    ],
+    [
+      "Brand names",
+      "Ultram, ConZip; with acetaminophen: Ultracet"
+    ],
+    [
+      "Drug class",
+      "Opioid agonist; serotonin-norepinephrine reuptake inhibitor"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only (since 2014)"
+    ],
+    [
+      "Approved uses",
+      "Pain severe enough to require an opioid"
+    ],
+    [
+      "Forms",
+      "Tablets, extended-release tablets and capsules, oral solution"
+    ],
+    [
+      "Onset",
+      "About 1 hour"
+    ],
+    [
+      "Half-life",
+      "About 6 to 7 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP2D6 (to the more potent O-desmethyltramadol) and CYP3A4"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone (partly; seizures can still occur)"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour",
+    "duration": "4 to 6 hours (immediate release)",
+    "half_life": "6 to 7 hours",
+    "naloxone": "Partly",
+    "dependence": "Moderate",
+    "medical": "Moderate to severe pain",
+    "groups": [
+      "opioid",
+      "serotonergic"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is tramadol used for?",
+      "blocks": [
+        {
+          "p": "Tramadol is approved for adults with pain severe enough to require an opioid when other treatments are inadequate. Extended-release forms are for long-lasting pain needing daily treatment.[[1]]"
+        },
+        {
+          "p": "It relieves pain in two ways: its metabolite O-desmethyltramadol activates opioid receptors, and tramadol itself blocks reuptake of serotonin and norepinephrine, like some antidepressants. This dual action explains its distinctive risks."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is tramadol usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use tramadol. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical adult dose",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Immediate-release tablets",
+                "Start 25 mg a day, increase by 25 to 50 mg every 3 days to 50 to 100 mg every 4 to 6 hours",
+                "Maximum 400 mg a day; slow start improves tolerability"
+              ],
+              [
+                "Tramadol with acetaminophen (Ultracet)",
+                "2 tablets every 4 to 6 hours, up to 5 days",
+                "Maximum 8 tablets a day"
+              ],
+              [
+                "Kidney impairment (CrCl under 30)",
+                "Every 12 hours",
+                "Maximum 200 mg a day"
+              ],
+              [
+                "Adults over 75",
+                "Lower total dose",
+                "Maximum 300 mg a day"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of tramadol?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Tramadol exposes users to risks of addiction, misuse, and abuse, which can lead to overdose and death.",
+              "Life-threatening slowed breathing can occur, especially when starting treatment or after a dose increase.",
+              "Accidental ingestion, especially by children, can cause a fatal overdose.",
+              "Use with benzodiazepines or other central nervous system depressants, including alcohol, can cause profound sedation, slowed breathing, coma, and death.",
+              "Prolonged use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated.",
+              "Ultra-rapid CYP2D6 metabolizers can have life-threatening breathing problems; tramadol is contraindicated in children under 12.[[2]]",
+              "Drugs that affect CYP2D6 and CYP3A4 can change tramadol levels and cause overdose or seizures."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include dizziness, nausea, constipation, headache, drowsiness, and sweating.[[1]]"
+        },
+        {
+          "p": "**Seizures** can occur even at recommended doses, and the risk rises at high doses, with antidepressants, and in people with epilepsy or head injury. **Serotonin syndrome**, low blood sugar, and low sodium are other recognized risks.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with tramadol?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines (alprazolam, diazepam, clonazepam)",
+                "Profound sedation, slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Gabapentin, pregabalin, sleep medicines, muscle relaxants",
+                "Additive sedation and breathing problems",
+                "Use caution; lower doses"
+              ],
+              [
+                "SSRIs, SNRIs, tricyclics, triptans, MAOIs",
+                "Serotonin syndrome and seizures",
+                "MAOIs contraindicated; others use caution"
+              ],
+              [
+                "Bupropion",
+                "Seizure risk; blocks conversion to active metabolite",
+                "Use caution"
+              ],
+              [
+                "Carbamazepine",
+                "Lowers tramadol levels; seizure risk",
+                "Not recommended"
+              ],
+              [
+                "Other opioids",
+                "Additive breathing suppression",
+                "Avoid unless directed by prescriber"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does tramadol overdose look like?",
+      "blocks": [
+        {
+          "p": "Tramadol overdose can cause sleepiness, slow breathing, pinpoint pupils, seizures, and a dangerously fast heartbeat. Seizures may happen even after naloxone restores breathing.[[1]][[3]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before tramadol does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is tramadol withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take tramadol regularly for more than a few weeks become physically dependent, even when they take it exactly as prescribed. Dependence is not the same as addiction, but it means stopping suddenly causes withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "12 to 24 hours",
+              "title": "Early symptoms",
+              "text": "Anxiety, restlessness, yawning, sweating, runny nose, watery eyes, and muscle aches."
+            },
+            {
+              "when": "Days 2 to 4",
+              "title": "Peak withdrawal",
+              "text": "Diarrhea, stomach cramps, nausea and vomiting, goosebumps, dilated pupils, fast heartbeat, and strong cravings. Rarely dangerous in healthy adults, but dehydration can be serious."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Lingering symptoms",
+              "text": "Poor sleep, low mood, low energy, and cravings can continue for weeks. Tolerance falls quickly, which raises the risk of overdose if use restarts."
+            }
+          ]
+        },
+        {
+          "warn": "After a break, the body loses tolerance within days. Returning to a previous dose of tramadol can cause a fatal overdose."
+        },
+        {
+          "p": "The FDA warns against stopping opioids abruptly in people who are physically dependent. A prescriber can taper the dose gradually, often by 10% or less per month for long-term users, and medicines such as clonidine or lofexidine can ease symptoms. For opioid use disorder, buprenorphine and methadone cut the risk of death roughly in half.[[4]]"
+        },
+        {
+          "p": "Because tramadol also acts like an antidepressant, some people get unusual withdrawal symptoms such as anxiety, panic, confusion, tingling, or hallucinations in addition to typical opioid withdrawal."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get tramadol legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, tramadol is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[8]][[9]]",
+            "**Cost:** generic tramadol is inexpensive and widely covered."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order tramadol online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill tramadol prescriptions online and ship them. Buying tramadol from a website that does not require a prescription is illegal, and the product is often fake.[[8]][[10]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether tramadol is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells tramadol with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[8]][[9]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is tramadol legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class C; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule I of the Controlled Drugs and Substances Act since 2022"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Not under UN control; controlled nationally in many countries"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[11]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is tramadol an opioid?",
+      "Yes. Its main metabolite activates opioid receptors, which is why it is a controlled substance and can cause addiction and overdose."
+    ],
+    [
+      "Can tramadol cause seizures?",
+      "Yes, even at normal doses. The risk is higher above 400 mg a day, with antidepressants, and in people with a seizure disorder."
+    ],
+    [
+      "Can you take tramadol with antidepressants?",
+      "Only with care. Combining it with SSRIs, SNRIs, or tricyclics raises the risk of serotonin syndrome and seizures; it must not be taken with MAOIs."
+    ],
+    [
+      "How long does tramadol stay in your system?",
+      "Its half-life is 6 to 7 hours. Urine tests typically detect it for 1 to 4 days."
+    ],
+    [
+      "Is tramadol weaker than other opioids?",
+      "It is less potent per milligram, but it has caused many overdose deaths, and its seizure and serotonin risks do not apply to most other opioids."
+    ]
+  ],
+  "sources": [
+    [
+      "Ultram (tramadol) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=tramadol"
+    ],
+    [
+      "FDA restricts use of prescription codeine pain and cough medicines and tramadol pain medicines in children",
+      "US Food and Drug Administration, 2017",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-restricts-use-prescription-codeine-pain-and-cough-medicines-and"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, 2022",
+      "Centers for Disease Control and Prevention, MMWR",
+      "https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

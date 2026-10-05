@@ -22,7 +22,7 @@ During the COVID-19 public health emergency, the DEA and the Department of Healt
 
 ## What could change after 2026
 
-The agencies have said permanent telemedicine standards are coming. In January 2025 the DEA proposed a special registration that would let approved clinicians prescribe by telemedicine under added record-keeping and reporting duties. That proposal is not final.
+The agencies have said permanent telemedicine standards are coming. In January 2025 the DEA proposed a special registration that would let approved clinicians prescribe by telemedicine under added record-keeping and reporting duties. In August 2026 the DEA sent a final version of the special registration rule to the White House Office of Management and Budget for review; its text had not been published as of early October 2026.
 
 If no new rule or extension is in place on January 1, 2027, the in-person requirement of the Ryan Haight Act applies again, with its limited exceptions. We will update this page when the agencies act.
 

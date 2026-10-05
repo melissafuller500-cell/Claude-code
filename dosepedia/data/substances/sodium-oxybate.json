@@ -1,0 +1,374 @@
+{
+  "slug": "sodium-oxybate",
+  "name": "Sodium oxybate",
+  "brands": [
+    "Xyrem",
+    "Xywav",
+    "Lumryz"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Gabapentinoids, dissociatives, and others",
+    "slug": "gabapentinoids-dissociatives"
+  },
+  "subclass": "CNS depressant (GHB salt)",
+  "schedule": {
+    "us": "III",
+    "label": "Schedule III"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Sodium oxybate (Xyrem) and GHB facts: narcolepsy treatment, the central pharmacy program, risks, overdose, withdrawal, illicit GHB, and US law.",
+  "quick": "Sodium oxybate (Xyrem) is the sodium salt of GHB (gamma-hydroxybutyrate), used to treat cataplexy and daytime sleepiness in narcolepsy. FDA-approved oxybate products are Schedule III and available only through a restricted central pharmacy program. GHB outside that program is Schedule I, and it has been used in drug-facilitated sexual assault.",
+  "facts": [
+    [
+      "Generic name",
+      "Sodium oxybate (GHB sodium salt); calcium, magnesium, potassium, and sodium oxybates (Xywav)"
+    ],
+    [
+      "Brand names",
+      "Xyrem, Xywav, Lumryz"
+    ],
+    [
+      "Street names (illicit GHB)",
+      "G, liquid ecstasy, Georgia home boy, gina"
+    ],
+    [
+      "Drug class",
+      "Central nervous system depressant"
+    ],
+    [
+      "US legal status",
+      "FDA-approved oxybates: Schedule III with restricted distribution; illicit GHB: Schedule I"
+    ],
+    [
+      "Approved uses",
+      "Cataplexy and excessive daytime sleepiness in narcolepsy; idiopathic hypersomnia (Xywav)"
+    ],
+    [
+      "Forms",
+      "Oral solution; extended-release granules (Lumryz)"
+    ],
+    [
+      "Onset",
+      "15 to 30 minutes"
+    ],
+    [
+      "Half-life",
+      "30 to 60 minutes"
+    ],
+    [
+      "Reversal agent",
+      "None"
+    ]
+  ],
+  "profile": {
+    "onset": "15 to 30 minutes",
+    "duration": "2 to 4 hours",
+    "half_life": "30 to 60 minutes",
+    "naloxone": "No",
+    "dependence": "High",
+    "medical": "Narcolepsy; idiopathic hypersomnia",
+    "groups": [
+      "depressant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is sodium oxybate used for?",
+      "blocks": [
+        {
+          "p": "Sodium oxybate is approved for cataplexy (sudden muscle weakness triggered by emotions) and excessive daytime sleepiness in people 7 and older with narcolepsy. Xywav, with less sodium, is also approved for idiopathic hypersomnia in adults. Lumryz is taken once at bedtime.[[1]]"
+        },
+        {
+          "p": "GHB occurs naturally in small amounts in the brain. Taken at night, oxybate deepens slow-wave sleep, which improves daytime alertness and reduces cataplexy."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is sodium oxybate usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use sodium oxybate. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical adult starting dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Xyrem or Xywav",
+                "4.5 g a night, split into two doses: at bedtime and 2.5 to 4 hours later",
+                "Raise by 1.5 g a night weekly; maximum 9 g a night"
+              ],
+              [
+                "Lumryz (once nightly)",
+                "4.5 g at bedtime",
+                "Maximum 9 g"
+              ],
+              [
+                "With valproate (divalproex)",
+                "At least 20% lower dose",
+                "Valproate raises oxybate levels"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Doses are taken in bed, at least 2 hours after eating, because sleep comes on within minutes."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of sodium oxybate?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Central nervous system depression: seizures, slowed breathing, decreased consciousness, coma, and death can occur at recommended doses, and are more likely with alcohol or other sedatives.",
+              "Abuse and misuse: illicit GHB use has been associated with seizures, breathing problems, coma, and death.",
+              "Available only through a restricted REMS program."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include nausea, dizziness, vomiting, bedwetting, headache, and sleepwalking.[[1]]"
+        },
+        {
+          "p": "**Illicit GHB** has a very steep dose-response curve: a small increase can move a person from euphoria to unconsciousness. It is colorless and nearly tasteless in drinks, which is why it has been used to sedate people for sexual assault. Related chemicals GBL and 1,4-butanediol turn into GHB in the body."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with sodium oxybate?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Alcohol",
+                "Deep sedation, slowed breathing, death",
+                "Contraindicated"
+              ],
+              [
+                "Sedative-hypnotics (sleeping pills)",
+                "Additive CNS depression",
+                "Contraindicated"
+              ],
+              [
+                "Opioids, benzodiazepines, gabapentinoids",
+                "Slowed breathing, coma",
+                "Avoid"
+              ],
+              [
+                "Valproate",
+                "Raises oxybate levels",
+                "Reduce oxybate dose by at least 20%"
+              ],
+              [
+                "Topiramate",
+                "Confusion, coma reported",
+                "Use caution"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does sodium oxybate overdose look like?",
+      "blocks": [
+        {
+          "p": "GHB overdose causes vomiting, confusion, agitation, slow heart rate, low body temperature, seizures, slowed or irregular breathing, and sudden deep unconsciousness. People may wake abruptly hours later.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse sodium oxybate, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        },
+        {
+          "p": "If someone may have been drugged without their knowledge, call 911 and ask hospital staff to test for GHB quickly; it leaves the body within about 12 hours. The National Sexual Assault Hotline is 1-800-656-4673."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is sodium oxybate withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "Regular, frequent GHB use (often every few hours, day and night) causes severe physical dependence. Withdrawal can be life-threatening and needs medical care. Withdrawal after prescribed nightly oxybate is uncommon but has been reported.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "1 to 6 hours",
+              "title": "Rapid onset",
+              "text": "Anxiety, tremor, sweating, insomnia, fast heartbeat."
+            },
+            {
+              "when": "Days 1 to 6",
+              "title": "Severe withdrawal",
+              "text": "Confusion, hallucinations, delirium, agitation, and seizures can occur."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Recovery",
+              "text": "Symptoms ease; insomnia and anxiety may linger."
+            }
+          ]
+        },
+        {
+          "warn": "People who use GHB around the clock should not stop suddenly on their own. Withdrawal can progress to delirium within hours and is treated in hospital, often with benzodiazepines or baclofen."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get sodium oxybate legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, sodium oxybate is a Schedule III controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule III prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Central pharmacy only:** FDA-approved oxybates are dispensed only through a REMS program by certified pharmacies, which ship directly to enrolled patients after counseling. They are not available at retail pharmacies.",
+            "**Illicit GHB:** GHB that is not an FDA-approved product is Schedule I. Possession and sale carry federal penalties, increased if the drug was used to commit a violent crime."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order sodium oxybate online?",
+      "blocks": [
+        {
+          "p": "Only through the manufacturer's REMS program: the prescriber enrolls the patient, and a certified central pharmacy ships the medicine directly. It cannot be bought from ordinary online pharmacies.[[1]]"
+        },
+        {
+          "p": "Any seller of GHB, GBL, or 1,4-butanediol for drinking, including products sold as cleaners or \"wheel cleaner\", is illegal and dangerous."
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is sodium oxybate legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "GHB Class B since 2022; sodium oxybate prescribed"
+              ],
+              [
+                "Canada",
+                "Schedule III; Xyrem by prescription"
+              ],
+              [
+                "European Union",
+                "Sodium oxybate approved for narcolepsy and, in some countries, alcohol dependence"
+              ],
+              [
+                "International",
+                "GHB: Schedule II of the 1971 Convention"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[7]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is Xyrem the same as GHB?",
+      "Yes. Xyrem is the sodium salt of GHB, made to pharmaceutical standards and dosed precisely."
+    ],
+    [
+      "Why can't I get Xyrem at a regular pharmacy?",
+      "Because of its risks and history of misuse, it is only dispensed through a restricted program by certified pharmacies that ship directly to patients."
+    ],
+    [
+      "How long does GHB stay in the body?",
+      "It is cleared within about 6 hours in blood and 12 hours in urine, so testing after a suspected drugging must happen quickly."
+    ],
+    [
+      "Can you drink alcohol with sodium oxybate?",
+      "No. The combination can stop breathing and is contraindicated."
+    ]
+  ],
+  "sources": [
+    [
+      "Xyrem (sodium oxybate) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=sodium+oxybate"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

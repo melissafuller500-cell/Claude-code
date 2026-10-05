@@ -1,0 +1,399 @@
+{
+  "slug": "dextroamphetamine",
+  "name": "Dextroamphetamine",
+  "brands": [
+    "Dexedrine",
+    "Zenzedi",
+    "ProCentra",
+    "Xelstrym"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Amphetamine stimulant",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Dextroamphetamine (Dexedrine, Zenzedi) facts: uses for ADHD and narcolepsy, dosing basics, boxed warning, risks, interactions, and legal access.",
+  "quick": "Dextroamphetamine is the more active form (isomer) of amphetamine. It is used for ADHD and narcolepsy as tablets, long-acting capsules, a liquid, and a skin patch. It is a Schedule II controlled substance.",
+  "facts": [
+    [
+      "Generic name",
+      "Dextroamphetamine sulfate"
+    ],
+    [
+      "Brand names",
+      "Dexedrine Spansule, Zenzedi, ProCentra (liquid), Xelstrym (patch)"
+    ],
+    [
+      "Drug class",
+      "Amphetamine-type stimulant"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only"
+    ],
+    [
+      "Approved uses",
+      "ADHD; narcolepsy"
+    ],
+    [
+      "Forms",
+      "Tablets, extended-release capsules, oral solution, transdermal patch"
+    ],
+    [
+      "Onset",
+      "30 to 60 minutes"
+    ],
+    [
+      "Duration",
+      "4 to 6 hours (tablet); 8 to 12 hours (capsule)"
+    ],
+    [
+      "Half-life",
+      "About 10 to 12 hours"
+    ],
+    [
+      "How it works",
+      "Releases dopamine and norepinephrine"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "4 to 12 hours depending on form",
+    "half_life": "10 to 12 hours",
+    "naloxone": "No",
+    "dependence": "Moderate to high",
+    "medical": "ADHD; narcolepsy",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is dextroamphetamine used for?",
+      "blocks": [
+        {
+          "p": "Dextroamphetamine is approved for ADHD and narcolepsy. The patch (Xelstrym) is applied for up to 9 hours a day, which lets families control how long it works.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is dextroamphetamine usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use dextroamphetamine. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Use",
+              "Typical starting dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "ADHD, age 6 and up",
+                "5 mg once or twice a day",
+                "Raise by 5 mg weekly; rarely above 40 mg a day"
+              ],
+              [
+                "Narcolepsy, adults",
+                "10 mg a day",
+                "Usual range 5 to 60 mg a day"
+              ],
+              [
+                "Patch (Xelstrym)",
+                "4.5 mg per 9 hours",
+                "Applied in the morning and removed within 9 hours"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of dextroamphetamine?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warning",
+            "items": [
+              "Dextroamphetamine has a high potential for abuse and misuse, which can lead to a substance use disorder, including addiction. Misuse and abuse of CNS stimulants can result in overdose and death, and this risk is increased with higher doses or unapproved methods of administration, such as snorting or injection.[[2]]",
+              "Prescribers should assess each patient's risk before prescribing, monitor for signs of misuse throughout treatment, and counsel patients not to share their medicine.[[2]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include reduced appetite, insomnia, weight loss, dry mouth, fast heartbeat, and irritability. Serious risks are the same as for other amphetamines: heart problems, high blood pressure, psychosis, and slowed growth in children.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with dextroamphetamine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "MAOIs (phenelzine, selegiline, linezolid)",
+                "Dangerous rise in blood pressure",
+                "Contraindicated within 14 days"
+              ],
+              [
+                "Other stimulants, decongestants (pseudoephedrine)",
+                "High blood pressure, fast heart rate",
+                "Use caution"
+              ],
+              [
+                "SSRIs, SNRIs, tramadol, triptans",
+                "Serotonin syndrome (rare)",
+                "Use caution"
+              ],
+              [
+                "Alcohol",
+                "Masks drunkenness; heart strain",
+                "Avoid"
+              ],
+              [
+                "Urine alkalinizers (sodium bicarbonate, acetazolamide)",
+                "Raise levels",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does dextroamphetamine overdose look like?",
+      "blocks": [
+        {
+          "p": "Overdose causes agitation, fast breathing, confusion, hallucinations, very high temperature, chest pain, irregular heartbeat, and seizures.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop dextroamphetamine?",
+      "blocks": [
+        {
+          "p": "Stopping dextroamphetamine after regular prescribed use does not cause dangerous physical withdrawal. ADHD symptoms return, and some people feel tired or low for a few days. After heavy misuse, a \"crash\" with exhaustion, increased sleep and appetite, and depression is common.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Crash",
+              "text": "Fatigue, long sleep, increased appetite, low mood, irritability."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Low mood and cravings",
+              "text": "Low energy, poor concentration, and cravings after heavy use."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Recovery",
+              "text": "Mood and energy normalize; depression should be watched for."
+            }
+          ]
+        },
+        {
+          "p": "There is no need to taper prescribed stimulants for safety, but anyone who feels severe depression or suicidal thoughts after stopping should contact a clinician or call or text 988."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get dextroamphetamine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, dextroamphetamine is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[4]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[5]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[6]][[7]]",
+            "**Cost:** generic dextroamphetamine tablets and capsules are widely covered.",
+            "**Shortages:** prescription stimulants were in short supply from 2022, and some strengths remained hard to find into 2025. If a pharmacy is out, ask about another strength, form, or nearby pharmacy, or ask the prescriber about alternatives."
+          ]
+        },
+        {
+          "warn": "Pills sold as Adderall outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[8]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order dextroamphetamine online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill dextroamphetamine prescriptions online and ship them. Buying dextroamphetamine from a website that does not require a prescription is illegal, and the product is often fake.[[6]][[8]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether dextroamphetamine is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells dextroamphetamine with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[6]][[7]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is dextroamphetamine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B; dexamfetamine prescribed for ADHD and narcolepsy"
+              ],
+              [
+                "Canada",
+                "Schedule I of the Controlled Drugs and Substances Act; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug"
+              ],
+              [
+                "International",
+                "Schedule II of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "What is the difference between dextroamphetamine and Adderall?",
+      "Adderall contains about 75% dextroamphetamine and 25% levoamphetamine. Dextroamphetamine alone is somewhat more potent per milligram for focus and has fewer heart-rate effects from the levo form."
+    ],
+    [
+      "Is there a dextroamphetamine patch?",
+      "Yes. Xelstrym, approved in 2022, is worn on the skin for up to 9 hours."
+    ],
+    [
+      "How long does dextroamphetamine stay in your system?",
+      "Its half-life is about 10 to 12 hours. Urine tests typically detect it for 2 to 4 days."
+    ]
+  ],
+  "sources": [
+    [
+      "Dexedrine (dextroamphetamine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=dextroamphetamine"
+    ],
+    [
+      "FDA updating warnings to improve safe use of prescription stimulants used to treat ADHD and other conditions",
+      "US Food and Drug Administration, 2023",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-updating-warnings-improve-safe-use-prescription-stimulants-used-treat-adhd-and-other-conditions"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

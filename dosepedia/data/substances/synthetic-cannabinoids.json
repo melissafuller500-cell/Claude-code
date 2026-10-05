@@ -1,0 +1,336 @@
+{
+  "slug": "synthetic-cannabinoids",
+  "name": "Synthetic cannabinoids",
+  "brands": [],
+  "aka": [
+    "K2",
+    "Spice",
+    "Fake weed",
+    "Mamba",
+    "Kronic"
+  ],
+  "kind": "nomed",
+  "class": {
+    "name": "Cannabis and psychedelics",
+    "slug": "cannabis-psychedelics"
+  },
+  "subclass": "Synthetic cannabinoid receptor agonist",
+  "schedule": {
+    "us": "I",
+    "label": "Schedule I"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Synthetic cannabinoids (K2, Spice) facts: why they are more dangerous than cannabis, effects, seizures, kidney injury, bleeding outbreaks, withdrawal, and US law.",
+  "quick": "Synthetic cannabinoids, sold as K2 or Spice, are lab-made chemicals sprayed onto plant material or sold as vape liquids. They act on the same receptors as THC but much more strongly. They can cause seizures, psychosis, kidney injury, heart attack, and death. Many are Schedule I, but makers keep changing formulas.",
+  "facts": [
+    [
+      "What they are",
+      "Lab-made cannabinoid receptor agonists sprayed on plant material or in e-liquids"
+    ],
+    [
+      "Street names",
+      "K2, Spice, fake weed, mamba, kronic"
+    ],
+    [
+      "Drug class",
+      "Synthetic cannabinoid receptor agonists"
+    ],
+    [
+      "US legal status",
+      "Many compounds Schedule I; new variants appear constantly"
+    ],
+    [
+      "How it is used",
+      "Smoked, vaped, or drunk as tea"
+    ],
+    [
+      "Onset",
+      "Minutes"
+    ],
+    [
+      "Duration",
+      "2 to 6 hours"
+    ],
+    [
+      "Potency",
+      "Often many times stronger than THC, and full rather than partial agonists"
+    ],
+    [
+      "Drug tests",
+      "Usually not detected by standard THC tests"
+    ],
+    [
+      "Reversal agent",
+      "None"
+    ]
+  ],
+  "profile": {
+    "onset": "Minutes",
+    "duration": "2 to 6 hours",
+    "half_life": "Varies by compound",
+    "naloxone": "No",
+    "dependence": "High",
+    "medical": "None",
+    "groups": [
+      "cannabinoid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is synthetic cannabinoids?",
+      "blocks": [
+        {
+          "p": "Synthetic cannabinoids are hundreds of different chemicals designed to activate the brain's cannabinoid receptors. Unlike THC, most are full agonists and far more potent, which makes their effects stronger and less predictable.[[1]]"
+        },
+        {
+          "p": "They are sold in colorful packets labeled \"not for human consumption\", as incense or potpourri, and increasingly in vape cartridges and infused into paper mailed into prisons."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of synthetic cannabinoids, and how long do they last?",
+      "blocks": [
+        {
+          "p": "Effects can include euphoria and relaxation, but also extreme anxiety, confusion, paranoia, hallucinations, vomiting, racing heart, and agitation. Some users become unresponsive (\"zombie\" outbreaks).[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of synthetic cannabinoids?",
+      "blocks": [
+        {
+          "p": "**Serious harms** include seizures, acute kidney injury, heart attack and stroke, psychosis, and death. Because the chemicals and amounts vary from packet to packet, a familiar product can suddenly be much stronger.[[1]]"
+        },
+        {
+          "p": "**Contamination:** in 2018, synthetic cannabinoids laced with brodifacoum, a rat poison, caused severe bleeding and several deaths across multiple states."
+        },
+        {
+          "p": "**Testing:** standard drug tests do not detect most synthetic cannabinoids, which is one reason people use them, but it also makes poisonings hard to diagnose."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with synthetic cannabinoids?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Alcohol",
+                "Stronger impairment, vomiting",
+                "High risk"
+              ],
+              [
+                "Stimulants",
+                "Heart strain, seizures",
+                "High risk"
+              ],
+              [
+                "Psychedelics",
+                "Severe anxiety, psychosis",
+                "High risk"
+              ],
+              [
+                "Sedatives and opioids",
+                "Unpredictable sedation",
+                "High risk"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does a synthetic cannabinoid overdose look like?",
+      "blocks": [
+        {
+          "p": "Signs include severe agitation or confusion, a very fast heartbeat, vomiting, chest pain, seizures, unresponsiveness, and unusual bleeding (from gums or nose, or blood in urine) if rat poison is involved. These are medical emergencies; call 911.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone has taken too much",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, unresponsiveness, or if a child may have eaten a cannabis product.",
+              "For an adult who is awake but anxious or sick, move them to a calm place and stay with them. Symptoms usually ease over several hours.",
+              "Call Poison Help at 1-800-222-1222 for advice, including for any child or pet exposure.",
+              "Do not drive. Edibles can keep building for hours after they are eaten."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is synthetic cannabinoids addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "Frequent use can cause dependence and withdrawal that is often more severe than cannabis withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Hours to day 1",
+              "title": "Onset",
+              "text": "Anxiety, irritability, sweating, nausea, cravings."
+            },
+            {
+              "when": "Days 2 to 5",
+              "title": "Peak",
+              "text": "Insomnia, vomiting, tremor, and rarely seizures."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Resolves",
+              "text": "Sleep and mood improve gradually."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is synthetic cannabinoids legal in the US?",
+      "blocks": [
+        {
+          "p": "Synthetic cannabinoids is a Schedule I controlled substance under federal law, meaning it is considered to have a high potential for abuse and no currently accepted medical use. It cannot be prescribed, and possessing, making, or selling it is a federal crime.[[2]]"
+        },
+        {
+          "ul": [
+            "**Possession:** under federal law, a first conviction for possessing any controlled substance without a valid prescription can bring up to one year in prison and a minimum fine of $1,000. Penalties rise with prior convictions.[[3]]",
+            "**Selling or sharing:** distribution carries much heavier federal penalties, which increase with the amount involved and are higher still if the drug causes death or serious injury.[[4]]",
+            "**State law:** states set their own penalties, and most drug cases are prosecuted under state law. Penalties range from a civil fine to long prison terms depending on the state, the amount, and prior record."
+          ]
+        },
+        {
+          "p": "**Shifting chemistry:** the Synthetic Drug Abuse Prevention Act of 2012 and many DEA orders placed dozens of these compounds in Schedule I. Makers respond with new variants; the Federal Analogue Act can treat chemicals substantially similar to Schedule I drugs as Schedule I when sold for human consumption.[[2]]"
+        },
+        {
+          "p": "**Hemp-derived products:** some products sold as \"hemp\" or \"delta-8\" contain synthetic cannabinoids. A 2025 federal law bans synthetic cannabinoids in hemp products from November 12, 2026.[[5]]"
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with synthetic cannabinoids use?",
+      "blocks": [
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[6]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[7]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is synthetic cannabinoids legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B (third-generation synthetic cannabinoids)"
+              ],
+              [
+                "Canada",
+                "Schedule II with cannabis-like substances"
+              ],
+              [
+                "Australia",
+                "Prohibited (Schedule 9 analogues)"
+              ],
+              [
+                "International",
+                "Many listed in Schedule II of the 1971 Convention"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is K2 the same as marijuana?",
+      "No. K2 contains lab-made chemicals that act much more strongly than THC and are far more dangerous."
+    ],
+    [
+      "Does K2 show up on a drug test?",
+      "Standard tests usually do not detect it. Specialized tests exist."
+    ],
+    [
+      "Why are synthetic cannabinoids so dangerous?",
+      "They are full, potent activators of cannabinoid receptors, the dose and chemical vary between packets, and they are sometimes contaminated."
+    ],
+    [
+      "Is Spice legal if it says \"not for human consumption\"?",
+      "No. That label does not make it legal; many compounds are Schedule I and analogues sold for consumption can be prosecuted."
+    ]
+  ],
+  "sources": [
+    [
+      "Synthetic Cannabinoids (K2/Spice)",
+      "National Institute on Drug Abuse",
+      "https://nida.nih.gov/research-topics/synthetic-cannabinoids"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 U.S.C. 844, Penalties for simple possession",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/844"
+    ],
+    [
+      "21 U.S.C. 841, Prohibited acts A (trafficking penalties)",
+      "Legal Information Institute, Cornell Law School",
+      "https://www.law.cornell.edu/uscode/text/21/841"
+    ],
+    [
+      "New federal restrictions on hemp and hemp-derived products",
+      "DLA Piper, November 2025",
+      "https://www.dlapiper.com/insights/publications/2025/11/new-federal-restrictions-on-hemp-and-hemp-derived-products"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

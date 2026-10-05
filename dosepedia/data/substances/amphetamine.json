@@ -1,0 +1,436 @@
+{
+  "slug": "amphetamine",
+  "name": "Amphetamine",
+  "brands": [
+    "Adderall",
+    "Adderall XR",
+    "Mydayis",
+    "Evekeo",
+    "Adzenys XR-ODT"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Stimulants",
+    "slug": "stimulants"
+  },
+  "subclass": "Amphetamine stimulant (mixed salts)",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Amphetamine (Adderall) facts: uses for ADHD and narcolepsy, dosing basics, boxed warning, side effects, interactions, overdose, crash, and how to get it legally.",
+  "quick": "Adderall is a mix of four amphetamine salts (about three parts dextroamphetamine to one part levoamphetamine) used to treat ADHD and narcolepsy. It is one of the most prescribed medicines in the US and a Schedule II controlled substance, because it can be misused and can lead to addiction.",
+  "facts": [
+    [
+      "Generic name",
+      "Mixed amphetamine salts (dextroamphetamine and amphetamine)"
+    ],
+    [
+      "Brand names",
+      "Adderall, Adderall XR, Mydayis; also Evekeo, Adzenys XR-ODT"
+    ],
+    [
+      "Drug class",
+      "Amphetamine-type central nervous system stimulant"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only"
+    ],
+    [
+      "Approved uses",
+      "ADHD (age 6 and up for most forms); narcolepsy"
+    ],
+    [
+      "Forms",
+      "Tablets, extended-release capsules, orally disintegrating tablets"
+    ],
+    [
+      "Onset",
+      "30 to 60 minutes"
+    ],
+    [
+      "Duration",
+      "4 to 6 hours (IR); 10 to 12 hours (XR)"
+    ],
+    [
+      "Half-life",
+      "About 10 to 13 hours"
+    ],
+    [
+      "How it works",
+      "Releases dopamine and norepinephrine"
+    ]
+  ],
+  "profile": {
+    "onset": "30 to 60 minutes",
+    "duration": "4 to 6 hours (IR); 10 to 12 hours (XR)",
+    "half_life": "10 to 13 hours",
+    "naloxone": "No",
+    "dependence": "Moderate to high",
+    "medical": "ADHD; narcolepsy",
+    "groups": [
+      "stimulant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is amphetamine used for?",
+      "blocks": [
+        {
+          "p": "Adderall is approved for attention-deficit/hyperactivity disorder (ADHD) and narcolepsy. Adderall XR and Mydayis are approved for ADHD.[[1]]"
+        },
+        {
+          "p": "Amphetamines release dopamine and norepinephrine in the brain, which improves attention, focus, and impulse control in people with ADHD. Stimulants are the most effective medicines for ADHD, helping about 70 to 80% of people."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is amphetamine usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use amphetamine. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product and use",
+              "Typical starting dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Adderall, ADHD (age 6 and up)",
+                "5 mg once or twice a day",
+                "Raise by 5 mg weekly; rarely above 40 mg a day"
+              ],
+              [
+                "Adderall, narcolepsy",
+                "10 mg a day (adults)",
+                "Usual range 5 to 60 mg a day in divided doses"
+              ],
+              [
+                "Adderall XR, ADHD (adults)",
+                "20 mg once in the morning",
+                "Swallow whole or sprinkle on applesauce"
+              ],
+              [
+                "Adderall XR, ADHD (children 6 to 12)",
+                "5 to 10 mg once in the morning",
+                "Maximum 30 mg a day"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Doses are taken in the morning, with the second immediate-release dose 4 to 6 hours later, to limit insomnia. Clinicians check blood pressure, heart rate, and, in children, growth."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of amphetamine?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warning",
+            "items": [
+              "Adderall has a high potential for abuse and misuse, which can lead to a substance use disorder, including addiction. Misuse and abuse of CNS stimulants can result in overdose and death, and this risk is increased with higher doses or unapproved methods of administration, such as snorting or injection.[[2]]",
+              "Prescribers should assess each patient's risk before prescribing, monitor for signs of misuse throughout treatment, and counsel patients not to share their medicine.[[2]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include decreased appetite, trouble sleeping, dry mouth, stomach pain, headache, weight loss, nervousness, and fast heart rate.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include sudden death in people with heart defects or serious heart problems, stroke and heart attack in adults, high blood pressure, new psychosis or mania, slowed growth in children, poor circulation in fingers and toes (Raynaud's), and serotonin syndrome.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with amphetamine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "MAOIs (phenelzine, selegiline, linezolid)",
+                "Dangerous rise in blood pressure",
+                "Contraindicated within 14 days"
+              ],
+              [
+                "Other stimulants, decongestants (pseudoephedrine)",
+                "High blood pressure, fast heart rate",
+                "Use caution"
+              ],
+              [
+                "SSRIs, SNRIs, tramadol, triptans",
+                "Serotonin syndrome (rare)",
+                "Use caution"
+              ],
+              [
+                "Alcohol",
+                "Masks drunkenness; heart strain",
+                "Avoid"
+              ],
+              [
+                "Antacids and urine alkalinizers (sodium bicarbonate)",
+                "Raise amphetamine levels",
+                "Avoid"
+              ],
+              [
+                "Vitamin C and acidic juices",
+                "Lower absorption",
+                "Take at different times"
+              ],
+              [
+                "Fluoxetine, paroxetine, bupropion (CYP2D6 inhibitors)",
+                "Raise amphetamine levels",
+                "Monitor"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does amphetamine overdose look like?",
+      "blocks": [
+        {
+          "p": "Stimulant overdose causes restlessness, agitation, tremor, fast breathing, confusion, hallucinations, panic, very high body temperature, high or low blood pressure, chest pain, irregular heartbeat, seizures, and collapse.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may be overdosing",
+            "items": [
+              "Call 911 for chest pain, a seizure, trouble breathing, signs of a stroke (face drooping, weakness on one side, slurred speech), a very high body temperature, or if the person collapses.",
+              "Move them somewhere cool and calm, loosen tight clothing, and cool the skin with water. Do not try to hold them down.",
+              "If they become unresponsive or their breathing slows, give naloxone. Street stimulants are often contaminated with fentanyl.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What happens when you stop Adderall?",
+      "blocks": [
+        {
+          "p": "Stopping Adderall after regular prescribed use does not cause dangerous physical withdrawal. ADHD symptoms return, and some people feel tired or low for a few days. After heavy misuse, a \"crash\" with exhaustion, increased sleep and appetite, and depression is common.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 3",
+              "title": "Crash",
+              "text": "Fatigue, long sleep, increased appetite, low mood, irritability."
+            },
+            {
+              "when": "Weeks 1 to 2",
+              "title": "Low mood and cravings",
+              "text": "Low energy, poor concentration, and cravings after heavy use."
+            },
+            {
+              "when": "Weeks to months",
+              "title": "Recovery",
+              "text": "Mood and energy normalize; depression should be watched for."
+            }
+          ]
+        },
+        {
+          "p": "There is no need to taper prescribed stimulants for safety, but anyone who feels severe depression or suicidal thoughts after stopping should contact a clinician or call or text 988."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get amphetamine legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, amphetamine is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[4]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[5]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[6]][[7]]",
+            "**Cost:** generic Adderall and Adderall XR are widely covered; some plans limit quantities or require prior authorization for adults.",
+            "**Shortages:** prescription stimulants were in short supply from 2022, and some strengths remained hard to find into 2025. If a pharmacy is out, ask about another strength, form, or nearby pharmacy, or ask the prescriber about alternatives."
+          ]
+        },
+        {
+          "warn": "Pills sold as Adderall outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[8]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order adderall online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill adderall prescriptions online and ship them. Buying adderall from a website that does not require a prescription is illegal, and the product is often fake.[[6]][[8]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether adderall is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells adderall with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[6]][[7]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is amphetamine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B; Adderall not licensed, but lisdexamfetamine and dexamfetamine are prescribed"
+              ],
+              [
+                "Canada",
+                "Schedule I; Adderall XR prescribed"
+              ],
+              [
+                "Japan",
+                "Amphetamines prohibited, including for medical use; bringing Adderall into Japan is illegal"
+              ],
+              [
+                "International",
+                "Schedule II of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is Adderall the same as amphetamine?",
+      "Adderall is a brand of mixed amphetamine salts, a blend of dextroamphetamine and levoamphetamine."
+    ],
+    [
+      "Is Adderall addictive?",
+      "It can be. Taken as prescribed for ADHD, addiction is uncommon, but misuse, especially at high doses or by snorting or injecting, can lead to stimulant use disorder."
+    ],
+    [
+      "Can you buy Adderall online?",
+      "Only with a valid prescription, filled by a licensed pharmacy. Telehealth prescribing is allowed through December 31, 2026. Adderall sold without a prescription is often counterfeit and has contained methamphetamine or fentanyl."
+    ],
+    [
+      "How long does Adderall stay in your system?",
+      "Its half-life is 10 to 13 hours. Urine tests usually detect amphetamine for 2 to 4 days."
+    ],
+    [
+      "Can you travel abroad with Adderall?",
+      "It depends on the country. Japan and some other countries prohibit amphetamines, even with a prescription. Check the destination's embassy rules before travel."
+    ],
+    [
+      "Does Adderall help people without ADHD study?",
+      "Studies show small or no improvements in learning for people without ADHD, along with real risks of side effects and misuse."
+    ]
+  ],
+  "sources": [
+    [
+      "Adderall (amphetamine) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=amphetamine"
+    ],
+    [
+      "FDA updating warnings to improve safe use of prescription stimulants used to treat ADHD and other conditions",
+      "US Food and Drug Administration, 2023",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-updating-warnings-improve-safe-use-prescription-stimulants-used-treat-adhd-and-other-conditions"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

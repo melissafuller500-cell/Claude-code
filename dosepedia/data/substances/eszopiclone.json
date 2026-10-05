@@ -1,0 +1,386 @@
+{
+  "slug": "eszopiclone",
+  "name": "Eszopiclone",
+  "brands": [
+    "Lunesta"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
+  },
+  "subclass": "Nonbenzodiazepine hypnotic (\"Z-drug\")",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Eszopiclone (Lunesta) facts: use for insomnia, dosing basics, complex sleep behavior warning, interactions, overdose, withdrawal, and legal access.",
+  "quick": "Eszopiclone (Lunesta) is a Z-drug sleep medicine for trouble falling or staying asleep. It is a Schedule IV controlled substance. Like zolpidem, it carries a boxed warning for complex sleep behaviors, and a bitter or metallic taste is a common side effect.",
+  "facts": [
+    [
+      "Generic name",
+      "Eszopiclone"
+    ],
+    [
+      "Brand names",
+      "Lunesta"
+    ],
+    [
+      "Drug class",
+      "Nonbenzodiazepine hypnotic (\"Z-drug\")"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Insomnia (sleep onset and maintenance)"
+    ],
+    [
+      "Forms",
+      "Tablets"
+    ],
+    [
+      "Onset",
+      "About 1 hour"
+    ],
+    [
+      "Half-life",
+      "About 6 hours"
+    ],
+    [
+      "Broken down by",
+      "CYP3A4 and CYP2E1"
+    ],
+    [
+      "FDA boxed warning",
+      "Complex sleep behaviors"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour",
+    "duration": "7 to 8 hours",
+    "half_life": "About 6 hours",
+    "naloxone": "No",
+    "dependence": "Moderate",
+    "medical": "Insomnia",
+    "groups": [
+      "depressant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is eszopiclone used for?",
+      "blocks": [
+        {
+          "p": "Eszopiclone is approved for insomnia, helping people fall asleep and stay asleep. Unlike some sleeping pills, it was studied for up to six months of nightly use.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is eszopiclone usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use eszopiclone. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Group",
+              "Typical dose",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Adults",
+                "1 mg right before bed",
+                "Can be raised to 2 or 3 mg"
+              ],
+              [
+                "Older adults, severe liver disease",
+                "1 mg",
+                "Maximum 2 mg"
+              ],
+              [
+                "With strong CYP3A4 inhibitors",
+                "1 mg",
+                "Maximum 2 mg"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "The FDA lowered the starting dose to 1 mg in 2014 because 3 mg can impair driving and memory the next day even when people feel alert."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of eszopiclone?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warning",
+            "items": [
+              "Complex sleep behaviors, including sleepwalking, sleep-driving, and other activities while not fully awake, have caused serious injuries and deaths. Stop the medicine if one occurs, and do not take it if you have had one before.[[2]]"
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include unpleasant taste, headache, drowsiness, dizziness, and dry mouth. Next-day impairment can occur, especially at higher doses.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with eszopiclone?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids",
+                "Profound sedation, slowed breathing",
+                "Avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Greater impairment",
+                "Avoid"
+              ],
+              [
+                "Other sedatives",
+                "Additive sedation",
+                "Avoid combining"
+              ],
+              [
+                "Ketoconazole, clarithromycin, ritonavir",
+                "Raise eszopiclone levels",
+                "Maximum 2 mg"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does eszopiclone overdose look like?",
+      "blocks": [
+        {
+          "p": "Overdose causes excessive sleepiness progressing to coma, especially with alcohol or other sedatives.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse eszopiclone, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is eszopiclone withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "After regular use, stopping eszopiclone can cause rebound insomnia and mild withdrawal symptoms such as anxiety and abnormal dreams. Long-term users should taper with their prescriber.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Nights 1 to 3",
+              "title": "Rebound insomnia",
+              "text": "Temporary worsening of sleep."
+            },
+            {
+              "when": "Days 1 to 7",
+              "title": "Withdrawal in some users",
+              "text": "Anxiety, abnormal dreams, nausea, upset stomach."
+            },
+            {
+              "when": "Weeks",
+              "title": "Recovery",
+              "text": "Sleep usually normalizes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get eszopiclone legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, eszopiclone is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[3]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[4]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[5]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[6]][[7]]",
+            "**Cost:** generic eszopiclone is widely available."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order eszopiclone online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill eszopiclone prescriptions online and ship them. Buying eszopiclone from a website that does not require a prescription is illegal, and the product is often fake.[[6]][[8]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether eszopiclone is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells eszopiclone with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[6]][[7]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is eszopiclone legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Not marketed; related zopiclone is Class C"
+              ],
+              [
+                "Canada",
+                "Prescription medicine"
+              ],
+              [
+                "Australia",
+                "Not marketed; zopiclone is Schedule 4"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[9]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Why does Lunesta taste bad?",
+      "A bitter or metallic taste is one of the most common side effects, reported by about a third of people at higher doses."
+    ],
+    [
+      "Is eszopiclone better than zolpidem?",
+      "Eszopiclone lasts longer, which may help people who wake during the night, but it is more likely to cause next-day grogginess."
+    ],
+    [
+      "Is Lunesta addictive?",
+      "It can cause dependence and has a lower but real risk of misuse. It is Schedule IV."
+    ]
+  ],
+  "sources": [
+    [
+      "Lunesta (eszopiclone) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=eszopiclone"
+    ],
+    [
+      "FDA adds Boxed Warning for risk of serious injuries caused by sleepwalking with certain prescription insomnia medicines",
+      "US Food and Drug Administration, 2019",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-adds-boxed-warning-risk-serious-injuries-caused-sleepwalking-certain-prescription-insomnia"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

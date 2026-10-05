@@ -1,0 +1,315 @@
+{
+  "slug": "tianeptine",
+  "name": "Tianeptine",
+  "brands": [],
+  "aka": [
+    "Gas station heroin",
+    "Za Za",
+    "Tianaa",
+    "Neptune's Fix"
+  ],
+  "kind": "unregulated",
+  "class": {
+    "name": "Emerging and unscheduled substances",
+    "slug": "emerging"
+  },
+  "subclass": "Atypical antidepressant with opioid agonist activity",
+  "schedule": {
+    "us": "",
+    "label": "Not federally controlled"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Tianeptine (\"gas station heroin\") facts: what it is, opioid effects, overdoses, FDA warnings, state bans, the 2026 DEA Schedule I proposal, withdrawal, and treatment.",
+  "quick": "Tianeptine is an antidepressant approved in some European, Asian, and Latin American countries but never in the US. At high doses it activates opioid receptors, and it has been sold in gas stations and online as a supplement, earning the nickname \"gas station heroin\". The FDA has repeatedly warned against it, many states ban it, and in July 2026 the DEA proposed placing it in Schedule I.",
+  "facts": [
+    [
+      "Chemical",
+      "Tianeptine sodium or sulfate"
+    ],
+    [
+      "Product names",
+      "Za Za, Tianaa, Neptune's Fix, TD Red"
+    ],
+    [
+      "Drug class",
+      "Atypical tricyclic antidepressant; mu-opioid agonist at high doses"
+    ],
+    [
+      "US legal status",
+      "Not federally controlled; Schedule I proposed (July 2026); banned in about 15 states"
+    ],
+    [
+      "FDA status",
+      "Not approved; warnings and import alerts"
+    ],
+    [
+      "Approved elsewhere",
+      "Prescribed for depression in France and other countries (Stablon, Coaxil)"
+    ],
+    [
+      "Onset",
+      "About 1 hour"
+    ],
+    [
+      "Duration",
+      "2 to 4 hours"
+    ],
+    [
+      "Half-life",
+      "About 2.5 hours"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour",
+    "duration": "2 to 4 hours",
+    "half_life": "About 2.5 hours",
+    "naloxone": "Yes",
+    "dependence": "High",
+    "medical": "None in the US",
+    "groups": [
+      "opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is tianeptine?",
+      "blocks": [
+        {
+          "p": "Tianeptine was developed in France in the 1960s and is prescribed for depression in several countries at 12.5 mg three times a day. At much higher doses, it acts as a full agonist at mu-opioid receptors, causing opioid effects.[[1]]"
+        },
+        {
+          "p": "In the US it is sold illegally as a dietary supplement or \"research chemical\" in gas stations, smoke shops, and online, sometimes in amounts hundreds of times the antidepressant dose."
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "q": "What are the effects of tianeptine, and how long do they last?",
+      "blocks": [
+        {
+          "p": "At high doses tianeptine causes euphoria, relaxation, and pain relief similar to opioids, along with drowsiness, nausea, and constipation. Its short half-life leads people to redose many times a day.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks of tianeptine?",
+      "blocks": [
+        {
+          "p": "**Overdose and death:** the FDA has linked tianeptine products to seizures, loss of consciousness, and deaths, both alone and with other drugs. Poison center calls rose from 4 in 2013 to about 350 in 2024.[[1]]"
+        },
+        {
+          "p": "**Contamination:** FDA testing found some products, such as Neptune's Fix, contained synthetic cannabinoids and other undeclared drugs.[[1]]"
+        },
+        {
+          "p": "**Dependence:** daily users rapidly develop severe opioid-like dependence, often taking grams per day."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What is dangerous to mix with tianeptine?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Risk level"
+            ],
+            "rows": [
+              [
+                "Opioids",
+                "Additive breathing suppression",
+                "High risk"
+              ],
+              [
+                "Benzodiazepines, alcohol, sedatives",
+                "Deep sedation, slowed breathing",
+                "High risk"
+              ],
+              [
+                "Other antidepressants",
+                "Unpredictable effects",
+                "Avoid"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. Unregulated drugs often contain other substances, which makes any combination less predictable."
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does a tianeptine overdose look like?",
+      "blocks": [
+        {
+          "p": "Tianeptine overdose looks like opioid overdose: extreme sleepiness, slow or stopped breathing, pinpoint pupils, and unresponsiveness. Agitation, fast heartbeat, confusion, and seizures have also been reported. Naloxone reverses its opioid effects.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before tianeptine does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "Is tianeptine addictive, and what is withdrawal like?",
+      "blocks": [
+        {
+          "p": "Tianeptine withdrawal resembles opioid withdrawal and can be severe after heavy use.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "8 to 24 hours",
+              "title": "Symptoms begin",
+              "text": "Anxiety, sweating, runny nose, muscle aches, cravings."
+            },
+            {
+              "when": "Days 1 to 4",
+              "title": "Peak",
+              "text": "Diarrhea, vomiting, insomnia, agitation, and in some cases confusion."
+            },
+            {
+              "when": "1 to 2 weeks",
+              "title": "Resolves",
+              "text": "Physical symptoms ease; mood symptoms can last longer."
+            }
+          ]
+        },
+        {
+          "p": "Hospitals have treated tianeptine withdrawal with buprenorphine or methadone, as with other opioids."
+        }
+      ]
+    },
+    {
+      "id": "legal-us",
+      "q": "Is tianeptine legal in the US?",
+      "blocks": [
+        {
+          "p": "**Federal law:** tianeptine is not approved by the FDA and cannot legally be sold as a dietary supplement or medicine. The FDA has issued repeated warnings and seized products.[[1]]"
+        },
+        {
+          "p": "**Proposed Schedule I (2026):** on July 8, 2026, the DEA proposed permanently placing tianeptine in Schedule I, citing high abuse potential, opioid-like effects, and no accepted medical use in the US. Comments closed August 7, 2026; the rule was not yet final as of October 2026.[[2]]"
+        },
+        {
+          "p": "**State law:** about 15 states, including Alabama, Florida, Georgia, Indiana, Kentucky, Michigan, Mississippi, Ohio, and Tennessee, have scheduled or banned tianeptine."
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "q": "Where can someone get help with tianeptine use?",
+      "blocks": [
+        {
+          "p": "Tianeptine dependence responds to the same treatments as opioid use disorder, including buprenorphine."
+        },
+        {
+          "ul": [
+            "**SAMHSA National Helpline:** 1-800-662-4357. Free, confidential, 24 hours a day, in English and Spanish. It gives referrals to local treatment and support.[[3]]",
+            "**FindTreatment.gov:** a federal locator for state-licensed treatment programs, searchable by location, payment, and type of care.[[4]]",
+            "**988 Suicide and Crisis Lifeline:** call or text 988 for a mental health or substance use crisis.",
+            "**Your own clinician:** a primary care doctor can screen, treat, and refer, and can discuss medicines that support recovery where they exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is tianeptine legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "France",
+                "Prescription antidepressant with special prescribing rules since 2012"
+              ],
+              [
+                "Russia",
+                "Controlled substance"
+              ],
+              [
+                "United Kingdom",
+                "Not licensed; prescription-only medicine"
+              ],
+              [
+                "International",
+                "Not under UN control"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[5]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Why is tianeptine called gas station heroin?",
+      "Because it is sold in gas stations and smoke shops and causes opioid-like effects, dependence, and overdoses at high doses."
+    ],
+    [
+      "Is tianeptine legal in the US?",
+      "It is not FDA-approved and cannot legally be sold as a supplement. About 15 states ban it, and the DEA proposed Schedule I in July 2026."
+    ],
+    [
+      "Does naloxone work on tianeptine?",
+      "Yes. Naloxone reverses its opioid effects in overdose."
+    ],
+    [
+      "Is tianeptine an antidepressant?",
+      "Yes, in some countries at low prescribed doses. The US has never approved it."
+    ]
+  ],
+  "sources": [
+    [
+      "Tianeptine products linked to serious harm, overdoses, death",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/consumers/consumer-updates/tianeptine-products-linked-serious-harm-overdoses-death"
+    ],
+    [
+      "Schedules of Controlled Substances: Placement of Tianeptine in Schedule I, proposed rule",
+      "Federal Register, July 8, 2026",
+      "https://public-inspection.federalregister.gov/2026-13821.pdf"
+    ],
+    [
+      "National Helpline",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://www.samhsa.gov/find-help/helplines/national-helpline"
+    ],
+    [
+      "FindTreatment.gov",
+      "Substance Abuse and Mental Health Services Administration",
+      "https://findtreatment.gov/"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

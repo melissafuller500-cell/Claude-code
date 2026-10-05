@@ -1,0 +1,447 @@
+{
+  "slug": "hydrocodone",
+  "name": "Hydrocodone",
+  "brands": [
+    "Norco",
+    "Vicodin",
+    "Lortab",
+    "Hysingla ER",
+    "Zohydro ER"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Opioids",
+    "slug": "opioids"
+  },
+  "subclass": "Opioid agonist",
+  "schedule": {
+    "us": "II",
+    "label": "Schedule II"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Hydrocodone (Norco, Vicodin) facts: uses, risks, acetaminophen limits, interactions, overdose signs, withdrawal, and how to get it legally in the US.",
+  "quick": "Hydrocodone is a prescription opioid for severe pain, most often combined with acetaminophen in products such as Norco and Vicodin. It has been a Schedule II controlled substance since 2014. It can cause addiction, overdose, and withdrawal, and the acetaminophen in combination products can damage the liver at high doses.",
+  "facts": [
+    [
+      "Generic name",
+      "Hydrocodone bitartrate"
+    ],
+    [
+      "Brand names",
+      "Norco, Vicodin, Lortab (with acetaminophen); Hysingla ER, Zohydro ER"
+    ],
+    [
+      "Drug class",
+      "Opioid agonist"
+    ],
+    [
+      "US legal status",
+      "Schedule II, prescription only (since October 2014)"
+    ],
+    [
+      "Approved uses",
+      "Severe pain needing an opioid; some combination products for cough"
+    ],
+    [
+      "Forms",
+      "Tablets and oral solution with acetaminophen or ibuprofen; extended-release tablets and capsules"
+    ],
+    [
+      "Onset",
+      "20 to 60 minutes"
+    ],
+    [
+      "Half-life",
+      "About 4 hours (immediate release)"
+    ],
+    [
+      "Broken down by",
+      "CYP3A4 (to norhydrocodone) and CYP2D6 (to hydromorphone)"
+    ],
+    [
+      "Reversal agent",
+      "Naloxone"
+    ]
+  ],
+  "profile": {
+    "onset": "20 to 60 minutes",
+    "duration": "4 to 6 hours (immediate release)",
+    "half_life": "About 4 hours",
+    "naloxone": "Yes",
+    "dependence": "High",
+    "medical": "Severe pain",
+    "groups": [
+      "opioid"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is hydrocodone used for?",
+      "blocks": [
+        {
+          "p": "Hydrocodone combined with acetaminophen is approved for pain severe enough to require an opioid when other treatments are inadequate. Extended-release hydrocodone alone (Hysingla ER, Zohydro ER) is only for severe, long-lasting pain that needs daily, around-the-clock treatment.[[1]]"
+        },
+        {
+          "p": "In 2014 the DEA moved all hydrocodone combination products from Schedule III to Schedule II, which ended refills and tightened prescribing. At the time, hydrocodone combinations were the most prescribed medicines in the US.[[2]]"
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is hydrocodone usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use hydrocodone. They are not personal dosing advice. A prescriber sets the dose for each person and adjusts it over time.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Product",
+              "Typical adult dose",
+              "Notes from the label"
+            ],
+            "rows": [
+              [
+                "Hydrocodone/acetaminophen 5/325 mg",
+                "1 to 2 tablets every 4 to 6 hours as needed",
+                "Maximum 8 tablets a day for this strength"
+              ],
+              [
+                "Hydrocodone/acetaminophen 10/325 mg",
+                "1 tablet every 4 to 6 hours as needed",
+                "Maximum 6 tablets a day"
+              ],
+              [
+                "Extended-release (Hysingla ER)",
+                "20 mg once a day (opioid-naive)",
+                "Swallow whole; not for as-needed use"
+              ],
+              [
+                "All combination products",
+                "Acetaminophen under 4,000 mg a day from all sources",
+                "Count over-the-counter cold and pain products too"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Acetaminophen overdose is a leading cause of acute liver failure in the US. People taking hydrocodone combinations should not take other products that contain acetaminophen without asking a pharmacist."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of hydrocodone?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Hydrocodone exposes users to risks of addiction, misuse, and abuse, which can lead to overdose and death.",
+              "Life-threatening slowed breathing can occur, especially when starting treatment or after a dose increase.",
+              "Accidental ingestion, especially by children, can cause a fatal overdose.",
+              "Use with benzodiazepines or other central nervous system depressants, including alcohol, can cause profound sedation, slowed breathing, coma, and death.",
+              "Prolonged use during pregnancy can cause neonatal opioid withdrawal syndrome, which may be life-threatening if not recognized and treated.",
+              "Products containing acetaminophen can cause severe liver injury, sometimes requiring a transplant, usually at doses above 4,000 mg a day."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include constipation, nausea, vomiting, drowsiness, dizziness, and itching.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include slowed breathing, low blood pressure, adrenal insufficiency, and hearing loss reported with heavy, long-term use of hydrocodone-acetaminophen.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with hydrocodone?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Benzodiazepines (alprazolam, diazepam, clonazepam)",
+                "Profound sedation, slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Gabapentin, pregabalin, sleep medicines, muscle relaxants",
+                "Additive sedation and breathing problems",
+                "Use caution; lower doses"
+              ],
+              [
+                "Acetaminophen from other products (Tylenol, cold medicines)",
+                "Liver damage from too much acetaminophen",
+                "Keep total under 4,000 mg a day"
+              ],
+              [
+                "Clarithromycin, ketoconazole, ritonavir",
+                "Raise hydrocodone levels",
+                "Monitor closely"
+              ],
+              [
+                "SSRIs, SNRIs, MAOIs",
+                "Serotonin syndrome",
+                "MAOIs: avoid within 14 days"
+              ],
+              [
+                "Other opioids",
+                "Additive breathing suppression",
+                "Avoid unless directed by prescriber"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does hydrocodone overdose look like?",
+      "blocks": [
+        {
+          "p": "A hydrocodone overdose causes pinpoint pupils, severe drowsiness, slow or stopped breathing, limpness, and blue lips. With combination products, an acetaminophen overdose can also occur. It may cause few symptoms for the first day, then liver failure, so anyone who took too many tablets needs medical care even if they feel well.[[1]][[3]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, cannot be woken, has blue or gray lips, or is breathing slowly or not at all.",
+              "Give naloxone (Narcan or a generic nasal spray, sold without a prescription) into one nostril. If there is no response after 2 to 3 minutes, give another dose.",
+              "If you are trained, give rescue breaths. Otherwise place the person on their side so they do not choke.",
+              "Stay with them. Naloxone can wear off before hydrocodone does, so the overdose can return even after the person wakes up.",
+              "Most states have Good Samaritan laws that protect people who call 911 for an overdose from some drug charges."
+            ]
+          }
+        },
+        {
+          "p": "Hospitals treat acetaminophen overdose with acetylcysteine, which works best when given within 8 hours. Call Poison Help at 1-800-222-1222 right away."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is hydrocodone withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take hydrocodone regularly for more than a few weeks become physically dependent, even when they take it exactly as prescribed. Dependence is not the same as addiction, but it means stopping suddenly causes withdrawal.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "6 to 12 hours",
+              "title": "Early symptoms",
+              "text": "Anxiety, restlessness, yawning, sweating, runny nose, watery eyes, and muscle aches."
+            },
+            {
+              "when": "Days 1 to 3",
+              "title": "Peak withdrawal",
+              "text": "Diarrhea, stomach cramps, nausea and vomiting, goosebumps, dilated pupils, fast heartbeat, and strong cravings. Rarely dangerous in healthy adults, but dehydration can be serious."
+            },
+            {
+              "when": "Days 5 to 10, then weeks",
+              "title": "Lingering symptoms",
+              "text": "Poor sleep, low mood, low energy, and cravings can continue for weeks. Tolerance falls quickly, which raises the risk of overdose if use restarts."
+            }
+          ]
+        },
+        {
+          "warn": "After a break, the body loses tolerance within days. Returning to a previous dose of hydrocodone can cause a fatal overdose."
+        },
+        {
+          "p": "The FDA warns against stopping opioids abruptly in people who are physically dependent. A prescriber can taper the dose gradually, often by 10% or less per month for long-term users, and medicines such as clonidine or lofexidine can ease symptoms. For opioid use disorder, buprenorphine and methadone cut the risk of death roughly in half.[[4]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get hydrocodone legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, hydrocodone is a Schedule II controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** Schedule II prescriptions cannot be refilled. A prescriber can write several prescriptions at once, with dates when each may be filled, for up to a 90-day supply in total.[[5]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[6]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[7]][[8]]",
+            "**Cost:** generic hydrocodone-acetaminophen is inexpensive and widely covered."
+          ]
+        },
+        {
+          "warn": "Pills sold as Norco or Vicodin outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or methamphetamine, and they cannot be told apart by appearance.[[9]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order hydrocodone online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill hydrocodone prescriptions online and ship them. Buying hydrocodone from a website that does not require a prescription is illegal, and the product is often fake.[[7]][[9]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether hydrocodone is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells hydrocodone with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[7]][[8]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is hydrocodone legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class A; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule I of the Controlled Drugs and Substances Act; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug; limited availability"
+              ],
+              [
+                "International",
+                "Schedule I of the 1961 Single Convention on Narcotic Drugs"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[10]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is hydrocodone the same as Vicodin?",
+      "Vicodin was a brand of hydrocodone combined with acetaminophen. Norco and generic hydrocodone-acetaminophen tablets contain the same two ingredients in different strengths."
+    ],
+    [
+      "How long does hydrocodone stay in your system?",
+      "Its half-life is about 4 hours. Urine tests usually detect it for 2 to 4 days after the last dose."
+    ],
+    [
+      "Can you get refills on hydrocodone?",
+      "No. Since 2014 hydrocodone has been Schedule II, which does not allow refills. A prescriber can issue up to a 90-day supply as several dated prescriptions."
+    ],
+    [
+      "How much acetaminophen is too much?",
+      "Adults should not take more than 4,000 mg a day from all sources, and many clinicians advise 3,000 mg or less, especially for people who drink alcohol or have liver disease."
+    ],
+    [
+      "Can you drink alcohol with hydrocodone?",
+      "No. Alcohol adds to the sedation and breathing effects and also raises the risk of liver damage from acetaminophen."
+    ]
+  ],
+  "sources": [
+    [
+      "Norco (hydrocodone) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=hydrocodone"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "Information about naloxone and nalmefene",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/information-about-naloxone"
+    ],
+    [
+      "CDC Clinical Practice Guideline for Prescribing Opioids for Pain, 2022",
+      "Centers for Disease Control and Prevention, MMWR",
+      "https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm"
+    ],
+    [
+      "21 CFR 1306.12, Refilling prescriptions; issuance of multiple prescriptions (Schedule II)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}

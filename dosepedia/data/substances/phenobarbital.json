@@ -1,0 +1,389 @@
+{
+  "slug": "phenobarbital",
+  "name": "Phenobarbital",
+  "brands": [
+    "Sezaby"
+  ],
+  "aka": [],
+  "kind": "rx",
+  "class": {
+    "name": "Benzodiazepines and sedatives",
+    "slug": "benzodiazepines-sedatives"
+  },
+  "subclass": "Barbiturate",
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Phenobarbital facts: uses in epilepsy and alcohol withdrawal, dosing basics, risks, interactions, overdose, withdrawal, and legal access.",
+  "quick": "Phenobarbital is a long-acting barbiturate used mainly for seizures and, in hospitals, for alcohol withdrawal. It is one of the oldest medicines still in use. It is a Schedule IV controlled substance with a narrow margin between a helpful and a dangerous dose.",
+  "facts": [
+    [
+      "Generic name",
+      "Phenobarbital"
+    ],
+    [
+      "Brand names",
+      "Sezaby (injection for newborn seizures); most products are unbranded"
+    ],
+    [
+      "Drug class",
+      "Barbiturate"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Seizures; sedation (older labeling); neonatal seizures (Sezaby)"
+    ],
+    [
+      "Forms",
+      "Tablets, elixir, injection"
+    ],
+    [
+      "Onset",
+      "About 1 hour by mouth"
+    ],
+    [
+      "Half-life",
+      "About 79 hours (range 53 to 118)"
+    ],
+    [
+      "Broken down by",
+      "Liver (CYP2C9, CYP2C19); strongly induces other liver enzymes"
+    ],
+    [
+      "Antidote",
+      "None; supportive care"
+    ]
+  ],
+  "profile": {
+    "onset": "About 1 hour",
+    "duration": "10 to 12 hours or more",
+    "half_life": "53 to 118 hours",
+    "naloxone": "No",
+    "dependence": "High",
+    "medical": "Seizures; alcohol withdrawal",
+    "groups": [
+      "depressant"
+    ]
+  },
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is phenobarbital used for?",
+      "blocks": [
+        {
+          "p": "Phenobarbital is used to prevent and treat seizures and, in hospitals, increasingly to manage severe alcohol withdrawal. Most oral phenobarbital in the US is sold under older, unapproved-drug status; Sezaby is an FDA-approved injection for seizures in newborns.[[1]]"
+        },
+        {
+          "p": "It is inexpensive and recommended by the World Health Organization as an essential antiseizure medicine, but newer medicines are usually preferred because of sedation, interactions, and overdose risk."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is phenobarbital usually prescribed?",
+      "blocks": [
+        {
+          "p": "Phenobarbital dosing is individualized and often guided by blood levels. The figures below are typical ranges from labeling and are not personal dosing advice.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Use",
+              "Typical adult dose",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "Seizure prevention",
+                "60 to 200 mg a day, once or in divided doses",
+                "Target blood level often 15 to 40 mcg/mL"
+              ],
+              [
+                "Alcohol withdrawal (hospital)",
+                "Weight-based loading doses",
+                "Given with close monitoring"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of phenobarbital?",
+      "blocks": [
+        {
+          "p": "**Common side effects** include drowsiness, slowed thinking, depression, and, in children and older adults, paradoxical hyperactivity or confusion.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include fatal overdose, especially with alcohol or opioids; serious skin reactions; bone thinning with long-term use; and birth defects.[[1]]"
+        },
+        {
+          "warn": "Unlike benzodiazepines, barbiturates have no ceiling on their sedative effect. Overdose can stop breathing even without other drugs, and there is no antidote."
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with phenobarbital?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids",
+                "Slowed breathing, death",
+                "Avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Additive sedation; overdose",
+                "Avoid"
+              ],
+              [
+                "Hormonal birth control",
+                "Lower contraceptive levels; pregnancy",
+                "Use another method"
+              ],
+              [
+                "Warfarin, many antiseizure drugs, steroids, some HIV drugs",
+                "Phenobarbital speeds their breakdown",
+                "Monitor levels; adjust doses"
+              ],
+              [
+                "Valproate",
+                "Raises phenobarbital levels",
+                "Monitor"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements and over-the-counter products.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does phenobarbital overdose look like?",
+      "blocks": [
+        {
+          "p": "Phenobarbital overdose causes deep sleepiness, confusion, slurred speech, loss of reflexes, low body temperature, slowed breathing, low blood pressure, and coma. It is more dangerous than benzodiazepine overdose because there is no reversal drug.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse phenobarbital, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        },
+        {
+          "p": "Hospitals treat severe overdose with breathing support and, sometimes, activated charcoal or dialysis to remove the drug."
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is phenobarbital withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "Regular use causes physical dependence. Barbiturate withdrawal is among the most dangerous drug withdrawals.[[1]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 2 to 4",
+              "title": "Symptoms begin",
+              "text": "Anxiety, tremor, weakness, insomnia, nausea."
+            },
+            {
+              "when": "Days 3 to 8",
+              "title": "Severe withdrawal",
+              "text": "Seizures and delirium can occur and can be fatal."
+            },
+            {
+              "when": "Weeks",
+              "title": "Recovery",
+              "text": "Gradual return of sleep and mood."
+            }
+          ]
+        },
+        {
+          "warn": "Never stop phenobarbital suddenly. In people with epilepsy, stopping can trigger prolonged seizures. Tapers are slow, often over weeks to months."
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you get phenobarbital legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, phenobarbital is a Schedule IV controlled substance. The only legal way to get it is with a prescription from a clinician registered with the Drug Enforcement Administration (DEA), filled by a licensed pharmacy. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[2]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[3]]",
+            "**Telehealth:** federal flexibilities let DEA-registered clinicians prescribe Schedule II to V medicines after a telemedicine visit, without a prior in-person exam, through December 31, 2026. A permanent DEA rule was under final review in late 2026. State rules can be stricter.[[4]]",
+            "**Monitoring:** prescribers and pharmacists in most states check a prescription drug monitoring program, a database of controlled-substance prescriptions, before prescribing or dispensing.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[5]][[6]]",
+            "**Cost:** generic phenobarbital is very inexpensive."
+          ]
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because many countries restrict controlled medicines or require a permit."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order phenobarbital online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill phenobarbital prescriptions online and ship them. Buying phenobarbital from a website that does not require a prescription is illegal, and the product is often fake.[[5]][[7]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether phenobarbital is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells phenobarbital with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[5]][[6]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is phenobarbital legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United Kingdom",
+                "Class B; prescription only"
+              ],
+              [
+                "Canada",
+                "Schedule IV; prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 4 prescription medicine"
+              ],
+              [
+                "International",
+                "Schedule IV of the 1971 Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Laws change and differ in detail. Check current rules before carrying any controlled medicine across a border.[[8]]"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Is phenobarbital still used?",
+      "Yes, for seizures, especially in newborns and where cost matters, and increasingly in hospitals for alcohol withdrawal."
+    ],
+    [
+      "Is phenobarbital a benzodiazepine?",
+      "No. It is a barbiturate. Barbiturates are more dangerous in overdose because they have no ceiling effect and no antidote."
+    ],
+    [
+      "Does phenobarbital affect birth control?",
+      "Yes. It speeds up the breakdown of hormonal contraceptives and can make them fail."
+    ],
+    [
+      "How long does phenobarbital stay in your system?",
+      "Its half-life averages about 79 hours, so it takes 2 to 3 weeks to clear fully."
+    ]
+  ],
+  "sources": [
+    [
+      "Sezaby (phenobarbital) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=phenobarbital"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions (Schedules III and IV)",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ],
+    [
+      "International drug control conventions",
+      "United Nations Office on Drugs and Crime",
+      "https://www.unodc.org/unodc/en/commissions/CND/conventions.html"
+    ]
+  ]
+}
