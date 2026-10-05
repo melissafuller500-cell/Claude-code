@@ -1,0 +1,442 @@
+{
+  "slug": "alprazolam",
+  "name": "Alprazolam",
+  "brands": [
+    "Xanax",
+    "Xanax XR"
+  ],
+  "class": {
+    "name": "Benzodiazepines",
+    "slug": "benzodiazepines"
+  },
+  "schedule": {
+    "us": "IV",
+    "label": "Schedule IV"
+  },
+  "reviewer": null,
+  "updated": "2026-10-05",
+  "description": "Alprazolam (Xanax) facts: uses, risks, interactions, overdose signs, withdrawal timeline, and how to buy or order it legally with a prescription in the US.",
+  "quick": "Alprazolam (brand name Xanax) is a short-acting benzodiazepine prescribed for generalized anxiety disorder and panic disorder. It is a Schedule IV controlled substance in the United States, available only by prescription. It works within about an hour, and it can cause dependence, so stopping it suddenly after regular use can trigger withdrawal, including seizures.",
+  "facts": [
+    [
+      "Generic name",
+      "Alprazolam"
+    ],
+    [
+      "Brand names",
+      "Xanax, Xanax XR"
+    ],
+    [
+      "Drug class",
+      "Benzodiazepine"
+    ],
+    [
+      "US legal status",
+      "Schedule IV, prescription only"
+    ],
+    [
+      "Approved uses",
+      "Generalized anxiety disorder, panic disorder"
+    ],
+    [
+      "Forms",
+      "Tablet, extended-release tablet, orally disintegrating tablet, oral solution"
+    ],
+    [
+      "Peak effect",
+      "1 to 2 hours after an immediate-release dose"
+    ],
+    [
+      "Half-life",
+      "About 11 hours on average (range 6 to 27) in healthy adults"
+    ],
+    [
+      "Broken down by",
+      "Liver enzyme CYP3A4"
+    ],
+    [
+      "FDA boxed warnings",
+      "Use with opioids; misuse and addiction; dependence and withdrawal"
+    ]
+  ],
+  "sections": [
+    {
+      "id": "uses",
+      "q": "What is alprazolam used for?",
+      "blocks": [
+        {
+          "p": "Alprazolam is FDA-approved for the short-term treatment of generalized anxiety disorder and for panic disorder with or without agoraphobia. The extended-release form (Xanax XR) is approved for panic disorder only.[[1]]"
+        },
+        {
+          "p": "It belongs to the benzodiazepine class. These medicines increase the effect of GABA, the brain's main calming chemical, which reduces anxiety and causes sedation."
+        }
+      ]
+    },
+    {
+      "id": "dosage",
+      "q": "How is alprazolam usually prescribed?",
+      "blocks": [
+        {
+          "p": "The figures below come from the FDA-approved label and describe how prescribers typically use the medicine. They are not personal dosing advice. A prescriber sets the dose for each person and usually aims for the lowest dose that works.[[1]]"
+        },
+        {
+          "table": {
+            "head": [
+              "Condition",
+              "Typical starting dose",
+              "Label maximum"
+            ],
+            "rows": [
+              [
+                "Generalized anxiety disorder",
+                "0.25 to 0.5 mg three times a day",
+                "4 mg a day in divided doses"
+              ],
+              [
+                "Panic disorder (immediate release)",
+                "0.5 mg three times a day",
+                "Up to 10 mg a day in some patients"
+              ],
+              [
+                "Panic disorder (extended release)",
+                "0.5 to 1 mg once a day",
+                "Usual range 3 to 6 mg a day"
+              ],
+              [
+                "Older adults or liver disease",
+                "0.25 mg two or three times a day",
+                "Raised slowly if needed"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Tolerance and dependence become more likely with higher doses and longer use, which is why treatment is meant to be reassessed regularly."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "q": "What are the risks and side effects of alprazolam?",
+      "blocks": [
+        {
+          "boxed": {
+            "title": "FDA boxed warnings",
+            "items": [
+              "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.",
+              "Alprazolam can be misused and can lead to addiction, which raises the risk of overdose and death.",
+              "Regular use can cause physical dependence. Stopping suddenly or cutting the dose quickly can cause withdrawal reactions, including seizures, that can be life-threatening."
+            ]
+          }
+        },
+        {
+          "p": "**Common side effects** include drowsiness, tiredness, lightheadedness, poor coordination, memory problems, slurred speech, irritability, constipation, and changes in appetite or sex drive.[[1]]"
+        },
+        {
+          "p": "**Serious risks** include impaired driving, falls (especially in older adults), worsening depression, and breathing problems in people with lung disease or sleep apnea. Use late in pregnancy can cause sedation and withdrawal symptoms in the newborn.[[1]][[2]]"
+        }
+      ]
+    },
+    {
+      "id": "interactions",
+      "q": "What should not be mixed with alprazolam?",
+      "blocks": [
+        {
+          "interactions": {
+            "head": [
+              "Combined with",
+              "What happens",
+              "Label guidance"
+            ],
+            "rows": [
+              [
+                "Opioids (oxycodone, fentanyl, codeine)",
+                "Slowed breathing, coma, death",
+                "Boxed warning; avoid unless no alternative"
+              ],
+              [
+                "Alcohol",
+                "Stronger sedation and slowed breathing",
+                "Avoid"
+              ],
+              [
+                "Other sedatives and sleep medicines",
+                "Additive drowsiness and impaired coordination",
+                "Use caution"
+              ],
+              [
+                "Ketoconazole, itraconazole",
+                "Sharply raise alprazolam levels",
+                "Do not combine"
+              ],
+              [
+                "Nefazodone, fluvoxamine, cimetidine, erythromycin",
+                "Raise alprazolam levels",
+                "Lower dose or caution"
+              ],
+              [
+                "Carbamazepine, phenytoin",
+                "Lower alprazolam levels",
+                "May reduce effect"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "This is not a full list. A pharmacist can check a complete medication list, including supplements.[[1]]"
+        }
+      ]
+    },
+    {
+      "id": "overdose",
+      "q": "What does an alprazolam overdose look like?",
+      "blocks": [
+        {
+          "p": "Signs include extreme drowsiness, confusion, slurred speech, poor coordination, slow reflexes, and loss of consciousness. Overdose is far more dangerous when alprazolam is combined with opioids or alcohol, because breathing can slow or stop.[[1]]"
+        },
+        {
+          "emergency": {
+            "title": "If someone may have overdosed",
+            "items": [
+              "Call 911 (US) if the person is unresponsive, hard to wake, or breathing slowly.",
+              "For advice when the person is awake and stable, call Poison Help at 1-800-222-1222 (US, free, 24 hours).",
+              "If opioids could be involved, including pills not from a pharmacy, give naloxone if you have it. Naloxone does not reverse alprazolam, but it will not harm the person.",
+              "Stay with the person and place them on their side if they are drowsy or vomiting."
+            ]
+          }
+        },
+        {
+          "p": "Hospitals can treat benzodiazepine overdose with supportive care and, in selected cases, the antidote flumazenil.[[1]][[8]]"
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "q": "What is alprazolam withdrawal like, and how long does it last?",
+      "blocks": [
+        {
+          "p": "People who take alprazolam regularly, even as prescribed, can become physically dependent within weeks. Because alprazolam leaves the body quickly, withdrawal tends to start sooner and feel more intense than with longer-acting benzodiazepines.[[1]][[3]]"
+        },
+        {
+          "timeline": [
+            {
+              "when": "Days 1 to 2",
+              "title": "Symptoms begin",
+              "text": "Rebound anxiety, insomnia, restlessness, sweating, and tremor usually appear within one to two days of the last dose."
+            },
+            {
+              "when": "Weeks 1 to 4",
+              "title": "Acute withdrawal",
+              "text": "Symptoms commonly continue for two to four weeks or longer. They can include panic, irritability, muscle pain, nausea, sensitivity to light and sound, and, in severe cases, seizures."
+            },
+            {
+              "when": "Months",
+              "title": "Protracted symptoms in some people",
+              "text": "A minority have lingering anxiety, poor sleep, low mood, or tingling that can last weeks to more than 12 months."
+            }
+          ]
+        },
+        {
+          "warn": "Stopping alprazolam abruptly can cause seizures. The dose should be reduced gradually under the care of a prescriber."
+        },
+        {
+          "p": "The FDA label advises lowering the daily dose by no more than 0.5 mg every three days, and notes that some people need a slower reduction. Clinical guidance from addiction medicine specialists favors slower, individualized tapers, often small reductions every few weeks, sometimes after switching to a longer-acting benzodiazepine.[[1]][[4]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-access",
+      "q": "How do you buy alprazolam legally in the US?",
+      "blocks": [
+        {
+          "p": "In the United States, the only legal way to buy alprazolam is with a prescription. It is a Schedule IV controlled substance, so it can be purchased only from a licensed pharmacy after a clinician registered with the Drug Enforcement Administration (DEA) prescribes it. Depending on state law, that can be a physician, nurse practitioner, or physician assistant.[[5]]"
+        },
+        {
+          "ul": [
+            "**Refills:** a Schedule IV prescription can be refilled up to five times within six months of the date it was written. After that, a new prescription is needed.[[6]]",
+            "**Telehealth:** federal flexibilities allow DEA-registered clinicians to prescribe controlled medicines by telemedicine without a prior in-person visit through December 31, 2026. State rules can be stricter.[[7]]",
+            "**Monitoring:** most states require prescribers or pharmacists to check a prescription drug monitoring program, which records controlled-substance prescriptions.",
+            "**Pharmacies:** a legitimate pharmacy always requires a valid prescription, has a licensed pharmacist available, and is licensed in the state it ships to. The FDA's BeSafeRx tool and the NABP's safe pharmacy list help confirm a pharmacy is real.[[9]][[10]]",
+            "**Cost:** generic alprazolam is widely available and is covered by most insurance plans."
+          ]
+        },
+        {
+          "warn": "Pills sold as Xanax outside a pharmacy are often counterfeit. The DEA reports that fake pills frequently contain fentanyl or other potent drugs, and they cannot be told apart by appearance.[[11]]"
+        },
+        {
+          "p": "**Traveling:** keep the medicine in its original pharmacy container and carry a copy of the prescription. Check the rules of the destination country before travel, because limits on quantity and paperwork vary."
+        }
+      ]
+    },
+    {
+      "id": "buy-online",
+      "q": "Can you order alprazolam online?",
+      "blocks": [
+        {
+          "p": "Yes, but only with a valid prescription and only from a pharmacy licensed in your state. Many licensed pharmacies, including mail-order pharmacies run by insurers, fill alprazolam prescriptions online and ship them. Ordering alprazolam from a website that does not ask for a prescription is illegal, and the pills are often fake.[[9]][[11]]"
+        },
+        {
+          "steps": [
+            [
+              "See a licensed clinician",
+              "A clinician evaluates you in person or by telemedicine and decides whether alprazolam is appropriate."
+            ],
+            [
+              "The prescription goes to a pharmacy",
+              "Prescriptions for controlled medicines are usually sent electronically, straight from the prescriber to the pharmacy you choose."
+            ],
+            [
+              "The pharmacy checks and fills it",
+              "A pharmacist verifies the prescription and your identity, then dispenses the medicine in person or by mail."
+            ]
+          ]
+        },
+        {
+          "p": "**Signs that an online seller is illegal:**"
+        },
+        {
+          "ul": [
+            "It sells alprazolam or Xanax with no prescription, or after only a short online questionnaire.",
+            "It takes orders through social media, messaging apps, or email.",
+            "It asks for payment in cryptocurrency, gift cards, or money transfers.",
+            "It has no US street address, no state pharmacy license, and no pharmacist to speak to.",
+            "Its prices are far below those of ordinary pharmacies, or it ships from another country."
+          ]
+        },
+        {
+          "p": "The FDA's BeSafeRx tool links to each state's license lookup, and the National Association of Boards of Pharmacy lists verified online pharmacies.[[9]][[10]]"
+        }
+      ]
+    },
+    {
+      "id": "legal-status",
+      "q": "Is alprazolam legal in other countries?",
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Country",
+              "Status"
+            ],
+            "rows": [
+              [
+                "United States",
+                "Schedule IV, prescription only"
+              ],
+              [
+                "United Kingdom",
+                "Class C; available on private prescription, not routinely on the NHS"
+              ],
+              [
+                "Canada",
+                "Schedule IV of the Controlled Drugs and Substances Act, prescription only"
+              ],
+              [
+                "Australia",
+                "Schedule 8 controlled drug since 2014"
+              ],
+              [
+                "International",
+                "Schedule IV of the 1971 UN Convention on Psychotropic Substances"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Possessing alprazolam without a valid prescription is an offence in each of these countries."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "How long does alprazolam take to work?",
+      "Immediate-release alprazolam usually starts working within 30 to 60 minutes and reaches its peak level in the blood after 1 to 2 hours."
+    ],
+    [
+      "How long does alprazolam stay in your system?",
+      "Its average half-life is about 11 hours, so most of a single dose is cleared in two to three days. It can be detected for longer in people who take it regularly, in older adults, and in people with liver disease or obesity."
+    ],
+    [
+      "Is alprazolam addictive?",
+      "Yes. It can cause physical dependence and addiction, even at prescribed doses. The risk rises with higher doses, longer use, and a history of substance use disorder."
+    ],
+    [
+      "Can you drink alcohol with alprazolam?",
+      "No. Alcohol and alprazolam both slow the central nervous system. Together they increase sedation and the risk of dangerously slow breathing."
+    ],
+    [
+      "Can you buy alprazolam online legally?",
+      "Yes, with a valid prescription from a DEA-registered clinician, filled by a pharmacy licensed in your state. Under federal flexibilities that run through December 31, 2026, the prescription can follow a telemedicine visit, subject to state law. A website that sells alprazolam without a prescription is not a legal pharmacy."
+    ],
+    [
+      "Can you purchase alprazolam without a prescription?",
+      "No. In the US it is illegal to purchase or possess alprazolam without a valid prescription. Pills sold without one are frequently counterfeit and may contain fentanyl."
+    ],
+    [
+      "How do you order an alprazolam refill?",
+      "Ask your pharmacy to refill it, online, by phone, or in person. A Schedule IV prescription can be refilled up to five times within six months of the date it was written if the prescriber authorized refills. After that you need a new prescription."
+    ],
+    [
+      "Is it safe to stop alprazolam suddenly?",
+      "No. Stopping suddenly after regular use can cause withdrawal, including seizures. The dose should be lowered gradually with a prescriber."
+    ]
+  ],
+  "sources": [
+    [
+      "Xanax (alprazolam) prescribing information",
+      "DailyMed, US National Library of Medicine",
+      "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=alprazolam"
+    ],
+    [
+      "FDA requiring Boxed Warning updated to improve safe use of benzodiazepine drug class",
+      "US Food and Drug Administration, 2020",
+      "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class"
+    ],
+    [
+      "Clinical Guidelines for Withdrawal Management and Treatment of Drug Dependence in Closed Settings",
+      "World Health Organization",
+      "https://www.ncbi.nlm.nih.gov/books/NBK310652/"
+    ],
+    [
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering",
+      "American Society of Addiction Medicine, 2025",
+      "https://www.asam.org/quality-care/clinical-guidelines/benzodiazepine-tapering"
+    ],
+    [
+      "Controlled Substance Schedules",
+      "DEA Diversion Control Division",
+      "https://www.deadiversion.usdoj.gov/schedules/"
+    ],
+    [
+      "21 CFR 1306.22, Refilling of prescriptions",
+      "Electronic Code of Federal Regulations",
+      "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+    ],
+    [
+      "Prescribing controlled substances via telehealth",
+      "US Department of Health and Human Services",
+      "https://telehealth.hhs.gov/providers/telehealth-policy/prescribing-controlled-substances-via-telehealth"
+    ],
+    [
+      "Poison Help",
+      "Health Resources and Services Administration",
+      "https://poisonhelp.hrsa.gov/"
+    ],
+    [
+      "BeSafeRx: Your Source for Online Pharmacy Information",
+      "US Food and Drug Administration",
+      "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"
+    ],
+    [
+      "Safe Pharmacy",
+      "National Association of Boards of Pharmacy",
+      "https://safe.pharmacy/"
+    ],
+    [
+      "One Pill Can Kill",
+      "US Drug Enforcement Administration",
+      "https://www.dea.gov/onepill"
+    ]
+  ]
+}

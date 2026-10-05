@@ -1,0 +1,15 @@
+{
+  "slug": "benzodiazepines",
+  "name": "Benzodiazepines",
+  "description": "Benzodiazepines explained: how they work, what they treat, why they carry FDA boxed warnings, and how they are controlled in the US.",
+  "intro": "Benzodiazepines are prescription medicines that calm the brain by strengthening the effect of GABA, its main inhibitory chemical. They are prescribed for anxiety, panic disorder, insomnia, seizures, muscle spasm, and alcohol withdrawal.",
+  "blocks": [
+    {"p": "All benzodiazepines act on the same GABA-A receptor, so they share the same core effects: less anxiety, sedation, muscle relaxation, and protection against seizures. They differ mainly in how quickly they start working and how long they last. Short-acting medicines such as alprazolam leave the body quickly, which tends to make withdrawal start sooner and feel more intense."},
+    {"p": "In the United States, most benzodiazepines are **Schedule IV** controlled substances. They are legal only with a prescription from a DEA-registered clinician, filled by a licensed pharmacy."},
+    {"boxed": {"title": "Class-wide FDA boxed warning (2020)", "items": [
+      "Taking benzodiazepines with opioids can cause profound sedation, slowed breathing, coma, and death.",
+      "Benzodiazepines can be misused and can lead to addiction.",
+      "Regular use can cause physical dependence, and stopping suddenly can cause life-threatening withdrawal, including seizures."
+    ]}}
+  ]
+}
