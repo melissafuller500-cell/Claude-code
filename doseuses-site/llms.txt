@@ -1,0 +1,139 @@
+# DoseUses
+
+> Independent, educational reference on prescription and controlled substances in the United States. Plain-language profiles written from primary sources (FDA prescribing information, DEA rules and the Federal Register, NIDA, CDC). DoseUses sells nothing and does not give personal medical advice. Emergency: call 911; Poison Help 1-800-222-1222; SAMHSA helpline 1-800-662-4357.
+
+Profiles are drafts pending medical review; facts are current as of October 2026.
+
+## Tools
+- [Drugs A to Z](https://doseuses.com/drugs/): all 106 profiles
+- [Combination checker](https://doseuses.com/interactions/)
+- [Compare drugs](https://doseuses.com/compare/)
+- [Overdose help](https://doseuses.com/overdose/)
+- [Withdrawal timelines](https://doseuses.com/withdrawal/)
+- [Legal status and US schedules](https://doseuses.com/legal-status/)
+- [Glossary](https://doseuses.com/glossary/)
+
+## Opioids
+- [Buprenorphine](https://doseuses.com/drugs/buprenorphine/): Buprenorphine is a partial opioid agonist and one of the most effective treatments for opioid use disorder. Guide: https://doseuses.com/blog/buprenorphine-explained/
+- [Butorphanol](https://doseuses.com/drugs/butorphanol/): Butorphanol is a prescription opioid that activates kappa opioid receptors and partly blocks mu receptors. Guide: https://doseuses.com/blog/butorphanol-explained/
+- [Carfentanil](https://doseuses.com/drugs/carfentanil/): Carfentanil is a synthetic opioid about 100 times more potent than fentanyl and 10,000 times more potent than morphine. Guide: https://doseuses.com/blog/carfentanil-explained/
+- [Codeine](https://doseuses.com/drugs/codeine/): Codeine is a mild opioid used for pain and, in some products, for cough. Guide: https://doseuses.com/blog/codeine-explained/
+- [Diphenoxylate and atropine](https://doseuses.com/drugs/diphenoxylate/): Lomotil combines diphenoxylate, an opioid-related drug that slows the gut, with a small dose of atropine added to discourage misuse. Guide: https://doseuses.com/blog/diphenoxylate-explained/
+- [Fentanyl](https://doseuses.com/drugs/fentanyl/): Fentanyl is a synthetic opioid about 50 times stronger than heroin and 100 times stronger than morphine. Guide: https://doseuses.com/blog/fentanyl-explained/
+- [Heroin](https://doseuses.com/drugs/heroin/): Heroin is an illegal opioid made from morphine. Guide: https://doseuses.com/blog/heroin-explained/
+- [Hydrocodone](https://doseuses.com/drugs/hydrocodone/): Hydrocodone is a prescription opioid for severe pain, most often combined with acetaminophen in products such as Norco and Vicodin. Guide: https://doseuses.com/blog/hydrocodone-explained/
+- [Hydromorphone](https://doseuses.com/drugs/hydromorphone/): Hydromorphone (Dilaudid) is a potent opioid, about five times stronger than morphine by mouth, used for severe pain in hospitals, after surgery, and in cancer care. Guide: https://doseuses.com/blog/hydromorphone-explained/
+- [Levorphanol](https://doseuses.com/drugs/levorphanol/): Levorphanol is a potent, long-acting prescription opioid for severe pain. Guide: https://doseuses.com/blog/levorphanol-explained/
+- [Loperamide](https://doseuses.com/drugs/loperamide/): Loperamide (Imodium) is an over-the-counter diarrhea medicine that acts on opioid receptors in the gut. Guide: https://doseuses.com/blog/loperamide-explained/
+- [Meperidine](https://doseuses.com/drugs/meperidine/): Meperidine (Demerol), called pethidine outside the US, is a synthetic opioid for short-term acute pain. Guide: https://doseuses.com/blog/meperidine-explained/
+- [Methadone](https://doseuses.com/drugs/methadone/): Methadone is a long-acting opioid used to treat opioid use disorder and severe pain. Guide: https://doseuses.com/blog/methadone-explained/
+- [Morphine](https://doseuses.com/drugs/morphine/): Morphine is the original opioid pain medicine, extracted from the opium poppy, and the standard against which other opioids are measured. Guide: https://doseuses.com/blog/morphine-explained/
+- [Naloxone](https://doseuses.com/drugs/naloxone/): Naloxone is an emergency medicine that reverses opioid overdose by knocking opioids off their receptors. Guide: https://doseuses.com/blog/naloxone-explained/
+- [Naltrexone](https://doseuses.com/drugs/naltrexone/): Naltrexone is a prescription medicine that blocks opioid receptors. Guide: https://doseuses.com/blog/naltrexone-explained/
+- [Oxycodone](https://doseuses.com/drugs/oxycodone/): Oxycodone is a strong prescription opioid used for pain severe enough to need an opioid when other treatments are not enough. Guide: https://doseuses.com/blog/oxycodone-explained/
+- [Oxymorphone](https://doseuses.com/drugs/oxymorphone/): Oxymorphone is a strong prescription opioid for severe pain, roughly twice as potent as oxycodone by mouth. Guide: https://doseuses.com/blog/oxymorphone-explained/
+- [Promethazine with codeine](https://doseuses.com/drugs/promethazine-codeine/): Promethazine with codeine is a prescription cough syrup that combines codeine, an opioid, with promethazine, a sedating antihistamine. Guide: https://doseuses.com/blog/promethazine-codeine-explained/
+- [Tapentadol](https://doseuses.com/drugs/tapentadol/): Tapentadol (Nucynta) is a prescription opioid that also blocks norepinephrine reuptake. Guide: https://doseuses.com/blog/tapentadol-explained/
+- [Tramadol](https://doseuses.com/drugs/tramadol/): Tramadol is a prescription pain medicine that acts as a weak opioid and also raises serotonin and norepinephrine levels. Guide: https://doseuses.com/blog/tramadol-explained/
+
+## Benzodiazepines and sedatives
+- [Alprazolam](https://doseuses.com/drugs/alprazolam/): Alprazolam (brand name Xanax) is a short-acting benzodiazepine prescribed for generalized anxiety disorder and panic disorder. Guide: https://doseuses.com/blog/alprazolam-explained/
+- [Butalbital](https://doseuses.com/drugs/butalbital/): Butalbital is a barbiturate sedative sold only in combinations, such as Fioricet (with acetaminophen and caffeine) and Fiorinal (with aspirin and caffeine), for tension headaches. Guide: https://doseuses.com/blog/butalbital-explained/
+- [Carisoprodol](https://doseuses.com/drugs/carisoprodol/): Carisoprodol (Soma) is a muscle relaxant for short-term relief of acute, painful muscle conditions, used for no more than two or three weeks. Guide: https://doseuses.com/blog/carisoprodol-explained/
+- [Chlordiazepoxide](https://doseuses.com/drugs/chlordiazepoxide/): Chlordiazepoxide (Librium) was the first benzodiazepine, introduced in 1960. Guide: https://doseuses.com/blog/chlordiazepoxide-explained/
+- [Clonazepam](https://doseuses.com/drugs/clonazepam/): Clonazepam (Klonopin) is a long-acting benzodiazepine used for panic disorder and certain seizure disorders. Guide: https://doseuses.com/blog/clonazepam-explained/
+- [Clorazepate](https://doseuses.com/drugs/clorazepate/): Clorazepate (Tranxene) is a long-acting benzodiazepine used for anxiety, as an add-on treatment for partial seizures, and for alcohol withdrawal. Guide: https://doseuses.com/blog/clorazepate-explained/
+- [Cyclobenzaprine](https://doseuses.com/drugs/cyclobenzaprine/): Cyclobenzaprine (Flexeril) is a prescription muscle relaxant for short-term relief of muscle spasm. Guide: https://doseuses.com/blog/cyclobenzaprine-explained/
+- [Daridorexant](https://doseuses.com/drugs/daridorexant/): Daridorexant (Quviviq) is a prescription insomnia medicine that blocks orexin, a brain chemical that keeps people awake. Guide: https://doseuses.com/blog/daridorexant-explained/
+- [Diazepam](https://doseuses.com/drugs/diazepam/): Diazepam (Valium) is a long-acting benzodiazepine used for anxiety, alcohol withdrawal, muscle spasms, and seizures. Guide: https://doseuses.com/blog/diazepam-explained/
+- [Diphenhydramine](https://doseuses.com/drugs/diphenhydramine/): Diphenhydramine (Benadryl) is an over-the-counter antihistamine for allergies that also causes drowsiness and is sold as a sleep aid. Guide: https://doseuses.com/blog/diphenhydramine-explained/
+- [Eszopiclone](https://doseuses.com/drugs/eszopiclone/): Eszopiclone (Lunesta) is a Z-drug sleep medicine for trouble falling or staying asleep. Guide: https://doseuses.com/blog/eszopiclone-explained/
+- [GHB](https://doseuses.com/drugs/ghb/): GHB (gamma-hydroxybutyrate) is a central nervous system depressant sold illegally as a clear liquid or powder. Guide: https://doseuses.com/blog/ghb-explained/
+- [Lorazepam](https://doseuses.com/drugs/lorazepam/): Lorazepam (Ativan) is an intermediate-acting benzodiazepine used for anxiety, short-term insomnia caused by anxiety, and, by injection, for status epilepticus and sedation before procedures. Guide: https://doseuses.com/blog/lorazepam-explained/
+- [Midazolam](https://doseuses.com/drugs/midazolam/): Midazolam is a fast, short-acting benzodiazepine used to sedate people for procedures and surgery and, as Nayzilam nasal spray, to stop seizure clusters at home. Guide: https://doseuses.com/blog/midazolam-explained/
+- [Oxazepam](https://doseuses.com/drugs/oxazepam/): Oxazepam is an intermediate-acting benzodiazepine for anxiety and alcohol withdrawal. Guide: https://doseuses.com/blog/oxazepam-explained/
+- [Phenobarbital](https://doseuses.com/drugs/phenobarbital/): Phenobarbital is a long-acting barbiturate used mainly for seizures and, in hospitals, for alcohol withdrawal. Guide: https://doseuses.com/blog/phenobarbital-explained/
+- [Suvorexant](https://doseuses.com/drugs/suvorexant/): Suvorexant (Belsomra) is a sleep medicine that blocks orexin, a brain chemical that keeps you awake, rather than boosting GABA like benzodiazepines and Z-drugs. Guide: https://doseuses.com/blog/suvorexant-explained/
+- [Temazepam](https://doseuses.com/drugs/temazepam/): Temazepam (Restoril) is a benzodiazepine sleeping pill approved for short-term treatment of insomnia, usually 7 to 10 days. Guide: https://doseuses.com/blog/temazepam-explained/
+- [Triazolam](https://doseuses.com/drugs/triazolam/): Triazolam (Halcion) is a short-acting benzodiazepine sleeping pill for short-term insomnia, usually 7 to 10 days. Guide: https://doseuses.com/blog/triazolam-explained/
+- [Zaleplon](https://doseuses.com/drugs/zaleplon/): Zaleplon (Sonata) is a very short-acting prescription sleep medicine, a Z-drug related to zolpidem, for trouble falling asleep. Guide: https://doseuses.com/blog/zaleplon-explained/
+- [Zolpidem](https://doseuses.com/drugs/zolpidem/): Zolpidem (Ambien) is a prescription sleep medicine that acts on the same brain receptors as benzodiazepines. Guide: https://doseuses.com/blog/zolpidem-explained/
+
+## Stimulants
+- [Amphetamine](https://doseuses.com/drugs/amphetamine/): Adderall is a mix of four amphetamine salts (about three parts dextroamphetamine to one part levoamphetamine) used to treat ADHD and narcolepsy. Guide: https://doseuses.com/blog/amphetamine-explained/
+- [Armodafinil](https://doseuses.com/drugs/armodafinil/): Armodafinil (Nuvigil) is a prescription wakefulness medicine for narcolepsy, sleepiness from obstructive sleep apnea, and shift work disorder. Guide: https://doseuses.com/blog/armodafinil-explained/
+- [Caffeine](https://doseuses.com/drugs/caffeine/): Caffeine is the world's most widely used psychoactive substance, found in coffee, tea, soda, energy drinks, and over-the-counter alertness pills. Guide: https://doseuses.com/blog/caffeine-explained/
+- [Cocaine](https://doseuses.com/drugs/cocaine/): Cocaine is a stimulant made from the leaves of the coca plant. Guide: https://doseuses.com/blog/cocaine-explained/
+- [Dexmethylphenidate](https://doseuses.com/drugs/dexmethylphenidate/): Dexmethylphenidate (Focalin) is the more active half of methylphenidate, so it works at about half the dose. Guide: https://doseuses.com/blog/dexmethylphenidate-explained/
+- [Dextroamphetamine](https://doseuses.com/drugs/dextroamphetamine/): Dextroamphetamine is the more active form (isomer) of amphetamine. Guide: https://doseuses.com/blog/dextroamphetamine-explained/
+- [Diethylpropion](https://doseuses.com/drugs/diethylpropion/): Diethylpropion, called amfepramone outside the US, is a prescription appetite suppressant for a few weeks of use in obesity. Guide: https://doseuses.com/blog/diethylpropion-explained/
+- [Khat](https://doseuses.com/drugs/khat/): Khat is a shrub whose fresh leaves are chewed for a stimulant effect in East Africa and the Arabian Peninsula. Guide: https://doseuses.com/blog/khat-explained/
+- [Lisdexamfetamine](https://doseuses.com/drugs/lisdexamfetamine/): Lisdexamfetamine (Vyvanse) is an inactive prodrug that the body slowly converts into dextroamphetamine. Guide: https://doseuses.com/blog/lisdexamfetamine-explained/
+- [Methamphetamine](https://doseuses.com/drugs/methamphetamine/): Methamphetamine is a powerful stimulant. Guide: https://doseuses.com/blog/methamphetamine-explained/
+- [Methylphenidate](https://doseuses.com/drugs/methylphenidate/): Methylphenidate (Ritalin, Concerta) is the most widely used ADHD medicine besides amphetamines. Guide: https://doseuses.com/blog/methylphenidate-explained/
+- [Modafinil](https://doseuses.com/drugs/modafinil/): Modafinil (Provigil) is a wakefulness-promoting medicine for excessive sleepiness from narcolepsy, obstructive sleep apnea, and shift work disorder. Guide: https://doseuses.com/blog/modafinil-explained/
+- [Phendimetrazine](https://doseuses.com/drugs/phendimetrazine/): Phendimetrazine (Bontril) is a prescription appetite suppressant for short-term use, a few weeks, alongside diet and exercise in people with obesity. Guide: https://doseuses.com/blog/phendimetrazine-explained/
+- [Phentermine](https://doseuses.com/drugs/phentermine/): Phentermine (Adipex-P) is an appetite suppressant related to amphetamine, used for a few weeks as part of a weight-loss program in people with obesity. Guide: https://doseuses.com/blog/phentermine-explained/
+- [Pseudoephedrine](https://doseuses.com/drugs/pseudoephedrine/): Pseudoephedrine (Sudafed) is a decongestant sold without a prescription but kept behind the pharmacy counter. Guide: https://doseuses.com/blog/pseudoephedrine-explained/
+- [Solriamfetol](https://doseuses.com/drugs/solriamfetol/): Solriamfetol (Sunosi) is a prescription medicine that improves wakefulness in adults with narcolepsy or obstructive sleep apnea. Guide: https://doseuses.com/blog/solriamfetol-explained/
+- [Synthetic cathinones](https://doseuses.com/drugs/synthetic-cathinones/): Synthetic cathinones are lab-made stimulants related to khat, sold as 'bath salts', 'flakka', or disguised as molly or other drugs. Guide: https://doseuses.com/blog/synthetic-cathinones-explained/
+
+## Gabapentinoids, dissociatives, and others
+- [Brivaracetam](https://doseuses.com/drugs/brivaracetam/): Brivaracetam (Briviact) is a prescription antiseizure medicine for partial-onset seizures in people 1 month and older. Guide: https://doseuses.com/blog/brivaracetam-explained/
+- [Cenobamate](https://doseuses.com/drugs/cenobamate/): Cenobamate (Xcopri) is a prescription antiseizure medicine for partial-onset seizures in adults, approved in 2019. Guide: https://doseuses.com/blog/cenobamate-explained/
+- [Dextromethorphan](https://doseuses.com/drugs/dextromethorphan/): Dextromethorphan (DXM) is the cough suppressant in many over-the-counter medicines, such as Delsym, Robitussin DM, and NyQuil. Guide: https://doseuses.com/blog/dextromethorphan-explained/
+- [Dronabinol](https://doseuses.com/drugs/dronabinol/): Dronabinol (Marinol) is synthetic THC, the main psychoactive compound in cannabis, made as an FDA-approved medicine. Guide: https://doseuses.com/blog/dronabinol-explained/
+- [Esketamine](https://doseuses.com/drugs/esketamine/): Esketamine (Spravato) is a nasal spray for treatment-resistant depression and for depression with suicidal thoughts. Guide: https://doseuses.com/blog/esketamine-explained/
+- [Gabapentin](https://doseuses.com/drugs/gabapentin/): Gabapentin (Neurontin) is one of the most prescribed medicines in the US, approved for shingles nerve pain, partial seizures, and (as Horizant) restless legs syndrome. Guide: https://doseuses.com/blog/gabapentin-explained/
+- [Ketamine](https://doseuses.com/drugs/ketamine/): Ketamine is a dissociative anesthetic used in operating rooms, emergency departments, and battlefield medicine. Guide: https://doseuses.com/blog/ketamine-explained/
+- [Lacosamide](https://doseuses.com/drugs/lacosamide/): Lacosamide (Vimpat) is a prescription antiseizure medicine for partial-onset seizures and, as add-on therapy, generalized tonic-clonic seizures. Guide: https://doseuses.com/blog/lacosamide-explained/
+- [Nitrous oxide](https://doseuses.com/drugs/nitrous-oxide/): Nitrous oxide is a gas used in dentistry and as a whipped-cream propellant. Guide: https://doseuses.com/blog/nitrous-oxide-explained/
+- [Pregabalin](https://doseuses.com/drugs/pregabalin/): Pregabalin (Lyrica) is a nerve pain and antiseizure medicine used for diabetic nerve pain, shingles pain, fibromyalgia, spinal cord injury pain, and partial seizures. Guide: https://doseuses.com/blog/pregabalin-explained/
+- [Sodium oxybate](https://doseuses.com/drugs/sodium-oxybate/): Sodium oxybate (Xyrem) is the sodium salt of GHB (gamma-hydroxybutyrate), used to treat cataplexy and daytime sleepiness in narcolepsy. Guide: https://doseuses.com/blog/sodium-oxybate-explained/
+- [Zuranolone](https://doseuses.com/drugs/zuranolone/): Zuranolone (Zurzuvae) is the first pill approved specifically for postpartum depression, taken once a day for 14 days. Guide: https://doseuses.com/blog/zuranolone-explained/
+
+## Cannabis and psychedelics
+- [2C-B](https://doseuses.com/drugs/2c-b/): 2C-B is a synthetic psychedelic related to mescaline, first made in 1974. Guide: https://doseuses.com/blog/2c-b-explained/
+- [5-MeO-DMT](https://doseuses.com/drugs/5-meo-dmt/): 5-MeO-DMT is a very potent, short-acting psychedelic found in the venom of the Sonoran Desert toad and some plants, and also made synthetically. Guide: https://doseuses.com/blog/5-meo-dmt-explained/
+- [Amanita muscaria](https://doseuses.com/drugs/amanita-muscaria/): Amanita muscaria, the red-and-white fly agaric mushroom, contains muscimol and ibotenic acid, which act on GABA and glutamate receptors, not like psilocybin. Guide: https://doseuses.com/blog/amanita-muscaria-explained/
+- [Ayahuasca](https://doseuses.com/drugs/ayahuasca/): Ayahuasca is a psychedelic brew from the Amazon, usually made from Banisteriopsis caapi vine and Psychotria viridis leaves. Guide: https://doseuses.com/blog/ayahuasca-explained/
+- [Cannabis](https://doseuses.com/drugs/cannabis/): Cannabis is a plant whose main psychoactive compound is THC. Guide: https://doseuses.com/blog/cannabis-explained/
+- [CBD](https://doseuses.com/drugs/cbd/): CBD (cannabidiol) is a non-intoxicating compound from cannabis and hemp. Guide: https://doseuses.com/blog/cbd-explained/
+- [Delta-8 THC](https://doseuses.com/drugs/delta-8-thc/): Delta-8 THC is an intoxicating cannabinoid usually made by chemically converting hemp-derived CBD. Guide: https://doseuses.com/blog/delta-8-thc-explained/
+- [DMT](https://doseuses.com/drugs/dmt/): DMT (dimethyltryptamine) is a powerful, short-acting psychedelic found in many plants. Guide: https://doseuses.com/blog/dmt-explained/
+- [Ibogaine](https://doseuses.com/drugs/ibogaine/): Ibogaine is a psychedelic from the root bark of the African iboga shrub. Guide: https://doseuses.com/blog/ibogaine-explained/
+- [LSD](https://doseuses.com/drugs/lsd/): LSD (lysergic acid diethylamide) is a very potent psychedelic, active in millionths of a gram, with effects lasting 8 to 12 hours. Guide: https://doseuses.com/blog/lsd-explained/
+- [MDMA](https://doseuses.com/drugs/mdma/): MDMA, sold as ecstasy or molly, is a stimulant and empathy-enhancing drug that releases large amounts of serotonin. Guide: https://doseuses.com/blog/mdma-explained/
+- [Mescaline](https://doseuses.com/drugs/mescaline/): Mescaline is a psychedelic found in the peyote cactus and some other cacti, such as San Pedro. Guide: https://doseuses.com/blog/mescaline-explained/
+- [Nabilone](https://doseuses.com/drugs/nabilone/): Nabilone (Cesamet) is a prescription synthetic cannabinoid, similar to THC, for nausea and vomiting from chemotherapy that has not responded to standard medicines. Guide: https://doseuses.com/blog/nabilone-explained/
+- [Psilocybin](https://doseuses.com/drugs/psilocybin/): Psilocybin is the psychedelic compound in "magic mushrooms". Guide: https://doseuses.com/blog/psilocybin-explained/
+- [Salvia divinorum](https://doseuses.com/drugs/salvia/): Salvia divinorum is a Mexican plant whose active compound, salvinorin A, causes intense but very brief hallucinations when smoked or chewed. Guide: https://doseuses.com/blog/salvia-explained/
+- [Synthetic cannabinoids](https://doseuses.com/drugs/synthetic-cannabinoids/): Synthetic cannabinoids, sold as K2 or Spice, are lab-made chemicals sprayed onto plant material or sold as vape liquids. Guide: https://doseuses.com/blog/synthetic-cannabinoids-explained/
+
+## Anabolic steroids
+- [Methandrostenolone](https://doseuses.com/drugs/methandrostenolone/): Methandrostenolone (Dianabol, 'D-bol') is an oral anabolic steroid developed in the 1950s that was the first widely misused steroid in sport. Guide: https://doseuses.com/blog/methandrostenolone-explained/
+- [Nandrolone](https://doseuses.com/drugs/nandrolone/): Nandrolone is an injectable anabolic steroid. Guide: https://doseuses.com/blog/nandrolone-explained/
+- [Oxandrolone](https://doseuses.com/drugs/oxandrolone/): Oxandrolone (Anavar, Oxandrin) is an oral anabolic steroid once prescribed for weight loss after surgery, trauma, or infection. Guide: https://doseuses.com/blog/oxandrolone-explained/
+- [Oxymetholone](https://doseuses.com/drugs/oxymetholone/): Oxymetholone (Anadrol-50) is an oral anabolic steroid approved for anemias caused by the bone marrow not making enough red blood cells. Guide: https://doseuses.com/blog/oxymetholone-explained/
+- [SARMs](https://doseuses.com/drugs/sarms/): SARMs (selective androgen receptor modulators) are experimental drugs designed to build muscle with fewer side effects than steroids. Guide: https://doseuses.com/blog/sarms-explained/
+- [Stanozolol](https://doseuses.com/drugs/stanozolol/): Stanozolol (Winstrol) is an anabolic steroid once prescribed in the US for hereditary angioedema. Guide: https://doseuses.com/blog/stanozolol-explained/
+- [Testosterone](https://doseuses.com/drugs/testosterone/): Testosterone is the main male sex hormone, prescribed to men with confirmed low testosterone caused by a medical condition (hypogonadism). Guide: https://doseuses.com/blog/testosterone-explained/
+- [Trenbolone](https://doseuses.com/drugs/trenbolone/): Trenbolone ('tren') is a very potent anabolic steroid approved only as a growth implant for cattle. Guide: https://doseuses.com/blog/trenbolone-explained/
+
+## Emerging and unscheduled substances
+- [7-OH (7-hydroxymitragynine)](https://doseuses.com/drugs/7-hydroxymitragynine/): 7-OH (7-hydroxymitragynine) is a potent opioid compound found in trace amounts in kratom and sold in concentrated tablets, gummies, and shots in gas stations and vape shops. Guide: https://doseuses.com/blog/7-hydroxymitragynine-explained/
+- [Bromazolam](https://doseuses.com/drugs/bromazolam/): Bromazolam is a designer benzodiazepine never approved anywhere as a medicine. Guide: https://doseuses.com/blog/bromazolam-explained/
+- [Etizolam](https://doseuses.com/drugs/etizolam/): Etizolam is a benzodiazepine-like drug prescribed for anxiety in Japan, Italy, and India but never approved in the US. Guide: https://doseuses.com/blog/etizolam-explained/
+- [HHC](https://doseuses.com/drugs/hhc/): HHC (hexahydrocannabinol) is a semi-synthetic cannabinoid made from hemp-derived CBD, with effects similar to THC. Guide: https://doseuses.com/blog/hhc-explained/
+- [Kratom](https://doseuses.com/drugs/kratom/): Kratom is a Southeast Asian tree whose leaves contain mitragynine and 7-hydroxymitragynine (7-OH), which act on opioid receptors. Guide: https://doseuses.com/blog/kratom-explained/
+- [Medetomidine](https://doseuses.com/drugs/medetomidine/): Medetomidine is a powerful veterinary sedative that, since late 2024, has replaced xylazine as a common adulterant in illicit fentanyl in Philadelphia, Chicago, and other cities. Guide: https://doseuses.com/blog/medetomidine-explained/
+- [Nitazenes](https://doseuses.com/drugs/nitazenes/): Nitazenes are a group of synthetic opioids, first made in the 1950s but never approved as medicines, that have appeared in the illicit drug supply since 2019. Guide: https://doseuses.com/blog/nitazenes-explained/
+- [PCP](https://doseuses.com/drugs/pcp/): PCP (phencyclidine), also called angel dust, is a dissociative drug developed as an anesthetic in the 1950s and abandoned because of severe agitation and hallucinations in patients. Guide: https://doseuses.com/blog/pcp-explained/
+- [Phenibut](https://doseuses.com/drugs/phenibut/): Phenibut is a sedative related to GABA and baclofen, prescribed for anxiety and sleep in Russia and Latvia. Guide: https://doseuses.com/blog/phenibut-explained/
+- [Tianeptine](https://doseuses.com/drugs/tianeptine/): Tianeptine is an antidepressant approved in some European, Asian, and Latin American countries but never in the US. Guide: https://doseuses.com/blog/tianeptine-explained/
+- [Xylazine](https://doseuses.com/drugs/xylazine/): Xylazine is a veterinary sedative that has spread through the illicit fentanyl supply as "tranq". Guide: https://doseuses.com/blog/xylazine-explained/
+
+## About
+- [Editorial policy](https://doseuses.com/editorial-policy/)
+- [Medical review team](https://doseuses.com/medical-review-team/)
+- [Blog](https://doseuses.com/blog/)
