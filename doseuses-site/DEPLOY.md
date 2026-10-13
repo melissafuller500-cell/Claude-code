@@ -2,9 +2,7 @@
 
 Upload the contents of this folder to the web root, including the hidden `.htaccess` file.
 
-If you are using the split downloads, unzip all three into the same folder:
-`doseuses-1-site.zip` (pages, fonts, server files), `doseuses-2-share-images.zip` and
-`doseuses-3-blog-images.zip` (both unpack into `assets/img/`).
+The download `doseuses-site.zip` holds the whole site: unzip it and upload everything inside.
 
 ## Must do on the server / DNS
 1. Point `doseuses.com` and `www.doseuses.com` at the host and issue an SSL certificate covering both.
