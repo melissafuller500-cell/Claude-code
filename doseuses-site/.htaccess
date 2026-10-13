@@ -22,7 +22,7 @@ ErrorDocument 404 /404.html
   Header always set X-Frame-Options "SAMEORIGIN"
   Header unset X-Powered-By
 
-  <FilesMatch "\.(woff2|png|svg|ico|webmanifest)$">
+  <FilesMatch "\.(woff2|png|jpg|svg|ico|js|json|webmanifest)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\.(html|xml|txt)$">
