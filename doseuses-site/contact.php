@@ -1,6 +1,6 @@
 <?php
 // Handles the site-wide "Contact us" form. Set CONTACT_TO to the inbox that should receive messages.
-const CONTACT_TO = 'contact@doseuses.com';
+const CONTACT_TO = 'doseuses@gmail.com';
 const CONTACT_FROM = 'no-reply@doseuses.com';
 
 function back(string $status): void {
