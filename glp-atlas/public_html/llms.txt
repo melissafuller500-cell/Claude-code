@@ -1,0 +1,90 @@
+# GLP Atlas
+
+> Independent reference on GLP-1, incretin and insulin medicines for the United States and Canada: label dosing, safety, cost and legal access. Does not sell medicines. Last reviewed 2026-10-20. Editor: Noé Mbwang. Medical review: pending — clinician review in progress.
+
+Facts come from FDA and Health Canada labels, manufacturer releases and peer-reviewed trials. When citing, please link the specific page and its review date. Full text of every page: https://www.glpatlas.com/llms-full.txt
+
+## Medicines
+- [Ozempic (injection)](https://www.glpatlas.com/drugs/ozempic/): semaglutide, GLP-1 receptor agonist, once weekly; Novo Nordisk
+- [Ozempic tablets (formerly Rybelsus)](https://www.glpatlas.com/drugs/ozempic-tablets/): oral semaglutide, GLP-1 receptor agonist (oral), once daily; Novo Nordisk
+- [Wegovy (injection)](https://www.glpatlas.com/drugs/wegovy/): semaglutide, GLP-1 receptor agonist, once weekly; Novo Nordisk
+- [Wegovy pill](https://www.glpatlas.com/drugs/wegovy-pill/): oral semaglutide 25 mg, GLP-1 receptor agonist (oral), once daily; Novo Nordisk
+- [Mounjaro](https://www.glpatlas.com/drugs/mounjaro/): tirzepatide, Dual GIP / GLP-1 receptor agonist, once weekly; Eli Lilly
+- [Zepbound](https://www.glpatlas.com/drugs/zepbound/): tirzepatide, Dual GIP / GLP-1 receptor agonist, once weekly; Eli Lilly
+- [Foundayo](https://www.glpatlas.com/drugs/foundayo/): orforglipron, Small-molecule (non-peptide) oral GLP-1 receptor agonist, once daily; Eli Lilly
+- [Victoza (and generic liraglutide)](https://www.glpatlas.com/drugs/victoza/): liraglutide, GLP-1 receptor agonist, once daily; Novo Nordisk; generics available
+- [Saxenda (and generic liraglutide 3 mg)](https://www.glpatlas.com/drugs/saxenda/): liraglutide, GLP-1 receptor agonist, once daily; Novo Nordisk; generic by Teva
+- [Trulicity](https://www.glpatlas.com/drugs/trulicity/): dulaglutide, GLP-1 receptor agonist, once weekly; Eli Lilly
+- [Byetta and Bydureon BCise](https://www.glpatlas.com/drugs/byetta-bydureon/): exenatide, GLP-1 receptor agonist, twice daily (byetta) or once weekly (bydureon bcise); AstraZeneca
+- [Soliqua 100/33](https://www.glpatlas.com/drugs/soliqua/): insulin glargine + lixisenatide, Basal insulin + GLP-1 receptor agonist combination, once daily; Sanofi
+- [Xultophy 100/3.6](https://www.glpatlas.com/drugs/xultophy/): insulin degludec + liraglutide, Basal insulin + GLP-1 receptor agonist combination, once daily; Novo Nordisk
+- [Insulin lispro: Humalog, Admelog, Lyumjev](https://www.glpatlas.com/drugs/insulin-lispro/): insulin lispro, Rapid-acting (mealtime) insulin, with meals; Eli Lilly; Sanofi (Admelog)
+- [Insulin aspart: NovoLog, Fiasp](https://www.glpatlas.com/drugs/insulin-aspart/): insulin aspart, Rapid-acting (mealtime) insulin, with meals; Novo Nordisk
+- [Insulin glulisine: Apidra](https://www.glpatlas.com/drugs/insulin-glulisine/): insulin glulisine, Rapid-acting (mealtime) insulin, with meals; Sanofi
+- [Regular (short-acting) insulin: Humulin R, Novolin R](https://www.glpatlas.com/drugs/regular-insulin/): human insulin (regular), Short-acting insulin, before meals; Eli Lilly; Novo Nordisk
+- [NPH (intermediate-acting) insulin: Humulin N, Novolin N](https://www.glpatlas.com/drugs/nph-insulin/): isophane human insulin, Intermediate-acting insulin, once or twice daily; Eli Lilly; Novo Nordisk
+- [Insulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeo](https://www.glpatlas.com/drugs/insulin-glargine/): insulin glargine, Long-acting (basal) insulin, once daily; Sanofi; Eli Lilly; Biocon/Viatris
+- [Insulin degludec: Tresiba](https://www.glpatlas.com/drugs/insulin-degludec/): insulin degludec, Ultra-long-acting (basal) insulin, once daily; Novo Nordisk
+- [Insulin icodec: Awiqli (once-weekly insulin)](https://www.glpatlas.com/drugs/insulin-icodec/): insulin icodec-abae, Once-weekly basal insulin (700 units/mL), once weekly; Novo Nordisk
+- [Premixed insulins: Humalog Mix, NovoLog Mix, Humulin/Novolin 70/30](https://www.glpatlas.com/drugs/premixed-insulin/): premixed insulin, Premixed (intermediate + rapid or short), usually twice daily with meals; Eli Lilly; Novo Nordisk
+- [Symlin](https://www.glpatlas.com/drugs/symlin/): pramlintide, Amylin analog, before major meals; AstraZeneca
+- [Glucagon rescue: GlucaGen, Gvoke, Baqsimi](https://www.glpatlas.com/drugs/glucagon/): glucagon / dasiglucagon, Emergency treatment for severe low blood sugar, emergency use only; Various
+- [CagriSema (investigational)](https://www.glpatlas.com/drugs/cagrisema/): cagrilintide + semaglutide, Amylin analog + GLP-1 receptor agonist combination, once weekly; Novo Nordisk
+- [Retatrutide (investigational)](https://www.glpatlas.com/drugs/retatrutide/): retatrutide, GIP / GLP-1 / glucagon triple receptor agonist, once weekly; Eli Lilly
+
+## Comparisons
+- [Ozempic vs Wegovy: same drug, different jobs](https://www.glpatlas.com/compare/ozempic-vs-wegovy/): Ozempic and Wegovy both contain semaglutide. Compare approvals, doses, pills vs pens and cost in the US and Canada.
+- [Wegovy vs Zepbound: semaglutide vs tirzepatide for weight loss](https://www.glpatlas.com/compare/wegovy-vs-zepbound/): Wegovy (semaglutide) vs Zepbound (tirzepatide): weight-loss results, dosing, side effects and self-pay costs compared.
+- [Wegovy pill vs Foundayo: the two weight-loss pills compared](https://www.glpatlas.com/compare/wegovy-pill-vs-foundayo/): The Wegovy pill (oral semaglutide) and Foundayo (orforglipron) compared: how to take them, results, doses and cost.
+- [Mounjaro vs Ozempic for type 2 diabetes](https://www.glpatlas.com/compare/mounjaro-vs-ozempic/): Mounjaro (tirzepatide) vs Ozempic (semaglutide) for type 2 diabetes: A1C, weight, doses and cost.
+- [Saxenda vs Wegovy: daily liraglutide vs weekly semaglutide](https://www.glpatlas.com/compare/saxenda-vs-wegovy/): Saxenda (daily liraglutide, now generic) vs Wegovy (weekly semaglutide): results, convenience and cost.
+
+## Guides
+- [How to buy GLP-1 medicines legally in the USA](https://www.glpatlas.com/guides/how-to-buy-glp1-legally-usa/): The legal ways to buy or order Wegovy, Zepbound, Ozempic, Mounjaro and GLP-1 pills in the US — prescriptions, pharmacies, telehealth and direct-from-manufacturer.
+- [How to buy GLP-1 medicines legally in Canada](https://www.glpatlas.com/guides/how-to-buy-glp1-legally-canada/): How to get Ozempic, Wegovy, Mounjaro and generic semaglutide legally in Canada: prescriptions, pharmacies, coverage and the new generics.
+- [GLP-1 cost without insurance (US, 2026)](https://www.glpatlas.com/guides/glp1-cost-without-insurance/): What Wegovy, Zepbound, Ozempic, Mounjaro, the Wegovy pill and Foundayo cost without insurance through NovoCare and LillyDirect in 2026.
+- [Compounded, research-peptide and counterfeit GLP-1s: the risks](https://www.glpatlas.com/guides/compounded-and-counterfeit-glp1/): Why compounded, 'research' and counterfeit semaglutide and tirzepatide are risky, and how to spot fake Ozempic and Wegovy pens.
+- [GLP-1 side effects: what's common, what's serious](https://www.glpatlas.com/guides/glp1-side-effects/): Common and serious side effects of semaglutide, tirzepatide, liraglutide and orforglipron, and when to call a doctor.
+- [New GLP-1 drugs coming: the 2026–2027 pipeline](https://www.glpatlas.com/guides/glp1-pipeline-2026/): CagriSema, retatrutide and other upcoming obesity and diabetes drugs: status, results and expected decisions.
+
+## Topics
+- [Semaglutide: every brand, dose, use and price (2026)](https://www.glpatlas.com/semaglutide/): Semaglutide explained: Ozempic, Wegovy, Wegovy HD, Wegovy pill and Ozempic tablets — uses, doses, side effects, generics and cost in the US and Canada.
+- [Tirzepatide: Mounjaro and Zepbound explained (2026)](https://www.glpatlas.com/tirzepatide/): Tirzepatide (Mounjaro, Zepbound): how the dual GIP/GLP-1 drug works, doses, results, side effects, vials vs pens and cost.
+- [Diabetes injections: the full list for type 2 and type 1 diabetes](https://www.glpatlas.com/diabetes-injections/): Complete list of diabetes injections in 2026: GLP-1s (Ozempic, Mounjaro, Trulicity, Victoza), insulins (Lantus, Humalog, Tresiba, Awiqli), combinations and glucagon.
+- [Weight loss injections and pills approved in 2026](https://www.glpatlas.com/weight-loss-injections/): Every FDA-approved weight loss injection and GLP-1 pill in 2026: Wegovy, Wegovy HD, Zepbound, Saxenda, Wegovy pill and Foundayo — results, doses and cost.
+- [Insulin types, brands and prices: a complete guide](https://www.glpatlas.com/insulin/): All insulin types explained: rapid, short, intermediate, long-acting, once-weekly and premixed — brands, timing, storage and $35 cost programs.
+
+## Questions
+- [What if I miss an Ozempic dose?](https://www.glpatlas.com/questions/ozempic-missed-dose/): Take it as soon as possible within 5 days of the missed dose. If more than 5 days have passed, skip it and take the next dose on your usual day. Never take two doses to catch up.
+- [What if I miss a Wegovy dose?](https://www.glpatlas.com/questions/wegovy-missed-dose/): If the next scheduled dose is more than 2 days away, take the missed dose as soon as possible. If it is less than 2 days away, skip it. If you miss more than 2 weeks, contact your prescriber — you may need to restart at a lower dose.
+- [What if I miss a Zepbound or Mounjaro dose?](https://www.glpatlas.com/questions/zepbound-missed-dose/): Take it within 4 days (96 hours) of the missed dose. If more than 4 days have passed, skip it and take the next dose on your regular day.
+- [What if I miss a Trulicity dose?](https://www.glpatlas.com/questions/trulicity-missed-dose/): Take it if there are at least 3 days (72 hours) until your next scheduled dose; otherwise skip it and take the next one on schedule.
+- [Can you drink alcohol on Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/alcohol-on-glp1/): The labels do not ban alcohol, but alcohol can worsen nausea and, with insulin or sulfonylureas, raise the risk of low blood sugar. Heavy drinking also raises pancreatitis risk. Ask your prescriber what is safe for you.
+- [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/): Semaglutide has a half-life of about one week, so it takes about five weeks after the last weekly injection to leave the body. Effects on appetite fade over that period.
+- [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/): Tirzepatide's half-life is about 5 days; it takes roughly 25–30 days after the last dose to clear.
+- [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/): A popular term for a hollow or aged facial look after rapid weight loss. It is caused by loss of facial fat, not by a direct effect of the drug, and can happen with any large weight loss.
+- [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/): Hair loss was reported more often than with placebo in weight-loss trials, mostly in people who lost a lot of weight quickly. It is usually temporary shedding linked to rapid weight loss.
+- [What happens when you stop Wegovy or Zepbound?](https://www.glpatlas.com/questions/what-happens-when-you-stop-glp1/): Appetite returns over a few weeks and most people regain a large share of lost weight within a year, as shown in withdrawal studies. Blood sugar may rise in people with diabetes. Plan any stop with your prescriber.
+- [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/): No. Semaglutide should be stopped at least 2 months before a planned pregnancy because of its long half-life. Tirzepatide can reduce oral contraceptive effectiveness. Talk to your prescriber before trying to conceive.
+- [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/): Under the skin of the stomach (at least 2 inches from the belly button), the front of the thigh, or the back of the upper arm (usually by someone else). Rotate sites each week.
+- [How to manage nausea and constipation on GLP-1 medicines](https://www.glpatlas.com/questions/glp1-constipation-nausea/): Eat smaller meals, stop when full, avoid greasy or very sweet foods, drink fluids and increase fibre gradually. Persistent vomiting, severe pain or signs of dehydration need medical attention.
+- [What is a GLP-1 agonist?](https://www.glpatlas.com/questions/what-is-glp1/): A medicine that mimics glucagon-like peptide-1, a gut hormone released after eating. GLP-1 agonists raise insulin when blood sugar is high, lower glucagon, slow stomach emptying and reduce appetite. Examples: semaglutide, liraglutide, dulaglutide; tirzepatide also acts on GIP.
+- [Semaglutide vs tirzepatide: which is stronger?](https://www.glpatlas.com/questions/semaglutide-vs-tirzepatide/): Tirzepatide (Zepbound, Mounjaro) produced more average weight loss than semaglutide 2.4 mg (Wegovy) in head-to-head research. Semaglutide has more labeled outcome indications (heart, kidney, MASH). Wegovy HD 7.2 mg narrows the gap.
+- [Can Ozempic be prescribed for weight loss?](https://www.glpatlas.com/questions/ozempic-off-label-weight-loss/): Ozempic is approved for type 2 diabetes. Doctors may prescribe it off-label, but insurers often refuse coverage for that use. Wegovy is the semaglutide brand approved for weight management.
+- [When will generic semaglutide be available in the US?](https://www.glpatlas.com/questions/generic-semaglutide-us/): Not yet. Novo Nordisk's key US patents run into the early 2030s. Canada approved generics in 2026. Compounded semaglutide is not a generic and is not FDA-approved.
+- [Generic Ozempic in Canada: what to know](https://www.glpatlas.com/questions/generic-ozempic-canada/): Health Canada authorized generic semaglutide from Dr. Reddy's (April 28, 2026) and Apotex (May 1, 2026) for type 2 diabetes, and the first generic for weight management on June 29, 2026. Ask your pharmacist about substitution under your plan.
+- [How to spot fake Ozempic or Wegovy pens](https://www.glpatlas.com/questions/fake-ozempic-pens/): Buy only from licensed pharmacies, check that the label, lot number and expiry are intact and match the box, and report anything unusual. Pens sold without a prescription, through social media or WhatsApp, or labeled for another country are red flags. Report suspected fakes to FDA MedWatch or Health Canada.
+- [Is compounded semaglutide legal?](https://www.glpatlas.com/questions/compounded-semaglutide-legal/): Compounded drugs are not FDA-approved. Since the FDA removed semaglutide and tirzepatide from its shortage list, routine copying of the approved products by compounders is restricted, and the FDA has issued warning letters to sellers. 'Research use only' products are not for human use.
+- [How long does it take for Wegovy or Zepbound to work?](https://www.glpatlas.com/questions/glp1-how-long-to-work/): Appetite often changes within the first weeks, but the starting doses are for tolerance, not full effect. Most weight loss happens over months as the dose rises; trials measured results at about 68–72 weeks.
+- [What to eat on GLP-1 medicines](https://www.glpatlas.com/questions/glp1-food-list/): Prioritise protein, vegetables, whole grains and fluids; eat small portions slowly. Limit fried, fatty and very sugary foods, which often worsen nausea. A dietitian can help protect muscle during weight loss.
+- [How to store and travel with GLP-1 pens](https://www.glpatlas.com/questions/glp1-travel-storage/): Keep unopened pens refrigerated (36–46°F / 2–8°C), never frozen. In use, most pens tolerate room temperature for a limited time (Ozempic up to 56 days; Wegovy up to 28 days; Zepbound and Mounjaro up to 21 days). Carry them in hand luggage with the prescription label.
+- [Signs of low blood sugar (hypoglycemia)](https://www.glpatlas.com/questions/hypoglycemia-signs/): Shakiness, sweating, fast heartbeat, hunger, confusion, irritability and blurred vision. Treat with 15 g of fast-acting sugar and recheck in 15 minutes. Severe lows need glucagon and emergency help.
+- [How to use an insulin pen](https://www.glpatlas.com/questions/how-to-use-insulin-pen/): Attach a new needle, prime with 2 units, dial the dose, inject at 90 degrees into the stomach or thigh, hold for about 10 seconds, then remove and discard the needle. Rotate sites. Never share pens.
+- [Does insurance cover Wegovy, Zepbound or Ozempic?](https://www.glpatlas.com/questions/glp1-insurance-coverage/): Coverage depends on the plan and the diagnosis. Diabetes uses (Ozempic, Mounjaro) are widely covered; weight-management coverage varies and often needs prior authorization. Medicare arrangements announced in 2025 changed access for some beneficiaries; check your plan's formulary.
+- [Who qualifies for Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-who-qualifies/): Adults with a BMI of 30 or more, or 27 or more with at least one weight-related condition (such as high blood pressure, type 2 diabetes or high cholesterol), under US labels. A prescriber also checks contraindications such as a family history of medullary thyroid cancer.
+- [How to choose a GLP-1 telehealth provider](https://www.glpatlas.com/questions/glp1-telehealth/): Choose services whose prescribers are licensed in your state, that do a real medical assessment, dispense FDA-approved products through licensed pharmacies, and are LegitScript-certified. Avoid services selling 'research' or unbranded vials without clear sourcing.
+
+## Optional
+- [Glossary](https://www.glpatlas.com/glossary/)
+- [Editorial policy](https://www.glpatlas.com/editorial-policy/)
+- [Medical disclaimer](https://www.glpatlas.com/medical-disclaimer/)
