@@ -243,6 +243,30 @@
     $('#cmpSwap').addEventListener('click', function () { var t = cA.value; cA.value = cB.value; cB.value = t; draw(); });
   }
 
+
+  /* ---------- contact form: anti-bot timer + status messages (PHP mailer) */
+  $$('form[data-guard]').forEach(function (f) {
+    var ts = f.querySelector('input[name="ts"]'); if (ts) ts.value = Date.now();
+    var msg = f.querySelector('.form-msg'), st = new URLSearchParams(location.search).get('form');
+    var text = { invalid: 'Please fill in your name, a valid email and a message.', limit: 'Too many messages from this connection — please try again in an hour or email us directly.',
+                 error: 'The message could not be sent. Please email us directly.' }[st];
+    if (msg && text) { msg.textContent = text; msg.hidden = false; }
+  });
+
+  /* ---------- blog topic filter */
+  var bf = $('[data-blog-filter]');
+  if (bf) {
+    var posts = $$('.posts > a'), pempty = $('.empty');
+    $$('.chip', bf).forEach(function (c) {
+      c.setAttribute('aria-pressed', c.classList.contains('on'));
+      c.addEventListener('click', function () {
+        $$('.chip', bf).forEach(function (x) { x.classList.toggle('on', x === c); x.setAttribute('aria-pressed', x === c); });
+        var n = 0; posts.forEach(function (p) { var ok = !c.dataset.val || p.dataset.cat === c.dataset.val; p.hidden = !ok; if (ok) n++; });
+        if (pempty) pempty.hidden = n > 0;
+      });
+    });
+  }
+
   /* ---------- scroll: progress bar, back to top, TOC scrollspy */
   var bar = $('.progress span'), top = $('.totop'), doc = $('.doc');
   var tocLinks = $$('.toc a'), heads = tocLinks.map(function (a) { return d.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);

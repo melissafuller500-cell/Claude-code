@@ -7,6 +7,10 @@ import json, os, re, shutil, html, hashlib, datetime
 from data_drugs import DRUGS, CATS, BOXED_GLP1, GLP1_COMMON, GLP1_SERIOUS, GLP1_AVOID, INSULIN_COMMON, INSULIN_SERIOUS, INSULIN_AVOID
 from data_pages import COMPARES, GUIDES, TRUST
 from data_extra import ALIASES, PILLARS, QUESTIONS, GLOSSARY
+from blog_glp1 import POSTS_GLP1
+from blog_other import POSTS_OTHER
+POSTS = POSTS_GLP1 + POSTS_OTHER
+POST_BY_DRUG = {bp["drug"]: bp for bp in POSTS}
 
 # ======================= CONFIG — edit these =======================
 CONFIG = {
@@ -18,7 +22,8 @@ CONFIG = {
     "REVIEWER": "",                            # e.g. "Jane Doe, PharmD" — leave empty until a real licensed reviewer signs off
     "PUBLISHED": "2026-10-20",                 # first publication date (schema datePublished)
     "UPDATED": "2026-10-20",
-    "FORM_ENDPOINT": "netlify",                # "netlify" = Netlify Forms (honeypot spam filter); or a https:// Formspree URL; "" = mailto
+    "HOSTING": "hostinger",                    # "hostinger" / any Apache-LiteSpeed host (.htaccess + PHP), or "netlify" (_headers)
+    "FORM_ENDPOINT": "php",                    # "php" = built-in /contact.php mailer (Hostinger), "netlify" = Netlify Forms, a https:// Formspree URL, or "" = mailto
     "GOOGLE_VERIFY": "",                       # Search Console "HTML tag" content value (or verify by DNS)
     "BING_VERIFY": "",                         # Bing Webmaster Tools msvalidate.01 content value
     "SAME_AS": [],                             # official social / directory profiles, e.g. ["https://www.linkedin.com/company/…"]
@@ -216,6 +221,12 @@ def mechanism_fig():
                       ("Slower stomach", "food leaves the stomach", "more slowly"), ("Less appetite", "the brain signals", "fullness sooner")],
                      "The four main actions of GLP-1 receptor agonists, as described on their labels.", "mech")
 
+def amylin_fig():
+    return steps_svg("How amylin analogs work", "Pramlintide slows stomach emptying, lowers glucagon after meals, increases fullness and reduces the after-meal glucose rise.",
+                     [("Slower stomach", "food is absorbed", "more gradually"), ("Less glucagon", "after meals, so the", "liver adds less sugar"),
+                      ("More fullness", "smaller portions", "feel satisfying"), ("Smaller spike", "after-meal glucose", "rises less")],
+                     "The main actions of pramlintide, an amylin analog used with mealtime insulin.", "amy")
+
 def glucagon_fig():
     return steps_svg("What to do in severe low blood sugar", "Give glucagon, call emergency services, turn the person on their side, give sugar once they can swallow.",
                      [("Give glucagon", "follow the device's", "own instructions"), ("Call 911", "even if the person", "wakes up"),
@@ -262,12 +273,13 @@ def menu():
     short = lambda c: c.split(" (")[0].replace(" & incretin medicines", "")
     return [
         ("Medicines", "/drugs/", [(short(CATS[k]), by_cat(k)) for k in CATS], ("/drugs/", f"All {len(DRUGS)} medicines"), True),
-        ("Topics", None, [("Topic guides", [(pl["h1"].split(" —")[0], f'/{pl["slug"]}/', "") for pl in PILLARS])], None, False),
+        ("Topics", None, [("Topic guides", [(pl["h1"].split(" —")[0], f'/{pl["slug"]}/', "") for pl in PILLARS] + [("Glossary", "/glossary/", "A–Z definitions")])], None, False),
         ("Compare", "/compare/", [("Comparisons", [(c["title"].split(":")[0], f'/compare/{c["slug"]}/', "") for c in COMPARES] +
                                    [("Compare any two medicines", "/compare/#builder", "Interactive tool")])], ("/compare/", "All comparisons"), False),
         ("Guides", "/guides/", [("Buy safely", [(g["title"], f'/guides/{g["slug"]}/', "") for g in GUIDES])], ("/guides/", "All guides"), False),
         ("Questions", "/questions/", [("Questions", [(q[1], f"/questions/{q[0]}/", "") for q in QUESTIONS])], ("/questions/", f"All {len(QUESTIONS)} questions"), True),
-        ("Glossary", "/glossary/", None, None, False),
+        ("Blog", "/blog/", [(BLOG_CATS[k], [(bp["title"].split(":")[0], post_path(bp), "") for bp in POSTS if DRUG[bp["drug"]]["cat"] == k]) for k in BLOG_CATS],
+         ("/blog/", f"All {len(POSTS)} posts"), True),
         ("About", "/about/", [("Who we are", [(TRUST[k][0], f"/{k}/", "") for k in TRUST] + [("Contact", "/contact/", "")])], None, False),
     ]
 
@@ -394,6 +406,7 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="text/plain" title="LLM summary" href="/llms.txt">
+<link rel="alternate" type="application/rss+xml" title="{E(C['SITE'])} blog" href="/blog/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{asset('style.css')}">
@@ -418,7 +431,7 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
 <div class="cols">
 <div class="foot-brand"><strong>{E(C['SITE'])}</strong><p>Independent information on GLP-1, incretin and insulin medicines for the US and Canada. We do not sell or ship medicines.</p><p class="foot-mail"><a href="mailto:{E(C['EMAIL'])}">{E(C['EMAIL'])}</a></p><p class="small">Last site-wide review: <time datetime="{C['UPDATED']}">{human_date(C['UPDATED'])}</time></p></div>
 <div><strong>Topics</strong><a href="/semaglutide/">Semaglutide</a><a href="/tirzepatide/">Tirzepatide</a><a href="/diabetes-injections/">Diabetes injections</a><a href="/weight-loss-injections/">Weight loss injections</a><a href="/insulin/">Insulin</a></div>
-<div><strong>Site</strong><a href="/drugs/">All medicines</a><a href="/compare/">Comparisons</a><a href="/guides/">Guides</a><a href="/questions/">Questions</a><a href="/glossary/">Glossary</a></div>
+<div><strong>Site</strong><a href="/drugs/">All medicines</a><a href="/compare/">Comparisons</a><a href="/guides/">Guides</a><a href="/questions/">Questions</a><a href="/blog/">Blog</a><a href="/glossary/">Glossary</a></div>
 <div><strong>Trust</strong><a href="/about/">About</a><a href="/editorial-policy/">Editorial policy</a><a href="/medical-disclaimer/">Medical disclaimer</a><a href="/affiliate-disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a></div>
 </div>
 <p class="small">Information only — not medical advice. Always follow your prescriber and the official label. In an emergency call 911. © 2026 {E(C['SITE'])}.</p>
@@ -508,6 +521,8 @@ def drug_page(d):
         b += f'<div class="warn" role="note"><strong>⚠ {E(d.get("boxed_note", BOXED_GLP1))}</strong></div>'
     elif d.get("boxed_note"):
         b += f'<div class="warn" role="note"><strong>⚠ {E(d["boxed_note"])}</strong></div>'
+    bp = POST_BY_DRUG.get(d["slug"])
+    if bp: b += f'<p class="callout">Practical guide: <a href="{post_path(bp)}">{E(bp["title"])}</a></p>'
     b += '<section><h2 id="uses">What it is used for</h2><ul class="checks">' + "".join(f"<li>{E(u)}</li>" for u in d["uses"]) + "</ul></section>"
     b += (f'<section><h2 id="dosage">{E(d["short"])} dosage</h2><p class="note">Per the official label. Your prescriber sets your dose — never change it on your own.</p>'
           f'<div class="tbl"><table class="t steps"><caption class="sr">{E(d["short"])} label dosing schedule</caption><tbody>' +
@@ -546,7 +561,7 @@ def drug_page(d):
     rel = [DRUG.get(r) for r in d["related"] if r in DRUG]
     rc = [c for c in COMPARES if c["slug"] in d["related"]]
     if rel or rc:
-        b += '<section><h2>Related</h2><div class="grid">' + "".join(card(r) for r in rel) + \
+        b += '<section><h2>Related</h2><div class="grid">' + (link_card(post_path(bp), "Blog", bp["title"]) if bp else "") + "".join(card(r) for r in rel) + \
              "".join(link_card(f'/compare/{c["slug"]}/', "Compare", c["title"]) for c in rc) + "</div></section>"
     b += share(p, title)
     b, toc = with_toc(b)
@@ -620,7 +635,10 @@ def trust_pages():
         page(p, TRUST_TITLES.get(slug, t), long_desc, f'<article class="doc doc-narrow">{b}</article>', og_title=t,
              crumbs=[("Home", "/"), (t, p)], kind=kinds.get(slug, "WebPage"), label="About", search={"t": t, "u": p, "k": "Site", "s": ""})
     ep = C["FORM_ENDPOINT"]
-    if ep == "netlify":
+    if ep == "php":
+        form_tag = ('<form class="form" name="contact" method="POST" action="/contact.php" data-guard>'
+                    '<input type="hidden" name="ts" value="">')
+    elif ep == "netlify":
         form_tag = '<form class="form" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="contact">'
     elif ep:
         form_tag = f'<form class="form" action="{E(ep)}" method="POST">'
@@ -636,6 +654,7 @@ def trust_pages():
 <h2 id="form">Send a message</h2>
 <p>Use this form for corrections, editorial questions, press and partnership enquiries. Please do not include personal health information.</p>
 {form_tag}
+<p class="form-msg" role="status" hidden></p>
 <p class="hp" aria-hidden="true"><label>Leave this field empty<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <label>Name<input name="name" autocomplete="name" required></label><label>Email<input type="email" name="email" autocomplete="email" required></label>
 <label>Topic<select name="topic"><option>Correction</option><option>Editorial question</option><option>Press</option><option>Partnership / advertising</option></select></label>
@@ -705,6 +724,92 @@ def hubs():
          nodes=[item_list("Guides", [(g["title"], f'/guides/{g["slug"]}/') for g in GUIDES])],
          search={"t": "All guides", "u": "/guides/", "k": "Hub", "s": ""})
 
+BLOG_CATS = {"glp1": "GLP-1 & combinations", "insulin": "Insulin", "other": "Rescue & add-on", "pipeline": "Pipeline"}
+
+def post_path(bp): return f'/blog/{bp["slug"]}/'
+
+def words(h): return len(re_strip(h).split())
+
+def blog_post_page(bp):
+    d = DRUG[bp["drug"]]
+    p = post_path(bp)
+    cat = BLOG_CATS[d["cat"]]
+    body_html = "".join(f"<h2>{E(h)}</h2>{html_}" for h, html_ in bp["sections"])
+    minutes = max(3, round((words(body_html) + words(bp["tldr"]) + 120) / 220))
+    b = (f'<header class="doc-head"><span class="tag t-{d["cat"]}">Blog · {E(cat)}</span><h1>{E(bp["title"])}</h1>{updated_box()}'
+         f'<p class="lead">{E(bp["desc"])}</p><p class="read-time">{minutes} min read</p></header>')
+    b += tldr(E(bp["tldr"]), "Key takeaways")
+    b += (f'<section><h2 id="at-a-glance">{E(d["short"])} at a glance</h2><div class="tbl"><table class="t"><tbody>'
+          f'<tr><th scope="row">Generic name</th><td>{E(d["generic"])}</td></tr><tr><th scope="row">Made by</th><td>{E(d["maker"])}</td></tr>'
+          f'<tr><th scope="row">Type</th><td>{E(d["cls"])}</td></tr><tr><th scope="row">Form</th><td>{E(d["form"])}</td></tr>'
+          f'<tr><th scope="row">How often</th><td>{E(d["freq"])}</td></tr><tr><th scope="row">United States</th><td>{E(d["us"])}</td></tr>'
+          f'<tr><th scope="row">Canada</th><td>{E(d["ca"])}</td></tr></tbody></table></div>'
+          f'<p><a class="more" href="/drugs/{d["slug"]}/">Full {E(d["short"])} reference: uses, dosing, side effects →</a></p></section>')
+    fig = dose_chart(d) or insulin_chart(d) or {"glucagon": glucagon_fig, "symlin": amylin_fig}.get(d["slug"], mechanism_fig if d["cat"] in ("glp1", "pipeline") else str)()
+    secs = bp["sections"]
+    for i, (h, html_) in enumerate(secs):
+        b += f"<section><h2>{E(h)}</h2>{html_}" + (fig if i == 1 else "") + "</section>"
+    if d.get("boxed") or d.get("boxed_note"):
+        b += f'<div class="warn" role="note"><strong>⚠ {E(d.get("boxed_note", BOXED_GLP1))}</strong></div>'
+    fh, fnode = faq_block(bp["faqs"])
+    b += fh
+    rq = [q for q in QUESTIONS if d["slug"] in q[3]][:4]
+    rc = [c for c in COMPARES if d["slug"] in (c["a"], c["b"])]
+    more = [x for x in POSTS if x is not bp and DRUG[x["drug"]]["cat"] == d["cat"]][:3]
+    b += ('<section><h2>Keep reading</h2><div class="grid">' + card(d) +
+          "".join(link_card(f'/compare/{c["slug"]}/', "Compare", c["title"]) for c in rc) +
+          "".join(link_card(f"/questions/{q[0]}/", "Question", q[1]) for q in rq) +
+          "".join(link_card(post_path(x), "Blog", x["title"]) for x in more) + "</div></section>")
+    b += sources(label_src(d), "drugsfda", "dpd", "ctgov" if d["cat"] == "pipeline" else "medwatch", "medeffect")
+    b += '<p class="note">General information based on the official label. It does not replace advice from your prescriber or pharmacist.</p>'
+    b += share(p, bp["title"])
+    b, toc = with_toc(b, skip=("Keep reading",))
+    article = {"@type": "BlogPosting", "@id": url(p) + "#article", "_about": True, "headline": bp["title"], "description": bp["desc"],
+               "url": url(p), "image": url(f"/og/{og_key(p)}.png"), "datePublished": C["PUBLISHED"], "dateModified": C["UPDATED"],
+               "author": {"@id": url("/about/#editor")}, "publisher": {"@id": url("/#org")}, "mainEntityOfPage": {"@id": url(p) + "#webpage"},
+               "isPartOf": {"@id": url("/blog/") + "#blog"}, "articleSection": cat, "keywords": ", ".join([d["short"], d["generic"]] + bp["tags"]),
+               "wordCount": words(b), "inLanguage": "en", "about": {"@id": url(f'/drugs/{d["slug"]}/') + "#drug", "@type": "Drug", "name": d["short"]}}
+    nodes = [article] + ([fnode] if fnode else [])
+    page(p, bp["title"], bp["desc"], doc_layout(b, toc), crumbs=[("Home", "/"), ("Blog", "/blog/"), (bp["title"].split(":")[0], p)],
+         nodes=nodes, kw=[d["short"], d["generic"]] + bp["tags"], label="Blog · " + cat, og_title=bp["title"],
+         search={"t": bp["title"], "u": p, "k": "Blog", "s": " ".join([d["short"], d["generic"]] + bp["tags"])})
+
+def blog_index():
+    chips = '<div class="fgroup" data-blog-filter><span>Topic</span><button type="button" class="chip on" data-val="">All</button>' + \
+            "".join(f'<button type="button" class="chip" data-val="{k}">{E(v)}</button>' for k, v in BLOG_CATS.items()) + "</div>"
+    b = ('<header class="hub-head"><span class="eyebrow">Blog</span><h1>GLP-1 and diabetes medicine blog</h1>'
+         f'<p class="lead">{len(POSTS)} practical guides — one for every medicine we cover: the first weeks, dose steps, side effects, storage and the questions to ask your prescriber.</p>'
+         + updated_box() + '</header>')
+    b += tldr("Each post is written for one medicine and stays within its official label: how to start, what each dose step feels like, how to handle side effects, "
+              "storage, cost and the questions to ask your prescriber. Every post links to the full medicine reference and to its sources.", "About this blog")
+    b += ('<div class="finder"><div class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
+          '<input class="search" type="search" data-filter=".posts > a" placeholder="Search the blog…" aria-label="Search blog posts"></div>' + chips + '</div>')
+    b += '<div class="grid grid-lg posts">' + "".join(
+        f'<a class="card post-card" href="{post_path(bp)}" data-cat="{DRUG[bp["drug"]]["cat"]}" data-q="{E((bp["title"] + " " + bp["desc"] + " " + " ".join(bp["tags"])).lower())}">'
+        f'<img class="thumb" src="/og/{og_key(post_path(bp))}.png" alt="{E(bp["title"])}" width="1200" height="630" loading="lazy" decoding="async">'
+        f'<span class="tag t-{DRUG[bp["drug"]]["cat"]}">{E(BLOG_CATS[DRUG[bp["drug"]]["cat"]])}</span><strong>{E(bp["title"])}</strong>'
+        f'<span class="card-sub">{E(bp["desc"])}</span><span class="card-go" aria-hidden="true">→</span></a>' for bp in POSTS) + "</div>"
+    b += '<p class="empty" hidden>No post matches. <button type="button" class="linkish" data-open-palette>Search the whole site</button>.</p>'
+    b += f'<p class="note">Subscribe with any feed reader: <a href="/blog/feed.xml">RSS feed</a>.</p>'
+    b += sources("dailymed", "drugsfda", "dpd", "medwatch")
+    blog = {"@type": "Blog", "@id": url("/blog/") + "#blog", "name": f'{C["SITE"]} blog', "url": url("/blog/"), "publisher": {"@id": url("/#org")},
+            "inLanguage": "en", "blogPost": [{"@type": "BlogPosting", "@id": url(post_path(bp)) + "#article", "headline": bp["title"], "url": url(post_path(bp)),
+                                              "datePublished": C["PUBLISHED"], "author": {"@id": url("/about/#editor")}} for bp in POSTS]}
+    page("/blog/", "GLP-1 & Diabetes Medicine Blog: Practical Guides",
+         "Practical guides for every GLP-1, insulin and diabetes medicine: first weeks, dose steps, side effects, storage and questions to ask, for the US and Canada.",
+         b, crumbs=[("Home", "/"), ("Blog", "/blog/")], kind="CollectionPage", label="Blog", nodes=[blog],
+         search={"t": "Blog — all posts", "u": "/blog/", "k": "Hub", "s": "articles posts guides"})
+
+def rss():
+    from email.utils import format_datetime
+    pub = format_datetime(datetime.datetime.fromisoformat(C["UPDATED"] + "T09:00:00+00:00"))
+    items = "".join(f"<item><title>{E(bp['title'])}</title><link>{url(post_path(bp))}</link><guid isPermaLink=\"true\">{url(post_path(bp))}</guid>"
+                    f"<pubDate>{pub}</pubDate><description>{E(bp['desc'])}</description><category>{E(BLOG_CATS[DRUG[bp['drug']]['cat']])}</category></item>\n" for bp in POSTS)
+    xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>'
+           f'<title>{E(C["SITE"])} blog</title><link>{url("/blog/")}</link><description>Practical guides to GLP-1, insulin and diabetes medicines (US &amp; Canada).</description>'
+           f'<language>en</language><lastBuildDate>{pub}</lastBuildDate><atom:link href="{url("/blog/feed.xml")}" rel="self" type="application/rss+xml"/>\n{items}</channel></rss>\n')
+    open(f"{OUT}/blog/feed.xml", "w").write(xml)
+
 NEWS = [("2026-02-04", "Feb 4", "<strong>Ozempic tablets</strong> replace Rybelsus as the name for oral semaglutide in diabetes.", "/drugs/ozempic-tablets/"),
         ("2026-03-19", "Mar 19", "<strong>Wegovy HD</strong> 7.2 mg approved.", "/drugs/wegovy/"),
         ("2026-03-26", "Mar 26", "<strong>Awiqli</strong>, the first once-weekly insulin, approved in the US.", "/drugs/insulin-icodec/"),
@@ -733,6 +838,7 @@ def home():
 <div class="cta-panel"><span class="eyebrow">Interactive</span><h2>Compare any two medicines</h2><p>Line up dosing schedules, approvals and availability for any pair — from Wegovy vs Zepbound to Lantus vs Tresiba.</p><a class="btn" href="/compare/#builder">Open the comparison builder</a></div></section>
 <section class="reveal"><div class="sec-head"><h2>Compare</h2><a class="more" href="/compare/">All comparisons →</a></div><div class="grid">{"".join(link_card(f'/compare/{c["slug"]}/', "Compare", c["title"]) for c in COMPARES)}</div></section>
 <section class="reveal"><div class="sec-head"><h2>Buy safely</h2><a class="more" href="/guides/">All guides →</a></div><div class="grid">{"".join(link_card(f'/guides/{g["slug"]}/', "Guide", g["title"]) for g in GUIDES[:4])}</div></section>
+<section class="reveal"><div class="sec-head"><h2>From the blog</h2><a class="more" href="/blog/">All {len(POSTS)} posts →</a></div><div class="grid">{"".join(link_card(post_path(POST_BY_DRUG[s]), "Blog", POST_BY_DRUG[s]["title"]) for s in ("wegovy", "zepbound", "foundayo", "insulin-icodec"))}</div></section>
 <section class="reveal trust-strip"><div><span class="eyebrow">Editorial standards</span><h2>Where our facts come from</h2>
 <p>Every page is written from official labels and regulators, carries its review date, and is signed by our editor, <a href="/about/#editor">{E(C["EDITOR"])}</a>. We never sell medicines.</p></div>
 <ul class="src-logos">{"".join(f'<li>{ext(E(SRC[k][1]), E(SRC[k][0].split(" — ")[0]))}</li>' for k in ("drugsfda", "dailymed", "dpd", "ctgov", "safepharm"))}</ul></section>'''
@@ -858,7 +964,8 @@ def root_files():
            "".join(f"- [{c['title']}]({url('/compare/' + c['slug'] + '/')}): {c['desc']}\n" for c in COMPARES) + "\n## Guides\n" + \
            "".join(f"- [{g['title']}]({url('/guides/' + g['slug'] + '/')}): {g['desc']}\n" for g in GUIDES) + "\n## Topics\n" + \
            "".join(f"- [{pl['title']}]({url('/' + pl['slug'] + '/')}): {pl['desc']}\n" for pl in PILLARS) + "\n## Questions\n" + \
-           "".join(f"- [{q[1]}]({url('/questions/' + q[0] + '/')}): {re_strip(q[2])}\n" for q in QUESTIONS) + \
+           "".join(f"- [{q[1]}]({url('/questions/' + q[0] + '/')}): {re_strip(q[2])}\n" for q in QUESTIONS) + "\n## Blog\n" + \
+           "".join(f"- [{bp['title']}]({url(post_path(bp))}): {bp['desc']}\n" for bp in POSTS) + \
            "\n## Optional\n- [Glossary](" + url("/glossary/") + ")\n- [Editorial policy](" + url("/editorial-policy/") + ")\n- [Medical disclaimer](" + url("/medical-disclaimer/") + ")\n"
     open(f"{OUT}/llms.txt", "w").write(llms)
     full = intro + "\n\n".join(f"---\nURL: {url(p)}\nTitle: {t}\nSummary: {d}\nLast reviewed: {C['UPDATED']}\n\n{to_md(b)}" for t, p, d, b in LLM_PAGES) + "\n"
@@ -881,7 +988,12 @@ def root_files():
     open(f"{OUT}/site.webmanifest", "w").write(json.dumps(manifest, indent=1))
     host = C["DOMAIN"].split("//")[1]
     host_re = host.replace(".", "\\.")
-    open(f"{OUT}/_headers", "w").write(NETLIFY_HEADERS)  # Netlify / Cloudflare Pages (ignored by Apache)
+    if C["HOSTING"] == "netlify":
+        open(f"{OUT}/_headers", "w").write(NETLIFY_HEADERS)
+    if C["FORM_ENDPOINT"] == "php":
+        php = open(os.path.join(HERE, "contact_php.txt")).read()
+        for k in ("EMAIL", "EMAIL_ALT", "SITE"): php = php.replace(f"__{k}__", C.get(k) or C["EMAIL"])
+        open(f"{OUT}/contact.php", "w").write(php)
     open(f"{OUT}/.htaccess", "w").write(f"""# Force HTTPS + canonical host
 Options -Indexes
 RewriteEngine On
@@ -909,7 +1021,8 @@ ExpiresByType image/svg+xml "access plus 30 days"
 ExpiresByType image/png "access plus 30 days"
 ExpiresByType image/x-icon "access plus 30 days"
 ExpiresByType application/json "access plus 1 day"
-ExpiresByType text/html "access plus 1 hour"
+ExpiresByType text/html "access plus 0 seconds"
+ExpiresByType application/rss+xml "access plus 1 hour"
 </IfModule>
 <IfModule mod_headers.c>
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
@@ -917,7 +1030,11 @@ Header set X-Content-Type-Options "nosniff"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 Header set X-Frame-Options "SAMEORIGIN"
 Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-<FilesMatch "\\.(txt|xml)$">
+# HTML is always revalidated, so visitors see a new upload immediately (assets are versioned with ?v=hash)
+<FilesMatch "\\.html$">
+Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+<FilesMatch "\\.(txt|xml|php)$">
 Header set X-Robots-Tag "noindex"
 </FilesMatch>
 <FilesMatch "^(llms|llms-full)\\.txt$">
@@ -960,12 +1077,15 @@ def build():
     for g in GUIDES: guide_page(g)
     for pl in PILLARS: pillar_page(pl)
     question_pages(); glossary_page()
+    for bp in POSTS: blog_post_page(bp)
+    blog_index()
     trust_pages()
     page("/404.html", "Page not found", "Page not found.",
          '<section class="hero hero-404"><p class="eyebrow">Error 404</p><h1>This page drifted out of orbit</h1><p class="hero-sub">The link may be old or mistyped. Search the site or browse all medicines.</p>'
          '<p><button type="button" class="btn" data-open-palette>Search the site</button> <a class="btn btn-ghost" href="/drugs/">Browse all medicines</a></p></section>',
          kind="WebPage", label="Not found", body_class="home", article=False)
     root_files()
+    rss()
     try:
         import og
         og.render_all(OUT, OG_JOBS, C["SITE"], C["DOMAIN"].split("//")[1])

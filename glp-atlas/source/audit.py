@@ -91,9 +91,13 @@ def _(p, h):
     m = main_html(h)
     if len(strip(m).split()) >= 500 and not re.search(r"<(img|video|picture)\b|<svg[^>]*role=\"img\"", m): return "no image/figure"
 
+@check("Blog posts have BlogPosting schema", "Structured data")
+def _(p, h):
+    if re.match(r"^/blog/[^/]+/$", p) and '"BlogPosting"' not in h: return "missing BlogPosting"
+
 @check("Share links on content pages", "Social (SMO)")
 def _(p, h):
-    if not re.match(r"^/(drugs|compare|guides|questions)/[^/]+/$|^/(semaglutide|tirzepatide|insulin|diabetes-injections|weight-loss-injections)/$", p): return
+    if not re.match(r"^/(drugs|compare|guides|questions|blog)/[^/]+/$|^/(semaglutide|tirzepatide|insulin|diabetes-injections|weight-loss-injections)/$", p): return
     if "wa.me" not in h or "linkedin.com/sharing" not in h: return "no share links"
 
 @check("Primary CTA above the fold (home)", "Trust, local & conversion")
@@ -108,7 +112,8 @@ def _(p, h):
         tag = re.match(r"<form\b[^>]*>", f).group(0)
         act = re.search(r'action="([^"]*)"', tag)
         net = "data-netlify" in tag
-        if not net and (not act or not act.group(1).startswith("https://")): return "insecure or missing action"
+        same_origin = act and act.group(1).startswith("/") and DOMAIN.startswith("https://")  # posts to this HTTPS site (e.g. /contact.php)
+        if not net and not same_origin and (not act or not act.group(1).startswith("https://")): return "insecure or missing action"
         if "honeypot" not in tag and "bot-field" not in f and "h-captcha" not in f and "cf-turnstile" not in f: return "no spam protection"
 
 @check("FAQ schema where questions are answered", "AEO · answer engines")

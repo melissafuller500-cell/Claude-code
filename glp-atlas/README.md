@@ -10,7 +10,12 @@ pip install pillow            # only needed for Open Graph images + icons
 cd source && python3 build.py # writes ../public_html
 ```
 
-Upload the **contents** of `public_html/` to your web root: on Netlify drag the folder whose top level holds `index.html` (a `_headers` file is included), on Apache the `.htaccess` is included.
+### Deploy on Hostinger
+1. hPanel → **Files → File Manager** → open `public_html`. **Delete the old files first** (select all → Delete) so no page from an older upload survives.
+2. Click **Upload**, choose `glp-atlas-hostinger.zip`, then right-click it → **Extract** into `public_html` itself (not a sub-folder). `index.html`, `.htaccess` and `contact.php` must sit directly in `public_html`. Delete the zip afterwards.
+3. hPanel → **Emails**: create the mailbox `contact@glpatlas.com` (the contact form sends from it, and copies glp1atlas@gmail.com).
+4. hPanel → **Website → Cache Manager / LiteSpeed**: purge the cache, then reload the site with Ctrl+Shift+R.
+5. hPanel → **Security → SSL**: make sure SSL is active (the site redirects everything to `https://www.glpatlas.com`).
 
 Check a build before uploading: `python3 source/audit.py` (SEO / AEO / GEO / trust checks, exits non-zero on any failure).
 Preview locally: `cd public_html && python3 -m http.server 8000`.
@@ -21,6 +26,8 @@ Preview locally: `cd public_html && python3 -m http.server 8000`.
 | --- | --- |
 | `source/build.py` | Generator + `CONFIG` (site name, domain, editor, reviewer, dates) |
 | `source/data_*.py` | All content: medicines, comparisons, guides, pillars, questions, glossary |
+| `source/blog_glp1.py`, `source/blog_other.py` | The 26 blog posts (one per medicine) |
+| `source/contact_php.txt` | Template for `/contact.php`, the PHP mailer used on Hostinger |
 | `source/og.py` | Renders 1200×630 social images, logo and app icons |
 | `source/assets/` | `style.css` (design system), `app.js` (interactions), `bg3d.js` (WebGL background) |
 | `keyword-map.csv` | Keyword → target page map |

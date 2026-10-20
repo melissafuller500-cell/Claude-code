@@ -72,7 +72,7 @@
   ].join('\n');
 
   var gl = canvas.getContext('webgl', { antialias: true, alpha: true, depth: false, premultipliedAlpha: false, powerPreference: 'low-power' });
-  if (!gl) return;
+  if (!gl) { document.documentElement.classList.add('no-webgl'); return; }
 
   function sh(type, src) {
     var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
@@ -85,7 +85,7 @@
     gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS));
     gl.linkProgram(prog);
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
-  } catch (e) { return; }
+  } catch (e) { document.documentElement.classList.add('no-webgl'); return; }
   gl.useProgram(prog);
 
   // ---- geometry (built once, static buffers)
