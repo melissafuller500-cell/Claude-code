@@ -10,7 +10,9 @@ pip install pillow            # only needed for Open Graph images + icons
 cd source && python3 build.py # writes ../public_html
 ```
 
-Upload the **contents** of `public_html/` to your web root (Apache: `.htaccess` is included).
+Upload the **contents** of `public_html/` to your web root: on Netlify drag the folder whose top level holds `index.html` (a `_headers` file is included), on Apache the `.htaccess` is included.
+
+Check a build before uploading: `python3 source/audit.py` (SEO / AEO / GEO / trust checks, exits non-zero on any failure).
 Preview locally: `cd public_html && python3 -m http.server 8000`.
 
 ## Layout
@@ -37,6 +39,7 @@ Preview locally: `cd public_html && python3 -m http.server 8000`.
 
 1. Set `REVIEWER` in `CONFIG` once a licensed clinician has signed off. Until then pages say "pending", which weakens E-E-A-T, and the editorial policy promises a review.
 2. Confirm the final `DOMAIN` and `EMAIL`. Add real profiles to `SAME_AS`.
-3. Set `FORM_ENDPOINT` (e.g. Formspree) so the contact form doesn't depend on mailto.
+3. The contact form uses Netlify Forms (`FORM_ENDPOINT = "netlify"`, honeypot spam filter). In Netlify: Forms → enable form detection, then add an email notification to contact@glpatlas.com. Not on Netlify? Put a https Formspree URL in `FORM_ENDPOINT`.
+6. Paste your Search Console / Bing verification codes into `GOOGLE_VERIFY` / `BING_VERIFY` (or verify by DNS).
 4. Re-verify prices and approval dates; they change often.
 5. Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools.

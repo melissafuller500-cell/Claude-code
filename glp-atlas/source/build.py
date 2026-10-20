@@ -12,12 +12,15 @@ from data_extra import ALIASES, PILLARS, QUESTIONS, GLOSSARY
 CONFIG = {
     "SITE": "GLP Atlas",                       # brand name (placeholder — check domain availability)
     "DOMAIN": "https://www.glpatlas.com",      # final domain, no trailing slash
-    "EMAIL": "editor@glpatlas.com",            # editorial contact
+    "EMAIL": "contact@glpatlas.com",           # main editorial contact (shown everywhere)
+    "EMAIL_ALT": "glp1atlas@gmail.com",        # secondary contact (contact page + schema)
     "EDITOR": "Dr. George Grunberger",
     "REVIEWER": "",                            # e.g. "Jane Doe, PharmD" — leave empty until a real licensed reviewer signs off
     "PUBLISHED": "2026-10-20",                 # first publication date (schema datePublished)
     "UPDATED": "2026-10-20",
-    "FORM_ENDPOINT": "",                       # e.g. Formspree URL; empty = mailto fallback
+    "FORM_ENDPOINT": "netlify",                # "netlify" = Netlify Forms (honeypot spam filter); or a https:// Formspree URL; "" = mailto
+    "GOOGLE_VERIFY": "",                       # Search Console "HTML tag" content value (or verify by DNS)
+    "BING_VERIFY": "",                         # Bing Webmaster Tools msvalidate.01 content value
     "SAME_AS": [],                             # official social / directory profiles, e.g. ["https://www.linkedin.com/company/…"]
 }
 # ===================================================================
@@ -120,23 +123,206 @@ def tldr(text, label="Quick answer"):
 
 def ext(href, text): return f'<a href="{href}" rel="nofollow noopener" target="_blank">{text}<span class="ext" aria-hidden="true">↗</span></a>'
 
+# ---------------------------------------------------------------- citations, sharing, figures
+SRC = {
+    "drugsfda": ("Drugs@FDA — approval history and labels", "https://www.accessdata.fda.gov/scripts/cder/daf/"),
+    "dpd": ("Health Canada Drug Product Database", "https://health-products.canada.ca/dpd-bdpp/"),
+    "dailymed": ("DailyMed — FDA prescribing information (NIH)", "https://dailymed.nlm.nih.gov/dailymed/"),
+    "ctgov": ("ClinicalTrials.gov — registered trials", "https://clinicaltrials.gov/"),
+    "safepharm": ("NABP safe.pharmacy — verify an online pharmacy", "https://safe.pharmacy/"),
+    "besaferx": ("FDA BeSafeRx — buying medicines online safely", "https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information"),
+    "fdaglp1": ("FDA — concerns with unapproved GLP-1 drugs used for weight loss", "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss"),
+    "medwatch": ("FDA MedWatch — report a side effect", "https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program"),
+    "medeffect": ("Health Canada MedEffect — report a side effect", "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html"),
+    "cabuy": ("Health Canada — buying drugs over the internet", "https://www.canada.ca/en/health-canada/services/buying-drugs-over-internet.html"),
+    "napra": ("NAPRA — Canada's pharmacy regulatory authorities", "https://www.napra.ca/"),
+    "novocare": ("NovoCare — Novo Nordisk patient and self-pay programs", "https://www.novocare.com/"),
+    "lillydirect": ("LillyDirect — Eli Lilly self-pay pharmacy", "https://www.lillydirect.com/"),
+    "medicare": ("Medicare.gov — drug coverage", "https://www.medicare.gov/"),
+    "niddk": ("NIDDK (NIH) — diabetes overview", "https://www.niddk.nih.gov/health-information/diabetes"),
+    "niddkins": ("NIDDK (NIH) — insulin, medicines and other diabetes treatments", "https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments"),
+    "medline": ("MedlinePlus (NIH) — diabetes medicines", "https://medlineplus.gov/diabetesmedicines.html"),
+    "legitscript": ("LegitScript — healthcare merchant certification", "https://www.legitscript.com/"),
+    "netlify": ("Netlify privacy policy (our host)", "https://www.netlify.com/privacy/"),
+}
+
+def label_src(d):
+    q = d["short"].split(" (")[0].replace(" ", "+")
+    return (f'{d["short"]} prescribing information (DailyMed)', f"https://dailymed.nlm.nih.gov/dailymed/search.cfm?query={q}")
+
+def sources(*items, title="Sources", intro=""):
+    """items: SRC keys or (text, href) tuples."""
+    links = [SRC[i] if isinstance(i, str) else i for i in items]
+    return (f'<section class="src"><h2 id="sources">{E(title)}</h2>{intro}<p class="note">Checked against these primary sources on '
+            f'<time datetime="{C["UPDATED"]}">{human_date(C["UPDATED"])}</time>.</p><ul>' +
+            "".join(f"<li>{ext(E(h), E(t))}</li>" for t, h in dict.fromkeys(links)) + "</ul></section>")
+
+def share(path, title):
+    from urllib.parse import quote
+    u, t = quote(url(path), safe=""), quote(title, safe="")
+    links = [("WhatsApp", f"https://wa.me/?text={t}%20{u}"), ("Facebook", f"https://www.facebook.com/sharer/sharer.php?u={u}"),
+             ("LinkedIn", f"https://www.linkedin.com/sharing/share-offsite/?url={u}"), ("X", f"https://twitter.com/intent/tweet?url={u}&amp;text={t}"),
+             ("Email", f"mailto:?subject={t}&amp;body={u}")]
+    return ('<div class="page-tools" aria-label="Share this page"><span class="pt-h">Share</span>' +
+            "".join(f'<a class="chip" href="{h}" rel="noopener nofollow" target="_blank">{n}</a>' for n, h in links) +
+            '<button type="button" class="chip" data-share>Copy link</button><button type="button" class="chip" data-print>Print</button></div>')
+
+def auto_faq(body):
+    """FAQPage node from question-style headings that are followed by a paragraph."""
+    qa = [(re_strip(q), re_strip(a)) for q, a in re.findall(r"<h[23][^>]*>([^<]*\?)</h[23]>\s*<p>(.*?)</p>", body, re.S)]
+    if len(qa) < 2: return None
+    return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]}
+
+def dose_chart(d):
+    """Step chart of the label titration, drawn as accessible inline SVG (theme-aware via CSS classes)."""
+    pts = []
+    for lab, val in d["dosing"]:
+        m = re.match(r"(\d+(?:\.\d+)?)\s*(mg|mcg)\b", val)  # only rows that state a dose, not "increase by…"
+        if m: pts.append((lab, float(m.group(1)), m.group(0)))
+    units = {re.sub(r"[\d.\s]", "", p[2]) for p in pts}
+    if len(pts) < 3 or len(units) != 1: return ""
+    W, H, top, base = 720, 260, 40, 200
+    n, mx = len(pts), max(p[1] for p in pts)
+    bw = (W - 40) / n
+    bars = ""
+    for i, (lab, v, txt) in enumerate(pts):
+        h = max(8, (base - top) * v / mx)
+        x = 20 + i * bw + 8
+        bars += (f'<rect class="bar" x="{x:.0f}" y="{base - h:.0f}" width="{bw - 16:.0f}" height="{h:.0f}" rx="8"/>'
+                 f'<text class="val" x="{x + (bw - 16) / 2:.0f}" y="{base - h - 10:.0f}">{E(txt)}</text>'
+                 f'<text class="lab" x="{x + (bw - 16) / 2:.0f}" y="{base + 24:.0f}">{E(lab if len(lab) < 18 else lab[:16] + "…")}</text>')
+    desc = "; ".join(f"{lab}: {txt}" for lab, _, txt in pts)
+    return (f'<figure class="chart"><svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="dc-t dc-d"><title id="dc-t">{E(d["short"])} dose steps</title>'
+            f'<desc id="dc-d">{E(desc)}</desc><defs><linearGradient id="dcg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="g1"/><stop offset="1" class="g2"/></linearGradient></defs>'
+            f'<line class="axis" x1="20" y1="{base}" x2="{W - 20}" y2="{base}"/>{bars}</svg>'
+            f'<figcaption>{E(d["short"])} label titration, step by step. Doses go up only as tolerated and as your prescriber decides.</figcaption></figure>')
+
+def steps_svg(title, desc, steps, caption, sid):
+    """Four-step infographic as accessible inline SVG. steps: [(heading, line1, line2)]"""
+    W, n = 720, len(steps)
+    w = (W - 20 - 14 * (n - 1)) / n
+    g = ""
+    for i, (h, l1, l2) in enumerate(steps):
+        x = 10 + i * (w + 14)
+        g += (f'<rect class="box" x="{x:.0f}" y="10" width="{w:.0f}" height="150" rx="16"/><circle class="dot" cx="{x + 30:.0f}" cy="44" r="16"/>'
+              f'<text class="num" x="{x + 30:.0f}" y="50">{i + 1}</text><text class="h" x="{x + 16:.0f}" y="90">{E(h)}</text>'
+              f'<text class="t" x="{x + 16:.0f}" y="116">{E(l1)}</text><text class="t" x="{x + 16:.0f}" y="136">{E(l2)}</text>')
+    return (f'<figure class="chart steps-fig"><svg viewBox="0 0 {W} 170" role="img" aria-labelledby="{sid}-t {sid}-d"><title id="{sid}-t">{E(title)}</title>'
+            f'<desc id="{sid}-d">{E(desc)}</desc>{g}</svg><figcaption>{E(caption)}</figcaption></figure>')
+
+def mechanism_fig():
+    return steps_svg("How GLP-1 medicines work", "GLP-1 medicines raise insulin after meals, lower glucagon, slow stomach emptying and reduce appetite.",
+                     [("More insulin", "released after meals,", "only when sugar is high"), ("Less glucagon", "so the liver makes", "less sugar"),
+                      ("Slower stomach", "food leaves the stomach", "more slowly"), ("Less appetite", "the brain signals", "fullness sooner")],
+                     "The four main actions of GLP-1 receptor agonists, as described on their labels.", "mech")
+
+def glucagon_fig():
+    return steps_svg("What to do in severe low blood sugar", "Give glucagon, call emergency services, turn the person on their side, give sugar once they can swallow.",
+                     [("Give glucagon", "follow the device's", "own instructions"), ("Call 911", "even if the person", "wakes up"),
+                      ("Turn on side", "they may vomit", "as they recover"), ("Give sugar", "once awake and", "able to swallow")],
+                     "General emergency steps — always follow the instructions supplied with your glucagon product.", "gluc")
+
+INSULIN_PROFILE = [  # typical action, hours (onset, peak start, peak end, duration) — approximate label ranges
+    ("insulin-lispro", "Rapid-acting (lispro, aspart, glulisine)", .25, 1, 2, 4),
+    ("regular-insulin", "Short-acting (regular)", .5, 2, 3, 6),
+    ("nph-insulin", "Intermediate (NPH)", 2, 4, 12, 16),
+    ("insulin-glargine", "Long-acting (glargine)", 2, None, None, 24),
+    ("insulin-degludec", "Ultra-long (degludec)", 1, None, None, 42),
+    ("insulin-icodec", "Once-weekly (icodec)", 2, None, None, 48),
+]
+
+def insulin_chart(d):
+    if d["cat"] != "insulin": return ""
+    same = {"insulin-aspart": "insulin-lispro", "insulin-glulisine": "insulin-lispro"}.get(d["slug"], d["slug"])
+    W, row, left = 720, 34, 250
+    H = 50 + row * len(INSULIN_PROFILE)
+    sx = lambda h: left + (W - left - 30) * min(h, 48) / 48
+    g = ""
+    for i, (slug, lab, on, p1, p2, dur) in enumerate(INSULIN_PROFILE):
+        y = 30 + i * row
+        cur = " cur" if slug == same else ""
+        g += f'<text class="lab lab-l{cur}" x="{left - 12}" y="{y + 15}">{E(lab)}</text>'
+        g += f'<rect class="bar{cur}" x="{sx(on):.0f}" y="{y + 4}" width="{sx(dur) - sx(on):.0f}" height="16" rx="8"/>'
+        if p1 is not None: g += f'<rect class="peak" x="{sx(p1):.0f}" y="{y + 4}" width="{max(sx(p2) - sx(p1), 4):.0f}" height="16" rx="6"/>'
+        if slug == "insulin-icodec": g += f'<text class="val" x="{sx(48) - 6:.0f}" y="{y + 16}" text-anchor="end">≈ 1 week →</text>'
+    ticks = "".join(f'<line class="tick" x1="{sx(h):.0f}" y1="24" x2="{sx(h):.0f}" y2="{H - 14}"/><text class="lab" x="{sx(h):.0f}" y="{H}">{h} h</text>' for h in (0, 12, 24, 36, 48))
+    return (f'<figure class="chart ins"><svg viewBox="0 0 {W} {H + 6}" role="img" aria-labelledby="ic-t ic-d"><title id="ic-t">How long each insulin type works</title>'
+            '<desc id="ic-d">Approximate duration of action: rapid-acting about 4 hours, regular about 6 hours, NPH 12 to 18 hours with a peak at 4 to 12 hours, '
+            'glargine about 24 hours, degludec up to 42 hours, icodec about one week.</desc>'
+            f'<defs><linearGradient id="dcg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="g1"/><stop offset="1" class="g2"/></linearGradient></defs>{ticks}{g}</svg>'
+            '<figcaption>Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.</figcaption></figure>')
+
 # ---------------------------------------------------------------- page shell
-NAV = [("/drugs/", "Medicines"), ("/compare/", "Compare"), ("/guides/", "Guides"), ("/questions/", "Questions"), ("/glossary/", "Glossary")]
+AC = ' aria-current="page"'
+CHEV = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>'
+
+def menu():
+    """Header menu: (label, href or None, columns [(heading, [(title, path, hint)])], 'all' link, mega?)"""
+    by_cat = lambda k: [(d["short"], f'/drugs/{d["slug"]}/', d["generic"]) for d in DRUGS if d["cat"] == k]
+    short = lambda c: c.split(" (")[0].replace(" & incretin medicines", "")
+    return [
+        ("Medicines", "/drugs/", [(short(CATS[k]), by_cat(k)) for k in CATS], ("/drugs/", f"All {len(DRUGS)} medicines"), True),
+        ("Topics", None, [("Topic guides", [(pl["h1"].split(" —")[0], f'/{pl["slug"]}/', "") for pl in PILLARS])], None, False),
+        ("Compare", "/compare/", [("Comparisons", [(c["title"].split(":")[0], f'/compare/{c["slug"]}/', "") for c in COMPARES] +
+                                   [("Compare any two medicines", "/compare/#builder", "Interactive tool")])], ("/compare/", "All comparisons"), False),
+        ("Guides", "/guides/", [("Buy safely", [(g["title"], f'/guides/{g["slug"]}/', "") for g in GUIDES])], ("/guides/", "All guides"), False),
+        ("Questions", "/questions/", [("Questions", [(q[1], f"/questions/{q[0]}/", "") for q in QUESTIONS])], ("/questions/", f"All {len(QUESTIONS)} questions"), True),
+        ("Glossary", "/glossary/", None, None, False),
+        ("About", "/about/", [("Who we are", [(TRUST[k][0], f"/{k}/", "") for k in TRUST] + [("Contact", "/contact/", "")])], None, False),
+    ]
+
+def nav_html(path):
+    out = []
+    for label, href, cols, all_link, mega in menu():
+        paths = [p for _, items in (cols or []) for _, p, _ in items]
+        exact = href == path
+        in_sec = exact or path in paths or (href and href != "/about/" and path.startswith(href))
+        cur = ' aria-current="page"' if exact else (' aria-current="true"' if in_sec else "")
+        cls = "ni" + (" has-sub" if cols else "") + (" mega" if mega else "") + (" is-active" if in_sec else "")
+        sid = "sub-" + slugify(label)
+        top = (f'<a class="nl" href="{href}"{cur}>{label}</a>' if href else
+               f'<button type="button" class="nl nl-btn" aria-expanded="false" aria-controls="{sid}"{cur}>{label}{CHEV}</button>')
+        if not cols:
+            out.append(f'<li class="{cls}">{top}</li>'); continue
+        tog = f'<button type="button" class="nt" aria-expanded="false" aria-controls="{sid}" aria-label="Show {label} pages">{CHEV}</button>' if href else ""
+        body = ""
+        for head, items in cols:
+            body += f'<div class="sub-col"><p class="sub-h">{E(head)}</p><ul>'
+            for t, p, hint in items:
+                here = p == path
+                body += (f'<li><a href="{p}"{AC if here else ""}><span>{E(t)}</span>'
+                         + (f'<small>{E(hint)}</small>' if hint else "") + ('<em class="here">You are here</em>' if here else "") + "</a></li>")
+            body += "</ul></div>"
+        foot = f'<a class="sub-all" href="{all_link[0]}">{E(all_link[1])} →</a>' if all_link else ""
+        out.append(f'<li class="{cls}">{top}{tog}<div class="sub" id="{sid}"><div class="sub-in">{body}</div>{foot}</div></li>')
+    return '<ul class="nav">' + "".join(out) + "</ul>"
 
 def og_key(path):
     return "home" if path == "/" else path.strip("/").replace("/", "-").replace(".html", "")
 
+SEO_TITLES = {
+    "/compare/wegovy-vs-zepbound/": "Wegovy vs Zepbound: Semaglutide vs Tirzepatide",
+    "/diabetes-injections/": "Diabetes Injections: Full List for Type 1 & Type 2",
+    "/guides/compounded-and-counterfeit-glp1/": "Compounded & Counterfeit GLP-1s: The Real Risks",
+    "/questions/glp1-pregnancy/": "Can You Take Ozempic or Wegovy While Pregnant?",
+}
+SEO_DESC = {
+    "/diabetes-injections/": "Every diabetes injection in the US and Canada: GLP-1s, dual agonists, insulins, combinations and glucagon — uses, dosing, side effects and cost.",
+    "/guides/how-to-buy-glp1-legally-usa/": "The legal ways to buy Wegovy, Zepbound, Ozempic, Mounjaro and GLP-1 pills in the US: prescriptions, pharmacies, telehealth and manufacturer self-pay.",
+}
+
 def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="MedicalWebPage", label="Guide",
-         og_title=None, body_class="", article=True, search=None):
+         og_title=None, body_class="", article=True, search=None, noindex=False):
     canonical = url(path)
-    indexable = path.endswith("/")
+    title, desc = SEO_TITLES.get(path, title), SEO_DESC.get(path, desc)
+    indexable = path.endswith("/") and not noindex
     suffix = f" | {C['SITE']}"
     if path == "/":
         full_title = f"{C['SITE']}: GLP-1, Weight-Loss & Diabetes Medicine Guide"
     else:
-        full_title = title + suffix if len(title) + len(suffix) <= 62 else title
+        full_title = title + suffix if len(title) + len(suffix) <= 60 else title
     if indexable:
-        if len(full_title) > 65: WARNINGS.append(f"title {len(full_title)} chars: {path}")
+        if not 30 <= len(full_title) <= 60: WARNINGS.append(f"title {len(full_title)} chars: {path}")
         if not 70 <= len(desc) <= 165: WARNINGS.append(f"description {len(desc)} chars: {path}")
     key = og_key(path)
     og_img = url(f"/og/{key}.png")
@@ -151,6 +337,9 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
            "ethicsPolicy": url("/editorial-policy/"), "actionableFeedbackPolicy": url("/contact/"),
            "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "Canada"}],
            "knowsAbout": ["GLP-1 receptor agonists", "Semaglutide", "Tirzepatide", "Orforglipron", "Insulin", "Type 2 diabetes", "Obesity medicine"]}
+    org["contactPoint"] = [{"@type": "ContactPoint", "contactType": "editorial", "email": C["EMAIL"], "availableLanguage": ["en", "fr"],
+                            "areaServed": ["US", "CA"], "url": url("/contact/")}]
+    if C.get("EMAIL_ALT"): org["contactPoint"].append({"@type": "ContactPoint", "contactType": "customer support", "email": C["EMAIL_ALT"], "availableLanguage": ["en", "fr"]})
     if C["SAME_AS"]: org["sameAs"] = C["SAME_AS"]
     site = {"@type": "WebSite", "@id": url("/#website"), "url": url("/"), "name": C["SITE"], "inLanguage": "en",
             "publisher": {"@id": url("/#org")}, "description": "Independent reference on GLP-1, incretin and insulin medicines for the United States and Canada."}
@@ -180,8 +369,8 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
         graph.append(n)
     ld = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("</", "<\\/") + "</script>"
 
-    cur = ' aria-current="page"'
-    nav = "".join(f'<a href="{h}"{cur if path.startswith(h) else ""}>{t}</a>' for h, t in NAV)
+    nav = nav_html(path)
+    verify = "".join(f'\n<meta name="{n}" content="{E(C[k])}">' for k, n in (("GOOGLE_VERIFY", "google-site-verification"), ("BING_VERIFY", "msvalidate.01")) if C.get(k) and path == "/")
     og_type = "website" if path == "/" else "article"
     art_meta = (f'\n<meta property="article:published_time" content="{C["PUBLISHED"]}"><meta property="article:modified_time" content="{C["UPDATED"]}">'
                 f'<meta property="article:author" content="{url("/about/")}">') if og_type == "article" else ""
@@ -195,7 +384,7 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
 <link rel="canonical" href="{canonical}">
 <meta name="robots" content="{robots}">
 <link rel="alternate" hreflang="en-us" href="{canonical}"><link rel="alternate" hreflang="en-ca" href="{canonical}"><link rel="alternate" hreflang="x-default" href="{canonical}">
-<meta name="author" content="{E(C['EDITOR'])}">
+<meta name="author" content="{E(C['EDITOR'])}">{verify}
 <meta name="theme-color" content="#070b14" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#f3f6fb" media="(prefers-color-scheme: light)">
 <meta name="color-scheme" content="dark light">
 <meta property="og:type" content="{og_type}"><meta property="og:site_name" content="{E(C['SITE'])}"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="en_CA">
@@ -227,7 +416,7 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
 <main id="main" class="wrap" tabindex="-1">{crumb_nav}{body}</main>
 <footer class="foot"><div class="wrap">
 <div class="cols">
-<div class="foot-brand"><strong>{E(C['SITE'])}</strong><p>Independent information on GLP-1, incretin and insulin medicines for the US and Canada. We do not sell or ship medicines.</p><p class="small">Last site-wide review: <time datetime="{C['UPDATED']}">{human_date(C['UPDATED'])}</time></p></div>
+<div class="foot-brand"><strong>{E(C['SITE'])}</strong><p>Independent information on GLP-1, incretin and insulin medicines for the US and Canada. We do not sell or ship medicines.</p><p class="foot-mail"><a href="mailto:{E(C['EMAIL'])}">{E(C['EMAIL'])}</a></p><p class="small">Last site-wide review: <time datetime="{C['UPDATED']}">{human_date(C['UPDATED'])}</time></p></div>
 <div><strong>Topics</strong><a href="/semaglutide/">Semaglutide</a><a href="/tirzepatide/">Tirzepatide</a><a href="/diabetes-injections/">Diabetes injections</a><a href="/weight-loss-injections/">Weight loss injections</a><a href="/insulin/">Insulin</a></div>
 <div><strong>Site</strong><a href="/drugs/">All medicines</a><a href="/compare/">Comparisons</a><a href="/guides/">Guides</a><a href="/questions/">Questions</a><a href="/glossary/">Glossary</a></div>
 <div><strong>Trust</strong><a href="/about/">About</a><a href="/editorial-policy/">Editorial policy</a><a href="/medical-disclaimer/">Medical disclaimer</a><a href="/affiliate-disclosure/">Affiliate disclosure</a><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a></div>
@@ -244,16 +433,17 @@ def page(path, title, desc, body, *, crumbs=None, nodes=None, kw=None, kind="Med
 <script src="{asset('app.js')}" defer></script>
 <script src="{asset('bg3d.js')}" defer></script>
 </body></html>"""
-    if indexable:
+    if path.endswith("/"):
         d = os.path.join(OUT, path.strip("/"))
         os.makedirs(d, exist_ok=True)
         target = os.path.join(d, "index.html")
+    else:
+        target = os.path.join(OUT, path.strip("/"))
+    if indexable:
         SITEMAP.append((path, og_img))
         LLM_PAGES.append((title, path, desc, body))
         if search is not False:
             SEARCH.append(search or {"t": title, "u": path, "k": label, "s": ""})
-    else:
-        target = os.path.join(OUT, path.strip("/"))
     with open(target, "w") as f:
         f.write(doc)
 
@@ -292,7 +482,8 @@ def drug_page(d):
     avoid = INSULIN_AVOID if is_ins else GLP1_AVOID
     pipeline = d["cat"] == "pipeline"
     title = f'{d["short"]} ({d["generic"]}): Uses, Dosage, Side Effects & Cost'
-    if len(title) > 62: title = f'{d["short"]}: Uses, Dosage, Side Effects & Cost'
+    if len(title) > 60: title = title.replace("Uses, ", "")
+    if len(title) > 60: title = f'{d["short"]}: Uses, Dosage, Side Effects & Cost'
     if pipeline: title = f'{d["short"]}: Approval Status, Trial Results & Availability'
     desc = f'{d["short"]} ({d["generic"]}) by {d["maker"]}: what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.'
     if len(desc) > 160: desc = f'{d["short"]} ({d["generic"]}): what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.'
@@ -300,11 +491,12 @@ def drug_page(d):
     cls = lower_first(d["cls"])
     art = "an" if cls[0].lower() in "aeiou" else "a"
     uses = [lower_first(u) for u in d["uses"]]
+    gen = "" if d["generic"].lower() == d["short"].lower() else f' ({E(d["generic"])})'
     if pipeline:
-        summary = (f'<strong>{E(d["short"])}</strong> ({E(d["generic"])}) is an investigational {E(cls)} from {E(d["maker"])}. '
+        summary = (f'<strong>{E(d["short"])}</strong>{gen} is an investigational {E(cls)} from {E(d["maker"])}. '
                    f'It is not approved and cannot legally be bought outside a registered clinical trial. {E(d["us"])}')
     else:
-        summary = (f'<strong>{E(d["short"])}</strong> ({E(d["generic"])}) is {art} {E(cls)} made by {E(d["maker"])}, used for {E(join_and(uses))}. '
+        summary = (f'<strong>{E(d["short"])}</strong>{gen} is {art} {E(cls)} made by {E(d["maker"])}, used for {E(join_and(uses))}. '
                    f'Schedule: {E(d["freq"].lower())}. It is prescription-only in the US and Canada.')
     al = ALIASES.get(d["slug"], [])
     b = f'<header class="doc-head"><span class="tag t-{d["cat"]}">{E(CATS[d["cat"]])}</span><h1>{E(d["name"])}</h1>'
@@ -319,8 +511,11 @@ def drug_page(d):
     b += '<section><h2 id="uses">What it is used for</h2><ul class="checks">' + "".join(f"<li>{E(u)}</li>" for u in d["uses"]) + "</ul></section>"
     b += (f'<section><h2 id="dosage">{E(d["short"])} dosage</h2><p class="note">Per the official label. Your prescriber sets your dose — never change it on your own.</p>'
           f'<div class="tbl"><table class="t steps"><caption class="sr">{E(d["short"])} label dosing schedule</caption><tbody>' +
-          "".join(f'<tr><th scope="row"><span class="step">{i + 1}</span>{E(a)}</th><td>{E(v)}</td></tr>' for i, (a, v) in enumerate(d["dosing"])) + "</tbody></table></div>")
+          "".join(f'<tr><th scope="row"><span class="step">{i + 1}</span>{E(a)}</th><td>{E(v)}</td></tr>' for i, (a, v) in enumerate(d["dosing"])) + "</tbody></table></div>" + dose_chart(d))
     b += f'<h3>How to take it</h3><p>{E(d["take"])}</p><h3>Storage</h3><p>{E(d["store"])}</p></section>'
+    if not dose_chart(d) and d["cat"] in ("glp1", "pipeline"): b += '<section><h2 id="how-it-works">How it works</h2>' + mechanism_fig() + "</section>"
+    if d["slug"] == "glucagon": b += '<section><h2 id="emergency-steps">Emergency steps</h2>' + glucagon_fig() + "</section>"
+    if is_ins: b += '<section><h2 id="insulin-types">How long it works compared with other insulins</h2>' + insulin_chart(d) + "</section>"
     if not pipeline:
         b += ('<section><h2 id="side-effects">Side effects</h2><div class="two"><div class="pane"><h3>Common</h3><ul>' + "".join(f"<li>{E(x)}</li>" for x in common) +
               '</ul></div><div class="pane pane-alert"><h3>Serious — get medical help</h3><ul>' + "".join(f"<li>{E(x)}</li>" for x in serious) +
@@ -347,17 +542,13 @@ def drug_page(d):
     b += fh
     if al:
         b += '<p class="also"><strong>Also searched as:</strong> ' + E(", ".join(al)) + '</p>'
-    q = d["short"].split(" (")[0].replace(" ", "+")
-    b += f'''<section class="src"><h2 id="sources">Sources</h2><ul>
-<li>{ext(f"https://dailymed.nlm.nih.gov/dailymed/search.cfm?query={q}", "FDA prescribing information (DailyMed)")}</li>
-<li>{ext("https://www.accessdata.fda.gov/scripts/cder/daf/", "Drugs@FDA")}</li>
-<li>{ext("https://health-products.canada.ca/dpd-bdpp/", "Health Canada Drug Product Database")}</li></ul></section>'''
+    b += sources(label_src(d), "drugsfda", "dpd", "ctgov" if pipeline else ("medwatch" if not is_ins else "niddkins"), "medeffect")
     rel = [DRUG.get(r) for r in d["related"] if r in DRUG]
     rc = [c for c in COMPARES if c["slug"] in d["related"]]
     if rel or rc:
         b += '<section><h2>Related</h2><div class="grid">' + "".join(card(r) for r in rel) + \
              "".join(link_card(f'/compare/{c["slug"]}/', "Compare", c["title"]) for c in rc) + "</div></section>"
-    b += '<div class="page-tools"><button type="button" class="chip" data-share>Share this page</button><button type="button" class="chip" data-print>Print</button></div>'
+    b += share(p, title)
     b, toc = with_toc(b)
     nodes = [drug_node(d, p)]
     if fnode: nodes.append(fnode)
@@ -374,7 +565,9 @@ def compare_page(c):
     b += f'<section><h2 id="side-by-side">Side by side</h2><div class="tbl"><table class="t cmp"><caption class="sr">{E(a["short"])} compared with {E(bd["short"])}</caption><thead><tr><th scope="col">Feature</th><th scope="col"><a href="/drugs/{a["slug"]}/">{E(a["short"])}</a></th><th scope="col"><a href="/drugs/{bd["slug"]}/">{E(bd["short"])}</a></th></tr></thead><tbody>' + \
          "".join(f'<tr><th scope="row">{E(r[0])}</th><td>{E(r[1])}</td><td>{E(r[2])}</td></tr>' for r in c["rows"]) + "</tbody></table></div></section>"
     b += '<section><h2 id="which-one">Which one is right for you?</h2>' + c["body"] + '<div class="warn" role="note">Both are prescription medicines. Which one fits depends on your diagnosis, history and coverage — decide with your prescriber.</div></section>'
+    b += sources(label_src(a), label_src(bd), "drugsfda", "dpd")
     b += f'<section><h2>Related</h2><div class="grid">{card(a)}{card(bd)}{link_card("/compare/#builder", "Tool", "Compare any two medicines")}</div></section>'
+    b += share(p, c["title"])
     b, toc = with_toc(b)
     nodes = [{"@type": "ItemList", "@id": url(p) + "#compared", "name": c["title"], "itemListElement": [
         {"@type": "ListItem", "position": 1, "item": {"@type": "Drug", "name": a["short"], "nonProprietaryName": a["generic"], "url": url(f'/drugs/{a["slug"]}/')}},
@@ -382,41 +575,82 @@ def compare_page(c):
     page(p, c["title"], c["desc"], doc_layout(b, toc), crumbs=[("Home", "/"), ("Compare", "/compare/"), (c["title"].split(":")[0], p)],
          nodes=nodes, label="Comparison", search={"t": c["title"], "u": p, "k": "Compare", "s": a["generic"] + " " + bd["generic"]})
 
+GUIDE_SRC = {
+    "how-to-buy-glp1-legally-usa": ("safepharm", "besaferx", "novocare", "lillydirect", "fdaglp1"),
+    "how-to-buy-glp1-legally-canada": ("cabuy", "napra", "dpd", "medeffect"),
+    "glp1-cost-without-insurance": ("novocare", "lillydirect", "medicare", "safepharm"),
+    "compounded-and-counterfeit-glp1": ("fdaglp1", "besaferx", "safepharm", "medwatch", "medeffect"),
+    "glp1-side-effects": ("dailymed", "medwatch", "medeffect", "fdaglp1"),
+    "glp1-pipeline-2026": ("ctgov", "drugsfda", "fdaglp1"),
+}
+
 def guide_page(g):
     p = f'/guides/{g["slug"]}/'
     first = re.search(r"<p>(.*?)</p>", g["body"], re.S)
     b = f'<header class="doc-head"><span class="tag">Guide</span><h1>{E(g["title"])}</h1>{updated_box()}<p class="lead">{E(g["desc"])}</p></header>'
     if first: b += tldr(first.group(1), "Key point")
     b += g["body"].replace(first.group(0), "", 1) if first else g["body"]
+    b += sources(*GUIDE_SRC.get(g["slug"], ("drugsfda", "dpd")))
+    b += share(p, g["title"])
     b, toc = with_toc(b)
-    page(p, g["title"], g["desc"], doc_layout(b, toc), crumbs=[("Home", "/"), ("Guides", "/guides/"), (g["title"], p)], label="Guide",
+    fq = auto_faq(g["body"])
+    page(p, g["title"], g["desc"], doc_layout(b, toc), crumbs=[("Home", "/"), ("Guides", "/guides/"), (g["title"], p)], label="Guide", nodes=[fq] if fq else None,
          search={"t": g["title"], "u": p, "k": "Guide", "s": g["desc"]})
 
-def fill(s): return s.format(SITE=E(C["SITE"]), EMAIL=E(C["EMAIL"]), EDITOR=E(C["EDITOR"]), REVIEWER=E(REVIEWER_TXT))
+def fill(s): return s.format(SITE=E(C["SITE"]), EMAIL=E(C["EMAIL"]), EMAIL_ALT=E(C.get("EMAIL_ALT") or C["EMAIL"]), EDITOR=E(C["EDITOR"]),
+                             REVIEWER=E(REVIEWER_TXT), UPDATED=human_date(C["UPDATED"]))
+
+TRUST_TITLES = {
+    "about": "About GLP Atlas: Independent GLP-1 Medicine Reference",
+    "editorial-policy": "Editorial Policy: How We Research and Review",
+    "medical-disclaimer": "Medical Disclaimer: Information, Not Medical Advice",
+    "affiliate-disclosure": "Affiliate Disclosure: How GLP Atlas Is Funded",
+    "privacy": "Privacy Policy: What Data GLP Atlas Collects",
+}
+TRUST_SRC = {"about": ("drugsfda", "dpd", "dailymed"), "editorial-policy": ("drugsfda", "dpd", "dailymed", "ctgov"),
+             "medical-disclaimer": ("medwatch", "medeffect"), "affiliate-disclosure": ("legitscript", "safepharm"), "privacy": ("netlify",)}
 
 def trust_pages():
     kinds = {"about": "AboutPage"}
     for slug, (t, desc, body) in TRUST.items():
         p = f"/{slug}/"
         body = fill(body)
-        if slug == "about":
-            body = body.replace(f"Editor: {E(C['EDITOR'])}.", f'<span id="editor">Editor: <strong>{E(C["EDITOR"])}</strong></span>.')
-        if slug == "editorial-policy":
-            body = body.replace("<li>Corrections:", '<li id="corrections">Corrections:')
         long_desc = desc if len(desc) >= 70 else f"{desc} {C['SITE']} is an independent GLP-1, weight-loss and diabetes medicine reference for the US and Canada."
-        page(p, t, long_desc, f'<article class="doc doc-narrow"><header class="doc-head"><h1>{E(t)}</h1></header>{body}</article>',
-             crumbs=[("Home", "/"), (t, p)], kind=kinds.get(slug, "WebPage"), label="About", article=False, search={"t": t, "u": p, "k": "Site", "s": ""})
-    action = C["FORM_ENDPOINT"] or f"mailto:{C['EMAIL']}"
-    enc = "" if C["FORM_ENDPOINT"] else ' enctype="text/plain"'
-    body = f'''<article class="doc doc-narrow"><header class="doc-head"><h1>Contact the editors</h1></header>
+        b = f'<header class="doc-head"><span class="tag">About {E(C["SITE"])}</span><h1>{E(t)}</h1>{updated_box()}</header>{body}' + sources(*TRUST_SRC.get(slug, ("drugsfda",)))
+        page(p, TRUST_TITLES.get(slug, t), long_desc, f'<article class="doc doc-narrow">{b}</article>', og_title=t,
+             crumbs=[("Home", "/"), (t, p)], kind=kinds.get(slug, "WebPage"), label="About", search={"t": t, "u": p, "k": "Site", "s": ""})
+    ep = C["FORM_ENDPOINT"]
+    if ep == "netlify":
+        form_tag = '<form class="form" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="contact">'
+    elif ep:
+        form_tag = f'<form class="form" action="{E(ep)}" method="POST">'
+    else:
+        form_tag = f'<form class="form" action="mailto:{E(C["EMAIL"])}" method="POST" enctype="text/plain">'
+    alt = f' or <a href="mailto:{E(C["EMAIL_ALT"])}">{E(C["EMAIL_ALT"])}</a>' if C.get("EMAIL_ALT") else ""
+    intro = tldr(f'Write to <a href="mailto:{E(C["EMAIL"])}">{E(C["EMAIL"])}</a>{alt}, or use the form below. We answer corrections within 5 business days.', "How to reach us")
+    alt_card = f'<div><b>General enquiries</b><a href="mailto:{E(C["EMAIL_ALT"])}">{E(C["EMAIL_ALT"])}</a></div>' if C.get("EMAIL_ALT") else ""
+    body = f'''<header class="doc-head"><span class="tag">Contact</span><h1>Contact the editors</h1>{updated_box()}</header>
+{intro}
 <div class="warn" role="note"><strong>We do not sell, ship or broker medicines and cannot answer requests to buy them.</strong> For medical questions, ask your doctor or pharmacist. In an emergency call 911.</div>
-<p>Use this form for corrections, editorial questions, press and partnership enquiries. Email: <a href="mailto:{E(C['EMAIL'])}">{E(C['EMAIL'])}</a></p>
-<form class="form" action="{E(action)}" method="post"{enc}>
+<div class="contact-cards"><div><b>Editorial &amp; corrections</b><a href="mailto:{E(C['EMAIL'])}">{E(C['EMAIL'])}</a></div>{alt_card}<div><b>Response time</b>Within 5 business days</div></div>
+<h2 id="form">Send a message</h2>
+<p>Use this form for corrections, editorial questions, press and partnership enquiries. Please do not include personal health information.</p>
+{form_tag}
+<p class="hp" aria-hidden="true"><label>Leave this field empty<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <label>Name<input name="name" autocomplete="name" required></label><label>Email<input type="email" name="email" autocomplete="email" required></label>
 <label>Topic<select name="topic"><option>Correction</option><option>Editorial question</option><option>Press</option><option>Partnership / advertising</option></select></label>
-<label>Message<textarea name="message" rows="6" required></textarea></label><button class="btn" type="submit">Send message</button></form></article>'''
-    page("/contact/", "Contact", f"Contact the {C['SITE']} editorial team for corrections, editorial questions, press and partnership enquiries. We do not sell medicines.", body,
-         crumbs=[("Home", "/"), ("Contact", "/contact/")], kind="ContactPage", label="Contact", article=False, search={"t": "Contact the editors", "u": "/contact/", "k": "Site", "s": "email corrections press"})
+<label>Message<textarea name="message" rows="6" required></textarea></label>
+<p class="note">By sending this form you agree that we store your message to reply to you. See our <a href="/privacy/">privacy policy</a>.</p>
+<button class="btn" type="submit">Send message</button></form>
+''' + sources("medwatch", "medeffect", title="Had a side effect? Report it", intro="<p>We cannot give medical advice. Tell your prescriber or pharmacist, and report it to the regulator so it is tracked nationally.</p>")
+    page("/contact/", "Contact the GLP Atlas Editors: Corrections & Press",
+         f"Contact the {C['SITE']} editorial team at {C['EMAIL']} for corrections, editorial questions, press and partnership enquiries. We do not sell medicines.",
+         f'<article class="doc doc-narrow">{body}</article>', og_title="Contact the editors",
+         crumbs=[("Home", "/"), ("Contact", "/contact/")], kind="ContactPage", label="Contact", search={"t": "Contact the editors", "u": "/contact/", "k": "Site", "s": "email corrections press " + C["EMAIL"]})
+    page("/contact/thanks/", "Message sent", "Thank you — your message reached the editors.",
+         f'<section class="hero hero-404"><p class="eyebrow">Message sent</p><h1>Thank you — we got your message</h1><p class="hero-sub">The editors reply within 5 business days from {E(C["EMAIL"])}.</p>'
+         '<p><a class="btn" href="/">Back to the homepage</a> <a class="btn btn-ghost" href="/drugs/">Browse medicines</a></p></section>',
+         kind="WebPage", label="Contact", body_class="home", article=False, noindex=True)
 
 def item_list(name, items):
     return {"@type": "ItemList", "@id": url("/") + "#list-" + slugify(name), "name": name, "numberOfItems": len(items),
@@ -430,41 +664,44 @@ CHIPS = '''<div class="filters" role="group" aria-label="Filter medicines">
 
 def hubs():
     b = ('<header class="hub-head"><span class="eyebrow">Medicine finder</span><h1>All GLP-1, incretin and insulin medicines</h1>'
-         f'<p class="lead">{len(DRUGS)} medicines available or in development in the United States and Canada. Filter by what they treat, how they are taken, and how often.</p></header>'
+         f'<p class="lead">{len(DRUGS)} medicines available or in development in the United States and Canada. Filter by what they treat, how they are taken, and how often.</p>' + updated_box() + '</header>'
          '<div class="finder"><div class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
          '<input class="search" id="drug-q" type="search" placeholder="Search by brand, generic or misspelling…" aria-label="Search medicines"></div>' + CHIPS +
          '<p class="count" aria-live="polite"><span data-count>' + str(len(DRUGS)) + '</span> medicines shown</p></div>')
     for k, v in CATS.items():
         b += f'<section class="drug-group reveal"><h2>{E(v)}</h2><div class="grid">' + "".join(card(d) for d in DRUGS if d["cat"] == k) + "</div></section>"
     b += '<p class="empty" hidden>No medicine matches those filters. <button type="button" class="chip" data-reset>Clear filters</button></p>'
+    b += sources("drugsfda", "dailymed", "dpd", "ctgov")
     page("/drugs/", "All GLP-1, Incretin & Insulin Medicines (A–Z)",
          "Every GLP-1, incretin, insulin and diabetes injectable in the US and Canada, with uses, label dosing, side effects and legal access.", b,
-         crumbs=[("Home", "/"), ("Medicines", "/drugs/")], kind="CollectionPage", label="Medicines", article=False,
+         crumbs=[("Home", "/"), ("Medicines", "/drugs/")], kind="CollectionPage", label="Medicines",
          nodes=[item_list("All medicines", [(d["name"], f'/drugs/{d["slug"]}/') for d in DRUGS])],
          search={"t": "All medicines (A–Z)", "u": "/drugs/", "k": "Hub", "s": "list finder"})
 
     opts = "".join(f'<optgroup label="{E(v)}">' + "".join(f'<option value="{d["slug"]}">{E(d["name"])}</option>' for d in DRUGS if d["cat"] == k) + "</optgroup>" for k, v in CATS.items())
     b = ('<header class="hub-head"><span class="eyebrow">Side by side</span><h1>GLP-1 comparisons</h1>'
-         '<p class="lead">Editor-written comparisons of the most-searched pairs, plus a builder to line up any two medicines from the label facts.</p></header>'
+         '<p class="lead">Editor-written comparisons of the most-searched pairs, plus a builder to line up any two medicines from the label facts.</p>' + updated_box() + '</header>'
          '<section><h2>Editorial comparisons</h2><div class="grid">' +
          "".join(link_card(f'/compare/{c["slug"]}/', "Compare", c["title"], c["desc"]) for c in COMPARES) + "</div></section>"
          f'<section class="builder reveal" id="builder"><h2>Compare any two medicines</h2><p class="note">Facts pulled from each medicine page. Pick two to see them side by side.</p>'
          f'<div class="cmp-pick"><label>First medicine<select id="cmpA">{opts}</select></label>'
          '<button type="button" class="ibtn swap" id="cmpSwap" aria-label="Swap medicines">⇄</button>'
          f'<label>Second medicine<select id="cmpB">{opts}</select></label></div>'
-         '<div id="cmpOut" class="cmp-out" aria-live="polite"><noscript><p>Turn on JavaScript to use the comparison builder, or open the editorial comparisons above.</p></noscript></div></section>')
+         '<div id="cmpOut" class="cmp-out" aria-live="polite"><noscript><p>Turn on JavaScript to use the comparison builder, or open the editorial comparisons above.</p></noscript></div></section>'
+         + sources("drugsfda", "dailymed", "dpd"))
     page("/compare/", "GLP-1 Comparisons: Ozempic, Wegovy, Zepbound & More",
          "Side-by-side comparisons of Ozempic, Wegovy, Zepbound, Mounjaro, Foundayo and Saxenda, plus a tool to compare any two GLP-1 or insulin medicines.", b,
-         crumbs=[("Home", "/"), ("Compare", "/compare/")], kind="CollectionPage", label="Compare", article=False,
+         crumbs=[("Home", "/"), ("Compare", "/compare/")], kind="CollectionPage", label="Compare",
          nodes=[item_list("Comparisons", [(c["title"], f'/compare/{c["slug"]}/') for c in COMPARES])],
          search={"t": "Compare any two medicines", "u": "/compare/", "k": "Tool", "s": "comparison builder vs versus"})
 
     b = ('<header class="hub-head"><span class="eyebrow">Buy safely</span><h1>GLP-1 guides</h1>'
-         '<p class="lead">Practical, source-based guides on legal access, real costs, side effects and how to avoid counterfeit pens.</p></header>'
-         '<div class="grid grid-lg">' + "".join(link_card(f'/guides/{g["slug"]}/', "Guide", g["title"], g["desc"]) for g in GUIDES) + "</div>")
+         '<p class="lead">Practical, source-based guides on legal access, real costs, side effects and how to avoid counterfeit pens.</p>' + updated_box() + '</header>'
+         '<div class="grid grid-lg">' + "".join(link_card(f'/guides/{g["slug"]}/', "Guide", g["title"], g["desc"]) for g in GUIDES) + "</div>"
+         + sources("safepharm", "besaferx", "cabuy", "fdaglp1"))
     page("/guides/", "GLP-1 Guides: Buying Legally, Cost & Safety",
          "Guides on buying GLP-1 medicines legally in the US and Canada, costs without insurance, side effects and counterfeit risks.", b,
-         crumbs=[("Home", "/"), ("Guides", "/guides/")], kind="CollectionPage", label="Guides", article=False,
+         crumbs=[("Home", "/"), ("Guides", "/guides/")], kind="CollectionPage", label="Guides",
          nodes=[item_list("Guides", [(g["title"], f'/guides/{g["slug"]}/') for g in GUIDES])],
          search={"t": "All guides", "u": "/guides/", "k": "Hub", "s": ""})
 
@@ -483,19 +720,24 @@ def home():
 <h1>GLP-1, weight-loss and diabetes medicines — <span class="grad">explained clearly</span></h1>
 <p class="hero-sub">Approvals, label dosing, side effects, costs and the legal ways to get every GLP-1, incretin and insulin medicine in the United States and Canada.</p>
 <div class="hero-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="search" type="search" data-palette placeholder="Search Ozempic, Zepbound, Foundayo…" aria-label="Search medicines and questions"><kbd>⌘K</kbd></div>
-<div class="quick">{"".join(f'<button type="button" class="chip" data-palette-q="{q}">{q}</button>' for q in quick)}</div>
+<div class="hero-cta"><a class="btn" href="/drugs/">Find your medicine</a><a class="btn btn-ghost" href="/compare/#builder">Compare two medicines</a></div>
+<div class="quick"><span class="quick-h">Popular:</span>{"".join(f'<button type="button" class="chip" data-palette-q="{q}">{q}</button>' for q in quick)}</div>
+<p class="bg-hint" aria-hidden="true"><span class="h-mouse">Move your cursor or click the background — the molecules react.</span><span class="h-touch">Tap the background to send a pulse through the molecules.</span></p>
 <dl class="stats">{"".join(f'<div><dt>{t}</dt><dd data-count-to="{n}">{n}</dd></div>' for n, t in stats)}</dl>
 </section>
-<section class="reveal">{tldr('A <strong>GLP-1 receptor agonist</strong> is a medicine that mimics the gut hormone GLP-1: it raises insulin after meals, lowers glucagon, slows stomach emptying and reduces appetite. Semaglutide (Ozempic, Wegovy) and tirzepatide (Mounjaro, Zepbound) are the best known; all are prescription-only in the US and Canada. <a href="/questions/what-is-glp1/">Read the full answer →</a>', "What is a GLP-1?")}</section>
+<section class="reveal">{tldr('A <strong>GLP-1 receptor agonist</strong> is a medicine that mimics the gut hormone GLP-1: it raises insulin after meals, lowers glucagon, slows stomach emptying and reduces appetite. Semaglutide (Ozempic, Wegovy) and tirzepatide (Mounjaro, Zepbound) are the best known; all are prescription-only in the US and Canada. <a href="/questions/what-is-glp1/">Read the full answer →</a>', "What is a GLP-1?")}{mechanism_fig()}</section>
 <section class="reveal"><div class="sec-head"><h2>Most searched</h2><a class="more" href="/drugs/">All {len(DRUGS)} medicines →</a></div><div class="grid">{"".join(card(DRUG[s]) for s in feat)}</div></section>
 <section class="reveal"><div class="sec-head"><h2>What changed in 2026</h2></div><ol class="timeline">{"".join(f'<li><time datetime="{iso}">{lab}</time><a href="{h}">{t}</a></li>' for iso, lab, t, h in NEWS)}</ol></section>
 <section class="reveal"><div class="sec-head"><h2>Explore by topic</h2></div><div class="grid">{"".join(link_card(f'/{pl["slug"]}/', "Topic", pl["h1"]) for pl in PILLARS)}</div></section>
 <section class="reveal split"><div><div class="sec-head"><h2>Top questions</h2><a class="more" href="/questions/">All questions →</a></div><ul class="qlinks">{"".join(f'<li><a href="/questions/{q[0]}/">{E(q[1])}</a></li>' for q in QUESTIONS[:8])}</ul></div>
 <div class="cta-panel"><span class="eyebrow">Interactive</span><h2>Compare any two medicines</h2><p>Line up dosing schedules, approvals and availability for any pair — from Wegovy vs Zepbound to Lantus vs Tresiba.</p><a class="btn" href="/compare/#builder">Open the comparison builder</a></div></section>
 <section class="reveal"><div class="sec-head"><h2>Compare</h2><a class="more" href="/compare/">All comparisons →</a></div><div class="grid">{"".join(link_card(f'/compare/{c["slug"]}/', "Compare", c["title"]) for c in COMPARES)}</div></section>
-<section class="reveal"><div class="sec-head"><h2>Buy safely</h2><a class="more" href="/guides/">All guides →</a></div><div class="grid">{"".join(link_card(f'/guides/{g["slug"]}/', "Guide", g["title"]) for g in GUIDES[:4])}</div></section>'''
+<section class="reveal"><div class="sec-head"><h2>Buy safely</h2><a class="more" href="/guides/">All guides →</a></div><div class="grid">{"".join(link_card(f'/guides/{g["slug"]}/', "Guide", g["title"]) for g in GUIDES[:4])}</div></section>
+<section class="reveal trust-strip"><div><span class="eyebrow">Editorial standards</span><h2>Where our facts come from</h2>
+<p>Every page is written from official labels and regulators, carries its review date, and is signed by our editor, <a href="/about/#editor">{E(C["EDITOR"])}</a>. We never sell medicines.</p></div>
+<ul class="src-logos">{"".join(f'<li>{ext(E(SRC[k][1]), E(SRC[k][0].split(" — ")[0]))}</li>' for k in ("drugsfda", "dailymed", "dpd", "ctgov", "safepharm"))}</ul></section>'''
     page("/", "GLP-1, weight-loss & diabetes medicines explained",
-         "Independent US & Canada guide to GLP-1 and diabetes medicines — Ozempic, Wegovy, Zepbound, Mounjaro, Foundayo, insulin: dosing, side effects, cost, legal access.",
+         "Independent US & Canada guide to GLP-1 and diabetes medicines — Ozempic, Wegovy, Zepbound, Mounjaro, Foundayo, insulin: dosing, side effects, cost, access.",
          b, kind="WebPage", label="US & Canada", body_class="home", article=False,
          og_title="GLP-1, weight-loss & diabetes medicines — explained clearly",
          nodes=[item_list("Most searched medicines", [(DRUG[s]["name"], f"/drugs/{s}/") for s in feat])],
@@ -512,12 +754,15 @@ def pillar_page(pl):
     rq = [q for q in QUESTIONS if set(q[3]) & set(pl["drugs"])][:10]
     if rq:
         b += '<section><h2 id="popular-questions">Popular questions</h2><ul class="qlinks">' + "".join(f'<li><a href="/questions/{q[0]}/">{E(q[1])}</a></li>' for q in rq) + '</ul></section>'
+    b += sources(*[label_src(DRUG[s]) for s in pl["drugs"][:4]], "drugsfda", "dpd", "niddkins" if pl["slug"] == "insulin" else "niddk")
+    b += share(p, pl["title"])
     b, toc = with_toc(b)
+    fq = auto_faq(pl["body"])
     kw = pl["kw"] + [a for s in pl["drugs"] for a in ALIASES.get(s, [])[:4]]
     node = {"@type": "ItemList", "@id": url(p) + "#medicines", "name": f'Medicines: {pl["h1"].split(" —")[0]}',
             "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": {"@type": "Drug", "@id": url(f"/drugs/{s}/") + "#drug", "name": DRUG[s]["short"],
                                  "nonProprietaryName": DRUG[s]["generic"], "url": url(f"/drugs/{s}/")}} for i, s in enumerate(pl["drugs"])]}
-    page(p, pl["title"], pl["desc"], doc_layout(b, toc), crumbs=[("Home", "/"), (pl["h1"].split(" —")[0], p)], nodes=[node], kw=kw, label="Topic",
+    page(p, pl["title"], pl["desc"], doc_layout(b, toc), crumbs=[("Home", "/"), (pl["h1"].split(" —")[0], p)], nodes=[node] + ([fq] if fq else []), kw=kw, label="Topic",
          og_title=pl["h1"], search={"t": pl["h1"], "u": p, "k": "Topic", "s": " ".join(pl["kw"])})
 
 def question_pages():
@@ -533,27 +778,29 @@ def question_pages():
         others = [q for q in QUESTIONS if q[0] != slug and set(q[3]) & set(rel)][:6]
         if others:
             b += '<section><h2>More questions</h2><ul class="qlinks">' + "".join(f'<li><a href="/questions/{q[0]}/">{E(q[1])}</a></li>' for q in others) + '</ul></section>'
-        b += '<div class="page-tools"><button type="button" class="chip" data-share>Share this answer</button></div>'
+        b += sources(*[label_src(DRUG[r]) for r in rel[:3] if r in DRUG], "fdaglp1" if "compound" in slug or "fake" in slug or "generic" in slug else "medwatch", "dpd")
+        b += share(p, qn)
         faq = {"@type": "FAQPage", "@id": url(p) + "#faq", "mainEntity": [{"@type": "Question", "name": qn, "acceptedAnswer": {"@type": "Answer", "text": plain}}]}
         page(p, qn, desc, f'<article class="doc doc-narrow">{b}</article>', crumbs=[("Home", "/"), ("Questions", "/questions/"), (qn, p)], nodes=[faq],
              kw=kw + [DRUG[r]["short"] for r in rel if r in DRUG], label="Question",
              search={"t": qn, "u": p, "k": "Question", "s": " ".join(kw)})
     b = ('<header class="hub-head"><span class="eyebrow">Answers</span><h1>Questions people ask about GLP-1s and diabetes injections</h1>'
-         f'<p class="lead">{len(QUESTIONS)} short, label-based answers: missed doses, alcohol, side effects, stopping, pregnancy, storage and cost.</p></header>'
+         f'<p class="lead">{len(QUESTIONS)} short, label-based answers: missed doses, alcohol, side effects, stopping, pregnancy, storage and cost.</p>' + updated_box() + '</header>'
          '<div class="finder"><div class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
          '<input class="search" type="search" data-filter=".qlist li" placeholder="Search questions…" aria-label="Search questions"></div></div><ul class="qlist qlinks">' +
          "".join(f'<li data-q="{E((q[1] + " " + " ".join(q[4])).lower())}"><a href="/questions/{q[0]}/">{E(q[1])}</a></li>' for q in QUESTIONS) + '</ul>'
-         '<p class="empty" hidden>No question matches. Try the <button type="button" class="linkish" data-open-palette>site search</button>.</p>')
+         '<p class="empty" hidden>No question matches. Try the <button type="button" class="linkish" data-open-palette>site search</button>.</p>'
+         + sources("dailymed", "drugsfda", "dpd", "medwatch"))
     page("/questions/", "Questions About Ozempic, Wegovy, Zepbound & Insulin",
-         "Answers to the most-searched questions about semaglutide, tirzepatide, GLP-1 pills and insulin: missed doses, alcohol, side effects, stopping, pregnancy and cost.", b,
-         crumbs=[("Home", "/"), ("Questions", "/questions/")], kind="CollectionPage", label="Questions", article=False,
+         "Answers to the most-searched questions about semaglutide, tirzepatide, GLP-1 pills and insulin: missed doses, alcohol, side effects, pregnancy and cost.", b,
+         crumbs=[("Home", "/"), ("Questions", "/questions/")], kind="CollectionPage", label="Questions",
          nodes=[item_list("Questions", [(q[1], f"/questions/{q[0]}/") for q in QUESTIONS])],
          kw=[k for q in QUESTIONS for k in q[4]][:40], search={"t": "All questions", "u": "/questions/", "k": "Hub", "s": "faq"})
 
 def glossary_page():
     letters = sorted({t[0].upper() for t, _ in GLOSSARY})
     b = ('<header class="doc-head"><span class="tag">Reference</span><h1>GLP-1 and diabetes glossary</h1>'
-         f'<p class="lead">{len(GLOSSARY)} plain-English definitions of the terms you will meet on labels, in trials and at the pharmacy.</p></header>'
+         f'<p class="lead">{len(GLOSSARY)} plain-English definitions of the terms you will meet on labels, in trials and at the pharmacy.</p>{updated_box()}</header>'
          '<div class="finder"><div class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
          '<input class="search" type="search" data-filter=".gl > div" placeholder="Filter terms…" aria-label="Filter glossary terms"></div>'
          '<nav class="az" aria-label="Jump to letter">' + "".join(f'<a href="#letter-{l}">{l}</a>' for l in letters) + '</nav></div><dl class="gl">')
@@ -564,7 +811,7 @@ def glossary_page():
         seen.add(l)
         b += f'<div data-q="{E((t + " " + dfn).lower())}"{anchor}><dt id="{E(slugify(t))}">{E(t)}</dt><dd>{E(dfn)}</dd></div>'
         SEARCH.append({"t": t, "u": f"/glossary/#{slugify(t)}", "k": "Glossary", "s": dfn})
-    b += '</dl><p class="empty" hidden>No term matches.</p>'
+    b += '</dl><p class="empty" hidden>No term matches.</p>' + sources("niddk", "medline", "drugsfda")
     node = {"@type": "DefinedTermSet", "@id": url("/glossary/") + "#terms", "_about": True, "name": "GLP-1 and diabetes glossary",
             "hasDefinedTerm": [{"@type": "DefinedTerm", "@id": url("/glossary/#" + slugify(t)), "name": t, "description": dfn,
                                 "inDefinedTermSet": {"@id": url("/glossary/") + "#terms"}} for t, dfn in GLOSSARY]}

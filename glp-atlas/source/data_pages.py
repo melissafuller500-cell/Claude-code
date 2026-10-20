@@ -67,14 +67,58 @@ GUIDES = [
 ]
 
 TRUST = {
-"about":("About us","Who we are and why this site exists.","""<p>{SITE} is an independent reference on GLP-1, incretin and insulin medicines for readers in the United States and Canada. We explain what each medicine is approved for, how it is dosed according to its official label, its risks, and the legal ways to obtain it.</p>
+"about":("About us","Who we are, why this independent GLP-1 and diabetes medicine reference exists, and how it is funded.","""<p>{SITE} is an independent reference on GLP-1, incretin and insulin medicines for readers in the United States and Canada. We explain what each medicine is approved for, how it is dosed according to its official label, its risks, and the legal ways to obtain it.</p>
 <p><strong>We do not sell, ship or broker medicines.</strong> We never process orders and never ask readers to contact us to buy anything.</p>
-<p>Editor: {EDITOR}. Medical review: {REVIEWER}.</p>"""),
-"editorial-policy":("Editorial policy","How we research, review and update pages.","""<ul><li>Every page is written from primary sources: FDA and Health Canada labels, manufacturer releases and peer-reviewed trials.</li>
-<li>Each drug page is reviewed by a licensed clinician before publication and on every major update. The reviewer's name and date appear on the page.</li>
+<h2 id="editor">Who writes and reviews the content</h2>
+<ul><li><strong>Editor:</strong> {EDITOR} — responsible for every page and every update.</li>
+<li><strong>Medical review:</strong> {REVIEWER}.</li>
+<li><strong>Last site-wide review:</strong> {UPDATED}.</li></ul>
+<h2 id="mission">What we cover</h2>
+<ul><li>26 GLP-1, incretin, insulin and emergency diabetes medicines, plus two pipeline drugs.</li>
+<li>Side-by-side comparisons, buying guides for the US and Canada, and short answers to common questions.</li>
+<li>Prices, approvals and generics that change often — each page shows the date it was last checked.</li></ul>
+<h2 id="how-we-work">How we work</h2>
+<p>Facts come from primary sources: FDA and Health Canada labels, manufacturer releases and peer-reviewed trials. We do not publish anonymous claims or user testimonials. Read the full <a href="/editorial-policy/">editorial policy</a>.</p>
+<h2 id="contact">Contact</h2>
+<p>Corrections and editorial questions: <a href="mailto:{EMAIL}">{EMAIL}</a>. General enquiries: <a href="mailto:{EMAIL_ALT}">{EMAIL_ALT}</a>.</p>"""),
+"editorial-policy":("Editorial policy","How GLP Atlas researches, writes, reviews, dates and corrects every page about GLP-1 and diabetes medicines.","""<p>Every page on {SITE} follows the same process. The goal is simple: accurate, current, label-based information you can check yourself.</p>
+<h2 id="sources-policy">Sources we use</h2>
+<ul><li>FDA prescribing information (DailyMed and Drugs@FDA) and the Health Canada Drug Product Database.</li>
+<li>Manufacturer press releases for approvals, launches and self-pay prices.</li>
+<li>Peer-reviewed trials and registered studies on ClinicalTrials.gov.</li></ul>
+<h2 id="review">Review and dates</h2>
+<ul><li>Each drug page is reviewed by a licensed clinician before publication and on every major update. The reviewer's name and date appear on the page.</li>
 <li>Pages carry a "last reviewed" date and are re-checked when labels or prices change.</li>
-<li>Commercial partners never see or approve content before publication.</li><li>Corrections: email {EMAIL}; we respond within 5 business days.</li></ul>"""),
-"medical-disclaimer":("Medical disclaimer","This site is information, not medical advice.","""<p>Content on {SITE} is for general information only and is not a substitute for advice from your doctor or pharmacist. Do not start, stop or change a medicine based on this site. In an emergency call 911 (US/Canada).</p>"""),
-"affiliate-disclosure":("Affiliate disclosure","How we make money.","""<p>{SITE} may earn a commission when readers use links to licensed telehealth services or pharmacies. We only link to providers that require a prescription and are verified (for example, LegitScript-certified or listed on safe.pharmacy). Commissions never affect our medical content.</p>"""),
-"privacy":("Privacy policy","What data we collect.","""<p>We collect basic, anonymous analytics and the details you choose to send through the contact form. We do not sell personal data. Contact {EMAIL} to request deletion.</p>"""),
+<li>Dosing is reproduced from the label only. Insulin doses are never given as numbers, because they are always individual.</li></ul>
+<h2 id="independence">Independence</h2>
+<ul><li>Commercial partners never see or approve content before publication.</li>
+<li>We do not accept payment to rank, praise or omit any product.</li></ul>
+<h2 id="corrections">Corrections</h2>
+<p>Email <a href="mailto:{EMAIL}">{EMAIL}</a>. We respond within 5 business days, fix confirmed errors and update the review date.</p>"""),
+"medical-disclaimer":("Medical disclaimer","GLP Atlas provides general information about GLP-1 and diabetes medicines. It is not medical advice and does not replace your clinician.","""<p>Content on {SITE} is for general information only and is not a substitute for advice from your doctor or pharmacist. Do not start, stop or change a medicine based on this site. In an emergency call 911 (US/Canada).</p>
+<h2 id="limits">What this site can and cannot do</h2>
+<ul><li>It can explain what the official label says, in plain English.</li>
+<li>It cannot tell you which medicine or dose is right for you.</li>
+<li>It cannot diagnose a condition or interpret your test results.</li></ul>
+<h2 id="dates">Information changes</h2>
+<p>Approvals, prices and availability change often. Each page shows the date it was last reviewed. Always check the current label and ask your pharmacist.</p>
+<h2 id="side-effects">Side effects</h2>
+<p>If you think you have a side effect, contact your prescriber. You can also report it to the FDA (MedWatch) or Health Canada (MedEffect).</p>"""),
+"affiliate-disclosure":("Affiliate disclosure","How GLP Atlas makes money, which partners we accept, and why commissions never change our medical content.","""<p>{SITE} may earn a commission when readers use links to licensed telehealth services or pharmacies. Commissions never affect our medical content.</p>
+<h2 id="rules">Our rules for partners</h2>
+<ul><li>They must require a valid prescription.</li>
+<li>They must be verified — for example LegitScript-certified or listed on safe.pharmacy.</li>
+<li>They never sell compounded, "research" or foreign-labelled GLP-1 products.</li>
+<li>Paid links are marked and use rel="sponsored".</li></ul>
+<h2 id="no-influence">No influence on content</h2>
+<p>Partners do not see pages before publication and cannot ask for changes. Questions: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
+"privacy":("Privacy policy","What personal data GLP Atlas collects, why, how long we keep it and how to ask for deletion.","""<p>We collect as little data as possible. We do not sell personal data, and we do not use advertising trackers.</p>
+<h2 id="collect">What we collect</h2>
+<ul><li><strong>Contact form:</strong> your name, email and message, only so we can reply. It is processed by our host's form service.</li>
+<li><strong>Server logs:</strong> our host keeps standard technical logs (IP address, browser, pages requested) for security.</li>
+<li><strong>Your device:</strong> we store your light/dark theme choice in your browser's local storage. No cookies are set.</li></ul>
+<h2 id="share">Share buttons</h2>
+<p>Share links open WhatsApp, Facebook, LinkedIn or X only when you click them. Those services then apply their own privacy policies.</p>
+<h2 id="rights">Your rights</h2>
+<p>You can ask to see or delete any message you sent us. Email <a href="mailto:{EMAIL}">{EMAIL}</a>; we reply within 30 days. US and Canadian privacy laws (including CCPA and PIPEDA) apply.</p>"""),
 }

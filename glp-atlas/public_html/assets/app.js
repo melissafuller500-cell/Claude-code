@@ -25,19 +25,48 @@
   });
   syncThemeBtn();
 
-  /* ---------- mobile menu */
+  /* ---------- main menu: mobile panel + dropdowns (hover handled in CSS; taps, keyboard and Escape here) */
   var menuBtn = $('.menu'), nav = $('#mainnav');
+  var mobile = window.matchMedia('(max-width: 1080px)');
+  function setOpen(li, open) {
+    li.classList.toggle('open', open);
+    $$('[aria-expanded]', li).forEach(function (b) { if (b.parentNode === li) b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+  }
+  function closeAll(except) { $$('.ni.open').forEach(function (li) { if (li !== except) setOpen(li, false); }); }
+  $$('.ni.has-sub').forEach(function (li) {
+    $$('.nt, .nl-btn', li).forEach(function (b) {
+      if (b.parentNode !== li) return;
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = !li.classList.contains('open');
+        if (!mobile.matches) closeAll(li);
+        setOpen(li, open);
+      });
+    });
+    li.addEventListener('focusout', function (e) { if (!mobile.matches && !li.contains(e.relatedTarget)) setOpen(li, false); });
+    li.addEventListener('mouseleave', function () { if (!mobile.matches) setOpen(li, false); });
+  });
+  // on phones, the section you are in starts expanded so the current page is visible
+  if (mobile.matches) $$('.ni.has-sub.is-active').forEach(function (li) { setOpen(li, true); });
+  d.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = $('.ni.open') || (d.activeElement && d.activeElement.closest && d.activeElement.closest('.ni'));
+    if (open && !mobile.matches) { setOpen(open, false); var t = $('.nl', open); if (t) t.focus(); }
+    if (nav && nav.classList.contains('open')) { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus(); }
+  });
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', function () {
       var open = nav.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    d.addEventListener('click', function (e) {
-      if (nav.classList.contains('open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
-        nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false');
-      }
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
   }
+  d.addEventListener('click', function (e) {
+    if (!e.target.closest('.ni')) { if (!mobile.matches) closeAll(); }
+    if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+      nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   /* ---------- command palette */
   var pal = $('#palette'), palQ = $('#pal-q'), palList = $('#pal-list');

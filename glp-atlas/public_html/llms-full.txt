@@ -7,7 +7,7 @@ Facts come from FDA and Health Canada labels, manufacturer releases and peer-rev
 ---
 URL: https://www.glpatlas.com/
 Title: GLP-1, weight-loss & diabetes medicines explained
-Summary: Independent US & Canada guide to GLP-1 and diabetes medicines — Ozempic, Wegovy, Zepbound, Mounjaro, Foundayo, insulin: dosing, side effects, cost, legal access.
+Summary: Independent US & Canada guide to GLP-1 and diabetes medicines — Ozempic, Wegovy, Zepbound, Mounjaro, Foundayo, insulin: dosing, side effects, cost, access.
 Last reviewed: 2026-10-20
 
 Updated October 20, 2026 · United States & Canada
@@ -18,6 +18,12 @@ Approvals, label dosing, side effects, costs and the legal ways to get every GLP
 
 ⌘K
 
+[Find your medicine](https://www.glpatlas.com/drugs/)[Compare two medicines](https://www.glpatlas.com/compare/#builder)
+
+Popular:
+
+Move your cursor or click the background — the molecules react.Tap the background to send a pulse through the molecules.
+
 **medicines**: 26
 
 **comparisons**: 6
@@ -27,7 +33,7 @@ Approvals, label dosing, side effects, costs and the legal ways to get every GLP
 **buying & safety guides**: 6
 
 What is a GLP-1?
-A **GLP-1 receptor agonist** is a medicine that mimics the gut hormone GLP-1: it raises insulin after meals, lowers glucagon, slows stomach emptying and reduces appetite. Semaglutide (Ozempic, Wegovy) and tirzepatide (Mounjaro, Zepbound) are the best known; all are prescription-only in the US and Canada. [Read the full answer ](https://www.glpatlas.com/questions/what-is-glp1/)
+A **GLP-1 receptor agonist** is a medicine that mimics the gut hormone GLP-1: it raises insulin after meals, lowers glucagon, slows stomach emptying and reduces appetite. Semaglutide (Ozempic, Wegovy) and tirzepatide (Mounjaro, Zepbound) are the best known; all are prescription-only in the US and Canada. [Read the full answer ](https://www.glpatlas.com/questions/what-is-glp1/)The four main actions of GLP-1 receptor agonists, as described on their labels.
 
 ## Most searched
 [All 26 medicines ](https://www.glpatlas.com/drugs/)
@@ -70,6 +76,17 @@ Line up dosing schedules, approvals and availability for any pair — from Wegov
 [All guides ](https://www.glpatlas.com/guides/)
 [GuideHow to buy GLP-1 medicines legally in the USA](https://www.glpatlas.com/guides/how-to-buy-glp1-legally-usa/)[GuideHow to buy GLP-1 medicines legally in Canada](https://www.glpatlas.com/guides/how-to-buy-glp1-legally-canada/)[GuideGLP-1 cost without insurance (US, 2026)](https://www.glpatlas.com/guides/glp1-cost-without-insurance/)[GuideCompounded, research-peptide and counterfeit GLP-1s: the risks](https://www.glpatlas.com/guides/compounded-and-counterfeit-glp1/)
 
+Editorial standards
+## Where our facts come from
+
+Every page is written from official labels and regulators, carries its review date, and is signed by our editor, [Dr. George Grunberger](https://www.glpatlas.com/about/#editor). We never sell medicines.
+
+- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [DailyMed](https://dailymed.nlm.nih.gov/dailymed/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [ClinicalTrials.gov](https://clinicaltrials.gov/)
+- [NABP safe.pharmacy](https://safe.pharmacy/)
+
 ---
 URL: https://www.glpatlas.com/drugs/
 Title: All GLP-1, Incretin & Insulin Medicines (A–Z)
@@ -80,6 +97,7 @@ Medicine finder
 # All GLP-1, incretin and insulin medicines
 
 26 medicines available or in development in the United States and Canada. Filter by what they treat, how they are taken, and how often.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Use
 
@@ -104,7 +122,16 @@ Schedule
 ## Pipeline (not approved)
 
 [PipelineCagriSema (investigational)cagrilintide + semaglutide · Once weekly](https://www.glpatlas.com/drugs/cagrisema/)[PipelineRetatrutide (investigational)retatrutide · Once weekly](https://www.glpatlas.com/drugs/retatrutide/)
-No medicine matches those filters.
+No medicine matches those filters. 
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [DailyMed — FDA prescribing information (NIH)](https://dailymed.nlm.nih.gov/dailymed/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [ClinicalTrials.gov — registered trials](https://clinicaltrials.gov/)
 
 ---
 URL: https://www.glpatlas.com/compare/
@@ -116,6 +143,7 @@ Side by side
 # GLP-1 comparisons
 
 Editor-written comparisons of the most-searched pairs, plus a builder to line up any two medicines from the label facts.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 ## Editorial comparisons
 
@@ -125,6 +153,14 @@ Editor-written comparisons of the most-searched pairs, plus a builder to line up
 
 Facts pulled from each medicine page. Pick two to see them side by side.
 First medicineSecond medicine
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [DailyMed — FDA prescribing information (NIH)](https://dailymed.nlm.nih.gov/dailymed/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
 
 ---
 URL: https://www.glpatlas.com/guides/
@@ -136,7 +172,17 @@ Buy safely
 # GLP-1 guides
 
 Practical, source-based guides on legal access, real costs, side effects and how to avoid counterfeit pens.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 [GuideHow to buy GLP-1 medicines legally in the USAThe legal ways to buy or order Wegovy, Zepbound, Ozempic, Mounjaro and GLP-1 pills in the US — prescriptions, pharmacies, telehealth and direct-from-manufacturer.](https://www.glpatlas.com/guides/how-to-buy-glp1-legally-usa/)[GuideHow to buy GLP-1 medicines legally in CanadaHow to get Ozempic, Wegovy, Mounjaro and generic semaglutide legally in Canada: prescriptions, pharmacies, coverage and the new generics.](https://www.glpatlas.com/guides/how-to-buy-glp1-legally-canada/)[GuideGLP-1 cost without insurance (US, 2026)What Wegovy, Zepbound, Ozempic, Mounjaro, the Wegovy pill and Foundayo cost without insurance through NovoCare and LillyDirect in 2026.](https://www.glpatlas.com/guides/glp1-cost-without-insurance/)[GuideCompounded, research-peptide and counterfeit GLP-1s: the risksWhy compounded, 'research' and counterfeit semaglutide and tirzepatide are risky, and how to spot fake Ozempic and Wegovy pens.](https://www.glpatlas.com/guides/compounded-and-counterfeit-glp1/)[GuideGLP-1 side effects: what's common, what's seriousCommon and serious side effects of semaglutide, tirzepatide, liraglutide and orforglipron, and when to call a doctor.](https://www.glpatlas.com/guides/glp1-side-effects/)[GuideNew GLP-1 drugs coming: the 2026–2027 pipelineCagriSema, retatrutide and other upcoming obesity and diabetes drugs: status, results and expected decisions.](https://www.glpatlas.com/guides/glp1-pipeline-2026/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [NABP safe.pharmacy — verify an online pharmacy](https://safe.pharmacy/)
+- [FDA BeSafeRx — buying medicines online safely](https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information)
+- [Health Canada — buying drugs over the internet](https://www.canada.ca/en/health-canada/services/buying-drugs-over-internet.html)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
 
 ---
 URL: https://www.glpatlas.com/drugs/ozempic/
@@ -175,7 +221,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 2Weeks 5–8 | 0.5 mg once weekly |
 | 3If more control is needed | 1 mg, then 2 mg once weekly, each after at least 4 weeks |
 | 4Maximum | 2 mg once weekly |
-
+Ozempic label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject under the skin of the stomach, thigh or upper arm on the same day each week, with or without food. Rotate injection sites.
@@ -258,15 +304,18 @@ No. Compounded or 'research' semaglutide is not FDA-approved, and the FDA has wa
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesOzempic tablets (formerly Rybelsus)oral semaglutide · Once daily](https://www.glpatlas.com/drugs/ozempic-tablets/)[GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[GLP-1 & incretin medicinesMounjarotirzepatide · Once weekly](https://www.glpatlas.com/drugs/mounjaro/)[CompareOzempic vs Wegovy: same drug, different jobs](https://www.glpatlas.com/compare/ozempic-vs-wegovy/)
+Share[WhatsApp](https://wa.me/?text=Ozempic%20%28semaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic%2F&text=Ozempic%20%28semaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Ozempic%20%28semaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/ozempic-tablets/
@@ -303,7 +352,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 1Days 1–30 | 1.5 mg once daily (Rybelsus: 3 mg) |
 | 2Day 31 on | 4 mg once daily (Rybelsus: 7 mg) |
 | 3If more control is needed | 9 mg once daily after at least 30 days (Rybelsus: 14 mg) |
-
+Ozempic tablets label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Take first thing in the morning on an empty stomach with no more than 4 oz (120 mL) of plain water. Wait at least 30 minutes before eating, drinking or taking other oral medicines. Swallow whole.
@@ -366,15 +415,18 @@ Novo Nordisk moved oral semaglutide for diabetes under the better-known Ozempic 
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic+tablets)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Ozempic tablets prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic+tablets)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)[GLP-1 & incretin medicinesWegovy pilloral semaglutide 25 mg · Once daily](https://www.glpatlas.com/drugs/wegovy-pill/)[GLP-1 & incretin medicinesFoundayoorforglipron · Once daily](https://www.glpatlas.com/drugs/foundayo/)
+Share[WhatsApp](https://wa.me/?text=Ozempic%20tablets%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic-tablets%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic-tablets%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic-tablets%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic-tablets%2F&text=Ozempic%20tablets%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Ozempic%20tablets%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fozempic-tablets%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/wegovy/
@@ -415,7 +467,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 4Weeks 13–16 | 1.7 mg weekly |
 | 5Week 17 on | 2.4 mg weekly (or 1.7 mg if 2.4 mg is not tolerated) |
 | 6Wegovy HD | 7.2 mg weekly for adults who have tolerated 2.4 mg for at least 4 weeks |
-
+Wegovy label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject under the skin of the stomach, thigh or upper arm on the same day each week.
@@ -503,15 +555,18 @@ Studies show weight often returns after stopping. Long-term plans should be agre
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesWegovy pilloral semaglutide 25 mg · Once daily](https://www.glpatlas.com/drugs/wegovy-pill/)[GLP-1 & incretin medicinesZepboundtirzepatide · Once weekly](https://www.glpatlas.com/drugs/zepbound/)[CompareOzempic vs Wegovy: same drug, different jobs](https://www.glpatlas.com/compare/ozempic-vs-wegovy/)[CompareWegovy vs Zepbound: semaglutide vs tirzepatide for weight loss](https://www.glpatlas.com/compare/wegovy-vs-zepbound/)
+Share[WhatsApp](https://wa.me/?text=Wegovy%20%28semaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy%2F&text=Wegovy%20%28semaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Wegovy%20%28semaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/wegovy-pill/
@@ -548,7 +603,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 2Days 31–60 | 4 mg daily |
 | 3Days 61–90 | 9 mg daily |
 | 4Day 91 on | 25 mg daily (maintenance) |
-
+Wegovy pill label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Take on an empty stomach with up to 4 oz of water. Wait at least 30 minutes before food, drink or other oral medicines. Swallow whole.
@@ -611,15 +666,18 @@ Food and other drinks sharply reduce semaglutide absorption from the tablet.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy+pill)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Wegovy pill prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy+pill)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesFoundayoorforglipron · Once daily](https://www.glpatlas.com/drugs/foundayo/)[GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[CompareWegovy pill vs Foundayo: the two weight-loss pills compared](https://www.glpatlas.com/compare/wegovy-pill-vs-foundayo/)
+Share[WhatsApp](https://wa.me/?text=Wegovy%20pill%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy-pill%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy-pill%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy-pill%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy-pill%2F&text=Wegovy%20pill%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Wegovy%20pill%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fwegovy-pill%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/mounjaro/
@@ -656,7 +714,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 2Week 5 on | 5 mg weekly |
 | 3If needed | Increase by 2.5 mg every 4 weeks or more |
 | 4Maximum | 15 mg weekly |
-
+Mounjaro label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject under the skin of the stomach, thigh or upper arm once weekly, any time of day, with or without food.
@@ -724,15 +782,18 @@ Never mix them in the same syringe. If both are injected in the same area, keep 
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Mounjaro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesZepboundtirzepatide · Once weekly](https://www.glpatlas.com/drugs/zepbound/)[GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)[CompareMounjaro vs Ozempic for type 2 diabetes](https://www.glpatlas.com/compare/mounjaro-vs-ozempic/)
+Share[WhatsApp](https://wa.me/?text=Mounjaro%20%28tirzepatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fmounjaro%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fmounjaro%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fmounjaro%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fmounjaro%2F&text=Mounjaro%20%28tirzepatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Mounjaro%20%28tirzepatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fmounjaro%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/zepbound/
@@ -771,7 +832,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 3If needed | Increase by 2.5 mg every 4 weeks |
 | 4Maintenance | 5, 10 or 15 mg weekly (sleep apnea: 10 or 15 mg) |
 | 5Maximum | 15 mg weekly |
-
+Zepbound label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject under the skin of the stomach, thigh or upper arm once weekly.
@@ -854,15 +915,18 @@ Lilly sells single-dose vials directly to self-pay patients with a prescription 
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesMounjarotirzepatide · Once weekly](https://www.glpatlas.com/drugs/mounjaro/)[GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[GLP-1 & incretin medicinesFoundayoorforglipron · Once daily](https://www.glpatlas.com/drugs/foundayo/)[CompareWegovy vs Zepbound: semaglutide vs tirzepatide for weight loss](https://www.glpatlas.com/compare/wegovy-vs-zepbound/)
+Share[WhatsApp](https://wa.me/?text=Zepbound%20%28tirzepatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fzepbound%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fzepbound%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fzepbound%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fzepbound%2F&text=Zepbound%20%28tirzepatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Zepbound%20%28tirzepatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fzepbound%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/foundayo/
@@ -900,7 +964,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 3Days 61–90 | 5.5 mg daily (lowest maintenance dose) |
 | 4If needed | 9 mg, 14.5 mg or 17.2 mg daily, each step after at least 30 days |
 | 5Maximum | 17.2 mg daily (9 mg with strong CYP3A4 inhibitors) |
-
+Foundayo label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Take once daily at any time, with or without food or water — no fasting rule.
@@ -969,15 +1033,18 @@ In the 72-week ATTAIN-1 trial, the highest dose averaged about 12% body-weight l
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Foundayo)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Foundayo prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Foundayo)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesWegovy pilloral semaglutide 25 mg · Once daily](https://www.glpatlas.com/drugs/wegovy-pill/)[GLP-1 & incretin medicinesZepboundtirzepatide · Once weekly](https://www.glpatlas.com/drugs/zepbound/)[CompareWegovy pill vs Foundayo: the two weight-loss pills compared](https://www.glpatlas.com/compare/wegovy-pill-vs-foundayo/)
+Share[WhatsApp](https://wa.me/?text=Foundayo%20%28orforglipron%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ffoundayo%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ffoundayo%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ffoundayo%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ffoundayo%2F&text=Foundayo%20%28orforglipron%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Foundayo%20%28orforglipron%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ffoundayo%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/victoza/
@@ -1014,7 +1081,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 1Week 1 | 0.6 mg daily (starter) |
 | 2Week 2 on | 1.2 mg daily |
 | 3If needed | 1.8 mg daily |
-
+Victoza label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject once daily at any time, independent of meals.
@@ -1075,15 +1142,18 @@ Same molecule. Saxenda uses higher doses (up to 3 mg) for weight management.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Victoza)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Victoza prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Victoza)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesSaxenda (and generic liraglutide 3 mg)liraglutide · Once daily](https://www.glpatlas.com/drugs/saxenda/)[GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)[GLP-1 & incretin medicinesTrulicitydulaglutide · Once weekly](https://www.glpatlas.com/drugs/trulicity/)
+Share[WhatsApp](https://wa.me/?text=Victoza%20%28liraglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fvictoza%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fvictoza%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fvictoza%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fvictoza%2F&text=Victoza%20%28liraglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Victoza%20%28liraglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fvictoza%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/saxenda/
@@ -1121,7 +1191,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 3Week 3 | 1.8 mg daily |
 | 4Week 4 | 2.4 mg daily |
 | 5Week 5 on | 3 mg daily (maintenance) |
-
+Saxenda label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject once daily at any time.
@@ -1182,15 +1252,18 @@ Wegovy is weekly and produced more weight loss in trials; Saxenda is daily but n
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Saxenda)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Saxenda prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Saxenda)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesVictoza (and generic liraglutide)liraglutide · Once daily](https://www.glpatlas.com/drugs/victoza/)[GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[CompareSaxenda vs Wegovy: daily liraglutide vs weekly semaglutide](https://www.glpatlas.com/compare/saxenda-vs-wegovy/)
+Share[WhatsApp](https://wa.me/?text=Saxenda%20%28liraglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsaxenda%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsaxenda%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsaxenda%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsaxenda%2F&text=Saxenda%20%28liraglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Saxenda%20%28liraglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsaxenda%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/trulicity/
@@ -1227,7 +1300,7 @@ Per the official label. Your prescriber sets your dose — never change it on yo
 | 1Start | 0.75 mg weekly |
 | 2If needed | 1.5 mg, then 3 mg, then 4.5 mg weekly, each after at least 4 weeks |
 | 3Maximum | 4.5 mg weekly |
-
+Trulicity label titration, step by step. Doses go up only as tolerated and as your prescriber decides.
 ### How to take it
 
 Inject once weekly, any time of day, with or without food.
@@ -1292,15 +1365,18 @@ It is approved for type 2 diabetes. Some weight loss can occur, but it is not ap
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Trulicity)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Trulicity prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Trulicity)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)[GLP-1 & incretin medicinesMounjarotirzepatide · Once weekly](https://www.glpatlas.com/drugs/mounjaro/)[GLP-1 & incretin medicinesVictoza (and generic liraglutide)liraglutide · Once daily](https://www.glpatlas.com/drugs/victoza/)
+Share[WhatsApp](https://wa.me/?text=Trulicity%20%28dulaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ftrulicity%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ftrulicity%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ftrulicity%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ftrulicity%2F&text=Trulicity%20%28dulaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Trulicity%20%28dulaglutide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Ftrulicity%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/byetta-bydureon/
@@ -1315,7 +1391,7 @@ exenatide · GLP-1 receptor agonist · AstraZeneca
 ✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
-**Exenatide** (exenatide) is a GLP-1 receptor agonist made by AstraZeneca, used for blood sugar control in type 2 diabetes. Schedule: twice daily (byetta) or once weekly (bydureon bcise). It is prescription-only in the US and Canada.
+**Exenatide** is a GLP-1 receptor agonist made by AstraZeneca, used for blood sugar control in type 2 diabetes. Schedule: twice daily (byetta) or once weekly (bydureon bcise). It is prescription-only in the US and Canada.
 
 **Form**Pen injection
 **How often**Twice daily (Byetta) or once weekly (Bydureon BCise)
@@ -1342,6 +1418,9 @@ Byetta: before meals. Bydureon BCise: same day each week, with or without meals.
 ### Storage
 
 Refrigerate.
+
+## How it works
+The four main actions of GLP-1 receptor agonists, as described on their labels.
 
 ## Side effects
 
@@ -1396,15 +1475,18 @@ Newer once-weekly options largely replaced it, and the manufacturer has wound do
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Exenatide)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Exenatide prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Exenatide)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesTrulicitydulaglutide · Once weekly](https://www.glpatlas.com/drugs/trulicity/)[GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)
+Share[WhatsApp](https://wa.me/?text=Exenatide%20%28exenatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fbyetta-bydureon%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fbyetta-bydureon%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fbyetta-bydureon%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fbyetta-bydureon%2F&text=Exenatide%20%28exenatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Exenatide%20%28exenatide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fbyetta-bydureon%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/soliqua/
@@ -1444,6 +1526,9 @@ Once daily within 1 hour before the first meal.
 ### Storage
 
 Refrigerate before use; after first use, room temperature up to 28 days.
+
+## How it works
+The four main actions of GLP-1 receptor agonists, as described on their labels.
 
 ## Side effects
 
@@ -1498,15 +1583,18 @@ No. Lixisenatide-containing products do not carry that boxed warning, though gen
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Soliqua)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Soliqua prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Soliqua)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesXultophy 100/3.6insulin degludec + liraglutide · Once daily](https://www.glpatlas.com/drugs/xultophy/)[InsulinsInsulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeoinsulin glargine · Once daily](https://www.glpatlas.com/drugs/insulin-glargine/)
+Share[WhatsApp](https://wa.me/?text=Soliqua%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsoliqua%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsoliqua%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsoliqua%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsoliqua%2F&text=Soliqua%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Soliqua%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsoliqua%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/xultophy/
@@ -1547,6 +1635,9 @@ Once daily, same time each day, with or without food.
 ### Storage
 
 Refrigerate before use; after first use, up to 21 days at room temperature or in the fridge.
+
+## How it works
+The four main actions of GLP-1 receptor agonists, as described on their labels.
 
 ## Side effects
 
@@ -1601,19 +1692,22 @@ No. It already contains liraglutide.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Xultophy)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Xultophy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Xultophy)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesSoliqua 100/33insulin glargine + lixisenatide · Once daily](https://www.glpatlas.com/drugs/soliqua/)[InsulinsInsulin degludec: Tresibainsulin degludec · Once daily](https://www.glpatlas.com/drugs/insulin-degludec/)[GLP-1 & incretin medicinesVictoza (and generic liraglutide)liraglutide · Once daily](https://www.glpatlas.com/drugs/victoza/)
+Share[WhatsApp](https://wa.me/?text=Xultophy%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fxultophy%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fxultophy%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fxultophy%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fxultophy%2F&text=Xultophy%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Xultophy%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fxultophy%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/insulin-lispro/
-Title: Insulin lispro: Uses, Dosage, Side Effects & Cost
+Title: Insulin lispro (insulin lispro): Dosage, Side Effects & Cost
 Summary: Insulin lispro (insulin lispro) by Eli Lilly; Sanofi (Admelog): what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.
 Last reviewed: 2026-10-20
 
@@ -1624,7 +1718,7 @@ insulin lispro · Rapid-acting (mealtime) insulin · Eli Lilly; Sanofi (Admelog)
 ✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
-**Insulin lispro** (insulin lispro) is a rapid-acting (mealtime) insulin made by Eli Lilly; Sanofi (Admelog), used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
+**Insulin lispro** is a rapid-acting (mealtime) insulin made by Eli Lilly; Sanofi (Admelog), used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
 
 **Form**Vials, pens, cartridges
 **How often**With meals
@@ -1650,6 +1744,9 @@ Under the skin; some forms are also used in insulin pumps.
 ### Storage
 
 Unopened: refrigerate. In use: room temperature up to 28 days.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -1700,19 +1797,22 @@ Yes. Lyumjev contains ingredients that speed absorption, so it starts working so
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+lispro)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Insulin lispro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+lispro)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin aspart: NovoLog, Fiaspinsulin aspart · With meals](https://www.glpatlas.com/drugs/insulin-aspart/)[InsulinsInsulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeoinsulin glargine · Once daily](https://www.glpatlas.com/drugs/insulin-glargine/)[InsulinsPremixed insulins: Humalog Mix, NovoLog Mix, Humulin/Novolin 70/30premixed insulin · Usually twice daily with meals](https://www.glpatlas.com/drugs/premixed-insulin/)
+Share[WhatsApp](https://wa.me/?text=Insulin%20lispro%20%28insulin%20lispro%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-lispro%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-lispro%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-lispro%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-lispro%2F&text=Insulin%20lispro%20%28insulin%20lispro%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Insulin%20lispro%20%28insulin%20lispro%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-lispro%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/insulin-aspart/
-Title: Insulin aspart: Uses, Dosage, Side Effects & Cost
+Title: Insulin aspart (insulin aspart): Dosage, Side Effects & Cost
 Summary: Insulin aspart (insulin aspart) by Novo Nordisk: what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.
 Last reviewed: 2026-10-20
 
@@ -1723,7 +1823,7 @@ insulin aspart · Rapid-acting (mealtime) insulin · Novo Nordisk
 ✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
-**Insulin aspart** (insulin aspart) is a rapid-acting (mealtime) insulin made by Novo Nordisk, used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
+**Insulin aspart** is a rapid-acting (mealtime) insulin made by Novo Nordisk, used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
 
 **Form**Vials, pens, cartridges
 **How often**With meals
@@ -1749,6 +1849,9 @@ Under the skin; also used in pumps.
 ### Storage
 
 Unopened: refrigerate. In use: room temperature up to 28 days.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -1795,19 +1898,22 @@ Brand names differ by country; the active ingredient is the same insulin aspart.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+aspart)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Insulin aspart prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+aspart)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin lispro: Humalog, Admelog, Lyumjevinsulin lispro · With meals](https://www.glpatlas.com/drugs/insulin-lispro/)[InsulinsInsulin glulisine: Apidrainsulin glulisine · With meals](https://www.glpatlas.com/drugs/insulin-glulisine/)[InsulinsInsulin degludec: Tresibainsulin degludec · Once daily](https://www.glpatlas.com/drugs/insulin-degludec/)
+Share[WhatsApp](https://wa.me/?text=Insulin%20aspart%20%28insulin%20aspart%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-aspart%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-aspart%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-aspart%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-aspart%2F&text=Insulin%20aspart%20%28insulin%20aspart%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Insulin%20aspart%20%28insulin%20aspart%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-aspart%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/insulin-glulisine/
-Title: Apidra (insulin glulisine): Uses, Dosage, Side Effects & Cost
+Title: Apidra (insulin glulisine): Dosage, Side Effects & Cost
 Summary: Apidra (insulin glulisine) by Sanofi: what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.
 Last reviewed: 2026-10-20
 
@@ -1844,6 +1950,9 @@ Under the skin or in a pump.
 ### Storage
 
 Unopened: refrigerate. In use: up to 28 days at room temperature.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -1885,15 +1994,18 @@ See manufacturer programs.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Apidra)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Apidra prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Apidra)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin lispro: Humalog, Admelog, Lyumjevinsulin lispro · With meals](https://www.glpatlas.com/drugs/insulin-lispro/)[InsulinsInsulin aspart: NovoLog, Fiaspinsulin aspart · With meals](https://www.glpatlas.com/drugs/insulin-aspart/)
+Share[WhatsApp](https://wa.me/?text=Apidra%20%28insulin%20glulisine%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glulisine%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glulisine%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glulisine%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glulisine%2F&text=Apidra%20%28insulin%20glulisine%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Apidra%20%28insulin%20glulisine%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glulisine%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/regular-insulin/
@@ -1934,6 +2046,9 @@ Under the skin.
 ### Storage
 
 Unopened: refrigerate. In use: per product labeling (often 31–42 days).
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -1980,15 +2095,18 @@ No. U-500 is five times more concentrated and must only be used with its dedicat
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Regular+insulin)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Regular insulin prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Regular+insulin)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsNPH (intermediate-acting) insulin: Humulin N, Novolin Nisophane human insulin · Once or twice daily](https://www.glpatlas.com/drugs/nph-insulin/)[InsulinsPremixed insulins: Humalog Mix, NovoLog Mix, Humulin/Novolin 70/30premixed insulin · Usually twice daily with meals](https://www.glpatlas.com/drugs/premixed-insulin/)
+Share[WhatsApp](https://wa.me/?text=Regular%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fregular-insulin%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fregular-insulin%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fregular-insulin%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fregular-insulin%2F&text=Regular%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Regular%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fregular-insulin%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/nph-insulin/
@@ -2028,6 +2146,9 @@ Roll gently to resuspend (cloudy insulin) before each injection; do not shake ha
 ### Storage
 
 Unopened: refrigerate. In use: per labeling.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -2069,15 +2190,18 @@ Low-cost option.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=NPH+insulin)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [NPH insulin prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=NPH+insulin)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsRegular (short-acting) insulin: Humulin R, Novolin Rhuman insulin (regular) · Before meals](https://www.glpatlas.com/drugs/regular-insulin/)[InsulinsInsulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeoinsulin glargine · Once daily](https://www.glpatlas.com/drugs/insulin-glargine/)[InsulinsPremixed insulins: Humalog Mix, NovoLog Mix, Humulin/Novolin 70/30premixed insulin · Usually twice daily with meals](https://www.glpatlas.com/drugs/premixed-insulin/)
+Share[WhatsApp](https://wa.me/?text=NPH%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fnph-insulin%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fnph-insulin%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fnph-insulin%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fnph-insulin%2F&text=NPH%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=NPH%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fnph-insulin%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/insulin-glargine/
@@ -2092,7 +2216,7 @@ insulin glargine · Long-acting (basal) insulin · Sanofi; Eli Lilly; Biocon/Via
 ✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
-**Insulin glargine** (insulin glargine) is a long-acting (basal) insulin made by Sanofi; Eli Lilly; Biocon/Viatris, used for basal blood sugar control in type 1 and type 2 diabetes. Schedule: once daily. It is prescription-only in the US and Canada.
+**Insulin glargine** is a long-acting (basal) insulin made by Sanofi; Eli Lilly; Biocon/Viatris, used for basal blood sugar control in type 1 and type 2 diabetes. Schedule: once daily. It is prescription-only in the US and Canada.
 
 **Form**Vials, pens
 **How often**Once daily
@@ -2118,6 +2242,9 @@ Under the skin once daily. Do not dilute or mix with other insulins.
 ### Storage
 
 Unopened: refrigerate. In use: Lantus up to 28 days; Toujeo up to 56 days.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -2169,19 +2296,22 @@ After Levemir's US discontinuation, people were moved to other basal insulins su
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+glargine)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Insulin glargine prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+glargine)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin degludec: Tresibainsulin degludec · Once daily](https://www.glpatlas.com/drugs/insulin-degludec/)[InsulinsInsulin icodec: Awiqli (once-weekly insulin)insulin icodec-abae · Once weekly](https://www.glpatlas.com/drugs/insulin-icodec/)[GLP-1 & incretin medicinesSoliqua 100/33insulin glargine + lixisenatide · Once daily](https://www.glpatlas.com/drugs/soliqua/)
+Share[WhatsApp](https://wa.me/?text=Insulin%20glargine%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glargine%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glargine%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glargine%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glargine%2F&text=Insulin%20glargine%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Insulin%20glargine%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-glargine%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/insulin-degludec/
-Title: Tresiba (insulin degludec): Uses, Dosage, Side Effects & Cost
+Title: Tresiba (insulin degludec): Dosage, Side Effects & Cost
 Summary: Tresiba (insulin degludec) by Novo Nordisk: what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.
 Last reviewed: 2026-10-20
 
@@ -2217,6 +2347,9 @@ Under the skin once daily.
 ### Storage
 
 Unopened: refrigerate. In use: up to 56 days.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -2258,19 +2391,22 @@ See $35 programs.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Tresiba)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Tresiba prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Tresiba)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeoinsulin glargine · Once daily](https://www.glpatlas.com/drugs/insulin-glargine/)[InsulinsInsulin icodec: Awiqli (once-weekly insulin)insulin icodec-abae · Once weekly](https://www.glpatlas.com/drugs/insulin-icodec/)[GLP-1 & incretin medicinesXultophy 100/3.6insulin degludec + liraglutide · Once daily](https://www.glpatlas.com/drugs/xultophy/)
+Share[WhatsApp](https://wa.me/?text=Tresiba%20%28insulin%20degludec%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-degludec%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-degludec%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-degludec%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-degludec%2F&text=Tresiba%20%28insulin%20degludec%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Tresiba%20%28insulin%20degludec%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-degludec%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/insulin-icodec/
-Title: Awiqli: Uses, Dosage, Side Effects & Cost
+Title: Awiqli (insulin icodec-abae): Dosage, Side Effects & Cost
 Summary: Awiqli (insulin icodec-abae) by Novo Nordisk: what it treats, label dosing, side effects, cost and legal ways to get it in the US and Canada.
 Last reviewed: 2026-10-20
 
@@ -2306,6 +2442,9 @@ Under the skin once weekly.
 ### Storage
 
 Refrigerate before use; follow label for in-use storage.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -2352,15 +2491,18 @@ Yes, since March 26, 2026, for adults with type 2 diabetes. Some older sources s
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Awiqli)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Awiqli prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Awiqli)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin degludec: Tresibainsulin degludec · Once daily](https://www.glpatlas.com/drugs/insulin-degludec/)[InsulinsInsulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeoinsulin glargine · Once daily](https://www.glpatlas.com/drugs/insulin-glargine/)
+Share[WhatsApp](https://wa.me/?text=Awiqli%20%28insulin%20icodec-abae%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-icodec%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-icodec%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-icodec%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-icodec%2F&text=Awiqli%20%28insulin%20icodec-abae%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Awiqli%20%28insulin%20icodec-abae%29%3A%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Finsulin-icodec%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/premixed-insulin/
@@ -2375,7 +2517,7 @@ premixed insulin · Premixed (intermediate + rapid or short) · Eli Lilly; Novo 
 ✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
-**Premixed insulin** (premixed insulin) is a premixed (intermediate + rapid or short) made by Eli Lilly; Novo Nordisk, used for blood sugar control in diabetes when a fixed mix suits the routine. Schedule: usually twice daily with meals. It is prescription-only in the US and Canada.
+**Premixed insulin** is a premixed (intermediate + rapid or short) made by Eli Lilly; Novo Nordisk, used for blood sugar control in diabetes when a fixed mix suits the routine. Schedule: usually twice daily with meals. It is prescription-only in the US and Canada.
 
 **Form**Vials, pens
 **How often**Usually twice daily with meals
@@ -2400,6 +2542,9 @@ Resuspend gently before each injection; timing depends on the product.
 ### Storage
 
 Unopened: refrigerate. In use: per labeling.
+
+## How long it works compared with other insulins
+Typical time-action profiles from product labels (darker band = peak). Your response can differ — follow your own plan.
 
 ## Side effects
 
@@ -2441,15 +2586,18 @@ Human-insulin 70/30 is among the cheapest options.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Premixed+insulin)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Premixed insulin prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Premixed+insulin)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsNPH (intermediate-acting) insulin: Humulin N, Novolin Nisophane human insulin · Once or twice daily](https://www.glpatlas.com/drugs/nph-insulin/)[InsulinsRegular (short-acting) insulin: Humulin R, Novolin Rhuman insulin (regular) · Before meals](https://www.glpatlas.com/drugs/regular-insulin/)[InsulinsInsulin lispro: Humalog, Admelog, Lyumjevinsulin lispro · With meals](https://www.glpatlas.com/drugs/insulin-lispro/)
+Share[WhatsApp](https://wa.me/?text=Premixed%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fpremixed-insulin%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fpremixed-insulin%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fpremixed-insulin%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fpremixed-insulin%2F&text=Premixed%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Premixed%20insulin%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fpremixed-insulin%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/symlin/
@@ -2539,15 +2687,18 @@ Brand-only.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Symlin)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Symlin prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Symlin)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin lispro: Humalog, Admelog, Lyumjevinsulin lispro · With meals](https://www.glpatlas.com/drugs/insulin-lispro/)[PipelineCagriSema (investigational)cagrilintide + semaglutide · Once weekly](https://www.glpatlas.com/drugs/cagrisema/)
+Share[WhatsApp](https://wa.me/?text=Symlin%20%28pramlintide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsymlin%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsymlin%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsymlin%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsymlin%2F&text=Symlin%20%28pramlintide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Symlin%20%28pramlintide%29%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fsymlin%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/glucagon/
@@ -2587,6 +2738,9 @@ Given by a family member or bystander when the person cannot safely eat or drink
 ### Storage
 
 Room temperature; check expiry dates.
+
+## Emergency steps
+General emergency steps — always follow the instructions supplied with your glucagon product.
 
 ## Side effects
 
@@ -2645,15 +2799,18 @@ No. It is a rescue medicine for severe low blood sugar.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Glucagon)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Glucagon prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Glucagon)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [InsulinsInsulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeoinsulin glargine · Once daily](https://www.glpatlas.com/drugs/insulin-glargine/)[InsulinsRegular (short-acting) insulin: Humulin R, Novolin Rhuman insulin (regular) · Before meals](https://www.glpatlas.com/drugs/regular-insulin/)
+Share[WhatsApp](https://wa.me/?text=Glucagon%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fglucagon%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fglucagon%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fglucagon%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fglucagon%2F&text=Glucagon%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost)[Email](https://www.glpatlas.commailto:?subject=Glucagon%3A%20Uses%2C%20Dosage%2C%20Side%20Effects%20%26%20Cost&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fglucagon%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/cagrisema/
@@ -2694,6 +2851,9 @@ Not available outside clinical trials.
 
 —
 
+## How it works
+The four main actions of GLP-1 receptor agonists, as described on their labels.
+
 ## Safety
 
 Safety data come from clinical trials only. Gastrointestinal effects were the most common, as with other incretin medicines.
@@ -2719,15 +2879,18 @@ No. Anything sold as CagriSema today is unapproved and unverified.
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=CagriSema)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [CagriSema prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=CagriSema)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [ClinicalTrials.gov — registered trials](https://clinicaltrials.gov/)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[PipelineRetatrutide (investigational)retatrutide · Once weekly](https://www.glpatlas.com/drugs/retatrutide/)
+Share[WhatsApp](https://wa.me/?text=CagriSema%3A%20Approval%20Status%2C%20Trial%20Results%20%26%20Availability%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fcagrisema%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fcagrisema%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fcagrisema%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fcagrisema%2F&text=CagriSema%3A%20Approval%20Status%2C%20Trial%20Results%20%26%20Availability)[Email](https://www.glpatlas.commailto:?subject=CagriSema%3A%20Approval%20Status%2C%20Trial%20Results%20%26%20Availability&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fcagrisema%2F)
 
 ---
 URL: https://www.glpatlas.com/drugs/retatrutide/
@@ -2742,7 +2905,7 @@ retatrutide · GIP / GLP-1 / glucagon triple receptor agonist · Eli Lilly
 ✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
-**Retatrutide** (retatrutide) is an investigational GIP / GLP-1 / glucagon triple receptor agonist from Eli Lilly. It is not approved and cannot legally be bought outside a registered clinical trial. Not FDA-approved. Lilly plans to submit to the FDA in Q1 2027 after positive TRIUMPH-2 and TRIUMPH-3 results (July 2026).
+**Retatrutide** is an investigational GIP / GLP-1 / glucagon triple receptor agonist from Eli Lilly. It is not approved and cannot legally be bought outside a registered clinical trial. Not FDA-approved. Lilly plans to submit to the FDA in Q1 2027 after positive TRIUMPH-2 and TRIUMPH-3 results (July 2026).
 
 **Form**Weekly injection
 **How often**Once weekly
@@ -2768,6 +2931,9 @@ Not available outside clinical trials.
 
 —
 
+## How it works
+The four main actions of GLP-1 receptor agonists, as described on their labels.
+
 ## Safety
 
 Safety data come from clinical trials only. Gastrointestinal effects were the most common, as with other incretin medicines.
@@ -2791,15 +2957,18 @@ It is not an approved drug. The FDA sent warning letters in August 2026 to onlin
 
 ## Sources
 
-- [FDA prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Retatrutide)
+Checked against these primary sources on October 20, 2026.
 
-- [Drugs@FDA](https://www.accessdata.fda.gov/scripts/cder/daf/)
-
+- [Retatrutide prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Retatrutide)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [ClinicalTrials.gov — registered trials](https://clinicaltrials.gov/)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ## Related
 
 [GLP-1 & incretin medicinesZepboundtirzepatide · Once weekly](https://www.glpatlas.com/drugs/zepbound/)[PipelineCagriSema (investigational)cagrilintide + semaglutide · Once weekly](https://www.glpatlas.com/drugs/cagrisema/)
+Share[WhatsApp](https://wa.me/?text=Retatrutide%3A%20Approval%20Status%2C%20Trial%20Results%20%26%20Availability%20https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fretatrutide%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fretatrutide%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fretatrutide%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fretatrutide%2F&text=Retatrutide%3A%20Approval%20Status%2C%20Trial%20Results%20%26%20Availability)[Email](https://www.glpatlas.commailto:?subject=Retatrutide%3A%20Approval%20Status%2C%20Trial%20Results%20%26%20Availability&body=https%3A%2F%2Fwww.glpatlas.com%2Fdrugs%2Fretatrutide%2F)
 
 ---
 URL: https://www.glpatlas.com/compare/ozempic-vs-wegovy/
@@ -2829,13 +2998,23 @@ Ozempic and Wegovy both contain semaglutide. Compare approvals, doses, pills vs 
 The choice is usually made by the diagnosis, not by preference: a person with type 2 diabetes is typically prescribed Ozempic, while a person treated for weight is prescribed Wegovy. Insurers apply different coverage rules to each, which is why the same molecule can cost very different amounts.
 Both are prescription medicines. Which one fits depends on your diagnosis, history and coverage — decide with your prescriber.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+
 ## Related
 
 [GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)[GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[ToolCompare any two medicines](https://www.glpatlas.com/compare/#builder)
+Share[WhatsApp](https://wa.me/?text=Ozempic%20vs%20Wegovy%3A%20same%20drug%2C%20different%20jobs%20https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fozempic-vs-wegovy%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fozempic-vs-wegovy%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fozempic-vs-wegovy%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fozempic-vs-wegovy%2F&text=Ozempic%20vs%20Wegovy%3A%20same%20drug%2C%20different%20jobs)[Email](https://www.glpatlas.commailto:?subject=Ozempic%20vs%20Wegovy%3A%20same%20drug%2C%20different%20jobs&body=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fozempic-vs-wegovy%2F)
 
 ---
 URL: https://www.glpatlas.com/compare/wegovy-vs-zepbound/
-Title: Wegovy vs Zepbound: semaglutide vs tirzepatide for weight loss
+Title: Wegovy vs Zepbound: Semaglutide vs Tirzepatide
 Summary: Wegovy (semaglutide) vs Zepbound (tirzepatide): weight-loss results, dosing, side effects and self-pay costs compared.
 Last reviewed: 2026-10-20
 
@@ -2861,9 +3040,19 @@ Wegovy (semaglutide) vs Zepbound (tirzepatide): weight-loss results, dosing, sid
 In head-to-head research tirzepatide produced greater average weight loss than semaglutide 2.4 mg. Wegovy HD narrows that gap. Side effects are similar and mostly gastrointestinal.
 Both are prescription medicines. Which one fits depends on your diagnosis, history and coverage — decide with your prescriber.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+
 ## Related
 
 [GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[GLP-1 & incretin medicinesZepboundtirzepatide · Once weekly](https://www.glpatlas.com/drugs/zepbound/)[ToolCompare any two medicines](https://www.glpatlas.com/compare/#builder)
+Share[WhatsApp](https://wa.me/?text=Wegovy%20vs%20Zepbound%3A%20semaglutide%20vs%20tirzepatide%20for%20weight%20loss%20https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-vs-zepbound%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-vs-zepbound%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-vs-zepbound%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-vs-zepbound%2F&text=Wegovy%20vs%20Zepbound%3A%20semaglutide%20vs%20tirzepatide%20for%20weight%20loss)[Email](https://www.glpatlas.commailto:?subject=Wegovy%20vs%20Zepbound%3A%20semaglutide%20vs%20tirzepatide%20for%20weight%20loss&body=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-vs-zepbound%2F)
 
 ---
 URL: https://www.glpatlas.com/compare/wegovy-pill-vs-foundayo/
@@ -2893,9 +3082,19 @@ The Wegovy pill (oral semaglutide) and Foundayo (orforglipron) compared: how to 
 The Wegovy pill showed larger average weight loss in trials; Foundayo is easier to take because it has no fasting rule. Both carry the thyroid C-cell boxed warning.
 Both are prescription medicines. Which one fits depends on your diagnosis, history and coverage — decide with your prescriber.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy pill prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy+pill)
+- [Foundayo prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Foundayo)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+
 ## Related
 
 [GLP-1 & incretin medicinesWegovy pilloral semaglutide 25 mg · Once daily](https://www.glpatlas.com/drugs/wegovy-pill/)[GLP-1 & incretin medicinesFoundayoorforglipron · Once daily](https://www.glpatlas.com/drugs/foundayo/)[ToolCompare any two medicines](https://www.glpatlas.com/compare/#builder)
+Share[WhatsApp](https://wa.me/?text=Wegovy%20pill%20vs%20Foundayo%3A%20the%20two%20weight-loss%20pills%20compared%20https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-pill-vs-foundayo%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-pill-vs-foundayo%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-pill-vs-foundayo%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-pill-vs-foundayo%2F&text=Wegovy%20pill%20vs%20Foundayo%3A%20the%20two%20weight-loss%20pills%20compared)[Email](https://www.glpatlas.commailto:?subject=Wegovy%20pill%20vs%20Foundayo%3A%20the%20two%20weight-loss%20pills%20compared&body=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fwegovy-pill-vs-foundayo%2F)
 
 ---
 URL: https://www.glpatlas.com/compare/mounjaro-vs-ozempic/
@@ -2924,9 +3123,19 @@ Mounjaro (tirzepatide) vs Ozempic (semaglutide) for type 2 diabetes: A1C, weight
 Mounjaro tends to lower A1C and weight more on average; Ozempic has labeled heart and kidney outcome benefits. Prescribers weigh both.
 Both are prescription medicines. Which one fits depends on your diagnosis, history and coverage — decide with your prescriber.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Mounjaro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+
 ## Related
 
 [GLP-1 & incretin medicinesMounjarotirzepatide · Once weekly](https://www.glpatlas.com/drugs/mounjaro/)[GLP-1 & incretin medicinesOzempic (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/ozempic/)[ToolCompare any two medicines](https://www.glpatlas.com/compare/#builder)
+Share[WhatsApp](https://wa.me/?text=Mounjaro%20vs%20Ozempic%20for%20type%202%20diabetes%20https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fmounjaro-vs-ozempic%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fmounjaro-vs-ozempic%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fmounjaro-vs-ozempic%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fmounjaro-vs-ozempic%2F&text=Mounjaro%20vs%20Ozempic%20for%20type%202%20diabetes)[Email](https://www.glpatlas.commailto:?subject=Mounjaro%20vs%20Ozempic%20for%20type%202%20diabetes&body=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fmounjaro-vs-ozempic%2F)
 
 ---
 URL: https://www.glpatlas.com/compare/saxenda-vs-wegovy/
@@ -2955,14 +3164,24 @@ Saxenda (daily liraglutide, now generic) vs Wegovy (weekly semaglutide): results
 Saxenda's generic can make it the cheaper option without insurance, at the cost of daily injections and smaller average results.
 Both are prescription medicines. Which one fits depends on your diagnosis, history and coverage — decide with your prescriber.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Saxenda prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Saxenda)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+
 ## Related
 
 [GLP-1 & incretin medicinesSaxenda (and generic liraglutide 3 mg)liraglutide · Once daily](https://www.glpatlas.com/drugs/saxenda/)[GLP-1 & incretin medicinesWegovy (injection)semaglutide · Once weekly](https://www.glpatlas.com/drugs/wegovy/)[ToolCompare any two medicines](https://www.glpatlas.com/compare/#builder)
+Share[WhatsApp](https://wa.me/?text=Saxenda%20vs%20Wegovy%3A%20daily%20liraglutide%20vs%20weekly%20semaglutide%20https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fsaxenda-vs-wegovy%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fsaxenda-vs-wegovy%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fsaxenda-vs-wegovy%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fsaxenda-vs-wegovy%2F&text=Saxenda%20vs%20Wegovy%3A%20daily%20liraglutide%20vs%20weekly%20semaglutide)[Email](https://www.glpatlas.commailto:?subject=Saxenda%20vs%20Wegovy%3A%20daily%20liraglutide%20vs%20weekly%20semaglutide&body=https%3A%2F%2Fwww.glpatlas.com%2Fcompare%2Fsaxenda-vs-wegovy%2F)
 
 ---
 URL: https://www.glpatlas.com/guides/how-to-buy-glp1-legally-usa/
 Title: How to buy GLP-1 medicines legally in the USA
-Summary: The legal ways to buy or order Wegovy, Zepbound, Ozempic, Mounjaro and GLP-1 pills in the US — prescriptions, pharmacies, telehealth and direct-from-manufacturer.
+Summary: The legal ways to buy Wegovy, Zepbound, Ozempic, Mounjaro and GLP-1 pills in the US: prescriptions, pharmacies, telehealth and manufacturer self-pay.
 Last reviewed: 2026-10-20
 
 Guide
@@ -3000,6 +3219,17 @@ Use the NABP's [safe.pharmacy](https://safe.pharmacy/) lookup. Legitimate online
 
 In August 2026 the FDA issued warning letters to online sellers of products marketed as semaglutide, tirzepatide and retatrutide. Foreign-labeled pens are unapproved in the US even when genuine.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [NABP safe.pharmacy — verify an online pharmacy](https://safe.pharmacy/)
+- [FDA BeSafeRx — buying medicines online safely](https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information)
+- [NovoCare — Novo Nordisk patient and self-pay programs](https://www.novocare.com/)
+- [LillyDirect — Eli Lilly self-pay pharmacy](https://www.lillydirect.com/)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+Share[WhatsApp](https://wa.me/?text=How%20to%20buy%20GLP-1%20medicines%20legally%20in%20the%20USA%20https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-usa%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-usa%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-usa%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-usa%2F&text=How%20to%20buy%20GLP-1%20medicines%20legally%20in%20the%20USA)[Email](https://www.glpatlas.commailto:?subject=How%20to%20buy%20GLP-1%20medicines%20legally%20in%20the%20USA&body=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-usa%2F)
+
 ---
 URL: https://www.glpatlas.com/guides/how-to-buy-glp1-legally-canada/
 Title: How to buy GLP-1 medicines legally in Canada
@@ -3030,6 +3260,16 @@ Every pharmacy must be licensed by its provincial regulatory college. Look it up
 ## Coverage
 
 Provincial plans and private insurers set their own rules; many require prior authorization. Obesity coverage is often an optional benefit.
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Health Canada — buying drugs over the internet](https://www.canada.ca/en/health-canada/services/buying-drugs-over-internet.html)
+- [NAPRA — Canada's pharmacy regulatory authorities](https://www.napra.ca/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
+Share[WhatsApp](https://wa.me/?text=How%20to%20buy%20GLP-1%20medicines%20legally%20in%20Canada%20https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-canada%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-canada%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-canada%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-canada%2F&text=How%20to%20buy%20GLP-1%20medicines%20legally%20in%20Canada)[Email](https://www.glpatlas.commailto:?subject=How%20to%20buy%20GLP-1%20medicines%20legally%20in%20Canada&body=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fhow-to-buy-glp1-legally-canada%2F)
 
 ---
 URL: https://www.glpatlas.com/guides/glp1-cost-without-insurance/
@@ -3062,9 +3302,19 @@ Self-pay prices changed several times in 2025–2026. The figures below were rep
 
 With commercial insurance that covers the drug, manufacturer savings cards can bring copays as low as $25/month. Medicare arrangements announced in 2025 set lower copays for eligible patients; check current Medicare rules.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [NovoCare — Novo Nordisk patient and self-pay programs](https://www.novocare.com/)
+- [LillyDirect — Eli Lilly self-pay pharmacy](https://www.lillydirect.com/)
+- [Medicare.gov — drug coverage](https://www.medicare.gov/)
+- [NABP safe.pharmacy — verify an online pharmacy](https://safe.pharmacy/)
+Share[WhatsApp](https://wa.me/?text=GLP-1%20cost%20without%20insurance%20%28US%2C%202026%29%20https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-cost-without-insurance%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-cost-without-insurance%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-cost-without-insurance%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-cost-without-insurance%2F&text=GLP-1%20cost%20without%20insurance%20%28US%2C%202026%29)[Email](https://www.glpatlas.commailto:?subject=GLP-1%20cost%20without%20insurance%20%28US%2C%202026%29&body=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-cost-without-insurance%2F)
+
 ---
 URL: https://www.glpatlas.com/guides/compounded-and-counterfeit-glp1/
-Title: Compounded, research-peptide and counterfeit GLP-1s: the risks
+Title: Compounded & Counterfeit GLP-1s: The Real Risks
 Summary: Why compounded, 'research' and counterfeit semaglutide and tirzepatide are risky, and how to spot fake Ozempic and Wegovy pens.
 Last reviewed: 2026-10-20
 
@@ -3085,6 +3335,17 @@ Compounded semaglutide and tirzepatide are not FDA-approved. Products sold as "r
 - Report suspected fakes to FDA MedWatch (US) or Health Canada.
 
 Sellers of these products face FDA warning letters and lawsuits from Novo Nordisk and Eli Lilly.
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+- [FDA BeSafeRx — buying medicines online safely](https://www.fda.gov/drugs/quick-tips-buying-medicines-over-internet/besaferx-your-source-online-pharmacy-information)
+- [NABP safe.pharmacy — verify an online pharmacy](https://safe.pharmacy/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
+Share[WhatsApp](https://wa.me/?text=Compounded%2C%20research-peptide%20and%20counterfeit%20GLP-1s%3A%20the%20risks%20https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fcompounded-and-counterfeit-glp1%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fcompounded-and-counterfeit-glp1%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fcompounded-and-counterfeit-glp1%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fcompounded-and-counterfeit-glp1%2F&text=Compounded%2C%20research-peptide%20and%20counterfeit%20GLP-1s%3A%20the%20risks)[Email](https://www.glpatlas.commailto:?subject=Compounded%2C%20research-peptide%20and%20counterfeit%20GLP-1s%3A%20the%20risks&body=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fcompounded-and-counterfeit-glp1%2F)
 
 ---
 URL: https://www.glpatlas.com/guides/glp1-side-effects/
@@ -3111,6 +3372,16 @@ Most side effects are digestive and appear when starting or increasing the dose:
 
 Tell any surgical or endoscopy team that you take a GLP-1 medicine, because of the risk of aspiration under anesthesia.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [DailyMed — FDA prescribing information (NIH)](https://dailymed.nlm.nih.gov/dailymed/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+Share[WhatsApp](https://wa.me/?text=GLP-1%20side%20effects%3A%20what%27s%20common%2C%20what%27s%20serious%20https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-side-effects%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-side-effects%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-side-effects%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-side-effects%2F&text=GLP-1%20side%20effects%3A%20what%27s%20common%2C%20what%27s%20serious)[Email](https://www.glpatlas.commailto:?subject=GLP-1%20side%20effects%3A%20what%27s%20common%2C%20what%27s%20serious&body=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-side-effects%2F)
+
 ---
 URL: https://www.glpatlas.com/guides/glp1-pipeline-2026/
 Title: New GLP-1 drugs coming: the 2026–2027 pipeline
@@ -3133,6 +3404,15 @@ None of the investigational products is legally sold. Anything marketed as one o
 - **Ozempic tablets 25 mg**: under FDA review, decision expected by end of 2026.
 
 - **Survodutide** (Boehringer Ingelheim / Zealand Pharma) and other agents remain in development.
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [ClinicalTrials.gov — registered trials](https://clinicaltrials.gov/)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+Share[WhatsApp](https://wa.me/?text=New%20GLP-1%20drugs%20coming%3A%20the%202026%E2%80%932027%20pipeline%20https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-pipeline-2026%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-pipeline-2026%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-pipeline-2026%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-pipeline-2026%2F&text=New%20GLP-1%20drugs%20coming%3A%20the%202026%E2%80%932027%20pipeline)[Email](https://www.glpatlas.commailto:?subject=New%20GLP-1%20drugs%20coming%3A%20the%202026%E2%80%932027%20pipeline&body=https%3A%2F%2Fwww.glpatlas.com%2Fguides%2Fglp1-pipeline-2026%2F)
 
 ---
 URL: https://www.glpatlas.com/semaglutide/
@@ -3186,6 +3466,19 @@ Its half-life is about one week, so it takes roughly five weeks after the last w
 - [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/)
 - [How to manage nausea and constipation on GLP-1 medicines](https://www.glpatlas.com/questions/glp1-constipation-nausea/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Ozempic tablets prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic+tablets)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Wegovy pill prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy+pill)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — diabetes overview](https://www.niddk.nih.gov/health-information/diabetes)
+Share[WhatsApp](https://wa.me/?text=Semaglutide%3A%20every%20brand%2C%20dose%2C%20use%20and%20price%20%282026%29%20https%3A%2F%2Fwww.glpatlas.com%2Fsemaglutide%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fsemaglutide%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fsemaglutide%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fsemaglutide%2F&text=Semaglutide%3A%20every%20brand%2C%20dose%2C%20use%20and%20price%20%282026%29)[Email](https://www.glpatlas.commailto:?subject=Semaglutide%3A%20every%20brand%2C%20dose%2C%20use%20and%20price%20%282026%29&body=https%3A%2F%2Fwww.glpatlas.com%2Fsemaglutide%2F)
+
 ---
 URL: https://www.glpatlas.com/tirzepatide/
 Title: Tirzepatide: Mounjaro and Zepbound explained (2026)
@@ -3230,10 +3523,22 @@ Tirzepatide can make oral contraceptives less effective. The label advises switc
 - [What is a GLP-1 agonist?](https://www.glpatlas.com/questions/what-is-glp1/)
 - [Semaglutide vs tirzepatide: which is stronger?](https://www.glpatlas.com/questions/semaglutide-vs-tirzepatide/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Mounjaro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Retatrutide prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Retatrutide)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — diabetes overview](https://www.niddk.nih.gov/health-information/diabetes)
+Share[WhatsApp](https://wa.me/?text=Tirzepatide%3A%20Mounjaro%20and%20Zepbound%20explained%20%282026%29%20https%3A%2F%2Fwww.glpatlas.com%2Ftirzepatide%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Ftirzepatide%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Ftirzepatide%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Ftirzepatide%2F&text=Tirzepatide%3A%20Mounjaro%20and%20Zepbound%20explained%20%282026%29)[Email](https://www.glpatlas.commailto:?subject=Tirzepatide%3A%20Mounjaro%20and%20Zepbound%20explained%20%282026%29&body=https%3A%2F%2Fwww.glpatlas.com%2Ftirzepatide%2F)
+
 ---
 URL: https://www.glpatlas.com/diabetes-injections/
-Title: Diabetes injections: the full list for type 2 and type 1 diabetes
-Summary: Complete list of diabetes injections in 2026: GLP-1s (Ozempic, Mounjaro, Trulicity, Victoza), insulins (Lantus, Humalog, Tresiba, Awiqli), combinations and glucagon.
+Title: Diabetes Injections: Full List for Type 1 & Type 2
+Summary: Every diabetes injection in the US and Canada: GLP-1s, dual agonists, insulins, combinations and glucagon — uses, dosing, side effects and cost.
 Last reviewed: 2026-10-20
 
 Topic
@@ -3274,6 +3579,19 @@ Basal (long-acting): [glargine](https://www.glpatlas.com/drugs/insulin-glargine/
 - [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/)
 - [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/)
 - [How to manage nausea and constipation on GLP-1 medicines](https://www.glpatlas.com/questions/glp1-constipation-nausea/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Mounjaro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+- [Trulicity prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Trulicity)
+- [Victoza prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Victoza)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — diabetes overview](https://www.niddk.nih.gov/health-information/diabetes)
+Share[WhatsApp](https://wa.me/?text=Diabetes%20injections%3A%20the%20full%20list%20for%20type%202%20and%20type%201%20diabetes%20https%3A%2F%2Fwww.glpatlas.com%2Fdiabetes-injections%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fdiabetes-injections%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fdiabetes-injections%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fdiabetes-injections%2F&text=Diabetes%20injections%3A%20the%20full%20list%20for%20type%202%20and%20type%201%20diabetes)[Email](https://www.glpatlas.commailto:?subject=Diabetes%20injections%3A%20the%20full%20list%20for%20type%202%20and%20type%201%20diabetes&body=https%3A%2F%2Fwww.glpatlas.com%2Fdiabetes-injections%2F)
 
 ---
 URL: https://www.glpatlas.com/weight-loss-injections/
@@ -3322,6 +3640,19 @@ US labels cover adults with a BMI of 30 or more, or 27 or more with a weight-rel
 - [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/)
 - [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Saxenda prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Saxenda)
+- [Wegovy pill prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy+pill)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — diabetes overview](https://www.niddk.nih.gov/health-information/diabetes)
+Share[WhatsApp](https://wa.me/?text=Weight%20loss%20injections%20and%20pills%20approved%20in%202026%20https%3A%2F%2Fwww.glpatlas.com%2Fweight-loss-injections%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fweight-loss-injections%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fweight-loss-injections%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fweight-loss-injections%2F&text=Weight%20loss%20injections%20and%20pills%20approved%20in%202026)[Email](https://www.glpatlas.commailto:?subject=Weight%20loss%20injections%20and%20pills%20approved%20in%202026&body=https%3A%2F%2Fwww.glpatlas.com%2Fweight-loss-injections%2F)
+
 ---
 URL: https://www.glpatlas.com/insulin/
 Title: Insulin types, brands and prices: a complete guide
@@ -3359,6 +3690,19 @@ Never switch insulin type, brand or concentration without your prescriber.
 - [Signs of low blood sugar (hypoglycemia)](https://www.glpatlas.com/questions/hypoglycemia-signs/)
 - [How to use an insulin pen](https://www.glpatlas.com/questions/how-to-use-insulin-pen/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Insulin lispro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+lispro)
+- [Insulin aspart prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+aspart)
+- [Apidra prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Apidra)
+- [Regular insulin prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Regular+insulin)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [NIDDK (NIH) — insulin, medicines and other diabetes treatments](https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments)
+Share[WhatsApp](https://wa.me/?text=Insulin%20types%2C%20brands%20and%20prices%3A%20a%20complete%20guide%20https%3A%2F%2Fwww.glpatlas.com%2Finsulin%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Finsulin%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Finsulin%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Finsulin%2F&text=Insulin%20types%2C%20brands%20and%20prices%3A%20a%20complete%20guide)[Email](https://www.glpatlas.commailto:?subject=Insulin%20types%2C%20brands%20and%20prices%3A%20a%20complete%20guide&body=https%3A%2F%2Fwww.glpatlas.com%2Finsulin%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/ozempic-missed-dose/
 Title: What if I miss an Ozempic dose?
@@ -3386,6 +3730,15 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/)
 - [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/)
 - [How to manage nausea and constipation on GLP-1 medicines](https://www.glpatlas.com/questions/glp1-constipation-nausea/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20if%20I%20miss%20an%20Ozempic%20dose%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-missed-dose%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-missed-dose%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-missed-dose%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-missed-dose%2F&text=What%20if%20I%20miss%20an%20Ozempic%20dose%3F)[Email](https://www.glpatlas.commailto:?subject=What%20if%20I%20miss%20an%20Ozempic%20dose%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-missed-dose%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/wegovy-missed-dose/
@@ -3415,6 +3768,15 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [What happens when you stop Wegovy or Zepbound?](https://www.glpatlas.com/questions/what-happens-when-you-stop-glp1/)
 - [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20if%20I%20miss%20a%20Wegovy%20dose%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwegovy-missed-dose%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwegovy-missed-dose%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwegovy-missed-dose%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwegovy-missed-dose%2F&text=What%20if%20I%20miss%20a%20Wegovy%20dose%3F)[Email](https://www.glpatlas.commailto:?subject=What%20if%20I%20miss%20a%20Wegovy%20dose%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwegovy-missed-dose%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/zepbound-missed-dose/
 Title: What if I miss a Zepbound or Mounjaro dose?
@@ -3443,6 +3805,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/)
 - [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Mounjaro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20if%20I%20miss%20a%20Zepbound%20or%20Mounjaro%20dose%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fzepbound-missed-dose%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fzepbound-missed-dose%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fzepbound-missed-dose%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fzepbound-missed-dose%2F&text=What%20if%20I%20miss%20a%20Zepbound%20or%20Mounjaro%20dose%3F)[Email](https://www.glpatlas.commailto:?subject=What%20if%20I%20miss%20a%20Zepbound%20or%20Mounjaro%20dose%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fzepbound-missed-dose%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/trulicity-missed-dose/
 Title: What if I miss a Trulicity dose?
@@ -3461,6 +3833,15 @@ General information based on official labels. Your prescriber or pharmacist can 
 ## Related medicines
 
 [GLP-1 & incretin medicinesTrulicitydulaglutide · Once weekly](https://www.glpatlas.com/drugs/trulicity/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Trulicity prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Trulicity)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20if%20I%20miss%20a%20Trulicity%20dose%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ftrulicity-missed-dose%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ftrulicity-missed-dose%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ftrulicity-missed-dose%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ftrulicity-missed-dose%2F&text=What%20if%20I%20miss%20a%20Trulicity%20dose%3F)[Email](https://www.glpatlas.commailto:?subject=What%20if%20I%20miss%20a%20Trulicity%20dose%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ftrulicity-missed-dose%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/alcohol-on-glp1/
@@ -3490,6 +3871,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Can%20you%20drink%20alcohol%20on%20Ozempic%2C%20Wegovy%20or%20Zepbound%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Falcohol-on-glp1%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Falcohol-on-glp1%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Falcohol-on-glp1%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Falcohol-on-glp1%2F&text=Can%20you%20drink%20alcohol%20on%20Ozempic%2C%20Wegovy%20or%20Zepbound%3F)[Email](https://www.glpatlas.commailto:?subject=Can%20you%20drink%20alcohol%20on%20Ozempic%2C%20Wegovy%20or%20Zepbound%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Falcohol-on-glp1%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/
 Title: How long does semaglutide stay in your system?
@@ -3517,6 +3909,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 - [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/)
 - [What happens when you stop Wegovy or Zepbound?](https://www.glpatlas.com/questions/what-happens-when-you-stop-glp1/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20long%20does%20semaglutide%20stay%20in%20your%20system%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-semaglutide-stays-in-system%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-semaglutide-stays-in-system%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-semaglutide-stays-in-system%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-semaglutide-stays-in-system%2F&text=How%20long%20does%20semaglutide%20stay%20in%20your%20system%3F)[Email](https://www.glpatlas.commailto:?subject=How%20long%20does%20semaglutide%20stay%20in%20your%20system%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-semaglutide-stays-in-system%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/
@@ -3546,6 +3948,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [Can you take Ozempic or Wegovy while pregnant or trying to conceive?](https://www.glpatlas.com/questions/glp1-pregnancy/)
 - [Where do you inject Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/glp1-injection-sites/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Mounjaro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Mounjaro)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20long%20does%20tirzepatide%20stay%20in%20your%20system%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-tirzepatide-stays-in-system%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-tirzepatide-stays-in-system%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-tirzepatide-stays-in-system%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-tirzepatide-stays-in-system%2F&text=How%20long%20does%20tirzepatide%20stay%20in%20your%20system%3F)[Email](https://www.glpatlas.commailto:?subject=How%20long%20does%20tirzepatide%20stay%20in%20your%20system%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-long-tirzepatide-stays-in-system%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/ozempic-face/
 Title: What is 'Ozempic face'?
@@ -3573,6 +3985,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/)
 - [What happens when you stop Wegovy or Zepbound?](https://www.glpatlas.com/questions/what-happens-when-you-stop-glp1/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20is%20%27Ozempic%20face%27%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-face%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-face%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-face%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-face%2F&text=What%20is%20%27Ozempic%20face%27%3F)[Email](https://www.glpatlas.commailto:?subject=What%20is%20%27Ozempic%20face%27%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-face%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/glp1-hair-loss/
@@ -3602,6 +4024,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Foundayo prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Foundayo)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Does%20Wegovy%20or%20Zepbound%20cause%20hair%20loss%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-hair-loss%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-hair-loss%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-hair-loss%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-hair-loss%2F&text=Does%20Wegovy%20or%20Zepbound%20cause%20hair%20loss%3F)[Email](https://www.glpatlas.commailto:?subject=Does%20Wegovy%20or%20Zepbound%20cause%20hair%20loss%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-hair-loss%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/what-happens-when-you-stop-glp1/
 Title: What happens when you stop Wegovy or Zepbound?
@@ -3630,9 +4063,19 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20happens%20when%20you%20stop%20Wegovy%20or%20Zepbound%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-happens-when-you-stop-glp1%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-happens-when-you-stop-glp1%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-happens-when-you-stop-glp1%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-happens-when-you-stop-glp1%2F&text=What%20happens%20when%20you%20stop%20Wegovy%20or%20Zepbound%3F)[Email](https://www.glpatlas.commailto:?subject=What%20happens%20when%20you%20stop%20Wegovy%20or%20Zepbound%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-happens-when-you-stop-glp1%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/glp1-pregnancy/
-Title: Can you take Ozempic or Wegovy while pregnant or trying to conceive?
+Title: Can You Take Ozempic or Wegovy While Pregnant?
 Summary: No. Semaglutide should be stopped at least 2 months before a planned pregnancy because of its long half-life. Tirzepatide can reduce oral contraceptive…
 Last reviewed: 2026-10-20
 
@@ -3657,6 +4100,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [Can you drink alcohol on Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/alcohol-on-glp1/)
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Can%20you%20take%20Ozempic%20or%20Wegovy%20while%20pregnant%20or%20trying%20to%20conceive%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-pregnancy%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-pregnancy%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-pregnancy%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-pregnancy%2F&text=Can%20you%20take%20Ozempic%20or%20Wegovy%20while%20pregnant%20or%20trying%20to%20conceive%3F)[Email](https://www.glpatlas.commailto:?subject=Can%20you%20take%20Ozempic%20or%20Wegovy%20while%20pregnant%20or%20trying%20to%20conceive%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-pregnancy%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/glp1-injection-sites/
@@ -3686,6 +4140,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Where%20do%20you%20inject%20Ozempic%2C%20Wegovy%20or%20Zepbound%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-injection-sites%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-injection-sites%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-injection-sites%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-injection-sites%2F&text=Where%20do%20you%20inject%20Ozempic%2C%20Wegovy%20or%20Zepbound%3F)[Email](https://www.glpatlas.commailto:?subject=Where%20do%20you%20inject%20Ozempic%2C%20Wegovy%20or%20Zepbound%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-injection-sites%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/glp1-constipation-nausea/
 Title: How to manage nausea and constipation on GLP-1 medicines
@@ -3713,6 +4178,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [Can you drink alcohol on Ozempic, Wegovy or Zepbound?](https://www.glpatlas.com/questions/alcohol-on-glp1/)
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20to%20manage%20nausea%20and%20constipation%20on%20GLP-1%20medicines%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-constipation-nausea%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-constipation-nausea%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-constipation-nausea%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-constipation-nausea%2F&text=How%20to%20manage%20nausea%20and%20constipation%20on%20GLP-1%20medicines)[Email](https://www.glpatlas.commailto:?subject=How%20to%20manage%20nausea%20and%20constipation%20on%20GLP-1%20medicines&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-constipation-nausea%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/what-is-glp1/
@@ -3742,6 +4218,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Foundayo prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Foundayo)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20is%20a%20GLP-1%20agonist%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-is-glp1%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-is-glp1%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-is-glp1%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-is-glp1%2F&text=What%20is%20a%20GLP-1%20agonist%3F)[Email](https://www.glpatlas.commailto:?subject=What%20is%20a%20GLP-1%20agonist%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fwhat-is-glp1%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/semaglutide-vs-tirzepatide/
 Title: Semaglutide vs tirzepatide: which is stronger?
@@ -3769,6 +4256,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Semaglutide%20vs%20tirzepatide%3A%20which%20is%20stronger%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fsemaglutide-vs-tirzepatide%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fsemaglutide-vs-tirzepatide%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fsemaglutide-vs-tirzepatide%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fsemaglutide-vs-tirzepatide%2F&text=Semaglutide%20vs%20tirzepatide%3A%20which%20is%20stronger%3F)[Email](https://www.glpatlas.commailto:?subject=Semaglutide%20vs%20tirzepatide%3A%20which%20is%20stronger%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fsemaglutide-vs-tirzepatide%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/ozempic-off-label-weight-loss/
@@ -3798,6 +4295,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 - [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Can%20Ozempic%20be%20prescribed%20for%20weight%20loss%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-off-label-weight-loss%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-off-label-weight-loss%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-off-label-weight-loss%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-off-label-weight-loss%2F&text=Can%20Ozempic%20be%20prescribed%20for%20weight%20loss%3F)[Email](https://www.glpatlas.commailto:?subject=Can%20Ozempic%20be%20prescribed%20for%20weight%20loss%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fozempic-off-label-weight-loss%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/generic-semaglutide-us/
 Title: When will generic semaglutide be available in the US?
@@ -3825,6 +4332,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 - [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=When%20will%20generic%20semaglutide%20be%20available%20in%20the%20US%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-semaglutide-us%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-semaglutide-us%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-semaglutide-us%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-semaglutide-us%2F&text=When%20will%20generic%20semaglutide%20be%20available%20in%20the%20US%3F)[Email](https://www.glpatlas.commailto:?subject=When%20will%20generic%20semaglutide%20be%20available%20in%20the%20US%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-semaglutide-us%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/generic-ozempic-canada/
@@ -3854,6 +4371,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 - [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Generic%20Ozempic%20in%20Canada%3A%20what%20to%20know%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-ozempic-canada%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-ozempic-canada%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-ozempic-canada%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-ozempic-canada%2F&text=Generic%20Ozempic%20in%20Canada%3A%20what%20to%20know)[Email](https://www.glpatlas.commailto:?subject=Generic%20Ozempic%20in%20Canada%3A%20what%20to%20know&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fgeneric-ozempic-canada%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/fake-ozempic-pens/
 Title: How to spot fake Ozempic or Wegovy pens
@@ -3881,6 +4408,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 - [Does Wegovy or Zepbound cause hair loss?](https://www.glpatlas.com/questions/glp1-hair-loss/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20to%20spot%20fake%20Ozempic%20or%20Wegovy%20pens%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ffake-ozempic-pens%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ffake-ozempic-pens%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ffake-ozempic-pens%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ffake-ozempic-pens%2F&text=How%20to%20spot%20fake%20Ozempic%20or%20Wegovy%20pens)[Email](https://www.glpatlas.commailto:?subject=How%20to%20spot%20fake%20Ozempic%20or%20Wegovy%20pens&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Ffake-ozempic-pens%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/compounded-semaglutide-legal/
@@ -3910,6 +4447,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA — concerns with unapproved GLP-1 drugs used for weight loss](https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Is%20compounded%20semaglutide%20legal%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fcompounded-semaglutide-legal%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fcompounded-semaglutide-legal%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fcompounded-semaglutide-legal%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fcompounded-semaglutide-legal%2F&text=Is%20compounded%20semaglutide%20legal%3F)[Email](https://www.glpatlas.commailto:?subject=Is%20compounded%20semaglutide%20legal%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fcompounded-semaglutide-legal%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/glp1-how-long-to-work/
 Title: How long does it take for Wegovy or Zepbound to work?
@@ -3937,6 +4484,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20long%20does%20it%20take%20for%20Wegovy%20or%20Zepbound%20to%20work%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-how-long-to-work%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-how-long-to-work%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-how-long-to-work%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-how-long-to-work%2F&text=How%20long%20does%20it%20take%20for%20Wegovy%20or%20Zepbound%20to%20work%3F)[Email](https://www.glpatlas.commailto:?subject=How%20long%20does%20it%20take%20for%20Wegovy%20or%20Zepbound%20to%20work%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-how-long-to-work%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/glp1-food-list/
@@ -3966,6 +4523,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=What%20to%20eat%20on%20GLP-1%20medicines%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-food-list%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-food-list%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-food-list%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-food-list%2F&text=What%20to%20eat%20on%20GLP-1%20medicines)[Email](https://www.glpatlas.commailto:?subject=What%20to%20eat%20on%20GLP-1%20medicines&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-food-list%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/glp1-travel-storage/
 Title: How to store and travel with GLP-1 pens
@@ -3994,6 +4561,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20to%20store%20and%20travel%20with%20GLP-1%20pens%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-travel-storage%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-travel-storage%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-travel-storage%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-travel-storage%2F&text=How%20to%20store%20and%20travel%20with%20GLP-1%20pens)[Email](https://www.glpatlas.commailto:?subject=How%20to%20store%20and%20travel%20with%20GLP-1%20pens&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-travel-storage%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/hypoglycemia-signs/
 Title: Signs of low blood sugar (hypoglycemia)
@@ -4017,6 +4595,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 
 - [How to use an insulin pen](https://www.glpatlas.com/questions/how-to-use-insulin-pen/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Glucagon prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Glucagon)
+- [Insulin glargine prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+glargine)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Signs%20of%20low%20blood%20sugar%20%28hypoglycemia%29%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhypoglycemia-signs%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhypoglycemia-signs%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhypoglycemia-signs%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhypoglycemia-signs%2F&text=Signs%20of%20low%20blood%20sugar%20%28hypoglycemia%29)[Email](https://www.glpatlas.commailto:?subject=Signs%20of%20low%20blood%20sugar%20%28hypoglycemia%29&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhypoglycemia-signs%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/how-to-use-insulin-pen/
 Title: How to use an insulin pen
@@ -4039,6 +4627,16 @@ General information based on official labels. Your prescriber or pharmacist can 
 ## More questions
 
 - [Signs of low blood sugar (hypoglycemia)](https://www.glpatlas.com/questions/hypoglycemia-signs/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Insulin glargine prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+glargine)
+- [Insulin lispro prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Insulin+lispro)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20to%20use%20an%20insulin%20pen%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-to-use-insulin-pen%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-to-use-insulin-pen%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-to-use-insulin-pen%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-to-use-insulin-pen%2F&text=How%20to%20use%20an%20insulin%20pen)[Email](https://www.glpatlas.commailto:?subject=How%20to%20use%20an%20insulin%20pen&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fhow-to-use-insulin-pen%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/glp1-insurance-coverage/
@@ -4068,6 +4666,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Ozempic prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Ozempic)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Does%20insurance%20cover%20Wegovy%2C%20Zepbound%20or%20Ozempic%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-insurance-coverage%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-insurance-coverage%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-insurance-coverage%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-insurance-coverage%2F&text=Does%20insurance%20cover%20Wegovy%2C%20Zepbound%20or%20Ozempic%3F)[Email](https://www.glpatlas.commailto:?subject=Does%20insurance%20cover%20Wegovy%2C%20Zepbound%20or%20Ozempic%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-insurance-coverage%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/glp1-who-qualifies/
 Title: Who qualifies for Wegovy or Zepbound?
@@ -4095,6 +4704,17 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does semaglutide stay in your system?](https://www.glpatlas.com/questions/how-long-semaglutide-stays-in-system/)
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [Foundayo prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Foundayo)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=Who%20qualifies%20for%20Wegovy%20or%20Zepbound%3F%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-who-qualifies%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-who-qualifies%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-who-qualifies%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-who-qualifies%2F&text=Who%20qualifies%20for%20Wegovy%20or%20Zepbound%3F)[Email](https://www.glpatlas.commailto:?subject=Who%20qualifies%20for%20Wegovy%20or%20Zepbound%3F&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-who-qualifies%2F)
 
 ---
 URL: https://www.glpatlas.com/questions/glp1-telehealth/
@@ -4124,16 +4744,27 @@ General information based on official labels. Your prescriber or pharmacist can 
 - [How long does tirzepatide stay in your system?](https://www.glpatlas.com/questions/how-long-tirzepatide-stays-in-system/)
 - [What is 'Ozempic face'?](https://www.glpatlas.com/questions/ozempic-face/)
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Wegovy prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Wegovy)
+- [Zepbound prescribing information (DailyMed)](https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Zepbound)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+Share[WhatsApp](https://wa.me/?text=How%20to%20choose%20a%20GLP-1%20telehealth%20provider%20https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-telehealth%2F)[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-telehealth%2F)[LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-telehealth%2F)[X](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-telehealth%2F&text=How%20to%20choose%20a%20GLP-1%20telehealth%20provider)[Email](https://www.glpatlas.commailto:?subject=How%20to%20choose%20a%20GLP-1%20telehealth%20provider&body=https%3A%2F%2Fwww.glpatlas.com%2Fquestions%2Fglp1-telehealth%2F)
+
 ---
 URL: https://www.glpatlas.com/questions/
 Title: Questions About Ozempic, Wegovy, Zepbound & Insulin
-Summary: Answers to the most-searched questions about semaglutide, tirzepatide, GLP-1 pills and insulin: missed doses, alcohol, side effects, stopping, pregnancy and cost.
+Summary: Answers to the most-searched questions about semaglutide, tirzepatide, GLP-1 pills and insulin: missed doses, alcohol, side effects, pregnancy and cost.
 Last reviewed: 2026-10-20
 
 Answers
 # Questions people ask about GLP-1s and diabetes injections
 
 28 short, label-based answers: missed doses, alcohol, side effects, stopping, pregnancy, storage and cost.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 - [What if I miss an Ozempic dose?](https://www.glpatlas.com/questions/ozempic-missed-dose/)
 - [What if I miss a Wegovy dose?](https://www.glpatlas.com/questions/wegovy-missed-dose/)
@@ -4165,6 +4796,15 @@ Answers
 - [How to choose a GLP-1 telehealth provider](https://www.glpatlas.com/questions/glp1-telehealth/)
 No question matches. Try the .
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [DailyMed — FDA prescribing information (NIH)](https://dailymed.nlm.nih.gov/dailymed/)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+
 ---
 URL: https://www.glpatlas.com/glossary/
 Title: GLP-1 and Diabetes Glossary
@@ -4175,6 +4815,7 @@ Reference
 # GLP-1 and diabetes glossary
 
 14 plain-English definitions of the terms you will meet on labels, in trials and at the pharmacy.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
  div" placeholder="Filter terms…" aria-label="Filter glossary terms">
 
@@ -4207,79 +4848,244 @@ Reference
 **Titration**: Gradual dose increases to improve tolerance.
 No term matches.
 
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [NIDDK (NIH) — diabetes overview](https://www.niddk.nih.gov/health-information/diabetes)
+- [MedlinePlus (NIH) — diabetes medicines](https://medlineplus.gov/diabetesmedicines.html)
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+
 ---
 URL: https://www.glpatlas.com/about/
-Title: About us
-Summary: Who we are and why this site exists. GLP Atlas is an independent GLP-1, weight-loss and diabetes medicine reference for the US and Canada.
+Title: About GLP Atlas: Independent GLP-1 Medicine Reference
+Summary: Who we are, why this independent GLP-1 and diabetes medicine reference exists, and how it is funded.
 Last reviewed: 2026-10-20
 
+About GLP Atlas
 # About us
 
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 GLP Atlas is an independent reference on GLP-1, incretin and insulin medicines for readers in the United States and Canada. We explain what each medicine is approved for, how it is dosed according to its official label, its risks, and the legal ways to obtain it.
 
 **We do not sell, ship or broker medicines.** We never process orders and never ask readers to contact us to buy anything.
 
-Editor: **Dr. George Grunberger**. Medical review: pending — clinician review in progress.
+## Who writes and reviews the content
+
+- **Editor:** Dr. George Grunberger — responsible for every page and every update.
+
+- **Medical review:** pending — clinician review in progress.
+
+- **Last site-wide review:** October 20, 2026.
+
+## What we cover
+
+- 26 GLP-1, incretin, insulin and emergency diabetes medicines, plus two pipeline drugs.
+
+- Side-by-side comparisons, buying guides for the US and Canada, and short answers to common questions.
+
+- Prices, approvals and generics that change often — each page shows the date it was last checked.
+
+## How we work
+
+Facts come from primary sources: FDA and Health Canada labels, manufacturer releases and peer-reviewed trials. We do not publish anonymous claims or user testimonials. Read the full [editorial policy](https://www.glpatlas.com/editorial-policy/).
+
+## Contact
+
+Corrections and editorial questions: [contact@glpatlas.com](https://www.glpatlas.commailto:contact@glpatlas.com). General enquiries: [glp1atlas@gmail.com](https://www.glpatlas.commailto:glp1atlas@gmail.com).
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [DailyMed — FDA prescribing information (NIH)](https://dailymed.nlm.nih.gov/dailymed/)
 
 ---
 URL: https://www.glpatlas.com/editorial-policy/
-Title: Editorial policy
-Summary: How we research, review and update pages. GLP Atlas is an independent GLP-1, weight-loss and diabetes medicine reference for the US and Canada.
+Title: Editorial Policy: How We Research and Review
+Summary: How GLP Atlas researches, writes, reviews, dates and corrects every page about GLP-1 and diabetes medicines.
 Last reviewed: 2026-10-20
 
+About GLP Atlas
 # Editorial policy
 
-- Every page is written from primary sources: FDA and Health Canada labels, manufacturer releases and peer-reviewed trials.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+Every page on GLP Atlas follows the same process. The goal is simple: accurate, current, label-based information you can check yourself.
+
+## Sources we use
+
+- FDA prescribing information (DailyMed and Drugs@FDA) and the Health Canada Drug Product Database.
+
+- Manufacturer press releases for approvals, launches and self-pay prices.
+
+- Peer-reviewed trials and registered studies on ClinicalTrials.gov.
+
+## Review and dates
 
 - Each drug page is reviewed by a licensed clinician before publication and on every major update. The reviewer's name and date appear on the page.
 
 - Pages carry a "last reviewed" date and are re-checked when labels or prices change.
 
+- Dosing is reproduced from the label only. Insulin doses are never given as numbers, because they are always individual.
+
+## Independence
+
 - Commercial partners never see or approve content before publication.
-- Corrections: email editor@glpatlas.com; we respond within 5 business days.
+
+- We do not accept payment to rank, praise or omit any product.
+
+## Corrections
+
+Email [contact@glpatlas.com](https://www.glpatlas.commailto:contact@glpatlas.com). We respond within 5 business days, fix confirmed errors and update the review date.
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Drugs@FDA — approval history and labels](https://www.accessdata.fda.gov/scripts/cder/daf/)
+- [Health Canada Drug Product Database](https://health-products.canada.ca/dpd-bdpp/)
+- [DailyMed — FDA prescribing information (NIH)](https://dailymed.nlm.nih.gov/dailymed/)
+- [ClinicalTrials.gov — registered trials](https://clinicaltrials.gov/)
 
 ---
 URL: https://www.glpatlas.com/medical-disclaimer/
-Title: Medical disclaimer
-Summary: This site is information, not medical advice. GLP Atlas is an independent GLP-1, weight-loss and diabetes medicine reference for the US and Canada.
+Title: Medical Disclaimer: Information, Not Medical Advice
+Summary: GLP Atlas provides general information about GLP-1 and diabetes medicines. It is not medical advice and does not replace your clinician.
 Last reviewed: 2026-10-20
 
+About GLP Atlas
 # Medical disclaimer
 
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Content on GLP Atlas is for general information only and is not a substitute for advice from your doctor or pharmacist. Do not start, stop or change a medicine based on this site. In an emergency call 911 (US/Canada).
+
+## What this site can and cannot do
+
+- It can explain what the official label says, in plain English.
+
+- It cannot tell you which medicine or dose is right for you.
+
+- It cannot diagnose a condition or interpret your test results.
+
+## Information changes
+
+Approvals, prices and availability change often. Each page shows the date it was last reviewed. Always check the current label and ask your pharmacist.
+
+## Side effects
+
+If you think you have a side effect, contact your prescriber. You can also report it to the FDA (MedWatch) or Health Canada (MedEffect).
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
 
 ---
 URL: https://www.glpatlas.com/affiliate-disclosure/
-Title: Affiliate disclosure
-Summary: How we make money. GLP Atlas is an independent GLP-1, weight-loss and diabetes medicine reference for the US and Canada.
+Title: Affiliate Disclosure: How GLP Atlas Is Funded
+Summary: How GLP Atlas makes money, which partners we accept, and why commissions never change our medical content.
 Last reviewed: 2026-10-20
 
+About GLP Atlas
 # Affiliate disclosure
 
-GLP Atlas may earn a commission when readers use links to licensed telehealth services or pharmacies. We only link to providers that require a prescription and are verified (for example, LegitScript-certified or listed on safe.pharmacy). Commissions never affect our medical content.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+GLP Atlas may earn a commission when readers use links to licensed telehealth services or pharmacies. Commissions never affect our medical content.
+
+## Our rules for partners
+
+- They must require a valid prescription.
+
+- They must be verified — for example LegitScript-certified or listed on safe.pharmacy.
+
+- They never sell compounded, "research" or foreign-labelled GLP-1 products.
+
+- Paid links are marked and use rel="sponsored".
+
+## No influence on content
+
+Partners do not see pages before publication and cannot ask for changes. Questions: [contact@glpatlas.com](https://www.glpatlas.commailto:contact@glpatlas.com).
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [LegitScript — healthcare merchant certification](https://www.legitscript.com/)
+- [NABP safe.pharmacy — verify an online pharmacy](https://safe.pharmacy/)
 
 ---
 URL: https://www.glpatlas.com/privacy/
-Title: Privacy policy
-Summary: What data we collect. GLP Atlas is an independent GLP-1, weight-loss and diabetes medicine reference for the US and Canada.
+Title: Privacy Policy: What Data GLP Atlas Collects
+Summary: What personal data GLP Atlas collects, why, how long we keep it and how to ask for deletion.
 Last reviewed: 2026-10-20
 
+About GLP Atlas
 # Privacy policy
 
-We collect basic, anonymous analytics and the details you choose to send through the contact form. We do not sell personal data. Contact editor@glpatlas.com to request deletion.
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+We collect as little data as possible. We do not sell personal data, and we do not use advertising trackers.
+
+## What we collect
+
+- **Contact form:** your name, email and message, only so we can reply. It is processed by our host's form service.
+
+- **Server logs:** our host keeps standard technical logs (IP address, browser, pages requested) for security.
+
+- **Your device:** we store your light/dark theme choice in your browser's local storage. No cookies are set.
+
+## Share buttons
+
+Share links open WhatsApp, Facebook, LinkedIn or X only when you click them. Those services then apply their own privacy policies.
+
+## Your rights
+
+You can ask to see or delete any message you sent us. Email [contact@glpatlas.com](https://www.glpatlas.commailto:contact@glpatlas.com); we reply within 30 days. US and Canadian privacy laws (including CCPA and PIPEDA) apply.
+
+## Sources
+
+Checked against these primary sources on October 20, 2026.
+
+- [Netlify privacy policy (our host)](https://www.netlify.com/privacy/)
 
 ---
 URL: https://www.glpatlas.com/contact/
-Title: Contact
-Summary: Contact the GLP Atlas editorial team for corrections, editorial questions, press and partnership enquiries. We do not sell medicines.
+Title: Contact the GLP Atlas Editors: Corrections & Press
+Summary: Contact the GLP Atlas editorial team at contact@glpatlas.com for corrections, editorial questions, press and partnership enquiries. We do not sell medicines.
 Last reviewed: 2026-10-20
 
+Contact
 # Contact the editors
+
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+
+How to reach us
+Write to [contact@glpatlas.com](https://www.glpatlas.commailto:contact@glpatlas.com) or [glp1atlas@gmail.com](https://www.glpatlas.commailto:glp1atlas@gmail.com), or use the form below. We answer corrections within 5 business days.
 
 **We do not sell, ship or broker medicines and cannot answer requests to buy them.** For medical questions, ask your doctor or pharmacist. In an emergency call 911.
 
-Use this form for corrections, editorial questions, press and partnership enquiries. Email: [editor@glpatlas.com](https://www.glpatlas.commailto:editor@glpatlas.com)
+**Editorial & corrections**[contact@glpatlas.com](https://www.glpatlas.commailto:contact@glpatlas.com)
+**General enquiries**[glp1atlas@gmail.com](https://www.glpatlas.commailto:glp1atlas@gmail.com)
+**Response time**Within 5 business days
 
+## Send a message
+
+Use this form for corrections, editorial questions, press and partnership enquiries. Please do not include personal health information.
+
+Leave this field empty
 NameEmail
 Topic
 Message
+
+By sending this form you agree that we store your message to reply to you. See our [privacy policy](https://www.glpatlas.com/privacy/).
+
+## Had a side effect? Report it
+
+We cannot give medical advice. Tell your prescriber or pharmacist, and report it to the regulator so it is tracked nationally.
+Checked against these primary sources on October 20, 2026.
+
+- [FDA MedWatch — report a side effect](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program)
+- [Health Canada MedEffect — report a side effect](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada.html)
