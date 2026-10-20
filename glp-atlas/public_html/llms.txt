@@ -1,6 +1,6 @@
 # GLP Atlas
 
-> Independent reference on GLP-1, incretin and insulin medicines for the United States and Canada: label dosing, safety, cost and legal access. Does not sell medicines. Last reviewed 2026-10-20. Editor: Noé Mbwang. Medical review: pending — clinician review in progress.
+> Independent reference on GLP-1, incretin and insulin medicines for the United States and Canada: label dosing, safety, cost and legal access. Does not sell medicines. Last reviewed 2026-10-20. Editor: Dr. George Grunberger. Medical review: pending — clinician review in progress.
 
 Facts come from FDA and Health Canada labels, manufacturer releases and peer-reviewed trials. When citing, please link the specific page and its review date. Full text of every page: https://www.glpatlas.com/llms-full.txt
 

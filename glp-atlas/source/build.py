@@ -13,7 +13,7 @@ CONFIG = {
     "SITE": "GLP Atlas",                       # brand name (placeholder — check domain availability)
     "DOMAIN": "https://www.glpatlas.com",      # final domain, no trailing slash
     "EMAIL": "editor@glpatlas.com",            # editorial contact
-    "EDITOR": "Noé Mbwang",
+    "EDITOR": "Dr. George Grunberger",
     "REVIEWER": "",                            # e.g. "Jane Doe, PharmD" — leave empty until a real licensed reviewer signs off
     "PUBLISHED": "2026-10-20",                 # first publication date (schema datePublished)
     "UPDATED": "2026-10-20",
@@ -634,6 +634,7 @@ def root_files():
     open(f"{OUT}/site.webmanifest", "w").write(json.dumps(manifest, indent=1))
     host = C["DOMAIN"].split("//")[1]
     host_re = host.replace(".", "\\.")
+    open(f"{OUT}/_headers", "w").write(NETLIFY_HEADERS)  # Netlify / Cloudflare Pages (ignored by Apache)
     open(f"{OUT}/.htaccess", "w").write(f"""# Force HTTPS + canonical host
 Options -Indexes
 RewriteEngine On
@@ -677,6 +678,21 @@ Header unset X-Robots-Tag
 </FilesMatch>
 </IfModule>
 """)
+
+NETLIFY_HEADERS = """/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+/assets/*.css
+  Cache-Control: public, max-age=31536000
+/assets/*.js
+  Cache-Control: public, max-age=31536000
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+"""
 
 def copy_assets():
     src = os.path.join(HERE, "assets")

@@ -1,6 +1,6 @@
 # GLP Atlas
 
-> Independent reference on GLP-1, incretin and insulin medicines for the United States and Canada: label dosing, safety, cost and legal access. Does not sell medicines. Last reviewed 2026-10-20. Editor: Noé Mbwang. Medical review: pending — clinician review in progress.
+> Independent reference on GLP-1, incretin and insulin medicines for the United States and Canada: label dosing, safety, cost and legal access. Does not sell medicines. Last reviewed 2026-10-20. Editor: Dr. George Grunberger. Medical review: pending — clinician review in progress.
 
 Facts come from FDA and Health Canada labels, manufacturer releases and peer-reviewed trials. When citing, please link the specific page and its review date. Full text of every page: https://www.glpatlas.com/llms-full.txt
 
@@ -148,7 +148,7 @@ GLP-1 & incretin medicines
 # Ozempic (injection)
 
 semaglutide · GLP-1 receptor agonist · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Ozempic** (semaglutide) is a GLP-1 receptor agonist made by Novo Nordisk, used for blood sugar control in adults with type 2 diabetes, lower risk of major cardiovascular events in adults with type 2 diabetes and heart disease and reduce risk of kidney disease progression in adults with type 2 diabetes and chronic kidney disease. Schedule: once weekly. It is prescription-only in the US and Canada.
@@ -278,7 +278,7 @@ GLP-1 & incretin medicines
 # Ozempic tablets (formerly Rybelsus)
 
 oral semaglutide · GLP-1 receptor agonist (oral) · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Ozempic tablets** (oral semaglutide) is a GLP-1 receptor agonist (oral) made by Novo Nordisk, used for blood sugar control in adults with type 2 diabetes and lower risk of major cardiovascular events in adults with type 2 diabetes at high risk. Schedule: once daily. It is prescription-only in the US and Canada.
@@ -386,7 +386,7 @@ GLP-1 & incretin medicines
 # Wegovy (injection)
 
 semaglutide · GLP-1 receptor agonist · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Wegovy** (semaglutide) is a GLP-1 receptor agonist made by Novo Nordisk, used for weight reduction and long-term maintenance in adults and children 12+ with obesity, or adults with overweight and a weight-related condition, reduce major cardiovascular events in adults with heart disease and obesity or overweight and MASH (fatty liver disease) with moderate-to-advanced fibrosis in adults. Schedule: once weekly. It is prescription-only in the US and Canada.
@@ -523,7 +523,7 @@ GLP-1 & incretin medicines
 # Wegovy pill
 
 oral semaglutide 25 mg · GLP-1 receptor agonist (oral) · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Wegovy pill** (oral semaglutide 25 mg) is a GLP-1 receptor agonist (oral) made by Novo Nordisk, used for weight reduction and long-term maintenance in adults with obesity, or overweight with a weight-related condition (see the label for any additional indications). Schedule: once daily. It is prescription-only in the US and Canada.
@@ -631,7 +631,7 @@ GLP-1 & incretin medicines
 # Mounjaro
 
 tirzepatide · Dual GIP / GLP-1 receptor agonist · Eli Lilly
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Mounjaro** (tirzepatide) is a dual GIP / GLP-1 receptor agonist made by Eli Lilly, used for blood sugar control in adults with type 2 diabetes. Schedule: once weekly. It is prescription-only in the US and Canada.
@@ -744,7 +744,7 @@ GLP-1 & incretin medicines
 # Zepbound
 
 tirzepatide · Dual GIP / GLP-1 receptor agonist · Eli Lilly
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Zepbound** (tirzepatide) is a dual GIP / GLP-1 receptor agonist made by Eli Lilly, used for weight reduction and long-term maintenance in adults with obesity, or overweight with a weight-related condition and moderate-to-severe obstructive sleep apnea in adults with obesity. Schedule: once weekly. It is prescription-only in the US and Canada.
@@ -874,7 +874,7 @@ GLP-1 & incretin medicines
 # Foundayo
 
 orforglipron · Small-molecule (non-peptide) oral GLP-1 receptor agonist · Eli Lilly
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Foundayo** (orforglipron) is a small-molecule (non-peptide) oral GLP-1 receptor agonist made by Eli Lilly, used for weight reduction and long-term maintenance in adults with obesity, or overweight with at least one weight-related condition. Schedule: once daily. It is prescription-only in the US and Canada.
@@ -989,7 +989,7 @@ GLP-1 & incretin medicines
 # Victoza (and generic liraglutide)
 
 liraglutide · GLP-1 receptor agonist · Novo Nordisk; generics available
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Victoza** (liraglutide) is a GLP-1 receptor agonist made by Novo Nordisk; generics available, used for blood sugar control in adults and children 10+ with type 2 diabetes and lower cardiovascular risk in adults with type 2 diabetes and heart disease. Schedule: once daily. It is prescription-only in the US and Canada.
@@ -1095,7 +1095,7 @@ GLP-1 & incretin medicines
 # Saxenda (and generic liraglutide 3 mg)
 
 liraglutide · GLP-1 receptor agonist · Novo Nordisk; generic by Teva
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Saxenda** (liraglutide) is a GLP-1 receptor agonist made by Novo Nordisk; generic by Teva, used for weight management in adults and adolescents 12+ with obesity (adults also with overweight plus a weight-related condition). Schedule: once daily. It is prescription-only in the US and Canada.
@@ -1202,7 +1202,7 @@ GLP-1 & incretin medicines
 # Trulicity
 
 dulaglutide · GLP-1 receptor agonist · Eli Lilly
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Trulicity** (dulaglutide) is a GLP-1 receptor agonist made by Eli Lilly, used for blood sugar control in adults and children 10+ with type 2 diabetes and lower cardiovascular risk in adults with type 2 diabetes. Schedule: once weekly. It is prescription-only in the US and Canada.
@@ -1312,7 +1312,7 @@ GLP-1 & incretin medicines
 # Byetta and Bydureon BCise
 
 exenatide · GLP-1 receptor agonist · AstraZeneca
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Exenatide** (exenatide) is a GLP-1 receptor agonist made by AstraZeneca, used for blood sugar control in type 2 diabetes. Schedule: twice daily (byetta) or once weekly (bydureon bcise). It is prescription-only in the US and Canada.
@@ -1416,7 +1416,7 @@ GLP-1 & incretin medicines
 # Soliqua 100/33
 
 insulin glargine + lixisenatide · Basal insulin + GLP-1 receptor agonist combination · Sanofi
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Soliqua** (insulin glargine + lixisenatide) is a basal insulin + GLP-1 receptor agonist combination made by Sanofi, used for blood sugar control in adults with type 2 diabetes. Schedule: once daily. It is prescription-only in the US and Canada.
@@ -1518,7 +1518,7 @@ GLP-1 & incretin medicines
 # Xultophy 100/3.6
 
 insulin degludec + liraglutide · Basal insulin + GLP-1 receptor agonist combination · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Xultophy** (insulin degludec + liraglutide) is a basal insulin + GLP-1 receptor agonist combination made by Novo Nordisk, used for blood sugar control in adults with type 2 diabetes. Schedule: once daily. It is prescription-only in the US and Canada.
@@ -1621,7 +1621,7 @@ Insulins
 # Insulin lispro: Humalog, Admelog, Lyumjev
 
 insulin lispro · Rapid-acting (mealtime) insulin · Eli Lilly; Sanofi (Admelog)
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Insulin lispro** (insulin lispro) is a rapid-acting (mealtime) insulin made by Eli Lilly; Sanofi (Admelog), used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
@@ -1720,7 +1720,7 @@ Insulins
 # Insulin aspart: NovoLog, Fiasp
 
 insulin aspart · Rapid-acting (mealtime) insulin · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Insulin aspart** (insulin aspart) is a rapid-acting (mealtime) insulin made by Novo Nordisk, used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
@@ -1815,7 +1815,7 @@ Insulins
 # Insulin glulisine: Apidra
 
 insulin glulisine · Rapid-acting (mealtime) insulin · Sanofi
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Apidra** (insulin glulisine) is a rapid-acting (mealtime) insulin made by Sanofi, used for mealtime blood sugar control in type 1 and type 2 diabetes. Schedule: with meals. It is prescription-only in the US and Canada.
@@ -1905,7 +1905,7 @@ Insulins
 # Regular (short-acting) insulin: Humulin R, Novolin R
 
 human insulin (regular) · Short-acting insulin · Eli Lilly; Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Regular insulin** (human insulin (regular)) is a short-acting insulin made by Eli Lilly; Novo Nordisk, used for blood sugar control in diabetes. Schedule: before meals. It is prescription-only in the US and Canada.
@@ -2000,7 +2000,7 @@ Insulins
 # NPH (intermediate-acting) insulin: Humulin N, Novolin N
 
 isophane human insulin · Intermediate-acting insulin · Eli Lilly; Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **NPH insulin** (isophane human insulin) is an intermediate-acting insulin made by Eli Lilly; Novo Nordisk, used for basal blood sugar control in diabetes. Schedule: once or twice daily. It is prescription-only in the US and Canada.
@@ -2089,7 +2089,7 @@ Insulins
 # Insulin glargine: Lantus, Basaglar, Semglee, Rezvoglar, Toujeo
 
 insulin glargine · Long-acting (basal) insulin · Sanofi; Eli Lilly; Biocon/Viatris
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Insulin glargine** (insulin glargine) is a long-acting (basal) insulin made by Sanofi; Eli Lilly; Biocon/Viatris, used for basal blood sugar control in type 1 and type 2 diabetes. Schedule: once daily. It is prescription-only in the US and Canada.
@@ -2189,7 +2189,7 @@ Insulins
 # Insulin degludec: Tresiba
 
 insulin degludec · Ultra-long-acting (basal) insulin · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Tresiba** (insulin degludec) is an ultra-long-acting (basal) insulin made by Novo Nordisk, used for basal blood sugar control in diabetes (adults and children 1+). Schedule: once daily. It is prescription-only in the US and Canada.
@@ -2278,7 +2278,7 @@ Insulins
 # Insulin icodec: Awiqli (once-weekly insulin)
 
 insulin icodec-abae · Once-weekly basal insulin (700 units/mL) · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Awiqli** (insulin icodec-abae) is an once-weekly basal insulin (700 units/mL) made by Novo Nordisk, used for blood sugar control in adults with type 2 diabetes. Schedule: once weekly. It is prescription-only in the US and Canada.
@@ -2372,7 +2372,7 @@ Insulins
 # Premixed insulins: Humalog Mix, NovoLog Mix, Humulin/Novolin 70/30
 
 premixed insulin · Premixed (intermediate + rapid or short) · Eli Lilly; Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Premixed insulin** (premixed insulin) is a premixed (intermediate + rapid or short) made by Eli Lilly; Novo Nordisk, used for blood sugar control in diabetes when a fixed mix suits the routine. Schedule: usually twice daily with meals. It is prescription-only in the US and Canada.
@@ -2461,7 +2461,7 @@ Other diabetes injectables
 # Symlin
 
 pramlintide · Amylin analog · AstraZeneca
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Symlin** (pramlintide) is an amylin analog made by AstraZeneca, used for added to mealtime insulin in type 1 or type 2 diabetes. Schedule: before major meals. It is prescription-only in the US and Canada.
@@ -2559,7 +2559,7 @@ Other diabetes injectables
 # Glucagon rescue: GlucaGen, Gvoke, Baqsimi
 
 glucagon / dasiglucagon · Emergency treatment for severe low blood sugar · Various
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Glucagon** (glucagon / dasiglucagon) is an emergency treatment for severe low blood sugar made by Various, used for severe hypoglycemia in people with diabetes. Schedule: emergency use only. It is prescription-only in the US and Canada.
@@ -2665,7 +2665,7 @@ Pipeline (not approved)
 # CagriSema (investigational)
 
 cagrilintide + semaglutide · Amylin analog + GLP-1 receptor agonist combination · Novo Nordisk
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **CagriSema** (cagrilintide + semaglutide) is an investigational amylin analog + GLP-1 receptor agonist combination from Novo Nordisk. It is not approved and cannot legally be bought outside a registered clinical trial. Not FDA-approved. Filed December 18, 2025; Novo Nordisk guides to an FDA decision in Q4 2026.
@@ -2739,7 +2739,7 @@ Pipeline (not approved)
 # Retatrutide (investigational)
 
 retatrutide · GIP / GLP-1 / glucagon triple receptor agonist · Eli Lilly
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 In short
 **Retatrutide** (retatrutide) is an investigational GIP / GLP-1 / glucagon triple receptor agonist from Eli Lilly. It is not approved and cannot legally be bought outside a registered clinical trial. Not FDA-approved. Lilly plans to submit to the FDA in Q1 2027 after positive TRIUMPH-2 and TRIUMPH-3 results (July 2026).
@@ -2810,7 +2810,7 @@ Last reviewed: 2026-10-20
 Comparison
 # Ozempic vs Wegovy: same drug, different jobs
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Quick answer
 Ozempic and Wegovy both contain semaglutide. Compare approvals, doses, pills vs pens and cost in the US and Canada. The choice is usually made by the diagnosis, not by preference: a person with type 2 diabetes is typically prescribed Ozempic, while a person treated for weight is prescribed Wegovy. Insurers apply different coverage rules to each, which is why the same molecule can cost very different amounts.
@@ -2842,7 +2842,7 @@ Last reviewed: 2026-10-20
 Comparison
 # Wegovy vs Zepbound: semaglutide vs tirzepatide for weight loss
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Quick answer
 Wegovy (semaglutide) vs Zepbound (tirzepatide): weight-loss results, dosing, side effects and self-pay costs compared. In head-to-head research tirzepatide produced greater average weight loss than semaglutide 2.4 mg. Wegovy HD narrows that gap. Side effects are similar and mostly gastrointestinal.
@@ -2874,7 +2874,7 @@ Last reviewed: 2026-10-20
 Comparison
 # Wegovy pill vs Foundayo: the two weight-loss pills compared
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Quick answer
 The Wegovy pill (oral semaglutide) and Foundayo (orforglipron) compared: how to take them, results, doses and cost. The Wegovy pill showed larger average weight loss in trials; Foundayo is easier to take because it has no fasting rule. Both carry the thyroid C-cell boxed warning.
@@ -2906,7 +2906,7 @@ Last reviewed: 2026-10-20
 Comparison
 # Mounjaro vs Ozempic for type 2 diabetes
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Quick answer
 Mounjaro (tirzepatide) vs Ozempic (semaglutide) for type 2 diabetes: A1C, weight, doses and cost. Mounjaro tends to lower A1C and weight more on average; Ozempic has labeled heart and kidney outcome benefits. Prescribers weigh both.
@@ -2937,7 +2937,7 @@ Last reviewed: 2026-10-20
 Comparison
 # Saxenda vs Wegovy: daily liraglutide vs weekly semaglutide
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Quick answer
 Saxenda (daily liraglutide, now generic) vs Wegovy (weekly semaglutide): results, convenience and cost. Saxenda's generic can make it the cheaper option without insurance, at the cost of daily injections and smaller average results.
@@ -2968,7 +2968,7 @@ Last reviewed: 2026-10-20
 Guide
 # How to buy GLP-1 medicines legally in the USA
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 The legal ways to buy or order Wegovy, Zepbound, Ozempic, Mounjaro and GLP-1 pills in the US — prescriptions, pharmacies, telehealth and direct-from-manufacturer.
 
 Key point
@@ -3009,7 +3009,7 @@ Last reviewed: 2026-10-20
 Guide
 # How to buy GLP-1 medicines legally in Canada
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 How to get Ozempic, Wegovy, Mounjaro and generic semaglutide legally in Canada: prescriptions, pharmacies, coverage and the new generics.
 
 Key point
@@ -3040,7 +3040,7 @@ Last reviewed: 2026-10-20
 Guide
 # GLP-1 cost without insurance (US, 2026)
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 What Wegovy, Zepbound, Ozempic, Mounjaro, the Wegovy pill and Foundayo cost without insurance through NovoCare and LillyDirect in 2026.
 
 Key point
@@ -3071,7 +3071,7 @@ Last reviewed: 2026-10-20
 Guide
 # Compounded, research-peptide and counterfeit GLP-1s: the risks
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Why compounded, 'research' and counterfeit semaglutide and tirzepatide are risky, and how to spot fake Ozempic and Wegovy pens.
 
 Key point
@@ -3095,7 +3095,7 @@ Last reviewed: 2026-10-20
 Guide
 # GLP-1 side effects: what's common, what's serious
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Common and serious side effects of semaglutide, tirzepatide, liraglutide and orforglipron, and when to call a doctor.
 
 Key point
@@ -3120,7 +3120,7 @@ Last reviewed: 2026-10-20
 Guide
 # New GLP-1 drugs coming: the 2026–2027 pipeline
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 CagriSema, retatrutide and other upcoming obesity and diabetes drugs: status, results and expected decisions.
 
 Key point
@@ -3143,7 +3143,7 @@ Last reviewed: 2026-10-20
 Topic
 # Semaglutide — the complete guide
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Semaglutide explained: Ozempic, Wegovy, Wegovy HD, Wegovy pill and Ozempic tablets — uses, doses, side effects, generics and cost in the US and Canada.
 
 In short
@@ -3195,7 +3195,7 @@ Last reviewed: 2026-10-20
 Topic
 # Tirzepatide — Mounjaro and Zepbound
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Tirzepatide (Mounjaro, Zepbound): how the dual GIP/GLP-1 drug works, doses, results, side effects, vials vs pens and cost.
 
 In short
@@ -3239,7 +3239,7 @@ Last reviewed: 2026-10-20
 Topic
 # Diabetes injections — every option
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Complete list of diabetes injections in 2026: GLP-1s (Ozempic, Mounjaro, Trulicity, Victoza), insulins (Lantus, Humalog, Tresiba, Awiqli), combinations and glucagon.
 
 In short
@@ -3284,7 +3284,7 @@ Last reviewed: 2026-10-20
 Topic
 # Weight loss injections and pills
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 Every FDA-approved weight loss injection and GLP-1 pill in 2026: Wegovy, Wegovy HD, Zepbound, Saxenda, Wegovy pill and Foundayo — results, doses and cost.
 
 In short
@@ -3331,7 +3331,7 @@ Last reviewed: 2026-10-20
 Topic
 # Insulin — types, brands and how they differ
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 All insulin types explained: rapid, short, intermediate, long-acting, once-weekly and premixed — brands, timing, storage and $35 cost programs.
 
 In short
@@ -3368,7 +3368,7 @@ Last reviewed: 2026-10-20
 Question
 # What if I miss an Ozempic dose?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Take it as soon as possible within 5 days of the missed dose. If more than 5 days have passed, skip it and take the next dose on your usual day. Never take two doses to catch up.
@@ -3396,7 +3396,7 @@ Last reviewed: 2026-10-20
 Question
 # What if I miss a Wegovy dose?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 If the next scheduled dose is more than 2 days away, take the missed dose as soon as possible. If it is less than 2 days away, skip it. If you miss more than 2 weeks, contact your prescriber — you may need to restart at a lower dose.
@@ -3424,7 +3424,7 @@ Last reviewed: 2026-10-20
 Question
 # What if I miss a Zepbound or Mounjaro dose?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Take it within 4 days (96 hours) of the missed dose. If more than 4 days have passed, skip it and take the next dose on your regular day.
@@ -3452,7 +3452,7 @@ Last reviewed: 2026-10-20
 Question
 # What if I miss a Trulicity dose?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Take it if there are at least 3 days (72 hours) until your next scheduled dose; otherwise skip it and take the next one on schedule.
@@ -3471,7 +3471,7 @@ Last reviewed: 2026-10-20
 Question
 # Can you drink alcohol on Ozempic, Wegovy or Zepbound?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 The labels do not ban alcohol, but alcohol can worsen nausea and, with insulin or sulfonylureas, raise the risk of low blood sugar. Heavy drinking also raises pancreatitis risk. Ask your prescriber what is safe for you.
@@ -3499,7 +3499,7 @@ Last reviewed: 2026-10-20
 Question
 # How long does semaglutide stay in your system?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Semaglutide has a half-life of about one week, so it takes about five weeks after the last weekly injection to leave the body. Effects on appetite fade over that period.
@@ -3527,7 +3527,7 @@ Last reviewed: 2026-10-20
 Question
 # How long does tirzepatide stay in your system?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Tirzepatide's half-life is about 5 days; it takes roughly 25–30 days after the last dose to clear.
@@ -3555,7 +3555,7 @@ Last reviewed: 2026-10-20
 Question
 # What is 'Ozempic face'?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 A popular term for a hollow or aged facial look after rapid weight loss. It is caused by loss of facial fat, not by a direct effect of the drug, and can happen with any large weight loss.
@@ -3583,7 +3583,7 @@ Last reviewed: 2026-10-20
 Question
 # Does Wegovy or Zepbound cause hair loss?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Hair loss was reported more often than with placebo in weight-loss trials, mostly in people who lost a lot of weight quickly. It is usually temporary shedding linked to rapid weight loss.
@@ -3611,7 +3611,7 @@ Last reviewed: 2026-10-20
 Question
 # What happens when you stop Wegovy or Zepbound?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Appetite returns over a few weeks and most people regain a large share of lost weight within a year, as shown in withdrawal studies. Blood sugar may rise in people with diabetes. Plan any stop with your prescriber.
@@ -3639,7 +3639,7 @@ Last reviewed: 2026-10-20
 Question
 # Can you take Ozempic or Wegovy while pregnant or trying to conceive?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 No. Semaglutide should be stopped at least 2 months before a planned pregnancy because of its long half-life. Tirzepatide can reduce oral contraceptive effectiveness. Talk to your prescriber before trying to conceive.
@@ -3667,7 +3667,7 @@ Last reviewed: 2026-10-20
 Question
 # Where do you inject Ozempic, Wegovy or Zepbound?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Under the skin of the stomach (at least 2 inches from the belly button), the front of the thigh, or the back of the upper arm (usually by someone else). Rotate sites each week.
@@ -3695,7 +3695,7 @@ Last reviewed: 2026-10-20
 Question
 # How to manage nausea and constipation on GLP-1 medicines
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Eat smaller meals, stop when full, avoid greasy or very sweet foods, drink fluids and increase fibre gradually. Persistent vomiting, severe pain or signs of dehydration need medical attention.
@@ -3723,7 +3723,7 @@ Last reviewed: 2026-10-20
 Question
 # What is a GLP-1 agonist?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 A medicine that mimics glucagon-like peptide-1, a gut hormone released after eating. GLP-1 agonists raise insulin when blood sugar is high, lower glucagon, slow stomach emptying and reduce appetite. Examples: semaglutide, liraglutide, dulaglutide; tirzepatide also acts on GIP.
@@ -3751,7 +3751,7 @@ Last reviewed: 2026-10-20
 Question
 # Semaglutide vs tirzepatide: which is stronger?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Tirzepatide (Zepbound, Mounjaro) produced more average weight loss than semaglutide 2.4 mg (Wegovy) in head-to-head research. Semaglutide has more labeled outcome indications (heart, kidney, MASH). Wegovy HD 7.2 mg narrows the gap.
@@ -3779,7 +3779,7 @@ Last reviewed: 2026-10-20
 Question
 # Can Ozempic be prescribed for weight loss?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Ozempic is approved for type 2 diabetes. Doctors may prescribe it off-label, but insurers often refuse coverage for that use. Wegovy is the semaglutide brand approved for weight management.
@@ -3807,7 +3807,7 @@ Last reviewed: 2026-10-20
 Question
 # When will generic semaglutide be available in the US?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Not yet. Novo Nordisk's key US patents run into the early 2030s. Canada approved generics in 2026. Compounded semaglutide is not a generic and is not FDA-approved.
@@ -3835,7 +3835,7 @@ Last reviewed: 2026-10-20
 Question
 # Generic Ozempic in Canada: what to know
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Health Canada authorized generic semaglutide from Dr. Reddy's (April 28, 2026) and Apotex (May 1, 2026) for type 2 diabetes, and the first generic for weight management on June 29, 2026. Ask your pharmacist about substitution under your plan.
@@ -3863,7 +3863,7 @@ Last reviewed: 2026-10-20
 Question
 # How to spot fake Ozempic or Wegovy pens
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Buy only from licensed pharmacies, check that the label, lot number and expiry are intact and match the box, and report anything unusual. Pens sold without a prescription, through social media or WhatsApp, or labeled for another country are red flags. Report suspected fakes to FDA MedWatch or Health Canada.
@@ -3891,7 +3891,7 @@ Last reviewed: 2026-10-20
 Question
 # Is compounded semaglutide legal?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Compounded drugs are not FDA-approved. Since the FDA removed semaglutide and tirzepatide from its shortage list, routine copying of the approved products by compounders is restricted, and the FDA has issued warning letters to sellers. 'Research use only' products are not for human use.
@@ -3919,7 +3919,7 @@ Last reviewed: 2026-10-20
 Question
 # How long does it take for Wegovy or Zepbound to work?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Appetite often changes within the first weeks, but the starting doses are for tolerance, not full effect. Most weight loss happens over months as the dose rises; trials measured results at about 68–72 weeks.
@@ -3947,7 +3947,7 @@ Last reviewed: 2026-10-20
 Question
 # What to eat on GLP-1 medicines
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Prioritise protein, vegetables, whole grains and fluids; eat small portions slowly. Limit fried, fatty and very sugary foods, which often worsen nausea. A dietitian can help protect muscle during weight loss.
@@ -3975,7 +3975,7 @@ Last reviewed: 2026-10-20
 Question
 # How to store and travel with GLP-1 pens
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Keep unopened pens refrigerated (36–46°F / 2–8°C), never frozen. In use, most pens tolerate room temperature for a limited time (Ozempic up to 56 days; Wegovy up to 28 days; Zepbound and Mounjaro up to 21 days). Carry them in hand luggage with the prescription label.
@@ -4003,7 +4003,7 @@ Last reviewed: 2026-10-20
 Question
 # Signs of low blood sugar (hypoglycemia)
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Shakiness, sweating, fast heartbeat, hunger, confusion, irritability and blurred vision. Treat with 15 g of fast-acting sugar and recheck in 15 minutes. Severe lows need [glucagon](https://www.glpatlas.com/drugs/glucagon/) and emergency help.
@@ -4026,7 +4026,7 @@ Last reviewed: 2026-10-20
 Question
 # How to use an insulin pen
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Attach a new needle, prime with 2 units, dial the dose, inject at 90 degrees into the stomach or thigh, hold for about 10 seconds, then remove and discard the needle. Rotate sites. Never share pens.
@@ -4049,7 +4049,7 @@ Last reviewed: 2026-10-20
 Question
 # Does insurance cover Wegovy, Zepbound or Ozempic?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Coverage depends on the plan and the diagnosis. Diabetes uses (Ozempic, Mounjaro) are widely covered; weight-management coverage varies and often needs prior authorization. Medicare arrangements announced in 2025 changed access for some beneficiaries; check your plan's formulary.
@@ -4077,7 +4077,7 @@ Last reviewed: 2026-10-20
 Question
 # Who qualifies for Wegovy or Zepbound?
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Adults with a BMI of 30 or more, or 27 or more with at least one weight-related condition (such as high blood pressure, type 2 diabetes or high cholesterol), under US labels. A prescriber also checks contraindications such as a family history of medullary thyroid cancer.
@@ -4105,7 +4105,7 @@ Last reviewed: 2026-10-20
 Question
 # How to choose a GLP-1 telehealth provider
 
-✓Last reviewed October 20, 2026 · Written by [Noé Mbwang](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
+✓Last reviewed October 20, 2026 · Written by [Dr. George Grunberger](https://www.glpatlas.com/about/#editor) · Medical review: pending — clinician review in progress · [How we review](https://www.glpatlas.com/editorial-policy/)
 
 Short answer
 Choose services whose prescribers are licensed in your state, that do a real medical assessment, dispense FDA-approved products through licensed pharmacies, and are LegitScript-certified. Avoid services selling 'research' or unbranded vials without clear sourcing.
@@ -4219,7 +4219,7 @@ GLP Atlas is an independent reference on GLP-1, incretin and insulin medicines f
 
 **We do not sell, ship or broker medicines.** We never process orders and never ask readers to contact us to buy anything.
 
-Editor: **Noé Mbwang**. Medical review: pending — clinician review in progress.
+Editor: **Dr. George Grunberger**. Medical review: pending — clinician review in progress.
 
 ---
 URL: https://www.glpatlas.com/editorial-policy/
