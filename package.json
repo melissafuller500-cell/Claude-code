@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "build": "echo \"No build step needed\"",
     "dev": "node --watch server.js",
     "seed": "node src/seed.js",
     "test": "node --test test/app.test.js"
