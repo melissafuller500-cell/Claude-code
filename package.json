@@ -1,0 +1,22 @@
+{
+  "name": "invest-n-returns",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Invest n Returns: invest in Africa's top assets with weekly payouts. Public site, investor dashboard and admin console.",
+  "main": "server.js",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server.js",
+    "seed": "node --disable-warning=ExperimentalWarning src/seed.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^4.21.2",
+    "helmet": "^8.1.0"
+  }
+}
