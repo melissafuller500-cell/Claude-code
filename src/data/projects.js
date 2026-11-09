@@ -1,0 +1,33 @@
+'use strict';
+// Seed catalogue (illustrative projects). pct = share already raised off-platform at seed time.
+// rate = target annual return %, mult = target multiple for equity deals.
+module.exports = [
+  { c: 'ag', en: 'Plantain farm, 12 ha', fr: 'Plantain, 12 ha', city: 'Penja', region: 'Littoral', cc: 'CM', cur: 'XAF', goal: 45000000, pct: 68, rate: 15, term: 10, pay: 'cycle', risk: 3, featured: 1 },
+  { c: 're', en: '6 rental flats', fr: '6 appartements locatifs', city: 'Bonamoussadi, Douala', region: 'Littoral', cc: 'CM', cur: 'XAF', goal: 120000000, pct: 41, rate: 10, term: 48, pay: 'quarterly', risk: 2, featured: 1 },
+  { c: 'co', en: 'Drinks distributor — stock loan', fr: 'Distributeur de boissons — prêt stock', city: 'Yaoundé', region: 'Centre', cc: 'CM', cur: 'XAF', goal: 30000000, pct: 85, rate: 17, term: 12, pay: 'monthly', risk: 3, featured: 1 },
+  { c: 'ag', en: 'Poultry unit, 5 000 layers', fr: 'Élevage, 5 000 pondeuses', city: 'Bafoussam', region: 'Ouest', cc: 'CM', cur: 'XAF', goal: 38000000, pct: 22, rate: 16, term: 14, pay: 'quarterly', risk: 4 },
+  { c: 're', en: 'Student residence, 24 rooms', fr: 'Cité universitaire, 24 chambres', city: 'Molyko, Buea', region: 'Sud-Ouest', cc: 'CM', cur: 'XAF', goal: 95000000, pct: 12, rate: 11, term: 60, pay: 'quarterly', risk: 2 },
+  { c: 'co', en: 'Medical lab — equipment finance', fr: 'Laboratoire médical — financement équipement', city: 'Akwa, Douala', region: 'Littoral', cc: 'CM', cur: 'XAF', goal: 22000000, pct: 57, rate: 15, term: 18, pay: 'monthly', risk: 2 },
+  { c: 're', en: 'Office floor, Plateau', fr: 'Plateau de bureaux', city: 'Abidjan', region: 'Lagunes', cc: 'CI', cur: 'XOF', goal: 210000000, pct: 33, rate: 9, term: 60, pay: 'quarterly', risk: 2 },
+  { c: 'ag', en: 'Cashew processing, 300 t/yr', fr: "Transformation d'anacarde, 300 t/an", city: 'Bouaké', region: 'Vallée du Bandama', cc: 'CI', cur: 'USD', goal: 150000, pct: 46, rate: 16, term: 12, pay: 'cycle', risk: 3 },
+  { c: 'te', en: 'Fintech — merchant payments app', fr: 'Fintech — app de paiement marchand', city: 'Lagos', region: 'Lagos State', cc: 'NG', cur: 'USD', goal: 400000, pct: 61, mult: 3, term: 60, pay: 'exit', risk: 5 },
+  { c: 'te', en: 'Agritech — cold-chain logistics', fr: 'Agritech — logistique frigorifique', city: 'Nairobi', region: 'Nairobi County', cc: 'KE', cur: 'USD', goal: 250000, pct: 18, mult: 2.5, term: 48, pay: 'exit', risk: 5 },
+  { c: 'mi', en: 'Gold royalty — small-scale mine', fr: 'Redevance or — mine semi-mécanisée', city: 'Obuasi', region: 'Ashanti', cc: 'GH', cur: 'USD', goal: 600000, pct: 52, rate: 25, term: 36, pay: 'weekly', risk: 5, featured: 1 },
+  { c: 'mi', en: 'Copper concentrate offtake', fr: 'Préfinancement concentré de cuivre', city: 'Kitwe', region: 'Copperbelt', cc: 'ZM', cur: 'USD', goal: 900000, pct: 27, rate: 21, term: 24, pay: 'weekly', risk: 4 },
+  { c: 'mi', en: 'Lithium exploration royalty', fr: 'Redevance exploration lithium', city: 'Goulamina', region: 'Sikasso', cc: 'ML', cur: 'USD', goal: 750000, pct: 9, rate: 24, term: 48, pay: 'weekly', risk: 5 },
+  { c: 'en', en: 'Solar mini-grid, 4 villages', fr: 'Mini-réseau solaire, 4 villages', city: 'Kaduna', region: 'Kaduna State', cc: 'NG', cur: 'USD', goal: 320000, pct: 64, rate: 17, term: 60, pay: 'weekly', risk: 3, featured: 1 },
+  { c: 'en', en: 'Fuel & LPG depot', fr: 'Dépôt carburant et gaz', city: 'Thiès', region: 'Thiès', cc: 'SN', cur: 'XOF', goal: 180000000, pct: 40, rate: 19, term: 36, pay: 'weekly', risk: 3 },
+  { c: 'en', en: 'Pay-as-you-go home solar, 8 000 kits', fr: 'Solaire domestique prépayé, 8 000 kits', city: 'Kisumu', region: 'Kisumu County', cc: 'KE', cur: 'USD', goal: 450000, pct: 71, rate: 16, term: 48, pay: 'weekly', risk: 3 },
+  { c: 'en', en: 'Solar farm, 5 MW', fr: 'Centrale solaire, 5 MW', city: 'Garoua', region: 'Nord', cc: 'CM', cur: 'XAF', goal: 2400000000, pct: 15, rate: 13, term: 84, pay: 'monthly', risk: 2 },
+  { c: 'in', en: 'Port warehouse, 6 000 m²', fr: 'Entrepôt portuaire, 6 000 m²', city: 'Kribi', region: 'Sud', cc: 'CM', cur: 'XAF', goal: 850000000, pct: 38, rate: 14, term: 72, pay: 'monthly', risk: 2, featured: 1 },
+  { c: 'in', en: 'Cold storage hub', fr: 'Plateforme frigorifique', city: 'Tangier', region: 'Tanger-Tétouan', cc: 'MA', cur: 'MAD', goal: 5000000, pct: 56, rate: 12, term: 60, pay: 'monthly', risk: 2 },
+  { c: 'in', en: 'Telecom towers, 12 sites', fr: 'Pylônes télécoms, 12 sites', city: 'Yamoussoukro', region: 'Lacs', cc: 'CI', cur: 'USD', goal: 700000, pct: 44, rate: 15, term: 84, pay: 'weekly', risk: 2 },
+  { c: 'in', en: 'Business hotel, 60 rooms', fr: "Hôtel d'affaires, 60 chambres", city: 'Kigali', region: 'Kigali', cc: 'RW', cur: 'USD', goal: 1800000, pct: 21, rate: 13, term: 72, pay: 'monthly', risk: 3 },
+  { c: 'in', en: 'Textile factory expansion', fr: "Extension d'usine textile", city: 'Hawassa', region: 'Sidama', cc: 'ET', cur: 'USD', goal: 550000, pct: 33, rate: 18, term: 36, pay: 'weekly', risk: 3 },
+  { c: 'in', en: 'Private clinic, 40 beds', fr: 'Clinique privée, 40 lits', city: 'Accra', region: 'Greater Accra', cc: 'GH', cur: 'USD', goal: 1200000, pct: 48, rate: 15, term: 60, pay: 'monthly', risk: 2 },
+  { c: 're', en: 'Gated townhouses, 20 units', fr: 'Résidence fermée, 20 villas', city: 'Diamniadio', region: 'Dakar', cc: 'SN', cur: 'XOF', goal: 1300000000, pct: 26, rate: 12, term: 48, pay: 'quarterly', risk: 2 },
+  { c: 'ag', en: 'Cocoa rehabilitation, 80 ha', fr: 'Réhabilitation cacao, 80 ha', city: 'Mbalmayo', region: 'Centre', cc: 'CM', cur: 'XAF', goal: 95000000, pct: 59, rate: 19, term: 24, pay: 'harvest', risk: 3 },
+  { c: 'ag', en: 'Tilapia fish farm', fr: 'Pisciculture tilapia', city: 'Lake Volta', region: 'Volta', cc: 'GH', cur: 'USD', goal: 210000, pct: 35, rate: 18, term: 18, pay: 'weekly', risk: 3 },
+  { c: 'fo', en: 'Studio apartments, JVC', fr: 'Studios, JVC', city: 'Dubai', region: 'Dubai', cc: 'AE', cur: 'AED', goal: 1100000, pct: 72, rate: 7.5, term: 60, pay: 'quarterly', risk: 2, featured: 1 },
+  { c: 'fo', en: 'Short-let flats, city centre', fr: 'Appartements location courte', city: 'Lisbon', region: 'Lisboa', cc: 'PT', cur: 'EUR', goal: 480000, pct: 29, rate: 6.5, term: 72, pay: 'quarterly', risk: 2 },
+];
