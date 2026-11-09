@@ -5,12 +5,8 @@ const crypto = require('crypto');
 const env = process.env;
 const isProd = env.NODE_ENV === 'production';
 
+// In production without SESSION_SECRET, db.init() generates one and stores it in the database.
 const secret = env.SESSION_SECRET || (isProd ? null : 'dev-only-secret-change-me-' + 'x'.repeat(16));
-if (!secret) {
-  // Fail closed in production: a random per-boot secret would silently log everyone out on restart.
-  console.error('[config] SESSION_SECRET is required in production.');
-  process.exit(1);
-}
 
 module.exports = {
   isProd,

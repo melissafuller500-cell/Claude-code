@@ -6,17 +6,18 @@
   "main": "server.js",
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=22.13"
+    "node": ">=18.17"
   },
   "scripts": {
-    "start": "node --disable-warning=ExperimentalWarning server.js",
-    "dev": "node --disable-warning=ExperimentalWarning --watch server.js",
-    "seed": "node --disable-warning=ExperimentalWarning src/seed.js",
-    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node src/seed.js",
+    "test": "node --test test/app.test.js"
   },
   "dependencies": {
     "compression": "^1.8.1",
     "express": "^4.21.2",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "sql.js": "^1.15.2"
   }
 }

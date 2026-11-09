@@ -2,7 +2,7 @@
 
 A complete website for investing in African real assets: a public site in English and French, investor accounts, asset reservations, an investor dashboard and an admin console.
 
-Built with Node.js 22, Express and the built-in SQLite engine (`node:sqlite`). There are no native modules, no build step and only three runtime dependencies.
+Built with Node.js and Express. It runs on **Node 18, 20 or 22+**. The database is SQLite: it uses Node's built-in `node:sqlite` when available (Node 22.13+), and otherwise falls back automatically to `sql.js` (pure JavaScript/WebAssembly) with the same database file. There are no native modules and no build step, so it works on shared hosts like Hostinger.
 
 ## Quick start
 
@@ -65,8 +65,8 @@ See `.env.example`. Key variables:
 
 | Variable | Purpose |
 |---|---|
-| `NODE_ENV=production` | Secure cookies, HSTS, and requires `SESSION_SECRET` |
-| `SESSION_SECRET` | Long random string used for CSRF signing |
+| `NODE_ENV=production` | Secure cookies (HTTPS required for login) and HSTS |
+| `SESSION_SECRET` | Long random string used for CSRF signing. If it's missing, one is generated once and stored in the database |
 | `SITE_URL` | Public URL used for canonical links, the sitemap and OG tags (e.g. `https://investnreturns.com`) |
 | `ADMIN_EMAIL` / `ADMIN_PASSWORD` | First admin account, created on first boot |
 | `DB_FILE` | SQLite file path (default `data/inr.db`) |

@@ -7,12 +7,13 @@ process.env.SITE_URL = 'http://localhost';
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const app = require('../src/app');
-
+let app;
 let server;
 let base;
 
 test.before(async () => {
+  await require('../src/db').init();
+  app = require('../src/app');
   await new Promise((r) => { server = app.listen(0, r); });
   base = `http://127.0.0.1:${server.address().port}`;
 });

@@ -156,4 +156,4 @@ function seed() {
 
 module.exports = { seed, COPY };
 
-if (require.main === module) seed();
+if (require.main === module) require('./db').init().then(seed);
