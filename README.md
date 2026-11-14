@@ -85,6 +85,8 @@ See `.env.example`. Key variables:
 | `ADMIN_RESET=true` | Emergency: resets the `ADMIN_EMAIL` account's password to `ADMIN_PASSWORD` on the next start. Remove it afterwards |
 | `UPLOADS_DIR` | Where uploaded photos are stored (default: an `uploads` folder next to the database) |
 
+Almost everything else is now managed in **Admin → Settings** (no redeploy): domain, contact email, phones, WhatsApp button, the three offices, bank / Mobile Money / crypto deposit details, legal entity, social links, Google Analytics 4, Tag Manager, Meta Pixel, Google and Bing verification, SMTP email (with a test button; sending requires Node 20+), and payment-gateway keys.
+
 ## Going live checklist
 1. Set `NODE_ENV=production`, `SESSION_SECRET`, `SITE_URL`, `ADMIN_*` and `SEED_DEMO=false`, and delete or replace the example projects in the admin console.
 2. Put the app behind HTTPS (nginx, Caddy, or a platform like Render or Fly) and persist the `data/` volume.

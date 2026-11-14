@@ -546,6 +546,13 @@ function countriesIndex(ctx, { rows }) {
     <tbody>${rows.map((r) => { const rates = r.items.filter((a) => a.target_rate).map((a) => a.target_rate); return html`<tr><th scope="row"><a href="${ctx.u('/countries/' + countrySlug(r.code))}">${t.o(countries[r.code])}</a></th><td class="num">${r.items.length}</td><td>${[...new Set(r.items.map((a) => t.o(a.cat.name)))].join(', ')}</td><td class="num hl">${rates.length ? `${ctx.f.pct(Math.min(...rates), 1)} – ${ctx.f.pct(Math.max(...rates), 1)}` : t('equity', 'capital')}</td></tr>`; })}</tbody>
   </table></div>
 </div></section>
+<section class="section-tight"><div class="wrap two-col">
+  <div class="prose-block">
+    <h2>${t('Why invest across several countries?', 'Pourquoi investir dans plusieurs pays ?')}</h2>
+    <p class="prose">${t('Spreading your money across countries reduces the impact of any one currency, election, drought or regulation change. Projects in the CFA franc zone (Cameroon, Côte d’Ivoire, Senegal, Mali, Gabon, Benin) use a currency pegged to the euro, while property in Dubai and Portugal earns rent in dirhams and euros.', 'Répartir votre argent entre plusieurs pays réduit l’effet d’une devise, d’une élection, d’une sécheresse ou d’un changement de réglementation. Les projets de la zone franc CFA (Cameroun, Côte d’Ivoire, Sénégal, Mali, Gabon, Bénin) utilisent une monnaie arrimée à l’euro, tandis que l’immobilier à Dubaï et au Portugal rapporte des loyers en dirhams et en euros.')}</p>
+  </div>
+  <div>${parts.faqList(ctx, [faq[6], faq[2]])}</div>
+</div></section>
 ${parts.ctaBand(ctx)}`,
   });
 }
@@ -575,6 +582,22 @@ function countryPage(ctx, { code, items, saved }) {
     <tbody>${items.map((a) => html`<tr><th scope="row"><a href="${ctx.u('/assets/' + a.slug)}">${t(a.title_en, a.title_fr)}</a></th><td>${a.city}</td><td>${t.o(a.cat.name)}</td><td class="num hl">${a.target_rate ? ctx.f.pct(a.target_rate, 1) : a.target_multiple + '×'}</td><td class="num">${a.term_months} ${t('mo', 'mois')}</td><td class="num">${a.risk}/5</td></tr>`)}</tbody>
   </table></div>
   <div class="projects" style="margin-top:32px">${items.map((a) => assetCard(ctx, a, { saved: saved.has(a.id) }))}</div>
+</div></section>
+<section class="section-tight"><div class="wrap two-col">
+  <div class="prose-block">
+    <h2>${t(`How to invest in ${countries[code].en}, step by step`, `Comment investir ${frIn(code)}, étape par étape`)}</h2>
+    <ol class="timeline">
+      <li><b>${t('Open a free account', 'Ouvrez un compte gratuit')}</b><span>${t('Register in two minutes and verify your identity (ID document and selfie).', 'Inscrivez-vous en deux minutes et vérifiez votre identité (pièce et selfie).')}</span></li>
+      <li><b>${t('Choose a project and a payout schedule', 'Choisissez un projet et une fréquence')}</b><span>${t('Pick one of the projects above, the amount (from 500 USD) and how often you want to be paid: weekly, monthly, every 3 or 6 months, or yearly.', 'Choisissez un des projets ci-dessus, le montant (dès 500 USD) et la fréquence de vos versements : chaque semaine, mois, trimestre, semestre ou année.')}</span></li>
+      <li><b>${t('Pay with the method you prefer', 'Payez avec le moyen de votre choix')}</b><span>${t(`Our team sends you payment details for USDT, USDC, BTC, ETH, Mobile Money, card or bank transfer. Projects here are budgeted in ${localCurrency[code] || 'local currency'} or USD.`, `Notre équipe vous envoie les coordonnées pour USDT, USDC, BTC, ETH, Mobile Money, carte ou virement. Les projets sont budgétés en ${localCurrency[code] || 'monnaie locale'} ou en USD.`)}</span></li>
+      <li><b>${t('Receive your income', 'Recevez vos revenus')}</b><span>${t('Income is credited to your balance on your schedule; withdraw in crypto, Mobile Money or by bank transfer.', 'Les revenus sont crédités sur votre solde selon votre calendrier ; retrait en crypto, Mobile Money ou virement.')}</span></li>
+    </ol>
+  </div>
+  <div class="prose-block">
+    <h2>${t('Before you invest', 'Avant d’investir')}</h2>
+    <p class="prose">${t(`Each project in ${countries[code].en} sits in its own company (SPV) and passes our five checks: title or registration, site visit, numbers review, the SPV itself and staged escrow. Read the risks on each project page and spread your money across several projects and countries.`, `Chaque projet ${frIn(code)} est logé dans sa propre société (SPV) et passe nos cinq contrôles : titre ou immatriculation, visite sur site, revue des chiffres, la SPV elle-même et le séquestre par étapes. Lisez les risques sur chaque page projet et répartissez votre argent entre plusieurs projets et pays.`)}</p>
+    <p class="prose"><a class="link" href="${ctx.u('/countries')}">${t('Compare all countries', 'Comparer tous les pays')} ${icon('arrow', 14)}</a> · <a class="link" href="${ctx.u('/legal/risk')}">${t('Risk disclosure', 'Avertissement sur les risques')} ${icon('arrow', 14)}</a></p>
+  </div>
 </div></section>
 <section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
 ${parts.ctaBand(ctx)}`,
