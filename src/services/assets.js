@@ -24,12 +24,14 @@ function decorate(a) {
   a.remaining_cents = Math.max(0, goalCents - a.committed_cents);
   a.yield_based = a.target_rate != null && a.target_rate > 0;
   a.highlights = { en: safeJson(a.highlights_en, []), fr: safeJson(a.highlights_fr, []) };
+  a.photos = safeJson(a.images, []);
   return a;
 }
 function safeJson(s, d) { try { return JSON.parse(s); } catch { return d; } }
 
 function expireStale() {
-  q.run("UPDATE reservations SET status='expired', decided_at=? WHERE status='pending' AND expires_at < ?", now(), now());
+  // Reservations where the investor declared payment never auto-expire: an admin must check them.
+  q.run("UPDATE reservations SET status='expired', decided_at=? WHERE status='pending' AND paid_at IS NULL AND expires_at < ?", now(), now());
 }
 
 function list({ category, country, risk, sort, search, status = ['open', 'funded'], featured, limit } = {}) {

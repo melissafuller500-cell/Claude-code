@@ -12,7 +12,7 @@ function head(ctx, { title, description, path = ctx.path, type = 'website', imag
   const frUrl = site + (path === '/' ? '/fr/' : '/fr' + path);
   const canonical = localized && ctx.lang === 'fr' ? frUrl : enUrl;
   const fullTitle = title.includes(config.brand.name) ? title : `${title} | ${config.brand.name}`;
-  const img = image || `${site}/img/og-image.png`;
+  const img = image || `${site}/img/og-image.jpg`;
   const graph = [organization(), website(ctx), ...jsonld].filter(Boolean);
   return html`
 <title>${fullTitle}</title>
@@ -47,7 +47,7 @@ function organization() {
     name: config.brand.name,
     url: config.siteUrl + '/',
     logo: { '@type': 'ImageObject', url: `${config.siteUrl}/img/logo-512.png`, width: 512, height: 512 },
-    image: `${config.siteUrl}/img/og-image.png`,
+    image: `${config.siteUrl}/img/og-image.jpg`,
     email: config.brand.email,
     description: 'Invest n Returns is an investment platform for African real assets: rental property, farms, SME loans, tech start-ups, mining royalties, energy, infrastructure and hard-currency property abroad. Investors pay in crypto (USDT, USDC, BTC, ETH) or cash (Mobile Money, card, bank) and receive income weekly.',
     address: { '@type': 'PostalAddress', addressLocality: 'Douala', addressRegion: 'Littoral', addressCountry: 'CM' },
@@ -111,6 +111,7 @@ function investment(ctx, a) {
     description: ctx.t(a.summary_en, a.summary_fr),
     url,
     category: ctx.t.o(a.cat.name),
+    ...(a.photos && a.photos.length ? { image: a.photos.map((p) => config.siteUrl + p.src) } : {}),
     provider: { '@id': ORG_ID },
     areaServed: a.country_code,
     ...(a.target_rate ? { annualPercentageRate: a.target_rate, interestRate: a.target_rate } : {}),

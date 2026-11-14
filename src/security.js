@@ -104,9 +104,18 @@ function csrf(req, res, next) {
   };
   res.locals.csrfToken = () => hmac(ensureSeed());
   if (['GET', 'HEAD', 'OPTIONS'].includes(req.method)) return next();
-  const sent = String((req.body && req.body._csrf) || req.get('x-csrf-token') || '');
   const expected = seed ? hmac(seed) : '';
-  const ok = expected && sent.length === expected.length && crypto.timingSafeEqual(Buffer.from(sent), Buffer.from(expected));
+  const check = (sent) => {
+    sent = String(sent || '');
+    return !!expected && sent.length === expected.length && crypto.timingSafeEqual(Buffer.from(sent), Buffer.from(expected));
+  };
+  // Multipart bodies are parsed later by the upload handler: only the photo-upload route may defer the check,
+  // and it must call req.verifyCsrf() after parsing.
+  if (/^multipart\/form-data/i.test(req.get('content-type') || '') && /^\/admin\/assets\/\d+\/photos$/.test(req.path)) {
+    req.verifyCsrf = () => check(req.body && req.body._csrf);
+    return next();
+  }
+  const ok = check((req.body && req.body._csrf) || req.get('x-csrf-token'));
   if (!ok) {
     const err = new Error('Your form expired. Please reload the page and try again.');
     err.status = 403;

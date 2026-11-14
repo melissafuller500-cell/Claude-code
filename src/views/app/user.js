@@ -2,13 +2,13 @@
 const { html, raw, json } = require('../../html');
 const { appPage } = require('../layout');
 const { icon, badge, csrfField, targetLabel, termLabel, riskMeter, assetCard } = require('../components');
-const { countries, payMethods, payoutFreq, statusLabels, tierFor } = require('../../data/catalog');
+const { countries, payMethods, payoutFreq, payoutSchedules, statusLabels, tierFor } = require('../../data/catalog');
 const categories = require('../../data/categories');
 const config = require('../../config');
 
 const catName = (ctx, code) => { const c = categories.find((x) => x.code === code); return c ? ctx.t.o(c.name) : code; };
 
-function overview(ctx, { pf, user, recentTx, featured, unread }) {
+function overview(ctx, { pf, user, recentTx, featured, unread, offers = [] }) {
   const t = ctx.t;
   const f = ctx.f;
   const tier = tierFor(pf.invested / 100);
@@ -26,6 +26,7 @@ ${user.kyc_status !== 'verified' ? html`<div class="notice ${user.kyc_status ===
   ${user.kyc_status !== 'pending' ? html`<a class="btn btn-gold btn-sm" href="/dashboard/kyc">${t('Verify now', 'Vérifier')}</a>` : ''}
 </div>` : ''}
 
+${offers && offers.length ? html`<a class="notice notice-offer" href="/dashboard/offers">${icon('briefcase', 20)}<div><b>${offers.length === 1 ? t('You have a personal investment proposal', 'Vous avez une proposition d’investissement personnelle') : t(`You have ${offers.length} personal investment proposals`, `Vous avez ${offers.length} propositions d’investissement personnelles`)}</b><p>${t('Review the terms and accept or decline in one click.', 'Consultez les conditions et acceptez ou refusez en un clic.')}</p></div><span class="btn btn-gold btn-sm">${t('View', 'Voir')}</span></a>` : ''}
 <section class="welcome">
   <div>
     <p class="eyebrow">${t('Welcome back', 'Bon retour')}, ${firstName}</p>
@@ -48,7 +49,7 @@ ${user.kyc_status !== 'verified' ? html`<div class="notice ${user.kyc_status ===
   <div class="stat-card">
     <span>${t('Total paid out', 'Total versé')}</span>
     <b class="num pos">${f.usd(pf.paidOut)}</b>
-    <small>${t('Next weekly payout', 'Prochain versement')} ≈ <b>${f.usd(pf.weekly)}</b></small>
+    <small>${pf.next ? html`${t('Next payout', 'Prochain versement')} <b>${f.usd(pf.next.period_cents)}</b> · ${f.date(pf.next.next_payout_at)}` : t('No payout scheduled yet', 'Aucun versement prévu')}</small>
   </div>
   <div class="stat-card live-card">
     <span><i class="dot"></i> ${t('Accruing right now', 'En cours de génération')}</span>
@@ -88,32 +89,47 @@ ${user.kyc_status !== 'verified' ? html`<div class="notice ${user.kyc_status ===
   return appPage(ctx, { title: t('Overview', "Vue d'ensemble"), active: '/dashboard', body, unread });
 }
 
+function rateLabel(ctx, r) {
+  if (!r.target_rate) return r.target_multiple ? r.target_multiple + '×' : '—';
+  return ctx.f.pct(r.rate != null ? r.rate : r.target_rate, 1);
+}
+
 function positionsTable(ctx, rows) {
   const t = ctx.t;
   const f = ctx.f;
   if (!rows.length) return html`<div class="empty"><p>${t('You have no investments yet.', "Vous n'avez pas encore d'investissement.")}</p><a class="btn btn-gold btn-sm" href="${ctx.u('/assets')}">${t('Find a project', 'Trouver un projet')}</a></div>`;
   return html`<div class="table-scroll"><table class="table">
-    <thead><tr><th>${t('Project', 'Projet')}</th><th>${t('Reference', 'Référence')}</th><th class="ta-r">${t('Amount', 'Montant')}</th><th>${t('Target', 'Cible')}</th><th class="ta-r">${t('Paid out', 'Versé')}</th><th>${t('Status', 'Statut')}</th><th><span class="sr">${t('Actions', 'Actions')}</span></th></tr></thead>
+    <thead><tr><th>${t('Project', 'Projet')}</th><th>${t('Reference', 'Référence')}</th><th class="ta-r">${t('Amount', 'Montant')}</th><th>${t('Return', 'Rendement')}</th><th>${t('Payouts', 'Versements')}</th><th class="ta-r">${t('Paid out', 'Versé')}</th><th>${t('Status', 'Statut')}</th><th><span class="sr">${t('Actions', 'Actions')}</span></th></tr></thead>
     <tbody>${rows.map((r) => html`<tr>
       <td><a href="${ctx.u('/assets/' + r.slug)}" class="cell-title"><span class="chip ${r.category}">${catName(ctx, r.category)}</span> ${t(r.title_en, r.title_fr)}</a></td>
       <td class="num">${r.ref}</td>
       <td class="ta-r num">${f.usd(r.amount_cents, 0)}</td>
-      <td class="num hl">${r.target_rate ? f.pct(r.target_rate, 1) : r.target_multiple + '×'}</td>
+      <td class="num hl">${rateLabel(ctx, r)}${r.rate_override != null ? html` <em class="badge badge-featured" title="${t('Custom rate', 'Taux personnalisé')}">★</em>` : ''}</td>
+      <td>${r.target_rate ? t.o(payoutSchedules[r.payout_freq] || payoutFreq[r.payout_freq]) : t('At exit', 'À la sortie')}${r.status === 'active' && r.next_payout_at ? html`<br><small class="muted">${t('Next', 'Prochain')} ${f.date(r.next_payout_at)}</small>` : ''}</td>
       <td class="ta-r num pos">${f.usd(r.paid_out_cents)}</td>
-      <td>${badge(ctx, r.status)}${r.status === 'pending' ? html`<small class="countdown" data-countdown="${r.expires_at}"></small>` : ''}</td>
-      <td class="ta-r"><a class="btn btn-ghost btn-xs" href="/dashboard/reservations/${r.ref}">${r.status === 'pending' ? t('Pay', 'Payer') : t('Details', 'Détails')}</a></td>
+      <td>${badge(ctx, r.status)}${r.status === 'pending' ? (r.paid_at ? html`<small class="countdown">${t('Payment being checked', 'Paiement en vérification')}</small>` : html`<small class="countdown" data-countdown="${r.expires_at}"></small>`) : ''}</td>
+      <td class="ta-r"><a class="btn btn-ghost btn-xs" href="/dashboard/reservations/${r.ref}">${r.status === 'pending' && !r.paid_at ? t('Pay', 'Payer') : t('Details', 'Détails')}</a></td>
     </tr>`)}</tbody></table></div>`;
 }
 
 function txList(ctx, rows) {
   const t = ctx.t;
-  const labels = { deposit: t('Investment funded', 'Investissement financé'), payout: t('Weekly payout', 'Versement hebdo'), withdrawal: t('Withdrawal', 'Retrait'), refund: t('Capital returned', 'Capital rendu'), adjustment: t('Adjustment', 'Ajustement') };
+  const label = (x) => {
+    if (x.type === 'adjustment') return x.amount_cents > 0 ? t('Account funded', 'Compte crédité') : t('Account debited', 'Compte débité');
+    if (x.type === 'deposit' && x.method === 'balance') return t('Invested from balance', 'Investi depuis le solde');
+    return { deposit: t('Investment funded', 'Investissement financé'), payout: t('Payout', 'Versement'), withdrawal: t('Withdrawal', 'Retrait'), refund: t('Capital returned', 'Capital rendu') }[x.type];
+  };
   if (!rows.length) return html`<p class="muted">${t('No activity yet.', "Pas encore d'activité.")}</p>`;
-  return html`<ul class="tx-list">${rows.map((x) => html`<li>
+  return html`<ul class="tx-list">${rows.map((x) => {
+    const fromBal = x.type === 'deposit' && x.method === 'balance';
+    const cls = x.type === 'withdrawal' || fromBal || (x.type === 'adjustment' && x.amount_cents < 0) ? 'neg' : x.type === 'deposit' ? '' : 'pos';
+    const sign = fromBal ? '−' : x.type === 'deposit' ? '' : x.amount_cents > 0 ? '+' : '';
+    return html`<li>
     <span class="tx-ico tx-${x.type}">${icon(x.type === 'payout' ? 'coins' : x.type === 'withdrawal' ? 'send' : x.type === 'deposit' ? 'ticket' : 'wallet', 16)}</span>
-    <span class="tx-main"><b>${labels[x.type]}</b><small>${x.details || ''} · ${ctx.f.date(x.created_at)}</small></span>
-    <span class="tx-amt num ${x.type === 'withdrawal' ? 'neg' : x.type === 'deposit' ? '' : 'pos'}">${x.type === 'deposit' ? '' : x.amount_cents > 0 ? '+' : ''}${ctx.f.usd(x.amount_cents)}${x.status !== 'completed' ? html` <em class="badge badge-${x.status}">${ctx.t.o(statusLabels[x.status] || { en: x.status, fr: x.status })}</em>` : ''}</span>
-  </li>`)}</ul>`;
+    <span class="tx-main"><b>${label(x)}</b><small>${x.details || ''} · ${ctx.f.date(x.created_at)}</small></span>
+    <span class="tx-amt num ${cls}">${sign}${ctx.f.usd(x.amount_cents)}${x.status !== 'completed' ? html` <em class="badge badge-${x.status}">${ctx.t.o(statusLabels[x.status] || { en: x.status, fr: x.status })}</em>` : ''}</span>
+  </li>`;
+  })}</ul>`;
 }
 
 function reservations(ctx, { pf, unread, filter }) {
@@ -126,30 +142,33 @@ function reservations(ctx, { pf, unread, filter }) {
   return appPage(ctx, { title: t('My investments', 'Mes investissements'), active: '/dashboard/reservations', body, unread });
 }
 
-function payInstructions(ctx, r) {
+function payInstructions(ctx, r, defaultDetails) {
   const t = ctx.t;
-  const m = payMethods[r.pay_method];
-  const envKey = { usdt: 'PAY_USDT_ADDRESS', usdc: 'PAY_USDC_ADDRESS', btc: 'PAY_BTC_ADDRESS', eth: 'PAY_ETH_ADDRESS', momo: 'PAY_MOMO_NUMBER', orange: 'PAY_ORANGE_NUMBER', bank: 'PAY_BANK_IBAN', card: 'PAY_CARD_LINK' }[r.pay_method];
-  const dest = process.env[envKey];
+  const m = payMethods[r.pay_method] || { label: r.pay_method, kind: '' };
+  const details = r.pay_details || defaultDetails;
   return html`<div class="pay-box">
     <h3>${t('How to pay', 'Comment payer')} · ${m.label}</h3>
     <ol class="pay-steps">
       <li>${t('Amount to send', 'Montant à envoyer')}: <b class="num">${ctx.f.usd(r.amount_cents)}</b> ${m.kind === 'crypto' ? t('(equivalent at today’s rate)', '(équivalent au cours du jour)') : ''}</li>
-      <li>${dest ? html`${t('Send to', 'Envoyer à')}: <code class="copy" data-copy="${dest}">${dest}</code>` : t('Our payments team sends the deposit details to your email and WhatsApp within one hour (business hours).', 'Notre équipe paiements vous envoie les coordonnées de dépôt par email et WhatsApp sous une heure (heures ouvrées).')}</li>
+      <li>${details
+        ? html`${t('Send to', 'Envoyer à')}:<pre class="pay-details" data-copy="${details}" title="${t('Click to copy', 'Cliquer pour copier')}">${details}</pre>${r.pay_details_at ? html`<small class="muted">${t('Sent by our team on', 'Envoyé par notre équipe le')} ${ctx.f.dateTime(r.pay_details_at)}</small>` : ''}`
+        : html`<span class="waiting">${icon('clock', 16)} ${t('Our payments team is preparing your payment details. You will get a notification and a message within one hour (business hours).', 'Notre équipe prépare vos coordonnées de paiement. Vous recevrez une notification et un message sous une heure (heures ouvrées).')}</span>`}</li>
       <li>${t('Use this reference in the payment note', 'Indiquez cette référence dans le motif')}: <code class="copy" data-copy="${r.ref}">${r.ref}</code></li>
-      <li>${t('We confirm receipt and activate your investment. You get a notification.', 'Nous confirmons la réception et activons votre investissement. Vous recevez une notification.')}</li>
+      <li>${t('After paying, tell us below. We confirm receipt and activate your investment.', 'Après paiement, prévenez-nous ci-dessous. Nous confirmons la réception et activons votre investissement.')}</li>
     </ol>
   </div>`;
 }
 
-function reservationDetail(ctx, { r, unread, user }) {
+function reservationDetail(ctx, { r, unread, user, defaultDetails }) {
   const t = ctx.t;
   const f = ctx.f;
-  const weekly = r.target_rate ? Math.floor((r.amount_cents * r.target_rate) / 100 / 52) : 0;
+  const rate = r.rate_override != null ? r.rate_override : r.target_rate;
+  const sched = payoutSchedules[r.payout_freq];
+  const per = rate && sched ? Math.floor((r.amount_cents * rate) / 100 / sched.perYear) : 0;
   const steps = [
     ['reserved', t('Reserved', 'Réservé'), true],
-    ['paid', t('Payment received', 'Paiement reçu'), ['active', 'completed'].includes(r.status)],
-    ['active', t('Earning weekly', 'Revenus hebdo'), ['active', 'completed'].includes(r.status)],
+    ['paid', r.paid_at && r.status === 'pending' ? t('Payment being checked', 'Paiement en vérification') : t('Payment received', 'Paiement reçu'), ['active', 'completed'].includes(r.status) || !!r.paid_at],
+    ['active', t('Earning', 'Revenus'), ['active', 'completed'].includes(r.status)],
     ['done', t('Capital returned', 'Capital rendu'), r.status === 'completed'],
   ];
   const body = html`
@@ -160,19 +179,21 @@ function reservationDetail(ctx, { r, unread, user }) {
     <h2 class="h-lg"><a href="${ctx.u('/assets/' + r.slug)}">${t(r.title_en, r.title_fr)}</a></h2>
     <p class="muted">${r.city}, ${t.o(countries[r.country_code])} · ${catName(ctx, r.category)}</p>
   </div>
-  <div class="ta-r">${badge(ctx, r.status)}${r.status === 'pending' ? html`<p class="countdown big" data-countdown="${r.expires_at}"></p>` : ''}</div>
+  <div class="ta-r">${badge(ctx, r.status)}${r.status === 'pending' && !r.paid_at ? html`<p class="countdown big" data-countdown="${r.expires_at}"></p>` : ''}</div>
 </section>
 ${['rejected', 'cancelled', 'expired'].includes(r.status) ? '' : html`<ol class="progress-steps">${steps.map(([k, l, done]) => html`<li class="${done ? 'done' : ''}"><i>${done ? icon('check', 14) : ''}</i><span>${l}</span></li>`)}</ol>`}
 <section class="panel-grid">
   <div class="panel">
     <dl class="facts">
       <dt>${t('Amount', 'Montant')}</dt><dd class="num">${f.usd(r.amount_cents)}</dd>
-      <dt>${t('Target', 'Cible')}</dt><dd class="num hl">${r.target_rate ? f.pct(r.target_rate, 1) + t(' / yr', ' / an') : r.target_multiple + '×'}</dd>
+      <dt>${t('Return', 'Rendement')}</dt><dd class="num hl">${rate ? f.pct(rate, 2) + t(' / yr', ' / an') : r.target_multiple + '×'}${r.rate_override != null ? html` <em class="badge badge-featured">${t('Custom rate', 'Taux personnalisé')}</em>` : ''}</dd>
       <dt>${t('Term', 'Durée')}</dt><dd>${termLabel(ctx, r.term_months)}</dd>
-      <dt>${t('Payouts', 'Versements')}</dt><dd>${t.o(payoutFreq[r.payout_freq])}</dd>
-      ${weekly ? html`<dt>${t('Expected weekly', 'Hebdo attendu')}</dt><dd class="num pos">${f.usd(weekly)}</dd>` : ''}
+      <dt>${t('Payout schedule', 'Fréquence des versements')}</dt><dd>${rate && sched ? t.o(sched) : t('At exit', 'À la sortie')}</dd>
+      ${per ? html`<dt>${t('Each payout', 'Chaque versement')}</dt><dd class="num pos">${f.usd(per)}</dd>` : ''}
+      ${r.status === 'active' && r.next_payout_at && per ? html`<dt>${t('Next payout', 'Prochain versement')}</dt><dd>${f.date(r.next_payout_at)}</dd>` : ''}
       <dt>${t('Paid out so far', 'Déjà versé')}</dt><dd class="num pos">${f.usd(r.paid_out_cents)}</dd>
       <dt>${t('Payment method', 'Moyen de paiement')}</dt><dd>${payMethods[r.pay_method] ? payMethods[r.pay_method].label : r.pay_method}</dd>
+      ${r.paid_ref ? html`<dt>${t('Your payment reference', 'Votre référence de paiement')}</dt><dd><code>${r.paid_ref}</code></dd>` : ''}
       <dt>${t('Created', 'Créée le')}</dt><dd>${f.dateTime(r.created_at)}</dd>
       ${r.decided_at ? html`<dt>${t('Updated', 'Mise à jour')}</dt><dd>${f.dateTime(r.decided_at)}</dd>` : ''}
       ${r.note ? html`<dt>Note</dt><dd>${r.note}</dd>` : ''}
@@ -181,10 +202,17 @@ ${['rejected', 'cancelled', 'expired'].includes(r.status) ? '' : html`<ol class=
   <div class="panel">
     ${r.status === 'pending' ? html`
       ${user.kyc_status !== 'verified' ? html`<div class="notice notice-warn">${icon('shield', 18)}<div><b>${t('Identity verification required', "Vérification d'identité requise")}</b><p>${t('We can only activate your investment once your identity is verified.', 'Nous ne pouvons activer votre investissement qu’après vérification de votre identité.')} <a class="link" href="/dashboard/kyc">${t('Verify now', 'Vérifier')}</a></p></div></div>` : ''}
-      ${payInstructions(ctx, r)}
-      <form method="post" action="/dashboard/reservations/${r.ref}/cancel" data-confirm="${t('Cancel this reservation?', 'Annuler cette réservation ?')}">${csrfField(ctx)}<button class="btn btn-ghost btn-sm danger" type="submit">${t('Cancel reservation', 'Annuler la réservation')}</button></form>`
-    : r.status === 'active' ? html`<h3>${t('Earning now', 'Rapporte maintenant')}</h3><p class="muted">${t('Income is credited to your balance every week.', 'Les revenus sont crédités chaque semaine.')}</p>
-      <div class="big-accrual"><b class="num pos" data-accrual data-annual-cents="${r.target_rate ? Math.round((r.amount_cents * r.target_rate) / 100) : 0}" data-since="${r.decided_at || r.created_at}" data-base-cents="${r.paid_out_cents}" data-lang="${ctx.lang}">${f.usd(r.paid_out_cents, 4)}</b><span class="muted">${t('earned on this investment (live estimate)', 'gagné sur cet investissement (estimation en direct)')}</span></div>`
+      ${r.paid_at
+        ? html`<div class="notice notice-info">${icon('check', 18)}<div><b>${t('Payment declared', 'Paiement déclaré')}</b><p>${t('Thank you. Our team is checking your payment (reference', 'Merci. Notre équipe vérifie votre paiement (référence')} <code>${r.paid_ref}</code>). ${t('You will be notified as soon as your investment is active.', 'Vous serez prévenu dès que votre investissement sera actif.')}</p></div></div>`
+        : html`${payInstructions(ctx, r, defaultDetails)}
+          <form method="post" action="/dashboard/reservations/${r.ref}/paid" class="stack paid-form" data-validate novalidate>${csrfField(ctx)}
+            <label for="paid-ref"><b>${t('I have paid', "J'ai payé")}</b> — ${t('transaction ID, hash or receipt number', 'ID de transaction, hash ou numéro de reçu')}</label>
+            <div class="inline-form"><input id="paid-ref" name="paid_ref" required maxlength="200" autocomplete="off" placeholder="${t('e.g. MP240915.1234.A56789 or 0x9f…', 'ex. MP240915.1234.A56789 ou 0x9f…')}"><button class="btn btn-gold btn-sm" type="submit">${t('Confirm payment sent', 'Confirmer le paiement')}</button></div>
+          </form>`}
+      <div class="btn-row"><a class="btn btn-ghost btn-sm" href="/dashboard/messages">${icon('inbox', 14)} ${t('Message our team', 'Écrire à notre équipe')}</a>
+      ${r.paid_at ? '' : html`<form method="post" action="/dashboard/reservations/${r.ref}/cancel" class="inline" data-confirm="${t('Cancel this reservation?', 'Annuler cette réservation ?')}">${csrfField(ctx)}<button class="btn btn-ghost btn-sm danger" type="submit">${t('Cancel reservation', 'Annuler la réservation')}</button></form>`}</div>`
+    : r.status === 'active' ? html`<h3>${t('Earning now', 'Rapporte maintenant')}</h3><p class="muted">${per ? t(`Income is credited to your balance ${sched.en.toLowerCase()}.`, `Les revenus sont crédités sur votre solde ${sched.fr.toLowerCase()}.`) : t('Returns are paid at exit.', 'Le rendement est versé à la sortie.')}</p>
+      <div class="big-accrual"><b class="num pos" data-accrual data-annual-cents="${rate ? Math.round((r.amount_cents * rate) / 100) : 0}" data-since="${r.decided_at || r.created_at}" data-base-cents="${r.paid_out_cents}" data-lang="${ctx.lang}">${f.usd(r.paid_out_cents, 4)}</b><span class="muted">${t('earned on this investment (live estimate)', 'gagné sur cet investissement (estimation en direct)')}</span></div>`
     : html`<p class="muted">${t('This reservation is closed.', 'Cette réservation est clôturée.')}</p><a class="btn btn-gold btn-sm" href="${ctx.u('/assets')}">${t('Find another project', 'Trouver un autre projet')}</a>`}
   </div>
 </section>`;
@@ -217,7 +245,7 @@ function wallet(ctx, { user, txs, unread, pendingWd, error }) {
       ${error ? html`<p class="error show" role="alert">${error}</p>` : ''}
       <div class="field"><label for="w-amt">${t('Amount (USD)', 'Montant (USD)')}</label><div class="amt-input"><span>$</span><input id="w-amt" name="amount" inputmode="decimal" required placeholder="50.00"></div>
         <button type="button" class="link small" data-fill="#w-amt" data-value="${(user.balance_cents / 100).toFixed(2)}">${t('Withdraw all', 'Tout retirer')} (${f.usd(user.balance_cents)})</button></div>
-      <div class="field"><label for="w-method">${t('Method', 'Moyen')}</label><select id="w-method" name="method" required>${Object.entries(payMethods).filter(([k]) => k !== 'card').map(([k, m]) => html`<option value="${k}">${m.label}</option>`)}</select></div>
+      <div class="field"><label for="w-method">${t('Method', 'Moyen')}</label><select id="w-method" name="method" required>${Object.entries(payMethods).filter(([k]) => k !== 'card' && k !== 'balance').map(([k, m]) => html`<option value="${k}">${m.label}</option>`)}</select></div>
       <div class="field"><label for="w-dest">${t('Wallet address, phone number or IBAN', 'Adresse, numéro ou IBAN')}</label><input id="w-dest" name="destination" required maxlength="140" autocomplete="off"></div>
       <button class="btn btn-gold" type="submit" ${user.kyc_status !== 'verified' ? raw('disabled') : ''}>${t('Request withdrawal', 'Demander le retrait')}</button>
     </form>
@@ -321,4 +349,72 @@ function profile(ctx, { user, sessions, unread, error, pwError }) {
   return appPage(ctx, { title: t('Profile & security', 'Profil & sécurité'), active: '/dashboard/profile', body, unread });
 }
 
-module.exports = { overview, reservations, reservationDetail, watchlist, wallet, kyc, notifications, profile, txList };
+function messages(ctx, { items, error }) {
+  const t = ctx.t;
+  const body = html`
+<section class="panel chat-panel">
+  <div class="panel-head"><h2>${t('Your conversation with Invest n Returns', 'Votre conversation avec Invest n Returns')}</h2><span class="muted">${t('We reply within one business day', 'Réponse sous un jour ouvré')}</span></div>
+  <div class="chat" data-chat>
+    ${items.length ? items.map((m) => chatBubble(ctx, m, 'user')) : html`<p class="muted center">${t('No messages yet. Ask us anything about projects, payments or your account.', 'Aucun message. Posez-nous vos questions sur les projets, paiements ou votre compte.')}</p>`}
+  </div>
+  <form method="post" action="/dashboard/messages" class="chat-form" data-validate novalidate>${csrfField(ctx)}
+    ${error ? html`<p class="error show" role="alert">${error}</p>` : ''}
+    <label class="sr" for="m-body">${t('Message', 'Message')}</label>
+    <textarea id="m-body" name="body" required maxlength="5000" rows="3" placeholder="${t('Write your message…', 'Écrivez votre message…')}" data-enter-submit></textarea>
+    <button class="btn btn-gold" type="submit">${icon('send', 16)} ${t('Send', 'Envoyer')}</button>
+  </form>
+</section>`;
+  return appPage(ctx, { title: t('Messages', 'Messages'), active: '/dashboard/messages', body });
+}
+
+function chatBubble(ctx, m, viewer) {
+  const mine = m.sender === viewer;
+  const who = m.sender === 'admin' ? 'Invest n Returns' : viewer === 'admin' ? m.user_name || ctx.t('Investor', 'Investisseur') : ctx.t('You', 'Vous');
+  return html`<div class="bubble ${mine ? 'b-mine' : 'b-theirs'} kind-${m.kind}">
+    <div class="bubble-meta"><b>${who}</b> · ${ctx.f.dateTime(m.created_at)}${m.kind !== 'message' ? html` · <em>${{ payment: ctx.t('Payment', 'Paiement'), proposal: ctx.t('Proposal', 'Proposition'), announcement: ctx.t('Announcement', 'Annonce') }[m.kind] || m.kind}</em>` : ''}</div>
+    <div class="bubble-body">${m.body}</div>
+  </div>`;
+}
+
+function offers(ctx, { items, user, error }) {
+  const t = ctx.t;
+  const f = ctx.f;
+  const open = items.filter((p) => p.status === 'pending');
+  const past = items.filter((p) => p.status !== 'pending');
+  const card = (p) => {
+    const photos = (() => { try { return JSON.parse(p.images || '[]'); } catch { return []; } })();
+    const sched = payoutSchedules[p.payout_freq];
+    const per = p.rate && sched ? Math.floor((p.amount_cents * p.rate) / 100 / sched.perYear) : 0;
+    return html`<article class="panel offer-card">
+      ${photos[0] ? html`<img class="offer-img" src="${photos[0].sm || photos[0].src}" alt="" loading="lazy" width="640" height="360">` : ''}
+      <div class="offer-main">
+        <div class="panel-head"><div><p class="eyebrow">${t('Personal proposal', 'Proposition personnelle')}</p><h2><a href="${ctx.u('/assets/' + p.slug)}">${t(p.title_en, p.title_fr)}</a></h2><p class="muted">${p.city}, ${t.o(countries[p.country_code])}</p></div>${p.status === 'pending' ? html`<span class="badge badge-new">${t('Awaiting your answer', 'En attente de votre réponse')}</span>` : badge(ctx, p.status)}</div>
+        <dl class="offer-terms">
+          <div><dt>${t('Amount', 'Montant')}</dt><dd class="num">${f.usd(p.amount_cents, 0)}</dd></div>
+          <div><dt>${t('Return', 'Rendement')}</dt><dd class="num hl">${p.rate ? f.pct(p.rate, 2) + t(' / yr', ' / an') : p.target_multiple + '×'}</dd></div>
+          <div><dt>${t('Payouts', 'Versements')}</dt><dd>${sched ? t.o(sched) : t('At exit', 'À la sortie')}</dd></div>
+          ${per ? html`<div><dt>${t('Each payout', 'Chaque versement')}</dt><dd class="num pos">${f.usd(per)}</dd></div>` : ''}
+          <div><dt>${t('Term', 'Durée')}</dt><dd>${termLabel(ctx, p.term_months)}</dd></div>
+          <div><dt>${t('Risk', 'Risque')}</dt><dd>${riskMeter(ctx, p.risk)}</dd></div>
+        </dl>
+        ${p.message ? html`<p class="offer-msg">${p.message}</p>` : ''}
+        ${p.status === 'pending' ? html`
+          <p class="fine-sm">${t('Valid until', 'Valable jusqu’au')} ${f.dateTime(p.expires_at)}. ${t('Returns are targets, not guarantees; you can lose capital.', 'Les rendements sont des objectifs, non garantis ; vous pouvez perdre du capital.')}</p>
+          <form method="post" action="/dashboard/offers/${p.id}/accept" class="inline-form" data-confirm="${t('Accept this proposal?', 'Accepter cette proposition ?')}">${csrfField(ctx)}
+            <label class="sr" for="om${p.id}">${t('Payment method', 'Moyen de paiement')}</label>
+            <select id="om${p.id}" name="method" required>${Object.entries(payMethods).map(([k, m]) => html`<option value="${k}" ${k === 'balance' && user.balance_cents < p.amount_cents ? raw('disabled') : ''}>${k === 'balance' ? `${m.label} — ${f.usd(user.balance_cents)}` : m.label}</option>`)}</select>
+            <button class="btn btn-gold btn-sm" type="submit">${icon('check', 14)} ${t('Accept', 'Accepter')}</button>
+          </form>
+          <form method="post" action="/dashboard/offers/${p.id}/decline" class="inline" data-confirm="${t('Decline this proposal?', 'Refuser cette proposition ?')}">${csrfField(ctx)}<button class="btn btn-ghost btn-xs" type="submit">${t('Decline', 'Refuser')}</button></form>`
+        : p.reservation_id ? html`<a class="link" href="/dashboard/reservations">${t('See the investment', 'Voir l’investissement')}</a>` : ''}
+      </div>
+    </article>`;
+  };
+  const body = html`
+${error ? html`<p class="error show" role="alert">${error}</p>` : ''}
+${open.length ? html`<section class="cards-list">${open.map(card)}</section>` : html`<div class="panel empty"><p>${t('No open proposals right now. Our team sends personal proposals that match your profile.', 'Aucune proposition ouverte pour le moment. Notre équipe vous envoie des propositions adaptées à votre profil.')}</p><a class="btn btn-ghost btn-sm" href="${ctx.u('/assets')}">${t('Browse projects', 'Voir les projets')}</a></div>`}
+${past.length ? html`<h2 class="h-sub">${t('Past proposals', 'Propositions passées')}</h2><section class="cards-list">${past.map(card)}</section>` : ''}`;
+  return appPage(ctx, { title: t('Offers', 'Propositions'), active: '/dashboard/offers', body });
+}
+
+module.exports = { overview, reservations, reservationDetail, watchlist, wallet, kyc, notifications, profile, txList, messages, offers, chatBubble };

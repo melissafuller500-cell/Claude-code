@@ -58,8 +58,17 @@ function termLabel(ctx, months) {
   return ctx.t(`${months} mo`, `${months} mois`);
 }
 
-// Deterministic decorative cover per asset (no external images needed).
-function cover(a, cls = 'cover') {
+// Responsive <img> for an asset photo ({src, sm}); lazy unless eager.
+function photoImg(p, alt, { eager = false, sizes = '(max-width: 640px) 100vw, (max-width: 980px) 50vw, 400px' } = {}) {
+  const srcset = p.sm && p.sm !== p.src ? `${p.sm} 640w, ${p.src} 1280w` : '';
+  return html`<img src="${p.sm || p.src}" ${srcset ? raw(`srcset="${srcset}" sizes="${sizes}"`) : ''} alt="${alt}" width="640" height="400" ${eager ? raw('fetchpriority="high"') : raw('loading="lazy"')} decoding="async">`;
+}
+
+// Cover: the first photo when the asset has one, otherwise a deterministic illustration.
+function cover(a, cls = 'cover', alt = '') {
+  if (a.photos && a.photos.length) {
+    return html`<div class="${cls} has-photo">${photoImg(a.photos[0], alt || `${a.title_en} — ${a.city}`)}<span class="cover-emoji" aria-hidden="true">${a.cat.emoji}</span></div>`;
+  }
   const hue = a.cat.hue;
   let seed = 0;
   for (const ch of a.slug) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
@@ -78,8 +87,8 @@ function assetCard(ctx, a, { saved = false } = {}) {
   const loc = `${a.city}, ${ctx.t.o(countries[a.country_code]) || a.country_code}`;
   return html`
 <article class="proj reveal" data-cat="${a.category}" data-risk="${a.risk}" data-search="${(a.title_en + ' ' + a.title_fr + ' ' + a.city + ' ' + a.region).toLowerCase()}">
-  <a class="proj-link" href="${ctx.u('/assets/' + a.slug)}" aria-label="${ctx.t(a.title_en, a.title_fr)}">
-    ${cover(a)}
+  <a class="proj-link" href="${ctx.u('/assets/' + a.slug)}" tabindex="-1">
+    ${cover(a, 'cover', `${ctx.t(a.title_en, a.title_fr)} — ${loc}`)}
   </a>
   <div class="proj-top">
     <div>
@@ -91,7 +100,7 @@ function assetCard(ctx, a, { saved = false } = {}) {
   <div class="proj-body">
     <div><span>${a.yield_based ? ctx.t('Target return / yr', 'Rendement cible / an') : ctx.t('Target multiple', 'Multiple cible')}</span><b class="hl">${targetLabel(ctx, a)}</b></div>
     <div><span>${ctx.t('Term', 'Durée')}</span><b>${termLabel(ctx, a.term_months)}</b></div>
-    <div><span>${ctx.t('Payouts', 'Versements')}</span><b>${ctx.t.o(payoutFreq[a.payout_freq])}</b></div>
+    <div><span>${ctx.t('Payouts', 'Versements')}</span><b>${a.yield_based ? ctx.t('Weekly → yearly', 'Hebdo → annuel') : ctx.t('At exit', 'À la sortie')}</b></div>
     <div><span>${ctx.t('Risk', 'Risque')} ${a.risk}/5</span>${riskMeter(ctx, a.risk)}</div>
   </div>
   <div class="bar" role="progressbar" aria-valuenow="${a.pct}" aria-valuemin="0" aria-valuemax="100" aria-label="${ctx.t('Funded', 'Financé')}"><i style="--w:${a.pct}%"></i></div>
@@ -120,4 +129,4 @@ function pagination(ctx, { page, pages, base }) {
   return html`<nav class="pager" aria-label="Pagination">${links}</nav>`;
 }
 
-module.exports = { icon, logoMark, riskMeter, badge, targetLabel, termLabel, assetCard, cover, flash, csrfField, pagination };
+module.exports = { icon, logoMark, riskMeter, badge, targetLabel, termLabel, assetCard, cover, photoImg, flash, csrfField, pagination };

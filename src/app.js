@@ -48,6 +48,8 @@ app.use((req, res, next) => {
   next();
 });
 
+require('fs').mkdirSync(config.uploadsDir, { recursive: true });
+app.use('/uploads', express.static(config.uploadsDir, { maxAge: config.isProd ? '30d' : 0, fallthrough: true, dotfiles: 'deny' }));
 app.use(express.static(path.join(__dirname, '..', 'public'), {
   maxAge: config.isProd ? '7d' : 0,
   setHeaders: (res, file) => { if (/\.(css|js)$/.test(file) && config.isProd) res.set('Cache-Control', 'public, max-age=604800'); },

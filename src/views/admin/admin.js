@@ -2,10 +2,10 @@
 const { html, raw, json } = require('../../html');
 const { appPage } = require('../layout');
 const { icon, badge, csrfField, pagination } = require('../components');
-const { countries, payMethods, payoutFreq } = require('../../data/catalog');
+const { countries, payMethods, payoutFreq, payoutSchedules } = require('../../data/catalog');
 const categories = require('../../data/categories');
 
-const page = (ctx, title, active, body, counts) => appPage(ctx, { title, area: 'admin', active, body, counts });
+const page = (ctx, title, active, body) => appPage(ctx, { title, area: 'admin', active, body });
 const catName = (code) => (categories.find((c) => c.code === code) || { name: { en: code } }).name.en;
 const sel = (a, b) => (String(a) === String(b) ? raw('selected') : '');
 
@@ -102,7 +102,7 @@ function assetForm(ctx, { a = {}, counts, error }) {
   <div class="field"><label for="a-term">Term (months)</label><input id="a-term" name="term_months" required inputmode="numeric" value="${v('term_months', 24)}"></div>
   <div class="field"><label for="a-pay">Payout frequency</label><select id="a-pay" name="payout_freq">${Object.entries(payoutFreq).map(([k, l]) => html`<option value="${k}" ${sel(v('payout_freq', 'monthly'), k)}>${l.en}</option>`)}</select></div>
   <div class="field"><label for="a-risk">Risk (1–5)</label><select id="a-risk" name="risk">${[1, 2, 3, 4, 5].map((r) => html`<option ${sel(v('risk', 3), r)}>${r}</option>`)}</select></div>
-  <div class="field"><label for="a-min">Minimum investment (USD)</label><input id="a-min" name="min_usd" required inputmode="numeric" value="${v('min_usd', 100)}"></div>
+  <div class="field"><label for="a-min">Minimum investment (USD)</label><input id="a-min" name="min_usd" required inputmode="numeric" value="${v('min_usd', 500)}"></div>
   <div class="field"><label for="a-off">Raised outside platform (USD)</label><input id="a-off" name="offline_raised_usd" inputmode="numeric" value="${v('offline_raised_usd', 0)}"></div>
 
   <h2 class="full">Content (SEO: write a clear first sentence — it becomes the quick answer)</h2>
@@ -114,7 +114,16 @@ function assetForm(ctx, { a = {}, counts, error }) {
   <div class="field"><label for="a-hfr">Checks completed (French, one per line)</label><textarea id="a-hfr" name="highlights_fr" maxlength="1200" rows="4">${hl('fr')}</textarea></div>
   <div class="form-actions"><button class="btn btn-gold" type="submit">${isNew ? 'Create asset' : 'Save changes'}</button><a class="btn btn-ghost" href="/admin/assets">Cancel</a></div>
 </form>
-${!isNew ? html`<form method="post" action="/admin/assets/${a.id}/delete" class="panel danger-zone" data-confirm="Delete this asset permanently? Only possible if it has no reservations.">${csrfField(ctx)}
+${!isNew ? html`<section class="panel" id="photos">
+  <div class="panel-head"><h2>Photos</h2><span class="muted">First photo = cover (cards, page header, social shares). Max 20.</span></div>
+  ${(() => { let ph = []; try { ph = JSON.parse(a.images || '[]'); } catch { ph = []; } return ph.length ? html`<div class="photo-grid">${ph.map((p, i) => html`<figure class="${i === 0 ? 'is-cover' : ''}"><img src="${p.sm || p.src}" alt="" loading="lazy" width="320" height="200"><figcaption>${i === 0 ? html`<em class="badge badge-active">Cover</em>` : html`<form method="post" action="/admin/assets/${a.id}/photos/${i}/cover" class="inline">${csrfField(ctx)}<button class="btn btn-ghost btn-xs">Make cover</button></form>`}<form method="post" action="/admin/assets/${a.id}/photos/${i}/delete" class="inline" data-confirm="Remove this photo?">${csrfField(ctx)}<button class="btn btn-ghost btn-xs danger">Remove</button></form></figcaption></figure>`)}</div>` : html`<p class="muted">No photo yet. Projects without photos show an illustration.</p>`; })()}
+  <form method="post" action="/admin/assets/${a.id}/photos" enctype="multipart/form-data" class="inline-form mt">${csrfField(ctx)}
+    <label class="sr" for="ph">Photos</label><input id="ph" type="file" name="photos" accept="image/jpeg,image/png,image/webp,image/avif" multiple required>
+    <button class="btn btn-gold btn-sm" type="submit">${icon('plus', 14)} Upload photos</button>
+  </form>
+  <p class="fine-sm">JPG, PNG, WebP or AVIF, up to 8 MB each. Landscape photos around 1600×1000 look best.</p>
+</section>
+<form method="post" action="/admin/assets/${a.id}/delete" class="panel danger-zone" data-confirm="Delete this asset permanently? Only possible if it has no reservations.">${csrfField(ctx)}
   <div><h3>Delete asset</h3><p class="muted">Assets with reservations cannot be deleted — set them to "closed" instead.</p></div><button class="btn btn-ghost btn-sm danger" type="submit">Delete</button></form>` : ''}`;
   return page(ctx, isNew ? 'New asset' : `Edit · ${a.title_en}`, '/admin/assets', body, counts);
 }
@@ -127,16 +136,17 @@ function reservationsList(ctx, { items, counts, filter, search }) {
   <form method="get" class="search-mini"><input type="hidden" name="status" value="${filter}"><label class="sr" for="rs">Search</label><input id="rs" name="q" value="${search}" placeholder="Ref, email, asset…"><button class="btn btn-ghost btn-sm">Search</button></form>
 </div>
 <section class="panel"><div class="table-scroll"><table class="table">
-  <thead><tr><th>Ref</th><th>Investor</th><th>Asset</th><th class="ta-r">Amount</th><th>Method</th><th>Created</th><th>Status</th><th>Actions</th></tr></thead>
+  <thead><tr><th>Ref</th><th>Investor</th><th>Asset</th><th class="ta-r">Amount</th><th>Method</th><th>Payment</th><th>Status</th><th>Actions</th></tr></thead>
   <tbody>${items.length ? items.map((r) => html`<tr>
-    <td class="num">${r.ref}</td>
+    <td class="num"><a href="/admin/reservations/${r.id}"><b>${r.ref}</b></a><br><small>${f.dateTime(r.created_at)}</small></td>
     <td><a href="/admin/users/${r.user_id}"><b>${r.name}</b></a><br><small>${r.email}</small> ${r.kyc_status === 'verified' ? html`<em class="badge badge-verified">KYC ✓</em>` : html`<em class="badge badge-${r.kyc_status}">KYC ${r.kyc_status}</em>`}</td>
     <td>${r.title_en}</td>
     <td class="ta-r num">${f.usd(r.amount_cents, 0)}</td>
     <td>${payMethods[r.pay_method] ? payMethods[r.pay_method].label.split(' ')[0] : r.pay_method}</td>
-    <td><small>${f.dateTime(r.created_at)}</small>${r.status === 'pending' ? html`<br><small class="countdown" data-countdown="${r.expires_at}"></small>` : ''}</td>
+    <td>${r.status === 'pending' ? (r.paid_at ? html`<em class="badge badge-active">Investor says paid</em><br><small><code>${r.paid_ref}</code></small>` : r.pay_details_at ? html`<em class="badge">Details sent</em><br><small class="countdown" data-countdown="${r.expires_at}"></small>` : html`<a class="badge badge-pending" href="/admin/reservations/${r.id}">Send details</a><br><small class="countdown" data-countdown="${r.expires_at}"></small>`) : r.status === 'active' ? html`<small>${payoutSchedules[r.payout_freq] ? payoutSchedules[r.payout_freq].en : 'At exit'} · ${r.rate_override != null ? r.rate_override + '% ★' : ''}</small>` : ''}</td>
     <td>${badge(ctx, r.status)}</td>
     <td class="nowrap">
+      <a class="btn btn-ghost btn-xs" href="/admin/reservations/${r.id}">Open</a>
       ${r.status === 'pending' ? html`
         <form method="post" action="/admin/reservations/${r.id}/confirm" class="inline" data-confirm="Confirm payment received for ${r.ref}?">${csrfField(ctx)}${r.kyc_status !== 'verified' ? html`<input type="hidden" name="force" value="1">` : ''}<button class="btn btn-gold btn-xs" type="submit">${r.kyc_status === 'verified' ? 'Confirm paid' : 'Confirm (override KYC)'}</button></form>
         <form method="post" action="/admin/reservations/${r.id}/reject" class="inline" data-prompt="Reason for rejection (sent to investor):" data-prompt-field="note">${csrfField(ctx)}<input type="hidden" name="note" value=""><button class="btn btn-ghost btn-xs danger" type="submit">Reject</button></form>` : ''}
@@ -196,17 +206,25 @@ function userDetail(ctx, { u, kyc, res, txs, counts, isSelf }) {
       <form method="post" action="/admin/users/${u.id}/status" class="inline" data-confirm="${u.status === 'active' ? 'Suspend' : 'Reactivate'} ${u.email}?">${csrfField(ctx)}<input type="hidden" name="status" value="${u.status === 'active' ? 'suspended' : 'active'}"><button class="btn btn-ghost btn-sm ${u.status === 'active' ? 'danger' : ''}" type="submit">${u.status === 'active' ? 'Suspend account' : 'Reactivate account'}</button></form>
       <form method="post" action="/admin/users/${u.id}/reset" class="inline" data-confirm="Email a password reset link to ${u.email}?">${csrfField(ctx)}<button class="btn btn-ghost btn-sm" type="submit">Send password reset</button></form>
     </div>`}
-    <h3 class="mt">Adjust balance</h3>
-    <form method="post" action="/admin/users/${u.id}/adjust" class="inline-form" data-confirm="Apply this balance adjustment?">${csrfField(ctx)}
-      <label class="sr" for="adj-a">Amount</label><input id="adj-a" name="amount" inputmode="decimal" placeholder="+25.00 or -10" required>
-      <label class="sr" for="adj-r">Reason</label><input id="adj-r" name="reason" placeholder="Reason" maxlength="200" required>
-      <button class="btn btn-ghost btn-sm" type="submit">Apply</button></form>
+    <div class="btn-row"><a class="btn btn-ghost btn-sm" href="/admin/inbox/${u.id}">${icon('inbox', 14)} Message</a><a class="btn btn-ghost btn-sm" href="/admin/proposals/new?user=${u.id}">${icon('briefcase', 14)} Send a proposal</a></div>
+    <h3 class="mt" id="fund">Fund or debit account</h3>
+    <p class="fine-sm">Credit money you actually received (e.g. a MoMo deposit). The investor can then invest it instantly with "Account balance". Use a negative amount to debit.</p>
+    <form method="post" action="/admin/users/${u.id}/adjust" class="stack" data-confirm="Apply this balance change to ${u.email}?">${csrfField(ctx)}
+      <div class="grid-2">
+        <div class="field"><label for="adj-a">Amount (USD)</label><input id="adj-a" name="amount" inputmode="decimal" placeholder="500 or -25" required></div>
+        <div class="field"><label for="adj-m">Received via</label><select id="adj-m" name="method"><option value="">— (bonus / correction)</option>${Object.entries(payMethods).filter(([k]) => k !== 'balance').map(([k, m]) => html`<option value="${k}">${m.label}</option>`)}</select></div>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label for="adj-ref">Transaction reference</label><input id="adj-ref" name="reference" maxlength="120" placeholder="MoMo ID, tx hash, bank ref"></div>
+        <div class="field"><label for="adj-r">Reason</label><input id="adj-r" name="reason" maxlength="200" required placeholder="Deposit received"></div>
+      </div>
+      <button class="btn btn-gold btn-sm" type="submit">${icon('wallet', 14)} Apply</button></form>
     <dl class="facts mt"><dt>Joined</dt><dd>${f.dateTime(u.created_at)}</dd><dt>Last login</dt><dd>${f.dateTime(u.last_login_at)}</dd><dt>Language</dt><dd>${u.lang}</dd></dl>
   </div>
 </section>
-<section class="panel"><div class="panel-head"><h2>Reservations</h2></div>
-  <div class="table-scroll"><table class="table"><thead><tr><th>Ref</th><th>Asset</th><th class="ta-r">Amount</th><th class="ta-r">Paid out</th><th>Status</th><th>Created</th></tr></thead>
-  <tbody>${res.length ? res.map((r) => html`<tr><td class="num">${r.ref}</td><td>${r.title_en}</td><td class="ta-r num">${f.usd(r.amount_cents, 0)}</td><td class="ta-r num">${f.usd(r.paid_out_cents)}</td><td>${badge(ctx, r.status)}</td><td><small>${f.dateTime(r.created_at)}</small></td></tr>`) : html`<tr><td colspan="6" class="muted center">None</td></tr>`}</tbody></table></div></section>
+<section class="panel"><div class="panel-head"><h2>Investments &amp; reservations</h2></div>
+  <div class="table-scroll"><table class="table"><thead><tr><th>Ref</th><th>Asset</th><th class="ta-r">Amount</th><th>Return</th><th>Payouts</th><th class="ta-r">Paid out</th><th>Status</th><th></th></tr></thead>
+  <tbody>${res.length ? res.map((r) => html`<tr><td class="num">${r.ref}</td><td>${r.title_en}</td><td class="ta-r num">${f.usd(r.amount_cents, 0)}</td><td class="num">${r.rate_override != null ? r.rate_override + '% ★' : r.target_rate != null ? r.target_rate + '%' : 'equity'}</td><td>${payoutSchedules[r.payout_freq] ? payoutSchedules[r.payout_freq].en : '—'}</td><td class="ta-r num">${f.usd(r.paid_out_cents)}</td><td>${badge(ctx, r.status)}</td><td class="ta-r"><a class="btn btn-ghost btn-xs" href="/admin/reservations/${r.id}">Manage</a></td></tr>`) : html`<tr><td colspan="8" class="muted center">None</td></tr>`}</tbody></table></div></section>
 <section class="panel"><div class="panel-head"><h2>Transactions</h2></div>
   <div class="table-scroll"><table class="table"><thead><tr><th>Date</th><th>Type</th><th class="ta-r">Amount</th><th>Status</th><th>Details</th></tr></thead>
   <tbody>${txs.length ? txs.map((t) => html`<tr><td><small>${f.dateTime(t.created_at)}</small></td><td>${t.type}</td><td class="ta-r num">${f.usd(t.amount_cents)}</td><td>${t.status}</td><td><small>${t.details}</small></td></tr>`) : html`<tr><td colspan="5" class="muted center">None</td></tr>`}</tbody></table></div></section>`;
@@ -228,26 +246,32 @@ function withdrawals(ctx, { pending, recent, counts }) {
   return page(ctx, 'Withdrawals', '/admin/withdrawals', body, counts);
 }
 
-function payouts(ctx, { preview, runs, week, done, counts }) {
+function payouts(ctx, { due, upcoming, runs, auto }) {
   const f = ctx.f;
+  const total = due.reduce((a, r) => a + r.amount, 0);
   const body = html`
 <section class="panel payout-run">
   <div>
-    <p class="eyebrow">Week ${week}</p>
-    <h2 class="h-lg">${done ? 'Payouts already credited this week' : 'Weekly payout ready'}</h2>
-    <p class="muted">Credits each active investment with amount × target rate ÷ 52 to the investor's balance and notifies them. Runs once per ISO week.</p>
+    <p class="eyebrow">${auto ? 'Automatic payouts: ON' : 'Automatic payouts: OFF'}</p>
+    <h2 class="h-lg">${due.length ? `${due.length} payout${due.length > 1 ? 's' : ''} due now` : 'No payout due right now'}</h2>
+    <p class="muted">Each active investment pays on the schedule the investor chose (weekly, monthly, every 3 or 6 months, yearly): amount × annual rate ÷ payouts per year, credited to the investor's balance. ${auto ? 'Due payouts are credited automatically every 15 minutes.' : 'Turn on automatic payouts in Settings, or run them here.'}</p>
   </div>
   <div class="stat-row">
-    <div><span>Active positions</span><b class="num">${preview.count}</b></div>
-    <div><span>Investors</span><b class="num">${preview.investors}</b></div>
-    <div><span>Total to credit</span><b class="num pos">${f.usd(preview.total)}</b></div>
+    <div><span>Positions due</span><b class="num">${due.length}</b></div>
+    <div><span>Total to credit</span><b class="num pos">${f.usd(total)}</b></div>
   </div>
-  <form method="post" action="/admin/payouts/run" data-confirm="Credit ${f.usd(preview.total)} to ${preview.investors} investors for ${week}?">${csrfField(ctx)}<button class="btn btn-gold btn-lg" type="submit" ${done || !preview.count ? raw('disabled') : ''}>${icon('coins', 18)} Run payout for ${week}</button></form>
+  <form method="post" action="/admin/payouts/run" data-confirm="Credit ${f.usd(total)} now?">${csrfField(ctx)}<button class="btn btn-gold btn-lg" type="submit" ${due.length ? '' : raw('disabled')}>${icon('coins', 18)} Run due payouts</button></form>
 </section>
+${due.length ? html`<section class="panel"><div class="panel-head"><h2>Due now</h2></div><div class="table-scroll"><table class="table">
+  <thead><tr><th>Ref</th><th>Investor</th><th>Project</th><th>Schedule</th><th>Rate</th><th class="ta-r">Amount</th><th>Due since</th></tr></thead>
+  <tbody>${due.map((r) => html`<tr><td class="num"><a href="/admin/reservations/${r.id}">${r.ref}</a></td><td>${r.name}</td><td>${r.title_en}</td><td>${payoutSchedules[r.payout_freq].en}</td><td class="num">${r.rate}%</td><td class="ta-r num pos">${f.usd(r.amount)}</td><td><small>${f.dateTime(r.next_payout_at)}</small></td></tr>`)}</tbody></table></div></section>` : ''}
+<section class="panel"><div class="panel-head"><h2>Upcoming (next 30 days)</h2></div><div class="table-scroll"><table class="table">
+  <thead><tr><th>Date</th><th>Ref</th><th>Investor</th><th>Schedule</th><th class="ta-r">Amount</th></tr></thead>
+  <tbody>${upcoming.length ? upcoming.map((r) => html`<tr><td><small>${f.dateTime(r.next_payout_at)}</small></td><td class="num"><a href="/admin/reservations/${r.id}">${r.ref}</a></td><td>${r.name}</td><td>${payoutSchedules[r.payout_freq].en}</td><td class="ta-r num">${f.usd(r.amount)}</td></tr>`) : html`<tr><td colspan="5" class="muted center">Nothing scheduled in the next 30 days.</td></tr>`}</tbody></table></div></section>
 <section class="panel"><div class="panel-head"><h2>History</h2></div><div class="table-scroll"><table class="table">
-  <thead><tr><th>Week</th><th>Run at</th><th class="ta-r">Positions</th><th class="ta-r">Total credited</th></tr></thead>
-  <tbody>${runs.length ? runs.map((r) => html`<tr><td class="num">${r.week}</td><td>${f.dateTime(r.created_at)}</td><td class="ta-r num">${r.count}</td><td class="ta-r num pos">${f.usd(r.total_cents)}</td></tr>`) : html`<tr><td colspan="4" class="muted center">No payout runs yet.</td></tr>`}</tbody></table></div></section>`;
-  return page(ctx, 'Payouts', '/admin/payouts', body, counts);
+  <thead><tr><th>Run at</th><th>By</th><th class="ta-r">Payouts</th><th class="ta-r">Total credited</th></tr></thead>
+  <tbody>${runs.length ? runs.map((r) => html`<tr><td>${f.dateTime(r.created_at)}</td><td>${r.actor || 'automatic'}</td><td class="ta-r num">${r.count}</td><td class="ta-r num pos">${f.usd(r.total_cents)}</td></tr>`) : html`<tr><td colspan="4" class="muted center">No payout runs yet.</td></tr>`}</tbody></table></div></section>`;
+  return page(ctx, 'Payouts', '/admin/payouts', body);
 }
 
 function submissions(ctx, { items, counts }) {

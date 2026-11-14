@@ -157,14 +157,17 @@ test('full investor journey: register → KYC → reserve → admin confirm → 
   const tooSmall = await inv.post(`/dashboard/reserve/${slug}`, { amount: '5', method: 'usdt', consent: '1' }, `/assets/${slug}`);
   assert.equal(tooSmall.status, 303);
   assert.match(tooSmall.location, new RegExp(`/assets/${slug}`));
-  const res = await inv.post(`/dashboard/reserve/${slug}`, { amount: '1000', method: 'usdt', consent: '1' }, `/assets/${slug}`);
+  const below = await inv.post(`/dashboard/reserve/${slug}`, { amount: '400', method: 'usdt', payout_freq: 'weekly', consent: '1' }, `/assets/${slug}`);
+  assert.equal(below.status, 303, '400 USD is below the 500 USD minimum');
+  assert.match(below.location, /#reserve$/);
+  const res = await inv.post(`/dashboard/reserve/${slug}`, { amount: '5200', method: 'momo', payout_freq: 'weekly', consent: '1' }, `/assets/${slug}`);
   assert.equal(res.status, 303);
   const ref = res.location.match(/reservations\/(INR-[A-F0-9]+)/)[1];
-  const detail = await inv.req(`/dashboard/reservations/${ref}`);
+  let detail = await inv.req(`/dashboard/reservations/${ref}`);
   assert.match(detail.text, new RegExp(ref));
-  assert.match(detail.text, /data-countdown/);
+  assert.match(detail.text, /preparing your payment details/);
 
-  // Admin: verify KYC and confirm payment
+  // Admin: verify KYC, send payment details, change the rate
   const adm = client();
   await login(adm, 'admin@test.local', 'AdminTest!12345');
   const users = await adm.req(`/admin/users?q=${encodeURIComponent(email)}`);
@@ -173,32 +176,110 @@ test('full investor journey: register → KYC → reserve → admin confirm → 
   assert.equal(v.status, 303);
   const pending = await adm.req(`/admin/reservations?status=pending&q=${ref}`);
   const rid = pending.text.match(/\/admin\/reservations\/(\d+)\/confirm/)[1];
+  assert.match((await adm.req(`/admin/reservations/${rid}`)).text, /Send payment details/);
+  const sent = await adm.post(`/admin/reservations/${rid}/details`, { details: 'MTN MoMo: +237 650 000 000 (Invest n Returns SARL)' }, `/admin/reservations/${rid}`);
+  assert.equal(sent.status, 303);
+  detail = await inv.req(`/dashboard/reservations/${ref}`);
+  assert.match(detail.text, /\+237 650 000 000/);
+  const msgs = await inv.req('/dashboard/messages');
+  assert.match(msgs.text, /Payment details for/);
+
+  // Investor declares the payment
+  const paid = await inv.post(`/dashboard/reservations/${ref}/paid`, { paid_ref: 'MP2411.1234.A5' }, `/dashboard/reservations/${ref}`);
+  assert.equal(paid.status, 303);
+  assert.match((await adm.req(`/admin/reservations?status=pending&q=${ref}`)).text, /Investor says paid/);
+
+  // Admin raises the rate to 26% and confirms payment
+  const terms = await adm.post(`/admin/reservations/${rid}/terms`, { rate: '26', payout_freq: 'weekly', reason: 'Loyalty bonus' }, `/admin/reservations/${rid}`);
+  assert.equal(terms.status, 303);
   const conf = await adm.post(`/admin/reservations/${rid}/confirm`, {}, '/admin/reservations');
   assert.equal(conf.status, 303);
-  const active = await adm.req(`/admin/reservations?status=active&q=${ref}`);
-  assert.match(active.text, new RegExp(ref));
+  assert.match((await adm.req(`/admin/reservations?status=active&q=${ref}`)).text, new RegExp(ref));
 
-  // Weekly payout credits the investor
-  const run = await adm.post('/admin/payouts/run', {}, '/admin/payouts');
-  assert.equal(run.status, 303);
-  const again = await adm.post('/admin/payouts/run', {}, '/admin/payouts');
-  assert.equal(again.status, 303); // second run same week is refused with a flash, no double credit
+  // Nothing is due yet; one week later one weekly payout of 5200 × 26% ÷ 52 = $26.00 is due
+  const ledger = require('../src/services/ledger');
+  const { q } = require('../src/db');
+  const resvRow = q.get('SELECT * FROM reservations WHERE ref = ?', ref);
+  assert.equal(resvRow.rate_override, 26);
+  assert.ok(!ledger.duePayouts().some((r) => r.ref === ref), 'not due immediately');
+  const run = ledger.runDuePayouts(null, resvRow.next_payout_at + 1000);
+  assert.ok(run.total >= 2600);
+  const pay = q.get("SELECT amount_cents FROM transactions WHERE reservation_id = ? AND type = 'payout'", resvRow.id);
+  assert.equal(pay.amount_cents, 2600);
+  assert.equal(ledger.runDuePayouts(null, resvRow.next_payout_at + 1000).total, 0, 'no double credit');
   const wallet = await inv.req('/dashboard/wallet');
   assert.match(wallet.text, /Weekly payout/);
+
+  // Admin funds the account; investor invests from balance (instantly active, monthly payouts)
+  const fund = await adm.post(`/admin/users/${uid}/adjust`, { amount: '1500', method: 'momo', reference: 'MP-FUND-1', reason: 'MoMo deposit received' }, `/admin/users/${uid}`);
+  assert.equal(fund.status, 303);
+  const fromBal = await inv.post(`/dashboard/reserve/${slug}`, { amount: '1000', method: 'balance', payout_freq: 'monthly', consent: '1' }, `/assets/${slug}`);
+  const ref2 = fromBal.location.match(/reservations\/(INR-[A-F0-9]+)/)[1];
+  const r2 = q.get('SELECT * FROM reservations WHERE ref = ?', ref2);
+  assert.equal(r2.status, 'active');
+  assert.equal(r2.payout_freq, 'monthly');
+  const balNow = q.get('SELECT balance_cents FROM users WHERE id = ?', Number(uid)).balance_cents;
+  assert.equal(balNow, 2600 + 150000 - 100000);
 
   // Withdrawal above balance is refused; a valid one is accepted and held
   const big = await inv.post('/dashboard/wallet/withdraw', { amount: '999999', method: 'momo', destination: '+237600000000' }, '/dashboard/wallet');
   assert.equal(big.status, 422);
-  const bal = Number((wallet.text.match(/Available balance<\/span><b class="num">\$([0-9.,]+)/) || [])[1].replace(/,/g, ''));
-  assert.ok(bal > 0, 'balance credited by payout');
-  if (bal >= 10) {
-    const wd = await inv.post('/dashboard/wallet/withdraw', { amount: '10', method: 'momo', destination: '+237600000000' }, '/dashboard/wallet');
-    assert.equal(wd.status, 303);
-  }
+  const wd = await inv.post('/dashboard/wallet/withdraw', { amount: '10', method: 'momo', destination: '+237600000000' }, '/dashboard/wallet');
+  assert.equal(wd.status, 303);
 
-  // Investor sees active position and the CSV export is safe
+  // CSV export
   const csv = await inv.req('/dashboard/wallet.csv');
   assert.match(csv.headers.get('content-type'), /text\/csv/);
+});
+
+test('messages, announcements and proposals', async () => {
+  const inv = client();
+  await login(inv, 'demo@investnreturns.com', 'Demo!2026invest');
+  const sent = await inv.post('/dashboard/messages', { body: 'Hello, can I pay in euros?' }, '/dashboard/messages');
+  assert.equal(sent.status, 303);
+  const adm = client();
+  await login(adm, 'admin@test.local', 'AdminTest!12345');
+  const ib = await adm.req('/admin/inbox?filter=unread');
+  assert.match(ib.text, /can I pay in euros/);
+  const uid = ib.text.match(/href="\/admin\/inbox\/(\d+)"/)[1];
+  const reply = await adm.post(`/admin/inbox/${uid}`, { body: 'Yes, by SEPA transfer.' }, `/admin/inbox/${uid}`);
+  assert.equal(reply.status, 303);
+  assert.match((await inv.req('/dashboard/messages')).text, /Yes, by SEPA transfer/);
+
+  const bc = await adm.post('/admin/broadcast', { segment: 'all', title: 'New solar project', body: 'A 5 MW solar farm is now open.' }, '/admin/broadcast');
+  assert.equal(bc.status, 303);
+  assert.match((await inv.req('/dashboard/messages')).text, /New solar project/);
+
+  const form = await adm.req(`/admin/proposals/new?user=${uid}`);
+  const assetId = form.text.match(/<option value="(\d+)" data-rate="\d/)[1];
+  const prop = await adm.post('/admin/proposals', { user_id: uid, asset_id: assetId, amount: '2000', rate: '15.5', payout_freq: 'quarterly', days: '7', message: 'Picked for you.' }, '/admin/proposals/new');
+  assert.equal(prop.status, 303);
+  const offers = await inv.req('/dashboard/offers');
+  assert.match(offers.text, /Picked for you/);
+  assert.match(offers.text, /15[.,]5/);
+  const pid = offers.text.match(/\/dashboard\/offers\/(\d+)\/accept/)[1];
+  const acc = await inv.post(`/dashboard/offers/${pid}/accept`, { method: 'usdt' }, '/dashboard/offers');
+  assert.equal(acc.status, 303);
+  const ref = acc.location.match(/reservations\/(INR-[A-F0-9]+)/)[1];
+  const { q } = require('../src/db');
+  const r = q.get('SELECT * FROM reservations WHERE ref = ?', ref);
+  assert.equal(r.rate_override, 15.5);
+  assert.equal(r.payout_freq, 'quarterly');
+  assert.equal(r.amount_cents, 200000);
+});
+
+test('admin settings: default payment details are shown to investors', async () => {
+  const adm = client();
+  await login(adm, 'admin@test.local', 'AdminTest!12345');
+  const s = await adm.post('/admin/settings', { pay_usdt: 'USDT TRC-20: TTestAddress123', auto_payouts: '1' }, '/admin/settings');
+  assert.equal(s.status, 303);
+  const inv = client();
+  await login(inv, 'demo@investnreturns.com', 'Demo!2026invest');
+  const list = await inv.req('/assets?sort=risk');
+  const slug = list.text.match(/href="\/assets\/([a-z0-9-]+)"/)[1];
+  const res = await inv.post(`/dashboard/reserve/${slug}`, { amount: '600', method: 'usdt', payout_freq: 'semiannual', consent: '1' }, `/assets/${slug}`);
+  const ref = res.location.match(/reservations\/(INR-[A-F0-9]+)/)[1];
+  assert.match((await inv.req(`/dashboard/reservations/${ref}`)).text, /TTestAddress123/);
 });
 
 test('watchlist JSON toggle', async () => {
@@ -262,6 +343,31 @@ test('password reset flow via outbox', async () => {
   assert.equal(done.status, 303);
   const reuse = await c.post('/reset-password', { token, password: 'Another1Pass!' }, '/forgot-password');
   assert.equal(reuse.status, 400);
+});
+
+test('admin photo upload accepts real images only and requires CSRF', async () => {
+  const adm = client();
+  await login(adm, 'admin@test.local', 'AdminTest!12345');
+  const token = await adm.csrf('/admin/assets/1/edit');
+  const cookie = [...adm.jar].map(([k, v]) => `${k}=${v}`).join('; ');
+  const png = Buffer.from('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154789c6360000002000154a24f5d0000000049454e44ae426082', 'hex');
+  const send = (fields, files) => {
+    const fd = new FormData();
+    for (const [k, v] of Object.entries(fields)) fd.append(k, v);
+    for (const [name, buf, type] of files) fd.append('photos', new Blob([buf], { type }), name);
+    return fetch(base + '/admin/assets/1/photos', { method: 'POST', body: fd, redirect: 'manual', headers: { cookie } });
+  };
+  const noToken = await send({}, [['a.png', png, 'image/png']]);
+  assert.equal(noToken.status, 403);
+  const ok = await send({ _csrf: token }, [['a.png', png, 'image/png'], ['evil.png', Buffer.from('<script>alert(1)</script>'), 'image/png']]);
+  assert.equal(ok.status, 303);
+  const { q } = require('../src/db');
+  const photos = JSON.parse(q.get('SELECT images FROM assets WHERE id = 1').images);
+  const uploaded = photos.filter((p) => p.src.startsWith('/uploads/'));
+  assert.equal(uploaded.length, 1, 'only the real PNG is stored');
+  const img = await fetch(base + uploaded[0].src);
+  assert.equal(img.status, 200);
+  assert.match(img.headers.get('content-type'), /image\/png/);
 });
 
 test('security headers are set', async () => {

@@ -4,7 +4,7 @@ const seo = require('../seo');
 const { icon, logoMark, flash, csrfField } = require('./components');
 const categories = require('../data/categories');
 
-const ASSET_V = '1';
+const ASSET_V = "2";
 
 function docHead(ctx, headMarkup, extraCss = []) {
   return html`<!DOCTYPE html>
@@ -178,10 +178,15 @@ function authPage(ctx, { title, description, body }) {
 
 // Private app shell (investor dashboard and admin), never indexed.
 function appPage(ctx, { title, area = 'user', active = '', body, unread = 0, counts = {} }) {
+  counts = counts && Object.keys(counts).length ? counts : (ctx.res.locals && ctx.res.locals.counts) || {};
   const t = ctx.t;
+  const b = (ctx.res.locals && ctx.res.locals.badges) || {};
+  if (area === 'user' && !unread) unread = b.notif || 0;
   const userNav = [
     ['/dashboard', 'home', t('Overview', "Vue d'ensemble")],
     ['/dashboard/reservations', 'ticket', t('My investments', 'Mes investissements')],
+    ['/dashboard/offers', 'briefcase', t('Offers', 'Propositions'), false, b.offers],
+    ['/dashboard/messages', 'inbox', t('Messages', 'Messages'), false, b.msgs],
     ['/assets', 'grid', t('Browse projects', 'Parcourir les projets'), true],
     ['/dashboard/watchlist', 'heart', t('Watchlist', 'Favoris')],
     ['/dashboard/wallet', 'wallet', t('Wallet', 'Portefeuille')],
@@ -194,10 +199,14 @@ function appPage(ctx, { title, area = 'user', active = '', body, unread = 0, cou
     ['/admin/assets', 'building', 'Assets'],
     ['/admin/reservations', 'ticket', 'Reservations', false, counts.pendingRes],
     ['/admin/users', 'users', 'Users & KYC', false, counts.pendingKyc],
+    ['/admin/inbox', 'inbox', 'Inbox', false, counts.inbox],
+    ['/admin/proposals', 'briefcase', 'Proposals'],
+    ['/admin/broadcast', 'send', 'Announcements'],
     ['/admin/withdrawals', 'wallet', 'Withdrawals', false, counts.pendingWd],
-    ['/admin/payouts', 'coins', 'Payouts'],
-    ['/admin/submissions', 'briefcase', 'Project submissions', false, counts.newSub],
-    ['/admin/messages', 'inbox', 'Messages', false, counts.newMsg],
+    ['/admin/payouts', 'coins', 'Payouts', false, counts.duePay],
+    ['/admin/submissions', 'building', 'Project submissions', false, counts.newSub],
+    ['/admin/messages', 'log', 'Contact forms', false, counts.newMsg],
+    ['/admin/settings', 'shield', 'Settings'],
     ['/admin/outbox', 'send', 'Email outbox'],
     ['/admin/audit', 'log', 'Audit log'],
   ];

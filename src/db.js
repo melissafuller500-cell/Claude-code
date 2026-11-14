@@ -137,6 +137,35 @@ CREATE TABLE IF NOT EXISTS payout_runs (
   week TEXT NOT NULL UNIQUE, actor_id INTEGER, total_cents INTEGER NOT NULL, count INTEGER NOT NULL, created_at INTEGER NOT NULL
 );
 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS chat_messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  sender TEXT NOT NULL CHECK (sender IN ('user','admin')),
+  admin_id INTEGER,
+  kind TEXT NOT NULL DEFAULT 'message',
+  body TEXT NOT NULL,
+  reservation_id INTEGER,
+  read_by_user INTEGER NOT NULL DEFAULT 0,
+  read_by_admin INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_chat_user ON chat_messages(user_id, created_at);
+CREATE TABLE IF NOT EXISTS proposals (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  asset_id INTEGER NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+  amount_cents INTEGER NOT NULL,
+  rate REAL,
+  payout_freq TEXT NOT NULL DEFAULT 'monthly',
+  message TEXT NOT NULL DEFAULT '',
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','accepted','declined','expired','withdrawn')),
+  reservation_id INTEGER,
+  admin_id INTEGER,
+  expires_at INTEGER NOT NULL,
+  created_at INTEGER NOT NULL,
+  decided_at INTEGER
+);
+CREATE INDEX IF NOT EXISTS idx_prop_user ON proposals(user_id, status);
 `;
 
 let impl = null;
@@ -216,8 +245,36 @@ async function init() {
   }
   if (!impl) { impl = await openSqlJs(); backend = 'sql.js'; }
   impl.exec(SCHEMA);
+  migrate();
   ensureSecret();
   return backend;
+}
+
+// Additive, idempotent schema upgrades for databases created by earlier versions.
+function migrate() {
+  const cols = (t) => new Set(impl.all(`PRAGMA table_info(${t})`, []).map((c) => c.name));
+  const add = (t, col, def) => { if (!cols(t).has(col)) impl.exec(`ALTER TABLE ${t} ADD COLUMN ${col} ${def}`); };
+  add('assets', 'images', "TEXT NOT NULL DEFAULT '[]'");
+  add('reservations', 'payout_freq', "TEXT NOT NULL DEFAULT 'monthly'");
+  add('reservations', 'rate_override', 'REAL');
+  add('reservations', 'next_payout_at', 'INTEGER');
+  add('reservations', 'pay_details', "TEXT NOT NULL DEFAULT ''");
+  add('reservations', 'pay_details_at', 'INTEGER');
+  add('reservations', 'paid_ref', "TEXT NOT NULL DEFAULT ''");
+  add('reservations', 'paid_at', 'INTEGER');
+  add('reservations', 'proposal_id', 'INTEGER');
+  const done = (k) => !!impl.get('SELECT 1 FROM settings WHERE key = ?', ['mig_' + k]);
+  const mark = (k) => impl.run('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)', ['mig_' + k, String(Date.now())]);
+  if (!done('v2')) {
+    // Positions created before scheduled payouts existed were paid weekly: keep that.
+    impl.exec(`UPDATE reservations SET payout_freq = 'weekly' WHERE status IN ('active','completed') AND next_payout_at IS NULL`);
+    impl.exec(`UPDATE reservations SET next_payout_at = COALESCE((SELECT MAX(t.created_at) FROM transactions t WHERE t.reservation_id = reservations.id AND t.type = 'payout'), decided_at, created_at) + 604800000
+      WHERE status = 'active' AND next_payout_at IS NULL`);
+    // Minimum investment is now 500 USD (1 000 USD for tech equity).
+    impl.exec("UPDATE assets SET min_usd = 500 WHERE min_usd < 500");
+    impl.exec("UPDATE assets SET min_usd = 1000 WHERE category = 'te' AND min_usd < 1000");
+    mark('v2');
+  }
 }
 
 // Without SESSION_SECRET, generate one once and keep it in the database so

@@ -2,7 +2,7 @@
 // The eight asset classes. Each has a public landing page at /invest/:slug.
 module.exports = [
   {
-    code: 're', slug: 'real-estate', emoji: '🏢', hue: 38,
+    code: 're', photo: { src: '/img/projects/rental-flats-1.webp', sm: '/img/projects/rental-flats-1-sm.webp' }, slug: 'real-estate', emoji: '🏢', hue: 38,
     name: { en: 'Real estate', fr: 'Immobilier' },
     title: { en: 'Rental buildings and plots', fr: 'Immeubles locatifs et terrains' },
     short: {
@@ -33,7 +33,7 @@ module.exports = [
     ],
   },
   {
-    code: 'ag', slug: 'agriculture', emoji: '🌱', hue: 145,
+    code: 'ag', photo: { src: '/img/projects/plantain-2.webp', sm: '/img/projects/plantain-2-sm.webp' }, slug: 'agriculture', emoji: '🌱', hue: 145,
     name: { en: 'Agriculture', fr: 'Agriculture' },
     title: { en: 'Farms with an off-taker', fr: 'Exploitations avec acheteur garanti' },
     short: {
@@ -64,7 +64,7 @@ module.exports = [
     ],
   },
   {
-    code: 'co', slug: 'sme-loans', emoji: '🏪', hue: 200,
+    code: 'co', photo: { src: '/img/projects/drinks-1.webp', sm: '/img/projects/drinks-1-sm.webp' }, slug: 'sme-loans', emoji: '🏪', hue: 200,
     name: { en: 'Working companies', fr: 'Entreprises' },
     title: { en: 'Loans to profitable SMEs', fr: 'Prêts à des PME rentables' },
     short: {
@@ -91,7 +91,7 @@ module.exports = [
     ],
   },
   {
-    code: 'te', slug: 'tech-startups', emoji: '💻', hue: 225,
+    code: 'te', photo: { src: '/img/projects/fintech-1.webp', sm: '/img/projects/fintech-1-sm.webp' }, slug: 'tech-startups', emoji: '💻', hue: 225,
     name: { en: 'Tech companies', fr: 'Entreprises tech' },
     title: { en: 'Shares in African tech start-ups', fr: 'Parts dans des start-ups tech africaines' },
     short: {
@@ -118,7 +118,7 @@ module.exports = [
     ],
   },
   {
-    code: 'fo', slug: 'foreign-property', emoji: '🌍', hue: 15,
+    code: 'fo', photo: { src: '/img/projects/studios-1.webp', sm: '/img/projects/studios-1-sm.webp' }, slug: 'foreign-property', emoji: '🌍', hue: 15,
     name: { en: 'Foreign assets', fr: 'Actifs étrangers' },
     title: { en: 'Hard-currency property abroad', fr: "Immobilier en devises fortes à l'étranger" },
     short: {
@@ -131,21 +131,21 @@ module.exports = [
     target: { en: '6–9 % / year', fr: '6–9 % / an' },
     body: {
       en: [
-        'Many investors in Africa earn in local currency and want part of their savings anchored in dollars, euros or dirhams. Foreign property gives you that anchor from 100 USDT.',
+        'Many investors in Africa earn in local currency and want part of their savings anchored in dollars, euros or dirhams. Foreign property gives you that anchor from 500 USDT.',
         'We apply the same checks as on the continent: title, site visit, rent roll and a separate company per property. Rent is collected in hard currency and paid out in the currency you choose.',
       ],
       fr: [
-        "Beaucoup d'investisseurs en Afrique gagnent en monnaie locale et veulent ancrer une partie de leur épargne en dollars, euros ou dirhams. L'immobilier étranger offre cet ancrage dès 100 USDT.",
+        "Beaucoup d'investisseurs en Afrique gagnent en monnaie locale et veulent ancrer une partie de leur épargne en dollars, euros ou dirhams. L'immobilier étranger offre cet ancrage dès 500 USDT.",
         "Nous appliquons les mêmes contrôles que sur le continent : titre, visite, état locatif et une société par bien. Les loyers sont encaissés en devises fortes et versés dans la devise de votre choix.",
       ],
     },
     faq: [
       { q: { en: 'Why invest in foreign property through an African platform?', fr: "Pourquoi de l'immobilier étranger via une plateforme africaine ?" },
-        a: { en: 'To hold part of your savings in USD, EUR or AED with the same checks and reporting as African projects, starting from 100 USDT.', fr: "Pour détenir une part de votre épargne en USD, EUR ou AED avec les mêmes contrôles et rapports que les projets africains, dès 100 USDT." } },
+        a: { en: 'To hold part of your savings in USD, EUR or AED with the same checks and reporting as African projects, starting from 500 USDT.', fr: "Pour détenir une part de votre épargne en USD, EUR ou AED avec les mêmes contrôles et rapports que les projets africains, dès 500 USDT." } },
     ],
   },
   {
-    code: 'mi', slug: 'mining-royalties', emoji: '⛏️', hue: 30,
+    code: 'mi', photo: { src: '/img/projects/lithium-1.webp', sm: '/img/projects/lithium-1-sm.webp' }, slug: 'mining-royalties', emoji: '⛏️', hue: 30,
     name: { en: 'Mining', fr: 'Mines' },
     title: { en: 'Gold, copper and lithium royalties', fr: 'Redevances or, cuivre et lithium' },
     short: {
@@ -172,7 +172,7 @@ module.exports = [
     ],
   },
   {
-    code: 'en', slug: 'energy', emoji: '⚡', hue: 50,
+    code: 'en', photo: { src: '/img/projects/solarfarm-1.webp', sm: '/img/projects/solarfarm-1-sm.webp' }, slug: 'energy', emoji: '⚡', hue: 50,
     name: { en: 'Energy', fr: 'Énergie' },
     title: { en: 'Solar, mini-grids and fuel distribution', fr: 'Solaire, mini-réseaux et distribution de carburant' },
     short: {
@@ -199,7 +199,7 @@ module.exports = [
     ],
   },
   {
-    code: 'in', slug: 'infrastructure', emoji: '🚢', hue: 180,
+    code: 'in', photo: { src: '/img/projects/port-1.webp', sm: '/img/projects/port-1-sm.webp' }, slug: 'infrastructure', emoji: '🚢', hue: 180,
     name: { en: 'Infrastructure & more', fr: 'Infrastructures & plus' },
     title: { en: 'Logistics, telecom, hotels, health, industry', fr: 'Logistique, télécoms, hôtels, santé, industrie' },
     short: {

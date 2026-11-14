@@ -43,7 +43,7 @@ function classPage(ctx, { c, items, saved }) {
   const description = `${t.o(c.short)} ${t('Target', 'Cible')} ${t.o(c.target)}.`.slice(0, 300);
   const path = `/invest/${c.slug}`;
   const body = html`
-${parts.pageHero(ctx, { eyebrow: `${c.emoji} ${t.o(c.name)}`, title: t.o(c.title), lead: t.o(c.short), crumbs: [{ name: t('Asset classes', "Classes d'actifs"), url: ctx.u('/invest') }, { name: t.o(c.name), url: ctx.u(path) }] })}
+${parts.pageHero(ctx, { photo: c.photo, eyebrow: `${c.emoji} ${t.o(c.name)}`, title: t.o(c.title), lead: t.o(c.short), crumbs: [{ name: t('Asset classes', "Classes d'actifs"), url: ctx.u('/invest') }, { name: t.o(c.name), url: ctx.u(path) }] })}
 <section class="section-tight"><div class="wrap">
   <div class="kpis kpis-4">
     <div class="kpi reveal"><span>${t('Return from', 'Rendement issu de')}</span><b>${t.o(c.returnFrom)}</b></div>
@@ -90,15 +90,15 @@ function howItWorks(ctx) {
       [t('Verify your identity', 'Vérifiez votre identité'), t('Submit your ID details for KYC review.', "Soumettez vos informations d'identité pour la vérification KYC.")],
       [t('Reserve a project', 'Réservez un projet'), t('Choose a project and enter your amount; your share is held 72 hours.', 'Choisissez un projet et votre montant ; votre part est bloquée 72 heures.')],
       [t('Pay', 'Payez'), t('Pay in crypto, Mobile Money, card or bank transfer using your reservation reference.', 'Payez en crypto, Mobile Money, carte ou virement avec votre référence de réservation.')],
-      [t('Earn weekly', 'Gagnez chaque semaine'), t('Income is credited to your balance every week; withdraw any time.', 'Les revenus sont crédités chaque semaine ; retirez quand vous voulez.')],
+      [t('Get paid on your schedule', 'Soyez payé à votre rythme'), t('Income is credited to your balance weekly, monthly, quarterly, every 6 months or yearly, as you choose; withdraw any time.', 'Les revenus sont crédités chaque semaine, mois, trimestre, semestre ou année, selon votre choix ; retirez quand vous voulez.')],
     ].map(([name, text], i) => ({ '@type': 'HowToStep', position: i + 1, name, text })),
   };
   return simple(ctx, {
     path: '/how-it-works', eyebrow: t('How it works', 'Fonctionnement'),
     title: t('How investing with Invest n Returns works, step by step', 'Comment investir avec Invest n Returns, étape par étape'),
     h1: t('How it works', 'Comment ça marche'),
-    lead: t('You open a free account, verify your identity, reserve a share of a vetted project, pay in crypto or cash, and receive income every week. The whole process takes about 15 minutes.', "Vous ouvrez un compte gratuit, vérifiez votre identité, réservez une part d'un projet vérifié, payez en crypto ou en cash, et recevez des revenus chaque semaine. Le tout prend environ 15 minutes."),
-    description: t('Open an account, verify your ID, reserve a project from 100 USD, pay in USDT, BTC or Mobile Money and earn weekly income. Learn how Invest n Returns works.', 'Ouvrez un compte, vérifiez votre identité, réservez un projet dès 100 USD, payez en USDT, BTC ou Mobile Money et percevez des revenus chaque semaine.'),
+    lead: t('You open a free account, verify your identity, reserve a share of a vetted project, pay in crypto or cash, and receive income on the schedule you choose, from weekly to yearly. The whole process takes about 15 minutes.', "Vous ouvrez un compte gratuit, vérifiez votre identité, réservez une part d'un projet vérifié, payez en crypto ou en cash, et recevez des revenus selon le rythme choisi, de chaque semaine à chaque année. Le tout prend environ 15 minutes."),
+    description: t('Open an account, verify your ID, reserve a project from 500 USD, pay in USDT, BTC or Mobile Money and earn weekly income. Learn how Invest n Returns works.', 'Ouvrez un compte, vérifiez votre identité, réservez un projet dès 500 USD, payez en USDT, BTC ou Mobile Money et percevez des revenus chaque semaine.'),
     extraLd: [howTo],
     body: html`${parts.steps(ctx)}
 <section class="section-tight"><div class="wrap two-col">
@@ -195,7 +195,7 @@ function about(ctx, { stats }) {
     <div class="prose-block">
       <h2>${t('Our mission', 'Notre mission')}</h2>
       <p class="prose">${t('Africa has the fastest-growing cities, the youngest population and a huge share of the world’s farmland and minerals. Yet most of the profit from these assets flows to foreign funds. Local savers, meanwhile, are stuck with low-yield bank accounts and currencies that lose value.', "L'Afrique a les villes à la croissance la plus rapide, la population la plus jeune et une grande part des terres agricoles et des minerais du monde. Pourtant, l'essentiel des profits part vers des fonds étrangers, tandis que les épargnants locaux restent coincés avec des comptes peu rémunérés et des monnaies qui perdent de la valeur.")}</p>
-      <p class="prose">${t('We fix that by splitting quality assets into shares from 100 USD, checking them on the ground, and paying income weekly in the currency investors choose — including crypto and Mobile Money.', 'Nous changeons cela en divisant des actifs de qualité en parts dès 100 USD, en les vérifiant sur le terrain, et en versant les revenus chaque semaine dans la devise choisie — crypto et Mobile Money compris.')}</p>
+      <p class="prose">${t('We fix that by splitting quality assets into shares from 500 USD, checking them on the ground, and paying income weekly in the currency investors choose — including crypto and Mobile Money.', 'Nous changeons cela en divisant des actifs de qualité en parts dès 500 USD, en les vérifiant sur le terrain, et en versant les revenus chaque semaine dans la devise choisie — crypto et Mobile Money compris.')}</p>
     </div>
     <div class="prose-block">
       <h2>${t('What we stand for', 'Nos principes')}</h2>
@@ -319,7 +319,7 @@ const LEGAL = {
       [{ en: '1. Who we are', fr: '1. Qui sommes-nous' }, { en: 'Invest n Returns ("we") operates this website and the investment platform available through it, from Douala, Cameroon.', fr: 'Invest n Returns (« nous ») exploite ce site et la plateforme d’investissement accessible depuis celui-ci, depuis Douala, Cameroun.' }],
       [{ en: '2. Eligibility', fr: '2. Éligibilité' }, { en: 'You must be at least 18, have legal capacity, and complete identity verification. Access to some projects depends on your country of residence.', fr: 'Vous devez avoir au moins 18 ans, la capacité juridique, et compléter la vérification d’identité. L’accès à certains projets dépend de votre pays de résidence.' }],
       [{ en: '3. Reservations', fr: '3. Réservations' }, { en: 'A reservation holds a share of a project for 72 hours. It becomes a binding investment only when we confirm receipt of your funds and your identity is verified. Unpaid reservations expire automatically.', fr: 'Une réservation bloque une part de projet pendant 72 heures. Elle devient un investissement ferme uniquement après confirmation de la réception des fonds et vérification de votre identité. Les réservations non payées expirent automatiquement.' }],
-      [{ en: '4. Payouts and withdrawals', fr: '4. Versements et retraits' }, { en: 'Income is credited to your balance weekly according to each project’s performance. Withdrawals are processed after verification, usually within 3 business days.', fr: 'Les revenus sont crédités chaque semaine selon la performance de chaque projet. Les retraits sont traités après vérification, généralement sous 3 jours ouvrés.' }],
+      [{ en: '4. Payouts and withdrawals', fr: '4. Versements et retraits' }, { en: 'Income is credited to your balance on the payout schedule the investor chooses (weekly, monthly, quarterly, half-yearly or yearly), according to each project’s performance. Withdrawals are processed after verification, usually within 3 business days.', fr: 'Les revenus sont crédités selon le calendrier choisi par l’investisseur (hebdomadaire, mensuel, trimestriel, semestriel ou annuel), en fonction de la performance de chaque projet. Les retraits sont traités après vérification, généralement sous 3 jours ouvrés.' }],
       [{ en: '5. No guarantee', fr: '5. Absence de garantie' }, { en: 'Target returns are estimates. We do not guarantee returns or the return of capital.', fr: 'Les rendements cibles sont des estimations. Nous ne garantissons ni les rendements ni le remboursement du capital.' }],
       [{ en: '6. Account security', fr: '6. Sécurité du compte' }, { en: 'Keep your password confidential. Tell us immediately if you suspect unauthorised access.', fr: 'Gardez votre mot de passe confidentiel. Prévenez-nous immédiatement en cas de suspicion d’accès non autorisé.' }],
     ],

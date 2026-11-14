@@ -1,12 +1,13 @@
 'use strict';
 // Reusable public-page sections.
 const { html, raw } = require('../../html');
-const { icon } = require('../components');
+const { icon, photoImg } = require('../components');
 const { countries } = require('../../data/catalog');
 
-function pageHero(ctx, { eyebrow, title, lead, crumbs = [], children = '' }) {
+function pageHero(ctx, { eyebrow, title, lead, crumbs = [], children = '', photo }) {
   return html`
-<section class="page-hero">
+<section class="page-hero${photo ? ' with-photo' : ''}">
+  ${photo ? html`<div class="asset-cover has-photo">${photoImg(photo, '', { eager: true, sizes: '100vw' })}</div>` : ''}
   <div class="aurora soft" aria-hidden="true"><i></i><i></i></div>
   <div class="wrap">
     ${crumbs.length ? breadcrumbsNav(ctx, crumbs) : ''}
@@ -37,7 +38,7 @@ function steps(ctx) {
     [t('Open your account', 'Ouvrez votre compte'), t('Sign up in two minutes and verify your identity (ID + selfie). Required for every investor, in every country.', "Inscription en deux minutes et vérification d'identité (pièce + selfie). Obligatoire pour tout investisseur, dans tous les pays.")],
     [t('Reserve a project', 'Réservez un projet'), t('Read the file: location, budget, target return, term, risks and audit summary. Reserve your share; it is held for 72 hours.', 'Consultez le dossier : localisation, budget, rendement cible, durée, risques et audit. Réservez votre part ; elle est bloquée 72 heures.')],
     [t('Fund it', 'Financez'), t('Pay in USDT, BTC, ETH, Mobile Money, card or bank transfer. Funds wait in escrow until the project is fully funded.', "Payez en USDT, BTC, ETH, Mobile Money, carte ou virement. Les fonds restent sous séquestre jusqu'au financement complet.")],
-    [t('Collect weekly returns', 'Recevez vos revenus chaque semaine'), t('Rent, harvest, interest and royalty income lands in your balance every week. Withdraw in crypto or cash.', 'Loyers, récoltes, intérêts et redevances arrivent sur votre solde chaque semaine. Retrait en crypto ou en cash.')],
+    [t('Collect your returns', 'Recevez vos revenus'), t('Choose to be paid every week, month, 3 months, 6 months or year. Income lands in your balance; withdraw in crypto or cash.', 'Choisissez d’être payé chaque semaine, mois, trimestre, semestre ou année. Les revenus arrivent sur votre solde ; retrait en crypto ou en cash.')],
   ];
   return html`
 <section id="how">
@@ -57,6 +58,7 @@ function classCard(ctx, c) {
   const t = ctx.t;
   return html`
 <article class="asset reveal tilt">
+  ${c.photo ? html`<div class="asset-photo">${photoImg(c.photo, t.o(c.title), { sizes: '(max-width: 620px) 100vw, (max-width: 1000px) 50vw, 300px' })}</div>` : ''}
   <span class="tag">${c.emoji} ${t.o(c.name)}</span>
   <h3><a href="${ctx.u('/invest/' + c.slug)}" class="stretched">${t.o(c.title)}</a></h3>
   <p>${t.o(c.short)}</p>
@@ -190,7 +192,7 @@ function ctaBand(ctx) {
   <div class="wrap cta-inner reveal">
     <div>
       <h2>${t('Your first weekly payout starts with one reservation.', 'Votre premier versement hebdo commence par une réservation.')}</h2>
-      <p>${t('Free account. No fee to reserve. Start from 100 USD.', 'Compte gratuit. Aucun frais de réservation. Dès 100 USD.')}</p>
+      <p>${t('Free account. No fee to reserve. Start from 500 USD.', 'Compte gratuit. Aucun frais de réservation. Dès 500 USD.')}</p>
     </div>
     <div class="ctas">
       <a class="btn btn-gold btn-lg magnetic" href="${ctx.user ? ctx.u('/assets') : ctx.u('/register')}">${ctx.user ? t('Browse projects', 'Voir les projets') : t('Open my account', 'Ouvrir mon compte')} ${icon('arrow', 18)}</a>

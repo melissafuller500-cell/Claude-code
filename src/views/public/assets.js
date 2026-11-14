@@ -2,10 +2,10 @@
 const { html, raw, json } = require('../../html');
 const seo = require('../../seo');
 const { page } = require('../layout');
-const { assetCard, icon, riskMeter, targetLabel, termLabel, cover, csrfField } = require('../components');
+const { assetCard, icon, riskMeter, targetLabel, termLabel, cover, photoImg, csrfField } = require('../components');
 const parts = require('./parts');
 const categories = require('../../data/categories');
-const { countries, payoutFreq, payMethods } = require('../../data/catalog');
+const { countries, payoutFreq, payMethods, payoutSchedules } = require('../../data/catalog');
 const config = require('../../config');
 
 function list(ctx, { items, filters, saved, countryOptions }) {
@@ -13,8 +13,8 @@ function list(ctx, { items, filters, saved, countryOptions }) {
   const cat = categories.find((c) => c.code === filters.category);
   const title = cat ? t(`${cat.name.en} projects open for investment`, `Projets ${cat.name.fr.toLowerCase()} ouverts à l'investissement`) : t('Investment projects in Africa', "Projets d'investissement en Afrique");
   const description = t(
-    `Browse ${items.length} vetted projects: real estate, agriculture, SME loans, mining, energy, infrastructure, tech and foreign property. Filter by sector, country and risk. Reserve from 100 USD.`,
-    `Parcourez ${items.length} projets vérifiés : immobilier, agriculture, PME, mines, énergie, infrastructures, tech et immobilier étranger. Filtrez par secteur, pays et risque. Réservez dès 100 USD.`
+    `Browse ${items.length} vetted projects: real estate, agriculture, SME loans, mining, energy, infrastructure, tech and foreign property. Filter by sector, country and risk. Reserve from 500 USD.`,
+    `Parcourez ${items.length} projets vérifiés : immobilier, agriculture, PME, mines, énergie, infrastructures, tech et immobilier étranger. Filtrez par secteur, pays et risque. Réservez dès 500 USD.`
   );
   const sel = (a, b) => (String(a) === String(b) ? raw('selected') : '');
   const body = html`
@@ -78,19 +78,19 @@ function detail(ctx, { a, saved, related, myReservations }) {
   const loc = `${a.city}, ${t.o(countries[a.country_code]) || a.country_code}`;
   const title = t(`${a.title_en} in ${a.city} — ${a.target_rate ? a.target_rate + '% target return' : a.target_multiple + '× target'}`, `${a.title_fr} à ${a.city} — ${a.target_rate ? 'rendement cible ' + a.target_rate + ' %' : 'cible ' + a.target_multiple + '×'}`);
   const description = t(
-    `${a.title_en} (${loc}): ${a.cat.name.en.toLowerCase()} project with a ${a.target_rate ? a.target_rate + '% annual target' : a.target_multiple + '× target multiple'}, ${a.term_months}-month term, ${payoutFreq[a.payout_freq].en.toLowerCase()} payouts and risk ${a.risk}/5. Reserve from ${a.min_usd} USD.`,
-    `${a.title_fr} (${loc}) : projet ${a.cat.name.fr.toLowerCase()} avec ${a.target_rate ? 'un rendement cible de ' + a.target_rate + ' % par an' : 'un multiple cible de ' + a.target_multiple + '×'}, durée ${a.term_months} mois, versements ${payoutFreq[a.payout_freq].fr.toLowerCase()} et risque ${a.risk}/5. Réservez dès ${a.min_usd} USD.`
+    `${a.title_en} (${loc}): ${a.cat.name.en.toLowerCase()} project with a ${a.target_rate ? a.target_rate + '% annual target' : a.target_multiple + '× target multiple'}, ${a.term_months}-month term, ${a.yield_based ? 'weekly-to-yearly payouts (your choice)' : 'payout at exit'} and risk ${a.risk}/5. Reserve from ${a.min_usd} USD.`,
+    `${a.title_fr} (${loc}) : projet ${a.cat.name.fr.toLowerCase()} avec ${a.target_rate ? 'un rendement cible de ' + a.target_rate + ' % par an' : 'un multiple cible de ' + a.target_multiple + '×'}, durée ${a.term_months} mois, ${a.yield_based ? 'versements au choix (hebdo à annuel)' : 'gain à la sortie'} et risque ${a.risk}/5. Réservez dès ${a.min_usd} USD.`
   );
   const weekly = a.target_rate ? (1000 * a.target_rate) / 100 / 52 : 0;
   const facts = [
-    { q: t(`What return does ${a.title_en} target?`, `Quel rendement vise ${a.title_fr} ?`), a: a.target_rate ? t(`${a.target_rate}% per year, net of fees, paid ${payoutFreq[a.payout_freq].en.toLowerCase()} and credited weekly. For 1 000 USD that is about ${weekly.toFixed(2)} USD a week. Not guaranteed.`, `${a.target_rate} % par an, net de frais, versé ${payoutFreq[a.payout_freq].fr.toLowerCase()} et crédité chaque semaine. Pour 1 000 USD, environ ${weekly.toFixed(2)} USD par semaine. Non garanti.`) : t(`A ${a.target_multiple}× multiple of capital at exit, typically after ${Math.round(a.term_months / 12)} years. High risk.`, `Un multiple de ${a.target_multiple}× le capital à la sortie, généralement après ${Math.round(a.term_months / 12)} ans. Risque élevé.`) },
+    { q: t(`What return does ${a.title_en} target?`, `Quel rendement vise ${a.title_fr} ?`), a: a.target_rate ? t(`${a.target_rate}% per year, net of fees. You choose to be paid every week, month, 3 months, 6 months or year. For 1 000 USD that is about ${(1000 * a.target_rate / 100 / 12).toFixed(2)} USD a month. Not guaranteed.`, `${a.target_rate} % par an, net de frais. Vous choisissez d’être payé chaque semaine, mois, trimestre, semestre ou année. Pour 1 000 USD, environ ${(1000 * a.target_rate / 100 / 12).toFixed(2)} USD par mois. Non garanti.`) : t(`A ${a.target_multiple}× multiple of capital at exit, typically after ${Math.round(a.term_months / 12)} years. High risk.`, `Un multiple de ${a.target_multiple}× le capital à la sortie, généralement après ${Math.round(a.term_months / 12)} ans. Risque élevé.`) },
     { q: t('What is the minimum investment?', "Quel est l'investissement minimum ?"), a: t(`${a.min_usd} USD, payable in USDT, USDC, BTC, ETH, Mobile Money, card or bank transfer.`, `${a.min_usd} USD, payables en USDT, USDC, BTC, ETH, Mobile Money, carte ou virement.`) },
     { q: t('How long is my money committed?', 'Combien de temps mon argent est-il engagé ?'), a: t(`${a.term_months} months. Early exit is not guaranteed.`, `${a.term_months} mois. Une sortie anticipée n'est pas garantie.`) },
   ];
   const canReserve = a.status === 'open' && a.remaining_cents >= a.min_usd * 100;
   const body = html`
-<section class="asset-hero">
-  ${cover(a, 'asset-cover')}
+<section class="asset-hero${a.photos.length ? ' with-photo' : ''}">
+  ${a.photos.length ? html`<div class="asset-cover has-photo">${photoImg(a.photos[0], `${name} — ${loc}`, { eager: true, sizes: '100vw' })}</div>` : cover(a, 'asset-cover')}
   <div class="wrap">
     ${parts.breadcrumbsNav(ctx, [{ name: t('Projects', 'Projets'), url: ctx.u('/assets') }, { name: t.o(a.cat.name), url: ctx.u('/invest/' + a.cat.slug) }, { name, url: ctx.u('/assets/' + a.slug) }])}
     <div class="asset-head">
@@ -109,12 +109,13 @@ function detail(ctx, { a, saved, related, myReservations }) {
       <div class="kpis">
         <div class="kpi reveal"><span>${a.yield_based ? t('Target return / yr', 'Rendement cible / an') : t('Target multiple', 'Multiple cible')}</span><b class="hl">${targetLabel(ctx, a)}</b></div>
         <div class="kpi reveal"><span>${t('Term', 'Durée')}</span><b>${termLabel(ctx, a.term_months)}</b></div>
-        <div class="kpi reveal"><span>${t('Payouts', 'Versements')}</span><b>${t.o(payoutFreq[a.payout_freq])}</b></div>
+        <div class="kpi reveal"><span>${t('Payouts', 'Versements')}</span><b>${a.yield_based ? t('Your choice: weekly → yearly', 'Au choix : hebdo → annuel') : t('At exit', 'À la sortie')}</b></div>
         <div class="kpi reveal"><span>${t('Risk', 'Risque')} ${a.risk}/5</span>${riskMeter(ctx, a.risk)}</div>
         <div class="kpi reveal"><span>${t('Minimum', 'Minimum')}</span><b>${ctx.f.usdWhole(a.min_usd)}</b></div>
         <div class="kpi reveal"><span>${t('Investors', 'Investisseurs')}</span><b>${a.investor_count}</b></div>
       </div>
 
+      ${a.photos.length > 1 ? html`<div class="gallery" data-gallery>${a.photos.map((p, i) => html`<a href="${p.src}" class="g-item${i === 0 ? ' g-main' : ''}" data-lightbox aria-label="${t('Open photo', 'Ouvrir la photo')} ${i + 1}">${photoImg(p, `${name} — ${t('photo', 'photo')} ${i + 1}`, { sizes: i === 0 ? '(max-width: 960px) 100vw, 60vw' : '200px' })}</a>`)}</div>` : ''}
       <h2>${t('Quick answer', 'Réponse rapide')}</h2>
       <p class="answer lead-sm">${t(a.summary_en, a.summary_fr)}</p>
 
@@ -153,10 +154,16 @@ function detail(ctx, { a, saved, related, myReservations }) {
                 ${csrfField(ctx)}
                 <label for="r-amt">${t('Amount (USD)', 'Montant (USD)')}</label>
                 <div class="amt-input"><span>$</span><input id="r-amt" name="amount" inputmode="decimal" required value="${Math.max(a.min_usd, 1000)}" autocomplete="off"></div>
-                <div class="quick-amts">${[a.min_usd, 1000, 5000, 10000].filter((v, i, arr) => arr.indexOf(v) === i && v * 100 <= a.remaining_cents).map((v) => html`<button type="button" data-amt="${v}">${ctx.f.usdWhole(v)}</button>`)}</div>
+                <div class="quick-amts">${[a.min_usd, 1000, 2500, 5000, 10000].filter((v, i, arr) => arr.indexOf(v) === i && v * 100 <= a.remaining_cents).map((v) => html`<button type="button" data-amt="${v}">${ctx.f.usdWhole(v)}</button>`)}</div>
+                ${a.yield_based ? html`<span class="lbl" id="r-freq-lbl">${t('How often do you want to be paid?', 'À quelle fréquence voulez-vous être payé ?')}</span>
+                <div class="freq-pills" role="radiogroup" aria-labelledby="r-freq-lbl">
+                  ${Object.entries(payoutSchedules).map(([k, sc]) => html`<label class="pill"><input type="radio" name="payout_freq" value="${k}" data-per-year="${sc.perYear}" ${k === 'monthly' ? raw('checked') : ''}><span>${t.o(sc)}</span></label>`)}
+                </div>` : ''}
                 <label for="r-method">${t('Payment method', 'Moyen de paiement')}</label>
-                <select id="r-method" name="method" required>${Object.entries(payMethods).map(([k, m]) => html`<option value="${k}">${m.label}</option>`)}</select>
-                ${a.yield_based ? html`<div class="r-out"><div><span>${t('Weekly income', 'Revenu hebdo')}</span><b id="r-week">—</b></div><div><span>${t('Per year', 'Par an')}</span><b id="r-year">—</b></div></div>` : ''}
+                <select id="r-method" name="method" required>${Object.entries(payMethods).map(([k, m]) => k === 'balance'
+                  ? (ctx.user.balance_cents > 0 ? html`<option value="balance">${t('Account balance', 'Solde du compte')} (${ctx.f.usd(ctx.user.balance_cents)}) — ${t('instant', 'instantané')}</option>` : '')
+                  : html`<option value="${k}">${m.label}</option>`)}</select>
+                ${a.yield_based ? html`<div class="r-out"><div><span>${t('Each payout', 'Chaque versement')}</span><b id="r-week">—</b></div><div><span>${t('Per year', 'Par an')}</span><b id="r-year">—</b></div></div>` : ''}
                 <label class="consent"><input type="checkbox" name="consent" value="1" required> <span>${t('I understand returns are not guaranteed and I may lose capital.', 'Je comprends que les rendements ne sont pas garantis et que je peux perdre du capital.')}</span></label>
                 <button class="btn btn-gold btn-block btn-lg" type="submit">${t('Reserve my share', 'Réserver ma part')}</button>
                 <p class="fine-sm">${t(`Your share is held for ${config.reservationHoldHours} hours while you pay. No fee to reserve.`, `Votre part est bloquée ${config.reservationHoldHours} heures le temps de payer. Aucun frais de réservation.`)}</p>
@@ -180,6 +187,7 @@ ${related.length ? html`<section class="section-tight"><div class="wrap">
   return page(ctx, {
     seo: {
       title, description, path: `/assets/${a.slug}`, type: 'product',
+      image: a.photos[0] ? config.siteUrl + (a.photos[0].og || a.photos[0].src) : undefined,
       jsonld: [
         seo.webPage(ctx, { name, description, path: `/assets/${a.slug}`, type: 'ItemPage', dateModified: a.updated_at }),
         seo.investment(ctx, a),

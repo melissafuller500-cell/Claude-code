@@ -76,14 +76,14 @@ function llms(full) {
   const lines = [
     '# Invest n Returns',
     '',
-    '> Invest n Returns is an investment platform for African real assets. Investors from Africa, the diaspora and worldwide can invest from 100 USD in vetted rental property, farms with a guaranteed buyer, loans to profitable SMEs, tech start-ups, mining royalties, solar and fuel energy, infrastructure, and hard-currency property abroad (Dubai, Lisbon, Paris, Texas). Payments in crypto (USDT, USDC, BTC, ETH) or cash (MTN Mobile Money, Orange Money, card, bank transfer). Income is credited weekly. Based in Douala, Cameroon. English and French.',
+    '> Invest n Returns is an investment platform for African real assets. Investors from Africa, the diaspora and worldwide can invest from 500 USD in vetted rental property, farms with a guaranteed buyer, loans to profitable SMEs, tech start-ups, mining royalties, solar and fuel energy, infrastructure, and hard-currency property abroad (Dubai, Lisbon, Paris, Texas). Payments in crypto (USDT, USDC, BTC, ETH) or cash (MTN Mobile Money, Orange Money, card, bank transfer). Income is credited weekly, monthly, quarterly, half-yearly or yearly, as the investor chooses. Based in Douala, Cameroon. English and French.',
     '',
     '## Key facts',
     `- Open projects: ${s.assets} across 8 asset classes in ${s.countries} countries`,
     `- Average target return: ${s.avgRate.toFixed(1)}% per year (targets, not guaranteed)`,
-    '- Minimum investment: 100 USD (500 USD for tech start-up rounds)',
+    '- Minimum investment: 500 USD (1 000 USD for tech start-up rounds)',
     '- Reservation hold: 72 hours while the investor pays',
-    '- Payout frequency: weekly credit to balance for yield assets; tech equity pays at exit',
+    '- Payout frequency: chosen by the investor — weekly, monthly, every 3 months, every 6 months or yearly; tech equity pays at exit',
     '- Protection: 5 checks per project (title, site visit, numbers review, one SPV per project, staged escrow)',
     '- Identity verification (KYC) required before activation and withdrawal',
     '- Withdrawals: crypto, Mobile Money or bank, usually within 3 business days',
@@ -106,7 +106,7 @@ function llms(full) {
   if (full) {
     lines.push('', '## Open projects');
     for (const a of list) {
-      lines.push(`- [${a.title_en}](${site}/assets/${a.slug}) — ${a.city}, ${countries[a.country_code] ? countries[a.country_code].en : a.country_code}; ${a.cat.name.en}; ${a.target_rate ? a.target_rate + '% target/yr' : a.target_multiple + '× target multiple'}; ${a.term_months} months; ${payoutFreq[a.payout_freq].en.toLowerCase()} payouts; risk ${a.risk}/5; ${a.pct}% reserved; min ${a.min_usd} USD.`);
+      lines.push(`- [${a.title_en}](${site}/assets/${a.slug}) — ${a.city}, ${countries[a.country_code] ? countries[a.country_code].en : a.country_code}; ${a.cat.name.en}; ${a.target_rate ? a.target_rate + '% target/yr' : a.target_multiple + '× target multiple'}; ${a.term_months} months; ${a.yield_based ? "payouts weekly to yearly (investor's choice)" : "paid at exit"}; risk ${a.risk}/5; ${a.pct}% reserved; min ${a.min_usd} USD.`);
     }
     lines.push('', '## FAQ');
     for (const f of faq) lines.push(`### ${f.q.en}`, f.a.en, '');

@@ -5,11 +5,17 @@ const sec = require('../security');
 const assets = require('../services/assets');
 const ledger = require('../services/ledger');
 const views = require('../views/app/user');
+const engage = require('../services/engage');
+const settings = require('../services/settings');
 const { countries } = require('../data/catalog');
 
 const router = express.Router();
 router.use(sec.requireAuth);
-router.use((req, res, next) => { res.set('Cache-Control', 'private, no-store'); next(); });
+router.use((req, res, next) => {
+  res.set('Cache-Control', 'private, no-store');
+  res.locals.badges = { notif: unread(req.user.id), msgs: engage.unreadForUser(req.user.id), offers: engage.pendingCount(req.user.id) };
+  next();
+});
 
 const unread = (uid) => q.get('SELECT COUNT(*) n FROM notifications WHERE user_id = ? AND read = 0', uid).n;
 const str = (v, max = 200) => String(v == null ? '' : v).trim().slice(0, max);
@@ -26,7 +32,7 @@ router.get('/', (req, res) => {
   };
   const held = new Set(pf.rows.filter((r) => ['active', 'pending'].includes(r.status)).map((r) => r.asset_id));
   const featured = assets.list({ sort: 'funded' }).filter((a) => a.status === 'open' && !held.has(a.id)).slice(0, 5);
-  res.page(views.overview(ctx, { pf, user, recentTx, featured, unread: unread(user.id) }));
+  res.page(views.overview(ctx, { pf, user, recentTx, featured, unread: unread(user.id), offers: engage.userProposals(user.id).filter((p) => p.status === 'pending') }));
 });
 
 router.get('/reservations', (req, res) => {
@@ -36,10 +42,23 @@ router.get('/reservations', (req, res) => {
 
 router.get('/reservations/:ref', (req, res, next) => {
   assets.expireStale();
-  const r = q.get(`SELECT r.*, a.slug, a.title_en, a.title_fr, a.category, a.target_rate, a.target_multiple, a.term_months, a.payout_freq, a.city, a.country_code
+  const r = q.get(`SELECT r.*, a.slug, a.title_en, a.title_fr, a.category, a.target_rate, a.target_multiple, a.term_months, a.city, a.country_code
     FROM reservations r JOIN assets a ON a.id = r.asset_id WHERE r.ref = ? AND r.user_id = ?`, str(req.params.ref, 20), req.user.id);
   if (!r) return next();
-  res.page(views.reservationDetail(res.ctx(), { r, unread: unread(req.user.id), user: fresh(req) }));
+  res.page(views.reservationDetail(res.ctx(), { r, unread: unread(req.user.id), user: fresh(req), defaultDetails: settings.payDefault(r.pay_method) }));
+});
+
+router.post('/reservations/:ref/paid', (req, res) => {
+  const ctx = res.ctx();
+  const ref = str(req.params.ref, 20);
+  try {
+    ledger.declarePaid(req.user, ref, str(req.body.paid_ref, 200));
+    res.flash('ok', ctx.t('Thank you! We are checking your payment and will activate your investment shortly.', 'Merci ! Nous vérifions votre paiement et activerons votre investissement rapidement.'));
+  } catch (e) {
+    if (!e.userFacing) throw e;
+    res.flash('error', ledger.msg(e, ctx.lang));
+  }
+  res.redirect(303, `/dashboard/reservations/${encodeURIComponent(ref)}`);
 });
 
 router.post('/reserve/:slug', (req, res) => {
@@ -53,8 +72,10 @@ router.post('/reserve/:slug', (req, res) => {
   }
   try {
     const amount = Number(String(req.body.amount || '').replace(/[^0-9.]/g, ''));
-    const { ref } = ledger.reserve(req.user, a.id, amount, str(req.body.method, 10));
-    res.flash('ok', ctx.t(`Reservation ${ref} created. Your share is held for 72 hours.`, `Réservation ${ref} créée. Votre part est bloquée 72 heures.`));
+    const { ref, active } = ledger.reserve(req.user, a.id, amount, str(req.body.method, 10), { payoutFreq: str(req.body.payout_freq, 12) });
+    res.flash('ok', active
+      ? ctx.t(`Done! ${ref} is active and paid from your balance.`, `C’est fait ! ${ref} est actif, payé depuis votre solde.`)
+      : ctx.t(`Reservation ${ref} created. Your share is held for 72 hours.`, `Réservation ${ref} créée. Votre part est bloquée 72 heures.`));
     res.redirect(303, `/dashboard/reservations/${ref}`);
   } catch (e) {
     if (!e.userFacing) throw e;
@@ -194,6 +215,40 @@ router.post('/sessions/revoke', (req, res) => {
   q.run('DELETE FROM sessions WHERE user_id = ? AND id != ?', req.user.id, sec.sha256(req.cookies.inr_sid || ''));
   res.flash('ok', res.ctx().t('Other devices signed out.', 'Autres appareils déconnectés.'));
   res.redirect(303, '/dashboard/profile');
+});
+
+// ---------- messages ----------
+router.get('/messages', (req, res) => {
+  const items = engage.thread(req.user.id);
+  engage.markReadByUser(req.user.id);
+  res.locals.badges.msgs = 0;
+  res.page(views.messages(res.ctx(), { items }));
+});
+router.post('/messages', sec.rateLimit({ windowMs: 60e3, max: 20 }), (req, res) => {
+  const ctx = res.ctx();
+  try {
+    engage.userSend(req.user, req.body.body);
+  } catch (e) {
+    if (!e.userFacing) throw e;
+    return res.page(views.messages(ctx, { items: engage.thread(req.user.id), error: ledger.msg(e, ctx.lang) }), 422);
+  }
+  res.redirect(303, '/dashboard/messages#end');
+});
+
+// ---------- offers (personal proposals from the team) ----------
+router.get('/offers', (req, res) => res.page(views.offers(res.ctx(), { items: engage.userProposals(req.user.id), user: fresh(req) })));
+router.post('/offers/:id/:action(accept|decline)', (req, res) => {
+  const ctx = res.ctx();
+  try {
+    const r = engage.respond(req.user, req.params.id, req.params.action === 'accept', str(req.body.method, 10));
+    if (!r) { res.flash('ok', ctx.t('Proposal declined.', 'Proposition refusée.')); return res.redirect(303, '/dashboard/offers'); }
+    res.flash('ok', r.active ? ctx.t(`Accepted. ${r.ref} is active.`, `Acceptée. ${r.ref} est actif.`) : ctx.t(`Accepted. Reservation ${r.ref} created — see how to pay below.`, `Acceptée. Réservation ${r.ref} créée — voir comment payer ci-dessous.`));
+    res.redirect(303, `/dashboard/reservations/${r.ref}`);
+  } catch (e) {
+    if (!e.userFacing) throw e;
+    res.flash('error', ledger.msg(e, ctx.lang));
+    res.redirect(303, '/dashboard/offers');
+  }
 });
 
 module.exports = router;

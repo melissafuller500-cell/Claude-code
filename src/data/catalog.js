@@ -17,12 +17,37 @@ const payoutFreq = {
   weekly: { en: 'Weekly', fr: 'Hebdo' },
   monthly: { en: 'Monthly', fr: 'Mensuel' },
   quarterly: { en: 'Quarterly', fr: 'Trimestriel' },
+  semiannual: { en: 'Every 6 months', fr: 'Semestriel' },
+  annual: { en: 'Yearly', fr: 'Annuel' },
   cycle: { en: 'End of cycle', fr: 'Fin de cycle' },
   harvest: { en: 'Per harvest', fr: 'Par récolte' },
   exit: { en: 'At exit', fr: 'À la sortie' },
 };
 
+// Payout schedules an investor can choose for an income-producing investment.
+const payoutSchedules = {
+  weekly: { perYear: 52, months: 0, days: 7, en: 'Every week', fr: 'Chaque semaine' },
+  monthly: { perYear: 12, months: 1, en: 'Every month', fr: 'Chaque mois' },
+  quarterly: { perYear: 4, months: 3, en: 'Every 3 months', fr: 'Tous les 3 mois' },
+  semiannual: { perYear: 2, months: 6, en: 'Every 6 months', fr: 'Tous les 6 mois' },
+  annual: { perYear: 1, months: 12, en: 'Every year', fr: 'Chaque année' },
+};
+function nextPayoutAt(from, freq) {
+  const s = payoutSchedules[freq] || payoutSchedules.monthly;
+  if (s.days) return from + s.days * 864e5;
+  const d = new Date(from);
+  const day = d.getUTCDate();
+  d.setUTCDate(1);
+  d.setUTCMonth(d.getUTCMonth() + s.months);
+  const last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
+  d.setUTCDate(Math.min(day, last));
+  return d.getTime();
+}
+
+const MIN_INVEST_USD = 500;
+
 const payMethods = {
+  balance: { label: 'Account balance (instant)', kind: 'balance' },
   usdt: { label: 'USDT (TRC-20 / ERC-20)', kind: 'crypto' },
   usdc: { label: 'USDC (ERC-20 / Polygon)', kind: 'crypto' },
   btc: { label: 'BTC (Bitcoin / Lightning)', kind: 'crypto' },
@@ -35,6 +60,7 @@ const payMethods = {
 
 const statusLabels = {
   pending: { en: 'Pending payment', fr: 'Paiement en attente' },
+  withdrawn: { en: 'Withdrawn', fr: 'Retirée' },
   active: { en: 'Active', fr: 'Actif' },
   rejected: { en: 'Rejected', fr: 'Refusé' },
   cancelled: { en: 'Cancelled', fr: 'Annulé' },
@@ -64,4 +90,4 @@ const tiers = [
 ];
 const tierFor = (usd) => tiers.find((t) => usd >= t.min);
 
-module.exports = { countries, fx, payoutFreq, payMethods, statusLabels, tiers, tierFor };
+module.exports = { countries, fx, payoutFreq, payoutSchedules, nextPayoutAt, MIN_INVEST_USD, payMethods, statusLabels, tiers, tierFor };

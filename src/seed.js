@@ -3,6 +3,7 @@ const { q, tx, now } = require('./db');
 const config = require('./config');
 const { hashPassword } = require('./security');
 const projects = require('./data/projects');
+const { nextPayoutAt } = require('./data/catalog');
 const categories = require('./data/categories');
 const { countries, fx } = require('./data/catalog');
 const { uniqueSlug, toUsd } = require('./services/assets');
@@ -53,8 +54,15 @@ const COPY = {
   },
 };
 
+// Attach the photo sets to seeded projects in databases created before photos existed.
+function seedPhotos() {
+  for (const p of projects) {
+    q.run("UPDATE assets SET images = ? WHERE title_en = ? AND (images IS NULL OR images = '[]')", JSON.stringify(projects.photoSet(p.img, p.n)), p.en);
+  }
+}
+
 function seedAssets() {
-  if (q.get('SELECT COUNT(*) n FROM assets').n > 0) return;
+  if (q.get('SELECT COUNT(*) n FROM assets').n > 0) return seedPhotos();
   const t = now();
   tx(() => {
     projects.forEach((p, i) => {
@@ -69,14 +77,21 @@ function seedAssets() {
       slug, p.c, p.en, p.fr, descEn[0], descFr[0], descEn.join('\n\n'), descFr.join('\n\n'),
       JSON.stringify(c.h.en), JSON.stringify(c.h.fr), p.city, p.region, p.cc, p.cur, p.goal, goalUsd,
       Math.round((goalUsd * p.pct) / 100), p.rate ?? null, p.mult ?? null, p.term, p.pay, p.risk,
-      p.c === 'te' ? 500 : 100, 'open', p.featured ? 1 : 0, t - (projects.length - i) * 864e5, t);
+      p.c === 'te' ? 1000 : 500, 'open', p.featured ? 1 : 0, t - (projects.length - i) * 864e5, t);
     });
   });
+  seedPhotos();
   console.log(`[seed] ${projects.length} assets created`);
 }
 
 function seedUsers() {
   const admin = q.get('SELECT id FROM users WHERE email = ?', config.adminEmail);
+  // Emergency recovery: ADMIN_RESET=true resets this admin's password from ADMIN_PASSWORD on boot.
+  if (admin && process.env.ADMIN_RESET === 'true') {
+    q.run("UPDATE users SET password_hash = ?, role = 'admin', status = 'active' WHERE id = ?", hashPassword(config.adminPassword), admin.id);
+    q.run('DELETE FROM sessions WHERE user_id = ?', admin.id);
+    console.warn(`[seed] ADMIN_RESET: password reset for ${config.adminEmail}. Remove ADMIN_RESET now.`);
+  }
   if (!admin) {
     q.run(`INSERT INTO users (email,password_hash,name,role,kyc_status,country,created_at) VALUES (?,?,?,?,?,?,?)`,
       config.adminEmail, hashPassword(config.adminPassword), 'Platform Admin', 'admin', 'verified', 'CM', now());
@@ -103,8 +118,8 @@ function seedUsers() {
       if (!p.a) return;
       const created = t - p.ago * day;
       const cents = p.usd * 100;
-      const r = q.run(`INSERT INTO reservations (ref,user_id,asset_id,amount_cents,pay_method,status,created_at,expires_at,decided_at) VALUES (?,?,?,?,?,?,?,?,?)`,
-        `INR-DEMO${i + 1}0`, uid, p.a.id, cents, p.m, 'active', created, created + 72 * 36e5, created + day);
+      const r = q.run(`INSERT INTO reservations (ref,user_id,asset_id,amount_cents,pay_method,status,created_at,expires_at,decided_at,payout_freq,next_payout_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)`,
+        `INR-DEMO${i + 1}0`, uid, p.a.id, cents, p.m, 'active', created, created + 72 * 36e5, created + day, 'weekly', 0);
       const rid = Number(r.lastInsertRowid);
       q.run(`INSERT INTO transactions (user_id,type,amount_cents,status,reservation_id,method,details,created_at) VALUES (?,?,?,?,?,?,?,?)`,
         uid, 'deposit', cents, 'completed', rid, p.m, `Funding INR-DEMO${i + 1}0 · ${p.a.title_en}`, created + day);
@@ -115,7 +130,9 @@ function seedUsers() {
         q.run(`INSERT INTO transactions (user_id,type,amount_cents,status,reservation_id,details,created_at) VALUES (?,?,?,?,?,?,?)`,
           uid, 'payout', wk, 'completed', rid, `Weekly payout · ${p.a.title_en}`, created + day + w * 7 * day);
       }
-      q.run('UPDATE reservations SET paid_out_cents = ? WHERE id = ?', wk * weeks, rid);
+      let nxt = created + day;
+      for (let w = 0; w <= weeks; w++) nxt = nextPayoutAt(nxt, 'weekly');
+      q.run('UPDATE reservations SET paid_out_cents = ?, next_payout_at = ? WHERE id = ?', wk * weeks, nxt, rid);
       balance += wk * weeks;
     });
     // A withdrawal already paid.
@@ -128,6 +145,7 @@ function seedUsers() {
     if (farm) {
       q.run(`INSERT INTO reservations (ref,user_id,asset_id,amount_cents,pay_method,status,created_at,expires_at) VALUES (?,?,?,?,?,?,?,?)`,
         'INR-DEMO50', uid, farm.id, 100000, 'orange', 'pending', t - 3600e3, t + 71 * 36e5);
+      q.run("UPDATE reservations SET payout_freq = 'monthly' WHERE ref = 'INR-DEMO50'");
     }
     const ww = pick('port-warehouse');
     if (ww) q.run('INSERT INTO watchlist (user_id, asset_id, created_at) VALUES (?,?,?)', uid, ww.id, t);
@@ -140,6 +158,8 @@ function seedUsers() {
     const clinic = pick('private-clinic');
     if (clinic) q.run(`INSERT INTO reservations (ref,user_id,asset_id,amount_cents,pay_method,status,created_at,expires_at) VALUES (?,?,?,?,?,?,?,?)`,
       'INR-DEMO60', Number(u2.lastInsertRowid), clinic.id, 750000, 'usdc', 'pending', t - 5 * 3600e3, t + 67 * 36e5);
+    q.run("UPDATE reservations SET payout_freq = 'quarterly' WHERE ref = 'INR-DEMO60'");
+    q.run('INSERT INTO chat_messages (user_id,sender,kind,body,read_by_user,read_by_admin,created_at) VALUES (?,?,?,?,?,?,?)', uid, 'admin', 'message', 'Welcome Amara! I am your account manager. Write here any time — we reply within one business day.', 0, 1, t - 69 * day);
 
     q.run(`INSERT INTO submissions (name,email,company,type,city,need,description,created_at) VALUES (?,?,?,?,?,?,?,?)`,
       'Chantal Ebode', 'chantal@example.com', 'Ebode Agro SARL', 'Agriculture', 'Ebolowa', '60 000 000 XAF', 'Cocoa drying and fermentation centre for 400 smallholders, with an export buyer under contract.', t - day);

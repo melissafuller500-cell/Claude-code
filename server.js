@@ -10,6 +10,18 @@ process.on('unhandledRejection', (e) => { console.error('[fatal] unhandled rejec
   const server = app.listen(config.port, () => {
     console.log(`Invest n Returns running on ${config.siteUrl} (port ${config.port}, ${config.isProd ? 'production' : 'development'}, Node ${process.version}, db ${backend})`);
   });
+  // Automatic payouts (Admin → Settings): credit due payouts every 15 minutes.
+  const ledger = require('./src/services/ledger');
+  const settings = require('./src/services/settings');
+  const tickPayouts = () => {
+    try {
+      if (settings.get('auto_payouts') !== '1') return;
+      const r = ledger.runDuePayouts(null);
+      if (r.positions) console.log(`[payouts] auto-credited ${(r.total / 100).toFixed(2)} USD (${r.periods} payouts)`);
+    } catch (e) { console.error('[payouts] auto run failed', e); }
+  };
+  setTimeout(tickPayouts, 30e3).unref();
+  setInterval(tickPayouts, 15 * 60e3).unref();
   const shutdown = (sig) => {
     console.log(`${sig} received, shutting down…`);
     server.close(() => { try { db.close(); } catch { /* already closed */ } process.exit(0); });

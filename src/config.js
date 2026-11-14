@@ -13,6 +13,8 @@ module.exports = {
   port: Number(env.PORT) || 3000,
   siteUrl: (env.SITE_URL || `http://localhost:${Number(env.PORT) || 3000}`).replace(/\/+$/, ''),
   dbFile: env.DB_FILE || path.join(__dirname, '..', 'data', 'inr.db'),
+  // Uploaded photos live next to the database so they persist across redeploys.
+  uploadsDir: env.UPLOADS_DIR || (env.DB_FILE === ':memory:' ? path.join(require('os').tmpdir(), 'inr-uploads') : path.join(path.dirname(env.DB_FILE || path.join(__dirname, '..', 'data', 'inr.db')), 'uploads')),
   secret,
   cookieSecure: env.COOKIE_SECURE ? env.COOKIE_SECURE === 'true' : isProd,
   adminEmail: (env.ADMIN_EMAIL || 'admin@investnreturns.com').toLowerCase(),

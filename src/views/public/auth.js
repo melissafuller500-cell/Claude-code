@@ -18,8 +18,8 @@ function shell(ctx, { title, sub, form, aside = true }) {
   ${aside ? html`<aside class="auth-aside reveal">
     <p class="eyebrow">${t('Why investors choose us', 'Pourquoi nous choisir')}</p>
     <ul class="ticks">
-      <li>${icon('check', 16)} ${t('Weekly income credited to your balance', 'Revenus crédités chaque semaine')}</li>
-      <li>${icon('check', 16)} ${t('From 100 USD, in crypto or cash', 'Dès 100 USD, en crypto ou en cash')}</li>
+      <li>${icon('check', 16)} ${t('Paid weekly, monthly, quarterly or yearly — you choose', 'Payé chaque semaine, mois, trimestre ou année — au choix')}</li>
+      <li>${icon('check', 16)} ${t('From 500 USD, in crypto or cash', 'Dès 500 USD, en crypto ou en cash')}</li>
       <li>${icon('check', 16)} ${t('Five checks on every project', 'Cinq contrôles sur chaque projet')}</li>
       <li>${icon('check', 16)} ${t('One company (SPV) per project', 'Une société (SPV) par projet')}</li>
     </ul>

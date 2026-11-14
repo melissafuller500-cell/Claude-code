@@ -19,6 +19,7 @@
     "compression": "^1.8.1",
     "express": "^4.21.2",
     "helmet": "^8.1.0",
+    "multer": "^2.5.0",
     "sql.js": "^1.15.2"
   }
 }

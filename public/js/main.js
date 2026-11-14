@@ -212,13 +212,15 @@
     var rate = parseFloat(f.dataset.rate) || 0, min = parseFloat(f.dataset.min) || 0, max = parseFloat(f.dataset.max) || Infinity;
     var input = $('input[name="amount"]', f), wk = $('#r-week', f), yr = $('#r-year', f);
     function upd() {
-      var a = num(input.value);
-      if (wk) wk.textContent = usd(a * rate / 100 / 52, 2);
+      var a = num(input.value), fr = $('input[name="payout_freq"]:checked', f), per = fr ? parseFloat(fr.dataset.perYear) || 12 : 52;
+      if (wk) wk.textContent = usd(a * rate / 100 / per, 2);
       if (yr) yr.textContent = usd(a * rate / 100, 0);
       input.closest('.amt-input').style.borderColor = a && (a < min || a > max) ? 'var(--warn)' : '';
     }
     $$('[data-amt]', f).forEach(function (b) { b.addEventListener('click', function () { input.value = b.dataset.amt; upd(); input.focus(); }); });
-    input.addEventListener('input', upd); upd();
+    input.addEventListener('input', upd);
+    $$('input[name="payout_freq"]', f).forEach(function (r) { r.addEventListener('change', upd); });
+    upd();
     f.addEventListener('submit', function (e) {
       var a = num(input.value);
       if (a < min) { e.preventDefault(); toast(T('Minimum is ', 'Le minimum est de ') + usd(min, 0)); input.focus(); }
@@ -313,6 +315,42 @@
     setInterval(function () { el.textContent = usd((Date.now() - t0) / 1000 * rate * 10, 4); }, 80);
   });
 
+  // ---------- chat ----------
+  $$('[data-chat]').forEach(function (c) { c.scrollTop = c.scrollHeight; });
+  $$('[data-enter-submit]').forEach(function (ta) {
+    ta.addEventListener('keydown', function (e) { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); if (ta.form.requestSubmit) ta.form.requestSubmit(); else ta.form.submit(); } });
+  });
+
   // ---------- flash auto-hide ----------
   $$('[data-autohide]').forEach(function (el) { setTimeout(function () { el.style.transition = 'opacity .6s'; el.style.opacity = '0'; setTimeout(function () { el.remove(); }, 650); }, 7000); });
+})();
+
+/* Photo lightbox for project galleries. */
+(function () {
+  'use strict';
+  var links = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+  if (!links.length) return;
+  var idx = 0, box = null;
+  function show(i) {
+    idx = (i + links.length) % links.length;
+    box.querySelector('img').src = links[idx].getAttribute('href');
+    box.querySelector('img').alt = (links[idx].querySelector('img') || {}).alt || '';
+  }
+  function close() { if (box) { box.remove(); box = null; document.removeEventListener('keydown', onKey); links[idx].focus(); } }
+  function onKey(e) { if (e.key === 'Escape') close(); else if (e.key === 'ArrowRight') show(idx + 1); else if (e.key === 'ArrowLeft') show(idx - 1); }
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      box = document.createElement('div'); box.className = 'lightbox'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
+      box.innerHTML = '<img alt=""><button type="button" class="icon-btn lb-close" aria-label="Close">✕</button>' + (links.length > 1 ? '<button type="button" class="icon-btn lb-nav lb-prev" aria-label="Previous">‹</button><button type="button" class="icon-btn lb-nav lb-next" aria-label="Next">›</button>' : '');
+      document.body.appendChild(box); show(i);
+      box.addEventListener('click', function (ev) {
+        if (ev.target.classList.contains('lb-prev')) show(idx - 1);
+        else if (ev.target.classList.contains('lb-next')) show(idx + 1);
+        else if (ev.target === box || ev.target.classList.contains('lb-close')) close();
+      });
+      document.addEventListener('keydown', onKey);
+      box.querySelector('.lb-close').focus();
+    });
+  });
 })();

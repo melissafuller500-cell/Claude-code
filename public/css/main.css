@@ -531,3 +531,41 @@ textarea{min-height:96px;resize:vertical}
   .marquee-track{animation:none}
 }
 @media print{.site-header,.site-footer,.cta-band,.marquee,.aurora,.save-btn{display:none!important}body{background:#fff;color:#000}}
+
+/* ---------- photos ---------- */
+.cover.has-photo{background:#10221d}
+.cover.has-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.proj:hover .cover.has-photo img{transform:scale(1.07)}
+.cover.has-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,19,16,.55));pointer-events:none}
+.cover.has-photo .cover-emoji{z-index:1}
+.asset-photo{margin:-22px -22px 4px;aspect-ratio:16/9;overflow:hidden;border-radius:var(--r) var(--r) 0 0;background:var(--line)}
+.asset-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
+.asset:hover .asset-photo img{transform:scale(1.06)}
+.asset-hero.with-photo,.page-hero.with-photo{padding-top:120px;min-height:420px;display:flex;align-items:flex-end}
+.asset-hero.with-photo>.wrap,.page-hero.with-photo>.wrap{width:100%}
+.asset-cover.has-photo{position:absolute;inset:0;z-index:-1;opacity:1}
+.asset-cover.has-photo img{width:100%;height:100%;object-fit:cover;display:block;animation:kenburns 22s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08) translate(-1%,-1%)}}
+.page-hero.with-photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,19,16,.35),rgba(7,19,16,.92))}
+.page-hero.with-photo .aurora{display:none}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 28px}
+.gallery .g-item{position:relative;display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--line)}
+.gallery .g-main{grid-column:span 4;aspect-ratio:16/9}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.gallery .g-item:hover img{transform:scale(1.05)}
+@media (max-width:640px){.gallery{grid-template-columns:repeat(3,1fr)}.gallery .g-main{grid-column:span 3}}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(5,14,12,.92);display:grid;place-items:center;padding:20px;animation:fadeIn .25s}
+.lightbox img{max-width:100%;max-height:86vh;border-radius:10px;box-shadow:var(--shadow-lg)}
+.lightbox button{position:absolute;top:16px;right:16px;color:#fff}
+.lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:1.6rem}
+.lightbox .lb-prev{left:16px;right:auto;top:50%}
+.lightbox .lb-next{right:16px;top:50%}
+@keyframes fadeIn{from{opacity:0}}
+/* payout frequency pills */
+.freq-pills{display:flex;flex-wrap:wrap;gap:6px}
+.freq-pills .pill{position:relative;cursor:pointer;font-weight:500}
+.freq-pills input{position:absolute;opacity:0;pointer-events:none}
+.freq-pills span{display:inline-block;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:.82rem;background:var(--card);transition:all .2s}
+.freq-pills input:checked+span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.freq-pills input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.lbl{font-size:.86rem;font-weight:500}

@@ -7,7 +7,10 @@ const sec = require('../security');
 const assets = require('../services/assets');
 const ledger = require('../services/ledger');
 const views = require('../views/admin/admin');
-const { countries, payoutFreq, fx } = require('../data/catalog');
+const views2 = require('../views/admin/admin2');
+const engage = require('../services/engage');
+const settings = require('../services/settings');
+const { countries, payoutFreq, payoutSchedules, payMethods, fx } = require('../data/catalog');
 
 const router = express.Router();
 router.use(sec.requireAdmin);
@@ -24,6 +27,8 @@ function counts() {
     pendingWd: q.get("SELECT COUNT(*) n FROM transactions WHERE type='withdrawal' AND status='pending'").n,
     newSub: q.get("SELECT COUNT(*) n FROM submissions WHERE status='new'").n,
     newMsg: q.get("SELECT COUNT(*) n FROM messages WHERE status='new'").n,
+    inbox: engage.unreadForAdmin(),
+    duePay: ledger.duePayouts().length,
   };
 }
 
@@ -149,6 +154,63 @@ router.post('/assets/:id/delete', act((req) => {
   return 'Asset deleted.';
 }, '/admin/assets'));
 
+// ---------- asset photos ----------
+const multer = require('multer');
+const pathMod = require('path');
+const fsMod = require('fs');
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 8 * 1024 * 1024, files: 8, fields: 5 } });
+// Identify images by their bytes, never by the client-supplied name or MIME type.
+function sniffImage(buf) {
+  if (buf.length > 12 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return 'jpg';
+  if (buf.length > 8 && buf.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return 'png';
+  if (buf.length > 12 && buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') return 'webp';
+  if (buf.length > 12 && buf.toString('ascii', 4, 8) === 'ftyp' && /^avi[fs]$/.test(buf.toString('ascii', 8, 12))) return 'avif';
+  return null;
+}
+const photosOf = (a) => { try { return JSON.parse(a.images || '[]'); } catch { return []; } };
+const savePhotos = (id, list) => q.run('UPDATE assets SET images = ?, updated_at = ? WHERE id = ?', JSON.stringify(list.slice(0, 20)), now(), id);
+
+router.post('/assets/:id/photos', (req, res, next) => {
+  upload.array('photos', 8)(req, res, (err) => {
+    const back = `/admin/assets/${Number(req.params.id)}/edit#photos`;
+    if (err) { res.flash('error', err.code === 'LIMIT_FILE_SIZE' ? 'Each photo must be under 8 MB.' : 'Upload failed: ' + err.message); return res.redirect(303, back); }
+    if (!req.verifyCsrf || !req.verifyCsrf()) { const e = new Error('Your form expired. Please reload the page and try again.'); e.status = 403; e.code = 'CSRF'; return next(e); }
+    const a = q.get('SELECT * FROM assets WHERE id = ?', Number(req.params.id));
+    if (!a) return next();
+    const list = photosOf(a);
+    let added = 0;
+    let rejected = 0;
+    for (const f of req.files || []) {
+      const ext = sniffImage(f.buffer);
+      if (!ext) { rejected++; continue; }
+      const name = `${a.slug.slice(0, 40)}-${crypto.randomBytes(5).toString('hex')}.${ext}`;
+      fsMod.writeFileSync(pathMod.join(config.uploadsDir, name), f.buffer);
+      list.push({ src: `/uploads/${name}`, sm: `/uploads/${name}` });
+      added++;
+    }
+    savePhotos(a.id, list);
+    ledger.audit(req.user.id, 'asset.photos.add', a.slug, { added, rejected });
+    res.flash(added ? 'ok' : 'error', added ? `${added} photo${added > 1 ? 's' : ''} added.${rejected ? ` ${rejected} file(s) were not valid images.` : ''}` : 'No valid image. Use JPG, PNG, WebP or AVIF.');
+    res.redirect(303, back);
+  });
+});
+router.post('/assets/:id/photos/:idx/:action(cover|delete)', act((req) => {
+  const a = q.get('SELECT * FROM assets WHERE id = ?', Number(req.params.id));
+  if (!a) throw new ledger.UserError('Asset not found.');
+  const list = photosOf(a);
+  const i = Number(req.params.idx);
+  if (!(i >= 0 && i < list.length)) throw new ledger.UserError('Photo not found.');
+  const [p] = list.splice(i, 1);
+  if (req.params.action === 'cover') list.unshift(p);
+  else if (p.src.startsWith('/uploads/')) {
+    const file = pathMod.join(config.uploadsDir, pathMod.basename(p.src));
+    try { fsMod.unlinkSync(file); } catch { /* already gone */ }
+  }
+  savePhotos(a.id, list);
+  ledger.audit(req.user.id, 'asset.photos.' + req.params.action, a.slug);
+  return req.params.action === 'cover' ? 'Cover photo updated.' : 'Photo removed.';
+}, (req) => `/admin/assets/${Number(req.params.id)}/edit#photos`));
+
 // ---------- reservations ----------
 router.get('/reservations', (req, res) => {
   assets.expireStale();
@@ -164,6 +226,20 @@ router.get('/reservations', (req, res) => {
   res.page(views.reservationsList(res.ctx(), { items, counts: res.locals.counts, filter, search }));
 });
 const backRes = (req) => sec.safeNext(req.get('referer') ? safePath(req.get('referer')) : '', '/admin/reservations');
+router.get('/reservations/:id', (req, res, next) => {
+  assets.expireStale();
+  const r = q.get(`SELECT r.*, u.name, u.email, u.kyc_status, a.title_en, a.target_rate, a.target_multiple FROM reservations r
+    JOIN users u ON u.id = r.user_id JOIN assets a ON a.id = r.asset_id WHERE r.id = ?`, Number(req.params.id));
+  if (!r) return next();
+  engage.markReadByAdmin(r.user_id);
+  res.page(views2.reservationDetail(res.ctx(), { r, defaultDetails: settings.payDefault(r.pay_method), thread: engage.thread(r.user_id, 30) }));
+});
+const backDetail = (req) => `/admin/reservations/${Number(req.params.id)}`;
+router.post('/reservations/:id/details', act((req) => { ledger.sendPaymentDetails(req.user, req.params.id, req.body.details); return 'Payment details sent to the investor (dashboard, message and email).'; }, backDetail));
+router.post('/reservations/:id/terms', act((req) => {
+  const changes = ledger.setInvestmentTerms(req.user, req.params.id, { rate: str(req.body.rate, 10), payoutFreq: str(req.body.payout_freq, 12), reason: req.body.reason });
+  return 'Updated: ' + changes.join('; ') + '. The investor was notified.';
+}, backDetail));
 router.post('/reservations/:id/confirm', act((req) => { ledger.confirmReservation(req.user, req.params.id, { force: req.body.force === '1' }); return 'Payment confirmed. Investment is now active.'; }, backRes));
 router.post('/reservations/:id/reject', act((req) => { ledger.rejectReservation(req.user, req.params.id, str(req.body.note, 500)); return 'Reservation rejected.'; }, backRes));
 router.post('/reservations/:id/complete', act((req) => { ledger.completeReservation(req.user, req.params.id); return 'Investment completed and capital returned.'; }, backRes));
@@ -194,7 +270,7 @@ router.get('/users/:id', (req, res, next) => {
   if (!u) return next();
   let kyc = {};
   try { kyc = JSON.parse(u.kyc_data || '{}'); } catch { kyc = {}; }
-  const resv = q.all('SELECT r.*, a.title_en FROM reservations r JOIN assets a ON a.id = r.asset_id WHERE r.user_id = ? ORDER BY r.created_at DESC', u.id);
+  const resv = q.all('SELECT r.*, a.title_en, a.target_rate FROM reservations r JOIN assets a ON a.id = r.asset_id WHERE r.user_id = ? ORDER BY r.created_at DESC', u.id);
   const txs = q.all('SELECT * FROM transactions WHERE user_id = ? ORDER BY created_at DESC LIMIT 50', u.id);
   res.page(views.userDetail(res.ctx(), { u, kyc, res: resv, txs, counts: res.locals.counts, isSelf: u.id === req.user.id }));
 });
@@ -237,8 +313,9 @@ router.post('/users/:id/reset', act((req) => {
   return 'Reset link queued in the email outbox.';
 }, backUser));
 router.post('/users/:id/adjust', act((req) => {
-  ledger.adjustBalance(req.user, req.params.id, String(req.body.amount || '').replace(/[^0-9.\-]/g, ''), str(req.body.reason, 200));
-  return 'Balance adjusted.';
+  const amount = String(req.body.amount || '').replace(/[^0-9.\-]/g, '');
+  ledger.adjustBalance(req.user, req.params.id, amount, str(req.body.reason, 200), { method: str(req.body.method, 10), reference: str(req.body.reference, 120) });
+  return Number(amount) > 0 ? `Account funded with $${Number(amount).toFixed(2)}. The investor was notified.` : 'Balance debited.';
 }, backUser));
 
 // ---------- withdrawals ----------
@@ -258,16 +335,94 @@ router.post('/withdrawals/:id', act((req) => {
 
 // ---------- payouts ----------
 router.get('/payouts', (req, res) => {
-  const week = ledger.isoWeek();
-  const rows = q.all("SELECT r.user_id, r.amount_cents, a.target_rate FROM reservations r JOIN assets a ON a.id = r.asset_id WHERE r.status='active' AND a.target_rate > 0");
-  const preview = { count: rows.length, investors: new Set(rows.map((r) => r.user_id)).size, total: rows.reduce((s, r) => s + ledger.weeklyCents(r.amount_cents, r.target_rate), 0) };
-  const runs = q.all('SELECT * FROM payout_runs ORDER BY created_at DESC LIMIT 52');
-  res.page(views.payouts(res.ctx(), { preview, runs, week, done: !!q.get('SELECT 1 FROM payout_runs WHERE week = ?', week), counts: res.locals.counts }));
+  const withAmount = (rows) => rows.map((r) => {
+    const rate = ledger.effectiveRate(r);
+    return { ...r, rate, amount: ledger.periodCents(r.amount_cents, rate, r.payout_freq) };
+  });
+  const due = withAmount(q.all(`SELECT r.*, u.name, a.title_en, a.target_rate FROM reservations r JOIN users u ON u.id = r.user_id JOIN assets a ON a.id = r.asset_id
+    WHERE r.status = 'active' AND r.next_payout_at IS NOT NULL AND r.next_payout_at <= ? AND COALESCE(r.rate_override, a.target_rate) > 0 ORDER BY r.next_payout_at`, Date.now()));
+  const upcoming = withAmount(q.all(`SELECT r.*, u.name, a.title_en, a.target_rate FROM reservations r JOIN users u ON u.id = r.user_id JOIN assets a ON a.id = r.asset_id
+    WHERE r.status = 'active' AND r.next_payout_at > ? AND r.next_payout_at <= ? AND COALESCE(r.rate_override, a.target_rate) > 0 ORDER BY r.next_payout_at LIMIT 200`, Date.now(), Date.now() + 30 * 864e5));
+  const runs = q.all('SELECT p.*, u.email actor FROM payout_runs p LEFT JOIN users u ON u.id = p.actor_id ORDER BY p.created_at DESC LIMIT 52');
+  res.page(views.payouts(res.ctx(), { due, upcoming, runs, auto: settings.get('auto_payouts') === '1' }));
 });
 router.post('/payouts/run', act((req) => {
-  const r = ledger.runWeeklyPayout(req.user);
-  return `Credited $${(r.total / 100).toFixed(2)} across ${r.count} positions to ${r.investors} investors for ${r.week}.`;
+  const r = ledger.runDuePayouts(req.user);
+  if (!r.positions) throw new ledger.UserError('No payout is due right now.');
+  return `Credited $${(r.total / 100).toFixed(2)} (${r.periods} payouts) to ${r.investors} investors.`;
 }, '/admin/payouts'));
+
+// ---------- inbox (conversations with investors) ----------
+router.get('/inbox', (req, res) => {
+  const filter = req.query.filter === 'unread' ? 'unread' : 'all';
+  const search = str(req.query.q, 60);
+  res.page(views2.inbox(res.ctx(), { rows: engage.inbox({ filter, search }), filter, search }));
+});
+router.get('/inbox/:userId', (req, res, next) => {
+  const u = q.get('SELECT * FROM users WHERE id = ?', Number(req.params.userId));
+  if (!u) return next();
+  engage.markReadByAdmin(u.id);
+  res.locals.counts.inbox = engage.unreadForAdmin();
+  const pending = q.all("SELECT r.*, a.title_en FROM reservations r JOIN assets a ON a.id = r.asset_id WHERE r.user_id = ? AND r.status = 'pending' ORDER BY r.created_at DESC", u.id);
+  const active = q.all("SELECT r.*, a.title_en, a.target_rate FROM reservations r JOIN assets a ON a.id = r.asset_id WHERE r.user_id = ? AND r.status = 'active' ORDER BY r.created_at DESC", u.id);
+  res.page(views2.conversation(res.ctx(), { u, items: engage.thread(u.id), pending, active }));
+});
+router.post('/inbox/:userId', act((req) => { engage.adminSend(req.user, req.params.userId, req.body.body); return 'Message sent.'; }, (req) => `/admin/inbox/${Number(req.params.userId)}`));
+
+// ---------- announcements ----------
+function broadcastPage(req, res, extra = {}, status = 200) {
+  const counts = Object.fromEntries(Object.keys(engage.SEGMENTS).map((k) => [k, engage.segmentUsers(k).length]));
+  const countryCodes = q.all("SELECT DISTINCT country FROM users WHERE role = 'investor' AND country != '' ORDER BY country").map((r) => r.country);
+  res.page(views2.broadcast(res.ctx(), { segments: engage.SEGMENTS, countryCodes, counts, ...extra }), status);
+}
+router.get('/broadcast', (req, res) => broadcastPage(req, res));
+router.post('/broadcast', (req, res) => {
+  const values = { segment: str(req.body.segment, 20), country: str(req.body.country, 2), title: str(req.body.title, 120), body: str(req.body.body, 5000), email: req.body.email === '1' };
+  try {
+    const n = engage.broadcast(req.user, values);
+    res.flash('ok', `Announcement sent to ${n} investor${n > 1 ? 's' : ''}.`);
+    res.redirect(303, '/admin/broadcast');
+  } catch (e) {
+    if (!e.userFacing) throw e;
+    broadcastPage(req, res, { error: e.message, values }, 422);
+  }
+});
+
+// ---------- investment proposals ----------
+router.get('/proposals', (req, res) => {
+  const filter = ['pending', 'accepted', 'declined', 'expired', 'withdrawn', 'all'].includes(req.query.status) ? req.query.status : 'pending';
+  res.page(views2.proposals(res.ctx(), { items: engage.allProposals(filter), filter }));
+});
+function proposalPage(req, res, values, error, status = 200) {
+  const users = q.all("SELECT id, name, email, kyc_status, balance_cents FROM users WHERE status = 'active' ORDER BY name LIMIT 2000");
+  res.page(views2.proposalForm(res.ctx(), { users, assetsList: assets.list({ status: ['open'], sort: 'return' }), values, error }), status);
+}
+router.get('/proposals/new', (req, res) => proposalPage(req, res, { user_id: req.query.user || '', asset_id: req.query.asset || '' }));
+router.post('/proposals', (req, res) => {
+  const values = { user_id: str(req.body.user_id, 10), asset_id: str(req.body.asset_id, 10), amount: str(req.body.amount, 12), rate: str(req.body.rate, 8), payout_freq: str(req.body.payout_freq, 12), days: str(req.body.days, 3), message: str(req.body.message, 2000) };
+  try {
+    engage.createProposal(req.user, { userId: values.user_id, assetId: values.asset_id, amountUsd: values.amount.replace(/[^0-9.]/g, ''), rate: values.rate, payoutFreq: values.payout_freq, message: values.message, days: values.days });
+    res.flash('ok', 'Proposal sent. The investor was notified in Offers, Messages and by email.');
+    res.redirect(303, '/admin/proposals');
+  } catch (e) {
+    if (!e.userFacing) throw e;
+    proposalPage(req, res, values, e.message, 422);
+  }
+});
+router.post('/proposals/:id/withdraw', act((req) => { engage.withdrawProposal(req.user, req.params.id); return 'Proposal withdrawn.'; }, '/admin/proposals'));
+
+// ---------- settings ----------
+router.get('/settings', (req, res) => {
+  const values = { auto_payouts: settings.get('auto_payouts', '0') };
+  for (const k of Object.keys(payMethods)) values['pay_' + k] = settings.get('pay_' + k, process.env[settings.PAY_KEYS[k]] || '');
+  res.page(views2.settingsPage(res.ctx(), { values }));
+});
+router.post('/settings', act((req) => {
+  for (const k of Object.keys(payMethods)) if (k !== 'balance') settings.set('pay_' + k, str(req.body['pay_' + k], 1000));
+  settings.set('auto_payouts', req.body.auto_payouts === '1' ? '1' : '0');
+  ledger.audit(req.user.id, 'settings.update');
+  return 'Settings saved.';
+}, '/admin/settings'));
 
 // ---------- submissions, messages, outbox, audit ----------
 router.get('/submissions', (req, res) => res.page(views.submissions(res.ctx(), { items: q.all("SELECT * FROM submissions ORDER BY CASE status WHEN 'new' THEN 0 WHEN 'reviewing' THEN 1 ELSE 2 END, created_at DESC LIMIT 200"), counts: res.locals.counts })));
