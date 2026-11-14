@@ -8,7 +8,7 @@ const faq = require('../data/faq');
 const { payoutFreq, countries } = require('../data/catalog');
 
 const router = express.Router();
-const STATIC_PAGES = ['/', '/assets', '/invest', '/how-it-works', '/security', '/payments', '/roadmap', '/about', '/faq', '/returns-calculator', '/contact', '/submit-project', '/legal/terms', '/legal/privacy', '/legal/risk'];
+const STATIC_PAGES = ['/', '/assets', '/invest', '/how-it-works', '/security', '/payments', '/roadmap', '/about', '/faq', '/returns-calculator', '/contact', '/submit-project', '/legal/terms', '/legal/privacy', '/legal/risk', '/countries', '/offices'];
 const xmlEsc = (s) => String(s).replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' }[c]));
 
 router.get('/sitemap.xml', (req, res) => {
@@ -25,6 +25,11 @@ router.get('/sitemap.xml', (req, res) => {
   };
   STATIC_PAGES.forEach((p) => add(p, today, p === '/' ? '1.0' : p === '/assets' ? '0.9' : '0.6', p === '/' || p === '/assets' ? 'daily' : 'monthly'));
   categories.forEach((c) => add(`/invest/${c.slug}`, today, '0.8', 'weekly'));
+  const { countrySlug } = require('../data/catalog');
+  const live = assets.list();
+  [...new Set(live.map((a) => a.country_code))].forEach((cc) => add(`/countries/${countrySlug(cc)}`, today, '0.7', 'weekly'));
+  const { officeSlug } = require('../views/layout');
+  require('../services/settings').offices().forEach((o) => add(`/offices/${officeSlug(o)}`, today, '0.6', 'monthly'));
   assets.list({ status: ['open', 'funded', 'closed'] }).forEach((a) => add(`/assets/${a.slug}`, new Date(a.updated_at).toISOString().slice(0, 10), a.status === 'open' ? '0.8' : '0.4', 'weekly'));
   res.type('application/xml').set('Cache-Control', 'public, max-age=3600').send(
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join('\n')}\n</urlset>`
@@ -98,6 +103,9 @@ function llms(full) {
     `- [Returns calculator](${site}/returns-calculator)`,
     `- [FAQ](${site}/faq)`,
     `- [Submit a project](${site}/submit-project): for project owners seeking funding`,
+    `- [Projects by country](${site}/countries)`,
+    `- [Offices](${site}/offices): ${require('../services/settings').offices().map((o) => `${o.name} — ${o.street}, ${o.city}`).join('; ')}`,
+    `- [Contact](${site}/contact): ${require('../services/settings').contactEmail()}`,
     `- French version: ${site}/fr/`,
     '',
     '## Asset classes',

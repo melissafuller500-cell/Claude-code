@@ -3,8 +3,9 @@
 const { html, json } = require('./html');
 const config = require('./config');
 
-const ORG_ID = `${config.siteUrl}/#organization`;
-const SITE_ID = `${config.siteUrl}/#website`;
+const settings = require('./services/settings');
+const ORG_ID = () => `${config.siteUrl}/#organization`;
+const SITE_ID = () => `${config.siteUrl}/#website`;
 
 // Cut text at a word boundary so it fits `max` characters (search engines truncate beyond ~65 / ~160).
 function clamp(text, max) {
@@ -59,32 +60,45 @@ ${localized && !noindex ? html`<link rel="alternate" hreflang="en" href="${enUrl
 ${noindex ? '' : html`<script type="application/ld+json">${json({ '@context': 'https://schema.org', '@graph': graph })}</script>`}`;
 }
 
+function postal(o) {
+  return { '@type': 'PostalAddress', streetAddress: o.street, addressLocality: o.city, ...(o.region ? { addressRegion: o.region } : {}), ...(o.postal ? { postalCode: o.postal } : {}), addressCountry: o.country };
+}
+
 function organization() {
+  const offices = settings.offices();
+  const phone = settings.get('phone');
+  const hq = offices[0];
+  const sameAs = settings.social().map((x) => x.url);
   return {
     '@type': ['Organization', 'FinancialService'],
-    '@id': ORG_ID,
+    '@id': ORG_ID(),
     name: config.brand.name,
+    legalName: settings.get('legal_name') || config.brand.name,
     url: config.siteUrl + '/',
     logo: { '@type': 'ImageObject', url: `${config.siteUrl}/img/logo-512.png`, width: 512, height: 512 },
     image: `${config.siteUrl}/img/og-image.jpg`,
     email: config.brand.email,
-    description: 'Invest n Returns is an investment platform for African real assets: rental property, farms, SME loans, tech start-ups, mining royalties, energy, infrastructure and hard-currency property abroad. Investors pay in crypto (USDT, USDC, BTC, ETH) or cash (Mobile Money, card, bank) and receive income weekly.',
-    address: { '@type': 'PostalAddress', addressLocality: 'Douala', addressRegion: 'Littoral', addressCountry: 'CM' },
+    ...(phone ? { telephone: phone } : {}),
+    description: 'Invest n Returns is an investment platform for African real assets: rental property, farms, SME loans, tech start-ups, mining royalties, energy, infrastructure and hard-currency property abroad. Investors pay in crypto (USDT, USDC, BTC, ETH) or cash (Mobile Money, card, bank) and choose to be paid weekly, monthly, quarterly, half-yearly or yearly.',
+    ...(hq ? { address: postal(hq) } : {}),
+    ...(offices.length > 1 ? { location: offices.map((o) => ({ '@type': 'Place', name: `${config.brand.name} — ${o.name}`, address: postal(o), ...(o.phone ? { telephone: o.phone } : {}) })) } : {}),
     areaServed: ['Africa', 'Europe', 'North America', 'Asia'],
     knowsLanguage: ['en', 'fr'],
     knowsAbout: ['Real estate investing in Africa', 'Agricultural investment', 'SME lending', 'Mining royalties', 'Solar mini-grids', 'Crypto investing', 'Mobile Money'],
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: config.brand.email, availableLanguage: ['English', 'French'] },
+    ...(sameAs.length ? { sameAs } : {}),
+    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: config.brand.email, ...(phone ? { telephone: phone } : {}), availableLanguage: ['English', 'French'] },
+    ...(settings.get('tax_id') ? { taxID: settings.get('tax_id') } : {}),
   };
 }
 
 function website(ctx) {
   return {
     '@type': 'WebSite',
-    '@id': SITE_ID,
+    '@id': SITE_ID(),
     url: config.siteUrl + '/',
     name: config.brand.name,
     inLanguage: ctx.lang,
-    publisher: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID() },
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: `${config.siteUrl}${ctx.u('/assets')}?q={search_term_string}` },
@@ -114,8 +128,8 @@ function webPage(ctx, { name, description, path = ctx.path, type = 'WebPage', sp
     '@type': type,
     '@id': url + '#webpage',
     url, name, description, inLanguage: ctx.lang,
-    isPartOf: { '@id': SITE_ID },
-    about: { '@id': ORG_ID },
+    isPartOf: { '@id': SITE_ID() },
+    about: { '@id': ORG_ID() },
     dateModified: new Date(dateModified || Date.now()).toISOString().slice(0, 10),
     ...(speakable ? { speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.answer'] } } : {}),
   };
@@ -131,7 +145,7 @@ function investment(ctx, a) {
     url,
     category: ctx.t.o(a.cat.name),
     ...(a.photos && a.photos.length ? { image: a.photos.map((p) => config.siteUrl + p.src) } : {}),
-    provider: { '@id': ORG_ID },
+    provider: { '@id': ORG_ID() },
     areaServed: a.country_code,
     ...(a.target_rate ? { annualPercentageRate: a.target_rate, interestRate: a.target_rate } : {}),
     amount: { '@type': 'MonetaryAmount', currency: 'USD', minValue: a.min_usd, maxValue: a.goal_usd },
@@ -142,7 +156,7 @@ function investment(ctx, a) {
       priceCurrency: 'USD',
       price: a.min_usd,
       availability: a.status === 'open' ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
-      seller: { '@id': ORG_ID },
+      seller: { '@id': ORG_ID() },
     },
   };
 }
@@ -156,4 +170,4 @@ function itemList(ctx, assetsList, name) {
   };
 }
 
-module.exports = { head, breadcrumbs, faqPage, webPage, investment, itemList, organization };
+module.exports = { postal, head, breadcrumbs, faqPage, webPage, investment, itemList, organization };

@@ -22,8 +22,7 @@ function notify(userId, title, body = '', link = '') {
 // No email provider is wired in: messages are written to the outbox table (visible in Admin → Email outbox).
 // Plug an SMTP/API provider into this one function to send for real.
 function sendMail(to, subject, body) {
-  q.run('INSERT INTO outbox (to_email, subject, body, created_at) VALUES (?,?,?,?)', to, subject, body, now());
-  if (!config.isProd) console.log(`[mail] to=${to} subject="${subject}"`);
+  require('./mailer').send(to, subject, body);
 }
 // A message in the user's conversation with the platform team.
 function chat(userId, sender, body, { kind = 'message', adminId = null, reservationId = null } = {}) {

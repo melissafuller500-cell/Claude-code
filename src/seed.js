@@ -3,6 +3,7 @@ const { q, tx, now } = require('./db');
 const config = require('./config');
 const { hashPassword } = require('./security');
 const projects = require('./data/projects');
+const why = require('./data/why');
 const { nextPayoutAt } = require('./data/catalog');
 const categories = require('./data/categories');
 const { countries, fx } = require('./data/catalog');
@@ -61,26 +62,50 @@ function seedPhotos() {
   }
 }
 
+function insertProject(p, createdAt) {
+  const c = COPY[p.c];
+  const goalUsd = toUsd(p.goal, p.cur);
+  const slug = uniqueSlug(`${p.en} ${p.city.split(',')[0]}`);
+  const descEn = c.en(p);
+  const descFr = c.fr(p);
+  const w = why[p.en] || { en: '', fr: '' };
+  q.run(`INSERT INTO assets (slug,category,title_en,title_fr,summary_en,summary_fr,description_en,description_fr,highlights_en,highlights_fr,
+    city,region,country_code,currency,goal_local,goal_usd,offline_raised_usd,target_rate,target_multiple,term_months,payout_freq,risk,min_usd,status,featured,created_at,updated_at,images,why_en,why_fr)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+  slug, p.c, p.en, p.fr, descEn[0], descFr[0], descEn.join('\n\n'), descFr.join('\n\n'),
+  JSON.stringify(c.h.en), JSON.stringify(c.h.fr), p.city, p.region, p.cc, p.cur, p.goal, goalUsd,
+  Math.round((goalUsd * p.pct) / 100), p.rate ?? null, p.mult ?? null, p.term, p.pay, p.risk,
+  p.c === 'te' ? 1000 : 500, 'open', p.featured ? 1 : 0, createdAt, createdAt, JSON.stringify(projects.photoSet(p.img, p.n)), w.en, w.fr);
+}
+
+// Databases created by earlier versions: add the projects introduced since (once only, so
+// projects an admin deletes later do not come back) and fill empty "why this location" texts.
+function upgradeCatalogue() {
+  const flag = q.get("SELECT 1 FROM settings WHERE key = 'mig_catalogue_v3'");
+  if (!flag) {
+    const t = now();
+    let added = 0;
+    tx(() => {
+      projects.forEach((p, i) => {
+        if (!q.get('SELECT 1 FROM assets WHERE title_en = ?', p.en)) { insertProject(p, t - (projects.length - i) * 36e5); added++; }
+      });
+      q.run("INSERT OR IGNORE INTO settings (key, value) VALUES ('mig_catalogue_v3', ?)", String(t));
+    });
+    if (added) console.log(`[seed] catalogue upgraded: ${added} new projects`);
+  }
+  for (const p of projects) {
+    const w = why[p.en];
+    if (w) q.run("UPDATE assets SET why_en = ?, why_fr = ? WHERE title_en = ? AND (why_en IS NULL OR why_en = '')", w.en, w.fr, p.en);
+  }
+}
+
 function seedAssets() {
-  if (q.get('SELECT COUNT(*) n FROM assets').n > 0) return seedPhotos();
+  if (q.get('SELECT COUNT(*) n FROM assets').n > 0) { seedPhotos(); upgradeCatalogue(); return; }
   const t = now();
   tx(() => {
-    projects.forEach((p, i) => {
-      const c = COPY[p.c];
-      const goalUsd = toUsd(p.goal, p.cur);
-      const slug = uniqueSlug(`${p.en} ${p.city.split(',')[0]}`);
-      const descEn = c.en(p);
-      const descFr = c.fr(p);
-      q.run(`INSERT INTO assets (slug,category,title_en,title_fr,summary_en,summary_fr,description_en,description_fr,highlights_en,highlights_fr,
-        city,region,country_code,currency,goal_local,goal_usd,offline_raised_usd,target_rate,target_multiple,term_months,payout_freq,risk,min_usd,status,featured,created_at,updated_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-      slug, p.c, p.en, p.fr, descEn[0], descFr[0], descEn.join('\n\n'), descFr.join('\n\n'),
-      JSON.stringify(c.h.en), JSON.stringify(c.h.fr), p.city, p.region, p.cc, p.cur, p.goal, goalUsd,
-      Math.round((goalUsd * p.pct) / 100), p.rate ?? null, p.mult ?? null, p.term, p.pay, p.risk,
-      p.c === 'te' ? 1000 : 500, 'open', p.featured ? 1 : 0, t - (projects.length - i) * 864e5, t);
-    });
+    projects.forEach((p, i) => insertProject(p, t - (projects.length - i) * 864e5));
+    q.run("INSERT OR IGNORE INTO settings (key, value) VALUES ('mig_catalogue_v3', ?)", String(t));
   });
-  seedPhotos();
   console.log(`[seed] ${projects.length} assets created`);
 }
 

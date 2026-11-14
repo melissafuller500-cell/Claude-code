@@ -255,6 +255,8 @@ function migrate() {
   const cols = (t) => new Set(impl.all(`PRAGMA table_info(${t})`, []).map((c) => c.name));
   const add = (t, col, def) => { if (!cols(t).has(col)) impl.exec(`ALTER TABLE ${t} ADD COLUMN ${col} ${def}`); };
   add('assets', 'images', "TEXT NOT NULL DEFAULT '[]'");
+  add('assets', 'why_en', "TEXT NOT NULL DEFAULT ''");
+  add('assets', 'why_fr', "TEXT NOT NULL DEFAULT ''");
   add('reservations', 'payout_freq', "TEXT NOT NULL DEFAULT 'monthly'");
   add('reservations', 'rate_override', 'REAL');
   add('reservations', 'next_payout_at', 'INTEGER');
@@ -263,6 +265,8 @@ function migrate() {
   add('reservations', 'paid_ref', "TEXT NOT NULL DEFAULT ''");
   add('reservations', 'paid_at', 'INTEGER');
   add('reservations', 'proposal_id', 'INTEGER');
+  add('outbox', 'status', "TEXT NOT NULL DEFAULT 'stored'");
+  add('outbox', 'error', "TEXT NOT NULL DEFAULT ''");
   const done = (k) => !!impl.get('SELECT 1 FROM settings WHERE key = ?', ['mig_' + k]);
   const mark = (k) => impl.run('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)', ['mig_' + k, String(Date.now())]);
   if (!done('v2')) {

@@ -28,8 +28,11 @@ function breadcrumbsNav(ctx, crumbs) {
 
 function marquee(ctx) {
   const codes = ['CM', 'CI', 'SN', 'NG', 'GH', 'KE', 'RW', 'MA', 'ML', 'ZM', 'TZ', 'ET', 'EG', 'ZA', 'GA', 'BJ', 'AE', 'PT', 'FR', 'US'];
-  const items = codes.map((c) => html`<span><b>${c}</b>${ctx.t.o(countries[c])}</span>`);
-  return html`<div class="marquee" aria-label="${ctx.t('Markets covered', 'Marchés couverts')}"><div class="marquee-track">${items}<span aria-hidden="true" class="dup">${items}</span></div></div>`;
+  const { countrySlug } = require('../../data/catalog');
+  const live = new Set(require('../../db').q.all("SELECT DISTINCT country_code c FROM assets WHERE status IN ('open','funded')").map((r) => r.c));
+  const items = codes.map((c) => (live.has(c) ? html`<a href="${ctx.u('/countries/' + countrySlug(c))}"><b>${c}</b>${ctx.t.o(countries[c])}</a>` : html`<span><b>${c}</b>${ctx.t.o(countries[c])}</span>`));
+  const dup = codes.map((c) => html`<span><b>${c}</b>${ctx.t.o(countries[c])}</span>`);
+  return html`<nav class="marquee" aria-label="${ctx.t('Markets covered', 'Marchés couverts')}"><div class="marquee-track">${items}<span aria-hidden="true" class="dup">${dup}</span></div></nav>`;
 }
 
 function steps(ctx) {

@@ -95,6 +95,7 @@ function parseAsset(body, existing) {
     term_months: Math.round(num(body.term_months)), payout_freq: payoutFreq[body.payout_freq] ? body.payout_freq : 'monthly', risk: Math.round(num(body.risk)),
     min_usd: Math.round(num(body.min_usd)), offline_raised_usd: Math.round(num(body.offline_raised_usd || 0)),
     summary_en: str(body.summary_en, 400), summary_fr: str(body.summary_fr, 400), description_en: str(body.description_en, 6000), description_fr: str(body.description_fr, 6000),
+    why_en: str(body.why_en, 2000), why_fr: str(body.why_fr, 2000),
     highlights_en: lines(body.highlights_en), highlights_fr: lines(body.highlights_fr), slugInput: str(body.slug, 80).toLowerCase(),
   };
   const errs = [];
@@ -119,7 +120,7 @@ function parseAsset(body, existing) {
   d.slug = assets.uniqueSlug(d.slugInput || (existing && existing.slug) || `${d.title_en} ${d.city.split(',')[0]}`, existing && existing.id);
   return { d, errs };
 }
-const COLS = ['slug', 'category', 'title_en', 'title_fr', 'summary_en', 'summary_fr', 'description_en', 'description_fr', 'highlights_en', 'highlights_fr', 'city', 'region', 'country_code', 'currency', 'goal_local', 'goal_usd', 'offline_raised_usd', 'target_rate', 'target_multiple', 'term_months', 'payout_freq', 'risk', 'min_usd', 'status', 'featured'];
+const COLS = ['slug', 'category', 'title_en', 'title_fr', 'summary_en', 'summary_fr', 'description_en', 'description_fr', 'why_en', 'why_fr', 'highlights_en', 'highlights_fr', 'city', 'region', 'country_code', 'currency', 'goal_local', 'goal_usd', 'offline_raised_usd', 'target_rate', 'target_multiple', 'term_months', 'payout_freq', 'risk', 'min_usd', 'status', 'featured'];
 
 router.post('/assets', (req, res) => {
   const { d, errs } = parseAsset(req.body);
@@ -412,17 +413,30 @@ router.post('/proposals', (req, res) => {
 router.post('/proposals/:id/withdraw', act((req) => { engage.withdrawProposal(req.user, req.params.id); return 'Proposal withdrawn.'; }, '/admin/proposals'));
 
 // ---------- settings ----------
-router.get('/settings', (req, res) => {
-  const values = { auto_payouts: settings.get('auto_payouts', '0') };
-  for (const k of Object.keys(payMethods)) values['pay_' + k] = settings.get('pay_' + k, process.env[settings.PAY_KEYS[k]] || '');
-  res.page(views2.settingsPage(res.ctx(), { values }));
+function settingsView(req, res, errors = [], status = 200) {
+  const preview = {
+    whatsapp: settings.whatsappLink('en'),
+    pay: ['bank', 'momo', 'orange', 'usdt', 'usdc', 'btc', 'eth', 'card'].map((m) => `— ${payMethods[m].label} —\n${settings.payDefault(m) || '(not set: you will write details manually)'}`).join('\n\n'),
+  };
+  res.page(views2.settingsPage(res.ctx(), { settings, errors, smtpOk: !!require('../services/mailer').smtpConfig(), preview }), status);
+}
+router.get('/settings', (req, res) => settingsView(req, res));
+router.post('/settings', (req, res) => {
+  const errors = settings.saveForm(req.body);
+  ledger.audit(req.user.id, 'settings.update', '', errors.length ? { errors } : '');
+  if (errors.length) return settingsView(req, res, errors, 422);
+  res.flash('ok', 'Settings saved. Changes are live on the website.');
+  res.redirect(303, '/admin/settings');
 });
-router.post('/settings', act((req) => {
-  for (const k of Object.keys(payMethods)) if (k !== 'balance') settings.set('pay_' + k, str(req.body['pay_' + k], 1000));
-  settings.set('auto_payouts', req.body.auto_payouts === '1' ? '1' : '0');
-  ledger.audit(req.user.id, 'settings.update');
-  return 'Settings saved.';
-}, '/admin/settings'));
+router.post('/settings/test-email', async (req, res, next) => {
+  try {
+    const mailer = require('../services/mailer');
+    if (!mailer.smtpConfig()) { res.flash('error', 'SMTP is not configured yet. Fill in host, username and password first.'); return res.redirect(303, '/admin/settings#sec-email'); }
+    const r = await mailer.deliver(null, req.user.email, 'Invest n Returns — test email', 'This is a test email from your Invest n Returns website. SMTP works.');
+    res.flash(r.ok ? 'ok' : 'error', r.ok ? `Test email sent to ${req.user.email}.` : `Sending failed: ${r.error}`);
+    res.redirect(303, '/admin/settings#sec-email');
+  } catch (e) { next(e); }
+});
 
 // ---------- submissions, messages, outbox, audit ----------
 router.get('/submissions', (req, res) => res.page(views.submissions(res.ctx(), { items: q.all("SELECT * FROM submissions ORDER BY CASE status WHEN 'new' THEN 0 WHEN 'reviewing' THEN 1 ELSE 2 END, created_at DESC LIMIT 200"), counts: res.locals.counts })));

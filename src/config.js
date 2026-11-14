@@ -8,10 +8,9 @@ const isProd = env.NODE_ENV === 'production';
 // In production without SESSION_SECRET, db.init() generates one and stores it in the database.
 const secret = env.SESSION_SECRET || (isProd ? null : 'dev-only-secret-change-me-' + 'x'.repeat(16));
 
-module.exports = {
+const config = {
   isProd,
   port: Number(env.PORT) || 3000,
-  siteUrl: (env.SITE_URL || `http://localhost:${Number(env.PORT) || 3000}`).replace(/\/+$/, ''),
   dbFile: env.DB_FILE || path.join(__dirname, '..', 'data', 'inr.db'),
   // Uploaded photos live next to the database so they persist across redeploys.
   uploadsDir: env.UPLOADS_DIR || (env.DB_FILE === ':memory:' ? path.join(require('os').tmpdir(), 'inr-uploads') : path.join(path.dirname(env.DB_FILE || path.join(__dirname, '..', 'data', 'inr.db')), 'uploads')),
@@ -24,9 +23,13 @@ module.exports = {
   reservationHoldHours: 72,
   brand: {
     name: 'Invest n Returns',
-    email: 'contact@investnreturns.com',
+    // Live value from Admin → Settings.
+    get email() { return require('./services/settings').contactEmail(); },
     city: 'Douala',
     country: 'CM',
   },
   randomId: (n = 16) => crypto.randomBytes(n).toString('hex'),
 };
+// Website address: Admin → Settings, then SITE_URL, then a sensible default.
+Object.defineProperty(config, 'siteUrl', { enumerable: true, get() { return require('./services/settings').siteUrl(); } });
+module.exports = config;

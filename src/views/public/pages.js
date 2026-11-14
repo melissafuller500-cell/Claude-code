@@ -6,6 +6,10 @@ const { assetCard, icon, csrfField } = require('../components');
 const parts = require('./parts');
 const categories = require('../../data/categories');
 const faq = require('../../data/faq');
+const st = require('../../services/settings');
+const { officeSlug, mapLink } = require('../layout');
+const { countries, countrySlug, localCurrency } = require('../../data/catalog');
+const assetsSvc = require('../../services/assets');
 
 const crumbsLd = (ctx, items) => seo.breadcrumbs(ctx, [{ name: ctx.t('Home', 'Accueil'), url: ctx.u('/') }, ...items]);
 
@@ -303,13 +307,14 @@ function contact(ctx, { values = {}, error, sent }) {
     <h2>${t('Other ways to reach us', 'Autres moyens de nous joindre')}</h2>
     <dl class="facts">
       <dt>Email</dt><dd><a href="mailto:${ctx.brand.email}">${ctx.brand.email}</a></dd>
-      <dt>${t('Office', 'Bureau')}</dt><dd>Douala, Cameroun</dd>
-      <dt>${t('Hours', 'Horaires')}</dt><dd>${t('Mon–Fri, 8:00–18:00 WAT', 'Lun–Ven, 8h00–18h00 WAT')}</dd>
+      ${st.get('phone') ? html`<dt>${t('Phone', 'Téléphone')}</dt><dd><a href="tel:+${st.digits(st.get('phone'))}">${st.get('phone')}</a></dd>` : ''}
+      ${st.get('hours') ? html`<dt>${t('Hours', 'Horaires')}</dt><dd>${st.get('hours')}</dd>` : ''}
       <dt>${t('Languages', 'Langues')}</dt><dd>English · Français</dd>
     </dl>
-    <a class="btn btn-ghost" href="${ctx.u('/faq')}">${t('Read the FAQ', 'Lire la FAQ')}</a>
+    <div class="btn-row">${st.whatsappLink(ctx.lang) ? html`<a class="btn btn-gold" href="${st.whatsappLink(ctx.lang)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}<a class="btn btn-ghost" href="${ctx.u('/faq')}">${t('Read the FAQ', 'Lire la FAQ')}</a></div>
   </div>
-</div></section>`,
+</div></section>
+${officeCards(ctx)}`,
   });
 }
 
@@ -418,4 +423,162 @@ function legal(ctx, key) {
   });
 }
 
-module.exports = { classIndex, classPage, howItWorks, security, paymentsPage, roadmap, about, faqPage, calculatorPage, contact, submitProject, legal, LEGAL };
+// ---------- offices ----------
+const OFFICE_COPY = {
+  CM: {
+    short: { en: 'head office', fr: 'siège' },
+    role: { en: 'Head office and Central Africa projects team', fr: 'Siège et équipe projets Afrique centrale' },
+    serves: { en: 'Investors in Cameroon and the CEMAC zone, and projects in Douala, Yaoundé, Kribi, Garoua, Bafoussam and the rest of Cameroon.', fr: 'Les investisseurs du Cameroun et de la zone CEMAC, et les projets à Douala, Yaoundé, Kribi, Garoua, Bafoussam et dans tout le Cameroun.' },
+    pay: { en: 'Pay in FCFA by MTN Mobile Money, Orange Money or bank transfer, or in USDT and other crypto.', fr: 'Payez en FCFA par MTN Mobile Money, Orange Money ou virement, ou en USDT et autres cryptos.' },
+    near: ['CM', 'GA', 'CI', 'SN', 'BJ', 'ML'],
+  },
+  RW: {
+    short: { en: 'East Africa office', fr: 'bureau Afrique de l’Est' },
+    role: { en: 'East Africa office', fr: 'Bureau Afrique de l’Est' },
+    serves: { en: 'Investors in Rwanda and East Africa, and projects in Rwanda, Kenya, Tanzania and Ethiopia.', fr: 'Les investisseurs du Rwanda et d’Afrique de l’Est, et les projets au Rwanda, au Kenya, en Tanzanie et en Éthiopie.' },
+    pay: { en: 'Pay by bank transfer, mobile money or USDT; payouts can return in USD or local currency.', fr: 'Payez par virement, mobile money ou USDT ; les versements peuvent revenir en USD ou en monnaie locale.' },
+    near: ['RW', 'KE', 'TZ', 'ET', 'ZM'],
+  },
+  US: {
+    short: { en: 'diaspora & international desk', fr: 'bureau diaspora & international' },
+    role: { en: 'International and diaspora investors desk', fr: 'Bureau investisseurs internationaux et diaspora' },
+    serves: { en: 'African diaspora and international investors in North America, Europe and Asia who want exposure to African real assets.', fr: 'La diaspora africaine et les investisseurs internationaux en Amérique du Nord, en Europe et en Asie qui veulent investir dans les actifs réels africains.' },
+    pay: { en: 'Pay in USD by bank transfer, or in USDT/USDC. Some projects may not be open to US residents; eligibility is confirmed during identity verification.', fr: 'Payez en USD par virement, ou en USDT/USDC. Certains projets peuvent ne pas être ouverts aux résidents américains ; l’éligibilité est confirmée lors de la vérification d’identité.' },
+    near: ['NG', 'GH', 'KE', 'AE', 'PT', 'US'],
+  },
+};
+const officeCopy = (o) => OFFICE_COPY[o.country] || { role: { en: 'Office', fr: 'Bureau' }, serves: { en: 'Investors and project owners in the region.', fr: 'Les investisseurs et porteurs de projet de la région.' }, pay: { en: 'All payment methods are available.', fr: 'Tous les moyens de paiement sont disponibles.' }, near: [o.country] };
+const addrLine = (ctx, o) => `${o.street}, ${[o.postal, o.city].filter(Boolean).join(' ')}${o.region ? ', ' + o.region : ''}, ${ctx.t.o(countries[o.country]) || o.country}`;
+
+function officeCards(ctx) {
+  const t = ctx.t;
+  const offices = st.offices();
+  if (!offices.length) return '';
+  return html`<section class="section-tight"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">${t('Our offices', 'Nos bureaux')}</p><h2>${t('Meet us in Douala, Kigali or New York', 'Rencontrez-nous à Douala, Kigali ou New York')}</h2></div></div>
+  <div class="office-grid">${offices.map((o) => html`<article class="office-card reveal">
+    <p class="eyebrow">${t.o(officeCopy(o).role)}</p>
+    <h3><a href="${ctx.u('/offices/' + officeSlug(o))}">${o.name}</a></h3>
+    <address>${addrLine(ctx, o)}</address>
+    ${o.phone ? html`<p><a href="tel:+${st.digits(o.phone)}">${o.phone}</a></p>` : ''}
+    <div class="btn-row"><a class="btn btn-ghost btn-sm" href="${mapLink(o)}" target="_blank" rel="noopener">${t('Open in Google Maps', 'Ouvrir dans Google Maps')}</a><a class="link" href="${ctx.u('/offices/' + officeSlug(o))}">${t('Details', 'Détails')} ${icon('arrow', 14)}</a></div>
+  </article>`)}</div>
+</div></section>`;
+}
+
+function officeSchema(ctx, o) {
+  const url = ctx.site + ctx.u('/offices/' + officeSlug(o));
+  return { '@type': 'FinancialService', '@id': url + '#office', name: `Invest n Returns — ${o.name}`, url, address: seo.postal(o), parentOrganization: { '@id': ctx.site + '/#organization' }, email: st.contactEmail(), ...(o.phone ? { telephone: o.phone } : {}), areaServed: t_en(officeCopy(o).serves), image: ctx.site + '/img/og-image.jpg' };
+}
+const t_en = (o) => o.en;
+
+function officesIndex(ctx) {
+  const t = ctx.t;
+  const offices = st.offices();
+  const title = t('Invest n Returns offices: Douala, Kigali and New York', 'Bureaux Invest n Returns : Douala, Kigali et New York');
+  const description = t(`Visit or contact Invest n Returns: head office at ${offices[0] ? offices[0].street + ', ' + offices[0].city : 'Douala'}, plus offices in Kigali and New York for East Africa and diaspora investors.`, `Rendez-vous chez Invest n Returns : siège au ${offices[0] ? offices[0].street + ', ' + offices[0].city : 'Douala'}, et bureaux à Kigali et New York pour l’Afrique de l’Est et la diaspora.`);
+  return page(ctx, {
+    seo: { title, description, path: '/offices', jsonld: [seo.webPage(ctx, { name: title, description, path: '/offices' }), crumbsLd(ctx, [{ name: t('Offices', 'Bureaux'), url: ctx.u('/offices') }]), ...offices.map((o) => officeSchema(ctx, o))] },
+    body: html`${parts.pageHero(ctx, { eyebrow: t('Our offices', 'Nos bureaux'), title: t('Our offices in Africa and New York', 'Nos bureaux en Afrique et à New York'), lead: t(`Invest n Returns has ${offices.length} offices: the head office in Douala for Central Africa, Kigali for East Africa and New York for diaspora and international investors. Meetings are by appointment.`, `Invest n Returns compte ${offices.length} bureaux : le siège à Douala pour l’Afrique centrale, Kigali pour l’Afrique de l’Est et New York pour la diaspora et les investisseurs internationaux. Rendez-vous sur demande.`), crumbs: [{ name: t('Offices', 'Bureaux'), url: ctx.u('/offices') }] })}
+${officeCards(ctx)}
+<section class="section-tight"><div class="wrap faq-wrap">${parts.faqList(ctx, [faq[6], faq[7]])}</div></section>
+${parts.ctaBand(ctx)}`,
+  });
+}
+
+function officePage(ctx, o) {
+  const t = ctx.t;
+  const c = officeCopy(o);
+  const path = '/offices/' + officeSlug(o);
+  const nearby = assetsSvc.list({ status: ['open'] }).filter((a) => c.near.includes(a.country_code)).slice(0, 6);
+  const title = t(`Invest n Returns ${o.city} — ${(c.short || c.role).en}`, `Invest n Returns ${o.city} — ${(c.short || c.role).fr}`);
+  const description = t(`${t_en(c.role)} of Invest n Returns at ${addrLine(ctx, o)}. ${t_en(c.serves)}`, `${c.role.fr} d’Invest n Returns au ${addrLine(ctx, o)}. ${c.serves.fr}`);
+  const qa = [
+    { q: { en: `Where is the Invest n Returns office in ${o.city}?`, fr: `Où se trouve le bureau Invest n Returns à ${o.city} ?` }, a: { en: `At ${addrLine({ t: Object.assign((e) => e, { o: (x) => x.en }) }, o)}. Visits are by appointment: write to ${st.contactEmail()} first.`, fr: `Au ${addrLine({ t: Object.assign((e, f) => f, { o: (x) => x.fr }) }, o)}. Les visites se font sur rendez-vous : écrivez d’abord à ${st.contactEmail()}.` } },
+    { q: { en: `Who does the ${o.city} office serve?`, fr: `Qui le bureau de ${o.city} accompagne-t-il ?` }, a: c.serves },
+    { q: { en: 'How can I pay from this region?', fr: 'Comment payer depuis cette région ?' }, a: c.pay },
+  ];
+  return page(ctx, {
+    seo: { title, description, path, jsonld: [seo.webPage(ctx, { name: title, description, path }), crumbsLd(ctx, [{ name: t('Offices', 'Bureaux'), url: ctx.u('/offices') }, { name: o.city, url: ctx.u(path) }]), officeSchema(ctx, o), seo.faqPage(ctx, qa)] },
+    body: html`${parts.pageHero(ctx, { eyebrow: t.o(c.role), title: t(`Our ${o.city} office`, `Notre bureau de ${o.city}`), lead: t(`In short: the Invest n Returns ${o.city} office is at ${addrLine(ctx, o)}. ${t_en(c.serves)}`, `En bref : le bureau Invest n Returns de ${o.city} se trouve au ${addrLine(ctx, o)}. ${c.serves.fr}`), crumbs: [{ name: t('Offices', 'Bureaux'), url: ctx.u('/offices') }, { name: o.city, url: ctx.u(path) }] })}
+<section class="section-tight"><div class="wrap two-col">
+  <div class="prose-block">
+    <h2>${t('Address and contact', 'Adresse et contact')}</h2>
+    <address class="office-address">${o.street}<br>${[o.postal, o.city].filter(Boolean).join(' ')}${o.region ? ', ' + o.region : ''}<br>${t.o(countries[o.country]) || o.country}</address>
+    <dl class="facts">
+      <dt>Email</dt><dd><a href="mailto:${st.contactEmail()}">${st.contactEmail()}</a></dd>
+      ${o.phone || st.get('phone') ? html`<dt>${t('Phone', 'Téléphone')}</dt><dd><a href="tel:+${st.digits(o.phone || st.get('phone'))}">${o.phone || st.get('phone')}</a></dd>` : ''}
+      ${st.get('hours') ? html`<dt>${t('Hours', 'Horaires')}</dt><dd>${st.get('hours')}</dd>` : ''}
+      <dt>${t('Visits', 'Visites')}</dt><dd>${t('By appointment', 'Sur rendez-vous')}</dd>
+      <dt>${t('Languages', 'Langues')}</dt><dd>English · Français</dd>
+    </dl>
+    <div class="btn-row"><a class="btn btn-gold" href="${mapLink(o)}" target="_blank" rel="noopener">${t('Get directions', 'Itinéraire')}</a><a class="btn btn-ghost" href="${ctx.u('/contact')}">${t('Book a meeting', 'Prendre rendez-vous')}</a></div>
+  </div>
+  <div class="prose-block">
+    <h2>${t('What this office does', 'Le rôle de ce bureau')}</h2>
+    <p class="prose">${t.o(c.serves)}</p>
+    <p class="prose">${t.o(c.pay)}</p>
+    <p class="prose">${t('Every project on the platform passes the same five checks — title, site visit, numbers review, a dedicated company (SPV) and staged escrow — wherever the investor or the asset is located.', 'Chaque projet de la plateforme passe les mêmes cinq contrôles — titre, visite, revue des chiffres, société dédiée (SPV) et séquestre par étapes — où que soient l’investisseur ou l’actif.')}</p>
+  </div>
+</div></section>
+${nearby.length ? html`<section class="section-tight"><div class="wrap"><div class="head"><div><p class="eyebrow">${t('Projects followed from this office', 'Projets suivis par ce bureau')}</p><h2>${t(`Open projects near ${o.city}`, `Projets ouverts près de ${o.city}`)}</h2></div></div><div class="projects">${nearby.map((a) => assetCard(ctx, a))}</div></div></section>` : ''}
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
+${parts.ctaBand(ctx)}`,
+  });
+}
+
+// ---------- countries ----------
+// French preposition before a country name: en Côte d'Ivoire, au Cameroun, aux États-Unis.
+const FR_EN = new Set(['CI', 'ZM', 'TZ', 'ET', 'EG', 'ZA', 'FR']);
+const FR_AUX = new Set(['US', 'AE']);
+const frIn = (code) => `${FR_AUX.has(code) ? 'aux' : FR_EN.has(code) ? 'en' : 'au'} ${countries[code].fr}`;
+function countriesIndex(ctx, { rows }) {
+  const t = ctx.t;
+  const title = t('Invest by country: African projects open now', 'Investir par pays : projets africains ouverts');
+  const total = rows.reduce((n, r) => n + r.items.length, 0);
+  const description = t(`Browse ${total} open projects in ${rows.length} countries: Cameroon, Côte d’Ivoire, Nigeria, Ghana, Kenya, Rwanda and more. Compare target returns and sectors by country.`, `Parcourez ${total} projets ouverts dans ${rows.length} pays : Cameroun, Côte d’Ivoire, Nigeria, Ghana, Kenya, Rwanda et plus. Comparez rendements cibles et secteurs par pays.`);
+  return page(ctx, {
+    seo: { title, description, path: '/countries', jsonld: [seo.webPage(ctx, { name: title, description, path: '/countries', type: 'CollectionPage' }), crumbsLd(ctx, [{ name: t('Countries', 'Pays'), url: ctx.u('/countries') }])] },
+    body: html`${parts.pageHero(ctx, { eyebrow: t('By country', 'Par pays'), title: t('Invest by country', 'Investir par pays'), lead: t(`In short: Invest n Returns has ${total} open projects in ${rows.length} countries, mostly in Central, West and East Africa, plus hard-currency property in Dubai and Portugal.`, `En bref : Invest n Returns compte ${total} projets ouverts dans ${rows.length} pays, surtout en Afrique centrale, de l’Ouest et de l’Est, plus de l’immobilier en devises fortes à Dubaï et au Portugal.`), crumbs: [{ name: t('Countries', 'Pays'), url: ctx.u('/countries') }] })}
+<section class="section-tight"><div class="wrap">
+  <div class="table-scroll reveal"><table class="compare">
+    <thead><tr><th scope="col">${t('Country', 'Pays')}</th><th scope="col">${t('Open projects', 'Projets ouverts')}</th><th scope="col">${t('Sectors', 'Secteurs')}</th><th scope="col">${t('Target range / yr', 'Fourchette cible / an')}</th></tr></thead>
+    <tbody>${rows.map((r) => { const rates = r.items.filter((a) => a.target_rate).map((a) => a.target_rate); return html`<tr><th scope="row"><a href="${ctx.u('/countries/' + countrySlug(r.code))}">${t.o(countries[r.code])}</a></th><td class="num">${r.items.length}</td><td>${[...new Set(r.items.map((a) => t.o(a.cat.name)))].join(', ')}</td><td class="num hl">${rates.length ? `${ctx.f.pct(Math.min(...rates), 1)} – ${ctx.f.pct(Math.max(...rates), 1)}` : t('equity', 'capital')}</td></tr>`; })}</tbody>
+  </table></div>
+</div></section>
+${parts.ctaBand(ctx)}`,
+  });
+}
+
+function countryPage(ctx, { code, items, saved }) {
+  const t = ctx.t;
+  const name = t.o(countries[code]);
+  const path = '/countries/' + countrySlug(code);
+  const rates = items.filter((a) => a.target_rate).map((a) => a.target_rate);
+  const sectors = [...new Set(items.map((a) => t.o(a.cat.name)))];
+  const cities = [...new Set(items.map((a) => a.city.split(',').pop().trim()))];
+  const range = rates.length ? `${ctx.f.pct(Math.min(...rates), 1)} – ${ctx.f.pct(Math.max(...rates), 1)}` : '';
+  const title = t(`Invest in ${countries[code].en}: ${items.length} open projects${rates.length ? ', ' + Math.min(...rates) + '–' + Math.max(...rates) + '%/yr' : ''}`, `Investir ${frIn(code)} : ${items.length} projets ouverts`);
+  const description = t(`Invest in ${countries[code].en} from 500 USD: ${sectors.join(', ').toLowerCase()} projects in ${cities.join(', ')}. ${range ? 'Target ' + range + ' a year. ' : ''}Pay in USDT, Mobile Money or bank transfer.`, `Investissez ${frIn(code)} dès 500 USD : projets ${sectors.join(', ').toLowerCase()} à ${cities.join(', ')}. ${range ? 'Objectif ' + range + ' par an. ' : ''}Paiement en USDT, Mobile Money ou virement.`);
+  const qa = [
+    { q: { en: `Can I invest in ${countries[code].en} from abroad?`, fr: `Puis-je investir ${frIn(code)} depuis l’étranger ?` }, a: { en: `Yes. You can invest from Africa, Europe, North America or Asia, subject to the rules of your country of residence, from 500 USD in USDT, USDC, BTC, ETH, Mobile Money, card or bank transfer.`, fr: `Oui. Vous pouvez investir depuis l’Afrique, l’Europe, l’Amérique du Nord ou l’Asie, sous réserve des règles de votre pays de résidence, dès 500 USD en USDT, USDC, BTC, ETH, Mobile Money, carte ou virement.` } },
+    { q: { en: `Which projects are open in ${countries[code].en}?`, fr: `Quels projets sont ouverts ${frIn(code)} ?` }, a: { en: `${items.length} project${items.length > 1 ? 's' : ''}: ${items.map((a) => a.title_en).join('; ')}.`, fr: `${items.length} projet${items.length > 1 ? 's' : ''} : ${items.map((a) => a.title_fr).join(' ; ')}.` } },
+    { q: { en: `In which currency are ${countries[code].en} projects?`, fr: `Dans quelle devise sont les projets ${frIn(code)} ?` }, a: { en: `Projects are budgeted in ${localCurrency[code] || 'local currency'} or USD, and your investment, balance and payouts are shown in USD. You can withdraw in crypto or cash.`, fr: `Les projets sont budgétés en ${localCurrency[code] || 'monnaie locale'} ou en USD, et votre investissement, solde et versements sont affichés en USD. Retrait en crypto ou en cash.` } },
+  ];
+  return page(ctx, {
+    seo: { title, description, path, jsonld: [seo.webPage(ctx, { name: title, description, path, type: 'CollectionPage' }), crumbsLd(ctx, [{ name: t('Countries', 'Pays'), url: ctx.u('/countries') }, { name, url: ctx.u(path) }]), seo.itemList(ctx, items, title), seo.faqPage(ctx, qa)] },
+    body: html`${parts.pageHero(ctx, { photo: items[0] && items[0].photos[0], photoAlt: `${t(items[0] ? items[0].title_en : '', items[0] ? items[0].title_fr : '')}`, eyebrow: t('Invest by country', 'Investir par pays'), title: t(`Invest in ${countries[code].en}`, `Investir ${frIn(code)}`), lead: t(`In short: ${items.length} open project${items.length > 1 ? 's' : ''} in ${cities.join(', ')} — ${sectors.join(', ').toLowerCase()}${range ? ', targeting ' + range + ' a year' : ''}. From 500 USD.`, `En bref : ${items.length} projet${items.length > 1 ? 's' : ''} ouvert${items.length > 1 ? 's' : ''} à ${cities.join(', ')} — ${sectors.join(', ').toLowerCase()}${range ? ', avec un objectif de ' + range + ' par an' : ''}. Dès 500 USD.`), crumbs: [{ name: t('Countries', 'Pays'), url: ctx.u('/countries') }, { name, url: ctx.u(path) }] })}
+<section class="section-tight"><div class="wrap">
+  <div class="table-scroll reveal"><table class="compare">
+    <caption class="sr">${t('Projects compared', 'Projets comparés')}</caption>
+    <thead><tr><th scope="col">${t('Project', 'Projet')}</th><th scope="col">${t('City', 'Ville')}</th><th scope="col">${t('Sector', 'Secteur')}</th><th scope="col">${t('Target', 'Cible')}</th><th scope="col">${t('Term', 'Durée')}</th><th scope="col">${t('Risk', 'Risque')}</th></tr></thead>
+    <tbody>${items.map((a) => html`<tr><th scope="row"><a href="${ctx.u('/assets/' + a.slug)}">${t(a.title_en, a.title_fr)}</a></th><td>${a.city}</td><td>${t.o(a.cat.name)}</td><td class="num hl">${a.target_rate ? ctx.f.pct(a.target_rate, 1) : a.target_multiple + '×'}</td><td class="num">${a.term_months} ${t('mo', 'mois')}</td><td class="num">${a.risk}/5</td></tr>`)}</tbody>
+  </table></div>
+  <div class="projects" style="margin-top:32px">${items.map((a) => assetCard(ctx, a, { saved: saved.has(a.id) }))}</div>
+</div></section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
+${parts.ctaBand(ctx)}`,
+  });
+}
+
+module.exports = { countriesIndex, countryPage, officesIndex, officePage, officeCards, classIndex, classPage, howItWorks, security, paymentsPage, roadmap, about, faqPage, calculatorPage, contact, submitProject, legal, LEGAL };

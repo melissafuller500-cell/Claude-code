@@ -46,6 +46,10 @@ function nextPayoutAt(from, freq) {
 
 const MIN_INVEST_USD = 500;
 
+// Local currency per country (for country pages).
+const localCurrency = { CM: 'FCFA (XAF)', GA: 'FCFA (XAF)', CI: 'FCFA (XOF)', SN: 'FCFA (XOF)', ML: 'FCFA (XOF)', BJ: 'FCFA (XOF)', NG: 'Naira (NGN)', GH: 'Cedi (GHS)', KE: 'Kenyan shilling (KES)', RW: 'Rwandan franc (RWF)', MA: 'Dirham (MAD)', ZM: 'Kwacha (ZMW)', TZ: 'Tanzanian shilling (TZS)', ET: 'Birr (ETB)', EG: 'Egyptian pound (EGP)', ZA: 'Rand (ZAR)', AE: 'Dirham (AED)', PT: 'Euro (EUR)', FR: 'Euro (EUR)', US: 'US dollar (USD)' };
+const countrySlug = (code) => (countries[code] ? countries[code].en : code).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 const payMethods = {
   balance: { label: 'Account balance (instant)', kind: 'balance' },
   usdt: { label: 'USDT (TRC-20 / ERC-20)', kind: 'crypto' },
@@ -90,4 +94,4 @@ const tiers = [
 ];
 const tierFor = (usd) => tiers.find((t) => usd >= t.min);
 
-module.exports = { countries, fx, payoutFreq, payoutSchedules, nextPayoutAt, MIN_INVEST_USD, payMethods, statusLabels, tiers, tierFor };
+module.exports = { localCurrency, countrySlug, countries, fx, payoutFreq, payoutSchedules, nextPayoutAt, MIN_INVEST_USD, payMethods, statusLabels, tiers, tierFor };

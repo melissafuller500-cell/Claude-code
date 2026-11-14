@@ -354,3 +354,29 @@
     });
   });
 })();
+
+/* Dropdown menus: hover is handled in CSS; this adds tap/keyboard toggles and Escape to close. */
+(function () {
+  'use strict';
+  var items = Array.prototype.slice.call(document.querySelectorAll('.has-sub'));
+  function closeAll(except) { items.forEach(function (li) { if (li !== except) { li.classList.remove('open'); var b = li.querySelector('.sub-toggle'); if (b) b.setAttribute('aria-expanded', 'false'); } }); }
+  items.forEach(function (li) {
+    var btn = li.querySelector('.sub-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !li.classList.contains('open'); closeAll(li);
+      li.classList.toggle('open', open); btn.setAttribute('aria-expanded', String(open));
+      if (open) { var first = li.querySelector('.sub a'); if (first) first.focus(); }
+    });
+    li.addEventListener('mouseenter', function () { btn.setAttribute('aria-expanded', 'true'); });
+    li.addEventListener('mouseleave', function () { if (!li.classList.contains('open')) btn.setAttribute('aria-expanded', 'false'); });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.has-sub')) closeAll(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = document.querySelector('.has-sub.open, .has-sub:focus-within');
+    closeAll();
+    if (open) { var b = open.querySelector('.sub-toggle'); if (b) b.focus(); if (document.activeElement && open.contains(document.activeElement)) document.activeElement.blur(); }
+  });
+})();

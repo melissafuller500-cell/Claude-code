@@ -65,6 +65,28 @@ router.get('/invest/:slug', (req, res, next) => {
   res.page(pages.classPage(res.ctx(), { c, items: assets.list({ category: c.code }), saved: savedSet(req) }));
 });
 
+router.get('/countries', (req, res) => {
+  const all = assets.list();
+  const by = {};
+  for (const a of all) (by[a.country_code] = by[a.country_code] || []).push(a);
+  const rows = Object.entries(by).map(([code, items]) => ({ code, items })).sort((x, y) => y.items.length - x.items.length);
+  res.page(pages.countriesIndex(res.ctx(), { rows }));
+});
+router.get('/countries/:slug', (req, res, next) => {
+  const { countrySlug } = require('../data/catalog');
+  const code = Object.keys(countries).find((c) => countrySlug(c) === req.params.slug);
+  if (!code) return next();
+  const items = assets.list({ country: code });
+  if (!items.length) return next();
+  res.page(pages.countryPage(res.ctx(), { code, items, saved: savedSet(req) }));
+});
+router.get('/offices', (req, res) => res.page(pages.officesIndex(res.ctx())));
+router.get('/offices/:slug', (req, res, next) => {
+  const { officeSlug } = require('../views/layout');
+  const o = require('../services/settings').offices().find((x) => officeSlug(x) === req.params.slug);
+  if (!o) return next();
+  res.page(pages.officePage(res.ctx(), o));
+});
 router.get('/how-it-works', (req, res) => res.page(pages.howItWorks(res.ctx())));
 router.get('/security', (req, res) => res.page(pages.security(res.ctx())));
 router.get('/payments', (req, res) => res.page(pages.paymentsPage(res.ctx())));

@@ -260,3 +260,15 @@ pre.pay-details{white-space:pre-wrap;word-break:break-word;font:500 .92rem/1.5 v
 .photo-grid img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
 .photo-grid figcaption{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:8px}
 .big-num{font:700 1.6rem var(--display)}
+
+/* settings center */
+.settings-layout{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:start}
+.settings-nav{position:sticky;top:84px;display:grid;gap:2px;padding:12px}
+.settings-nav a{padding:8px 10px;border-radius:8px;text-decoration:none;font-size:.88rem;color:var(--muted)}
+.settings-nav a:hover{background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--ink)}
+.settings-form{display:grid;gap:18px}
+.settings-form section{scroll-margin-top:90px}
+.fhelp{color:var(--muted);font-size:.76rem}
+.settings-save{position:sticky;bottom:12px;display:flex;justify-content:flex-end;z-index:5}
+.settings-save .btn{box-shadow:var(--shadow-lg)}
+@media (max-width:900px){.settings-layout{grid-template-columns:1fr}.settings-nav{position:static;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}

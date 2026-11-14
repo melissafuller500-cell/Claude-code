@@ -21,11 +21,12 @@ app.use(helmet({
     useDefaults: true,
     directives: {
       'default-src': ["'self'"],
-      'script-src': ["'self'"],
+      // Analytics providers are allowed only so the IDs set in Admin → Settings can load.
+      'script-src': ["'self'", 'https://www.googletagmanager.com', 'https://connect.facebook.net'],
       'style-src': ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
       'font-src': ["'self'", 'https://fonts.gstatic.com'],
-      'img-src': ["'self'", 'data:'],
-      'connect-src': ["'self'"],
+      'img-src': ["'self'", 'data:', 'https://www.googletagmanager.com', 'https://*.google-analytics.com', 'https://www.facebook.com'],
+      'connect-src': ["'self'", 'https://*.google-analytics.com', 'https://*.analytics.google.com', 'https://www.googletagmanager.com', 'https://www.facebook.com'],
       'form-action': ["'self'", 'mailto:'],
       'frame-ancestors': ["'none'"],
       'upgrade-insecure-requests': config.cookieSecure ? [] : null,

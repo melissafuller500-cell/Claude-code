@@ -5,8 +5,9 @@ const { page } = require('../layout');
 const { assetCard, icon, riskMeter, targetLabel, termLabel, cover, photoImg, csrfField } = require('../components');
 const parts = require('./parts');
 const categories = require('../../data/categories');
-const { countries, payoutFreq, payMethods, payoutSchedules } = require('../../data/catalog');
+const { countries, payoutFreq, payMethods, payoutSchedules, countrySlug } = require('../../data/catalog');
 const config = require('../../config');
+const { SECTORS, PROTECTIONS, timeline } = require('../../data/projectDetails');
 const faq = require('../../data/faq');
 
 function list(ctx, { items, filters, saved, countryOptions }) {
@@ -93,6 +94,16 @@ function detail(ctx, { a, saved, related, myReservations }) {
     { q: t('What is the minimum investment?', "Quel est l'investissement minimum ?"), a: t(`${a.min_usd} USD, payable in USDT, USDC, BTC, ETH, Mobile Money, card or bank transfer.`, `${a.min_usd} USD, payables en USDT, USDC, BTC, ETH, Mobile Money, carte ou virement.`) },
     { q: t('How long is my money committed?', 'Combien de temps mon argent est-il engagé ?'), a: t(`${a.term_months} months. Early exit is not guaranteed.`, `${a.term_months} mois. Une sortie anticipée n'est pas garantie.`) },
   ];
+  const D = SECTORS[a.category] || SECTORS.re;
+  const tl = timeline(a.category, a.term_months);
+  const AMOUNTS = [1000, 5000, 10000];
+  const sections = [
+    ['summary', t('In short', 'En bref')], ...(a.photos.length ? [['photos', t('Photos', 'Photos')]] : []), ['about', t('About', 'À propos')],
+    ...(t(a.why_en, a.why_fr) ? [['location', t('Location', 'Localisation')]] : []), ['revenue', t('Revenue model', 'Modèle de revenus')],
+    ['funds', t('Use of funds', 'Utilisation des fonds')], ['timeline', t('Timeline', 'Calendrier')], ['payouts', t('Payouts', 'Versements')],
+    ['scenarios', t('Scenarios', 'Scénarios')], ['facts', t('Key facts', 'Chiffres clés')], ...(a.highlights[ctx.lang] && a.highlights[ctx.lang].length ? [['checks', t('Checks', 'Contrôles')]] : []),
+    ['risks', t('Risks', 'Risques')], ['protection', t('Protection', 'Protection')], ['exit', t('Exit', 'Sortie')], ['documents', t('Documents', 'Documents')], ['faq', 'FAQ'],
+  ];
   const canReserve = a.status === 'open' && a.remaining_cents >= a.min_usd * 100;
   const body = html`
 <section class="asset-hero${a.photos.length ? ' with-photo' : ''}">
@@ -115,36 +126,96 @@ function detail(ctx, { a, saved, related, myReservations }) {
 <section class="section-tight asset-body">
   <div class="wrap asset-grid">
     <div class="asset-main">
-      <div class="kpis">
-        <div class="kpi reveal"><span>${a.yield_based ? t('Target return / yr', 'Rendement cible / an') : t('Target multiple', 'Multiple cible')}</span><b class="hl">${targetLabel(ctx, a)}</b></div>
-        <div class="kpi reveal"><span>${t('Term', 'Durée')}</span><b>${termLabel(ctx, a.term_months)}</b></div>
-        <div class="kpi reveal"><span>${t('Payouts', 'Versements')}</span><b>${a.yield_based ? t('Your choice: weekly → yearly', 'Au choix : hebdo → annuel') : t('At exit', 'À la sortie')}</b></div>
-        <div class="kpi reveal"><span>${t('Risk', 'Risque')} ${a.risk}/5</span>${riskMeter(ctx, a.risk)}</div>
-        <div class="kpi reveal"><span>${t('Minimum', 'Minimum')}</span><b>${ctx.f.usdWhole(a.min_usd)}</b></div>
-        <div class="kpi reveal"><span>${t('Investors', 'Investisseurs')}</span><b>${a.investor_count}</b></div>
-      </div>
+      <nav class="toc" aria-label="${t('On this page', 'Sur cette page')}"><b>${t('On this page', 'Sur cette page')}</b>
+        ${sections.map(([id, label], k) => html`<a href="#${id}"><span class="num">${String(k + 1).padStart(2, '0')}</span> ${label}</a>`)}
+      </nav>
 
-      ${a.photos.length > 1 ? html`<div class="gallery" data-gallery>${a.photos.map((p, i) => html`<a href="${p.src}" class="g-item${i === 0 ? ' g-main' : ''}" data-lightbox aria-label="${t('Open photo', 'Ouvrir la photo')} ${i + 1}">${photoImg(p, `${name} — ${t('photo', 'photo')} ${i + 1}`, { sizes: i === 0 ? '(max-width: 960px) 100vw, 60vw' : '200px' })}</a>`)}</div>` : ''}
-      <h2>${t('Quick answer', 'Réponse rapide')}</h2>
-      <p class="answer lead-sm">${t(a.summary_en, a.summary_fr)}</p>
+      <section id="summary" class="dsec">
+        <h2><span class="num">01</span> ${t('In short', 'En bref')}</h2>
+        <p class="answer lead-sm">${t(a.summary_en, a.summary_fr)}</p>
+        <div class="kpis">
+          <div class="kpi"><span>${a.yield_based ? t('Target return / yr', 'Rendement cible / an') : t('Target multiple', 'Multiple cible')}</span><b class="hl">${targetLabel(ctx, a)}</b></div>
+          <div class="kpi"><span>${t('Term', 'Durée')}</span><b>${termLabel(ctx, a.term_months)}</b></div>
+          <div class="kpi"><span>${t('Payouts', 'Versements')}</span><b>${a.yield_based ? t('Your choice: weekly → yearly', 'Au choix : hebdo → annuel') : t('At exit', 'À la sortie')}</b></div>
+          <div class="kpi"><span>${t('Risk', 'Risque')} ${a.risk}/5</span>${riskMeter(ctx, a.risk)}</div>
+          <div class="kpi"><span>${t('Minimum', 'Minimum')}</span><b>${ctx.f.usdWhole(a.min_usd)}</b></div>
+          <div class="kpi"><span>${t('Investors', 'Investisseurs')}</span><b>${a.investor_count}</b></div>
+        </div>
+      </section>
 
-      <h2>${t('About this project', 'À propos du projet')}</h2>
-      ${String(t(a.description_en, a.description_fr)).split(/\n{2,}/).map((p) => html`<p class="prose">${p}</p>`)}
+      ${a.photos.length ? html`<section id="photos" class="dsec"><h2><span class="num">02</span> ${t('Photos', 'Photos')}</h2>
+        <div class="gallery" data-gallery>${a.photos.map((ph, k) => html`<a href="${ph.src}" class="g-item${k === 0 ? ' g-main' : ''}" data-lightbox aria-label="${t('Open photo', 'Ouvrir la photo')} ${k + 1}">${photoImg(ph, `${name} — ${t('photo', 'photo')} ${k + 1}`, { sizes: k === 0 ? '(max-width: 960px) 100vw, 60vw' : '200px' })}</a>`)}</div>
+        <p class="fine-sm">${t('Photos illustrate the type of asset financed and may not show the exact site.', 'Les photos illustrent le type d’actif financé et peuvent ne pas montrer le site exact.')}</p></section>` : ''}
 
-      ${a.highlights[ctx.lang] && a.highlights[ctx.lang].length ? html`<h2>${t('Checks completed', 'Contrôles effectués')}</h2>
-      <ul class="ticks">${a.highlights[ctx.lang].map((h) => html`<li>${icon('check', 16)} ${h}</li>`)}</ul>` : ''}
+      <section id="about" class="dsec"><h2><span class="num">03</span> ${t('About this project', 'À propos du projet')}</h2>
+        ${String(t(a.description_en, a.description_fr)).split(/\n{2,}/).map((x) => html`<p class="prose">${x}</p>`)}</section>
 
-      <h2>${t('Key facts', 'Chiffres clés')}</h2>
-      <dl class="facts">
-        <dt>${t('Funding goal', 'Objectif de financement')}</dt><dd class="num">${ctx.f.money(a.goal_local, a.currency)} <small>(≈ ${ctx.f.usdWhole(a.goal_usd)})</small></dd>
-        <dt>${t('Return from', 'Rendement issu de')}</dt><dd>${t.o(a.cat.returnFrom)}</dd>
-        <dt>${t('Structure', 'Structure')}</dt><dd>${t('Dedicated project company (SPV)', 'Société de projet dédiée (SPV)')}</dd>
-        <dt>${t('Country', 'Pays')}</dt><dd>${t.o(countries[a.country_code])}</dd>
-        <dt>${t('Status', 'Statut')}</dt><dd>${a.status === 'open' ? t('Open for reservation', 'Ouvert à la réservation') : a.status === 'funded' ? t('Fully funded', 'Entièrement financé') : t('Closed', 'Clôturé')}</dd>
-      </dl>
+      ${t(a.why_en, a.why_fr) ? html`<section id="location" class="dsec"><h2><span class="num">04</span> ${t(`Why ${a.city.split(',').pop().trim()}?`, `Pourquoi ${a.city.split(',').pop().trim()} ?`)}</h2>
+        <p class="prose">${t(a.why_en, a.why_fr)}</p>
+        <p class="loc">${icon('pin', 16)} ${loc}${a.region ? ` · ${a.region}` : ''}</p></section>` : ''}
 
-      <h2>${t('Questions about this project', 'Questions sur ce projet')}</h2>
-      ${parts.faqList(ctx, facts.map((f) => ({ q: { en: f.q, fr: f.q }, a: { en: f.a, fr: f.a } })))}
+      <section id="revenue" class="dsec"><h2><span class="num">05</span> ${t('How it makes money', 'Comment il génère des revenus')}</h2>
+        <p class="prose">${t.o(D.revenue)}</p></section>
+
+      <section id="funds" class="dsec"><h2><span class="num">06</span> ${t('Indicative use of funds', 'Utilisation indicative des fonds')}</h2>
+        <div class="table-scroll"><table class="compare">
+          <thead><tr><th scope="col">${t('Item', 'Poste')}</th><th scope="col">%</th><th scope="col">${a.currency === 'USD' ? 'USD' : ctx.f.money(0, a.currency).replace(/^0 /, '')}</th><th scope="col">≈ USD</th></tr></thead>
+          <tbody>${D.funds.map(([label, pc]) => html`<tr><th scope="row">${t.o(label)}</th><td class="num">${pc}%</td><td class="num">${ctx.f.money(a.goal_local * pc / 100, a.currency)}</td><td class="num">${ctx.f.usdWhole(a.goal_usd * pc / 100)}</td></tr>`)}
+          <tr class="total"><th scope="row">${t('Funding goal', 'Objectif de financement')}</th><td class="num">100%</td><td class="num">${ctx.f.money(a.goal_local, a.currency)}</td><td class="num">${ctx.f.usdWhole(a.goal_usd)}</td></tr></tbody>
+        </table></div>
+        <p class="fine-sm">${t('Indicative split for this type of project; the final budget is shared with verified investors in the project file.', 'Répartition indicative pour ce type de projet ; le budget final est communiqué aux investisseurs vérifiés dans le dossier du projet.')}</p></section>
+
+      <section id="timeline" class="dsec"><h2><span class="num">07</span> ${t('Timeline', 'Calendrier')}</h2>
+        <ol class="timeline">${tl.map((m) => html`<li><b>${m.month === 0 ? t('Start', 'Démarrage') : t(`Month ${m.month}`, `Mois ${m.month}`)}</b><span>${t.o(m.label)}</span></li>`)}</ol></section>
+
+      <section id="payouts" class="dsec"><h2><span class="num">08</span> ${a.yield_based ? t('What you receive, by payout schedule', 'Ce que vous recevez, selon la fréquence') : t('How returns are paid', 'Comment le rendement est versé')}</h2>
+        ${a.yield_based ? html`<p class="prose">${t(`At the ${a.target_rate}% annual target, each payout is the amount invested × ${a.target_rate}% ÷ the number of payouts per year. You choose the schedule when you reserve, and can change it later with our team.`, `Avec un objectif de ${a.target_rate} % par an, chaque versement vaut le montant investi × ${a.target_rate} % ÷ le nombre de versements par an. Vous choisissez la fréquence à la réservation et pouvez la modifier ensuite avec notre équipe.`)}</p>
+        <div class="table-scroll"><table class="compare">
+          <thead><tr><th scope="col">${t('Schedule', 'Fréquence')}</th>${AMOUNTS.map((u) => html`<th scope="col">${ctx.f.usdWhole(u)}</th>`)}<th scope="col">1 000 000 FCFA</th></tr></thead>
+          <tbody>${Object.entries(payoutSchedules).map(([k, sc]) => html`<tr><th scope="row">${t.o(sc)}</th>${AMOUNTS.map((u) => html`<td class="num">${ctx.f.usd(Math.round(u * 100 * a.target_rate / 100 / sc.perYear))}</td>`)}<td class="num">${ctx.f.int(1e6 * a.target_rate / 100 / sc.perYear)} FCFA</td></tr>`)}</tbody>
+        </table></div>` : html`<p class="prose">${t.o(D.exit)}</p>`}</section>
+
+      <section id="scenarios" class="dsec"><h2><span class="num">09</span> ${t('Total target over the term', 'Total visé sur la durée')}</h2>
+        <div class="table-scroll"><table class="compare">
+          <thead><tr><th scope="col">${t('Invested', 'Investi')}</th><th scope="col">${t('Target income over', 'Revenu visé sur')} ${termLabel(ctx, a.term_months)}</th><th scope="col">${t('If returns are 50% lower', 'Si le rendement est 50 % plus bas')}</th></tr></thead>
+          <tbody>${AMOUNTS.map((u) => { const base = a.yield_based ? u * a.target_rate / 100 * a.term_months / 12 : u * (a.target_multiple - 1); return html`<tr><th scope="row" class="num">${ctx.f.usdWhole(u)}</th><td class="num pos">+${ctx.f.usdWhole(base)}</td><td class="num">+${ctx.f.usdWhole(base / 2)}</td></tr>`; })}</tbody>
+        </table></div>
+        <p class="fine-sm">${t('Simple, illustrative calculation before currency effects. Targets are not guaranteed: you can also lose part or all of your capital.', 'Calcul simple et illustratif, hors effets de change. Les objectifs ne sont pas garantis : vous pouvez aussi perdre tout ou partie du capital.')}</p></section>
+
+      <section id="facts" class="dsec"><h2><span class="num">10</span> ${t('Key facts', 'Chiffres clés')}</h2>
+        <dl class="facts">
+          <dt>${t('Funding goal', 'Objectif de financement')}</dt><dd class="num">${ctx.f.money(a.goal_local, a.currency)} <small>(≈ ${ctx.f.usdWhole(a.goal_usd)})</small></dd>
+          <dt>${t('Reserved so far', 'Déjà réservé')}</dt><dd class="num">${a.pct}%</dd>
+          <dt>${t('Asset class', 'Classe d’actifs')}</dt><dd><a href="${ctx.u('/invest/' + a.cat.slug)}">${t.o(a.cat.name)}</a></dd>
+          <dt>${t('Return from', 'Rendement issu de')}</dt><dd>${t.o(a.cat.returnFrom)}</dd>
+          <dt>${t('Location', 'Localisation')}</dt><dd>${a.city}${a.region ? ` · ${a.region}` : ''}, <a href="${ctx.u('/countries/' + countrySlug(a.country_code))}">${t.o(countries[a.country_code])}</a></dd>
+          <dt>${t('Currency of the project', 'Devise du projet')}</dt><dd>${a.currency === 'XAF' || a.currency === 'XOF' ? 'FCFA (' + a.currency + ')' : a.currency}</dd>
+          <dt>${t('Structure', 'Structure')}</dt><dd>${t('Dedicated project company (SPV)', 'Société de projet dédiée (SPV)')}</dd>
+          <dt>${t('Status', 'Statut')}</dt><dd>${a.status === 'open' ? t('Open for reservation', 'Ouvert à la réservation') : a.status === 'funded' ? t('Fully funded', 'Entièrement financé') : t('Closed', 'Clôturé')}</dd>
+          <dt>${t('Last updated', 'Mise à jour')}</dt><dd>${ctx.f.date(a.updated_at)}</dd>
+        </dl></section>
+
+      ${a.highlights[ctx.lang] && a.highlights[ctx.lang].length ? html`<section id="checks" class="dsec"><h2><span class="num">11</span> ${t('Checks completed', 'Contrôles effectués')}</h2>
+        <ul class="ticks">${a.highlights[ctx.lang].map((h) => html`<li>${icon('check', 16)} ${h}</li>`)}</ul></section>` : ''}
+
+      <section id="risks" class="dsec"><h2><span class="num">12</span> ${t('Main risks and how they are managed', 'Principaux risques et leur gestion')}</h2>
+        <div class="table-scroll"><table class="compare risks-table">
+          <thead><tr><th scope="col">${t('Risk', 'Risque')}</th><th scope="col">${t('How it is managed', 'Comment il est géré')}</th></tr></thead>
+          <tbody>${D.risks.map(([r, m]) => html`<tr><td>${t.o(r)}</td><td>${t.o(m)}</td></tr>`)}</tbody>
+        </table></div></section>
+
+      <section id="protection" class="dsec"><h2><span class="num">13</span> ${t('How your money is protected', 'Comment votre argent est protégé')}</h2>
+        <ul class="ticks">${PROTECTIONS.map((x) => html`<li>${icon('shield', 16)} ${t.o(x)}</li>`)}</ul></section>
+
+      <section id="exit" class="dsec"><h2><span class="num">14</span> ${t('Exit and return of capital', 'Sortie et remboursement du capital')}</h2>
+        <p class="prose">${t.o(D.exit)}</p></section>
+
+      <section id="documents" class="dsec"><h2><span class="num">15</span> ${t('Documents in the project file', 'Documents du dossier')}</h2>
+        <ul class="ticks">${D.docs.map((d) => html`<li>${icon('log', 16)} ${t.o(d)}</li>`)}</ul>
+        <p class="fine-sm">${t('Available to identity-verified investors on request from our team.', 'Disponibles sur demande auprès de notre équipe pour les investisseurs vérifiés.')}</p></section>
+
+      <section id="faq" class="dsec"><h2><span class="num">16</span> ${t('Questions about this project', 'Questions sur ce projet')}</h2>
+        ${parts.faqList(ctx, facts.map((f) => ({ q: { en: f.q, fr: f.q }, a: { en: f.a, fr: f.a } })))}</section>
 
       ${parts.riskBox(ctx)}
     </div>

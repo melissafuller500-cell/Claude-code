@@ -166,15 +166,35 @@ function proposalForm(ctx, { users, assetsList, values = {}, error }) {
   return page(ctx, 'New proposal', '/admin/proposals', body);
 }
 
-function settingsPage(ctx, { values }) {
+function settingsPage(ctx, { settings, errors = [], smtpOk, preview }) {
+  const field = (f) => {
+    const id = 's-' + f.key;
+    const stored = settings.get(f.key, '');
+    if (f.type === 'bool') return html`<label class="consent full"><input type="checkbox" name="${f.key}" value="1" ${settings.get(f.key) === '1' ? raw('checked') : ''}> <span>${f.label}</span></label>`;
+    const help = f.help ? html`<small class="fhelp">${f.help}</small>` : '';
+    if (f.type === 'textarea') return html`<div class="field full"><label for="${id}">${f.label}</label><textarea id="${id}" name="${f.key}" rows="3" maxlength="2000">${stored}</textarea>${help}</div>`;
+    if (f.type === 'secret') return html`<div class="field"><label for="${id}">${f.label}</label><input id="${id}" name="${f.key}" type="password" autocomplete="new-password" placeholder="${stored ? '•••••••• saved — leave empty to keep' : 'Not set'}">${help}</div>`;
+    const t = { email: 'email', url: 'url', tel: 'tel' }[f.type] || 'text';
+    return html`<div class="field"><label for="${id}">${f.label}</label><input id="${id}" name="${f.key}" type="${t}" value="${stored || (f.key === 'site_url' ? settings.siteUrl() : '')}" placeholder="${f.def || ''}" maxlength="300">${help}</div>`;
+  };
   const body = html`
-<form method="post" action="/admin/settings" class="panel form-grid">${csrfField(ctx)}
-  <h2 class="full">Default payment details</h2>
-  <p class="muted full">Shown automatically on a new reservation for that method, and pre-filled when you send details. Leave empty to send details manually each time (recommended if you rotate accounts).</p>
-  ${Object.entries(payMethods).filter(([k]) => k !== 'balance').map(([k, m]) => html`<div class="field"><label for="s-${k}">${m.label}</label><textarea id="s-${k}" name="pay_${k}" rows="3" maxlength="1000">${values['pay_' + k] || ''}</textarea></div>`)}
-  <h2 class="full">Payouts</h2>
-  <label class="consent full"><input type="checkbox" name="auto_payouts" value="1" ${values.auto_payouts === '1' ? raw('checked') : ''}> <span><b>Automatic payouts</b>: credit due payouts to investor balances automatically (checked every 15 minutes). When off, use Payouts → "Run due payouts".</span></label>
-  <div class="form-actions"><button class="btn btn-gold" type="submit">Save settings</button></div>
+${errors.length ? html`<div class="notice notice-warn">${icon('shield', 18)}<div><b>Some values were not saved</b><p>${errors.join(' · ')}</p></div></div>` : ''}
+<div class="settings-layout">
+  <nav class="settings-nav panel" aria-label="Settings sections">${settings.SCHEMA.map((sec) => html`<a href="#sec-${sec.id}">${sec.title}</a>`)}</nav>
+  <form method="post" action="/admin/settings" class="settings-form">${csrfField(ctx)}
+    ${settings.SCHEMA.map((sec) => html`<section class="panel form-grid" id="sec-${sec.id}">
+      <div class="full"><h2>${sec.title}</h2>${sec.help ? html`<p class="muted">${sec.help}</p>` : ''}</div>
+      ${sec.fields.map(field)}
+      ${sec.id === 'general' ? html`<p class="fine-sm full">WhatsApp button: ${preview.whatsapp ? html`<a class="link" href="${preview.whatsapp}" target="_blank" rel="noopener">test the link</a>` : 'hidden until a WhatsApp number is saved.'}</p>` : ''}
+      ${sec.id === 'mobile' || sec.id === 'bank' ? html`<details class="full"><summary>Preview the default payment details investors will receive</summary><pre class="mail">${preview.pay}</pre></details>` : ''}
+      ${sec.id === 'email' ? html`<p class="fine-sm full">Status: ${smtpOk ? html`<b class="pos">SMTP configured</b>` : html`<b>not configured — emails are kept in the outbox only</b>`}</p>` : ''}
+    </section>`)}
+    <div class="settings-save"><button class="btn btn-gold btn-lg" type="submit">Save all settings</button></div>
+  </form>
+</div>
+<form method="post" action="/admin/settings/test-email" class="panel inline-form" data-confirm="Send a test email to ${ctx.user.email}?">${csrfField(ctx)}
+  <span><b>Test email sending</b> — sends a message to ${ctx.user.email} using the saved SMTP settings.</span>
+  <button class="btn btn-ghost btn-sm" type="submit">${icon('send', 14)} Send test email</button>
 </form>`;
   return page(ctx, 'Settings', '/admin/settings', body);
 }

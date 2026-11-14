@@ -370,6 +370,58 @@ test('admin photo upload accepts real images only and requires CSRF', async () =
   assert.match(img.headers.get('content-type'), /image\/png/);
 });
 
+test('52 projects, 16-section project page, country and office pages', async () => {
+  const c = client();
+  const { q } = require('../src/db');
+  assert.ok(q.get("SELECT COUNT(*) n FROM assets WHERE status = 'open'").n >= 50);
+  const p = await c.req('/assets/plantain-farm-12-ha-penja');
+  assert.equal(p.status, 200);
+  for (const id of ['summary', 'photos', 'about', 'location', 'revenue', 'funds', 'timeline', 'payouts', 'scenarios', 'facts', 'checks', 'risks', 'protection', 'exit', 'documents', 'faq']) {
+    assert.match(p.text, new RegExp(`id="${id}"`), `section ${id}`);
+  }
+  assert.match(p.text, /Moungo valley/);
+  const cm = await c.req('/countries/cameroon');
+  assert.equal(cm.status, 200);
+  assert.match(cm.text, /Invest in Cameroon/);
+  assert.equal((await c.req('/fr/countries/cote-d-ivoire')).status, 200);
+  const off = await c.req('/offices/kigali');
+  assert.equal(off.status, 200);
+  assert.match(off.text, /Kigali City Tower/);
+  assert.match(off.text, /"FinancialService"/);
+  const home = await c.req('/');
+  assert.match(home.text, /1389 Bd de la Liberté/);
+  assert.match(home.text, /120 Wall Street/);
+  assert.match(home.text, /class="has-sub/);
+  const sm = await c.req('/sitemap.xml');
+  assert.match(sm.text, /\/countries\/cameroon/);
+  assert.match(sm.text, /\/offices\/new-york/);
+});
+
+test('settings center drives WhatsApp, analytics, payment details and keeps secrets hidden', async () => {
+  const adm = client();
+  await login(adm, 'admin@test.local', 'AdminTest!12345');
+  const form = await adm.req('/admin/settings');
+  assert.equal(form.status, 200);
+  assert.match(form.text, /Bank account/);
+  const bad = await adm.post('/admin/settings', { whatsapp: 'not a phone', ga4_id: 'nope' }, '/admin/settings');
+  assert.equal(bad.status, 422);
+  const ok = await adm.post('/admin/settings', {
+    contact_email: 'admin@investnreturns.com', whatsapp: '+237 650 000 000', ga4_id: 'G-TEST1234', google_verification: 'abcDEF123456789',
+    bank_name: 'Test Bank', bank_iban: 'CM21 1000 2000 3000', bank_swift: 'TESTCMCX', smtp_pass: 'super-secret-pw', pay_usdt: 'USDT TRC-20: TTestAddress123',
+  }, '/admin/settings');
+  assert.equal(ok.status, 303);
+  const home = await client().req('/');
+  assert.match(home.text, /wa\.me\/237650000000/);
+  assert.match(home.text, /data-ga4="G-TEST1234"/);
+  assert.match(home.text, /google-site-verification" content="abcDEF123456789"/);
+  const again = await adm.req('/admin/settings');
+  assert.ok(!again.text.includes('super-secret-pw'), 'secret is never echoed back');
+  const settings = require('../src/services/settings');
+  assert.match(settings.payDefault('bank'), /IBAN: CM21 1000 2000 3000/);
+  // Dashboard and admin never load analytics.
+  assert.ok(!again.text.includes('data-ga4'));
+});
+
 test('security headers are set', async () => {
   const c = client();
   const r = await c.req('/');

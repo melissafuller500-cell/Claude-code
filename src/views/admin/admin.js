@@ -110,6 +110,8 @@ function assetForm(ctx, { a = {}, counts, error }) {
   <div class="field full"><label for="a-sfr">Summary (French)</label><textarea id="a-sfr" name="summary_fr" required maxlength="400" rows="2">${v('summary_fr')}</textarea></div>
   <div class="field full"><label for="a-den">Description (English; blank line between paragraphs)</label><textarea id="a-den" name="description_en" maxlength="6000" rows="6">${v('description_en')}</textarea></div>
   <div class="field full"><label for="a-dfr">Description (French)</label><textarea id="a-dfr" name="description_fr" maxlength="6000" rows="6">${v('description_fr')}</textarea></div>
+  <div class="field full"><label for="a-wen">Why this location (English) — real facts about the place and market</label><textarea id="a-wen" name="why_en" maxlength="2000" rows="3">${v('why_en')}</textarea></div>
+  <div class="field full"><label for="a-wfr">Why this location (French)</label><textarea id="a-wfr" name="why_fr" maxlength="2000" rows="3">${v('why_fr')}</textarea></div>
   <div class="field"><label for="a-hen">Checks completed (English, one per line)</label><textarea id="a-hen" name="highlights_en" maxlength="1200" rows="4">${hl('en')}</textarea></div>
   <div class="field"><label for="a-hfr">Checks completed (French, one per line)</label><textarea id="a-hfr" name="highlights_fr" maxlength="1200" rows="4">${hl('fr')}</textarea></div>
   <div class="form-actions"><button class="btn btn-gold" type="submit">${isNew ? 'Create asset' : 'Save changes'}</button><a class="btn btn-ghost" href="/admin/assets">Cancel</a></div>
@@ -301,8 +303,8 @@ function messages(ctx, { items, counts }) {
 function outbox(ctx, { items, counts, subscribers }) {
   const f = ctx.f;
   const body = html`
-<div class="notice notice-info">${icon('send', 18)}<div><b>No email provider connected</b><p>Emails are stored here. Connect SMTP or an email API in <code>src/services/ledger.js → sendMail()</code> to deliver them. Newsletter subscribers: <b>${subscribers}</b> · <a class="link" href="/admin/subscribers.csv">export CSV</a></p></div></div>
-<section class="cards-list">${items.length ? items.map((m) => html`<article class="panel sub-card"><div class="panel-head"><div><h2>${m.subject}</h2><p class="muted">To ${m.to_email} · ${f.dateTime(m.created_at)}</p></div></div><pre class="mail">${m.body}</pre></article>`) : html`<div class="panel empty"><p>Outbox is empty.</p></div>`}</section>`;
+<div class="notice notice-info">${icon('send', 18)}<div><b>Every email the site sends is logged here</b><p>Set up SMTP in <a class="link" href="/admin/settings#sec-email">Settings → Email sending</a> to deliver them. Newsletter subscribers: <b>${subscribers}</b> · <a class="link" href="/admin/subscribers.csv">export CSV</a></p></div></div>
+<section class="cards-list">${items.length ? items.map((m) => html`<article class="panel sub-card"><div class="panel-head"><div><h2>${m.subject}</h2><p class="muted">To ${m.to_email} · ${f.dateTime(m.created_at)} · <em class="badge badge-${m.status === 'sent' ? 'active' : m.status === 'failed' ? 'rejected' : 'pending'}">${m.status || 'stored'}</em>${m.error ? html` <small class="neg">${m.error}</small>` : ''}</p></div></div><pre class="mail">${m.body}</pre></article>`) : html`<div class="panel empty"><p>Outbox is empty.</p></div>`}</section>`;
   return page(ctx, 'Email outbox', '/admin/outbox', body, counts);
 }
 
