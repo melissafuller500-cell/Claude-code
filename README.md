@@ -47,7 +47,17 @@ Set `SEED_DEMO=false` in production to skip the demo users.
 - Reservations: a 72-hour hold with a countdown, payment instructions, cancel, and a progress timeline.
 - Watchlist (heart toggle), a wallet with withdrawals and CSV export, a KYC form, notifications, and profile and language settings.
 
-### Admin console (`/admin`)
+### Admin console (`/admin`): what an admin can do
+- **Send payment details** for each reservation, matching the method the investor chose (MoMo number, wallet address, IBAN…). The investor sees them on the reservation page and gets a message and an email. Default details per method can be saved in **Settings**.
+- **Confirm payments**: investors click "I have paid" and give their transaction reference; you check it and activate the investment.
+- **Fund an account** (credit or debit, with method and reference). Investors can then invest instantly using "Account balance".
+- **Change the return % or payout schedule of any single investment** (e.g. a loyalty bonus). The investor is notified.
+- **Payouts on the investor's schedule**: weekly, monthly, every 3 months, every 6 months or yearly. Run due payouts manually, or turn on automatic payouts (every 15 minutes) in Settings.
+- **Inbox**: two-way conversation with each investor (also emailed). **Announcements** go to a segment (all, verified, active, never invested, by country).
+- **Personal investment proposals**: pick an investor, project, amount, rate and schedule; they accept or decline in one click from Offers.
+- **Project photos**: upload, reorder (cover) or remove photos for each project.
+
+### Admin console (`/admin`): full list
 - Overview KPIs (AUM, investors, pending items, total paid out), a 30-day reservations chart, AUM by asset class, and a to-do queue.
 - Assets: create, edit and delete projects, with bilingual content, status, a featured flag and validation.
 - Reservations: confirm payment (blocked until KYC is verified, with an explicit override), reject with a reason, or complete and return capital.
@@ -72,6 +82,8 @@ See `.env.example`. Key variables:
 | `DB_FILE` | SQLite file path (default `data/inr.db`) |
 | `PAY_USDT_ADDRESS`, `PAY_MOMO_NUMBER`, … | Deposit details shown to investors. If unset, investors are told the details will be sent to them |
 | `TRUST_PROXY` | Number of reverse proxies in front of the app (default 1 in production) |
+| `ADMIN_RESET=true` | Emergency: resets the `ADMIN_EMAIL` account's password to `ADMIN_PASSWORD` on the next start. Remove it afterwards |
+| `UPLOADS_DIR` | Where uploaded photos are stored (default: an `uploads` folder next to the database) |
 
 ## Going live checklist
 1. Set `NODE_ENV=production`, `SESSION_SECRET`, `SITE_URL`, `ADMIN_*` and `SEED_DEMO=false`, and delete or replace the example projects in the admin console.

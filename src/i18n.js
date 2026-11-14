@@ -34,7 +34,8 @@ function fmt(lang) {
       const s = clean(nf.format(Math.round(dollars || 0)));
       return lang === 'fr' ? `${s} $` : `$${s}`;
     },
-    money: (amount, cur) => `${clean(nf.format(Math.round(amount || 0)))} ${cur}`,
+    // XAF (CEMAC) and XOF (UEMOA) are both written FCFA locally.
+    money: (amount, cur) => `${clean(nf.format(Math.round(amount || 0)))} ${cur === 'XAF' || cur === 'XOF' ? 'FCFA' : cur}`,
     pct: (n, d = 0) => (lang === 'fr' ? `${clean(new Intl.NumberFormat('fr-FR', { maximumFractionDigits: d }).format(n))} %` : `${new Intl.NumberFormat('en-US', { maximumFractionDigits: d }).format(n)}%`),
     date: (ms) => (ms ? new Date(ms).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '—'),
     dateTime: (ms) => (ms ? new Date(ms).toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—'),

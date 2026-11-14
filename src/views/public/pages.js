@@ -19,6 +19,7 @@ function simple(ctx, { path, eyebrow, title, h1, lead, description, body, extraL
 // ---------- asset classes ----------
 function classIndex(ctx, { counts }) {
   const t = ctx.t;
+  const qa = [faq[1], faq[4], faq[8], faq[7]];
   const title = t('Asset classes: what you can invest in across Africa', "Classes d'actifs : dans quoi investir en Afrique");
   return simple(ctx, {
     path: '/invest', eyebrow: t('Asset classes', "Classes d'actifs"), title,
@@ -33,7 +34,9 @@ function classIndex(ctx, { counts }) {
   </table></div>
   <div class="assets" style="margin-top:40px">${categories.map((c) => parts.classCard(ctx, c))}</div>
 </div></section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
 ${parts.ctaBand(ctx)}`,
+    extraLd: [seo.faqPage(ctx, qa)],
   });
 }
 
@@ -80,6 +83,7 @@ ${parts.ctaBand(ctx)}`;
 // ---------- content pages ----------
 function howItWorks(ctx) {
   const t = ctx.t;
+  const qa = [faq[3], faq[4], faq[10], faq[9]];
   const howTo = {
     '@type': 'HowTo',
     name: t('How to invest in African assets with Invest n Returns', 'Comment investir dans des actifs africains avec Invest n Returns'),
@@ -95,11 +99,11 @@ function howItWorks(ctx) {
   };
   return simple(ctx, {
     path: '/how-it-works', eyebrow: t('How it works', 'Fonctionnement'),
-    title: t('How investing with Invest n Returns works, step by step', 'Comment investir avec Invest n Returns, étape par étape'),
-    h1: t('How it works', 'Comment ça marche'),
+    title: t('How to invest in African assets, step by step', 'Comment investir dans des actifs africains, étape par étape'),
+    h1: t('How investing in African assets works', 'Comment investir dans des actifs africains'),
     lead: t('You open a free account, verify your identity, reserve a share of a vetted project, pay in crypto or cash, and receive income on the schedule you choose, from weekly to yearly. The whole process takes about 15 minutes.', "Vous ouvrez un compte gratuit, vérifiez votre identité, réservez une part d'un projet vérifié, payez en crypto ou en cash, et recevez des revenus selon le rythme choisi, de chaque semaine à chaque année. Le tout prend environ 15 minutes."),
     description: t('Open an account, verify your ID, reserve a project from 500 USD, pay in USDT, BTC or Mobile Money and earn weekly income. Learn how Invest n Returns works.', 'Ouvrez un compte, vérifiez votre identité, réservez un projet dès 500 USD, payez en USDT, BTC ou Mobile Money et percevez des revenus chaque semaine.'),
-    extraLd: [howTo],
+    extraLd: [howTo, seo.faqPage(ctx, qa)],
     body: html`${parts.steps(ctx)}
 <section class="section-tight"><div class="wrap two-col">
   <div class="prose-block">
@@ -115,16 +119,18 @@ function howItWorks(ctx) {
   <div>${parts.riskBox(ctx)}</div>
 </div></section>
 ${parts.calculator(ctx)}
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
 ${parts.ctaBand(ctx)}`,
   });
 }
 
 function security(ctx) {
   const t = ctx.t;
+  const qa = [faq[7], faq[8], faq[10]];
   return simple(ctx, {
     path: '/security', eyebrow: t('Security & risks', 'Sécurité & risques'),
     title: t('How Invest n Returns protects investors: 5 checks, SPVs and escrow', 'Comment Invest n Returns protège les investisseurs : 5 contrôles, SPV et séquestre'),
-    h1: t('How we protect your money', 'Comment nous protégeons votre argent'),
+    h1: t('How we protect your money in African projects', 'Comment nous protégeons votre argent dans les projets africains'),
     lead: t('Every project passes five checks before it goes live, sits in its own company (SPV), and receives funds in stages from escrow against proof of work. Your account is protected by hashed passwords, secure sessions and identity verification.', "Chaque projet passe cinq contrôles avant sa mise en ligne, est logé dans sa propre société (SPV) et reçoit les fonds par étapes depuis un séquestre, sur preuve d'avancement. Votre compte est protégé par des mots de passe chiffrés, des sessions sécurisées et la vérification d'identité."),
     description: t('Five due-diligence checks, one SPV per project, staged escrow releases and identity verification. Read how Invest n Returns protects investors and the risks you should know.', 'Cinq contrôles, une SPV par projet, séquestre par étapes et vérification d’identité. Découvrez comment Invest n Returns protège les investisseurs et les risques à connaître.'),
     body: html`${parts.trust(ctx)}
@@ -139,7 +145,9 @@ function security(ctx) {
     ].map(([h, p]) => html`<div class="feature reveal">${icon('shield', 22)}<h3>${h}</h3><p>${p}</p></div>`)}
   </div>
 </div></section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
 ${parts.ctaBand(ctx)}`,
+    extraLd: [seo.faqPage(ctx, qa)],
   });
 }
 
@@ -147,8 +155,8 @@ function paymentsPage(ctx) {
   const t = ctx.t;
   return simple(ctx, {
     path: '/payments', eyebrow: t('Crypto & cash', 'Crypto & cash'),
-    title: t('Invest with USDT, BTC, ETH, Mobile Money, card or bank transfer', 'Investir en USDT, BTC, ETH, Mobile Money, carte ou virement'),
-    h1: t('Pay in crypto or cash', 'Payez en crypto ou en cash'),
+    title: t('Invest in Africa with USDT, BTC, Mobile Money or bank transfer', 'Investir en Afrique en USDT, BTC, Mobile Money ou virement'),
+    h1: t('Invest in Africa with crypto or cash', 'Investir en Afrique en crypto ou en cash'),
     lead: t('You can fund any project with USDT, USDC, BTC or ETH, or with MTN Mobile Money, Orange Money, Visa/Mastercard or a bank transfer. Payouts and withdrawals go back to the method you choose.', 'Vous pouvez financer tout projet en USDT, USDC, BTC ou ETH, ou via MTN Mobile Money, Orange Money, Visa/Mastercard ou virement. Versements et retraits reviennent sur le moyen de votre choix.'),
     description: t('Fund African investments with USDT (TRC-20/ERC-20), USDC, BTC, ETH, MTN MoMo, Orange Money, card or SWIFT/SEPA. Withdraw within 3 business days.', 'Financez vos investissements en USDT, USDC, BTC, ETH, MTN MoMo, Orange Money, carte ou SWIFT/SEPA. Retraits sous 3 jours ouvrés.'),
     body: html`${parts.payments(ctx)}
@@ -165,18 +173,29 @@ function roadmap(ctx) {
     ['Q3 2027', t('Mining & infrastructure', 'Mines & infrastructures'), [t('Gold, copper, lithium royalties', 'Redevances or, cuivre, lithium'), t('Ports, cold chain, telecom towers', 'Ports, chaîne du froid, pylônes'), t('Auto-invest across sectors', 'Investissement automatique multi-secteurs')]],
     ['Q4 2027', t('Tech, foreign & trading', 'Tech, étranger & revente'), [t('Tech start-up rounds', 'Levées de start-ups tech'), t('Dubai, Lisbon, Paris, Texas property', 'Immobilier Dubaï, Lisbonne, Paris, Texas'), t('Resale market: sell your stake early', 'Marché secondaire : revendez vos parts')]],
   ];
+  const qa = [faq[0], faq[5], faq[6]];
   return simple(ctx, {
     path: '/roadmap', eyebrow: t('Roadmap', 'Feuille de route'),
     title: t('Roadmap: every sector of Africa’s economy, one account', "Feuille de route : tous les secteurs de l'économie africaine"),
     h1: t('Every sector of Africa’s economy, one account', "Tous les secteurs de l'économie africaine, un seul compte"),
     lead: t('We open sectors in waves so each launches with checked projects and local partners on the ground.', 'Nous ouvrons les secteurs par vagues, pour que chacun démarre avec des projets vérifiés et des partenaires locaux.'),
     description: t('See what is coming to Invest n Returns in 2027: real estate and agriculture at launch, then SME loans, energy, mining, infrastructure, tech, foreign property and a resale market.', 'Ce qui arrive sur Invest n Returns en 2027 : immobilier et agriculture au lancement, puis PME, énergie, mines, infrastructures, tech, immobilier étranger et marché secondaire.'),
-    body: html`<section class="section-tight"><div class="wrap"><div class="road">${road.map(([q, h, items], i) => html`<div class="reveal" style="--d:${i * 90}ms"><span class="num">${q}</span><h2 class="h3">${h}</h2><ul>${items.map((x) => html`<li>${x}</li>`)}</ul></div>`)}</div></div></section>${parts.ctaBand(ctx)}`,
+    body: html`<section class="section-tight"><div class="wrap"><div class="road">${road.map(([q, h, items], i) => html`<div class="reveal" style="--d:${i * 90}ms"><span class="num">${q}</span><h2 class="h3">${h}</h2><ul>${items.map((x) => html`<li>${x}</li>`)}</ul></div>`)}</div></div></section><section class="section-tight"><div class="wrap two-col">
+  <div class="prose-block">
+    <h2>${t('How a new sector opens', 'Comment un nouveau secteur ouvre')}</h2>
+    <p class="prose">${t('Each wave starts with local partners on the ground, then a first set of projects that pass our five checks: title or registration, site visit, numbers review, a dedicated company (SPV) and staged escrow. Only then do projects open to verified investors.', 'Chaque vague commence avec des partenaires locaux sur le terrain, puis une première série de projets qui passent nos cinq contrôles : titre ou immatriculation, visite sur site, revue des chiffres, société dédiée (SPV) et séquestre par étapes. Les projets ne s’ouvrent qu’ensuite aux investisseurs vérifiés.')}</p>
+    <p class="prose">${t('Subscribe to the newsletter or open a free account to be told first when a sector opens. Account holders also receive personal proposals from our team.', 'Abonnez-vous à la newsletter ou ouvrez un compte gratuit pour être prévenu en premier de l’ouverture d’un secteur. Les titulaires d’un compte reçoivent aussi des propositions personnelles de notre équipe.')}</p>
+  </div>
+  <div>${parts.faqList(ctx, qa)}</div>
+</div></section>
+${parts.ctaBand(ctx)}`,
+    extraLd: [seo.faqPage(ctx, qa)],
   });
 }
 
 function about(ctx, { stats }) {
   const t = ctx.t;
+  const qa = [faq[0], faq[6], faq[7]];
   return simple(ctx, {
     path: '/about', eyebrow: t('About us', 'À propos'),
     title: t('About Invest n Returns — African real-asset investing from Douala', 'À propos d’Invest n Returns — investir dans les actifs réels africains'),
@@ -208,18 +227,20 @@ function about(ctx, { stats }) {
     </div>
   </div>
 </div></section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
 ${parts.ctaBand(ctx)}`,
+    extraLd: [seo.faqPage(ctx, qa)],
   });
 }
 
 function faqPage(ctx) {
   const t = ctx.t;
   const all = [...faq, ...categories.flatMap((c) => c.faq)];
-  const title = t('Investor FAQ: returns, risks, payments and withdrawals', 'FAQ investisseurs : rendements, risques, paiements et retraits');
+  const title = t('Investing in Africa: FAQ on returns, risks and payouts', 'Investir en Afrique : FAQ rendements, risques et versements');
   const description = t('Answers to the most common questions about investing with Invest n Returns: minimum amount, where returns come from, payouts, crypto and Mobile Money, KYC, fees and risks.', 'Réponses aux questions fréquentes : montant minimum, origine des rendements, versements, crypto et Mobile Money, KYC, frais et risques.');
   return page(ctx, {
     seo: { title, description, path: '/faq', jsonld: [seo.webPage(ctx, { name: title, description, path: '/faq' }), crumbsLd(ctx, [{ name: 'FAQ', url: ctx.u('/faq') }]), seo.faqPage(ctx, all)] },
-    body: html`${parts.pageHero(ctx, { eyebrow: 'FAQ', title: t('Questions investors ask first', "Les questions qu'on nous pose d'abord"), lead: t('Short, direct answers. Still unsure? Write to us and a person will reply within one business day.', 'Des réponses courtes et directes. Un doute ? Écrivez-nous, une personne vous répondra sous un jour ouvré.'), crumbs: [{ name: 'FAQ', url: ctx.u('/faq') }] })}
+    body: html`${parts.pageHero(ctx, { eyebrow: 'FAQ', title: t('Questions about investing in Africa with Invest n Returns', 'Questions sur l’investissement en Afrique avec Invest n Returns'), lead: t('Short, direct answers. Still unsure? Write to us and a person will reply within one business day.', 'Des réponses courtes et directes. Un doute ? Écrivez-nous, une personne vous répondra sous un jour ouvré.'), crumbs: [{ name: 'FAQ', url: ctx.u('/faq') }] })}
 <section class="section-tight"><div class="wrap faq-wrap">
   <h2>${t('General', 'Général')}</h2>
   ${parts.faqList(ctx, faq)}
@@ -231,13 +252,27 @@ function faqPage(ctx) {
 
 function calculatorPage(ctx) {
   const t = ctx.t;
+  const qa = [faq[4], faq[11], faq[2]];
   return simple(ctx, {
     path: '/returns-calculator', eyebrow: t('Calculator', 'Simulateur'),
-    title: t('Investment returns calculator: weekly income and total return', 'Simulateur de rendement : revenu hebdomadaire et rendement total'),
-    h1: t('Returns calculator', 'Simulateur de rendement'),
+    title: t('Africa investment calculator: income in FCFA or USD', 'Simulateur d’investissement en Afrique : revenus en FCFA ou USD'),
+    h1: t('Returns calculator for African investments', 'Simulateur de rendement pour investir en Afrique'),
     lead: t('Total target return grows with the term: 20% over 12 months, 30% over 24, 40% over 36, 50% over 48 and up to 60% over 60 months. Larger amounts add 1 to 4 points through lower fees.', 'Le rendement total cible augmente avec la durée : 20 % sur 12 mois, 30 % sur 24, 40 % sur 36, 50 % sur 48 et jusqu’à 60 % sur 60 mois. Les montants élevés ajoutent 1 à 4 points grâce à des frais réduits.'),
     description: t('Estimate your weekly income and total return on African real-asset investments by amount, currency and term. Free calculator with tier bonuses.', 'Estimez votre revenu hebdomadaire et votre rendement total selon le montant, la devise et la durée. Simulateur gratuit avec bonus de palier.'),
-    body: html`${parts.calculator(ctx)}${parts.ctaBand(ctx)}`,
+    extraLd: [seo.faqPage(ctx, qa)],
+    body: html`${parts.calculator(ctx)}
+<section class="section-tight"><div class="wrap">
+  <h2>${t('Worked example: 1 000 000 FCFA invested', 'Exemple : 1 000 000 FCFA investis')}</h2>
+  <p class="prose answer">${t('In short: at a 15% target return, 1 000 000 FCFA (about 1 667 USD) earns about 12 500 FCFA a month, 37 500 FCFA a quarter or 150 000 FCFA a year, before any loss. You choose how often you are paid.', 'En bref : avec un rendement cible de 15 %, 1 000 000 FCFA (environ 1 667 USD) rapportent environ 12 500 FCFA par mois, 37 500 FCFA par trimestre ou 150 000 FCFA par an, hors pertes éventuelles. Vous choisissez la fréquence des versements.')}</p>
+  <div class="table-scroll"><table class="compare">
+    <caption class="sr">${t('Income on 1 000 000 FCFA by target return and payout schedule', 'Revenus sur 1 000 000 FCFA selon le rendement cible et la fréquence')}</caption>
+    <thead><tr><th scope="col">${t('Target return / year', 'Rendement cible / an')}</th><th scope="col">${t('Every week', 'Chaque semaine')}</th><th scope="col">${t('Every month', 'Chaque mois')}</th><th scope="col">${t('Every 3 months', 'Tous les 3 mois')}</th><th scope="col">${t('Every year', 'Chaque année')}</th></tr></thead>
+    <tbody>${[8, 12, 15, 19, 25].map((r) => html`<tr><th scope="row" class="num hl">${ctx.f.pct(r)}</th><td class="num">${ctx.f.int(1e6 * r / 100 / 52)} FCFA</td><td class="num">${ctx.f.int(1e6 * r / 100 / 12)} FCFA</td><td class="num">${ctx.f.int(1e6 * r / 100 / 4)} FCFA</td><td class="num">${ctx.f.int(1e6 * r / 100)} FCFA</td></tr>`)}</tbody>
+  </table></div>
+  <p class="fine-sm">${t('Indicative: 1 USD ≈ 600 FCFA. Rates shown are examples from projects on the platform (8% rental property to 25% mining royalty). Targets are not guaranteed and you can lose capital.', 'Indicatif : 1 USD ≈ 600 FCFA. Taux donnés à titre d’exemple d’après les projets de la plateforme (8 % immobilier locatif à 25 % redevance minière). Objectifs non garantis ; vous pouvez perdre du capital.')}</p>
+</div></section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
+${parts.ctaBand(ctx)}`,
   });
 }
 
@@ -245,7 +280,7 @@ function contact(ctx, { values = {}, error, sent }) {
   const t = ctx.t;
   return simple(ctx, {
     path: '/contact', eyebrow: 'Contact',
-    title: t('Contact Invest n Returns', 'Contacter Invest n Returns'),
+    title: t('Contact Invest n Returns — investor support, Douala', 'Contacter Invest n Returns — support investisseurs, Douala'),
     h1: t('Talk to a person', 'Parlez à une personne'),
     lead: t('Questions about a project, payments or your account? Write to us. We reply in English or French within one business day.', 'Une question sur un projet, un paiement ou votre compte ? Écrivez-nous. Réponse en français ou en anglais sous un jour ouvré.'),
     description: t('Contact the Invest n Returns team in Douala by email or form. Answers within one business day, in English or French.', "Contactez l'équipe Invest n Returns à Douala. Réponse sous un jour ouvré, en français ou en anglais."),
@@ -282,6 +317,11 @@ function submitProject(ctx, { values = {}, error, sent }) {
   const t = ctx.t;
   const types = ['Real estate', 'Agriculture', 'Working company', 'Tech company', 'Mining', 'Energy', 'Infrastructure', 'Property abroad'];
   const typesFr = ['Immobilier', 'Agriculture', 'Entreprise', 'Entreprise tech', 'Mines', 'Énergie', 'Infrastructures', 'Immobilier à l’étranger'];
+  const qa = [
+    { q: { en: 'How long until I hear back about my project?', fr: 'Sous quel délai ai-je une réponse ?' }, a: { en: 'Our team replies within 5 business days. If the project fits, we schedule a site visit and a review of your numbers.', fr: 'Notre équipe répond sous 5 jours ouvrés. Si le projet correspond, nous planifions une visite sur site et une revue de vos chiffres.' } },
+    { q: { en: 'Which projects does Invest n Returns finance?', fr: 'Quels projets Invest n Returns finance-t-il ?' }, a: { en: 'Rental property with a land title, farms with a signed buyer, SMEs with two years of accounts, licensed mines, energy and infrastructure with long contracts, and tech start-ups with revenue.', fr: 'Immobilier locatif avec titre foncier, exploitations avec acheteur sous contrat, PME avec deux ans de comptes, mines agréées, énergie et infrastructures sous contrat long, et start-ups tech avec chiffre d’affaires.' } },
+    { q: { en: 'How are the funds released to my project?', fr: 'Comment les fonds sont-ils versés à mon projet ?' }, a: { en: 'Your project gets its own company (SPV) and funds are released in stages from escrow against proof of work, such as invoices, photos or site reports.', fr: 'Votre projet reçoit sa propre société (SPV) et les fonds sont libérés par étapes depuis un séquestre, sur preuve d’avancement : factures, photos ou rapports de site.' } },
+  ];
   return simple(ctx, {
     path: '/submit-project', eyebrow: t('For project owners', 'Porteurs de projet'),
     title: t('Get your project funded by investors across Africa and the diaspora', 'Faites financer votre projet par des investisseurs d’Afrique et de la diaspora'),
@@ -289,6 +329,7 @@ function submitProject(ctx, { values = {}, error, sent }) {
     lead: t('We fund property, farms with a buyer, profitable SMEs, tech start-ups with revenue, licensed mines, energy and infrastructure. Tell us about your project; our team replies within 5 business days.', "Nous finançons immobilier, exploitations avec acheteur, PME rentables, start-ups avec chiffre d'affaires, mines agréées, énergie et infrastructures. Présentez votre projet ; notre équipe répond sous 5 jours ouvrés."),
     description: t('Raise capital for your real estate, farm, SME, mine, energy or infrastructure project from investors in Africa and the diaspora. Submit your project in 5 minutes.', 'Levez des fonds pour votre projet immobilier, agricole, PME, minier, énergie ou infrastructure. Soumettez votre projet en 5 minutes.'),
     crumb: t('Submit a project', 'Soumettre un projet'),
+    extraLd: [seo.faqPage(ctx, qa)],
     body: html`
 <section class="section-tight"><div class="wrap">
   <div class="form-shell reveal">
@@ -308,7 +349,27 @@ function submitProject(ctx, { values = {}, error, sent }) {
       <div class="form-actions"><button class="btn btn-gold" type="submit">${t('Submit my project', 'Soumettre mon projet')}</button></div>
     </form>`}
   </div>
-</div></section>`,
+</div></section>
+<section class="section-tight"><div class="wrap two-col">
+  <div class="prose-block">
+    <h2>${t('What we finance', 'Ce que nous finançons')}</h2>
+    <ul class="ticks">
+      <li>${icon('check', 16)} ${t('Rental buildings and plots with a land title (titre foncier)', 'Immeubles locatifs et terrains avec titre foncier')}</li>
+      <li>${icon('check', 16)} ${t('Farms and processing units with a signed buyer (off-taker)', 'Exploitations et unités de transformation avec acheteur sous contrat')}</li>
+      <li>${icon('check', 16)} ${t('SMEs with at least two years of accounts (RCCM registered)', 'PME avec au moins deux ans de comptes (immatriculées au RCCM)')}</li>
+      <li>${icon('check', 16)} ${t('Licensed mines, energy and infrastructure with long-term customers', 'Mines agréées, énergie et infrastructures avec clients sous contrat long')}</li>
+      <li>${icon('check', 16)} ${t('Tech start-ups that already earn revenue', 'Start-ups tech qui génèrent déjà du chiffre d’affaires')}</li>
+    </ul>
+  </div>
+  <div class="prose-block">
+    <h2>${t('Documents to prepare', 'Documents à préparer')}</h2>
+    <p class="prose">${t('You do not need them to submit, but having them ready speeds up our review: land title, lease or RCCM registration; the last two years of accounts or a budget; any signed sales contracts; photos of the site; and the ID of the managers.', 'Ils ne sont pas obligatoires pour soumettre, mais les avoir accélère notre analyse : titre foncier, bail ou immatriculation RCCM ; les deux derniers exercices comptables ou un budget ; les contrats de vente signés ; des photos du site ; et la pièce d’identité des dirigeants.')}</p>
+    <h2>${t('What happens next', 'La suite')}</h2>
+    <p class="prose">${t('We reply within 5 business days. If the project fits, we visit the site, review the numbers and set up a dedicated company (SPV). Funds are released in stages against proof of work.', 'Nous répondons sous 5 jours ouvrés. Si le projet correspond, nous visitons le site, analysons les chiffres et créons une société dédiée (SPV). Les fonds sont libérés par étapes sur preuve d’avancement.')}</p>
+  </div>
+</div></section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Frequently asked questions', 'Questions fréquentes')}</h2>${parts.faqList(ctx, qa)}</div></section>
+`,
   });
 }
 

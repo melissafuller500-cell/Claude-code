@@ -7,9 +7,11 @@ const parts = require('./parts');
 const categories = require('../../data/categories');
 const { countries, payoutFreq, payMethods, payoutSchedules } = require('../../data/catalog');
 const config = require('../../config');
+const faq = require('../../data/faq');
 
 function list(ctx, { items, filters, saved, countryOptions }) {
   const t = ctx.t;
+  const qa = [faq[2], faq[3], faq[4], faq[5]];
   const cat = categories.find((c) => c.code === filters.category);
   const title = cat ? t(`${cat.name.en} projects open for investment`, `Projets ${cat.name.fr.toLowerCase()} ouverts à l'investissement`) : t('Investment projects in Africa', "Projets d'investissement en Afrique");
   const description = t(
@@ -57,6 +59,7 @@ ${parts.pageHero(ctx, {
     <p class="sample-note">${t('Projects shown are illustrative while the platform is in pre-launch. Live projects open to verified investors.', 'Les projets affichés sont illustratifs pendant la phase de pré-lancement. Les projets réels s’ouvrent aux investisseurs vérifiés.')}</p>
   </div>
 </section>
+<section class="section-tight"><div class="wrap faq-wrap"><h2>${t('Before you invest', 'Avant d’investir')}</h2>${parts.faqList(ctx, qa)}</div></section>
 ${parts.ctaBand(ctx)}`;
 
   return page(ctx, {
@@ -66,6 +69,7 @@ ${parts.ctaBand(ctx)}`;
         seo.webPage(ctx, { name: title, description, path: '/assets', type: 'CollectionPage' }),
         seo.breadcrumbs(ctx, [{ name: t('Home', 'Accueil'), url: ctx.u('/') }, { name: t('Projects', 'Projets'), url: ctx.u('/assets') }]),
         seo.itemList(ctx, items, title),
+        seo.faqPage(ctx, qa),
       ],
     },
     body,
@@ -76,10 +80,12 @@ function detail(ctx, { a, saved, related, myReservations }) {
   const t = ctx.t;
   const name = t(a.title_en, a.title_fr);
   const loc = `${a.city}, ${t.o(countries[a.country_code]) || a.country_code}`;
-  const title = t(`${a.title_en} in ${a.city} — ${a.target_rate ? a.target_rate + '% target return' : a.target_multiple + '× target'}`, `${a.title_fr} à ${a.city} — ${a.target_rate ? 'rendement cible ' + a.target_rate + ' %' : 'cible ' + a.target_multiple + '×'}`);
+  const target = (fr) => (a.target_rate ? (fr ? `${a.target_rate} %/an visés` : `${a.target_rate}%/yr target`) : `${a.target_multiple}× ${fr ? 'visé' : 'target'}`);
+  const title = t(`${a.title_en}, ${a.city} — ${target(false)}`, `${a.title_fr}, ${a.city} — ${target(true)}`);
+  // Keep under 160 characters: the most useful facts first.
   const description = t(
-    `${a.title_en} (${loc}): ${a.cat.name.en.toLowerCase()} project with a ${a.target_rate ? a.target_rate + '% annual target' : a.target_multiple + '× target multiple'}, ${a.term_months}-month term, ${a.yield_based ? 'weekly-to-yearly payouts (your choice)' : 'payout at exit'} and risk ${a.risk}/5. Reserve from ${a.min_usd} USD.`,
-    `${a.title_fr} (${loc}) : projet ${a.cat.name.fr.toLowerCase()} avec ${a.target_rate ? 'un rendement cible de ' + a.target_rate + ' % par an' : 'un multiple cible de ' + a.target_multiple + '×'}, durée ${a.term_months} mois, ${a.yield_based ? 'versements au choix (hebdo à annuel)' : 'gain à la sortie'} et risque ${a.risk}/5. Réservez dès ${a.min_usd} USD.`
+    `Invest in ${a.title_en} (${loc}): ${target(false)}, ${a.term_months} months, risk ${a.risk}/5. From ${a.min_usd} USD in USDT or Mobile Money.`,
+    `Investissez dans ${a.title_fr} (${loc}) : ${target(true)}, ${a.term_months} mois, risque ${a.risk}/5. Dès ${a.min_usd} USD en USDT ou Mobile Money.`
   );
   const weekly = a.target_rate ? (1000 * a.target_rate) / 100 / 52 : 0;
   const facts = [
@@ -98,6 +104,9 @@ function detail(ctx, { a, saved, related, myReservations }) {
         <span class="chip ${a.category}">${a.cat.emoji} ${t.o(a.cat.name)}</span>
         <h1>${name}</h1>
         <p class="loc">${icon('pin', 16)} ${loc}${a.region ? ` · ${a.region}` : ''}</p>
+        <p class="answer hero-answer">${a.yield_based
+          ? t(`In short: ${a.target_rate}% a year target over ${a.term_months} months, from ${a.min_usd} USD, risk ${a.risk}/5. You choose to be paid weekly, monthly, quarterly, half-yearly or yearly.`, `En bref : ${a.target_rate} % par an visés sur ${a.term_months} mois, dès ${a.min_usd} USD, risque ${a.risk}/5. Versements au choix : hebdomadaires, mensuels, trimestriels, semestriels ou annuels.`)
+          : t(`In short: ${a.target_multiple}× target on capital at exit (about ${Math.round(a.term_months / 12)} years), from ${a.min_usd} USD, risk ${a.risk}/5 — high risk.`, `En bref : ${a.target_multiple}× le capital visé à la sortie (environ ${Math.round(a.term_months / 12)} ans), dès ${a.min_usd} USD, risque ${a.risk}/5 — risque élevé.`)}</p>
       </div>
       ${ctx.user ? html`<button type="button" class="save-btn big${saved ? ' on' : ''}" data-save="${a.slug}" aria-pressed="${saved ? 'true' : 'false'}" aria-label="${t('Save to watchlist', 'Ajouter aux favoris')}">${icon('heart', 20)} <span>${saved ? t('Saved', 'Enregistré') : t('Save', 'Enregistrer')}</span></button>` : ''}
     </div>

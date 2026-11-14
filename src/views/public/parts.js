@@ -4,10 +4,10 @@ const { html, raw } = require('../../html');
 const { icon, photoImg } = require('../components');
 const { countries } = require('../../data/catalog');
 
-function pageHero(ctx, { eyebrow, title, lead, crumbs = [], children = '', photo }) {
+function pageHero(ctx, { eyebrow, title, lead, crumbs = [], children = '', photo, photoAlt }) {
   return html`
 <section class="page-hero${photo ? ' with-photo' : ''}">
-  ${photo ? html`<div class="asset-cover has-photo">${photoImg(photo, '', { eager: true, sizes: '100vw' })}</div>` : ''}
+  ${photo ? html`<div class="asset-cover has-photo">${photoImg(photo, photoAlt || title, { eager: true, sizes: '100vw' })}</div>` : ''}
   <div class="aurora soft" aria-hidden="true"><i></i><i></i></div>
   <div class="wrap">
     ${crumbs.length ? breadcrumbsNav(ctx, crumbs) : ''}

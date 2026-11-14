@@ -6,12 +6,31 @@ const config = require('./config');
 const ORG_ID = `${config.siteUrl}/#organization`;
 const SITE_ID = `${config.siteUrl}/#website`;
 
+// Cut text at a word boundary so it fits `max` characters (search engines truncate beyond ~65 / ~160).
+function clamp(text, max) {
+  const s = String(text || '').replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max - 1);
+  const sentence = cut.lastIndexOf('. ');
+  if (sentence > max * 0.6) return cut.slice(0, sentence + 1);
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[\s,;:—-]+$/, '') + '…';
+}
+
+// Title: add the brand only when it still fits in 65 characters.
+function pageTitle(title) {
+  const brand = config.brand.name;
+  if (title.includes(brand)) return clamp(title, 65);
+  const withBrand = `${title} | ${brand}`;
+  return withBrand.length <= 65 ? withBrand : clamp(title, 65);
+}
+
 function head(ctx, { title, description, path = ctx.path, type = 'website', image, noindex = false, jsonld = [], localized = true, keywords }) {
   const site = config.siteUrl;
   const enUrl = site + (path === '/' ? '/' : path);
   const frUrl = site + (path === '/' ? '/fr/' : '/fr' + path);
   const canonical = localized && ctx.lang === 'fr' ? frUrl : enUrl;
-  const fullTitle = title.includes(config.brand.name) ? title : `${title} | ${config.brand.name}`;
+  const fullTitle = pageTitle(title);
+  description = clamp(description, 160);
   const img = image || `${site}/img/og-image.jpg`;
   const graph = [organization(), website(ctx), ...jsonld].filter(Boolean);
   return html`

@@ -4,7 +4,7 @@ const seo = require('../seo');
 const { icon, logoMark, flash, csrfField } = require('./components');
 const categories = require('../data/categories');
 
-const ASSET_V = "2";
+const ASSET_V = "3";
 
 function docHead(ctx, headMarkup, extraCss = []) {
   return html`<!DOCTYPE html>

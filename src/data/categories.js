@@ -15,12 +15,12 @@ module.exports = [
     target: { en: '8–12 % / year', fr: '8–12 % / an' },
     body: {
       en: [
-        'African cities are growing faster than anywhere else on earth, and housing supply has not kept up. That gap keeps occupancy high and rents rising in districts like Bonamoussadi in Douala, Cocody and the Plateau in Abidjan, and Molyko in Buea.',
+        'African cities are among the fastest-growing in the world (UN-Habitat), and housing supply has not kept up. That gap keeps occupancy high and rents rising in districts like Bonamoussadi in Douala, Cocody and the Plateau in Abidjan, and Molyko in Buea.',
         'Each property sits in its own special-purpose company (SPV). Investors own shares of that company in proportion to what they put in. Net rent, after maintenance, insurance and management, is distributed every quarter. When the property is sold at the end of the term, the net gain is shared the same way.',
         'Before a building is listed we verify the land title (titre foncier), visit the site, review the rent roll and set the target return from real lease data.',
       ],
       fr: [
-        "Les villes africaines croissent plus vite que partout ailleurs, et l'offre de logements ne suit pas. Ce déficit maintient l'occupation élevée et les loyers en hausse dans des quartiers comme Bonamoussadi à Douala, Cocody et le Plateau à Abidjan, ou Molyko à Buea.",
+        "Les villes africaines comptent parmi celles qui croissent le plus vite au monde (ONU-Habitat), et l'offre de logements ne suit pas. Ce déficit maintient l'occupation élevée et les loyers en hausse dans des quartiers comme Bonamoussadi à Douala, Cocody et le Plateau à Abidjan, ou Molyko à Buea.",
         "Chaque bien est logé dans sa propre société (SPV). Les investisseurs détiennent des parts de cette société au prorata de leur apport. Le loyer net, après entretien, assurance et gestion, est distribué chaque trimestre. À la revente en fin de durée, la plus-value nette est partagée de la même façon.",
         "Avant toute mise en ligne, nous vérifions le titre foncier, visitons le site, analysons l'état locatif et fixons le rendement cible à partir des baux réels.",
       ],
@@ -46,12 +46,12 @@ module.exports = [
     target: { en: '12–18 % / year', fr: '12–18 % / an' },
     body: {
       en: [
-        'Agriculture employs more than half of Africa\'s workforce, yet most farms cannot get bank credit for seed, feed or equipment. Investors fill that gap and share in the harvest.',
+        'Agriculture employs around half of the workforce in sub-Saharan Africa (World Bank and ILO estimates), yet most farms cannot get bank credit for seed, feed or equipment. Investors fill that gap and share in the harvest.',
         'We only list farms that already have a signed purchase contract (an off-taker) for the crop, so the sale price and the buyer are known before you invest. Funds are released in stages against proof of planting, growth and harvest.',
         'Weather, disease and price are real risks. Diversify across crops and regions, and favour cycles with insurance where available.',
       ],
       fr: [
-        "L'agriculture emploie plus de la moitié des actifs africains, mais la plupart des exploitations n'obtiennent pas de crédit bancaire pour les semences, l'aliment ou l'équipement. Les investisseurs comblent ce manque et partagent la récolte.",
+        "L'agriculture emploie environ la moitié des actifs en Afrique subsaharienne (estimations Banque mondiale et OIT), mais la plupart des exploitations n'obtiennent pas de crédit bancaire pour les semences, l'aliment ou l'équipement. Les investisseurs comblent ce manque et partagent la récolte.",
         "Nous ne listons que des exploitations disposant d'un contrat d'achat signé pour la récolte : le prix et l'acheteur sont connus avant votre investissement. Les fonds sont libérés par étapes sur preuve de plantation, de croissance et de récolte.",
         "Météo, maladies et prix sont des risques réels. Diversifiez cultures et régions, et privilégiez les cycles assurés lorsque c'est possible.",
       ],
@@ -104,11 +104,11 @@ module.exports = [
     target: { en: '2–5× capital · high risk', fr: '2–5× le capital · risque élevé' },
     body: {
       en: [
-        'African start-ups raised billions in the last decade, but most of that capital came from abroad. We let investors on the continent and in the diaspora own a piece of the companies building Africa\'s digital economy.',
+        'African start-ups raised several billion dollars a year in recent years (Partech Africa reports), but most of that capital came from abroad. We let investors on the continent and in the diaspora own a piece of the companies building Africa\'s digital economy.',
         'This is the highest-risk asset class on the platform. Many start-ups fail. There are no weekly payouts: returns arrive only at exit, often after several years. Keep tech to a small slice of your portfolio.',
       ],
       fr: [
-        "Les start-ups africaines ont levé des milliards en dix ans, mais l'essentiel venait de l'étranger. Nous permettons aux investisseurs du continent et de la diaspora de détenir une part des entreprises qui construisent l'économie numérique africaine.",
+        "Les start-ups africaines ont levé plusieurs milliards de dollars par an ces dernières années (rapports Partech Africa), mais l'essentiel venait de l'étranger. Nous permettons aux investisseurs du continent et de la diaspora de détenir une part des entreprises qui construisent l'économie numérique africaine.",
         "C'est la classe d'actifs la plus risquée de la plateforme. Beaucoup de start-ups échouent. Pas de versements hebdomadaires : le rendement n'arrive qu'à la sortie, souvent après plusieurs années. Gardez la tech pour une petite part du portefeuille.",
       ],
     },
@@ -158,11 +158,11 @@ module.exports = [
     target: { en: '18–25 % / year', fr: '18–25 % / an' },
     body: {
       en: [
-        'Africa holds a large share of the world\'s gold, copper, cobalt and lithium. Licensed small and mid-size mines need equipment and working capital that banks rarely provide.',
+        'Africa holds a large share of the world\'s gold, copper, cobalt and lithium (USGS Mineral Commodity Summaries). Licensed small and mid-size mines need equipment and working capital that banks rarely provide.',
         'A royalty pays you a fixed share of revenue on every ounce or tonne sold, without owning the mine. Royalties pay from the first sale and are senior to equity. We list only licensed operations with environmental permits and independent resource estimates.',
       ],
       fr: [
-        "L'Afrique détient une grande part de l'or, du cuivre, du cobalt et du lithium mondiaux. Les mines agréées de petite et moyenne taille ont besoin d'équipement et de fonds de roulement que les banques financent rarement.",
+        "L'Afrique détient une grande part de l'or, du cuivre, du cobalt et du lithium mondiaux (USGS, Mineral Commodity Summaries). Les mines agréées de petite et moyenne taille ont besoin d'équipement et de fonds de roulement que les banques financent rarement.",
         "Une redevance vous verse une part fixe du chiffre d'affaires sur chaque once ou tonne vendue, sans détenir la mine. Elle paie dès la première vente et passe avant les actionnaires. Nous ne listons que des exploitations agréées, avec permis environnemental et estimation indépendante des ressources.",
       ],
     },
@@ -185,11 +185,11 @@ module.exports = [
     target: { en: '12–19 % / year', fr: '12–19 % / an' },
     body: {
       en: [
-        'Around 600 million Africans still lack reliable electricity. Solar mini-grids and pay-as-you-go kits sell power by the day, which turns into steady, predictable cash flow.',
+        'Around 600 million people in Africa still lack access to electricity (IEA, Africa Energy Outlook 2022). Solar mini-grids and pay-as-you-go kits sell power by the day, which turns into steady, predictable cash flow.',
         'Fuel and LPG depots sell essential products with daily turnover. Both models fit weekly payouts naturally because customers pay every day.',
       ],
       fr: [
-        "Environ 600 millions d'Africains n'ont toujours pas d'électricité fiable. Mini-réseaux solaires et kits prépayés vendent l'énergie au jour le jour, ce qui crée des flux réguliers et prévisibles.",
+        "Environ 600 millions de personnes en Afrique n'ont toujours pas accès à l'électricité (AIE, Africa Energy Outlook 2022). Mini-réseaux solaires et kits prépayés vendent l'énergie au jour le jour, ce qui crée des flux réguliers et prévisibles.",
         "Les dépôts de carburant et de gaz vendent des produits essentiels avec une rotation quotidienne. Les deux modèles se prêtent naturellement aux versements hebdomadaires.",
       ],
     },
@@ -212,11 +212,11 @@ module.exports = [
     target: { en: '10–19 % / year', fr: '10–19 % / an' },
     body: {
       en: [
-        'Africa needs an estimated 100 billion dollars a year of new infrastructure. Mid-size assets such as warehouses, towers, clinics and hotels are too small for big funds and too large for local banks.',
+        'The African Development Bank estimates Africa\'s infrastructure financing gap at 68 to 108 billion USD a year (AfDB, African Economic Outlook 2018). Mid-size assets such as warehouses, towers, clinics and hotels are too small for big funds and too large for local banks.',
         'These assets earn from long contracts with creditworthy tenants (logistics firms, mobile operators, hospitals), which makes their income steady and easy to forecast.',
       ],
       fr: [
-        "L'Afrique a besoin d'environ 100 milliards de dollars d'infrastructures nouvelles par an. Les actifs de taille moyenne (entrepôts, pylônes, cliniques, hôtels) sont trop petits pour les grands fonds et trop gros pour les banques locales.",
+        "La Banque africaine de développement estime le déficit de financement des infrastructures africaines entre 68 et 108 milliards USD par an (BAD, Perspectives économiques en Afrique 2018). Les actifs de taille moyenne (entrepôts, pylônes, cliniques, hôtels) sont trop petits pour les grands fonds et trop gros pour les banques locales.",
         "Ces actifs perçoivent des revenus de contrats longs avec des locataires solvables (logisticiens, opérateurs mobiles, hôpitaux), ce qui rend leurs revenus réguliers et prévisibles.",
       ],
     },

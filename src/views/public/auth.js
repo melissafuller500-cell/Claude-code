@@ -4,10 +4,10 @@ const { authPage } = require('../layout');
 const { csrfField, icon } = require('../components');
 const { countries } = require('../../data/catalog');
 
-function shell(ctx, { title, sub, form, aside = true }) {
+function shell(ctx, { title, sub, form, aside = true, seoTitle, seoDesc }) {
   const t = ctx.t;
   return authPage(ctx, {
-    title, description: sub,
+    title: seoTitle || title, description: seoDesc || sub,
     body: html`
 <div class="auth-wrap">
   <section class="auth-card glass-light reveal">
@@ -36,6 +36,8 @@ function login(ctx, { error, email = '', next = '', showDemo = false }) {
   const t = ctx.t;
   return shell(ctx, {
     title: t('Welcome back', 'Bon retour'),
+    seoTitle: t('Log in to your investor account', 'Connexion à votre compte investisseur'),
+    seoDesc: t('Log in to your Invest n Returns account to follow your portfolio, payouts, reservations and messages from our team.', 'Connectez-vous à votre compte Invest n Returns pour suivre votre portefeuille, vos versements, réservations et messages.'),
     sub: t('Log in to see your portfolio, payouts and reservations.', 'Connectez-vous pour voir votre portefeuille, vos versements et réservations.'),
     form: html`<form method="post" action="${ctx.u('/login')}" class="stack" data-validate novalidate>
       ${csrfField(ctx)}<input type="hidden" name="next" value="${next}">
@@ -58,6 +60,7 @@ function register(ctx, { error, values = {}, next = '' }) {
   const sel = (a, b) => (a === b ? raw('selected') : '');
   return shell(ctx, {
     title: t('Open your free account', 'Ouvrez votre compte gratuit'),
+    seoDesc: t('Open a free Invest n Returns account in two minutes and invest from 500 USD in African real assets, paid weekly to yearly.', 'Ouvrez un compte Invest n Returns gratuit en deux minutes et investissez dès 500 USD dans des actifs réels africains.'),
     sub: t('Two minutes. No fee. You can verify your identity afterwards.', 'Deux minutes. Sans frais. Vous vérifierez votre identité ensuite.'),
     form: html`<form method="post" action="${ctx.u('/register')}" class="stack" data-validate novalidate>
       ${csrfField(ctx)}<input type="hidden" name="next" value="${next}">
@@ -83,6 +86,7 @@ function forgot(ctx, { sent, error }) {
   const t = ctx.t;
   return shell(ctx, {
     title: t('Reset your password', 'Réinitialiser le mot de passe'),
+    seoDesc: t('Reset your Invest n Returns password: enter your email and we send a secure link that stays valid for one hour.', 'Réinitialisez votre mot de passe Invest n Returns : saisissez votre email, nous envoyons un lien sécurisé valable une heure.'),
     sub: t('Enter your email and we will send you a reset link valid for one hour.', 'Saisissez votre email, nous vous enverrons un lien valable une heure.'),
     aside: false,
     form: sent

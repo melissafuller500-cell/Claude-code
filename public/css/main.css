@@ -569,3 +569,7 @@ textarea{min-height:96px;resize:vertical}
 .freq-pills input:checked+span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .freq-pills input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
 .lbl{font-size:.86rem;font-weight:500}
+
+.hero-answer{color:var(--vault-text);max-width:64ch;margin-top:10px;font-size:1.02rem;opacity:.92}
+.main-nav a{white-space:nowrap;padding:8px 10px}
+@media (max-width:1240px){.main-nav{display:none}.menu-btn{display:inline-grid}.nav-tools{margin-left:auto}}
