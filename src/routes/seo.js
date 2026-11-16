@@ -130,7 +130,7 @@ router.get('/llms-full.txt', (req, res) => res.type('text/plain; charset=utf-8')
 router.get('/manifest.webmanifest', (req, res) => {
   res.type('application/manifest+json').send(JSON.stringify({
     name: 'Invest n Returns', short_name: 'InvestNR', start_url: '/dashboard', display: 'standalone',
-    background_color: '#10221d', theme_color: '#10221d', description: "Invest in Africa's top assets and get paid weekly.",
+    background_color: '#10221d', theme_color: '#10221d', description: "Invest in Africa's real assets and get paid weekly.",
     icons: [{ src: '/img/logo-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }, { src: '/img/favicon.svg', sizes: 'any', type: 'image/svg+xml' }],
   }));
 });

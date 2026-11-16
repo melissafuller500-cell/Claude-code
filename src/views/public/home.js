@@ -9,7 +9,7 @@ const categories = require('../../data/categories');
 
 module.exports = function home(ctx, { featured, simAssets, stats, saved }) {
   const t = ctx.t;
-  const title = t("Invest in Africa's top assets, get paid weekly", "Investir dans les meilleurs actifs d'Afrique, payé chaque semaine");
+  const title = t("Invest in Africa's real assets, get paid weekly", "Investir dans les actifs réels d'Afrique, payé chaque semaine");
   const description = t(
     'Invest from 500 USD in vetted African real estate, farms, SME loans, mining royalties, solar energy, infrastructure and tech start-ups. Pay in USDT, BTC or Mobile Money. Weekly income, full reporting.',
     "Investissez dès 500 USD dans l'immobilier, l'agriculture, les PME, les mines, l'énergie solaire, les infrastructures et la tech en Afrique. Payez en USDT, BTC ou Mobile Money. Revenus hebdomadaires, reporting complet."
@@ -24,8 +24,8 @@ module.exports = function home(ctx, { featured, simAssets, stats, saved }) {
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow reveal">${t("Africa's top assets · one platform", "Les meilleurs actifs d'Afrique · une plateforme")}</p>
-        <h1 class="reveal">${t('Get paid ', 'Soyez payé ')}<em class="shine">${t('every week', 'chaque semaine')}</em>${t(" from Africa's top assets.", " par les meilleurs actifs d'Afrique.")}</h1>
+        <p class="eyebrow reveal">${t("Africa's real assets · one platform", "Les actifs réels d'Afrique · une plateforme")}</p>
+        <h1 class="reveal">${t('Get paid ', 'Soyez payé ')}<em class="shine">${t('every week', 'chaque semaine')}</em>${t(" from Africa's real assets.", " par les actifs réels d'Afrique.")}</h1>
         <p class="lead reveal">${t('Property, farms, mining, energy, infrastructure, working companies and tech across Africa, plus hard-currency assets abroad. Invest in crypto or cash from 500 USD. Get paid every week, month, 3 months, 6 months or year — you choose — and watch your income grow in real time.', "Immobilier, agriculture, mines, énergie, infrastructures, entreprises et tech à travers l'Afrique, plus des actifs en devises fortes. Investissez en crypto ou en cash dès 500 USD. Soyez payé chaque semaine, mois, trimestre, semestre ou année — au choix — et suivez vos revenus en temps réel.")}</p>
         <div class="ctas reveal">
           <a class="btn btn-gold btn-lg magnetic" href="${ctx.user ? ctx.u('/assets') : ctx.u('/register')}">${ctx.user ? t('Reserve an asset', 'Réserver un actif') : t('Open my free account', 'Ouvrir mon compte gratuit')} ${icon('arrow', 18)}</a>

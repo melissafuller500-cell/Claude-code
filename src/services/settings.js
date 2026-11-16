@@ -93,7 +93,7 @@ const SCHEMA = [
   ] },
   { id: 'seo', title: 'Analytics & search engines', help: 'Paste only the IDs. Scripts load on public pages only, never in the dashboard or admin.', fields: [
     { key: 'ga4_id', label: 'Google Analytics 4 ID', type: 'text', def: '', pattern: /^G-[A-Z0-9]{4,12}$/, help: 'Format G-XXXXXXX' },
-    { key: 'gtm_id', label: 'Google Tag Manager ID', type: 'text', def: '', pattern: /^GTM-[A-Z0-9]{4,10}$/, help: 'Format GTM-XXXXXX' },
+    { key: 'gtm_id', label: 'Google Tag Manager ID', type: 'text', def: 'GTM-5H3TS84D', pattern: /^GTM-[A-Z0-9]{4,10}$/, help: 'Format GTM-XXXXXX. Loaded first in <head> on every public page.' },
     { key: 'meta_pixel_id', label: 'Meta (Facebook) Pixel ID', type: 'text', def: '', pattern: /^\d{8,20}$/ },
     { key: 'google_verification', label: 'Google Search Console verification code', type: 'text', def: '', pattern: /^[A-Za-z0-9_-]{10,100}$/, help: 'Only the content="…" value of the meta tag' },
     { key: 'bing_verification', label: 'Bing Webmaster verification code', type: 'text', def: '', pattern: /^[A-Za-z0-9]{10,64}$/ },

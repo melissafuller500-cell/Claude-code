@@ -389,6 +389,9 @@ test('52 projects, 16-section project page, country and office pages', async () 
   assert.match(off.text, /Kigali City Tower/);
   assert.match(off.text, /"FinancialService"/);
   const home = await c.req('/');
+  assert.match(home.text, /<head>\s*<meta charset="utf-8">\s*<script src="\/js\/analytics\.js[^"]*" data-ga4="" data-gtm="GTM-5H3TS84D"/, 'GTM loads first in <head>');
+  assert.match(home.text, /googletagmanager\.com\/ns\.html\?id=GTM-5H3TS84D/, 'GTM noscript after <body>');
+  assert.match(home.text, /Africa&#39;s real assets/);
   assert.match(home.text, /1389 Bd de la Liberté/);
   assert.match(home.text, /120 Wall Street/);
   assert.match(home.text, /class="has-sub/);

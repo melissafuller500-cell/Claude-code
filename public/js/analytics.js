@@ -5,12 +5,11 @@
   if (!d) return;
   if (d.ga4) {
     var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(d.ga4); document.head.appendChild(g);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date()); window.gtag('config', d.ga4, { anonymize_ip: true });
+    window.gtag('config', d.ga4, { anonymize_ip: true });
   }
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) { window.gtag = function () { window.dataLayer.push(arguments); }; window.gtag('js', new Date()); }
   if (d.gtm) {
-    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
     var t = document.createElement('script'); t.async = true; t.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(d.gtm); document.head.appendChild(t);
   }

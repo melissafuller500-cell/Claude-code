@@ -5,14 +5,20 @@ const { icon, logoMark, flash, csrfField } = require('./components');
 const categories = require('../data/categories');
 const { countries } = require('../data/catalog');
 
-const ASSET_V = "4";
+const ASSET_V = "5";
 
 // Search-engine verification + analytics (public pages only). IDs are validated when saved.
 function trackingTags(ctx) {
   const st = require('../services/settings');
   const g = st.get('google_verification'); const b = st.get('bing_verification');
   const ga4 = st.get('ga4_id'); const gtm = st.get('gtm_id'); const px = st.get('meta_pixel_id');
-  return html`${g ? html`<meta name="google-site-verification" content="${g}">` : ''}${b ? html`<meta name="msvalidate.01" content="${b}">` : ''}${ga4 || gtm || px ? html`<script src="/js/analytics.js?v=${ASSET_V}" data-ga4="${ga4}" data-gtm="${gtm}" data-pixel="${px}" async></script>` : ''}`;
+  return html`${g ? html`<meta name="google-site-verification" content="${g}">` : ''}${b ? html`<meta name="msvalidate.01" content="${b}">` : ''}${ga4 || gtm || px ? html`<script src="/js/analytics.js?v=${ASSET_V}" data-ga4="${ga4}" data-gtm="${gtm}" data-pixel="${px}"></script>` : ''}`;
+}
+
+// Google Tag Manager fallback for visitors without JavaScript (placed right after <body>).
+function gtmNoscript() {
+  const gtm = require('../services/settings').get('gtm_id');
+  return gtm ? html`<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${gtm}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>` : '';
 }
 
 function docHead(ctx, headMarkup, extraCss = [], tracking = false) {
@@ -20,6 +26,7 @@ function docHead(ctx, headMarkup, extraCss = [], tracking = false) {
 <html lang="${ctx.lang}" data-theme-init>
 <head>
 <meta charset="utf-8">
+${tracking ? trackingTags(ctx) : ''}
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#10221d">
 <meta name="color-scheme" content="light dark">
@@ -34,7 +41,6 @@ function docHead(ctx, headMarkup, extraCss = [], tracking = false) {
 ${extraCss.map((c) => html`<link rel="stylesheet" href="${c}?v=${ASSET_V}">`)}
 <link rel="alternate" type="text/plain" title="LLM summary" href="/llms.txt">
 <script src="/js/theme.js?v=${ASSET_V}"></script>
-${tracking ? trackingTags(ctx) : ''}
 ${headMarkup}
 </head>`;
 }
@@ -227,6 +233,7 @@ function whatsappFloat(ctx) {
 function page(ctx, { seo: s, body, bodyClass = '' }) {
   return html`${docHead(ctx, seo.head(ctx, s), [], true)}
 <body class="${bodyClass}">
+${gtmNoscript()}
 ${header(ctx)}
 <main id="main">
 ${flash(ctx)}

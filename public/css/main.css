@@ -640,3 +640,7 @@ textarea{min-height:96px;resize:vertical}
 .asset-main,.asset-side,.two-col>*,.panel-grid>*{min-width:0}
 @media (max-width:960px){.asset-grid{grid-template-columns:minmax(0,1fr)}}
 .table-scroll{max-width:100%}
+
+/* WhatsApp button: always bottom-right */
+.wa-float{position:fixed;left:auto;top:auto;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:90}
+body:has(.drawer.open) .wa-float{opacity:0;pointer-events:none}
